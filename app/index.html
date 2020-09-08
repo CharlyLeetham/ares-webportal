@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="pagename" content={{title}}>
 
     <title>AresMUSH</title>
 
@@ -32,9 +33,10 @@
 
     <link integrity="" rel="stylesheet" href="{{rootURL}}assets/ares-webportal.css">
 
+
     {{content-for "head-footer"}}
   </head>
-  <body class="{{title}}">
+  <body class={{title}}>
 
     {{content-for "body"}}
     
