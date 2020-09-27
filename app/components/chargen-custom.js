@@ -4,7 +4,7 @@ export default Component.extend({
   tagName: '',
   
   cities = ['Barcelona', 'London', 'New York', 'Porto'],
-  destination = 'London'  
+  destination = 'London',
   
 
   
