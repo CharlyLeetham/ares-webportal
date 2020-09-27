@@ -10,15 +10,6 @@ export default Component.extend({
     });
     return list;
   }), 
-
-	actions: {
-		swiconicfChanged(val) {
-			this.set('char.custom.iconicf.value', val.value);
-		},
-		chooseswif(val) {
-			this.set('swiconicf', val);
-		}
-	},
   
   didInsertElement: function() {
     let self = this;
