@@ -5,7 +5,7 @@
                      </div>
                      <div class="col-sm-9">
 						{{{ansi-format text=char.custom.iconicf}}}
-						<PowerSelect @selected={{swiconicf}} @searchField="value" @options={{swiconicf}} @onchange="">
+						<PowerSelect @selected={{this.swiconicf}} @searchField="value" @options={{this.swiconicf}} @onchange={{this.chooseswif}} as |swiconicf|>
                                {{swiconicf.value}}
                         </PowerSelect>
                      </div>
