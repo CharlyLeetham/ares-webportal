@@ -9,7 +9,14 @@ export default Component.extend({
       list.push({ value: g });
     });
     return list;
-  }),  
+  }), 
+
+	actions: {
+
+		swiconicfChanged(val) {
+			this.set('char.custom.iconicf.value', val.value);
+		},
+	}
   
   didInsertElement: function() {
     let self = this;
@@ -20,6 +27,6 @@ export default Component.extend({
     // Return a hash containing your data.  Character data will be in 'char'.  For example:
     // 
     // return { goals: this.get('char.custom.goals') };
-   // return { powers: this.get('char.custom.iconicf')};
+   return { powers: this.get('char.custom.iconicf')};
   }
 });
