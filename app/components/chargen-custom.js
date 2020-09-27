@@ -12,11 +12,10 @@ export default Component.extend({
   }), 
 
 	actions: {
-
 		swiconicfChanged(val) {
 			this.set('char.custom.iconicf.value', val.value);
-		}
-	}
+		},
+	},
   
   didInsertElement: function() {
     let self = this;
