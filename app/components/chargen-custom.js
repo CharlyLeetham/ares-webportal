@@ -1,10 +1,5 @@
 import Component from '@ember/component';
 
-export default class extends Controller {
-  cities = ['Barcelona', 'London', 'New York', 'Porto']
-  destination = 'London'
-}
-
 export default Component.extend({
   tagName: '',
   
@@ -15,6 +10,9 @@ export default Component.extend({
     });
     return list;
   }), 
+  
+  cities = ['Barcelona', 'London', 'New York', 'Porto']
+  destination = 'London'  
   
 
   
