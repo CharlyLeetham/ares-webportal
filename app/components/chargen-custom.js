@@ -1,15 +1,22 @@
 import Component from '@ember/component';
 
+export default class extends Controller {
+  cities = ['Barcelona', 'London', 'New York', 'Porto']
+  destination = 'London'
+}
+
 export default Component.extend({
   tagName: '',
   
-  swiconicf: computed(function() {
+  swiconicfsel: computed(function() {
     let list = [];
     this.get('char.custom.iconicf').forEach(function(g) {
       list.push({ value: g });
     });
     return list;
   }), 
+  
+
   
   didInsertElement: function() {
     let self = this;

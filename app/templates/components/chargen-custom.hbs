@@ -5,9 +5,9 @@
                      </div>
                      <div class="col-sm-9">
 						{{{ansi-format text=char.custom.iconicf}}}
-						<! -- <PowerSelect @selected={{this.swiconicf}} @searchField="value" @options={{this.swiconicfsel}} @onchange={{fn (mut this.swiconicf)}} as |swiconicf|>
-                               {{swiconicf}}
-                        </PowerSelect> -->
+						<PowerSelect @selected={{this.destination}} @options={{this.cities}} @onChange={{fn (mut this.destination)}} as |name|>
+							{{name}}
+						</PowerSelect>
                      </div>
                  </div>
 	</div> 
