@@ -15,7 +15,7 @@ export default Component.extend({
 
 		swiconicfChanged(val) {
 			this.set('char.custom.iconicf.value', val.value);
-		},
+		}
 	}
   
   didInsertElement: function() {
