@@ -12,7 +12,7 @@ export default Component.extend({
 	}), 
 
     iconicfChanged(val) {
-        this.set('char.custom.iconicf.value', val);
+        //this.set('char.custom.iconicf.value', val);
     },
 	
   
