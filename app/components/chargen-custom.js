@@ -6,7 +6,7 @@ export default Component.extend({
   
 	swiconicfsel: computed(function() {
 		let list = [];
-		freid = this.get('model.char.custom.iconicf');
+		freid = this.get('char.custom.iconicf');
 		console.alert(freid);
 		this.get('char.custom.iconicf').forEach(function(g) {
 		  list.push({ value: g });
@@ -16,7 +16,7 @@ export default Component.extend({
 	}), 
 
     iconicfChanged(val) {
-        this.set('model.char.custom.iconicf.value', val.value);
+        this.set('char.custom.iconicf.value', val.value);
     },
 	
   
