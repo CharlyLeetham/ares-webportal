@@ -5,7 +5,7 @@ export default Component.extend({
   
 	swiconicfsel: computed(function() {
 		let list = [];
-		this.get('char.custom.iconicf').forEach(function(g) {
+		this.get('model.char.custom.iconicf').forEach(function(g) {
 		  list.push({ value: g });
 		});
 		return list;
