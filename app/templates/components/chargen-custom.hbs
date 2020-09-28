@@ -7,7 +7,7 @@
 						{{{ansi-format text=char.custom.iconicf}}}
                      </div>
 					 
-					<PowerSelect @selected={{char.custom.chariconicf}} @options={{this.swiconicfsel}} @onChange={{this.iconicfChanged}} as |icf|>
+					<PowerSelect @selected={{char.custom.chariconicf}} @options={{this.swiconicfsel}} @onChange=@onChange={{fn (mut this.char.custom.chariconicf)}} as |icf|>
 					  {{icf}}
 					</PowerSelect>					 
                  </div>
