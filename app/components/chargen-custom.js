@@ -11,11 +11,9 @@ export default Component.extend({
 		return list;
 	}), 
 
-	acltest: computed(function() {
-		names = ['Stefan', 'Miguel', 'Tomster', 'Pluto'];
-		foo() { }
-		return names;
-	}),
+    iconicfChanged(val) {
+        this.set('model.char.custom.iconicf.value', val.value);
+    },
 	
   
   didInsertElement: function() {
