@@ -8,6 +8,7 @@ export default Component.extend({
 		this.get('model.char.custom.iconicf').forEach(function(g) {
 		  list.push({ value: g });
 		});
+		console.alert(list);
 		return list;
 	}), 
 
