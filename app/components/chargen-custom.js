@@ -11,17 +11,6 @@ export default Component.extend({
 		return swiconicf;
 	}), 
 
-
-	actions: {
-		iconicfChanged(val) {
-			var charif;
-			charif = this.get('char.custom.chariconicf');
-			console.log ("Charif:".charif);
-			//this.set('char.custom.chariconicf', val.value);
-		}
-	}
-	
-  
   didInsertElement: function() {
     let self = this;
     this.set('updateCallback', function() { return self.onUpdate(); } );
@@ -33,5 +22,15 @@ export default Component.extend({
     // return { goals: this.get('char.custom.goals') };
    // return { powers: this.get('char.custom.iconicf')};
   }
+  
+  
+	actions: {
+		iconicfChanged(val) {
+			var charif;
+			charif = this.get('char.custom.chariconicf');
+			console.log ("Charif:".charif);
+			//this.set('char.custom.chariconicf', val.value);
+		}
+	}
   
 });
