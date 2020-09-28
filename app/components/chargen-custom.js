@@ -6,6 +6,7 @@ export default Component.extend({
   
 	swiconicfsel: computed(function() {
 		//let list = [];
+		var freid;
 		freid = this.get('char.custom.iconicf');
 		console.alert(freid);
 		//this.get('char.custom.iconicf').forEach(function(g) {
