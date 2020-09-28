@@ -9,7 +9,10 @@ export default Component.extend({
 		  list.push({ value: g });
 		});
 		return list;
-	}),   
+	}), 
+
+	names = ['Stefan', 'Miguel', 'Tomster', 'Pluto'],
+	foo() { },
   
   didInsertElement: function() {
     let self = this;
