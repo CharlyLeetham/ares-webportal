@@ -11,8 +11,12 @@ export default Component.extend({
 		return list;
 	}), 
 
-	names = ['Stefan', 'Miguel', 'Tomster', 'Pluto'],
-	foo() { },
+	acltest: computed(function() {
+		names = ['Stefan', 'Miguel', 'Tomster', 'Pluto'];
+		foo() { }
+		return names;
+	}),
+	
   
   didInsertElement: function() {
     let self = this;
