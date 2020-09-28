@@ -18,7 +18,7 @@ export default Component.extend({
 			charif = this.get('char.custom.chariconicf');
 			console.log ("Charif:".charif);
 			//this.set('char.custom.chariconicf', val.value);
-		},
+		}
 	}
 	
   
