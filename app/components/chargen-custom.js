@@ -8,11 +8,13 @@ export default Component.extend({
 		let list = [];
 		freid = this.get('char.custom.iconicf');
 		console.alert(freid);
-		this.get('char.custom.iconicf').forEach(function(g) {
-		  list.push({ value: g });
-		});
-		console.alert(list);
-		return list;
+		//this.get('char.custom.iconicf').forEach(function(g) {
+		  //list.push({ value: g });
+		//});
+		//console.alert(list);
+		//return list;
+		var list=["list1", "list2", "list3"];
+		return list
 	}), 
 
     iconicfChanged(val) {
