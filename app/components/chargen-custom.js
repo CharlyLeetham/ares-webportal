@@ -21,7 +21,7 @@ export default Component.extend({
     // 
     // return { goals: this.get('char.custom.goals') };
    // return { powers: this.get('char.custom.iconicf')};
-  }
+  },
   
   
 	actions: {
