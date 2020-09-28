@@ -9,7 +9,7 @@ export default Component.extend({
 		var freid;
 		//freid = this.get('char.custom.iconicf');
 		freid = "Hello World";
-		console.alert(freid);
+		console (freid);
 		//this.get('char.custom.iconicf').forEach(function(g) {
 		  //list.push({ value: g });
 		//});
