@@ -16,7 +16,7 @@ export default Component.extend({
 		//console.alert(list);
 		//return list;
 		var list=["list1", "list2", "list3"];
-		return list
+		return freid;
 	}), 
 
     iconicfChanged(val) {
