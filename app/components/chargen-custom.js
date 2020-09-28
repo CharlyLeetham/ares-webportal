@@ -3,8 +3,13 @@ import Component from '@ember/component';
 export default Component.extend({
   tagName: '',
   
-  cities = ['Barcelona', 'London', 'New York', 'Porto'],
-  destination = 'London',
+  swiconicfsel: computed(function() {
+    let list = [];
+    this.get('char.custom.iconicf').forEach(function(g) {
+      list.push({ value: g });
+    });
+    return list;
+  }), 
   
 
   
