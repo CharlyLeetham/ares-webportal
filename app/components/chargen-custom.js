@@ -7,8 +7,8 @@ export default Component.extend({
 	swiconicfsel: computed(function() {
 		//let list = [];
 		var freid;
-		//freid = this.get('char.custom.iconicf');
-		freid = "Hello World";
+		freid = this.get('char.custom.iconicf');
+		//freid = "Hello World";
 		console.log (freid);
 		//this.get('char.custom.iconicf').forEach(function(g) {
 		  //list.push({ value: g });
