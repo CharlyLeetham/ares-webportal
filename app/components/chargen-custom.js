@@ -10,6 +10,13 @@ export default Component.extend({
 		swiconicf = this.get('char.custom.iconicf');
 		return swiconicf;
 	}), 
+	
+	swracesel: computed(function() {
+		//let list = [];
+		var swiconicf;
+		swiconicf = this.get('char.custom.cgrace');
+		return swiconicf;
+	}), 
 
   didInsertElement: function() {
     let self = this;
@@ -29,6 +36,12 @@ export default Component.extend({
 			var charif;
 			charif = this.get('char.custom.chariconicf');
 			this.set('char.custom.chariconicf', val);
+		}
+		
+		raceChanged(val) {
+			var charrace;
+			charrace = this.get('char.custom.charrace');
+			this.set('char.custom.charrace', val);
 		}
 	}
   
