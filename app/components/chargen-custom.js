@@ -31,7 +31,7 @@ export default Component.extend({
 			console.log (charif);
 			console.log (val);
 			console.log (val.value);
-			this.set('char.custom.chariconicf', val.value);
+			this.set('char.custom.chariconicf', val);
 		}
 	}
   
