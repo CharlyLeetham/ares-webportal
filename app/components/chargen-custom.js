@@ -36,7 +36,7 @@ export default Component.extend({
 			var charif;
 			charif = this.get('char.custom.chariconicf');
 			this.set('char.custom.chariconicf', val);
-		}
+		},
 		
 		raceChanged(val) {
 			var charrace;
