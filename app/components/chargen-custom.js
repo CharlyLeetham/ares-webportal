@@ -26,10 +26,9 @@ export default Component.extend({
   
 	actions: {
 		iconicfChanged(val) {
-			console.log ("Charif2222:");
 			var charif;
 			charif = this.get('char.custom.chariconicf');
-			console.log ("Charif:".charif);
+			console.log (charif);
 			//this.set('char.custom.chariconicf', val.value);
 		}
 	}
