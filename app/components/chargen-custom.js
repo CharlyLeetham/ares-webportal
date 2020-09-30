@@ -28,9 +28,9 @@ export default Component.extend({
     // 
     // return { goals: this.get('char.custom.goals') };
 	console.log ('kkkk');
-	cgiconicf = char.custom.iconicf;
+	cgiconicf = this.get('char.custom.iconicf');
 	console.log (cgiconicf);
-	return { iconicf: 'self.cgiconicf')};
+	return { iconicf: this.get('char.custom.iconicf')};
   },
   
   
