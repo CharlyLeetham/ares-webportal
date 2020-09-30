@@ -27,7 +27,7 @@ export default Component.extend({
     // Return a hash containing your data.  Character data will be in 'char'.  For example:
     // 
     // return { goals: this.get('char.custom.goals') };
-   return { powers: this.get('char.custom.iconicf')};
+	return { chariconicf: this.get('char.custom.iconicf')};
   },
   
   
