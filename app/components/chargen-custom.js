@@ -27,10 +27,6 @@ export default Component.extend({
     // Return a hash containing your data.  Character data will be in 'char'.  For example:
     // 
     // return { goals: this.get('char.custom.goals') };
-	console.log ('kkkk');
-	var cgiconicf;
-	cgiconicf = this.get('char.custom.chariconicf');
-	console.log (cgiconicf);
 	return { iconicf: this.get('char.custom.chariconicf')};
   },
   
