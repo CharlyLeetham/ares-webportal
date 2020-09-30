@@ -30,7 +30,7 @@ export default Component.extend({
 	console.log ('kkkk');
 	cgiconicf = char.custom.iconicf;
 	console.log (cgiconicf);
-	return { iconicf: self.cgiconicf)};
+	return { iconicf: 'self.cgiconicf')};
   },
   
   
