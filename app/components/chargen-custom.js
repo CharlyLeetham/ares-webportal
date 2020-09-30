@@ -31,7 +31,7 @@ export default Component.extend({
 	var cgiconicf;
 	cgiconicf = this.get('char.custom.chariconicf');
 	console.log (cgiconicf);
-	return { iconicf: this.get('char.custom.iconicf')};
+	return { iconicf: this.get('char.custom.chariconicf')};
   },
   
   
