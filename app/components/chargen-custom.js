@@ -28,7 +28,7 @@ export default Component.extend({
     // 
     // return { goals: this.get('char.custom.goals') };
 	console.log ('kkkk');
-	console.log (char.custom.iconicf);
+	console.log ('char.custom.iconicf');
 	return { iconicf: this.get('char.custom.iconicf')};
   },
   
