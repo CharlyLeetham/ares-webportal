@@ -32,7 +32,7 @@
                              <b>{{demo.name}}</b> 
                      </div>
                      <div class="col-sm-9">
-                             <Input @type="text" @size={{25}} @value={{demo.value}} />
+                             <Input @type="text" @size={{25}} @value={{demo.value} {demo.key}} />
                      </div>
                  </div>
                  {{/each-in}}				
