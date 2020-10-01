@@ -1,22 +1,29 @@
 	<div id="swrifts-sheet" class="tab-pane fade in">          
-                 <div class="form-group row">
-                     <div class="col-sm-3">
+		<div class="row">
+			<div class="col-sm-9">
+				<div class="form-group row">
+					 <div class="col-sm-3">
 						<span class="heading">Iconic Framework</span> 
-                     </div>
-                     <div class="col-sm-9">
+					 </div>
+					 <div class="col-sm-9">
 						<PowerSelect @selected={{char.custom.chariconicf}} @options={{this.swiconicfsel}}  @onchange={{action "iconicfChanged"}} as |icf|>
 						  {{icf}}
 						</PowerSelect>	
-                     </div>			 
-                 </div>
-                 <div class="form-group row">
-                     <div class="col-sm-3">
+					 </div>			 
+				</div>
+				<div class="form-group row">
+					<div class="col-sm-3">
 						<span class="heading">Race</span> 
-                     </div>
-                     <div class="col-sm-9">
+					 </div>
+					 <div class="col-sm-9">
 						<PowerSelect @selected={{char.custom.charrace}} @options={{this.swracesel}}  @onchange={{action "raceChanged"}} as |icf|>
 						  {{icf}}
 						</PowerSelect>	
-                     </div>			 
-                 </div>
+					</div>			 
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<p> Counter information goes here </p>
+			</div>
+		</div>		
 	</div> 
