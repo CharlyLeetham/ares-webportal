@@ -17,9 +17,10 @@ export default Component.extend({
 	}),
 
  	swcgpoints: computed(function() {
-		var swcgpoints;
-		swcgpoints = this.get('char.custom.cgpoints');
-		return swcgpoints;
+        let swcgpoints_entry = this.get('model.custom.cgpoints');
+        Object.keys(swcpoints_entry).forEach(function(k) {
+            swcgpoints[k] = swcgpoints_entry[k].value;
+        });
 	}), 
 
   didInsertElement: function() {
