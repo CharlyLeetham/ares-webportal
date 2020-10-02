@@ -5,17 +5,21 @@ export default Component.extend({
   tagName: '',
   
 	swiconicfsel: computed(function() {
-		//let list = [];
 		var swiconicf;
 		swiconicf = this.get('char.custom.iconicf');
 		return swiconicf;
 	}), 
 	
 	swracesel: computed(function() {
-		//let list = [];
 		var swiconicf;
 		swiconicf = this.get('char.custom.cgrace');
 		return swiconicf;
+	}),
+
+ 	swcgpoints: computed(function() {
+		var swcgpoints;
+		swcgpoints = this.get('char.custom.cgpoints');
+		return swcgpoints;
 	}), 
 
   didInsertElement: function() {
