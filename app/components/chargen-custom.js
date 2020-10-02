@@ -21,6 +21,10 @@ export default Component.extend({
         Object.keys(swcpoints_entry).forEach(function(k) {
             swcgpoints[k] = swcgpoints_entry[k].value;
         });
+		
+        return { 
+            cgpoints: swcgpoints,
+        };
 	}), 
 
   didInsertElement: function() {
