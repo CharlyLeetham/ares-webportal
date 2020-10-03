@@ -26,13 +26,13 @@
 				<p> Counter information goes here </p>
 				<p> {{{ansi-format text=char.custom.cgpoints}}} </p>
 				
-                 {{#each char.custom.cgpoints as |key value|}}
+                 {{#each char.custom.cgpoints as |data|}}
                  <div class="form-group row">
                      <div class="col-sm-3">
-                             <b>{{key}}</b> 
+                             <b>{{data.name}}</b> 
                      </div>
                      <div class="col-sm-9">
-                             <Input @type="text" @size={{25}} @value={{value}} />
+                             <Input @type="text" @size={{25}} @value={{data.rating}} />
                      </div>
                  </div>
                  {{/each}}				
