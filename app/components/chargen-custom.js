@@ -13,19 +13,10 @@ export default Component.extend({
 	swracesel: computed(function() {
 		var swiconicf;
 		swiconicf = this.get('char.custom.cgrace');
+		document.getElementById("inp-stats_points").value = "testing"
 		return swiconicf;
 	}),
-
- 	swcgpoints: computed(function() {
-        let swcgpoints_entry = this.get('model.custom.cgpoints');
-        Object.keys(swcpoints_entry).forEach(function(k) {
-            swcgpoints[k] = swcgpoints_entry[k].value;
-        });
-		
-        return { 
-            cgpoints: swcgpoints,
-        };
-	}), 
+	
 
   didInsertElement: function() {
     let self = this;
@@ -44,7 +35,12 @@ export default Component.extend({
 		iconicfChanged(val) {
 			var charif;
 			charif = this.get('char.custom.chariconicf');
-			this.set('char.custom.chariconicf', val);
+			this.set('char.custom.chariconicf', val);			
+			//get back the chargen points for the iconicframework
+			//get the current chargen points.
+			//add the if points to the current points
+			//update each of the input fields.
+
 		},
 		
 		raceChanged(val) {
