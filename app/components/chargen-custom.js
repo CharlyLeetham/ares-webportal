@@ -13,7 +13,7 @@ export default Component.extend({
 	swracesel: computed(function() {
 		var swiconicf;
 		swiconicf = this.get('char.custom.cgrace');
-		document.getElementById("inp-stats_points").value = "testing"
+		//document.getElementById("inp-stats_points").value = "testing"
 		return swiconicf;
 	}),
 	
