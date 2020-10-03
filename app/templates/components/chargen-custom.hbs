@@ -26,7 +26,7 @@
 				<p> Counter information goes here </p>
 				<p> {{{ansi-format text=char.custom.cgpoints}}} </p>
 				
-                 {{#each_with char.custom.cgpoints as |data|}}
+                 {{#each char.custom.cgpoints as |data|}}
                  <div class="form-group row">
                      <div class="col-sm-3">
                              <b>{{data.name}}</b> 
@@ -35,7 +35,7 @@
                              <Input @type="text" @size={{25}} @value={{data.rating}} />
                      </div>
                  </div>
-                 {{/each_with}}				
+                 {{/each}}				
 			</div>
 		</div>		
 	</div> 
