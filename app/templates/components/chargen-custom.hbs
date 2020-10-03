@@ -25,25 +25,14 @@
 			<div class="col-sm-3">
 				<p class="txthding"> CGen Points Available </p>
                  {{#each-in char.custom.cgpoints as |key counter|}}
-					{{#each counter as |key data|}}
 						 <div class="form-group row">
 							 <div class="col-sm-9">
-									 <b>{{data.name}}</b> 
+									 <b>{{counter.name}}</b> 
 							 </div>
 							 <div class="col-sm-3">
-									 <Input id="inp-{{key}}" @type="text" disabled={{this.entryNotAllowed}} @size={{4}} @value={{data.rating}} />
+									 <Input id="inp-{{key}}" @type="text" disabled={{this.entryNotAllowed}} @size={{4}} @value={{counter.rating}} />
 							 </div>
-						 </div>
-					{{else}}
-						 <div class="form-group row">
-							 <div class="col-sm-9">
-									 <b>Key: {{key}}</b> 
-							 </div>
-							 <div class="col-sm-3">
-									 Who knows?
-							 </div>
-						 </div>
-					{{/each}}	 	
+						 </div>	 	
 				 {{else}}
                  <div class="form-group row">
                      <div class="col-sm-12">
