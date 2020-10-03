@@ -13,7 +13,6 @@ export default Component.extend({
 	swracesel: computed(function() {
 		var swiconicf;
 		swiconicf = this.get('char.custom.cgrace');
-		document.getElementById("inp-stats_points").value = 'testing'
 		return swiconicf;
 	}),
 	
@@ -35,7 +34,8 @@ export default Component.extend({
 		iconicfChanged(val) {
 			var charif;
 			charif = this.get('char.custom.chariconicf');
-			this.set('char.custom.chariconicf', val);			
+			this.set('char.custom.chariconicf', val);		
+			document.getElementById("inp-stats_points").value = 'testing'			
 			//get back the chargen points for the iconicframework
 			//get the current chargen points.
 			//add the if points to the current points
