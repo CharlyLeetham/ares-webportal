@@ -25,7 +25,7 @@
 			<div class="col-sm-3">
 				<p> Counter information goes here </p>
 				<p> {{{ansi-format text=char.custom.cgpoints}}} </p>
-                 {{#each char.custom.cgpoints as |key counter|}}
+                 {{#each-in char.custom.cgpoints as |key counter|}}
                  <div class="form-group row">
                      <div class="col-sm-3">
                              <b>dd {{key}}</b> 
@@ -40,7 +40,7 @@
 						Nothing here
 					</div>
 				  </div>
-                 {{/each}}					
+                 {{/each-in}}					
 			
 			</div>
 		</div>		
