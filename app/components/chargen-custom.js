@@ -38,7 +38,7 @@ export default Component.extend({
 			document.getElementById("inp-stats_points").value = 'testing'
 			let list = [];
 			charcg = this.get('char.custom.cgpoints');
-			console.log(charcg);
+			//console.log(charcg);
 			//this.get('char.custom.cgpoints').forEach(function(g) {
 			  //list.push({ value: g });
 			//});
