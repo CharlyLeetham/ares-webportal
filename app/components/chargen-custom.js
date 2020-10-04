@@ -32,7 +32,7 @@ export default Component.extend({
   
 	actions: {
 		iconicfChanged(val) {
-			var charif, charcg;
+			var charif, charcg, inpname;
 			charif = this.get('char.custom.chariconicf');
 			this.set('char.custom.chariconicf', val);		
 			document.getElementById("inp-stats_points").value = 'testing'
@@ -46,6 +46,7 @@ export default Component.extend({
 			for (const [key, value] of Object.entries(charcg)) {
 				console.log(`${key}: ${value}`);
 				for (const [key1, value1] of Object.entries(value)) {
+					document.getElementById("inp-" + key).value = value1
 					console.log(`${key1}: ${value1}`);
 				}
 			}
