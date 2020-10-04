@@ -32,9 +32,12 @@ export default Component.extend({
   
 	actions: {
 		iconicfChanged(val) {
-			var charif;
+			var charif, charcgp;
 			charif = this.get('char.custom.chariconicf');
 			this.set('char.custom.chariconicf', val)
+			charcgp = this.get('char.custom.inicgpoints');
+			console.log ('kkkk')
+			console.log (charcgp)
 		},
 		
 		raceChanged(val) {
