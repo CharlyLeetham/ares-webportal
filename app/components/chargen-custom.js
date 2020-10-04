@@ -36,8 +36,21 @@ export default Component.extend({
 			charif = this.get('char.custom.chariconicf');
 			this.set('char.custom.chariconicf', val)
 			charcgp = this.get('char.custom.inicgpoints');
-			console.log ('kkkk')
 			console.log (charcgp)
+			for (const [key, value] of Object.entries(charcg)) {
+				console.log(`Key: ${key}: ${value}`);
+				for (const [key1, value1] of Object.entries(value)) {
+					console.log ("inp-" + key + "=" + value1[rating])
+					// if (key1 == 'rating') {
+						// document.getElementById("inp-" + key).value = value1
+						// console.log(`${key1}: ${value1}`);
+					// }
+				}
+			}
+			//get back the chargen points for the iconicframework
+			//get the current chargen points.
+			//add the if points to the current points
+			//update each of the input fields.			
 		},
 		
 		raceChanged(val) {
