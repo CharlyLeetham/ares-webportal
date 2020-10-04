@@ -44,7 +44,7 @@ export default Component.extend({
 			//});
 			console.log(list);
 			for (const [key, value] of Object.entries(list)) {
-			  console.log(`${key}: ${value}`);
+			  console.log('Key: ${key} Value: ${value}`);
 			}			
 			//get back the chargen points for the iconicframework
 			//get the current chargen points.
