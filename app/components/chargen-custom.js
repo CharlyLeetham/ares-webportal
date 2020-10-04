@@ -37,7 +37,7 @@ export default Component.extend({
 			this.set('char.custom.chariconicf', val)
 			charcgp = this.get('char.custom.inicgpoints');
 			console.log (charcgp)
-			for (const [key, value] of Object.entries(charcg)) {
+			for (const [key, value] of Object.entries(charcgp)) {
 				console.log(`Key: ${key}: ${value}`);
 				for (const [key1, value1] of Object.entries(value)) {
 					console.log ("inp-" + key + "=" + value1[rating])
