@@ -37,10 +37,12 @@ export default Component.extend({
 			this.set('char.custom.chariconicf', val);		
 			document.getElementById("inp-stats_points").value = 'testing'
 			let list = [];
-			this.get('char.custom.cgpoints').forEach(function(g) {
-			  list.push({ value: g });
-			});
-			console.logt(list);
+			charcg = this.get('char.custom.cgpoints');
+			console.log(charcg);
+			//this.get('char.custom.cgpoints').forEach(function(g) {
+			  //list.push({ value: g });
+			//});
+			console.log(list);
 			//get back the chargen points for the iconicframework
 			//get the current chargen points.
 			//add the if points to the current points
