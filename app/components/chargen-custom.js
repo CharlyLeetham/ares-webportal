@@ -36,17 +36,13 @@ export default Component.extend({
 			charif = this.get('char.custom.iconicf');
 			this.set('char.custom.iconicf', val);		
 			//document.getElementById("inp-stats_points").value = 'testing'
-			let list = [];
 			//charcg = this.get('char.custom.inicgpoints');
 			//console.log(charcg);
-			//this.get('char.custom.cgpoints').forEach(function(g) {
-			  //list.push({ value: g });
-			//});
 			//console.log(list);
 			// for (const [key, value] of Object.entries(charcg)) {
-				console.log(`${key}: ${value}`);
+				// console.log(`${key}: ${value}`);
 				// for (const [key1, value1] of Object.entries(value)) {
-					console.log ("inp-" + key + "=" + value1[rating])
+					// console.log ("inp-" + key + "=" + value1[rating])
 					// if (key1 == 'rating') {
 						// document.getElementById("inp-" + key).value = value1
 						// console.log(`${key1}: ${value1}`);
