@@ -42,7 +42,7 @@ export default Component.extend({
 			//this.get('char.custom.cgpoints').forEach(function(g) {
 			  //list.push({ value: g });
 			//});
-			console.log(list);
+			//console.log(list);
 			list.forEach(element => console.log(element));	
 			//get back the chargen points for the iconicframework
 			//get the current chargen points.
