@@ -33,8 +33,8 @@ export default Component.extend({
 	actions: {
 		iconicfChanged(val) {
 			var charif, charcg, inpname;
-			charif = this.get('char.custom.chariconicf');
-			this.set('char.custom.chariconicf', val);		
+			charif = this.get('char.custom.iconicf');
+			this.set('char.custom.iconicf', val);		
 			//document.getElementById("inp-stats_points").value = 'testing'
 			let list = [];
 			charcg = this.get('char.custom.cgpoints');
