@@ -38,9 +38,9 @@ export default Component.extend({
 			charcgp = this.get('char.custom.inicgpoints');
 			console.log (charcgp)
 			for (const [key, value] of Object.entries(charcgp)) {
-				console.log(`Key: ${key}: ${value}`); 
+				#console.log(`Key: ${key}: ${value}`); 
 				for (const [key1, value1] of Object.entries(value)) {
-					console.log ("Key: "+key['name']+" Rating:" +key['rating'])
+					console.log ("Key1: "+key1+" Value1:" +value1)
 					//console.log ("inp-" + value1 + "=" + value1)
 					// if (key1 == 'rating') {
 						// document.getElementById("inp-" + key).value = value1
