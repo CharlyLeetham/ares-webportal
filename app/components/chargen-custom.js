@@ -43,7 +43,7 @@ export default Component.extend({
 			  //list.push({ value: g });
 			//});
 			//console.log(list);
-			console.log(typeof charcg);	
+			console.log(Object.values(charcg));
 			//get back the chargen points for the iconicframework
 			//get the current chargen points.
 			//add the if points to the current points
