@@ -32,7 +32,7 @@ export default Component.extend({
   
 	actions: {
 		iconicfChanged(val) {
-			var charif;
+			var charif, charcg;
 			charif = this.get('char.custom.chariconicf');
 			this.set('char.custom.chariconicf', val);		
 			document.getElementById("inp-stats_points").value = 'testing'
