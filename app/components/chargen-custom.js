@@ -40,7 +40,7 @@ export default Component.extend({
 			for (const [key, value] of Object.entries(charcgp)) {
 				console.log(`Key: ${key}: ${value}`); 
 				for (const [key1, value1] of Object.entries(value)) {
-					console.log ("Name: "+value[name]+" Rating:" +value1[rating])
+					console.log ("Key: "+key['name']+" Rating:" +key['rating'])
 					//console.log ("inp-" + value1 + "=" + value1)
 					// if (key1 == 'rating') {
 						// document.getElementById("inp-" + key).value = value1
