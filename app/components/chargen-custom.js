@@ -38,6 +38,7 @@ export default Component.extend({
 			this.set('char.custom.chariconicf', val)
 			charcgp = this.get('char.custom.inicgpoints');
 			cgslots = this.get('char.custom.cgslots');
+			console.log ('CGslots: '+typeof cgslots);
 			//newifpoints = cgslots.filter(item => item['ifname'] == 'dragon_juicer');
 			//console.log (cgslots);
 			//console.log (cgslots);
@@ -49,8 +50,8 @@ export default Component.extend({
 				// console.log(`Key: ${key}: ${value}`); 
 				// for (const [key1, value1] of Object.entries(value)) {
 					// console.log ("Key1: "+key+" Value1:" +value)
-					console.log ("inp-" + value['name'] + "=" + value['rating'])
-					document.getElementById("inp-" + value['name']).value = value['rating']
+					//console.log ("inp-" + value['name'] + "=" + value['rating'])
+					//document.getElementById("inp-" + value['name']).value = value['rating']
 				// }
 			// }
 			//get back the chargen points for the iconicframework
