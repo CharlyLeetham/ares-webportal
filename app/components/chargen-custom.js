@@ -42,9 +42,9 @@ export default Component.extend({
 			console.log (cgslots);
 			
 			// Reset all points to init levels. 
-			// for (const [key, value] of Object.entries(cgslots)) {
-				// console.log ("inp-" + value['name'] + "=" + value['rating'])
-			// }
+			for (const [key, value] of Object.entries(cgslots)) {
+				console.log ("inp-" + value['name'] + "=" + value['rating'])
+			}
 			//console.log (cgslots);
 			//console.log (cgslots);
 			//for (const [key, value] of Object.entries(cgslots)) {
