@@ -45,9 +45,9 @@ export default Component.extend({
 			// Reset all points to init levels. 
 			for (const [key, value] of Object.entries(cgslots)) {
 				console.log ("inp-" + value['name'] + "=" + value['value'])
-				if (newifpoints.filter(slots => slots.name.toString() == value["name"].toString()))
+				if (newifpoints.filter(slots => slots.name.toString() == value["name"].toString())) {
 					document.getElementById("inp-" + value['name']).value = newifpoints.filter(slots => slots.rating);
-				else
+				} else {
 					document.getElementById("inp-" + value['name']).value = value['value'];
 				}
 			}
