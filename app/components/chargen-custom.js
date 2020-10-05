@@ -46,7 +46,7 @@ export default Component.extend({
 			for (const [key, value] of Object.entries(cgslots)) {
 				console.log ("inp-" + value['name'] + "=" + value['value'])
 				resetifpoints = newifpoints.filter(slots => slots.ifname.toString() == value['name'])
-				console.log (resetifpoints);
+				console.log ('resetifpoints: '+resetifpoints);
 				// if (resetifpoints == value["name"].toString())) {
 					// document.getElementById("inp-" + value['name']).value = newifpoints.filter(slots => slots.rating);
 					// console.log ("Matched IFName inp-" + value['name'] + "=" + value['value'])
