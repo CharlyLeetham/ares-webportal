@@ -39,9 +39,11 @@ export default Component.extend({
 			console.log(newval);			
 			charcgp = this.get('char.custom.inicgpoints');  // This is the array of all the if's and values
 			cgslots = this.get('char.custom.cgslots');  // This is the cgslots at init and their values.
-			console.log ('CGslots: '+typeof cgslots);
+			console.log ('Newval: '+typeof newval);
 			//newifpoints = cgslots.filter(item => item['ifname'] == 'dragon_juicer');
-			newifpoints = Object.values(charcgp).filter(slots => slots.ifname === newval)
+			newifpoints = Object.values(charcgp)
+			
+			//.filter(slots => slots.ifname === newval)
 			console.log (newifpoints);
 			//console.log (cgslots);
 			//console.log (cgslots);
