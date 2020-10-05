@@ -35,7 +35,7 @@ export default Component.extend({
 			var charif, charcgp, cgslots, newifpoints, newval;
 			charif = this.get('char.custom.chariconicf');
 			this.set('char.custom.chariconicf', val)
-			newval = val.split('~')[0];
+			newval = val.split('~')[0].toLowerCase();
 			console.log(newval);			
 			charcgp = this.get('char.custom.inicgpoints');  // This is the array of all the if's and values
 			cgslots = this.get('char.custom.cgslots');  // This is the cgslots at init and their values.
