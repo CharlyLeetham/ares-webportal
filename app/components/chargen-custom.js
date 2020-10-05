@@ -36,11 +36,11 @@ export default Component.extend({
 			charif = this.get('char.custom.chariconicf');
 			console.log(val);
 			this.set('char.custom.chariconicf', val)
-			charcgp = this.get('char.custom.inicgpoints');
-			cgslots = this.get('char.custom.cgslots');
+			charcgp = this.get('char.custom.inicgpoints');  // This is the array of all the if's and values
+			cgslots = this.get('char.custom.cgslots');  // This is the cgslots at init and their values.
 			console.log ('CGslots: '+typeof cgslots);
 			//newifpoints = cgslots.filter(item => item['ifname'] == 'dragon_juicer');
-			newifpoints = Object.values(cgslots)
+			newifpoints = Object.values(charcg)
 			//.filter(slots => slots.ifname == 'dragon_juicer')
 			//console.log (cgslots);
 			//console.log (cgslots);
