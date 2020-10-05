@@ -44,11 +44,11 @@ export default Component.extend({
 			//}
 			for (const [key, value] of Object.entries(cgslots)) {
 				console.log(`Key: ${key}: ${value}`); 
-				//for (const [key1, value1] of Object.entries(value)) {
-					//console.log ("Key1: "+value['name']+" Value1:" +value['rating'])
+				for (const [key1, value1] of Object.entries(value)) {
+					console.log ("Key1: "+value['name']+" Value1:" +value['rating'])
 					//console.log ("inp-" + value['name'] + "=" + value['rating'])
 					//document.getElementById("inp-" + value['name']).value = value['rating']
-				//}
+				}
 			}
 			//get back the chargen points for the iconicframework
 			//get the current chargen points.
