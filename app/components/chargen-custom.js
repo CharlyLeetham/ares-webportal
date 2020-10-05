@@ -39,7 +39,7 @@ export default Component.extend({
 			cgslots = this.get('char.custom.cgslots');
 			console.log (cgslots);
 			for (const [key, value] of Object.entries(cgslots)) {
-				console.log ("Slot: " +value['name'] +"- Value: "+value['rating']);
+				console.log ("Slot: " +value['name'] +"- Value: "+value['value']);
 			}
 			// for (const [key, value] of Object.entries(charcgp)) {
 				//console.log(`Key: ${key}: ${value}`); 
