@@ -46,7 +46,7 @@ export default Component.extend({
 			for (const [key, value] of Object.entries(cgslots)) {
 				console.log ("inp-" + value['name'] + "=" + value['value'])
 				if (newifpoints.filter(slots => slots.name.toString() == value["name"].toString()))
-					document.getElementById("inp-" + value['name']).value = newifpoints.filter(slots => slots.rating;
+					document.getElementById("inp-" + value['name']).value = newifpoints.filter(slots => slots.rating);
 				else
 					document.getElementById("inp-" + value['name']).value = value['value'];
 				}
