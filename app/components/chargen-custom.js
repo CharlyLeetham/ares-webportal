@@ -40,12 +40,17 @@ export default Component.extend({
 			cgslots = this.get('char.custom.cgslots');  // This is the cgslots at init and their values.
 			newifpoints = Object.values(charcgp).filter(slots => slots.ifname.toString() == newval)
 			console.log (cgslots);
+			console.log (newifpoints);
 			
 			// Reset all points to init levels. 
 			for (const [key, value] of Object.entries(cgslots)) {
 				console.log ("inp-" + value['name'] + "=" + value['value'])
 				document.getElementById("inp-" + value['name']).value = value['value']
 			}
+			
+			// Reset all points to the new framework
+			//for (const [key, value] of Object.entries(cgslots)) {
+				
 			//console.log (cgslots);
 			//console.log (cgslots);
 			//for (const [key, value] of Object.entries(cgslots)) {
