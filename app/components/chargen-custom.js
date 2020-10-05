@@ -37,7 +37,7 @@ export default Component.extend({
 			this.set('char.custom.chariconicf', val)
 			charcgp = this.get('char.custom.inicgpoints');
 			cgslots = this.get('char.custom.cgslots');
-			console.log (cgslots);
+			//console.log (cgslots);
 			for (const [key, value] of Object.entries(cgslots)) {
 				console.log ('Slot: ${key} - Value: ${value}');
 			}
