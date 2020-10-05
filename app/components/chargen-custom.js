@@ -40,10 +40,10 @@ export default Component.extend({
 			cgslots = this.get('char.custom.cgslots');
 			console.log ('CGslots: '+typeof cgslots);
 			//newifpoints = cgslots.filter(item => item['ifname'] == 'dragon_juicer');
-			newifpoints = cgslots.filter((item)=>(item.ifname == 'dragon_juicer'));
+			newifpoints = Object.values(cgslots).filter(slots => slots.ifname == 'dragon_juicer')
 			//console.log (cgslots);
 			//console.log (cgslots);
-			//console.log (newifpoints);
+			console.log (newifpoints);
 			//for (const [key, value] of Object.entries(cgslots)) {
 				//console.log ("Slot: " +value['name'] +"- Value: "+value['value']);
 			//}
