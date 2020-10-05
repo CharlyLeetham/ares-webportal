@@ -32,24 +32,26 @@ export default Component.extend({
   
 	actions: {
 		iconicfChanged(val) {
-			var charif, charcgp, cgslots;
+			var charif, charcgp, cgslots, newifpoints;
 			charif = this.get('char.custom.chariconicf');
 			this.set('char.custom.chariconicf', val)
 			charcgp = this.get('char.custom.inicgpoints');
 			cgslots = this.get('char.custom.cgslots');
-			console.log (cgslots);
-			console.log (charcgp);
+			newifpoints = charslots.filter(item => item['ifname'] == 'dragon_juicer');
+			//console.log (cgslots);
+			//console.log (cgslots);
+			console.log (newifpoints);
 			//for (const [key, value] of Object.entries(cgslots)) {
 				//console.log ("Slot: " +value['name'] +"- Value: "+value['value']);
 			//}
-			for (const [key, value] of Object.entries(cgslots)) {
-				console.log(`Key: ${key}: ${value}`); 
-				for (const [key1, value1] of Object.entries(value)) {
-					console.log ("Key1: "+key+" Value1:" +value)
-					//console.log ("inp-" + value['name'] + "=" + value['rating'])
-					//document.getElementById("inp-" + value['name']).value = value['rating']
-				}
-			}
+			// for (const [key, value] of Object.entries(cgslots)) {
+				// console.log(`Key: ${key}: ${value}`); 
+				// for (const [key1, value1] of Object.entries(value)) {
+					// console.log ("Key1: "+key+" Value1:" +value)
+					console.log ("inp-" + value['name'] + "=" + value['rating'])
+					document.getElementById("inp-" + value['name']).value = value['rating']
+				// }
+			// }
 			//get back the chargen points for the iconicframework
 			//get the current chargen points.
 			//add the if points to the current points
