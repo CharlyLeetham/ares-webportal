@@ -32,10 +32,10 @@ export default Component.extend({
   
 	actions: {
 		iconicfChanged(val) {
-			var charif, charcgp, cgslots, newifpoints;
+			var charif, charcgp, cgslots, newifpoints, newval;
 			charif = this.get('char.custom.chariconicf');
 			this.set('char.custom.chariconicf', val)
-			val = val.split('~')[0];
+			newval = val.split('~')[0];
 			console.log(val);			
 			charcgp = this.get('char.custom.inicgpoints');  // This is the array of all the if's and values
 			cgslots = this.get('char.custom.cgslots');  // This is the cgslots at init and their values.
