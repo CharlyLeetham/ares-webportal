@@ -42,8 +42,7 @@ export default Component.extend({
 				for (const [key1, value1] of Object.entries(value)) {
 					console.log ("Key1: "+value['name']+" Value1:" +value['rating'])
 					console.log ("inp-" + value['name'] + "=" + value['rating'])
-					// if (key1 == 'rating') {
-						// document.getElementById("inp-" + key).value = value1
+					document.getElementById("inp-" + value['name']).value = value['rating']
 						// console.log(`${key1}: ${value1}`);
 					// }
 				}
