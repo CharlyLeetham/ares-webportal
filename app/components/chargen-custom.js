@@ -32,7 +32,7 @@ export default Component.extend({
   
 	actions: {
 		iconicfChanged(val) {
-			var charif, charcgp, cgslots, newifpoints, newval;
+			var charif, charcgp, cgslots, newifpoints, newval, resetifpoints;
 			charif = this.get('char.custom.chariconicf');
 			this.set('char.custom.chariconicf', val)
 			newval = val.split('~')[0].toLowerCase().trim();			
