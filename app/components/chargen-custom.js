@@ -34,14 +34,14 @@ export default Component.extend({
 		iconicfChanged(val) {
 			var charif, charcgp, cgslots, newifpoints;
 			charif = this.get('char.custom.chariconicf');
-			console.log('charif');
+			console.log(charif);
 			this.set('char.custom.chariconicf', val)
 			charcgp = this.get('char.custom.inicgpoints');
 			cgslots = this.get('char.custom.cgslots');
-			newifpoints = cgslots.filter(item => item['ifname'] == 'dragon_juicer');
+			//newifpoints = cgslots.filter(item => item['ifname'] == 'dragon_juicer');
 			//console.log (cgslots);
 			//console.log (cgslots);
-			console.log (newifpoints);
+			//console.log (newifpoints);
 			//for (const [key, value] of Object.entries(cgslots)) {
 				//console.log ("Slot: " +value['name'] +"- Value: "+value['value']);
 			//}
