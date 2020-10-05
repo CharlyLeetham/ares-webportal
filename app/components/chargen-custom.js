@@ -45,11 +45,15 @@ export default Component.extend({
 			// Reset all points to init levels. 
 			for (const [key, value] of Object.entries(cgslots)) {
 				console.log ("inp-" + value['name'] + "=" + value['value'])
-				if (newifpoints.filter(slots => slots.name.toString() == value["name"].toString())) {
-					document.getElementById("inp-" + value['name']).value = newifpoints.filter(slots => slots.rating);
-				} else {
-					document.getElementById("inp-" + value['name']).value = value['value'];
-				}
+				resetifpoints = newifpoints.filter(slots => slots.ifname.toString() == value['name'])
+				console.log (resetifpoints);
+				// if (resetifpoints == value["name"].toString())) {
+					// document.getElementById("inp-" + value['name']).value = newifpoints.filter(slots => slots.rating);
+					// console.log ("Matched IFName inp-" + value['name'] + "=" + value['value'])
+				// } else {
+					// document.getElementById("inp-" + value['name']).value = value['value'];
+					// console.log ("Didn't match inp-" + value['name'] + "=" + value['value'])
+				// }
 			}
 			
 			// Reset all points to the new framework
