@@ -32,31 +32,29 @@ export default Component.extend({
   
 	actions: {
 		iconicfChanged(val) {
-			var charif, charcgp, cgslots, newifpoints, newval, resetifpoints;
+			var charif, charcgp, cgslots, newifpoints, newval, resetifpoints, newrating;
 			charif = this.get('char.custom.chariconicf');
 			this.set('char.custom.chariconicf', val)
 			newval = val.split('~')[0].toLowerCase().trim();			
 			charcgp = this.get('char.custom.inicgpoints');  // This is the array of all the if's and values
 			cgslots = this.get('char.custom.cgslots');  // This is the cgslots at init and their values.
 			newifpoints = Object.values(charcgp).filter(slots => slots.ifname.toString() == newval)
-			console.log (cgslots);
-			console.log (newifpoints);
+			//console.log (cgslots);
+			//console.log (newifpoints);
 			
 			// Reset all points to init levels. 
 			for (const [key, value] of Object.entries(cgslots)) {
 				resetifpoints = newifpoints.filter(slots => slots.name.toString() == value['name']);
-				console.log ('resetifpoints: '+typeof resetifpoints);
 				if (Object.keys(resetifpoints).length === 0) {
 					console.log ("NO match: inp-" + value['name'] + "=" + value['value']);
+					newrating = value['value'];
 				} else {
 					for (const [key1, value1] of Object.entries(resetifpoints)) {
 						console.log ("Match: inp-" + value1['name'] + "=" + value1['rating']);
-						// console.log('Key1: '+key1+' Value: '+value1);
-						// for (const [key2, value2] of Object.entries(value)) {
-							// console.log('Key2: '+key2+' Value2: '+value2);
-						// }
+						newrating = value1['rating']
 					}
 				}
+				document.getElementById("inp-" + value['name']).value = newrating;
 				//console.log ('resetifpoints name: '+resetifpoints['ifname']);
 				//console.log ('resetifpoints: '+resetifpoints['name']+ ' = ' +resetifpoints['rating']);
 				// if (resetifpoints == value["name"].toString())) {
