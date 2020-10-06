@@ -47,7 +47,10 @@ export default Component.extend({
 				console.log ("inp-" + value['name'] + "=" + value['value'])
 				resetifpoints = newifpoints.filter(slots => slots.name.toString() == value['name']);
 				console.log ('resetifpoints: '+resetifpoints);
-				console.log ('resetifpoints name: '+resetifpoints['ifname']);
+				for (const [key1, value1] of Object.entries(resetifpoints)) {
+					console.log('Key1: '+key1+' Value: '+value1);
+				}
+				//console.log ('resetifpoints name: '+resetifpoints['ifname']);
 				//console.log ('resetifpoints: '+resetifpoints['name']+ ' = ' +resetifpoints['rating']);
 				// if (resetifpoints == value["name"].toString())) {
 					// document.getElementById("inp-" + value['name']).value = newifpoints.filter(slots => slots.rating);
