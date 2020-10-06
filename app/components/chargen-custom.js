@@ -50,7 +50,7 @@ export default Component.extend({
 					console.log ("NO match: inp-" + value['name'] + "=" + value['value']);
 				} else {
 					for (const [key1, value1] of Object.entries(resetifpoints)) {
-						console.log ("Match: inp-" + value1['name'] + "=" + value1['value']);
+						console.log ("Match: inp-" + value1['name'] + "=" + value1['rating']);
 						console.log('Key1: '+key1+' Value: '+value1);
 						for (const [key2, value2] of Object.entries(value)) {
 							console.log('Key2: '+key2+' Value2: '+value2);
