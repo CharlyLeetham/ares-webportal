@@ -46,7 +46,7 @@ export default Component.extend({
 			for (const [key, value] of Object.entries(cgslots)) {
 				resetifpoints = newifpoints.filter(slots => slots.name.toString() == value['name']);
 				console.log ('resetifpoints: '+typeof resetifpoints);
-				if (Object.keys(resetpoints).length === 0) {
+				if (Object.keys(resetifpoints).length === 0) {
 					console.log ("NO match: inp-" + value['name'] + "=" + value['value']);
 				} else {
 					for (const [key1, value1] of Object.entries(resetifpoints)) {
