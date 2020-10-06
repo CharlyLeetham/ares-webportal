@@ -44,13 +44,17 @@ export default Component.extend({
 			
 			// Reset all points to init levels. 
 			for (const [key, value] of Object.entries(cgslots)) {
-				console.log ("inp-" + value['name'] + "=" + value['value'])
 				resetifpoints = newifpoints.filter(slots => slots.name.toString() == value['name']);
 				//console.log ('resetifpoints: '+resetifpoints);
-				for (const [key1, value1] of Object.entries(resetifpoints)) {
-					console.log('Key1: '+key1+' Value: '+value1);
-					for (const [key2, value2] of Object.entries(value)) {
-						console.log('Key2: '+key2+' Value2: '+value2);
+				if (!resetifpoints) {
+					console.log ("NO match: inp-" + value['name'] + "=" + value['value']);
+				} else {
+					for (const [key1, value1] of Object.entries(resetifpoints)) {
+						console.log ("Match: inp-" + value1['name'] + "=" + value1['value']);
+						// console.log('Key1: '+key1+' Value: '+value1);
+						// for (const [key2, value2] of Object.entries(value)) {
+							// console.log('Key2: '+key2+' Value2: '+value2);
+						// }
 					}
 				}
 				//console.log ('resetifpoints name: '+resetifpoints['ifname']);
