@@ -44,7 +44,7 @@ export default Component.extend({
 			
 			// Reset all points to init levels. 
 			for (const [key, value] of Object.entries(cgslots)) {
-				//console.log ("inp-" + value['name'] + "=" + value['value'])
+				console.log ("inp-" + value['name'] + "=" + value['value'])
 				resetifpoints = newifpoints.filter(slots => slots.name.toString() == value['name']);
 				//console.log ('resetifpoints: '+resetifpoints);
 				for (const [key1, value1] of Object.entries(resetifpoints)) {
