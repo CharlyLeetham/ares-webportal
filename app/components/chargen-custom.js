@@ -51,7 +51,7 @@ export default Component.extend({
 				} else {
 					for (const [key1, value1] of Object.entries(resetifpoints)) {
 						console.log ("Match: inp-" + value1['name'] + "=" + value1['rating']);
-						newrating = value1['rating']
+						newrating = value1['rating'] + value['value'];
 					}
 				}
 				document.getElementById("inp-" + value['name']).value = newrating;
