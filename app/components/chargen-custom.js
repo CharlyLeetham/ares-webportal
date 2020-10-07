@@ -63,7 +63,7 @@ export default Component.extend({
 			var charrace, charif, charcgp, cgslots, newifpoints, newval, resetifpoints, resetracep, newrating, charracep, newrcpoints;
 			
 			charrace = this.get('char.custom.charrace');  //Get the value that was selected in the dropdown.
-			charif = this.get('char.custom.chariconicf'); //Get the value that was selected in the dropdown.
+			charif = this.get('char.custom.charicf'); //Get the value that was selected in the dropdown.
 			this.set('char.custom.charrace', val);
 			
 			//Modify the CGen counters for the IF
@@ -81,12 +81,12 @@ export default Component.extend({
 			newrating = 0;
 
 			for (const [key, value] of Object.entries(cgslots)) { //Loop through the init values. This is our yardstick.
-				resetifpoints = newifpoints.filter(slots => slots.name.toString() == value['name']);  // Test to see if the slot is modified by the Iconic Framework. 
+				resetifpoints = newifpoints.filter(slots => slots.name.toString() == value['class']);  // Test to see if the slot is modified by the Iconic Framework. 
 				if (Object.keys(resetifpoints).length === 0) { // If it isn't, do this. 
-					newrating = value['value'];  // Set the value we're going to send back to the web. This is going to equal CGINIT.
+					newrating = value['rating'];  // Set the value we're going to send back to the web. This is going to equal CGINIT.
 				} else {
 					for (const [key1, value1] of Object.entries(resetifpoints)) {
-						newrating = value1['rating'] + value['value'];  //If there's a match, set the value to whatever is in CGINIT PLUS the iconfic framework.
+						newrating = value1['rating'] + value['rating'];  //If there's a match, set the value to whatever is in CGINIT PLUS the iconfic framework.
 					}
 				}
 				
