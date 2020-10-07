@@ -13,5 +13,6 @@ export default Component.extend({
     // 
     // return { goals: this.get('char.custom.goals') };
 	return { charicf: this.get('char.custom.charicf') };
+	return { charrace: this.get('char.custom.charrace') };
   }
 });
