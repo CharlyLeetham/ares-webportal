@@ -99,7 +99,7 @@ export default Component.extend({
 					}
 				}
 	
-				document.getElementById("inp-" + value['name']).value = newrating;  //Set the counters on the website.		
+				document.getElementById("inp-" + value['class']).value = newrating;  //Set the counters on the website.		
 			}	
 		}
 	}
