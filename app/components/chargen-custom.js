@@ -35,6 +35,7 @@ export default Component.extend({
 			var charif, charcgp, cgslots, newifpoints, newval, resetifpoints, newrating;
 			charif = this.get('char.custom.chariconicf'); //Get the value that was selected in the dropdown.
 			this.set('char.custom.chariconicf', val) //Set the selected Iconic Framework on the site.
+			this.set('char.custom.charrace', 'None') //Set the Race to none.
 			
 			//Modify the CGen counters
 			newval = val.split('~')[0].toLowerCase().trim(); //Take whatever Iconic Framework has been selected and chop every from ~ in the name, remove the trailing space.			
@@ -52,7 +53,8 @@ export default Component.extend({
 					}
 				}
 				document.getElementById("inp-" + value['name']).value = newrating;  //Set the counters on the website.
-			}		
+			}
+			
 		},
 		
 		raceChanged(val) {
