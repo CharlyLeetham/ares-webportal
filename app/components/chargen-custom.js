@@ -90,7 +90,7 @@ export default Component.extend({
 					}
 				}
 				
-				resetracep = newrcpoints.filter(slots => slots.name.toString() == value['name']);  // Test to see if the slot is modified by the Race.
+				resetracep = newrcpoints.filter(slots => slots.name.toString() == value['class']);  // Test to see if the slot is modified by the Race.
 				if (Object.keys(resetracep).length === 0) { // If it isn't, do this. 
 					newrating = newrating;  // Set the value to newrating - which is either CGINIT or mod'd by IF.
 				} else {
