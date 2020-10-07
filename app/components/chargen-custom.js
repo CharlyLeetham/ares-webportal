@@ -45,12 +45,12 @@ export default Component.extend({
 			 
 			for (const [key, value] of Object.entries(cgslots)) { //Loop through the init values. This is our yardstick.
 				resetifpoints = newifpoints.filter(slots => slots.name.toString() == value['class']);  // Test to see if the slot is modified by the Iconic Framework. 
-				console.log("here");
-				console.log(resetifpoints);
-				if (Object.keys(resetifpoints).length === 0) { // If it isn't, do this. 
+				if (Object.keys(resetifpoints).length === 0) { // If it isn't, do this.
+					console.log ('newrating='+value['value']);
 					newrating = value['value'];  // Set the value we're going to send back to the web. This is going to equal CGINIT.
 				} else {
 					for (const [key1, value1] of Object.entries(resetifpoints)) {
+						console.log ('newrating='+value1['rating']+'+'+value['value']);
 						newrating = value1['rating'] + value['value'];  //If there's a match, set the value to whatever is in CGINIT PLUS the iconfic framework.
 					}
 				}
