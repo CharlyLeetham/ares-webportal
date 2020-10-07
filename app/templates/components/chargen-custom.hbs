@@ -16,7 +16,7 @@
 						<span class="heading">Race</span> 
 					 </div>
 					 <div class="col-sm-9">
-						<PowerSelect @selected={{char.custom.charrace}} @options={{this.swracesel}}  @onchange={{action "raceChanged"}} as |icf|>
+						<PowerSelect @selected={{char.custom.charrace}} @options={{this.swracesel}}  @onchange={{action "raceChanged" disabled="true"}} as |icf|>
 						  {{icf}}
 						</PowerSelect>	
 					</div>			 
