@@ -55,7 +55,7 @@ export default Component.extend({
 					}
 				}
 				//console.log ("inp-" + value['class']+".value= "+newrating);
-				document.getElementById("inp-" + value['name']).value = newrating;  //Set the counters on the website.
+				document.getElementById("inp-" + value['class']).value = newrating;  //Set the counters on the website.
 			}
 		},
 		
