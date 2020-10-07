@@ -52,7 +52,7 @@ export default Component.extend({
 						newrating = value1['rating'] + value['value'];  //If there's a match, set the value to whatever is in CGINIT PLUS the iconfic framework.
 					}
 				}
-				console.log ("inp-" + value['name']).value +"= newrating");
+				console.log ("inp-" + value['name']+".value= "+newrating);
 				//document.getElementById("inp-" + value['name']).value = newrating;  //Set the counters on the website.
 			}
 		},
