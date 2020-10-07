@@ -67,7 +67,7 @@ export default Component.extend({
 			newval = val.split('~')[0].toLowerCase().trim(); //Take whatever Race has been selected and chop every from ~ in the name, remove the trailing space.
 			
 			charcgp = this.get('char.custom.inicgpoints');  // This is the array of all the if's and values
-			charracep = this.get('char.custom.iniracepoints');  // This is the array of all the races and values	
+			charracep = this.get('char.custom.initracepoints');  // This is the array of all the races and values	
 			cgslots = this.get('char.custom.cgslots');  // This is the cgslots at init and their values.
 			
 			newifpoints = Object.values(charcgp).filter(slots => slots.ifname.toString() == charif); // Convert charcgp to an array and filter for any entries that match the new framework selected.
