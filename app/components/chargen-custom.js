@@ -94,8 +94,10 @@ export default Component.extend({
 				if (Object.keys(resetracep).length === 0) { // If it isn't, do this. 
 					newrating = newrating;  // Set the value to newrating - which is either CGINIT or mod'd by IF.
 				} else {
-					for (const [key1, value1] of Object.entries(resetracep)) {
+					for (const [key1, value1] of Object.entries(resetracep)) {						
+						console.log ("inp-" + value['class']+".value= "+newrating+" + "+value1['rating']);
 						newrating = value1['rating'];  //If there's a match, set the value to whatever is in CGINIT PLUS the iconfic framework.
+						console.log ("inp-" + value['class']+".value= "+newrating);						
 					}
 				}
 	
