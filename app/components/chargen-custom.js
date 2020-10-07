@@ -44,7 +44,7 @@ export default Component.extend({
 			newifpoints = Object.values(charcgp).filter(slots => slots.ifname.toString() == newval); // Convert charcgp to an array and filter for any entries that match the new framework selected.
 			 
 			for (const [key, value] of Object.entries(cgslots)) { //Loop through the init values. This is our yardstick.
-				resetifpoints = newifpoints.filter(slots => slots.name.toString() == value['name']);  // Test to see if the slot is modified by the Iconic Framework. 
+				resetifpoints = newifpoints.filter(slots => slots.name.toString() == value['class']);  // Test to see if the slot is modified by the Iconic Framework. 
 				if (Object.keys(resetifpoints).length === 0) { // If it isn't, do this. 
 					newrating = value['value'];  // Set the value we're going to send back to the web. This is going to equal CGINIT.
 				} else {
@@ -52,7 +52,7 @@ export default Component.extend({
 						newrating = value1['rating'] + value['value'];  //If there's a match, set the value to whatever is in CGINIT PLUS the iconfic framework.
 					}
 				}
-				console.log ("inp-" + value['name']+".value= "+newrating);
+				console.log ("inp-" + value['class']+".value= "+newrating);
 				//document.getElementById("inp-" + value['name']).value = newrating;  //Set the counters on the website.
 			}
 		},
