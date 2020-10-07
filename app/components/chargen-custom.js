@@ -44,6 +44,7 @@ export default Component.extend({
 			newifpoints = Object.values(charcgp).filter(slots => slots.ifname.toString() == newval); // Convert charcgp to an array and filter for any entries that match the new framework selected.
 			 
 			for (const [key, value] of Object.entries(cgslots)) { //Loop through the init values. This is our yardstick.
+			console.log("here");
 				resetifpoints = newifpoints.filter(slots => slots.name.toString() == value['class']);  // Test to see if the slot is modified by the Iconic Framework. 
 				if (Object.keys(resetifpoints).length === 0) { // If it isn't, do this. 
 					newrating = value['value'];  // Set the value we're going to send back to the web. This is going to equal CGINIT.
