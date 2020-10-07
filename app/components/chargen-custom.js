@@ -33,65 +33,70 @@ export default Component.extend({
 	actions: {
 		iconicfChanged(val) {
 			var charif, charcgp, cgslots, newifpoints, newval, resetifpoints, newrating;
-			charif = this.get('char.custom.chariconicf');
-			this.set('char.custom.chariconicf', val)
-			newval = val.split('~')[0].toLowerCase().trim();			
+			charif = this.get('char.custom.chariconicf'); //Get the value that was selected in the dropdown.
+			this.set('char.custom.chariconicf', val) //Set the selected Iconic Framework on the site.
+			
+			//Modify the CGen counters
+			newval = val.split('~')[0].toLowerCase().trim(); //Take whatever Iconic Framework has been selected and chop every from ~ in the name, remove the trailing space.			
 			charcgp = this.get('char.custom.inicgpoints');  // This is the array of all the if's and values
 			cgslots = this.get('char.custom.cgslots');  // This is the cgslots at init and their values.
-			newifpoints = Object.values(charcgp).filter(slots => slots.ifname.toString() == newval)
-			//console.log (cgslots);
-			//console.log (newifpoints);
-			
-			// Reset all points to init levels. 
-			for (const [key, value] of Object.entries(cgslots)) {
-				resetifpoints = newifpoints.filter(slots => slots.name.toString() == value['name']);
-				if (Object.keys(resetifpoints).length === 0) {
-					console.log ("NO match: inp-" + value['name'] + "=" + value['value']);
-					newrating = value['value'];
+			newifpoints = Object.values(charcgp).filter(slots => slots.ifname.toString() == newval); // Convert charcgp to an array and filter for any entries that match the new framework selected.
+			 
+			for (const [key, value] of Object.entries(cgslots)) { //Loop through the init values. This is our yardstick.
+				resetifpoints = newifpoints.filter(slots => slots.name.toString() == value['name']);  // Test to see if the slot is modified by the Iconic Framework. 
+				if (Object.keys(resetifpoints).length === 0) { // If it isn't, do this. 
+					newrating = value['value'];  // Set the value we're going to send back to the web. This is going to equal CGINIT.
 				} else {
 					for (const [key1, value1] of Object.entries(resetifpoints)) {
-						console.log ("Match: inp-" + value1['name'] + "=" + value1['rating']);
-						newrating = value1['rating'] + value['value'];
+						newrating = value1['rating'] + value['value'];  //If there's a match, set the value to whatever is in CGINIT PLUS the iconfic framework.
 					}
 				}
-				document.getElementById("inp-" + value['name']).value = newrating;
-				//console.log ('resetifpoints name: '+resetifpoints['ifname']);
-				//console.log ('resetifpoints: '+resetifpoints['name']+ ' = ' +resetifpoints['rating']);
-				// if (resetifpoints == value["name"].toString())) {
-					// document.getElementById("inp-" + value['name']).value = newifpoints.filter(slots => slots.rating);
-					// console.log ("Matched IFName inp-" + value['name'] + "=" + value['value'])
-				// } else {
-					// document.getElementById("inp-" + value['name']).value = value['value'];
-					// console.log ("Didn't match inp-" + value['name'] + "=" + value['value'])
-				// }
-			}
-			
-			// Reset all points to the new framework
-			//for (const [key, value] of Object.entries(cgslots)) {
-				
-			//console.log (cgslots);
-			//console.log (cgslots);
-			//for (const [key, value] of Object.entries(cgslots)) {
-				//console.log ("Slot: " +value['name'] +"- Value: "+value['value']);
-			//}
-			// for (const [key, value] of Object.entries(cgslots)) {
-				// console.log(`Key: ${key}: ${value}`); 
-				// for (const [key1, value1] of Object.entries(value)) {
-					// console.log ("Key1: "+key+" Value1:" +value)
-					//console.log ("inp-" + value['name'] + "=" + value['rating'])
-					//document.getElementById("inp-" + value['name']).value = value['rating']
-				// }
-			// }
-			//get back the chargen points for the iconicframework
-			//get the current chargen points.
-			//add the if points to the current points
-			//update each of the input fields.			
+				document.getElementById("inp-" + value['name']).value = newrating;  //Set the counters on the website.
+			}		
 		},
 		
 		raceChanged(val) {
-			var charrace;
-			charrace = this.get('char.custom.charrace');
+			var charrace, charif, charcgp, cgslots, newifpoints, newval, resetifpoints, newrating, charracep, newrcpoints;
+			
+			charrace = this.get('char.custom.charrace');  //Get the value that was selected in the dropdown.
+			charif = this.get('char.custom.chariconicf'); //Get the value that was selected in the dropdown.
 			this.set('char.custom.charrace', val);
+			
+			//Modify the CGen counters for the IF
+			charif = charif.split('~')[0].toLowerCase().trim(); //Take whatever IF has been set and chop every from ~ in the name, remove the trailing space.	
+			newval = val.split('~')[0].toLowerCase().trim(); //Take whatever Race has been selected and chop every from ~ in the name, remove the trailing space.
+			
+			charcgp = this.get('char.custom.inicgpoints');  // This is the array of all the if's and values
+			charracep = this.get('char.custom.iniracepoints');  // This is the array of all the races and values	
+			cgslots = this.get('char.custom.cgslots');  // This is the cgslots at init and their values.
+			
+			newifpoints = Object.values(charcgp).filter(slots => slots.ifname.toString() == charif); // Convert charcgp to an array and filter for any entries that match the new framework selected.
+			newrcpoints = Object.values(charracep).filter(slots => slots.ifname.toString() == newval); // Convert charcgp to an array and filter for any entries that match the new framework selected.
+
+			//Reset newrating to 0 for each loop
+			newrating = 0;
+
+			for (const [key, value] of Object.entries(cgslots)) { //Loop through the init values. This is our yardstick.
+				resetifpoints = newifpoints.filter(slots => slots.name.toString() == value['name']);  // Test to see if the slot is modified by the Iconic Framework. 
+				if (Object.keys(resetifpoints).length === 0) { // If it isn't, do this. 
+					newrating = value['value'];  // Set the value we're going to send back to the web. This is going to equal CGINIT.
+				} else {
+					for (const [key1, value1] of Object.entries(resetifpoints)) {
+						newrating = value1['rating'] + value['value'];  //If there's a match, set the value to whatever is in CGINIT PLUS the iconfic framework.
+					}
+				}
+				
+				resetracep = newrcpoints.filter(slots => slots.name.toString() == value['name']);  // Test to see if the slot is modified by the Race.
+				if (Object.keys(resetracep).length === 0) { // If it isn't, do this. 
+					newrating = newrating;  // Set the value to newrating - which is either CGINIT or mod'd by IF.
+				} else {
+					for (const [key1, value1] of Object.entries(resetracep)) {
+						newrating = value1['rating'];  //If there's a match, set the value to whatever is in CGINIT PLUS the iconfic framework.
+					}
+				}
+	
+				document.getElementById("inp-" + value['name']).value = newrating;  //Set the counters on the website.		
+			}	
 		}
 	}
   
