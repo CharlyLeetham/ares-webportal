@@ -23,11 +23,11 @@ export default Component.extend({
 		return swiconicf;
 	}),	
 	
-	// swsyshind: computed(function() {
-		// var swiconicf;
-		// swiconicf = this.get('char.custom.syshind');
-		// return swiconicf;
-	// }),
+	swsyshind: computed(function() {
+		var swiconicf;
+		swiconicf = this.get('char.custom.swsyshind');
+		return swiconicf;
+	}),
 	
 
   didInsertElement: function() {
