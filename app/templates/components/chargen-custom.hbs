@@ -31,8 +31,8 @@
 						<div class="row">
 							{{{ansi-format text=char.custom.cgedges}}}
 							{{#each-in char.custom.cgedges as |key counter|}}
-								<p> {{counter.class}}<br />
-									{{counter.rating}}
+								<p> <span class="tooltip">{{counter.class}}
+									<span class="tooltiptext">{{counter.rating}}</span>
 								</p>
 							{{/each-in}}
 						</div>
