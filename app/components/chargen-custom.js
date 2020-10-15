@@ -21,6 +21,12 @@ export default Component.extend({
 		var swiconicf;
 		swiconicf = this.get('char.custom.sysedges');
 		return swiconicf;
+	}),	
+	
+	swsyshind: computed(function() {
+		var swiconicf;
+		swiconicf = this.get('char.custom.syshind');
+		return swiconicf;
 	}),
 	
 

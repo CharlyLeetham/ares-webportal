@@ -57,6 +57,12 @@
 								</span></li>
 							{{/each-in}}
 							</ul></p>
+						</div>
+
+						<div class="row">
+							<PowerSelect @options={{this.swsyshind}}  @onChange={{action "raceChanged"}} as |hind|>
+							  {{hind}}
+							</PowerSelect>						
 						</div>						
 					</div>	
 				</div>					
