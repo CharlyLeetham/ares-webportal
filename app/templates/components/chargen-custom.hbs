@@ -37,6 +37,11 @@
 							{{/each-in}}
 							</ul></p>
 						</div>
+						<div class="row">
+							<PowerSelect @selected={{char.custom.sysedges}} @options={{this.swsysedges}}  @onChange={{action "raceChanged"}} as |edg|>
+							  {{edg}}
+							</PowerSelect>						
+						</div>
 					</div>
 					
 					<div class="col-sm-6">

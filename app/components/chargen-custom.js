@@ -16,6 +16,13 @@ export default Component.extend({
 		return swiconicf;
 	}),
 	
+	
+	swsysedges: computed(function() {
+		var swiconicf;
+		swiconicf = this.get('char.custom.sysedges');
+		return swiconicf;
+	}),
+	
 
   didInsertElement: function() {
     let self = this;
