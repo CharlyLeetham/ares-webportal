@@ -30,6 +30,11 @@
 						
 						<div class="row">
 							{{{ansi-format text=char.custom.cgedges}}}
+							{{#each-in char.custom.cgslots as |key counter|}}
+								<p> {{counter.class}}<br />
+									{{counter.rating}}
+								</p>
+							{{/each-in}}
 						</div>
 					</div>
 					
