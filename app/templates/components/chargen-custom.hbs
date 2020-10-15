@@ -29,12 +29,13 @@
 						</div>
 						
 						<div class="row">
+							<p> 
 							{{#each-in char.custom.cgedges as |key counter|}}
-								<p> <span class="cgtooltip">{{counter.class}}, 
-										<span class="tooltiptext">{{counter.rating}}</span>
-									</span>
-								</p>
+								<span class="cgtooltip">{{counter.class}}, 
+									<span class="tooltiptext">{{counter.rating}}</span>
+								</span>
 							{{/each-in}}
+							</p>
 						</div>
 					</div>
 					
