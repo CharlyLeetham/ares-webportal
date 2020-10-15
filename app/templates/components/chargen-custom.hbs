@@ -43,6 +43,16 @@
 						<div class="row txthding">
 							<span class="heading">Hinderances</span>
 						</div>
+						
+						<div class="row">
+							<p><ul class="hind">
+							{{#each-in char.custom.cghind as |key counter|}}
+								<li><span class="cgtooltip">{{counter.class}} 
+									<span class="tooltiptext">{{counter.rating}}</span>
+								</span></li>
+							{{/each-in}}
+							</ul></p>
+						</div>						
 					</div>	
 				</div>					
 			</div>
