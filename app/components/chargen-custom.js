@@ -39,7 +39,7 @@ export default Component.extend({
     // Return a hash containing your data.  Character data will be in 'char'.  For example:
     // 
     // return { goals: this.get('char.custom.goals') };
-	return { iconicf: this.get('char.custom.charicf'), race: this.get('char.custom.charrace')};
+	return { iconicf: this.get('char.custom.charicf'), race: this.get('char.custom.charrace'), };
   },
   
   
@@ -116,6 +116,12 @@ export default Component.extend({
 	
 				document.getElementById("inp-" + value['class']).value = newrating;  //Set the counters on the website.		
 			}	
+		}
+		
+		hindChanged(val) {
+			var charhind;
+			// charif = this.get('char.custom.charicf'); //Get the value that was selected in the dropdown.
+			this.set('char.custom.cghind', val);
 		}
 	}
   

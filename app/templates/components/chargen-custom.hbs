@@ -60,7 +60,7 @@
 						</div>
 
 						<div class="row">
-						<PowerSelectMultiple @options={{this.swsyshind}}  @onChange={{action "raceChanged"}} as |hind|>
+						<PowerSelectMultiple @selected={{char.custom.cghind}} @options={{this.swsyshind}}  @onChange={{action "raceChanged"}} as |hind|>
 							  {{hind}}
 							</PowerSelectMultiple>				
 						</div>						
