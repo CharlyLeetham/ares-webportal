@@ -116,7 +116,7 @@ export default Component.extend({
 	
 				document.getElementById("inp-" + value['class']).value = newrating;  //Set the counters on the website.		
 			}	
-		}
+		},
 		
 		hindChanged(val) {
 			var charhind;
