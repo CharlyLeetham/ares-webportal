@@ -40,7 +40,7 @@
 							</ul></p>
 						</div>
 						<div class="row">
-							<PowerSelect @options={{this.swsysedges}}  @onChange={{action "edgeChanged"}} as |edg|>
+							<PowerSelectMultiple @selected={{char.custom.cgedges}} @options={{this.swsysedges}}  @onChange={{action "edgeChanged"}} as |edg|>
 							  {{edg}}
 							</PowerSelect>						
 						</div>
