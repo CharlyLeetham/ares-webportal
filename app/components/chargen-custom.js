@@ -26,6 +26,7 @@ export default Component.extend({
 	swsyshind: computed(function() {
 		var swiconicf;
 		swiconicf = this.get('char.custom.swsyshind');
+		console.log (swiconicf);
 		return swiconicf;
 	}),
 	
