@@ -40,7 +40,7 @@ export default Component.extend({
     // Return a hash containing your data.  Character data will be in 'char'.  For example:
     // 
     // return { goals: this.get('char.custom.goals') };
-	return { iconicf: this.get('char.custom.charicf'), race: this.get('char.custom.charrace'), cgedges: this.get('char.custom.cgedges'), cgedgesnofw('char.custom.cgedgesnofw', cghind: this.get('char.custom.cghind'), cghindnofw: this.get('char.custom.cghindnofw') };
+	return { iconicf: this.get('char.custom.charicf'), race: this.get('char.custom.charrace'), cgedges: this.get('char.custom.cgedges'), cgedgesnofw: this.get('char.custom.cgedgesnofw', cghind: this.get('char.custom.cghind'), cghindnofw: this.get('char.custom.cghindnofw') };
   },
   
   
