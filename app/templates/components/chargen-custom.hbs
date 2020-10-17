@@ -38,7 +38,7 @@
 							</ul></p>
 						</div>
 						<div class="row">
-							<PowerSelectMultiple @selected={{char.custom.cgedges}} @options={{this.swsysedges}}  @onChange={{action "edgeChanged"}} as |edg|>
+							<PowerSelectMultiple @selected={{char.custom.cgedgesnofw}} @options={{this.swsysedges}}  @onChange={{action "edgeChanged"}} as |edg|>
 							  {{edg.name}}
 							</PowerSelectMultiple>						
 						</div>
@@ -60,8 +60,8 @@
 						</div>
 
 						<div class="row">
-						<PowerSelectMultiple @selected={{char.custom.cghind}} @options={{this.swsyshind}}  @onChange={{action "hindChanged"}} as |hind|>
-							  {{hind}}
+						<PowerSelectMultiple @selected={{char.custom.cghindnofw}} @options={{this.swsyshind}}  @onChange={{action "hindChanged"}} as |hind|>
+							  {{hind.name}}
 							</PowerSelectMultiple>				
 						</div>						
 					</div>	
