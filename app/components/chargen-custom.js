@@ -121,6 +121,12 @@ export default Component.extend({
 		hindChanged(val) {
 			var charhind;
 			// charif = this.get('char.custom.charicf'); //Get the value that was selected in the dropdown.
+			this.set('char.custom.cgedges', val);
+		}
+
+		hindChanged(val) {
+			var charhind;
+			// charif = this.get('char.custom.charicf'); //Get the value that was selected in the dropdown.
 			this.set('char.custom.cghind', val);
 		}
 	}
