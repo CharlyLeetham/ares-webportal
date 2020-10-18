@@ -156,7 +156,7 @@ export default Component.extend({
 				
 			}
 			this.set('char.custom.swsyshind', systrait1); //Send the new dropdown back to the page. 
-			this.set('char.custom.cghind', cgtr1); //Send the new array back to the page for nice display.			
+			this.set('char.custom.cghind', cgtr2); //Send the new array back to the page for nice display.			
 		},
 		
 		raceChanged(val) {
