@@ -49,6 +49,16 @@ export default Component.extend({
 			var charif, charcgp, cgslots, newifpoints, newval, resetifpoints, newrating, cgedg, cghind, swiconicf, systrait, systrait1, newtraitlist, newtrlist, dislist, dislist1, en, i, cgtr1=[], cgtr2=[];
 			charif = this.get('char.custom.charicf'); //Get the value that was selected in the dropdown.
 			this.set('char.custom.charicf', val) //Set the selected Iconic Framework on the site.
+			
+			
+			
+			// Check the Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
+			
+			var swrace;
+			swrace = this.get('char.custom.cgrace'); // Get the system races.
+			console.log(swrace);
+			
+			
 			this.set('char.custom.charrace', 'None') //Set the Race to none.
 			
 			//Modify the CGen counters
@@ -77,8 +87,8 @@ export default Component.extend({
 			cgedg = this.get('char.custom.cgedges');
 			swiconicf = this.get('char.custom.sysiconicf');
 
-			console.log(systrait);
-			console.log(cgedg);
+			// console.log(systrait);
+			// console.log(cgedg);
 			
 			//Change all items in the sysedg dropdown to enabled. 	
 			dislist = Object.values(systrait).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
@@ -120,10 +130,10 @@ export default Component.extend({
 			cghind = this.get('char.custom.cghind');
 			swiconicf = this.get('char.custom.sysiconicf');
 
-			console.log(systrait1);
-			console.log(cghind);
+			// console.log(systrait1);
+			// console.log(cghind);
 			
-			//Change all items in the sysedg dropdown to enabled. 
+			//Change all items in the hinderances dropdown to enabled. 
 			dislist1 = Object.values(systrait1).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 			for (const [key, value] of Object.entries(dislist1)) {
 				//console.log (value['name']+' disabled='+value['disabled']);
@@ -132,9 +142,9 @@ export default Component.extend({
 
 			// Clear the hinderances list for the framework
 			newtraitlist = swiconicf.filter(slots => slots.name.toString().toLowerCase() == newval); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
-			newtrlist = newtraitlist[0].hinderances; // Select the edges for the new if
+			newtrlist = newtraitlist[0].hinderances; // Select the hinderances for the new if
 	
-			//If there are new edges, go through and set these to disabled in the edge drop down.
+			//If there are new hinderances, go through and set these to disabled in the edge drop down.
 			if (newtrlist) {
 				i = 0;
 				for (const [key, value1] of Object.entries(newtrlist)) {
@@ -150,8 +160,8 @@ export default Component.extend({
 						cgtr2[i]['rating'] = value['desc'];
 						i=i+1
 					}
-					console.log(cghind);
-					console.log(cgtr2);
+					// console.log(cghind);
+					// console.log(cgtr2);
 				}
 				
 			}
