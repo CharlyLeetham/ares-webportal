@@ -73,7 +73,7 @@ export default Component.extend({
 			}
 			
 			// Change the Edges set by the iconicf.
-			var swiconicf, sysedg, newiflist, newedglist, dislist;
+			var swiconicf, sysedg, newiflist, newedglist, dislist, en;
 			sysedg = this.get('char.custom.sysedges');
 			swiconicf = this.get('char.custom.sysiconicf');
 
@@ -97,7 +97,8 @@ export default Component.extend({
 				for (const [key, value] of Object.entries(newedglist)) {
 					console.log(key);
 					console.log(value);
-					dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == value); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
+					en = value.split('*')[0].toLowerCase().trim();
+					dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 					console.log(dislist);
 				}
 			}
