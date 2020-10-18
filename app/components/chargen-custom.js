@@ -53,6 +53,12 @@ export default Component.extend({
 			newval = val.split('~')[0].toLowerCase().trim(); //Take whatever Iconic Framework has been selected and chop every from ~ in the name, remove the trailing space.			
 			
 			
+			// Common things to do 
+			
+			// Get the edges from the selected Iconic Framework
+			newtraitlist = swiconicf.filter(slots => slots.name.toString().toLowerCase() == newval); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
+			console.log(newtraitlist);			
+			
 			// Check the Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
 			
 			var swrace, swraceall, complrace, newcomprace=[];
@@ -77,9 +83,7 @@ export default Component.extend({
 							// console.log ('key: '+k+' Value: ')
 							// console.log (v)
 						// }
-						// Get the edges from the selected Iconic Framework
-						newtraitlist = swiconicf.filter(slots => slots.name.toString().toLowerCase() == newval); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
-						console.log(newtraitlist);
+
 					}					
 				}
 				// if (Object.values(value).indexOf("Complications")) {
