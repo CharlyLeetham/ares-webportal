@@ -144,10 +144,10 @@ export default Component.extend({
 					for (const [key, value] of Object.entries(dislist)) {
 						value['disabled'] = true //Set disabled for this element to true
 						// Write the new CG Edges array for a nice display
-						cgtr1[i]=[]
-						cgtr1[i]['class'] = value1;
-						cgtr1[i]['name'] = en;
-						cgtr1[i]['rating'] = value['desc'];
+						cgtr2[i]=[]
+						cgtr2[i]['class'] = value1;
+						cgtr2[i]['name'] = en;
+						cgtr2[i]['rating'] = value['desc'];
 						i=i+1
 					}
 					console.log(cgedg);
