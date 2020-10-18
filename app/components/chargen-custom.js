@@ -56,6 +56,7 @@ export default Component.extend({
 			
 			var swrace;
 			swrace = this.get('char.custom.cgrace'); // Get the system races.
+			console.log ('race')
 			console.log(swrace);
 			
 			
