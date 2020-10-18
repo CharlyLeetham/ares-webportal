@@ -80,7 +80,7 @@ export default Component.extend({
 			console.log(swiconicf);
 			console.log(newval);
 			
-			newedglist = Object.values(sysedg).filter(slots => slots.ifname.toString().toLowerCase() != newval); // Convert charcgp to an array and filter for any entries that match the new framework selected.
+			newedglist = Object.values(swiconicf).filter(slots => slots.name.toString().toLowerCase() == newval); // Convert charcgp to an array and filter for any entries that match the new framework selected.
 			
 			console.log(newedglist);			
 			this.set('char.custom.cgedges', "dddd");
