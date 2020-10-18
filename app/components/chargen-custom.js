@@ -93,7 +93,7 @@ export default Component.extend({
 
 			// Clear the edges list for the framework
 			
-			//cgedg=[];
+			var cgedg1=[];
 			
 			
 			newiflist = swiconicf.filter(slots => slots.name.toString().toLowerCase() == newval); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
@@ -108,16 +108,16 @@ export default Component.extend({
 					for (const [key, value] of Object.entries(dislist)) {
 						value['disabled'] = true //Set disabled for this element to true
 						// Write the new CG Edges array for a nice display
-						cgedg['class'] = value1;
-						cgedg['name'] = en;
-						cgedg['rating'] = value['desc'];
+						cgedg1['class'] = value1;
+						cgedg1['name'] = en;
+						cgedg1['rating'] = value['desc'];
 					}
 					console.log(cgedg);
 				}
 				
 			}
 			this.set('char.custom.sysedges', sysedg); //Send the new dropdown back to the page. 
-			this.set('char.custom.cgedges', cgedg); //Send the new array back to the page for nice display. 
+			this.set('char.custom.cgedges', cgedg1); //Send the new array back to the page for nice display. 
 			
 		},
 		
