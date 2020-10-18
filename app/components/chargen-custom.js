@@ -89,7 +89,7 @@ export default Component.extend({
 				dislist = Object.values(sysedg).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 				for (const [key, value] of Object.entries(dislist)) {
 					console.log (value['name']+' disabled='+value['disabled']);
-					value['disabled'] = false //Set disabled for this element to false
+					value['disabled'] = 0 //Set disabled for this element to false
 				}
 			} else {
 				// send backthe unfiltered list
