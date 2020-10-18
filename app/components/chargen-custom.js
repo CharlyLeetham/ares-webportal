@@ -85,7 +85,7 @@ export default Component.extend({
 			console.log(newiflist);		
 			if (newedglist) {
 				// make the changes	
-				cge = this.get('char.custom.swsysedges');
+				cge = this.get('char.custom.sysedges');
 				console.log (cge);
 			} else {
 				// send backthe unfiltered list
