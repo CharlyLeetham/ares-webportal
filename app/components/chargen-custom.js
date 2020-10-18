@@ -115,7 +115,7 @@ export default Component.extend({
 					}
 					console.log(cgedg);
 					console.log(cgedg1);
-					i = i++;
+					i = i+1;
 				}
 				
 			}
