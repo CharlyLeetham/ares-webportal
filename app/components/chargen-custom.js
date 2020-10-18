@@ -82,6 +82,7 @@ export default Component.extend({
 			newiflist = swiconicf.filter(slots => slots.name.toString().toLowerCase() == newval); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 			newedglist = newiflist[0].edges; // Select the edges for the new if
 			console.log('New edges:'+newedglist);		
+			console.log('New edges:'+(typeof newedglist));		
 			console.log('NewIFLIST:'+newiflist);		
 			if (newedglist) {
 				// make the changes	
