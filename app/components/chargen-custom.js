@@ -117,7 +117,7 @@ export default Component.extend({
 				
 			}
 			this.set('char.custom.sysedges', sysedg); //Send the new dropdown back to the page. 
-			this.set('char.custom.cgedges', cdedg); //Send the new array back to the page for nice display. 
+			this.set('char.custom.cgedges', cgedg); //Send the new array back to the page for nice display. 
 			
 		},
 		
