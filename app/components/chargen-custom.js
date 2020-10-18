@@ -101,7 +101,7 @@ export default Component.extend({
 	
 			//If there are new edges, go through and set these to disabled in the edge drop down.
 			if (newedglist) {
-
+								i = 0;
 				for (const [key, value1] of Object.entries(newedglist)) {
 					console.log(value1);
 					en = value1.split('*')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
@@ -109,9 +109,12 @@ export default Component.extend({
 					for (const [key, value] of Object.entries(dislist)) {
 						value['disabled'] = true //Set disabled for this element to true
 						// Write the new CG Edges array for a nice display
-						cgedg1['class'] = value1;
-						cgedg1['name'] = en;
-						cgedg1['rating'] = value['desc'];
+						
+						cgedg1[i]=[]
+						cgedg1[i]['class'] = value1;
+						cgedg1[i]['name'] = en;
+						cgedg1[i]['rating'] = value['desc'];
+						i=i+1
 					}
 					console.log(cgedg);
 					console.log(cgedg1);
