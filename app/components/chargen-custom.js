@@ -88,13 +88,11 @@ export default Component.extend({
 				// make the changes	
 				// Take the existing list of edges and remove all disable: true.
 				dislist = Object.values(sysedg).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
-				console.log (dislist);
 				for (const [key, value] of Object.entries(dislist)) {
 					console.log (value['name']+' disabled='+value['disabled']);
 					value['disabled'] = "false" //Set disabled for this element to false
 				}
-				console.log (dislist);				
-				
+				console.log('New edges:'+newedglist);
 			} else {
 				// send backthe unfiltered list
 			}
