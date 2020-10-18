@@ -113,6 +113,7 @@ export default Component.extend({
 						cgedg1['rating'] = value['desc'];
 					}
 					console.log(cgedg);
+					console.log(cgedg1);
 				}
 				
 			}
