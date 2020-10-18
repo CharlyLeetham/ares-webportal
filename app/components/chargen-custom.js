@@ -79,6 +79,7 @@ export default Component.extend({
 
 
 			console.log(sysedg);
+			console.log(cgedges);
 			
 			//Change all items in the sysedg dropdown to enabled. 	
 			
