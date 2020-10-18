@@ -83,7 +83,7 @@ export default Component.extend({
 			
 			dislist = Object.values(sysedg).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 			for (const [key, value] of Object.entries(dislist)) {
-				console.log (value['name']+' disabled='+value['disabled']);
+				//console.log (value['name']+' disabled='+value['disabled']);
 				value['disabled'] = false //Set disabled for this element to false
 			}			
 			
@@ -91,7 +91,7 @@ export default Component.extend({
 			newiflist = swiconicf.filter(slots => slots.name.toString().toLowerCase() == newval); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 			newedglist = newiflist[0].edges; // Select the edges for the new if
 			// console.log('New edges:'+newedglist);
-			// console.log (sysedg);
+			console.log (sysedg);
 			if (newedglist) {
 				//console.log(newedglist);
 				for (const [key, value] of Object.entries(newedglist)) {				
