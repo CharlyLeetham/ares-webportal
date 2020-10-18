@@ -77,11 +77,11 @@ export default Component.extend({
 			cgedg = this.get('char.custom.cgedges');
 			swiconicf = this.get('char.custom.sysiconicf');
 
-			console.log(sysedg);
+			console.log(systrait);
 			console.log(cgedg);
 			
 			//Change all items in the sysedg dropdown to enabled. 	
-			dislist = Object.values(sysedg).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
+			dislist = Object.values(systrait).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 			for (const [key, value] of Object.entries(dislist)) {
 				//console.log (value['name']+' disabled='+value['disabled']);
 				value['disabled'] = false //Set disabled for this element to false
