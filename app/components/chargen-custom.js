@@ -74,8 +74,11 @@ export default Component.extend({
 			
 			// Change the Edges set by the iconicf.
 			var swiconicf;
-			swiconicf = this.get('char.custom.iconicf');			
-			this.set('char.custom.cgedges', 'ddd' +swiconicf);
+			swiconicf = this.get('char.custom.iconicf');
+			let ddd = [
+						['a','b','c','c']
+					  ]
+			this.set('char.custom.cgedges', ddd);
 			
 		},
 		
