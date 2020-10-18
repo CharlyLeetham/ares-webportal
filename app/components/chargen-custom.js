@@ -49,38 +49,37 @@ export default Component.extend({
 			var charif, charcgp, cgslots, newifpoints, newval, resetifpoints, newrating, cgedg, cghind, swiconicf, systrait, systrait1, newtraitlist, newtrlist, dislist, dislist1, en, i, cgtr1=[], cgtr2=[];
 			charif = this.get('char.custom.charicf'); //Get the value that was selected in the dropdown.
 			this.set('char.custom.charicf', val) //Set the selected Iconic Framework on the site.
-			
+			swiconicf = this.get('char.custom.sysiconicf');	// Get all the Iconic Frameworks.	
+			newval = val.split('~')[0].toLowerCase().trim(); //Take whatever Iconic Framework has been selected and chop every from ~ in the name, remove the trailing space.			
 			
 			
 			// Check the Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
 			
 			var swrace, swraceall, complrace, newcomprace=[];
 			swrace = this.get('char.custom.cgrace'); // Get the system races.
-			swraceall = this.get('char.custom.swrifts_race'); // Get the system races.
+			swraceall = this.get('char.custom.swrifts_race'); // Get all the system races.
 			// console.log ('race')
 			// console.log(swraceall);
 			
-			for (const [key, value] of Object.entries(swraceall)) { //Loop through the race values. 
-				// for (const [k, v] of Object.entries(value)) {
-					// console.log ('key: '+k+' Value: ')
-					// console.log (v)
-				// }
-				
+			for (const [key, value] of Object.entries(swraceall)) { //Loop through the race values. 		
 				console.log (value);
 				
 				complrace = value.hasOwnProperty('complications');
 				if (complrace) { //Complications exist on the character
 					for (const [k, v] of Object.entries(value.complications)) {
 						var ppe_check = v.includes("Restricted Path PPE^") // see if the race has the value
-						// var isp_check = cvalue.include?("Restricted Path ISP^") #see if the race has the value
-						// var cyber_check = cvalue.include?("Cyber Resistant^") #see if the race has the value
-						// var nsb_check = cvalue.include?("Non-Standard Build^") #see if the race has the value
-						// var bp_check = cvalue.include?("Bizarre Physiology^") #see if the race has the value	
-						if (ppe_check) {
-							console.log (value["name"]);
-							console.log ('key: '+k+' Value: ')
-							console.log (v)
-						}
+						var isp_check = v.includes("Restricted Path ISP^") //see if the race has the value
+						var cyber_check = v.includes("Cyber Resistant^") //see if the race has the value
+						var nsb_check = v.includes("Non-Standard Build^") //see if the race has the value
+						var bp_check = v.includes("Bizarre Physiology^") //see if the race has the value	
+						// if (ppe_check) {
+							// console.log (value["name"]);
+							// console.log ('key: '+k+' Value: ')
+							// console.log (v)
+						// }
+						// Get the edges from the selected Iconic Framework
+						newtraitlist = swiconicf.filter(slots => slots.name.toString().toLowerCase() == newval); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
+						console.log('newtraitlist');
 					}					
 				}
 				// if (Object.values(value).indexOf("Complications")) {
@@ -96,7 +95,7 @@ export default Component.extend({
 			this.set('char.custom.charrace', 'None') //Set the Race to none.
 			
 			//Modify the CGen counters
-			newval = val.split('~')[0].toLowerCase().trim(); //Take whatever Iconic Framework has been selected and chop every from ~ in the name, remove the trailing space.			
+			
 			charcgp = this.get('char.custom.inicgpoints');  // This is the array of all the if's and values
 			cgslots = this.get('char.custom.cgslots');  // This is the cgslots at init and their values.
 			newifpoints = Object.values(charcgp).filter(slots => slots.ifname.toString() == newval); // Convert charcgp to an array and filter for any entries that match the new framework selected.
@@ -119,7 +118,7 @@ export default Component.extend({
 			// Change the Edges set by the iconicf.
 			systrait = this.get('char.custom.sysedges');
 			cgedg = this.get('char.custom.cgedges');
-			swiconicf = this.get('char.custom.sysiconicf');
+
 
 			// console.log(systrait);
 			// console.log(cgedg);
