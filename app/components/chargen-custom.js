@@ -78,8 +78,7 @@ export default Component.extend({
 			swiconicf = this.get('char.custom.iconicf');
 			console.log(sysedg);
 			console.log(swiconicf);
-			console.log(typeof sysedg);
-			console.log(typeof swiconicf);
+			console.log(newval);
 			this.set('char.custom.cgedges', "dddd");
 			
 		},
