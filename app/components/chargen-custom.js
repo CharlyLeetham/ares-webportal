@@ -57,8 +57,8 @@ export default Component.extend({
 			var swrace, swraceall, complrace;
 			swrace = this.get('char.custom.cgrace'); // Get the system races.
 			swraceall = this.get('char.custom.swrifts_race'); // Get the system races.
-			console.log ('race')
-			console.log(swraceall);
+			// console.log ('race')
+			// console.log(swraceall);
 			
 			for (const [key, value] of Object.entries(swraceall)) { //Loop through the race values. 
 				// for (const [k, v] of Object.entries(value)) {
@@ -66,11 +66,13 @@ export default Component.extend({
 					// console.log (v)
 				// }
 				
-				complrace = value.includes('Complications');
+				console.log (value);
+				
+				// complrace = value.includes('Complications');
 				// complrace = Object.values(value).filter(slots => slots.complications);
-				if (complrace) {
-					console.log (complrace);
-				}
+				// if (complrace) {
+// 					console.log (complrace);
+				// }
 				// if (Object.values(value).indexOf("Complications")) {
 					// console.log('Complications exists Key: ' +key+' Value: ');
 					// console.log(value);
