@@ -54,7 +54,7 @@ export default Component.extend({
 			
 			// Check the Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
 			
-			var swrace, swraceall, complrace;
+			var swrace, swraceall, complrace, newcomprace=[];
 			swrace = this.get('char.custom.cgrace'); // Get the system races.
 			swraceall = this.get('char.custom.swrifts_race'); // Get the system races.
 			// console.log ('race')
@@ -69,9 +69,11 @@ export default Component.extend({
 				console.log (value);
 				
 				complrace = value.hasOwnProperty('complications');
-				// complrace = Object.values(value).filter(slots => slots.complications);
-				if (complrace) {
-					console.log (complrace);
+				if (complrace) { //Complications exist on the character
+					for (const [k, v] of Object.entries(value.complications)) {
+						console.log ('key: '+k+' Value: ')
+						console.log (v)
+					}					
 				}
 				// if (Object.values(value).indexOf("Complications")) {
 					// console.log('Complications exists Key: ' +key+' Value: ');
