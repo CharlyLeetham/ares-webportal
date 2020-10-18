@@ -82,13 +82,18 @@ export default Component.extend({
 			console.log(sysedg);
 			console.log(cgedg);
 			
+			
 			//Change all items in the sysedg dropdown to enabled. 	
 			
 			dislist = Object.values(sysedg).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 			for (const [key, value] of Object.entries(dislist)) {
 				//console.log (value['name']+' disabled='+value['disabled']);
 				value['disabled'] = false //Set disabled for this element to false
-			}			
+			}		
+
+			// Clear the edges list for the framework
+			
+			cgedg=[];
 			
 			
 			newiflist = swiconicf.filter(slots => slots.name.toString().toLowerCase() == newval); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
@@ -101,12 +106,13 @@ export default Component.extend({
 					dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 					for (const [key, value] of Object.entries(dislist)) {
 						value['disabled'] = true //Set disabled for this element to true
+						// Write the new CG Edges array for a nice display
+						cgedg['class'] = value;
+						cgedg['name'] = en;
+						cgedg['rating'] = value['desc'];
 					}
-					console.log(dislist);
+					console.log(cgedg);
 				}
-				
-				// Now to display the new Framewok edges. We need the System Edges file for this to get the description 
-				
 				
 			}
 			this.set('char.custom.sysedges', sysedg); //Send the new dropdown back to the page. 
