@@ -46,7 +46,7 @@ export default Component.extend({
   
 	actions: {
 		iconicfChanged(val) {
-			var charif, charcgp, cgslots, newifpoints, newval, resetifpoints, newrating, cgedg, cghind, swiconicf, systrait, systrait1, newtraitlist, newtrlist, dislist, dislist1, en, i, cgtr1=[], cgtr2=[];
+			var charif, charcgp, cgslots, newifpoints, newval, resetifpoints, newrating, cgedg, cghind, swiconicf, systrait, systrait1, newtraitlist, newtrlist, dislist, dislist1, en, i, cgtr1=[], cgtr2=[], chosenifarray;
 			charif = this.get('char.custom.charicf'); //Get the value that was selected in the dropdown.
 			this.set('char.custom.charicf', val) //Set the selected Iconic Framework on the site.
 			swiconicf = this.get('char.custom.sysiconicf');	// Get all the Iconic Frameworks.	
@@ -56,8 +56,8 @@ export default Component.extend({
 			// Common things to do 
 			
 			// Get the edges from the selected Iconic Framework
-			newtraitlist = swiconicf.filter(slots => slots.name.toString().toLowerCase() == newval); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
-			console.log(newtraitlist);			
+			chosenifarray = swiconicf.filter(slots => slots.name.toString().toLowerCase() == newval); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
+			console.log(chosenifarray);			
 			
 			// Check the Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
 			
@@ -68,7 +68,7 @@ export default Component.extend({
 			// console.log(swraceall);
 			
 			for (const [key, value] of Object.entries(swraceall)) { //Loop through the race values. 		
-				console.log (value);
+				// console.log (value);
 				
 				complrace = value.hasOwnProperty('complications');
 				if (complrace) { //Complications exist on the character
