@@ -60,6 +60,9 @@ export default Component.extend({
 			console.log ('race')
 			console.log(swraceall);
 			
+			for (const [key, value] of Object.entries(swraceall)) { //Loop through the race values. 
+				console.log('Key: ' +key+' Value: '+value);
+			}
 			
 			
 			this.set('char.custom.charrace', 'None') //Set the Race to none.
