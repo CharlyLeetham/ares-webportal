@@ -17,7 +17,7 @@
 					 </div>
 					 <div class="col-sm-9">
 						<PowerSelect @selected={{char.custom.charrace}} @options={{this.swracesel}}  @onChange={{action "raceChanged"}} as |icf|>
-						  {{icf}}
+						  {{icf.name}}
 						</PowerSelect>
 					</div>			 
 				</div>

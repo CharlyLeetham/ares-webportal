@@ -106,7 +106,7 @@ export default Component.extend({
 			if (newtrlist) {
 				i = 0;
 				for (const [key, value1] of Object.entries(newtrlist)) {
-					console.log(value1);
+					// console.log(value1);
 					en = value1.split('*')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
 					dislist = Object.values(systrait).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 					for (const [key, value] of Object.entries(dislist)) {
@@ -118,8 +118,8 @@ export default Component.extend({
 						cgtr1[i]['rating'] = value['desc'];
 						i=i+1
 					}
-					console.log(cgedg);
-					console.log(cgtr1);
+					// console.log(cgedg);
+					// console.log(cgtr1);
 				}
 				
 			}
