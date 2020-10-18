@@ -76,6 +76,7 @@ export default Component.extend({
 			var swiconicf, sysedg;
 			sysedg = this.get('char.custom.sysedges');
 			swiconicf = this.get('char.custom.iconicf');
+			console.log(sysedg);
 			console.log(typeof sysedg);
 			console.log(typeof swiconicf);
 			this.set('char.custom.cgedges', "dddd");
