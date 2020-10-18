@@ -46,7 +46,7 @@ export default Component.extend({
   
 	actions: {
 		iconicfChanged(val) {
-			var charif, charcgp, cgslots, newifpoints, newval, resetifpoints, newrating;
+			var charif, charcgp, cgslots, newifpoints, newval, resetifpoints, newrating, cgedges;
 			charif = this.get('char.custom.charicf'); //Get the value that was selected in the dropdown.
 			this.set('char.custom.charicf', val) //Set the selected Iconic Framework on the site.
 			this.set('char.custom.charrace', 'None') //Set the Race to none.
@@ -75,11 +75,12 @@ export default Component.extend({
 			// Change the Edges set by the iconicf.
 			var swiconicf, sysedg, newiflist, newedglist, dislist, en;
 			sysedg = this.get('char.custom.sysedges');
+			cgedg = this.get('char.custom.cgedges');
 			swiconicf = this.get('char.custom.sysiconicf');
 
 
 			console.log(sysedg);
-			console.log(cgedges);
+			console.log(cgedg);
 			
 			//Change all items in the sysedg dropdown to enabled. 	
 			
