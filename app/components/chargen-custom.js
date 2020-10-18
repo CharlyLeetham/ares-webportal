@@ -71,8 +71,15 @@ export default Component.extend({
 				complrace = value.hasOwnProperty('complications');
 				if (complrace) { //Complications exist on the character
 					for (const [k, v] of Object.entries(value.complications)) {
-						console.log ('key: '+k+' Value: ')
-						console.log (v)
+						var ppe_check = v.includes("Restricted Path PPE^") // see if the race has the value
+						// var isp_check = cvalue.include?("Restricted Path ISP^") #see if the race has the value
+						// var cyber_check = cvalue.include?("Cyber Resistant^") #see if the race has the value
+						// var nsb_check = cvalue.include?("Non-Standard Build^") #see if the race has the value
+						// var bp_check = cvalue.include?("Bizarre Physiology^") #see if the race has the value	
+						if (ppe_check) {
+							console.log ('key: '+k+' Value: ')
+							console.log (v)
+						}
 					}					
 				}
 				// if (Object.values(value).indexOf("Complications")) {
