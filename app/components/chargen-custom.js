@@ -79,7 +79,7 @@ export default Component.extend({
 						// }
 						// Get the edges from the selected Iconic Framework
 						newtraitlist = swiconicf.filter(slots => slots.name.toString().toLowerCase() == newval); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
-						console.log('newtraitlist');
+						console.log(newtraitlist);
 					}					
 				}
 				// if (Object.values(value).indexOf("Complications")) {
