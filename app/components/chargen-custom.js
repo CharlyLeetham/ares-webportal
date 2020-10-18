@@ -67,7 +67,9 @@ export default Component.extend({
 				// }
 				
 				complrace = Object.values(value).filter(slots => slots.complications);
-				console.log (complrace);
+				if (complrace) {
+					console.log (complrace);
+				}
 				// if (Object.values(value).indexOf("Complications")) {
 					// console.log('Complications exists Key: ' +key+' Value: ');
 					// console.log(value);
