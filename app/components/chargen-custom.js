@@ -66,7 +66,7 @@ export default Component.extend({
 					// console.log (v)
 				// }
 				
-				// console.log (value);
+				console.log (value);
 				
 				complrace = value.hasOwnProperty('complications');
 				if (complrace) { //Complications exist on the character
