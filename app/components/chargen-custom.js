@@ -77,6 +77,7 @@ export default Component.extend({
 						// var nsb_check = cvalue.include?("Non-Standard Build^") #see if the race has the value
 						// var bp_check = cvalue.include?("Bizarre Physiology^") #see if the race has the value	
 						if (ppe_check) {
+							console.log (value["name"]);
 							console.log ('key: '+k+' Value: ')
 							console.log (v)
 						}
