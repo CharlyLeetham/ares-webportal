@@ -76,9 +76,8 @@ export default Component.extend({
 			var swiconicf, sysedg, newiflist, newedglist, cge, dislist;
 			sysedg = this.get('char.custom.sysedges');
 			swiconicf = this.get('char.custom.sysiconicf');
-			console.log(sysedg);
-			console.log(swiconicf);
-			console.log(newval);
+
+			console.log('New If: '+newval);
 			
 			newiflist = Object.values(swiconicf).filter(slots => slots.name.toString().toLowerCase() == newval); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 			newedglist = newiflist[0].edges; // Select the edges for the new if
