@@ -123,7 +123,8 @@ export default Component.extend({
 			console.log(systrait);
 			console.log(cgedg);
 			
-			//Change all items in the sysedg dropdown to enabled. 	
+			//Change all items in the sysedg dropdown to enabled. 
+			dislist = '';
 			dislist = Object.values(systrait1).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 			for (const [key, value] of Object.entries(dislist)) {
 				//console.log (value['name']+' disabled='+value['disabled']);
@@ -140,6 +141,7 @@ export default Component.extend({
 				for (const [key, value1] of Object.entries(newtrlist)) {
 					console.log(value1);
 					en = value1.split('*')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
+					dislist = '';
 					dislist = Object.values(systrait1).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 					for (const [key, value] of Object.entries(dislist)) {
 						value['disabled'] = true //Set disabled for this element to true
