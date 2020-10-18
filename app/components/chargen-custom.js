@@ -84,9 +84,10 @@ export default Component.extend({
 			newedglist = newiflist[0].edges; // Select the edges for the new if
 			console.log(newiflist);		
 			if (newedglist) {
-				console.log(newedglist);		
+				// make the changes	
+				console.log (char.custom.cgedgesnofw);
 			} else {
-				console.log("No Edges");
+				// send backthe unfiltered list
 			}
 			this.set('char.custom.cgedges', "dddd");
 			
