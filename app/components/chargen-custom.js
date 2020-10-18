@@ -89,6 +89,10 @@ export default Component.extend({
 				// Take the existing list of edges and remove all disable: true.
 				dislist = Object.values(sysedg).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 				console.log (dislist);
+				for (const [key, value] of Object.entries(dislist)) {
+					console.log (value['name']+' disabled='+value['disabled']);
+					// newrating = value1['rating'] + value['rating'];  //If there's a match, set the value to whatever is in CGINIT PLUS the iconfic framework.
+				}				
 				
 			} else {
 				// send backthe unfiltered list
