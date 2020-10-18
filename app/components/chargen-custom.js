@@ -93,7 +93,7 @@ export default Component.extend({
 
 			// Clear the edges list for the framework
 			
-			cgedg=[];
+			//cgedg=[];
 			
 			
 			newiflist = swiconicf.filter(slots => slots.name.toString().toLowerCase() == newval); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
