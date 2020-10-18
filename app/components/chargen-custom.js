@@ -73,26 +73,27 @@ export default Component.extend({
 			}
 			
 			// Change the Edges set by the iconicf.
-			var swiconicf, sysedg, newiflist, newedglist, cge, dislist;
+			var swiconicf, sysedg, newiflist, newedglist, dislist;
 			sysedg = this.get('char.custom.sysedges');
 			swiconicf = this.get('char.custom.sysiconicf');
 
-			console.log('New If: '+newval);
+			// console.log('New If: '+newval);
+			
+			//Change all items in the sysedg dropdown to enabled. 	
+			
+			dislist = Object.values(sysedg).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
+			for (const [key, value] of Object.entries(dislist)) {
+				console.log (value['name']+' disabled='+value['disabled']);
+				value['disabled'] = false //Set disabled for this element to false
+			}			
+			
 			
 			newiflist = swiconicf.filter(slots => slots.name.toString().toLowerCase() == newval); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 			newedglist = newiflist[0].edges; // Select the edges for the new if
-			console.log('New edges:'+newedglist);
-			console.log (sysedg);
+			// console.log('New edges:'+newedglist);
+			// console.log (sysedg);
 			if (newedglist) {
-				// make the changes	
-				// Take the existing list of edges and remove all disable: true.
-				dislist = Object.values(sysedg).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
-				for (const [key, value] of Object.entries(dislist)) {
-					console.log (value['name']+' disabled='+value['disabled']);
-					value['disabled'] = false //Set disabled for this element to false
-				}
-			} else {
-				// send backthe unfiltered list
+				console.log(newedglist);
 			}
 			this.set('char.custom.sysedges', sysedg);
 			
