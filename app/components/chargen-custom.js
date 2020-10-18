@@ -65,7 +65,7 @@ export default Component.extend({
 					console.log('Key: ' +key+' Value: ');
 					console.log(value);
 				} else {
-					console.log "No Complications"
+					console.log ("No Complications");
 				}
 			}
 			
