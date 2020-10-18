@@ -85,7 +85,8 @@ export default Component.extend({
 			console.log(newiflist);		
 			if (newedglist) {
 				// make the changes	
-				console.log (char.custom.cgedgesnofw);
+				cge = this.get(char.custom.cgedgesnofw);
+				console.log (cge);
 			} else {
 				// send backthe unfiltered list
 			}
