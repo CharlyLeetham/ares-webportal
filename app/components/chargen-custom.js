@@ -120,8 +120,8 @@ export default Component.extend({
 			cghind = this.get('char.custom.cghind');
 			swiconicf = this.get('char.custom.sysiconicf');
 
-			console.log(systrait);
-			console.log(cgedg);
+			console.log(systrait1);
+			console.log(cghind);
 			
 			//Change all items in the sysedg dropdown to enabled. 
 			dislist1 = Object.values(systrait1).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
@@ -130,9 +130,9 @@ export default Component.extend({
 				value['disabled'] = false //Set disabled for this element to false
 			}		
 
-			// Clear the edges list for the framework
+			// Clear the hinderances list for the framework
 			newtraitlist = swiconicf.filter(slots => slots.name.toString().toLowerCase() == newval); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
-			newtrlist = newtraitlist[0].edges; // Select the edges for the new if
+			newtrlist = newtraitlist[0].hinderances; // Select the edges for the new if
 	
 			//If there are new edges, go through and set these to disabled in the edge drop down.
 			if (newtrlist) {
@@ -150,8 +150,8 @@ export default Component.extend({
 						cgtr2[i]['rating'] = value['desc'];
 						i=i+1
 					}
-					console.log(cgedg);
-					console.log(cgtr1);
+					console.log(cghind);
+					console.log(cgtr2);
 				}
 				
 			}
