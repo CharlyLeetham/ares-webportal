@@ -94,7 +94,9 @@ export default Component.extend({
 			console.log (sysedg);
 			if (newedglist) {
 				//console.log(newedglist);
-				for (const [key, value] of Object.entries(newedglist)) {				
+				for (const [key, value] of Object.entries(newedglist)) {
+					console.log(key);
+					console.log(value);
 					dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == value); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 					console.log(dislist);
 				}
