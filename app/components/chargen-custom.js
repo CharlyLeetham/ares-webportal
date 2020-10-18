@@ -66,7 +66,8 @@ export default Component.extend({
 					// console.log (v)
 				// }
 				
-				complrace = Object.values(value).filter(slots => slots.complications);
+				complrace = value.includes('Complications');
+				// complrace = Object.values(value).filter(slots => slots.complications);
 				if (complrace) {
 					console.log (complrace);
 				}
