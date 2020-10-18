@@ -54,7 +54,7 @@ export default Component.extend({
 			
 			// Check the Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
 			
-			var swrace;
+			var swrace, swraceall;
 			swrace = this.get('char.custom.cgrace'); // Get the system races.
 			swraceall = this.get('char.custom.swrifts_race'); // Get the system races.
 			console.log ('race')
