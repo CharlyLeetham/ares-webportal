@@ -102,12 +102,12 @@ export default Component.extend({
 			//If there are new edges, go through and set these to disabled in the edge drop down.
 			if (newedglist) {
 				for (const [key, value] of Object.entries(newedglist)) {
-					en = value.split('*')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
+					en = value['name'].split('*')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
 					dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 					for (const [key, value] of Object.entries(dislist)) {
 						value['disabled'] = true //Set disabled for this element to true
 						// Write the new CG Edges array for a nice display
-						cgedg['class'] = value;
+						cgedg['class'] = value['name'];
 						cgedg['name'] = en;
 						cgedg['rating'] = value['desc'];
 					}
