@@ -46,7 +46,7 @@ export default Component.extend({
   
 	actions: {
 		iconicfChanged(val) {
-			var charif, charcgp, cgslots, newifpoints, newval, resetifpoints, newrating, cgedg, cghind, swiconicf, systrait, systrait1, newtraitlist, newtrlist, dislist, dislist1, en, i, cgtr1=[];
+			var charif, charcgp, cgslots, newifpoints, newval, resetifpoints, newrating, cgedg, cghind, swiconicf, systrait, systrait1, newtraitlist, newtrlist, dislist, dislist1, en, i, cgtr1=[], cgtr2[];
 			charif = this.get('char.custom.charicf'); //Get the value that was selected in the dropdown.
 			this.set('char.custom.charicf', val) //Set the selected Iconic Framework on the site.
 			this.set('char.custom.charrace', 'None') //Set the Race to none.
