@@ -92,7 +92,7 @@ export default Component.extend({
 					console.log (value['name']+' disabled='+value['disabled']);
 					value['disabled'] = "false" //Set disabled for this element to false
 				}
-				console.log('New edges:'+newedglist);
+				console.log('New edges:'+sysedg);
 			} else {
 				// send backthe unfiltered list
 			}
