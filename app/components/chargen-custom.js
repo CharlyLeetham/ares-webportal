@@ -93,7 +93,11 @@ export default Component.extend({
 			// console.log('New edges:'+newedglist);
 			// console.log (sysedg);
 			if (newedglist) {
-				console.log(newedglist);
+				//console.log(newedglist);
+				for (const [key, value] of Object.entries(newedglist)) {				
+					dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == value); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
+					console.log(dislist);
+				}
 			}
 			this.set('char.custom.sysedges', sysedg);
 			
