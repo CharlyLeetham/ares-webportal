@@ -56,8 +56,10 @@ export default Component.extend({
 			
 			var swrace;
 			swrace = this.get('char.custom.cgrace'); // Get the system races.
+			swraceall = this.get('char.custom.swrifts_race'); // Get the system races.
 			console.log ('race')
-			console.log(swrace);
+			console.log(swraceall);
+			
 			
 			
 			this.set('char.custom.charrace', 'None') //Set the Race to none.
