@@ -61,8 +61,12 @@ export default Component.extend({
 			console.log(swraceall);
 			
 			for (const [key, value] of Object.entries(swraceall)) { //Loop through the race values. 
-				console.log('Key: ' +key+' Value: ');
-				console.log(value);
+				if value.includes("Complications");
+					console.log('Key: ' +key+' Value: ');
+					console.log(value);
+				else {
+					console.log "No Complications"
+				}
 			}
 			
 			
