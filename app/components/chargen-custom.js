@@ -94,7 +94,7 @@ export default Component.extend({
 			} else {
 				// send backthe unfiltered list
 			}
-			this.set('char.custom.cgedges', "dddd");
+			this.set('char.custom.sysedges', sysedg);
 			
 		},
 		
