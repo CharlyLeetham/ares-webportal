@@ -73,7 +73,7 @@ export default Component.extend({
 			}
 			
 			// Change the Edges set by the iconicf.
-			var swiconicf, sysedg, newiflist, newedglist, cge;
+			var swiconicf, sysedg, newiflist, newedglist, cge, dislist;
 			sysedg = this.get('char.custom.sysedges');
 			swiconicf = this.get('char.custom.sysiconicf');
 			console.log(sysedg);
@@ -87,6 +87,10 @@ export default Component.extend({
 				// make the changes	
 				cge = this.get('char.custom.sysedges');
 				console.log (cge);
+				// Take the existing list of edges and remove all disable: true.
+				dislist = Object.values(cge).filter(slots => slots.disabled.toString().toLowerCase() == true); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
+				console.log (dislist);
+				
 			} else {
 				// send backthe unfiltered list
 			}
