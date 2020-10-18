@@ -91,8 +91,9 @@ export default Component.extend({
 				console.log (dislist);
 				for (const [key, value] of Object.entries(dislist)) {
 					console.log (value['name']+' disabled='+value['disabled']);
-					// newrating = value1['rating'] + value['rating'];  //If there's a match, set the value to whatever is in CGINIT PLUS the iconfic framework.
-				}				
+					value['disabled'] = "false" //Set disabled for this element to false
+				}
+				console.log (dislist);				
 				
 			} else {
 				// send backthe unfiltered list
