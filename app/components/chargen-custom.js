@@ -54,14 +54,14 @@ export default Component.extend({
 			
 			// Check the Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
 			
-			var swrace, swraceall;
+			var swrace, swraceall, complrace;
 			swrace = this.get('char.custom.cgrace'); // Get the system races.
 			swraceall = this.get('char.custom.swrifts_race'); // Get the system races.
 			console.log ('race')
 			console.log(swraceall);
 			
 			for (const [key, value] of Object.entries(swraceall)) { //Loop through the race values. 
-				if (Object.values(value).includes("Complications")) {
+				if (Object.values(value).indexOf("Complications")) {
 					console.log('Key: ' +key+' Value: ');
 					console.log(value);
 				} else {
