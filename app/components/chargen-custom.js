@@ -73,14 +73,15 @@ export default Component.extend({
 			}
 			
 			// Change the Edges set by the iconicf.
-			var swiconicf, sysedg, newedglist;
+			var swiconicf, sysedg, newiflist, newedglist;
 			sysedg = this.get('char.custom.sysedges');
 			swiconicf = this.get('char.custom.sysiconicf');
 			console.log(sysedg);
 			console.log(swiconicf);
 			console.log(newval);
 			
-			newedglist = Object.values(swiconicf).filter(slots => slots.name.toString().toLowerCase() == newval); // Convert charcgp to an array and filter for any entries that match the new framework selected.
+			newiflist = Object.values(swiconicf).filter(slots => slots.name.toString().toLowerCase() == newval); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
+			newedglist = newiflist.name; // Select the edges for the new if
 			
 			console.log(newedglist);			
 			this.set('char.custom.cgedges', "dddd");
