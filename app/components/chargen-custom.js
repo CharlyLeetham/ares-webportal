@@ -136,24 +136,12 @@ export default Component.extend({
 			for (const [k, v] of Object.entries(evalrace)) {
 				var dislist44 = Object.values(swrace).filter(slots => slots.class.toString().toLowerCase() == v); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.	
 				console.log(dislist44);
-				// for (const [k1, v1] of Object.entries(dislist44)) {
-					// console.log('Race: '+en1)
-					// console.log('K1: '+k1+' V1: ')
-					// console.log(v1);
-					// value['disabled'] = true //Set disabled for this element to true							
-				// }
+				for (const [k1, v1] of Object.entries(dislist44)) {
+					v1['disabled'] = true //Set disabled for this element to true							
+				}
 			}
-
-
-			
-			// if (Object.values(value).indexOf("Complications")) {
-				// console.log('Complications exists Key: ' +key+' Value: ');
-				// console.log(value);
-			// } else {
-				// console.log('Key: ' +key+' Value: ');
-				// console.log ("No Complications");
-			// }			
-			console.log(evalrace);
+		
+			console.log(dislist44);
 			this.set('char.custom.charrace', 'None') //Set the Race to none.
 			
 			//Modify the CGen counters
