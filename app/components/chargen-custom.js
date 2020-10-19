@@ -126,9 +126,10 @@ export default Component.extend({
 							if (evalrace.includes(en1)) {
 								// console.log('in there dummy');
 							} else {
-								evalrace[i]=en1;
+								evalrace[0][i]=en1;
+								i = i+1;								
 							}
-							i = i+1;
+
 						}	
 						// console.log(swrace);
 					}
