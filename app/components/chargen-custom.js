@@ -78,7 +78,7 @@ export default Component.extend({
 			comptypearray3 = ['power armor jock*']; // Used for cyber check
 			comptypearray4 = ['juicer', 'crazy']; // Used for Bizarre Physiology
 	
-			var evalrace=[];
+			var evalrace=[], en1;
 			
 			// Check the Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
 				
