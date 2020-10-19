@@ -123,12 +123,13 @@ export default Component.extend({
 							
 							en = value.name.split('*')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
 							var dislist44 = Object.values(swrace).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
+							console.log(swrace);							
 							for (const [k1, v1] of Object.entries(dislist44)) {
-								value['disabled'] = true //Set disabled for this element to true
+								value['disabled'] = true //Set disabled for this element to true							
 							}							
 								
 						}	
-						console.log(swrace);
+						// console.log(swrace);
 					}					
 				}
 				// if (Object.values(value).indexOf("Complications")) {
