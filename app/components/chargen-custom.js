@@ -123,7 +123,7 @@ export default Component.extend({
 							
 							en = value.name.split('*')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
 							var dislist44 = Object.values(swrace).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
-							// console.log(en);							
+							console.log('EN: '+en);							
 							for (const [k1, v1] of Object.entries(dislist44)) {
 								console.log('K1: '+k1+' V1: ')
 								console.log(v1);
