@@ -93,8 +93,8 @@ export default Component.extend({
 								// return true
 							// end
 							const b = ['ab miracles*', 'ab magic*'];
-							lowedgarray.some(v => b.includes(v));							
-							console.log(lowedgarray);
+							var test1 = lowedgarray.some(v => b.includes(v));							
+							console.log(test1);
 						}						
 						
 
