@@ -46,7 +46,7 @@ export default Component.extend({
   
 	actions: {
 		iconicfChanged(val) {
-			var charif, charcgp, cgslots, newifpoints, newval, resetifpoints, newrating, cgedg, cghind, swiconicf, dislist, dislist1, en, i, cgtr1=[], cgtr2=[], chosenifarray, newedgarray, newhindarray, sysedg, syshind, swrace, sysrace, swraceall, complrace, newcomprace=[], newcyberarray;
+			var charif, charcgp, cgslots, newifpoints, newval, resetifpoints, newrating, cgedg, cghind, swiconicf, dislist, dislist1, en, i, cgtr1=[], cgtr2=[], chosenifarray, newedgarray, newhindarray, sysedg, syshind, swrace, sysrace, swraceall, complrace, newcomprace=[], newcyberarray, lowedgarray, comptypearray=[];
 			charif = this.get('char.custom.charicf'); //Get the value that was selected in the dropdown.
 			this.set('char.custom.charicf', val) //Set the selected Iconic Framework on the site.
 			swiconicf = this.get('char.custom.sysiconicf');	// Get all the Iconic Frameworks.
@@ -68,11 +68,12 @@ export default Component.extend({
 			
 			newedgarray = chosenifarray[0].edges; // Select the edges for the new if
 			if (newedgarray) {
-				var lowedgarray = newedgarray.map(newedgarray => newedgarray.toLowerCase());	
-				console.log(lowedgarray);
+				lowedgarray = newedgarray.map(newedgarray => newedgarray.toLowerCase());	
 			}
 			newhindarray = chosenifarray[0].hinderances; // Select the hinderances for the new if
 			newcyberarray = chosenifarray[0].cybernetics; // Select the cybernetics for the new if
+			
+			comptypearray = ['ab miracles*', 'ab magic*'];
 
 			console.log(chosenifarray);			
 			
@@ -84,24 +85,15 @@ export default Component.extend({
 				complrace = value.hasOwnProperty('complications');
  
 				if (complrace && newedgarray) { //Complications exist on the character
-					var ppe_check = value.includes("Restricted Path PPE^") // see if the race has the value
-					console.log(ppe_check);
 					for (const [k, v] of Object.entries(value.complications)) {
-						// var ppe_check = v.includes("Restricted Path PPE^") // see if the race has the value
+						var ppe_check = v.includes("Restricted Path PPE^") // see if the race has the value
 						var isp_check = v.includes("Restricted Path ISP^") //see if the race has the value
 						var cyber_check = v.includes("Cyber Resistant^") //see if the race has the value
 						var nsb_check = v.includes("Non-Standard Build^") //see if the race has the value
 						var bp_check = v.includes("Bizarre Physiology^") //see if the race has the value	
 						if (ppe_check == true) {
-							// var abmagic = edgecheck.include? "ab magic*"
-							// var abmiracles = edgecheck.include? "ab miracles*"
-							// if (abmagic) || (abmiracles)
-								// return true
-							// end
-							// const b = ['ab miracles*', 'ab magic*'];
-							// console.log(newedgarray);
-							// var test1 = lowedgarray.some(v => b.includes(v));							
-							// console.log(test1);
+							var test1 = lowedgarray.some(v => b.includes(v));							
+							console.log(test1);
 						}						
 						
 
