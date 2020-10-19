@@ -96,7 +96,7 @@ export default Component.extend({
 						var bp_check = v.includes("Bizarre Physiology^") //see if the race has the value	
 						if (ppe_check == true) {
 							var ppetest = lowedgarray.some(v => comptypearray.includes(v));		
-							console.log(test1);
+							console.log(ppetest);
 						}
 
 						if (ppe_check == true) {
