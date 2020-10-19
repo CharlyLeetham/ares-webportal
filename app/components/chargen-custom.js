@@ -97,10 +97,8 @@ export default Component.extend({
 							// end
 							const b = ['ab miracles*', 'ab magic*'];
 							console.log(newedgarray);
-							// const lowedgarray = newedgarray.map(newedgarray => newedgarray.toLowerCase());								
-							console.log(lowedgarray);
-							// var test1 = lowedgarray.some(v => b.includes(v));							
-							// console.log(test1);
+							var test1 = lowedgarray.some(v => b.includes(v));							
+							console.log(test1);
 						}						
 						
 
