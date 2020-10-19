@@ -82,9 +82,12 @@ export default Component.extend({
 				// console.log (value);
 				
 				complrace = value.hasOwnProperty('complications');
+ 
 				if (complrace && newedgarray) { //Complications exist on the character
+					var ppe_check = value.includes("Restricted Path PPE^") // see if the race has the value
+					console.log(ppe_check);
 					for (const [k, v] of Object.entries(value.complications)) {
-						var ppe_check = v.includes("Restricted Path PPE^") // see if the race has the value
+						// var ppe_check = v.includes("Restricted Path PPE^") // see if the race has the value
 						var isp_check = v.includes("Restricted Path ISP^") //see if the race has the value
 						var cyber_check = v.includes("Cyber Resistant^") //see if the race has the value
 						var nsb_check = v.includes("Non-Standard Build^") //see if the race has the value
@@ -95,10 +98,10 @@ export default Component.extend({
 							// if (abmagic) || (abmiracles)
 								// return true
 							// end
-							const b = ['ab miracles*', 'ab magic*'];
-							console.log(newedgarray);
-							var test1 = lowedgarray.some(v => b.includes(v));							
-							console.log(test1);
+							// const b = ['ab miracles*', 'ab magic*'];
+							// console.log(newedgarray);
+							// var test1 = lowedgarray.some(v => b.includes(v));							
+							// console.log(test1);
 						}						
 						
 
