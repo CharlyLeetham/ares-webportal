@@ -91,7 +91,7 @@ export default Component.extend({
 							// if (abmagic) || (abmiracles)
 								// return true
 							// end
-							console.log(newedgarray);
+							console.log(typeof newedgarray);
 						}						
 						
 
