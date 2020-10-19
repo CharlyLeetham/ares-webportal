@@ -146,10 +146,10 @@ export default Component.extend({
 				}
 			}
 		
-			console.log(evalrace);
+			// console.log(evalrace);
 			// console.log(dislist44);
-			console.log(swrace);
-			this.set('char.custom.charrace', 'None') //Set the Race to none.
+			// console.log(swrace);
+			this.set('char.custom.charrace', swrace) //Set the Race to none.
 			
 			//Modify the CGen counters
 			
