@@ -135,13 +135,13 @@ export default Component.extend({
 			
 			for (const [k, v] of Object.entries(evalrace)) {
 				var dislist44 = Object.values(swrace).filter(slots => slots.class.toString().toLowerCase() == v); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.	
-				console.log(dislist44);
 				for (const [k1, v1] of Object.entries(dislist44)) {
 					v1['disabled'] = true //Set disabled for this element to true							
 				}
 			}
 		
 			console.log(dislist44);
+			console.log(swrace);
 			this.set('char.custom.charrace', 'None') //Set the Race to none.
 			
 			//Modify the CGen counters
