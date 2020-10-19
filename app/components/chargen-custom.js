@@ -67,6 +67,7 @@ export default Component.extend({
 			chosenifarray = swiconicf.filter(slots => slots.name.toString().toLowerCase() == newval); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 			
 			newedgarray = chosenifarray[0].edges; // Select the edges for the new if
+			const lowedgarray = newedgarray.map(newedgarray => newedgarray.toLowerCase());			
 			newhindarray = chosenifarray[0].hinderances; // Select the hinderances for the new if
 			newcyberarray = chosenifarray[0].cybernetics; // Select the cybernetics for the new if
 
@@ -91,7 +92,7 @@ export default Component.extend({
 							// if (abmagic) || (abmiracles)
 								// return true
 							// end
-							var tester1 =newedgarray.includes('ab miracles*');
+							var tester1 =lowedgarray.includes('ab miracles*');
 							console.log(tester1);
 						}						
 						
