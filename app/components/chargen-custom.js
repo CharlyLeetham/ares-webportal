@@ -59,7 +59,7 @@ export default Component.extend({
 			
 			newval = val.split('~')[0].toLowerCase().trim(); //Take whatever Iconic Framework has been selected and chop every from ~ in the name, remove the trailing space.			
 			
-			swrace = this.get('char.custom.cgrace'); // Get the system races. IS THIS NEEDED????		
+			swrace = this.get('char.custom.cgrace'); // Get the system races. This is needed to send the updated races back to the page for selection.		
 			cghind = this.get('char.custom.cghind'); // Hinderances on the Character. Is this needed????
 
 			swiconicf = this.get('char.custom.sysiconicf');  // Get all the Iconic Frameworks. 
@@ -77,8 +77,7 @@ export default Component.extend({
 			comptypearray2 = ['ab psionics*']; // Used for psionics check
 			comptypearray3 = ['power armor jock*']; // Used for cyber check
 			comptypearray4 = ['juicer', 'crazy']; // Used for Bizarre Physiology
-
-			console.log(chosenifarray);			
+	
 			
 			// Check the Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
 				
@@ -96,32 +95,32 @@ export default Component.extend({
 						var bp_check = v.includes("Bizarre Physiology^") //see if the race has the value	
 						if (ppe_check == true) {
 							var ppetest = lowedgarray.some(v => comptypearray.includes(v));		
-							console.log(ppetest);
 						}
 
 						if (ppe_check == true) {
 							var ppetest = lowedgarray.some(v => comptypearray.includes(v));		
-							console.log(ppetest);
+							// Check if the race can use this 
 						}	
 
 						if (isp_check == true) {
 							var isptest = lowedgarray.some(v => comptypearray2.includes(v));		
-							console.log(isptest);
 						}											
 						
 						if (nsb_check == true) {
 							var nsbtest = lowedgarray.some(v => comptypearray3.includes(v));		
-							console.log(nsbtest);
 						}						
 						
 						if (bp_check == true) {
 							var bptest = lowedgarray.some(v => comptypearray4.includes(v));		
-							console.log(bptest);
 						}
 
 						if (newcyberarray) {
-							console.log(newcyberarray);
 						}
+						
+						// I think here, after ensuring any / all of the above tests are true, we need to set race to disable. swrace is the variable to change.
+						
+						console.log(swrace);
+						
 						
 					}					
 				}
