@@ -134,7 +134,7 @@ export default Component.extend({
 			}
 			
 			dislist44 = Object.values(swrace).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
-			for (const [key, value] of Object.entries(dislist)) {
+			for (const [key, value] of Object.entries(dislist44)) {
 				//console.log (value['name']+' disabled='+value['disabled']);
 				value['disabled'] = false //Set disabled for this element to false
 			}					
