@@ -46,7 +46,7 @@ export default Component.extend({
   
 	actions: {
 		iconicfChanged(val) {
-			var charif, charcgp, cgslots, newifpoints, newval, resetifpoints, newrating, cgedg, cghind, swiconicf, dislist, dislist1, en, i, cgtr1=[], cgtr2=[], chosenifarray, newedgarray, newhindarray, sysedg, syshind, swrace, sysrace, swraceall, complrace, newcomprace=[], newcyberarray, lowedgarray, comptypearray=[];
+			var charif, charcgp, cgslots, newifpoints, newval, resetifpoints, newrating, cgedg, cghind, swiconicf, dislist, dislist1, en, i, cgtr1=[], cgtr2=[], chosenifarray, newedgarray, newhindarray, sysedg, syshind, swrace, sysrace, swraceall, complrace, newcomprace=[], newcyberarray, lowedgarray, comptypearray=[], comptypearray2=[], comptypearray3=[], comptypearray4=[];
 			charif = this.get('char.custom.charicf'); //Get the value that was selected in the dropdown.
 			this.set('char.custom.charicf', val) //Set the selected Iconic Framework on the site.
 			swiconicf = this.get('char.custom.sysiconicf');	// Get all the Iconic Frameworks.
@@ -73,7 +73,10 @@ export default Component.extend({
 			newhindarray = chosenifarray[0].hinderances; // Select the hinderances for the new if
 			newcyberarray = chosenifarray[0].cybernetics; // Select the cybernetics for the new if
 			
-			comptypearray = ['ab miracles*', 'ab magic*'];
+			comptypearray = ['ab miracles*', 'ab magic*']; // Used for PPE check
+			comptypearray2 = ['ab psionics*']; // Used for psionics check
+			comptypearray3 = ['power armor jock*']; // Used for cyber check
+			comptypearray4 = ['juicer', 'crazy']; // Used for Bizarre Physiology
 
 			console.log(chosenifarray);			
 			
@@ -92,11 +95,34 @@ export default Component.extend({
 						var nsb_check = v.includes("Non-Standard Build^") //see if the race has the value
 						var bp_check = v.includes("Bizarre Physiology^") //see if the race has the value	
 						if (ppe_check == true) {
-							var test1 = lowedgarray.some(v => comptypearray.includes(v));		
+							var ppetest = lowedgarray.some(v => comptypearray.includes(v));		
 							console.log(test1);
+						}
+
+						if (ppe_check == true) {
+							var ppetest = lowedgarray.some(v => comptypearray.includes(v));		
+							console.log(ppetest);
+						}	
+
+						if (isp_check == true) {
+							var isptest = lowedgarray.some(v => comptypearray2.includes(v));		
+							console.log(isptest);
+						}											
+						
+						if (nsb_check == true) {
+							var nsbtest = lowedgarray.some(v => comptypearray3.includes(v));		
+							console.log(nsbtest);
 						}						
 						
+						if (bp_check == true) {
+							var bptest = lowedgarray.some(v => comptypearray4.includes(v));		
+							console.log(bptest);
+						}
 
+						if (newcyberarray) {
+							console.log(newcyberarray);
+						}
+						
 					}					
 				}
 				// if (Object.values(value).indexOf("Complications")) {
