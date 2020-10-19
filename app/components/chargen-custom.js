@@ -91,7 +91,8 @@ export default Component.extend({
 							// if (abmagic) || (abmiracles)
 								// return true
 							// end
-							console.log(typeof newedgarray);
+							var tester1 =newedgarray.includes('ab miracles*');
+							console.log(tester1);
 						}						
 						
 
