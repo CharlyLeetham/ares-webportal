@@ -92,7 +92,7 @@ export default Component.extend({
 						var nsb_check = v.includes("Non-Standard Build^") //see if the race has the value
 						var bp_check = v.includes("Bizarre Physiology^") //see if the race has the value	
 						if (ppe_check == true) {
-							var test1 = lowedgarray.some(v => b.includes(v));							
+							var test1 = lowedgarray.some(v => comptypearray.includes(v));		
 							console.log(test1);
 						}						
 						
