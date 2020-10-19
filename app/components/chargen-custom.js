@@ -128,7 +128,7 @@ export default Component.extend({
 							}							
 								
 						}	
-						console.log(dislist44);
+						console.log(swrace);
 					}					
 				}
 				// if (Object.values(value).indexOf("Complications")) {
