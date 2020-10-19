@@ -81,12 +81,12 @@ export default Component.extend({
 			var evalrace=[], en1;
 			
 			// Check the Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
-				
+				var i = 0;				
 			for (const [key, value] of Object.entries(swraceall)) { //Loop through the race values. We want to know which races an Iconic Framework can't have.		
 				// console.log (value);
 				
 				complrace = value.hasOwnProperty('complications');
-				var i = 0;
+
 				if (complrace && newedgarray) { //Complications exist on the character
 					for (const [k, v] of Object.entries(value.complications)) {
 						var ppe_check = v.includes("Restricted Path PPE^") // see if the race has the value
@@ -121,10 +121,10 @@ export default Component.extend({
 						
 						// console.log ('Complication: '+v+' Race: '+value.name);
 						if (ppe_check==true || isp_check==true || nsb_check == true || bp_check == true || newcyberarray) {
-							console.log(en1);
+							// console.log(en1);
 							en1 = value.name.split('*')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
 							if (evalrace.includes(en1)) {
-								console.log('in there dummy');
+								// console.log('in there dummy');
 							} else {
 								evalrace[i]=en1;
 							}
