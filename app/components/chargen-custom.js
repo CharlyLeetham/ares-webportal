@@ -119,8 +119,9 @@ export default Component.extend({
 						
 						// I think here, after ensuring any / all of the above tests are true, we need to set race to disable. swrace is the variable to change.
 						
-						console.log(swrace);
-						
+						if (ppe_check==true || isp_check==true || nsb_check == true || bp_check == true || newcyberray) {
+								console.log(value.name);
+						}	
 						
 					}					
 				}
