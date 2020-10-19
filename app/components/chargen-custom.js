@@ -120,7 +120,8 @@ export default Component.extend({
 						// I think here, after ensuring any / all of the above tests are true, we need to set race to disable. swrace is the variable to change.
 						
 						// console.log ('Complication: '+v+' Race: '+value.name);
-						if (ppe_check==true || isp_check==true || nsb_check == true || bp_check == true || newcyberarray) {					
+						if (ppe_check==true || isp_check==true || nsb_check == true || bp_check == true || newcyberarray) {
+							console.log(en1);
 							en1 = value.name.split('*')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
 							if (evalrace.includes(en1)) {
 								console.log('in there dummy');
