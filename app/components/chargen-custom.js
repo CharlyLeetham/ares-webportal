@@ -46,40 +46,35 @@ export default Component.extend({
   
 	actions: {
 		iconicfChanged(val) {
-			var charif, charcgp, cgslots, newifpoints, newval, resetifpoints, newrating, cgedg, cghind, swiconicf, dislist, dislist1, en, i, cgtr1=[], cgtr2=[], chosenifarray, newedgarray, newhindarray, sysedg, syshind;
+			var charif, charcgp, cgslots, newifpoints, newval, resetifpoints, newrating, cgedg, cghind, swiconicf, dislist, dislist1, en, i, cgtr1=[], cgtr2=[], chosenifarray, newedgarray, newhindarray, sysedg, syshind, swrace, sysrace, swraceall, complrace, newcomprace=[], newcyberarray;
 			charif = this.get('char.custom.charicf'); //Get the value that was selected in the dropdown.
 			this.set('char.custom.charicf', val) //Set the selected Iconic Framework on the site.
 			swiconicf = this.get('char.custom.sysiconicf');	// Get all the Iconic Frameworks.
+			swraceall = this.get('char.custom.swrifts_race'); // Get all the system races.			
 			sysedg = this.get('char.custom.sysedges'); // Get all the System Edges
 			syshind = this.get('char.custom.swsyshind');// Get all the System Hinderances		
 			cgedg = this.get('char.custom.cgedges'); // Get the edges on the character now.
+
+			// Common things to do 
 			
 			newval = val.split('~')[0].toLowerCase().trim(); //Take whatever Iconic Framework has been selected and chop every from ~ in the name, remove the trailing space.			
 			
+			swrace = this.get('char.custom.cgrace'); // Get the system races. IS THIS NEEDED????		
+			cghind = this.get('char.custom.cghind'); // Hinderances on the Character. Is this needed????
+
+			swiconicf = this.get('char.custom.sysiconicf');  // Get all the Iconic Frameworks. 
 			
-						
-			cghind = this.get('char.custom.cghind');
-			swiconicf = this.get('char.custom.sysiconicf');
-			
-			// Common things to do 
-			
-			// Get the edges from the selected Iconic Framework
 			chosenifarray = swiconicf.filter(slots => slots.name.toString().toLowerCase() == newval); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 			
 			newedgarray = chosenifarray[0].edges; // Select the edges for the new if
 			newhindarray = chosenifarray[0].hinderances; // Select the hinderances for the new if
+			newcyberarray = chosenifarray[0].cybernetics; // Select the cybernetics for the new if
 
 			console.log(chosenifarray);			
 			
 			// Check the Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
-			
-			var swrace, swraceall, complrace, newcomprace=[];
-			swrace = this.get('char.custom.cgrace'); // Get the system races.
-			swraceall = this.get('char.custom.swrifts_race'); // Get all the system races.
-			// console.log ('race')
-			// console.log(swraceall);
-			
-			for (const [key, value] of Object.entries(swraceall)) { //Loop through the race values. 		
+				
+			for (const [key, value] of Object.entries(swraceall)) { //Loop through the race values. We want to know which races an Iconic Framework can't have.		
 				// console.log (value);
 				
 				complrace = value.hasOwnProperty('complications');
@@ -90,11 +85,15 @@ export default Component.extend({
 						var cyber_check = v.includes("Cyber Resistant^") //see if the race has the value
 						var nsb_check = v.includes("Non-Standard Build^") //see if the race has the value
 						var bp_check = v.includes("Bizarre Physiology^") //see if the race has the value	
-						// if (ppe_check) {
-							// console.log (value["name"]);
-							// console.log ('key: '+k+' Value: ')
-							// console.log (v)
-						// }
+						if (ppe_check == true) {
+							// var abmagic = edgecheck.include? "ab magic*"
+							// var abmiracles = edgecheck.include? "ab miracles*"
+							// if (abmagic) || (abmiracles)
+								// return true
+							// end
+							console.log(newedgarray);
+						}						
+						
 
 					}					
 				}
