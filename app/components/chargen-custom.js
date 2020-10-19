@@ -78,6 +78,7 @@ export default Component.extend({
 			comptypearray3 = ['power armor jock*']; // Used for cyber check
 			comptypearray4 = ['juicer', 'crazy']; // Used for Bizarre Physiology
 	
+			var en1=[];
 			
 			// Check the Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
 				
@@ -85,7 +86,7 @@ export default Component.extend({
 				// console.log (value);
 				
 				complrace = value.hasOwnProperty('complications');
- 
+				var i = 0;
 				if (complrace && newedgarray) { //Complications exist on the character
 					for (const [k, v] of Object.entries(value.complications)) {
 						var ppe_check = v.includes("Restricted Path PPE^") // see if the race has the value
@@ -120,22 +121,26 @@ export default Component.extend({
 						
 						// console.log ('Complication: '+v+' Race: '+value.name);
 						if (ppe_check==true || isp_check==true || nsb_check == true || bp_check == true || newcyberarray) {					
-							var en1;
-							en1 = value.name.split('*')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
-							//console.log ('Complication: '+v+' Race: '+en1);
-							var dislist44 = Object.values(swrace).filter(slots => slots.class.toString().toLowerCase() == en1); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.	
-							console.log(dislist44);
-							// for (const [k1, v1] of Object.entries(dislist44)) {
-								// console.log('Race: '+en1)
-								// console.log('K1: '+k1+' V1: ')
-								// console.log(v1);
-								// value['disabled'] = true //Set disabled for this element to true							
-							// }							
-								
+
+							en1[i] = value.name.split('*')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
+							i = i+1;
 						}	
 						// console.log(swrace);
-					}					
+					}
+					console.log(en1);
 				}
+				
+				// var dislist44 = Object.values(swrace).filter(slots => slots.class.toString().toLowerCase() == en1); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.	
+				// console.log(dislist44);
+				// for (const [k1, v1] of Object.entries(dislist44)) {
+					// console.log('Race: '+en1)
+					// console.log('K1: '+k1+' V1: ')
+					// console.log(v1);
+					// value['disabled'] = true //Set disabled for this element to true							
+				// }	
+
+
+				
 				// if (Object.values(value).indexOf("Complications")) {
 					// console.log('Complications exists Key: ' +key+' Value: ');
 					// console.log(value);
