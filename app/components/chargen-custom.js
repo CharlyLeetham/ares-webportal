@@ -118,10 +118,10 @@ export default Component.extend({
 						}
 						// I think here, after ensuring any / all of the above tests are true, we need to set race to disable. swrace is the variable to change.
 						
-
+console.log ('Race: '+value.name);
 						if (ppe_check==true || isp_check==true || nsb_check == true || bp_check == true || newcyberarray) {
 							
-							console.log ('Race: '+value.name);
+							
 							// var en1;
 							// en1 = value.name.split('*')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
 							// var dislist44 = Object.values(swrace).filter(slots => slots.class.toString().toLowerCase() == en1); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.						
