@@ -117,9 +117,7 @@ export default Component.extend({
 
 						if (newcyberarray) {
 						}
-						// I think here, after ensuring any / all of the above tests are true, we need to set race to disable. swrace is the variable to change.
-						
-						// console.log ('Complication: '+v+' Race: '+value.name);
+
 						if (ppe_check==true || isp_check==true || nsb_check == true || bp_check == true || newcyberarray) {
 							// console.log(en1);
 							en1 = value.name.split('*')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
@@ -129,33 +127,32 @@ export default Component.extend({
 								evalrace[i]=en1;
 								i = i+1;								
 							}
-
 						}	
-						// console.log(swrace);
 					}
 					
 				}
-				
-				// var dislist44 = Object.values(swrace).filter(slots => slots.class.toString().toLowerCase() == en1); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.	
-				// console.log(dislist44);
+			}
+			
+			for (const [k, v] of Object.entries(evalrace)) {
+				var dislist44 = Object.values(swrace).filter(slots => slots.class.toString().toLowerCase() == v); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.	
+				console.log(dislist44);
 				// for (const [k1, v1] of Object.entries(dislist44)) {
 					// console.log('Race: '+en1)
 					// console.log('K1: '+k1+' V1: ')
 					// console.log(v1);
 					// value['disabled'] = true //Set disabled for this element to true							
-				// }	
-
-
-				
-				// if (Object.values(value).indexOf("Complications")) {
-					// console.log('Complications exists Key: ' +key+' Value: ');
-					// console.log(value);
-				// } else {
-					// console.log('Key: ' +key+' Value: ');
-					// console.log ("No Complications");
 				// }
 			}
+
+
 			
+			// if (Object.values(value).indexOf("Complications")) {
+				// console.log('Complications exists Key: ' +key+' Value: ');
+				// console.log(value);
+			// } else {
+				// console.log('Key: ' +key+' Value: ');
+				// console.log ("No Complications");
+			// }			
 			console.log(evalrace);
 			this.set('char.custom.charrace', 'None') //Set the Race to none.
 			
