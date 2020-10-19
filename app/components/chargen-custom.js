@@ -118,7 +118,7 @@ export default Component.extend({
 						}
 						// I think here, after ensuring any / all of the above tests are true, we need to set race to disable. swrace is the variable to change.
 						
-console.log ('Race: '+value.name);
+						console.log ('Complication: '+v+' Race: '+value.name);
 						if (ppe_check==true || isp_check==true || nsb_check == true || bp_check == true || newcyberarray) {
 							
 							
