@@ -67,7 +67,9 @@ export default Component.extend({
 			chosenifarray = swiconicf.filter(slots => slots.name.toString().toLowerCase() == newval); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 			
 			newedgarray = chosenifarray[0].edges; // Select the edges for the new if
-			const lowedgarray = newedgarray.map(newedgarray => newedgarray.toLowerCase());			
+			if (newedgarray) {
+				const lowedgarray = newedgarray.map(newedgarray => newedgarray.toLowerCase());			
+			}
 			newhindarray = chosenifarray[0].hinderances; // Select the hinderances for the new if
 			newcyberarray = chosenifarray[0].cybernetics; // Select the cybernetics for the new if
 
@@ -79,7 +81,7 @@ export default Component.extend({
 				// console.log (value);
 				
 				complrace = value.hasOwnProperty('complications');
-				if (complrace) { //Complications exist on the character
+				if (complrace && newedgarray) { //Complications exist on the character
 					for (const [k, v] of Object.entries(value.complications)) {
 						var ppe_check = v.includes("Restricted Path PPE^") // see if the race has the value
 						var isp_check = v.includes("Restricted Path ISP^") //see if the race has the value
