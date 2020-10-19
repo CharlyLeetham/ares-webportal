@@ -67,10 +67,10 @@ export default Component.extend({
 			chosenifarray = swiconicf.filter(slots => slots.name.toString().toLowerCase() == newval); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 			
 			newedgarray = chosenifarray[0].edges; // Select the edges for the new if
-			// if (newedgarray) {
-				// const lowedgarray = newedgarray.map(newedgarray => newedgarray.toLowerCase());	
-				// console.log(lowedgarray);
-			// }
+			if (newedgarray) {
+				var lowedgarray = newedgarray.map(newedgarray => newedgarray.toLowerCase());	
+				console.log(lowedgarray);
+			}
 			newhindarray = chosenifarray[0].hinderances; // Select the hinderances for the new if
 			newcyberarray = chosenifarray[0].cybernetics; // Select the cybernetics for the new if
 
@@ -97,7 +97,7 @@ export default Component.extend({
 							// end
 							const b = ['ab miracles*', 'ab magic*'];
 							console.log(newedgarray);
-							const lowedgarray = newedgarray.map(newedgarray => newedgarray.toLowerCase());								
+							// const lowedgarray = newedgarray.map(newedgarray => newedgarray.toLowerCase());								
 							console.log(lowedgarray);
 							// var test1 = lowedgarray.some(v => b.includes(v));							
 							// console.log(test1);
