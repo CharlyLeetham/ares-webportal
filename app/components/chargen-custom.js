@@ -92,7 +92,7 @@ export default Component.extend({
 							// if (abmagic) || (abmiracles)
 								// return true
 							// end
-							var tester1 = lowedgarray.includes('ab miracles*');
+							var tester1 = lowedgarray.includes('ab miracles*' || 'ab magic*');
 							var tester2 = lowedgarray.includes('ab magic*');
 							console.log(tester1, tester2);
 						}						
