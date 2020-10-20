@@ -57,7 +57,7 @@ export default Component.extend({
 
 			// Common things to do 
 			
-			newval = val.split('~')[0].toLowerCase().trim(); //Take whatever Iconic Framework has been selected and chop every from ~ in the name, remove the trailing space.			
+			newval = val['name'].split('~')[0].toLowerCase().trim(); //Take whatever Iconic Framework has been selected and chop every from ~ in the name, remove the trailing space.			
 			
 			swrace = this.get('char.custom.cgrace'); // Get the system races. This is needed to send the updated races back to the page for selection.		
 			cghind = this.get('char.custom.cghind'); // Hinderances on the Character. Is this needed????
