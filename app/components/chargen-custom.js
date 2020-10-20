@@ -47,13 +47,14 @@ export default Component.extend({
 	actions: {
 		iconicfChanged(val) {
 			var charif, charcgp, cgslots, newifpoints, newval, resetifpoints, newrating, cgedg, cghind, swiconicf, dislist, dislist1, en, i, cgtr1=[], cgtr2=[], chosenifarray, newedgarray, newhindarray, sysedg, syshind, swrace, sysrace, swraceall, complrace, newcomprace=[], newcyberarray, lowedgarray, comptypearray=[], comptypearray2=[], comptypearray3=[], comptypearray4=[], newcif=[];
+			
 			console.log(val['name']);
 			console.log(val);
 			console.log(this.get('char.custom.iconicf'));
 			newcif[0]=val;
 			console.log(newcif);
 			charif = this.get('char.custom.charicf'); //Get the value that was selected in the dropdown.
-			this.set('char.custom.charicf', val['name']) //Set the selected Iconic Framework on the site.
+			this.set('char.custom.charicf', newcif) //Set the selected Iconic Framework on the site.
 			swiconicf = this.get('char.custom.sysiconicf');	// Get all the Iconic Frameworks.
 			swraceall = this.get('char.custom.swrifts_race'); // Get all the system races.			
 			sysedg = this.get('char.custom.sysedges'); // Get all the System Edges
