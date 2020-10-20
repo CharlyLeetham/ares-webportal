@@ -54,7 +54,7 @@ export default Component.extend({
 			newcif[0]=val;
 			console.log(newcif);
 			charif = this.get('char.custom.charicf'); //Get the value that was selected in the dropdown.
-			this.set('char.custom.charicf', newcif) //Set the selected Iconic Framework on the site.
+			this.set('char.custom.charicf', val) //Set the selected Iconic Framework on the site.
 			swiconicf = this.get('char.custom.sysiconicf');	// Get all the Iconic Frameworks.
 			swraceall = this.get('char.custom.swrifts_race'); // Get all the system races.			
 			sysedg = this.get('char.custom.sysedges'); // Get all the System Edges
