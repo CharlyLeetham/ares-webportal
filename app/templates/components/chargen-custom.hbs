@@ -10,9 +10,9 @@
 					{{#each-in char.custom.charicf as |k v|}}
 						{{k}} {{v.name}}  {{v.class}}
 					{{/each-in}}
-					
+					<br/>
 					{{#each-in char.custom.iconicf as |k v|}}
-						{{k}} {{v.name}}  {{v.class}}
+						{{k}} {{v.name}}  {{v.class}}<br/>
 					{{/each-in}}					
 						<PowerSelect @searchEnabled={{true}} @searchField="name" @searchPlaceholder="Type a name..." @selected={{char.custom.charicf}} @options={{this.swiconicfsel}}  @onChange={{action "iconicfChanged"}} as |icf|>
 						  {{icf.name}}
