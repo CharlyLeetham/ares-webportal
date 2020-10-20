@@ -240,6 +240,8 @@ export default Component.extend({
 		raceChanged(val) {
 			var charrace, charif, charcgp, cgslots, newifpoints, newval, resetifpoints, resetracep, newrating, charracep, newrcpoints;
 			
+			console.log(val);
+			
 			charrace = this.get('char.custom.charrace');  //Get the value that was selected in the dropdown.
 			charif = this.get('char.custom.charicf'); //Get the value that was selected in the dropdown.
 			this.set('char.custom.charrace', val);
