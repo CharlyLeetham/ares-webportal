@@ -247,8 +247,8 @@ export default Component.extend({
 			charif = this.get('char.custom.charicf'); //Get the value that was selected in the dropdown.
 			this.set('char.custom.charrace', val);
 			
-			//Modify the CGen counters for the IF
-			charif = charif.split('~')[0].toLowerCase().trim(); //Take whatever IF has been set and chop every from ~ in the name, remove the trailing space.	
+			// Modify the CGen counters for the IF
+			charif = charif['name'].split('~')[0].toLowerCase().trim(); //Take whatever IF has been set and chop every from ~ in the name, remove the trailing space.	
 			newval = val['name'].split('~')[0].toLowerCase().trim(); //Take whatever Race has been selected and chop every from ~ in the name, remove the trailing space.
 			
 			charcgp = this.get('char.custom.inicgpoints');  // This is the array of all the if's and values
