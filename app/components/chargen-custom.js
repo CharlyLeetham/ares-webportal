@@ -8,6 +8,7 @@ export default Component.extend({
 		var swiconicf;
 		swiconicf = this.get('char.custom.iconicf');
 		console.log(swiconicf);
+		console.log (this.get('char.custom.charicf'));
 		return swiconicf;
 	}), 
 	
