@@ -7,6 +7,7 @@ export default Component.extend({
 	swiconicfsel: computed(function() {
 		var swiconicf;
 		swiconicf = this.get('char.custom.iconicf');
+		console.log(swiconicf);		
 		return swiconicf;
 	}), 
 	
@@ -51,8 +52,6 @@ export default Component.extend({
 			console.log(val['name']);
 			console.log(val);
 			console.log(this.get('char.custom.iconicf'));
-			newcif[0]=val;
-			console.log(newcif);
 			charif = this.get('char.custom.charicf'); //Get the value that was selected in the dropdown.
 			this.set('char.custom.charicf', val) //Set the selected Iconic Framework on the site.
 			swiconicf = this.get('char.custom.sysiconicf');	// Get all the Iconic Frameworks.
