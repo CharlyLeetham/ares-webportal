@@ -50,7 +50,7 @@ export default Component.extend({
 			console.log(val['name']);
 			console.log(val);
 			console.log(this.get('char.custom.iconicf'));
-			newcif[0]=this.get('char.custom.iconicf');
+			newcif[0]=this.get('char.custom.charicf');
 			console.log(newcif);
 			charif = this.get('char.custom.charicf'); //Get the value that was selected in the dropdown.
 			this.set('char.custom.charicf', val['name']) //Set the selected Iconic Framework on the site.
