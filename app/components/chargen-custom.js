@@ -248,7 +248,7 @@ export default Component.extend({
 			
 			//Modify the CGen counters for the IF
 			charif = charif.split('~')[0].toLowerCase().trim(); //Take whatever IF has been set and chop every from ~ in the name, remove the trailing space.	
-			newval = val.split('~')[0].toLowerCase().trim(); //Take whatever Race has been selected and chop every from ~ in the name, remove the trailing space.
+			newval = val['name'].split('~')[0].toLowerCase().trim(); //Take whatever Race has been selected and chop every from ~ in the name, remove the trailing space.
 			
 			charcgp = this.get('char.custom.inicgpoints');  // This is the array of all the if's and values
 			charracep = this.get('char.custom.initracepoints');  // This is the array of all the races and values	
