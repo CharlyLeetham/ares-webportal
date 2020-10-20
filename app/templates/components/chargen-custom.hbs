@@ -8,9 +8,12 @@
 					 <div class="col-sm-9">
 					<!-- {{{ansi-format text=char.custom.charicf}}} -->>
 					{{#each-in char.custom.charicf as |k v|}}
-						{{k}}<br />
-						{{v}}
+						{{k}} {{v.name}}  {{v.class}}
 					{{/each-in}}
+					
+					{{#each-in char.custom.iconicf as |k v|}}
+						{{k}} {{v.name}}  {{v.class}}
+					{{/each-in}}					
 						<PowerSelect @searchEnabled={{true}} @searchField="name" @searchPlaceholder="Type a name..." @selected={{char.custom.charicf}} @options={{this.swiconicfsel}}  @onChange={{action "iconicfChanged"}} as |icf|>
 						  {{icf.name}}
 						</PowerSelect>							
