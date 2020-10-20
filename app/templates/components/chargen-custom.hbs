@@ -7,9 +7,9 @@
 					 </div>
 					 <div class="col-sm-9">
 						{{{ansi-format text=char.custom.charicf}}}
-						<PowerSelectMultiple @selected={{char.custom.charicf}} @options={{this.swiconicfsel}}  @onChange={{action "iconicfChanged"}} as |icf|>
+						<PowerSelec @selected={{char.custom.charicf}} @options={{this.swiconicfsel}}  @onChange={{action "iconicfChanged"}} as |icf|>
 						  {{icf.name}}
-						</PowerSelectMultiple>							
+						</PowerSelect>							
 					 </div>			 
 				</div>
 				<div class="form-group row">
