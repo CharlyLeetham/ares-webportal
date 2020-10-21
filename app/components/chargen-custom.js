@@ -261,7 +261,7 @@ export default Component.extend({
 			charrace = this.get('char.custom.charrace');  //Get the value that was selected in the dropdown.
 			charif = this.get('char.custom.charicf'); //Get the value that was selected in the dropdown.
 			this.set('char.custom.charrace', val); //Set the selected Race on the site.
-			swiconicf = this.get('char.custom.sysiconicf');	// Get all the Iconic Frameworks.
+			swiconicfall = this.get('char.custom.sysiconicf');	// Get all the Iconic Frameworks.
 			swraceall = this.get('char.custom.swrifts_race'); // Get all the system races.			
 			sysedg = this.get('char.custom.sysedges'); // Get all the System Edges
 			syshind = this.get('char.custom.swsyshind');// Get all the System Hinderances		
@@ -269,7 +269,8 @@ export default Component.extend({
 
 			// Common things to do 
 			newval = val['name'].split('~')[0].toLowerCase().trim(); //Take whatever Race has been selected and chop every from ~ in the name, remove the trailing space.			
-			
+
+			swiconicf = this.get('char.custom.iconicf'); // Get the system iconic frameworks formatted for drop down. This is needed to send the updated races back to the page for selection.			
 			swrace = this.get('char.custom.cgrace'); // Get the system races. This is needed to send the updated races back to the page for selection.	
 			
 			cghind = this.get('char.custom.cghind'); // Hinderances on the Character. Is this needed????
@@ -352,7 +353,7 @@ export default Component.extend({
 			}					
 			
 			for (const [k, v] of Object.entries(evalrace)) {
-				var dislist44 = Object.values(swrace).filter(slots => slots.name.toString().toLowerCase() == v); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.	
+				var dislist44 = Object.values(swiconicf).filter(slots => slots.name.toString().toLowerCase() == v); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.	
 				for (const [k1, v1] of Object.entries(dislist44)) {
 					v1['disabled'] = true //Set disabled for this element to true							
 				}
