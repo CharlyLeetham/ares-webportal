@@ -65,6 +65,7 @@ export default Component.extend({
 			
 			chosenifarray = swiconicfall.filter(slots => slots.name.toString().toLowerCase() == newval); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 			
+			console.log ('here');
 			newedgarray = chosenifarray[0].edges; // Select the edges for the new if
 			if (newedgarray) {
 				lowedgarray = newedgarray.map(newedgarray => newedgarray.toLowerCase());	
