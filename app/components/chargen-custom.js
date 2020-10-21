@@ -148,7 +148,7 @@ export default Component.extend({
 			for (const [k, v] of Object.entries(evalrace)) {
 				// console.log(swiconicfall)
 				var dislist44 = Object.values(swiconicf).filter(slots => slots.name.toString().toLowerCase() == v); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.	
-							console.log ('here3');
+							// console.log ('here3');
 				for (const [k1, v1] of Object.entries(dislist44)) {
 					v1['disabled'] = true //Set disabled for this element to true							
 				}
@@ -165,11 +165,11 @@ export default Component.extend({
 			
 			// console.log ('here44');
 			newifpoints = Object.values(charcgp).filter(slots => slots.ifname.toString() == newval); // Convert charcgp to an array and filter for any entries that match the new framework selected.
-			 			console.log ('here4');
+			 			// console.log ('here4');
 			for (const [key, value] of Object.entries(cgslots)) { //Loop through the init values. This is our yardstick.
 				resetifpoints = newifpoints.filter(slots => slots.name.toString() == value['class']);  // Test to see if the slot is modified by the Iconic Framework. 
 				
-							console.log ('here5');
+							// console.log ('here5');
 				if (Object.keys(resetifpoints).length === 0) { // If it isn't, do this.
 					//console.log ('newrating='+value['rating']);
 					newrating = value['rating'];  // Set the value we're going to send back to the web. This is going to equal CGINIT.
@@ -344,6 +344,8 @@ export default Component.extend({
 			}
 			
 			dislist44 = Object.values(swrace).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
+			
+			console.log (dislist44)
 			for (const [key, value] of Object.entries(dislist44)) {
 				//console.log (value['name']+' disabled='+value['disabled']);
 				value['disabled'] = false //Set disabled for this element to false
