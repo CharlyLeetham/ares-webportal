@@ -133,7 +133,11 @@ export default Component.extend({
 				}
 			}
 			
+			
 			dislist44 = Object.values(swiconicf).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
+			
+						console.log ('here2');
+						
 			for (const [key, value] of Object.entries(dislist44)) {
 				//console.log (value['name']+' disabled='+value['disabled']);
 				value['disabled'] = false //Set disabled for this element to false
@@ -141,6 +145,7 @@ export default Component.extend({
 			
 			for (const [k, v] of Object.entries(evalrace)) {
 				var dislist44 = Object.values(swiconicf).filter(slots => slots.class.toString().toLowerCase() == v); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.	
+							console.log ('here3');
 				for (const [k1, v1] of Object.entries(dislist44)) {
 					v1['disabled'] = true //Set disabled for this element to true							
 				}
@@ -156,9 +161,11 @@ export default Component.extend({
 			charcgp = this.get('char.custom.inicgpoints');  // This is the array of all the if's and values
 			cgslots = this.get('char.custom.cgslots');  // This is the cgslots at init and their values.
 			newifpoints = Object.values(charcgp).filter(slots => slots.ifname.toString() == newval); // Convert charcgp to an array and filter for any entries that match the new framework selected.
-			 
+			 			console.log ('here4');
 			for (const [key, value] of Object.entries(cgslots)) { //Loop through the init values. This is our yardstick.
 				resetifpoints = newifpoints.filter(slots => slots.name.toString() == value['class']);  // Test to see if the slot is modified by the Iconic Framework. 
+				
+							console.log ('here5');
 				if (Object.keys(resetifpoints).length === 0) { // If it isn't, do this.
 					//console.log ('newrating='+value['rating']);
 					newrating = value['rating'];  // Set the value we're going to send back to the web. This is going to equal CGINIT.
@@ -176,6 +183,7 @@ export default Component.extend({
 	
 			//Change all items in the sysedg dropdown to enabled. 	
 			dislist = Object.values(sysedg).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
+						console.log ('here6');
 			for (const [key, value] of Object.entries(dislist)) {
 				//console.log (value['name']+' disabled='+value['disabled']);
 				value['disabled'] = false //Set disabled for this element to false
@@ -192,6 +200,7 @@ export default Component.extend({
 					// console.log(value1);
 					en = value1.split('*')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
 					dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
+								console.log ('here7');
 					for (const [key, value] of Object.entries(dislist)) {
 						value['disabled'] = true //Set disabled for this element to true
 						// Write the new CG Edges array for a nice display
@@ -211,6 +220,8 @@ export default Component.extend({
 
 			//Change all items in the hinderances dropdown to enabled. 
 			dislist1 = Object.values(syshind).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
+			
+						console.log ('here8');
 			for (const [key, value] of Object.entries(dislist1)) {
 				//console.log (value['name']+' disabled='+value['disabled']);
 				value['disabled'] = false //Set disabled for this element to false
@@ -222,6 +233,8 @@ export default Component.extend({
 				for (const [key, value1] of Object.entries(newhindarray)) {
 					en = value1.split('*')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
 					dislist1 = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
+					
+								console.log ('here9');
 					for (const [key, value] of Object.entries(dislist1)) {
 						value['disabled'] = true //Set disabled for this element to true
 						// Write the new CG Edges array for a nice display
