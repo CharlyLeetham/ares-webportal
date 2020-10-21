@@ -146,7 +146,7 @@ export default Component.extend({
 			}					
 			
 			for (const [k, v] of Object.entries(evalrace)) {
-				console.log(swiconicfall)
+				// console.log(swiconicfall)
 				var dislist44 = Object.values(swiconicf).filter(slots => slots.name.toString().toLowerCase() == v); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.	
 							console.log ('here3');
 				for (const [k1, v1] of Object.entries(dislist44)) {
@@ -163,7 +163,7 @@ export default Component.extend({
 			charcgp = this.get('char.custom.inicgpoints');  // This is the array of all the if's and values
 			cgslots = this.get('char.custom.cgslots');  // This is the cgslots at init and their values.
 			
-			console.log ('here44');
+			// console.log ('here44');
 			newifpoints = Object.values(charcgp).filter(slots => slots.ifname.toString() == newval); // Convert charcgp to an array and filter for any entries that match the new framework selected.
 			 			console.log ('here4');
 			for (const [key, value] of Object.entries(cgslots)) { //Loop through the init values. This is our yardstick.
@@ -187,7 +187,7 @@ export default Component.extend({
 	
 			//Change all items in the sysedg dropdown to enabled. 	
 			dislist = Object.values(sysedg).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
-						console.log ('here6');
+						// console.log ('here6');
 			for (const [key, value] of Object.entries(dislist)) {
 				//console.log (value['name']+' disabled='+value['disabled']);
 				value['disabled'] = false //Set disabled for this element to false
@@ -195,7 +195,7 @@ export default Component.extend({
 
 			// Clear the edges list for the framework
 
-			console.log (newedgarray);
+			// console.log (newedgarray);
 	
 			//If there are new edges, go through and set these to disabled in the edge drop down.
 			if (newedgarray) {
@@ -204,7 +204,7 @@ export default Component.extend({
 					// console.log(value1);
 					en = value1.split('*')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
 					dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
-								console.log ('here7');
+								// console.log ('here7');
 					for (const [key, value] of Object.entries(dislist)) {
 						value['disabled'] = true //Set disabled for this element to true
 						// Write the new CG Edges array for a nice display
@@ -283,9 +283,9 @@ export default Component.extend({
 			newhindarray = chosenifarray[0].hinderances; // Select the hinderances for the new if
 			newcyberarray = chosenifarray[0].cybernetics; // Select the cybernetics for the new if
 			
-			comptypearray = ['ab miracles*', 'ab magic*']; // Used for PPE check
-			comptypearray2 = ['ab psionics*']; // Used for psionics check
-			comptypearray3 = ['power armor jock*']; // Used for cyber check
+			comptypearray = ['ab miracles^', 'ab magic^']; // Used for PPE check
+			comptypearray2 = ['ab psionics^']; // Used for psionics check
+			comptypearray3 = ['power armor jock^']; // Used for cyber check
 			comptypearray4 = ['juicer', 'crazy']; // Used for Bizarre Physiology
 	
 			var evalrace=[], en1;
