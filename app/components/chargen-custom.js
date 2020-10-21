@@ -282,8 +282,6 @@ export default Component.extend({
 				lowedgarray = newedgarray.map(newedgarray => newedgarray.toLowerCase());	
 			}
 			
-			console.log(lowedgarray)
-			
 			newhindarray = chosenifarray[0].hinderances; // Select the hinderances for the new if
 			newcyberarray = chosenifarray[0].cybernetics; // Select the cybernetics for the new if
 			
@@ -405,7 +403,7 @@ export default Component.extend({
 				i = 0;
 				for (const [key, value1] of Object.entries(newedgarray)) {
 					// console.log(value1);
-					en = value1.split('*')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
+					en = value1.split('^')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
 					dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 					for (const [key, value] of Object.entries(dislist)) {
 						value['disabled'] = true //Set disabled for this element to true
