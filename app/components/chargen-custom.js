@@ -162,7 +162,7 @@ export default Component.extend({
 			charcgp = this.get('char.custom.inicgpoints');  // This is the array of all the if's and values
 			cgslots = this.get('char.custom.cgslots');  // This is the cgslots at init and their values.
 			newifpoints = Object.values(charcgp).filter(slots => slots.ifname.toString() == newval); // Convert charcgp to an array and filter for any entries that match the new framework selected.
-			 			// console.log ('here4');
+			 			console.log ('here4');
 			for (const [key, value] of Object.entries(cgslots)) { //Loop through the init values. This is our yardstick.
 				resetifpoints = newifpoints.filter(slots => slots.name.toString() == value['class']);  // Test to see if the slot is modified by the Iconic Framework. 
 				
