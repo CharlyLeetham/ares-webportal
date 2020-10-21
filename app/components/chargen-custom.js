@@ -281,6 +281,9 @@ export default Component.extend({
 			if (newedgarray) {
 				lowedgarray = newedgarray.map(newedgarray => newedgarray.toLowerCase());	
 			}
+			
+			console.log(lowedgarray)
+			
 			newhindarray = chosenifarray[0].hinderances; // Select the hinderances for the new if
 			newcyberarray = chosenifarray[0].cybernetics; // Select the cybernetics for the new if
 			
@@ -346,7 +349,7 @@ export default Component.extend({
 			
 			dislist55 = Object.values(swiconicf).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 			
-			console.log (dislist55)
+			// console.log (dislist55)
 			for (const [key, value] of Object.entries(dislist55)) {
 				//console.log (value['name']+' disabled='+value['disabled']);
 				value['disabled'] = false //Set disabled for this element to false
@@ -385,7 +388,7 @@ export default Component.extend({
 				document.getElementById("inp-" + value['class']).value = newrating;  //Set the counters on the website.
 			}
 			
-			// Change the Edges set by the iconicf.
+			// Change the Edges set by the race.
 	
 			//Change all items in the sysedg dropdown to enabled. 	
 			dislist = Object.values(sysedg).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
