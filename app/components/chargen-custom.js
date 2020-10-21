@@ -344,7 +344,7 @@ export default Component.extend({
 				}
 			}
 			
-			dislist55 = Object.values(swrace).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
+			dislist55 = Object.values(swiconicf).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 			
 			console.log (dislist55)
 			for (const [key, value] of Object.entries(dislist55)) {
