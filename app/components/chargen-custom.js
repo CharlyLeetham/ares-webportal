@@ -182,6 +182,7 @@ export default Component.extend({
 
 			// Clear the edges list for the framework
 
+			console.log (newedgarray);
 	
 			//If there are new edges, go through and set these to disabled in the edge drop down.
 			if (newedgarray) {
