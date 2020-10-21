@@ -256,7 +256,7 @@ export default Component.extend({
 		},
 		
 		newRaceChanged(val) {
-			var charif, charcgp, charrace, cgslots, newifpoints, newval, resetifpoints, newrating, cgedg, cghind, swiconicf, dislist, dislist1, en, i, cgtr1=[], cgtr2=[], chosenifarray, newedgarray, newhindarray, sysedg, syshind, swrace, sysrace, swraceall, complrace, newcomprace=[], newcyberarray, lowedgarray, comptypearray=[], comptypearray2=[], comptypearray3=[], comptypearray4=[], newcif=[];
+			var charif, charcgp, charrace, cgslots, newifpoints, newval, resetifpoints, newrating, cgedg, cghind, swiconicf, swiconicfall, dislist, dislist1, en, i, cgtr1=[], cgtr2=[], chosenifarray, newedgarray, newhindarray, sysedg, syshind, swrace, sysrace, swraceall, complrace, newcomprace=[], newcyberarray, lowedgarray, comptypearray=[], comptypearray2=[], comptypearray3=[], comptypearray4=[], newcif=[];
 
 			charrace = this.get('char.custom.charrace');  //Get the value that was selected in the dropdown.
 			charif = this.get('char.custom.charicf'); //Get the value that was selected in the dropdown.
