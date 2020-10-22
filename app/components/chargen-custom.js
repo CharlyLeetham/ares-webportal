@@ -134,17 +134,18 @@ export default Component.extend({
 				}
 			}
 			
-			console.log(evalrace);
+
 			
 			dislist44 = Object.values(swrace).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
-						
+					
+			
 			for (const [key, value] of Object.entries(dislist44)) {
 				//console.log (value['name']+' disabled='+value['disabled']);
 				value['disabled'] = false //Set disabled for this element to false
 			}					
 			
 			for (const [k, v] of Object.entries(evalrace)) {
-				// console.log(swiconicfall)
+				console.log(swiconicf)
 				var dislist44 = Object.values(swiconicf).filter(slots => slots.name.toString().toLowerCase() == v); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.	
 				for (const [k1, v1] of Object.entries(dislist44)) {
 					v1['disabled'] = true //Set disabled for this element to true							
