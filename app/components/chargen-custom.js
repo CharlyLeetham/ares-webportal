@@ -295,7 +295,6 @@ export default Component.extend({
 				// console.log (value);
 				
 				complrace = value.hasOwnProperty('complications');
-				console.log (complrace);
 				if (complrace && newedgarray) { //Complications exist on the character
 					for (const [k, v] of Object.entries(value.complications)) {
 						var ppe_check = v.includes("Restricted Path PPE^") // see if the race has the value
@@ -342,7 +341,8 @@ export default Component.extend({
 					
 				}
 			}
-			
+			 console.log (evalrace);
+			 
 			dislist55 = Object.values(swiconicf).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 			
 			console.log (dislist55)
