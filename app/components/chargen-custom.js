@@ -285,13 +285,16 @@ export default Component.extend({
 			
 			console.log(racecompl);
 			
-			// Check to see if the Race includes things that the IF can't have //
 			
-			var ppe_check = racecompl.includes("Restricted Path PPE^") // see if the race has the value
-			var isp_check = racecompl.includes("Restricted Path ISP^") //see if the race has the value
-			var cyber_check = racecompl.includes("Cyber Resistant^") //see if the race has the value
-			var nsb_check = racecompl.includes("Non-Standard Build^") //see if the race has the value
-			var bp_check = racecompl.includes("Bizarre Physiology^") //see if the race has the value				
+			if (racecompl) {
+				// Check to see if the Race includes things that the IF can't have //
+				
+				var ppe_check = racecompl.includes("Restricted Path PPE^") // see if the race has the value
+				var isp_check = racecompl.includes("Restricted Path ISP^") //see if the race has the value
+				var cyber_check = racecompl.includes("Cyber Resistant^") //see if the race has the value
+				var nsb_check = racecompl.includes("Non-Standard Build^") //see if the race has the value
+				var bp_check = racecompl.includes("Bizarre Physiology^") //see if the race has the value				
+			}
 			
 			comptypearray = ['ab miracles*', 'ab magic*']; // Used for PPE check
 			comptypearray2 = ['ab psionics*']; // Used for psionics check
@@ -309,8 +312,7 @@ export default Component.extend({
 				// if (complrace && newedgarray) { //Complications exist on the character
 				if (value.edges) { //Complications exist on the character
 
-						console.log ('Key: '+key);
-						console.log (value); 
+						console.log (value.edges); 
 					for (const [k, v] of Object.entries(value.edges)) {
 
 						if (ppe_check == true) {
