@@ -357,10 +357,12 @@ export default Component.extend({
 				value['disabled'] = false //Set disabled for this element to false
 			}					
 			
-			for (const [k, v] of Object.entries(evalrace)) {
-				var dislist55 = Object.values(swiconicf).filter(slots => slots.name.toString().toLowerCase().includes(v.toLowerCase())); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.	
-				for (const [k1, v1] of Object.entries(dislist55)) {
-					v1['disabled'] = true //Set disabled for this element to true							
+			if (evalrace) {
+				for (const [k, v] of Object.entries(evalrace)) {
+					var dislist55 = Object.values(swiconicf).filter(slots => slots.name.toString().toLowerCase().includes(v.toLowerCase())); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.	
+					for (const [k1, v1] of Object.entries(dislist55)) {
+						v1['disabled'] = true //Set disabled for this element to true							
+					}
 				}
 			}
 			
