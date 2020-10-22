@@ -303,11 +303,11 @@ export default Component.extend({
 						var nsb_check = v.includes("Non-Standard Build^") //see if the race has the value
 						var bp_check = v.includes("Bizarre Physiology^") //see if the race has the value	
 						if (ppe_check == true) {
-							var ppetest = lowedgarray.some(v => comptypearray.includes(v));		
+							var ppetest = lowedgarray.some(v => comptypearray.includes(v));
 						}
 
 						if (ppe_check == true) {
-							var ppetest = lowedgarray.some(v => comptypearray.includes(v));		
+							var ppetest = lowedgarray.some(v => comptypearray.includes(v));	
 							// Check if the race can use this 
 						}	
 
@@ -327,15 +327,20 @@ export default Component.extend({
 						}
 
 						if (ppe_check==true || isp_check==true || nsb_check == true || bp_check == true || newcyberarray) {
+							// We need to determine if the IF has this edge
 							
-							en1 = value.name.split('^')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
-							console.log(en1);
-							if (evalrace.includes(en1)) {
-								// console.log('in there dummy');
-							} else {
-								evalrace[i]=en1;
-								i = i+1;								
+							for (const[k2, v2] of Object.entries(value.swiconicfall) {
+								// en1 = v2.split('^')[0].toLowerCase().trim(); // Take the trailing ^ from the edge
+								console.log (k2, v2);						
 							}
+							// en1 = value.name.split('^')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
+							// console.log(en1);
+							// if (evalrace.includes(en1)) {
+								console.log('in there dummy');
+							// } else {
+								// evalrace[i]=en1;
+								// i = i+1;								
+							// }
 						}	
 					}
 					
