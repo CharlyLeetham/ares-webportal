@@ -314,7 +314,7 @@ export default Component.extend({
 							console.log('Key: '+k);
 							console.log('Vlaue:' +v.toLowerCase());
 							if (ppe_check == true) {
-								var ppetest = lowedgarray.some(v => comptypearray.includes(v));	
+								var ppetest = v.toLowerCase().some(v => comptypearray.includes(v));	
 								// Check if the race can use this 
 							}	
 
@@ -335,7 +335,7 @@ export default Component.extend({
 
 							if (ppe_check==true || isp_check==true || nsb_check == true || bp_check == true || newcyberarray) {
 								
-								console.log (value);
+								console.log (value.name);
 								// We need to determine if the IF has this edge
 								
 								// en1 = value.name.split('^')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
