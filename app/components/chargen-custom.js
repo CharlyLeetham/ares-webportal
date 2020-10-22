@@ -336,6 +336,7 @@ export default Component.extend({
 								if (v2.hasOwnProperty('edges')) {
 									// if (lowedgarray.some(v2.edges => comptypearray4.includes(v2.edges))) {
 										console.log(v2.name);
+										console.log(v2.edges);
 									// }
 								}
 							}
