@@ -314,20 +314,20 @@ export default Component.extend({
 							console.log('Key: '+k);
 							console.log('Vlaue:' +v.toLowerCase());
 							if (ppe_check == true) {
-								var ppetest = v.toLowerCase().some(v => comptypearray.includes(v));	
+								var ppetest = comptypearray.includes(v.toLowerCase());	
 								// Check if the race can use this 
 							}	
 
 							if (isp_check == true) {
-								var isptest = lowedgarray.some(v => comptypearray2.includes(v));		
+								var isptest = comptypearray2.includes(v.toLowerCase());		
 							}											
 							
 							if (nsb_check == true) {
-								var nsbtest = lowedgarray.some(v => comptypearray3.includes(v));		
+								var nsbtest = comptypearray3.includes(v.toLowerCase());		
 							}						
 							
 							if (bp_check == true) {
-								var bptest = lowedgarray.some(v => comptypearray4.includes(v));		
+								var bptest = comptypearray4.includes(v.toLowerCase());		
 							}
 
 							if (newcyberarray) {
