@@ -294,62 +294,61 @@ export default Component.extend({
 				var cyber_check = racecompl.includes("Cyber Resistant^") //see if the race has the value
 				var nsb_check = racecompl.includes("Non-Standard Build^") //see if the race has the value
 				var bp_check = racecompl.includes("Bizarre Physiology^") //see if the race has the value				
-			}
-			
-			comptypearray = ['ab miracles*', 'ab magic*']; // Used for PPE check
-			comptypearray2 = ['ab psionics*']; // Used for psionics check
-			comptypearray3 = ['power armor jock*']; // Used for cyber check
-			comptypearray4 = ['juicer', 'crazy']; // Used for Bizarre Physiology
-	
-			var evalrace=[], en1;
-			
-			// Check the Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
-			var i = 0;				
-			for (const [key, value] of Object.entries(swiconicfall)) { //Loop through the race values. We want to know which races an Iconic Framework can't have.			
 
-			
-				// complrace = value.hasOwnProperty('complications');
-				// if (complrace && newedgarray) { //Complications exist on the character
-				if (value.edges) { //Complications exist on the character
+				comptypearray = ['ab miracles*', 'ab magic*']; // Used for PPE check
+				comptypearray2 = ['ab psionics*']; // Used for psionics check
+				comptypearray3 = ['power armor jock*']; // Used for cyber check
+				comptypearray4 = ['juicer', 'crazy']; // Used for Bizarre Physiology
+		
+				var evalrace=[], en1;
+				
+				// Check the Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
+				var i = 0;				
+				for (const [key, value] of Object.entries(swiconicfall)) { //Loop through the race values. We want to know which races an Iconic Framework can't have.			
 
-						console.log (value.edges); 
-					for (const [k, v] of Object.entries(value.edges)) {
+				
+					// complrace = value.hasOwnProperty('complications');
+					// if (complrace && newedgarray) { //Complications exist on the character
+					if (value.edges) { //Complications exist on the character
+						for (const [k, v] of Object.entries(value.edges)) {
+							console.log('Key: '+k);
+							console.log('Vlaue': +v);
+							if (ppe_check == true) {
+								var ppetest = lowedgarray.some(v => comptypearray.includes(v));	
+								// Check if the race can use this 
+							}	
 
-						if (ppe_check == true) {
-							var ppetest = lowedgarray.some(v => comptypearray.includes(v));	
-							// Check if the race can use this 
-						}	
-
-						if (isp_check == true) {
-							var isptest = lowedgarray.some(v => comptypearray2.includes(v));		
-						}											
-						
-						if (nsb_check == true) {
-							var nsbtest = lowedgarray.some(v => comptypearray3.includes(v));		
-						}						
-						
-						if (bp_check == true) {
-							var bptest = lowedgarray.some(v => comptypearray4.includes(v));		
-						}
-
-						if (newcyberarray) {
-						}
-
-						if (ppe_check==true || isp_check==true || nsb_check == true || bp_check == true || newcyberarray) {
+							if (isp_check == true) {
+								var isptest = lowedgarray.some(v => comptypearray2.includes(v));		
+							}											
 							
-							console.log (value);
-							// We need to determine if the IF has this edge
+							if (nsb_check == true) {
+								var nsbtest = lowedgarray.some(v => comptypearray3.includes(v));		
+							}						
 							
-							// en1 = value.name.split('^')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
-							// console.log(en1);
-							// if (evalrace.includes(en1)) {
-							// } else {
-								// evalrace[i]=en1;
-								// i = i+1;								
-							// }
-						}	
+							if (bp_check == true) {
+								var bptest = lowedgarray.some(v => comptypearray4.includes(v));		
+							}
+
+							if (newcyberarray) {
+							}
+
+							if (ppe_check==true || isp_check==true || nsb_check == true || bp_check == true || newcyberarray) {
+								
+								console.log (value);
+								// We need to determine if the IF has this edge
+								
+								// en1 = value.name.split('^')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
+								// console.log(en1);
+								// if (evalrace.includes(en1)) {
+								// } else {
+									// evalrace[i]=en1;
+									// i = i+1;								
+								// }
+							}	
+						}
+						
 					}
-					
 				}
 			}
 			 console.log (evalrace);
