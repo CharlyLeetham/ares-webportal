@@ -277,6 +277,8 @@ export default Component.extend({
 				lowedgarray = newedgarray.map(newedgarray => newedgarray.toLowerCase());	
 			}
 			
+			console.log (lowedgarray);
+			
 			newhindarray = chosenifarray[0].hinderances; // Select the hinderances for the new if
 			newcyberarray = chosenifarray[0].cybernetics; // Select the cybernetics for the new if
 			
