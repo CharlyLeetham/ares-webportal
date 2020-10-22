@@ -269,23 +269,7 @@ export default Component.extend({
 		newRaceChanged(val) {
 			var charif, charcgp, charrace, cgslots, newifpoints, newval, resetifpoints, newrating, cgedg, cghind, swiconicf, swiconicfall, dislist, dislist1, en, i, cgtr1=[], cgtr2=[], chosenifarray, newedgarray, newhindarray, sysedg, syshind, swrace, sysrace, swraceall, complrace, newcomprace=[], newcyberarray, lowedgarray, comptypearray=[], comptypearray2=[], comptypearray3=[], comptypearray4=[], newcif=[], racecompl;
 
-			charrace = this.get('char.custom.charrace');  //Get the value that was selected in the dropdown.
-			
-			
-			if (val.class.toLowerCase() == 'none') {
-
-				// Need to reset the ICF dropdown if this is the case.
-				//Change all items in the sysedg dropdown to enabled. 	
-				dislist55 = Object.values(swiconicf).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
-				
-				for (const [key, value] of Object.entries(dislist55)) {
-					//console.log (value['name']+' disabled='+value['disabled']);
-					value['disabled'] = false //Set disabled for this element to false
-				}	
-				return;
-			}
-			
-			this.set('char.custom.charrace', val) //Set the Race to the chosen race		
+			charrace = this.get('char.custom.charrace');  //Get the value that was selected in the dropdown.	
 			
 			charif = this.get('char.custom.charicf'); //Get the value that was selected in the dropdown.
 			this.set('char.custom.charrace', val); //Set the selected Race on the site.
@@ -302,6 +286,22 @@ export default Component.extend({
 			swrace = this.get('char.custom.cgrace'); // Get the system races. This is needed to send the updated races back to the page for selection.	
 			
 			cghind = this.get('char.custom.cghind'); // Hinderances on the Character. Is this needed????
+			
+			
+			if (val.class.toLowerCase() == 'none') {
+
+				// Need to reset the ICF dropdown if this is the case.
+				//Change all items in the sysedg dropdown to enabled. 	
+				dislist55 = Object.values(swiconicf).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
+				
+				for (const [key, value] of Object.entries(dislist55)) {
+					//console.log (value['name']+' disabled='+value['disabled']);
+					value['disabled'] = false //Set disabled for this element to false
+				}	
+				return;
+			}
+			
+			this.set('char.custom.charrace', val) //Set the Race to the chosen race				
 			
 			chosenifarray = swraceall.filter(slots => slots.name.toString().toLowerCase() == newval); // Convert the race list to an array and filter for any entries that match the new framework selected.
 			
