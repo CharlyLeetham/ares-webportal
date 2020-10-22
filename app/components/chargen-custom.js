@@ -291,20 +291,17 @@ export default Component.extend({
 			
 			// Check the Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
 			var i = 0;				
-			for (const [key, value] of Object.entries(swraceall)) { //Loop through the race values. We want to know which races an Iconic Framework can't have.		
-				// console.log (value);
+			for (const [key, value] of Object.entries(swiconicfall)) { //Loop through the race values. We want to know which races an Iconic Framework can't have.		
+				console.log (value);
 				
 				complrace = value.hasOwnProperty('complications');
 				if (complrace && newedgarray) { //Complications exist on the character
 					for (const [k, v] of Object.entries(value.complications)) {
-						var ppe_check = v.includes("Restricted Path PPE^") // see if the race has the value
-						var isp_check = v.includes("Restricted Path ISP^") //see if the race has the value
-						var cyber_check = v.includes("Cyber Resistant^") //see if the race has the value
-						var nsb_check = v.includes("Non-Standard Build^") //see if the race has the value
-						var bp_check = v.includes("Bizarre Physiology^") //see if the race has the value	
-						if (ppe_check == true) {
-							var ppetest = lowedgarray.some(v => comptypearray.includes(v));
-						}
+						var ppe_check = v.includes("Restricted Path PPE*") // see if the race has the value
+						var isp_check = v.includes("Restricted Path ISP*") //see if the race has the value
+						var cyber_check = v.includes("Cyber Resistant*") //see if the race has the value
+						var nsb_check = v.includes("Non-Standard Build*") //see if the race has the value
+						var bp_check = v.includes("Bizarre Physiology*") //see if the race has the value	
 
 						if (ppe_check == true) {
 							var ppetest = lowedgarray.some(v => comptypearray.includes(v));	
@@ -329,17 +326,6 @@ export default Component.extend({
 						if (ppe_check==true || isp_check==true || nsb_check == true || bp_check == true || newcyberarray) {
 							// We need to determine if the IF has this edge
 							
-							for (const[k2, v2] of Object.entries(swiconicfall)) {
-								// en1 = v2.split('^')[0].toLowerCase().trim(); // Take the trailing ^ from the edge
-								console.log (lowedgarray);
-								// console.log (k2, v2);
-								if (v2.hasOwnProperty('edges')) {
-									// if (lowedgarray.some(v2.edges => comptypearray4.includes(v2.edges))) {
-										console.log(v2.name);
-										console.log(v2.edges);
-									// }
-								}
-							}
 							// en1 = value.name.split('^')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
 							// console.log(en1);
 							// if (evalrace.includes(en1)) {
