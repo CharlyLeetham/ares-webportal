@@ -276,11 +276,12 @@ export default Component.extend({
 
 				// Need to reset the ICF dropdown if this is the case.
 				//Change all items in the sysedg dropdown to enabled. 	
-				dislist = Object.values(sysedg).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
-				for (const [key, value] of Object.entries(dislist)) {
+				dislist55 = Object.values(swiconicf).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
+				
+				for (const [key, value] of Object.entries(dislist55)) {
 					//console.log (value['name']+' disabled='+value['disabled']);
 					value['disabled'] = false //Set disabled for this element to false
-				}		
+				}	
 				return;
 			}
 			
