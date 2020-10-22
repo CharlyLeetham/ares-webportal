@@ -134,6 +134,8 @@ export default Component.extend({
 				}
 			}
 			
+			console.log (evalrace);
+			
 			dislist44 = Object.values(evalrace).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 			
 						console.log ('here2');
