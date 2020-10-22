@@ -48,6 +48,8 @@ export default Component.extend({
 		iconicfChanged(val) {
 			var charif, charcgp, cgslots, newifpoints, newval, resetifpoints, newrating, cgedg, cghind, swiconicf, swiconicfall, dislist, dislist1, en, i, cgtr1=[], cgtr2=[], chosenifarray, newedgarray, newhindarray, sysedg, syshind, swrace, sysrace, swraceall, complrace, newcomprace=[], newcyberarray, lowedgarray, comptypearray=[], comptypearray2=[], comptypearray3=[], comptypearray4=[], newcif=[];
 
+
+			// Common things to do 
 			charif = this.get('char.custom.charicf'); //Get the value that was selected in the dropdown.
 			this.set('char.custom.charicf', val) //Set the selected Iconic Framework on the site.
 			swiconicfall = this.get('char.custom.sysiconicf');	// Get all the Iconic Frameworks.
@@ -55,17 +57,16 @@ export default Component.extend({
 			sysedg = this.get('char.custom.sysedges'); // Get all the System Edges
 			syshind = this.get('char.custom.swsyshind');// Get all the System Hinderances		
 			cgedg = this.get('char.custom.cgedges'); // Get the edges on the character now.
-
-			// Common things to do 
 			newval = val['name'].split('~')[0].toLowerCase().trim(); //Take whatever Iconic Framework has been selected and chop every from ~ in the name, remove the trailing space.			
 			
-			swiconicf = this.get('char.custom.iconicf'); // Get the system iconic frameworks formatted for drop down. This is needed to send the updated races back to the page for selection.		
+			swiconicf = this.get('char.custom.iconicf'); // Get the iconic frameworks formatted for drop down. This is needed to send the updated races back to the page for selection.		
 			swrace = this.get('char.custom.cgrace'); // Get the system races formatted for drop down. This is needed to send the updated races back to the page for selection.		
 			cghind = this.get('char.custom.cghind'); // Hinderances on the Character. Is this needed???? 
 			
 			chosenifarray = swiconicfall.filter(slots => slots.name.toString().toLowerCase() == newval); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 			
 			// console.log ('here');
+			
 			newedgarray = chosenifarray[0].edges; // Select the edges for the new if
 			if (newedgarray) {
 				lowedgarray = newedgarray.map(newedgarray => newedgarray.toLowerCase());	
@@ -133,12 +134,10 @@ export default Component.extend({
 				}
 			}
 			
-			
 			dislist44 = Object.values(swiconicf).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 			
 						// console.log ('here2');
-						// console.log ('Dislist44');
-						// console.log (dislist44);
+						console.log (dislist44);
 						
 			for (const [key, value] of Object.entries(dislist44)) {
 				//console.log (value['name']+' disabled='+value['disabled']);
@@ -148,7 +147,7 @@ export default Component.extend({
 			for (const [k, v] of Object.entries(evalrace)) {
 				// console.log(swiconicfall)
 				var dislist44 = Object.values(swiconicf).filter(slots => slots.name.toString().toLowerCase() == v); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.	
-							// console.log ('here3');
+							console.log (dislist44);
 				for (const [k1, v1] of Object.entries(dislist44)) {
 					v1['disabled'] = true //Set disabled for this element to true							
 				}
