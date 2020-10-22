@@ -302,14 +302,16 @@ export default Component.extend({
 			
 			// Check the Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
 			var i = 0;				
-			for (const [key, value] of Object.entries(swiconicfall)) { //Loop through the race values. We want to know which races an Iconic Framework can't have.						
+			for (const [key, value] of Object.entries(swiconicfall)) { //Loop through the race values. We want to know which races an Iconic Framework can't have.			
+
+						console.log (key);
+						console.log (value);			
 				// complrace = value.hasOwnProperty('complications');
 				// if (complrace && newedgarray) { //Complications exist on the character
 				if (if value.edges) { //Complications exist on the character
 
 					for (const [k, v] of Object.entries(value.edges)) {
-						console.log (k);
-						console.log (v);
+
 						if (ppe_check == true) {
 							var ppetest = lowedgarray.some(v => comptypearray.includes(v));	
 							// Check if the race can use this 
