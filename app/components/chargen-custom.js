@@ -261,7 +261,7 @@ export default Component.extend({
 				console.log ('ddddd');
 				// Need to reset the ICF dropdown if this is the case.
 				this.set('char.custom.charrace', val) //Set the Race to the chosen race
-				return();
+				return;
 			}
 			
 			charif = this.get('char.custom.charicf'); //Get the value that was selected in the dropdown.
