@@ -312,7 +312,7 @@ export default Component.extend({
 					if (value.edges) { //Complications exist on the character
 						for (const [k, v] of Object.entries(value.edges)) {
 							console.log('Key: '+k);
-							console.log('Vlaue': +v);
+							console.log('Vlaue:' +v);
 							if (ppe_check == true) {
 								var ppetest = lowedgarray.some(v => comptypearray.includes(v));	
 								// Check if the race can use this 
