@@ -310,7 +310,7 @@ export default Component.extend({
 				if (value.edges) { //Complications exist on the character
 
 						console.log ('Key: '+key);
-						console.log (value);
+						console.log (value); 
 					for (const [k, v] of Object.entries(value.edges)) {
 
 						if (ppe_check == true) {
