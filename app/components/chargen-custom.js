@@ -52,6 +52,18 @@ export default Component.extend({
 			// Common things to do 
 			charif = this.get('char.custom.charicf'); //Get the value that was selected in the dropdown.
 			this.set('char.custom.charicf', val) //Set the selected Iconic Framework on the site.
+			
+			if (charif.class == 'none') {
+				dislist44 = Object.values(swrace).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
+						
+				
+				for (const [key, value] of Object.entries(dislist44)) {
+					//console.log (value['name']+' disabled='+value['disabled']);
+					value['disabled'] = false //Set disabled for this element to false
+				}
+
+				return;
+			}
 			swiconicfall = this.get('char.custom.sysiconicf');	// Get all the Iconic Frameworks.
 			swraceall = this.get('char.custom.swrifts_race'); // Get all the system races.			
 			sysedg = this.get('char.custom.sysedges'); // Get all the System Edges
@@ -65,7 +77,6 @@ export default Component.extend({
 			
 			chosenifarray = swiconicfall.filter(slots => slots.name.toString().toLowerCase() == newval); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 			
-			// console.log ('here');
 			
 			newedgarray = chosenifarray[0].edges; // Select the edges for the new if
 			if (newedgarray) {
@@ -260,14 +271,20 @@ export default Component.extend({
 
 			charrace = this.get('char.custom.charrace');  //Get the value that was selected in the dropdown.
 			
-			console.log(charrace);
 			
 			if (val.class.toLowerCase() == 'none') {
-				console.log ('ddddd');
+
 				// Need to reset the ICF dropdown if this is the case.
-				this.set('char.custom.charrace', val) //Set the Race to the chosen race
+				//Change all items in the sysedg dropdown to enabled. 	
+				dislist = Object.values(sysedg).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
+				for (const [key, value] of Object.entries(dislist)) {
+					//console.log (value['name']+' disabled='+value['disabled']);
+					value['disabled'] = false //Set disabled for this element to false
+				}		
 				return;
 			}
+			
+			this.set('char.custom.charrace', val) //Set the Race to the chosen race		
 			
 			charif = this.get('char.custom.charicf'); //Get the value that was selected in the dropdown.
 			this.set('char.custom.charrace', val); //Set the selected Race on the site.
@@ -370,9 +387,7 @@ export default Component.extend({
 					}
 				}
 			}
-			
-			this.set('char.custom.charrace', val) //Set the Race to the chosen race
-			
+						
 			//Modify the CGen counters
 			
 			charcgp = this.get('char.custom.inicgpoints');  // This is the array of all the if's and values
