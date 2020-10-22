@@ -329,7 +329,7 @@ export default Component.extend({
 						if (ppe_check==true || isp_check==true || nsb_check == true || bp_check == true || newcyberarray) {
 							// We need to determine if the IF has this edge
 							
-							for (const[k2, v2] of Object.entries(value.swiconicfall) {
+							for (const[k2, v2] of Object.entries(value.swiconicfall)) {
 								// en1 = v2.split('^')[0].toLowerCase().trim(); // Take the trailing ^ from the edge
 								console.log (k2, v2);						
 							}
