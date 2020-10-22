@@ -257,7 +257,7 @@ export default Component.extend({
 			
 			console.log(charrace);
 			
-			if (charrace.toLowerCase() == 'none') {
+			if (val.class.toLowerCase() == 'none') {
 				console.log ('ddddd');
 				// Need to reset the ICF dropdown if this is the case.
 				this.set('char.custom.charrace', val) //Set the Race to the chosen race
