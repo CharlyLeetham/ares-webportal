@@ -311,8 +311,8 @@ export default Component.extend({
 					// if (complrace && newedgarray) { //Complications exist on the character
 					if (value.edges) { //Complications exist on the character
 						for (const [k, v] of Object.entries(value.edges)) {
-							console.log('Key: '+k);
-							console.log('Vlaue:' +v.toLowerCase());
+							// console.log('Key: '+k);
+							// console.log('Vlaue:' +v.toLowerCase());
 							if (ppe_check == true) {
 								var ppetest = comptypearray.includes(v.toLowerCase());	
 								// Check if the race can use this 
@@ -335,16 +335,9 @@ export default Component.extend({
 
 							if (ppe_check==true || isp_check==true || nsb_check == true || bp_check == true || newcyberarray) {
 								
-								console.log (value.name);
+								// console.log (value.name);
 								// We need to determine if the IF has this edge
-								
-								// en1 = value.name.split('^')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
-								// console.log(en1);
-								// if (evalrace.includes(en1)) {
-								// } else {
-									// evalrace[i]=en1;
-									// i = i+1;								
-								// }
+								evalrace[i]=value.name;							
 							}	
 						}
 						
