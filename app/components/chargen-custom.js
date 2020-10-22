@@ -291,9 +291,7 @@ export default Component.extend({
 			
 			// Check the Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
 			var i = 0;				
-			for (const [key, value] of Object.entries(swiconicfall)) { //Loop through the race values. We want to know which races an Iconic Framework can't have.		
-				console.log (value);
-				
+			for (const [key, value] of Object.entries(swiconicfall)) { //Loop through the race values. We want to know which races an Iconic Framework can't have.						
 				complrace = value.hasOwnProperty('complications');
 				if (complrace && newedgarray) { //Complications exist on the character
 					for (const [k, v] of Object.entries(value.complications)) {
@@ -324,6 +322,8 @@ export default Component.extend({
 						}
 
 						if (ppe_check==true || isp_check==true || nsb_check == true || bp_check == true || newcyberarray) {
+							
+							console.log (value);
 							// We need to determine if the IF has this edge
 							
 							// en1 = value.name.split('^')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
