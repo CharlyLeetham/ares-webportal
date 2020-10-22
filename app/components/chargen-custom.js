@@ -147,6 +147,7 @@ export default Component.extend({
 			for (const [k, v] of Object.entries(evalrace)) {
 				console.log(swiconicf)
 				var dislist44 = Object.values(swiconicf).filter(slots => slots.class.toString().toLowerCase() == v); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.	
+				console.log(dislist44)
 				for (const [k1, v1] of Object.entries(dislist44)) {
 					v1['disabled'] = true //Set disabled for this element to true							
 				}
