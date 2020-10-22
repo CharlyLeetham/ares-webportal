@@ -254,6 +254,10 @@ export default Component.extend({
 			var charif, charcgp, charrace, cgslots, newifpoints, newval, resetifpoints, newrating, cgedg, cghind, swiconicf, swiconicfall, dislist, dislist1, en, i, cgtr1=[], cgtr2=[], chosenifarray, newedgarray, newhindarray, sysedg, syshind, swrace, sysrace, swraceall, complrace, newcomprace=[], newcyberarray, lowedgarray, comptypearray=[], comptypearray2=[], comptypearray3=[], comptypearray4=[], newcif=[], racecompl;
 
 			charrace = this.get('char.custom.charrace');  //Get the value that was selected in the dropdown.
+			
+			console.log(charrace);
+			
+			
 			charif = this.get('char.custom.charicf'); //Get the value that was selected in the dropdown.
 			this.set('char.custom.charrace', val); //Set the selected Race on the site.
 			swiconicfall = this.get('char.custom.sysiconicf');	// Get all the Iconic Frameworks.
@@ -276,14 +280,10 @@ export default Component.extend({
 			if (newedgarray) {
 				lowedgarray = newedgarray.map(newedgarray => newedgarray.toLowerCase());	
 			}
-			
-			console.log (lowedgarray);
-			
+				
 			newhindarray = chosenifarray[0].hinderances; // Select the hinderances for the new if
 			newcyberarray = chosenifarray[0].cybernetics; // Select the cybernetics for the new if
 			racecompl = chosenifarray[0].complications;
-			
-			console.log(racecompl);
 			
 			
 			if (racecompl) {
@@ -305,10 +305,6 @@ export default Component.extend({
 				// Check the Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
 				var i = 0;				
 				for (const [key, value] of Object.entries(swiconicfall)) { //Loop through the race values. We want to know which races an Iconic Framework can't have.			
-
-				
-					// complrace = value.hasOwnProperty('complications');
-					// if (complrace && newedgarray) { //Complications exist on the character
 					if (value.edges) { //Complications exist on the character
 						for (const [k, v] of Object.entries(value.edges)) {
 							// console.log('Key: '+k);
@@ -347,29 +343,21 @@ export default Component.extend({
 					}
 				}
 			}
-			 // console.log (evalrace);
 			 
 			dislist55 = Object.values(swiconicf).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 			
-			// console.log (dislist55)
 			for (const [key, value] of Object.entries(dislist55)) {
 				//console.log (value['name']+' disabled='+value['disabled']);
 				value['disabled'] = false //Set disabled for this element to false
 			}					
 			
 			for (const [k, v] of Object.entries(evalrace)) {
-				console.log ('Key: '+k);
-				console.log ('value: '+v);
-				console.log (swiconicf);
 				var dislist55 = Object.values(swiconicf).filter(slots => slots.name.toString().toLowerCase().includes(v.toLowerCase())); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.	
 				for (const [k1, v1] of Object.entries(dislist55)) {
 					v1['disabled'] = true //Set disabled for this element to true							
 				}
 			}
-		
-			// console.log(evalrace);
-			// console.log(dislist44);
-			// console.log(swrace);
+			
 			this.set('char.custom.charrace', val) //Set the Race to the chosen race
 			
 			//Modify the CGen counters
