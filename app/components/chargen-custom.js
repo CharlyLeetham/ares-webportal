@@ -334,9 +334,9 @@ export default Component.extend({
 								console.log (lowedgarray);
 								// console.log (k2, v2);
 								if (v2.hasOwnProperty('edges')) {
-									if (lowedgarray.some(v2.edges => comptypearray4.includes(v2.edges))) {
+									// if (lowedgarray.some(v2.edges => comptypearray4.includes(v2.edges))) {
 										console.log(v2.name);
-									}
+									// }
 								}
 							}
 							// en1 = value.name.split('^')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
