@@ -304,12 +304,13 @@ export default Component.extend({
 			var i = 0;				
 			for (const [key, value] of Object.entries(swiconicfall)) { //Loop through the race values. We want to know which races an Iconic Framework can't have.			
 
-						console.log (key);
-						console.log (value);			
+			
 				// complrace = value.hasOwnProperty('complications');
 				// if (complrace && newedgarray) { //Complications exist on the character
 				if (value.edges) { //Complications exist on the character
 
+						console.log ('Key: '+key);
+						console.log (value);
 					for (const [k, v] of Object.entries(value.edges)) {
 
 						if (ppe_check == true) {
