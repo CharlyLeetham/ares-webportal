@@ -308,7 +308,7 @@ export default Component.extend({
 						console.log (value);			
 				// complrace = value.hasOwnProperty('complications');
 				// if (complrace && newedgarray) { //Complications exist on the character
-				if (if value.edges) { //Complications exist on the character
+				if (value.edges) { //Complications exist on the character
 
 					for (const [k, v] of Object.entries(value.edges)) {
 
