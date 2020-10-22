@@ -295,7 +295,7 @@ export default Component.extend({
 				// console.log (value);
 				
 				complrace = value.hasOwnProperty('complications');
-
+				console.log (complrace);
 				if (complrace && newedgarray) { //Complications exist on the character
 					for (const [k, v] of Object.entries(value.complications)) {
 						var ppe_check = v.includes("Restricted Path PPE^") // see if the race has the value
@@ -328,8 +328,9 @@ export default Component.extend({
 						}
 
 						if (ppe_check==true || isp_check==true || nsb_check == true || bp_check == true || newcyberarray) {
-							// console.log(en1);
+							
 							en1 = value.name.split('^')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
+							console.log(en1);
 							if (evalrace.includes(en1)) {
 								// console.log('in there dummy');
 							} else {
