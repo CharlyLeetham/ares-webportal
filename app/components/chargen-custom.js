@@ -331,6 +331,7 @@ export default Component.extend({
 							
 							for (const[k2, v2] of Object.entries(swiconicfall)) {
 								// en1 = v2.split('^')[0].toLowerCase().trim(); // Take the trailing ^ from the edge
+								console.log (lowedgarray);
 								console.log (k2, v2);						
 							}
 							// en1 = value.name.split('^')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
