@@ -285,9 +285,17 @@ export default Component.extend({
 			
 			console.log(racecompl);
 			
-			comptypearray = ['ab miracles^', 'ab magic^']; // Used for PPE check
-			comptypearray2 = ['ab psionics^']; // Used for psionics check
-			comptypearray3 = ['power armor jock^']; // Used for cyber check
+			// Check to see if the Race includes things that the IF can't have //
+			
+			var ppe_check = racecompl.includes("Restricted Path PPE^") // see if the race has the value
+			var isp_check = racecompl.includes("Restricted Path ISP^") //see if the race has the value
+			var cyber_check = racecompl.includes("Cyber Resistant^") //see if the race has the value
+			var nsb_check = racecompl.includes("Non-Standard Build^") //see if the race has the value
+			var bp_check = racecompl.includes("Bizarre Physiology^") //see if the race has the value				
+			
+			comptypearray = ['ab miracles*', 'ab magic*']; // Used for PPE check
+			comptypearray2 = ['ab psionics*']; // Used for psionics check
+			comptypearray3 = ['power armor jock*']; // Used for cyber check
 			comptypearray4 = ['juicer', 'crazy']; // Used for Bizarre Physiology
 	
 			var evalrace=[], en1;
@@ -297,15 +305,11 @@ export default Component.extend({
 			for (const [key, value] of Object.entries(swiconicfall)) { //Loop through the race values. We want to know which races an Iconic Framework can't have.						
 				// complrace = value.hasOwnProperty('complications');
 				// if (complrace && newedgarray) { //Complications exist on the character
-				if (newedgarray) { //Complications exist on the character
+				if (if value.edges) { //Complications exist on the character
 
 					for (const [k, v] of Object.entries(value.edges)) {
-						var ppe_check = v.includes("Restricted Path PPE*") // see if the race has the value
-						var isp_check = v.includes("Restricted Path ISP*") //see if the race has the value
-						var cyber_check = v.includes("Cyber Resistant*") //see if the race has the value
-						var nsb_check = v.includes("Non-Standard Build*") //see if the race has the value
-						var bp_check = v.includes("Bizarre Physiology*") //see if the race has the value	
-
+						console.log (k);
+						console.log (v);
 						if (ppe_check == true) {
 							var ppetest = lowedgarray.some(v => comptypearray.includes(v));	
 							// Check if the race can use this 
