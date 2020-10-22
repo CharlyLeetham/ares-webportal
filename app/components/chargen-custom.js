@@ -251,7 +251,7 @@ export default Component.extend({
 		},
 		
 		newRaceChanged(val) {
-			var charif, charcgp, charrace, cgslots, newifpoints, newval, resetifpoints, newrating, cgedg, cghind, swiconicf, swiconicfall, dislist, dislist1, en, i, cgtr1=[], cgtr2=[], chosenifarray, newedgarray, newhindarray, sysedg, syshind, swrace, sysrace, swraceall, complrace, newcomprace=[], newcyberarray, lowedgarray, comptypearray=[], comptypearray2=[], comptypearray3=[], comptypearray4=[], newcif=[];
+			var charif, charcgp, charrace, cgslots, newifpoints, newval, resetifpoints, newrating, cgedg, cghind, swiconicf, swiconicfall, dislist, dislist1, en, i, cgtr1=[], cgtr2=[], chosenifarray, newedgarray, newhindarray, sysedg, syshind, swrace, sysrace, swraceall, complrace, newcomprace=[], newcyberarray, lowedgarray, comptypearray=[], comptypearray2=[], comptypearray3=[], comptypearray4=[], newcif=[], racecompl;
 
 			charrace = this.get('char.custom.charrace');  //Get the value that was selected in the dropdown.
 			charif = this.get('char.custom.charicf'); //Get the value that was selected in the dropdown.
@@ -281,6 +281,9 @@ export default Component.extend({
 			
 			newhindarray = chosenifarray[0].hinderances; // Select the hinderances for the new if
 			newcyberarray = chosenifarray[0].cybernetics; // Select the cybernetics for the new if
+			racecompl = chosenifarray[0].complications;
+			
+			console.log(racecompl);
 			
 			comptypearray = ['ab miracles^', 'ab magic^']; // Used for PPE check
 			comptypearray2 = ['ab psionics^']; // Used for psionics check
@@ -292,10 +295,11 @@ export default Component.extend({
 			// Check the Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
 			var i = 0;				
 			for (const [key, value] of Object.entries(swiconicfall)) { //Loop through the race values. We want to know which races an Iconic Framework can't have.						
-				complrace = value.hasOwnProperty('complications');
-				if (complrace && newedgarray) { //Complications exist on the character
-								console.log (value);
-					for (const [k, v] of Object.entries(value.complications)) {
+				// complrace = value.hasOwnProperty('complications');
+				// if (complrace && newedgarray) { //Complications exist on the character
+				if (newedgarray) { //Complications exist on the character
+
+					for (const [k, v] of Object.entries(value.edges)) {
 						var ppe_check = v.includes("Restricted Path PPE*") // see if the race has the value
 						var isp_check = v.includes("Restricted Path ISP*") //see if the race has the value
 						var cyber_check = v.includes("Cyber Resistant*") //see if the race has the value
