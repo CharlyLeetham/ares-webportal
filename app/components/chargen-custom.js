@@ -63,7 +63,7 @@ export default Component.extend({
 
 		//If there are new edges, go through and set these to disabled in the edge drop down.
 		if (newedgarray) {
-			i = 0;
+			var i = 0;
 			for (const [key, value1] of Object.entries(newedgarray)) {
 				// console.log(value1);
 				en = value1.split('*')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
