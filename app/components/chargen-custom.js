@@ -49,7 +49,7 @@ export default Component.extend({
 	},
 	
 	changedges: function(sysedg, newedgarray, fw) {
-		var cgtr1=[], i, en, specchar;
+		var cgtr1=[], i, en, specchar, dislist;
 		
 		if (fw == 'icf') {
 			specchar = '*';
