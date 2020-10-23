@@ -91,48 +91,7 @@ export default Component.extend({
 			this.set('char.custom.cghind', cgtr1); //Send the new array back to the page for nice display.			
 		}
 		return;
-	},
-	
-	changehind: function (syshind, newhindarray, fw) {
-		var i, cgtr2=[], dislist1, en, specchar;
-		
-		if (fw == 'icf') {
-			specchar = '*';
-		} else {
-			specchar ='^';
-		}		
-		
-		//Change all items in the hinderances dropdown to enabled. 
-		dislist1 = Object.values(syshind).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
-		
-		for (const [key, value] of Object.entries(dislist1)) {
-			//console.log (value['name']+' disabled='+value['disabled']);
-			value['disabled'] = false //Set disabled for this element to false
-		}		
-
-		//If there are new hinderances, go through and set these to disabled in the edge drop down.
-		if (newhindarray) {
-			i = 0;
-			for (const [key, value1] of Object.entries(newhindarray)) {
-				en = value1.split(specchar)[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
-				dislist1 = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
-				
-				for (const [key, value] of Object.entries(dislist1)) {
-					value['disabled'] = true //Set disabled for this element to true
-					// Write the new CG Edges array for a nice display
-					cgtr2[i]=[]
-					cgtr2[i]['class'] = value1;
-					cgtr2[i]['name'] = en;
-					cgtr2[i]['rating'] = value['desc'];
-					i=i+1
-				}
-			}
-			
-		}
-		this.set('char.custom.swsyshind', syshind); //Send the new dropdown back to the page. 
-		this.set('char.custom.cghind', cgtr2); //Send the new array back to the page for nice display.
-		return;
-	},		
+	},	
   
 	actions: {
 		iconicfChanged(val) {
