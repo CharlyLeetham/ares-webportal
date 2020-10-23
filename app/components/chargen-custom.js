@@ -434,11 +434,11 @@ export default Component.extend({
 			// Change the Edges set by the race.
 			
 			var newedg;		
-			newedg = this.changedges(sysedg, newedgarray, 'race');
+			newedg = this.changedges(sysedg, newedgarray, edge, 'race');
 			
 			// Change the Hinderances set by the race.
 			var newhind;	
-			newhind = this.changehind(syshind, newhindarray, 'race');			
+			newhind = this.changeedges(syshind, newhindarray, edge, 'race');			
 		},		
 		
 		edgeChanged(val) {
