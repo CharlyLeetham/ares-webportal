@@ -256,9 +256,11 @@ export default Component.extend({
 			}
 			this.set('char.custom.swsyshind', syshind); //Send the new dropdown back to the page. 
 			this.set('char.custom.cghind', cgtr2); //Send the new array back to the page for nice display.
-
+			
+			myval='hdhdhd ';
+			var myval=this.testfunction(myval);
 			console.log("New val: "+newval);
-			var newval=this.testfunction('newvalue');
+
 		},
 		
 		newRaceChanged(val) {
