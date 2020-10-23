@@ -46,6 +46,8 @@ export default Component.extend({
 	changedges: function(sysedg, newedgarray, traittype, fw) {
 		var cgtr1=[], i, en, specchar, dislist;
 		
+		console.log(traittype);
+		
 		if (fw == 'icf') {
 			specchar = '*';
 		} else {
