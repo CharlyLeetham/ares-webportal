@@ -88,7 +88,7 @@ export default Component.extend({
 	
 	changehind: function (syshind, newhindarray) {
 		
-		var i, cgtr2=[], dislist1;
+		var i, cgtr2=[], dislist1, en;
 		
 		//Change all items in the hinderances dropdown to enabled. 
 		dislist1 = Object.values(syshind).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
