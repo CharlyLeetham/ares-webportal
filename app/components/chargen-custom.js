@@ -83,7 +83,7 @@ export default Component.extend({
 		this.set('char.custom.sysedges', sysedg); //Send the new dropdown back to the page. 
 		this.set('char.custom.cgedges', cgtr1); //Send the new array back to the page for nice display. 		
 		return;
-	}
+	},
   
 	actions: {
 		iconicfChanged(val) {
