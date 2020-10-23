@@ -87,8 +87,8 @@ export default Component.extend({
 			this.set('char.custom.sysedges', sysedg); //Send the new dropdown back to the page. 
 			this.set('char.custom.cgedges', cgtr1); //Send the new array back to the page for nice display. 	
 		} else {
-			this.set('char.custom.swsyshind', syshind); //Send the new dropdown back to the page. 
-			this.set('char.custom.cghind', cgtr2); //Send the new array back to the page for nice display.			
+			this.set('char.custom.swsyshind', sysedg); //Send the new dropdown back to the page. 
+			this.set('char.custom.cghind', cgtr1); //Send the new array back to the page for nice display.			
 		}
 		return;
 	},
