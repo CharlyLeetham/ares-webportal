@@ -253,8 +253,8 @@ export default Component.extend({
 			this.set('char.custom.swsyshind', syshind); //Send the new dropdown back to the page. 
 			this.set('char.custom.cghind', cgtr2); //Send the new array back to the page for nice display.
 
-			var newval=this.testfunction('newvalue');
 			console.log("New val: "+newval);
+			var newval=this.testfunction('newvalue');
 		},
 		
 		newRaceChanged(val) {
@@ -524,7 +524,7 @@ export default Component.extend({
 			var charhind;
 			// charif = this.get('char.custom.charicf'); //Get the value that was selected in the dropdown.
 			this.set('char.custom.cghindnofw', val);
-		}
+		},
 		
 		testfunction(val) {
 			val = val+", "+val;
