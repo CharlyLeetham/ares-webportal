@@ -43,7 +43,7 @@ export default Component.extend({
 	return { iconicf: this.get('char.custom.charicf'), race: this.get('char.custom.charrace'), cgedges: this.get('char.custom.cgedges'), cgedgesnofw: this.get('char.custom.cgedgesnofw'), cghind: this.get('char.custom.cghind'), cghindnofw: this.get('char.custom.cghindnofw') };
   },
  
-	changedges: function(sysedg, newedgarray, fw) {
+	changedges: function(sysedg, newedgarray, traittype, fw) {
 		var cgtr1=[], i, en, specchar, dislist;
 		
 		if (fw == 'icf') {
@@ -51,6 +51,7 @@ export default Component.extend({
 		} else {
 			specchar ='^';
 		}
+		
 		//Change all items in the sysedg dropdown to enabled. 	
 		dislist = Object.values(sysedg).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 
@@ -79,8 +80,14 @@ export default Component.extend({
 				}
 			}	
 		}
-		this.set('char.custom.sysedges', sysedg); //Send the new dropdown back to the page. 
-		this.set('char.custom.cgedges', cgtr1); //Send the new array back to the page for nice display. 		
+		
+		if (traittype == 'edge') {
+			this.set('char.custom.sysedges', sysedg); //Send the new dropdown back to the page. 
+			this.set('char.custom.cgedges', cgtr1); //Send the new array back to the page for nice display. 	
+		} else {
+			this.set('char.custom.swsyshind', syshind); //Send the new dropdown back to the page. 
+			this.set('char.custom.cghind', cgtr2); //Send the new array back to the page for nice display.			
+		}
 		return;
 	},
 	
@@ -269,12 +276,12 @@ export default Component.extend({
 			// Change the Edges set by the iconicf.
 			
 			var newedg;		
-			newedg = this.changedges(sysedg, newedgarray, 'icf');
+			newedg = this.changedges(sysedg, newedgarray, 'edge', 'icf');
 			
 			// Change the Hinderances set by the iconicf.
 			var newhind;	
 			// newhind = this.changehind(syshind, newhindarray, 'icf');
-			newhind = this.changedges(syshind, newhindarray, 'icf');
+			newhind = this.changedges(syshind, newhindarray, 'hind', 'icf');
 
 		},
 		
