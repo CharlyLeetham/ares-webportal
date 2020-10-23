@@ -77,7 +77,6 @@ export default Component.extend({
 			
 			chosenifarray = swiconicfall.filter(slots => slots.name.toString().toLowerCase() == newval); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 			
-			
 			newedgarray = chosenifarray[0].edges; // Select the edges for the new if
 			if (newedgarray) {
 				lowedgarray = newedgarray.map(newedgarray => newedgarray.toLowerCase());	
@@ -145,8 +144,6 @@ export default Component.extend({
 				}
 			}
 			
-
-			
 			dislist44 = Object.values(swrace).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 					
 			
@@ -164,17 +161,12 @@ export default Component.extend({
 					v1['disabled'] = true //Set disabled for this element to true							
 				}
 			}
-		
-			// console.log(evalrace);
-			// console.log(dislist44);
-			// console.log(swrace);
-			
+					
 			//Modify the CGen counters
 			
 			charcgp = this.get('char.custom.inicgpoints');  // This is the array of all the if's and values
 			cgslots = this.get('char.custom.cgslots');  // This is the cgslots at init and their values.
 			
-			// console.log ('here44');
 			newifpoints = Object.values(charcgp).filter(slots => slots.ifname.toString() == newval); // Convert charcgp to an array and filter for any entries that match the new framework selected.
 			 			// console.log ('here4');
 			for (const [key, value] of Object.entries(cgslots)) { //Loop through the init values. This is our yardstick.
@@ -190,7 +182,6 @@ export default Component.extend({
 						newrating = value1['rating'] + value['rating'];  //If there's a match, set the value to whatever is in CGINIT PLUS the iconfic framework.
 					}
 				}
-				//console.log ("inp-" + value['class']+".value= "+newrating);
 				document.getElementById("inp-" + value['class']).value = newrating;  //Set the counters on the website.
 			}
 			
@@ -205,8 +196,6 @@ export default Component.extend({
 			}		
 
 			// Clear the edges list for the framework
-
-			// console.log (newedgarray);
 	
 			//If there are new edges, go through and set these to disabled in the edge drop down.
 			if (newedgarray) {
@@ -231,7 +220,6 @@ export default Component.extend({
 			this.set('char.custom.cgedges', cgtr1); //Send the new array back to the page for nice display. 
 			
 			// Change the Hinderances set by the iconicf.
-
 
 			//Change all items in the hinderances dropdown to enabled. 
 			dislist1 = Object.values(syshind).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
@@ -263,7 +251,10 @@ export default Component.extend({
 				
 			}
 			this.set('char.custom.swsyshind', syshind); //Send the new dropdown back to the page. 
-			this.set('char.custom.cghind', cgtr2); //Send the new array back to the page for nice display.			
+			this.set('char.custom.cghind', cgtr2); //Send the new array back to the page for nice display.
+
+			var newval=this.testfunction('newvalue');
+			console.log('New val: "+newval);
 		},
 		
 		newRaceChanged(val) {
@@ -533,6 +524,11 @@ export default Component.extend({
 			var charhind;
 			// charif = this.get('char.custom.charicf'); //Get the value that was selected in the dropdown.
 			this.set('char.custom.cghindnofw', val);
+		}
+		
+		testfunction(val) {
+			val = val+", "+val;
+			return val;
 		}
 	}
   
