@@ -254,7 +254,7 @@ export default Component.extend({
 			this.set('char.custom.cghind', cgtr2); //Send the new array back to the page for nice display.
 
 			console.log("New val: "+newval);
-			var newval=self.testfunction('newvalue');
+			var newval=testfunction('newvalue');
 		},
 		
 		newRaceChanged(val) {
