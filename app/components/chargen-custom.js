@@ -42,7 +42,11 @@ export default Component.extend({
     // return { goals: this.get('char.custom.goals') };
 	return { iconicf: this.get('char.custom.charicf'), race: this.get('char.custom.charrace'), cgedges: this.get('char.custom.cgedges'), cgedgesnofw: this.get('char.custom.cgedgesnofw'), cghind: this.get('char.custom.cghind'), cghindnofw: this.get('char.custom.cghindnofw') };
   },
-  
+ 
+	testfunction: function(val) {
+		val = val+", "+val;
+		return val;
+	},
   
 	actions: {
 		iconicfChanged(val) {
@@ -254,7 +258,7 @@ export default Component.extend({
 			this.set('char.custom.cghind', cgtr2); //Send the new array back to the page for nice display.
 
 			console.log("New val: "+newval);
-			var newval=testfunction('newvalue');
+			var newval=this.testfunction('newvalue');
 		},
 		
 		newRaceChanged(val) {
@@ -526,10 +530,6 @@ export default Component.extend({
 			this.set('char.custom.cghindnofw', val);
 		},
 		
-		testfunction(val) {
-			val = val+", "+val;
-			return val;
-		}
 	}
   
 });
