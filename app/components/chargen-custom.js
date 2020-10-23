@@ -70,10 +70,9 @@ export default Component.extend({
 		if (newedgarray) {
 			i = 0;
 			for (const [key, value1] of Object.entries(newedgarray)) {
-				// console.log(value1);
 				en = value1.split(specchar)[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
 				dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
-							// console.log ('here7');
+
 				for (const [key, value] of Object.entries(dislist)) {
 					value['disabled'] = true //Set disabled for this element to true
 					// Write the new CG Edges array for a nice display
@@ -102,7 +101,6 @@ export default Component.extend({
 		//Change all items in the hinderances dropdown to enabled. 
 		dislist1 = Object.values(syshind).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 		
-					// console.log ('here8');
 		for (const [key, value] of Object.entries(dislist1)) {
 			//console.log (value['name']+' disabled='+value['disabled']);
 			value['disabled'] = false //Set disabled for this element to false
@@ -115,7 +113,6 @@ export default Component.extend({
 				en = value1.split(specchar)[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
 				dislist1 = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 				
-							// console.log ('here9');
 				for (const [key, value] of Object.entries(dislist1)) {
 					value['disabled'] = true //Set disabled for this element to true
 					// Write the new CG Edges array for a nice display
@@ -428,119 +425,16 @@ export default Component.extend({
 				//console.log ("inp-" + value['class']+".value= "+newrating);
 				document.getElementById("inp-" + value['class']).value = newrating;  //Set the counters on the website.
 			}
-			
+
 			// Change the Edges set by the race.
-	
-			//Change all items in the sysedg dropdown to enabled. 	
-			dislist = Object.values(sysedg).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
-			for (const [key, value] of Object.entries(dislist)) {
-				//console.log (value['name']+' disabled='+value['disabled']);
-				value['disabled'] = false //Set disabled for this element to false
-			}		
-
-			// Clear the edges list for the framework
-
-	
-			//If there are new edges, go through and set these to disabled in the edge drop down.
-			if (newedgarray) {
-				i = 0;
-				for (const [key, value1] of Object.entries(newedgarray)) {
-					// console.log(value1);
-					en = value1.split('^')[0].toLowerCase().trim(); // Take the trailing ^ from the edge for I/F's (NOTE: Need to work out Races next)
-					dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
-					for (const [key, value] of Object.entries(dislist)) {
-						value['disabled'] = true //Set disabled for this element to true
-						// Write the new CG Edges array for a nice display
-						cgtr1[i]=[]
-						cgtr1[i]['class'] = value1;
-						cgtr1[i]['name'] = en;
-						cgtr1[i]['rating'] = value['desc'];
-						i=i+1
-					}
-				}	
-			}
-			this.set('char.custom.sysedges', sysedg); //Send the new dropdown back to the page. 
-			this.set('char.custom.cgedges', cgtr1); //Send the new array back to the page for nice display. 
 			
-			// Change the Hinderances set by the iconicf.
-
-
-			//Change all items in the hinderances dropdown to enabled. 
-			dislist1 = Object.values(syshind).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
-			for (const [key, value] of Object.entries(dislist1)) {
-				//console.log (value['name']+' disabled='+value['disabled']);
-				value['disabled'] = false //Set disabled for this element to false
-			}		
-
-			//If there are new hinderances, go through and set these to disabled in the edge drop down.
-			if (newhindarray) {
-				i = 0;
-				for (const [key, value1] of Object.entries(newhindarray)) {
-					en = value1.split('*')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
-					dislist1 = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
-					for (const [key, value] of Object.entries(dislist1)) {
-						value['disabled'] = true //Set disabled for this element to true
-						// Write the new CG Edges array for a nice display
-						cgtr2[i]=[]
-						cgtr2[i]['class'] = value1;
-						cgtr2[i]['name'] = en;
-						cgtr2[i]['rating'] = value['desc'];
-						i=i+1
-					}
-				}
-				
-			}
-			this.set('char.custom.swsyshind', syshind); //Send the new dropdown back to the page. 
-			this.set('char.custom.cghind', cgtr2); //Send the new array back to the page for nice display.			
+			var newedg;		
+			newedg = this.changedges(sysedg, newedgarray, 'race');
+			
+			// Change the Hinderances set by the race.
+			var newhind;	
+			newhind = this.changehind(syshind, newhindarray, 'race');			
 		},		
-		
-		raceChanged(val) {
-			var charrace, charif, charcgp, cgslots, newifpoints, newval, resetifpoints, resetracep, newrating, charracep, newrcpoints;
-			
-			console.log(val);
-			
-			charrace = this.get('char.custom.charrace');  //Get the value that was selected in the dropdown.
-			charif = this.get('char.custom.charicf'); //Get the value that was selected in the dropdown.
-			this.set('char.custom.charrace', val);
-			
-			// Modify the CGen counters for the IF
-			charif = charif['name'].split('~')[0].toLowerCase().trim(); //Take whatever IF has been set and chop every from ~ in the name, remove the trailing space.	
-			newval = val['name'].split('~')[0].toLowerCase().trim(); //Take whatever Race has been selected and chop every from ~ in the name, remove the trailing space.
-			
-			charcgp = this.get('char.custom.inicgpoints');  // This is the array of all the if's and values
-			charracep = this.get('char.custom.initracepoints');  // This is the array of all the races and values	
-			cgslots = this.get('char.custom.cgslots');  // This is the cgslots at init and their values.
-			
-			newifpoints = Object.values(charcgp).filter(slots => slots.ifname.toString() == charif); // Convert charcgp to an array and filter for any entries that match the new framework selected.
-			newrcpoints = Object.values(charracep).filter(slots => slots.ifname.toString() == newval); // Convert charcgp to an array and filter for any entries that match the new framework selected.
-
-			//Reset newrating to 0 for each loop
-			newrating = 0;
-
-			for (const [key, value] of Object.entries(cgslots)) { //Loop through the init values. This is our yardstick.
-				resetifpoints = newifpoints.filter(slots => slots.name.toString() == value['class']);  // Test to see if the slot is modified by the Iconic Framework. 
-				if (Object.keys(resetifpoints).length === 0) { // If it isn't, do this. 
-					newrating = value['rating'];  // Set the value we're going to send back to the web. This is going to equal CGINIT.
-				} else {
-					for (const [key1, value1] of Object.entries(resetifpoints)) {
-						newrating = value1['rating'] + value['rating'];  //If there's a match, set the value to whatever is in CGINIT PLUS the iconfic framework.
-					}
-				}
-				
-				resetracep = newrcpoints.filter(slots => slots.name.toString() == value['class']);  // Test to see if the slot is modified by the Race.
-				if (Object.keys(resetracep).length === 0) { // If it isn't, do this. 
-					newrating = newrating;  // Set the value to newrating - which is either CGINIT or mod'd by IF.
-				} else {
-					for (const [key1, value1] of Object.entries(resetracep)) {						
-						// console.log ("inp-" + value['class']+".value= "+newrating+" + "+value1['rating']);
-						newrating = value1['rating']+newrating;  //If there's a match, set the value to whatever is in CGINIT PLUS the iconfic framework.
-						// console.log ("inp-" + value['class']+".value= "+newrating);						
-					}
-				}
-	
-				document.getElementById("inp-" + value['class']).value = newrating;  //Set the counters on the website.		
-			}	
-		},
 		
 		edgeChanged(val) {
 			var charhind;
