@@ -48,9 +48,14 @@ export default Component.extend({
 		return val;
 	},
 	
-	changedges: function(sysedg, newedgarray) {
-		var cgtr1=[],
+	changedges: function(sysedg, newedgarray, fw) {
+		var cgtr1=[], i, en, specchar;
 		
+		if (fw == 'icf') {
+			specchar = '*';
+		} else {
+			specchar ='^';
+		}
 		//Change all items in the sysedg dropdown to enabled. 	
 		dislist = Object.values(sysedg).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 
@@ -63,11 +68,10 @@ export default Component.extend({
 
 		//If there are new edges, go through and set these to disabled in the edge drop down.
 		if (newedgarray) {
-			var i, en;
 			i = 0;
 			for (const [key, value1] of Object.entries(newedgarray)) {
 				// console.log(value1);
-				en = value1.split('*')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
+				en = value1.split(specchar)[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
 				dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 							// console.log ('here7');
 				for (const [key, value] of Object.entries(dislist)) {
@@ -86,9 +90,14 @@ export default Component.extend({
 		return;
 	},
 	
-	changehind: function (syshind, newhindarray) {
+	changehind: function (syshind, newhindarray, fw) {
+		var i, cgtr2=[], dislist1, en, specchar;
 		
-		var i, cgtr2=[], dislist1, en;
+		if (fw == 'icf') {
+			specchar = '*';
+		} else {
+			specchar ='^';
+		}		
 		
 		//Change all items in the hinderances dropdown to enabled. 
 		dislist1 = Object.values(syshind).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
@@ -103,7 +112,7 @@ export default Component.extend({
 		if (newhindarray) {
 			i = 0;
 			for (const [key, value1] of Object.entries(newhindarray)) {
-				en = value1.split('*')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
+				en = value1.split(specchar)[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
 				dislist1 = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 				
 							// console.log ('here9');
@@ -268,11 +277,11 @@ export default Component.extend({
 			// Change the Edges set by the iconicf.
 			
 			var newedg;		
-			newedg = this.changedges(sysedg, newedgarray);
+			newedg = this.changedges(sysedg, newedgarray, 'icf');
 			
 			// Change the Hinderances set by the iconicf.
 			var newhind;	
-			newhind = this.changehind(syshind, newhindarray);
+			newhind = this.changehind(syshind, newhindarray, 'icf');
 
 		},
 		
