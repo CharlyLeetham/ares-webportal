@@ -43,11 +43,6 @@ export default Component.extend({
 	return { iconicf: this.get('char.custom.charicf'), race: this.get('char.custom.charrace'), cgedges: this.get('char.custom.cgedges'), cgedgesnofw: this.get('char.custom.cgedgesnofw'), cghind: this.get('char.custom.cghind'), cghindnofw: this.get('char.custom.cghindnofw') };
   },
  
-	testfunction: function(val) {
-		val = val+", "+val;
-		return val;
-	},
-	
 	changedges: function(sysedg, newedgarray, fw) {
 		var cgtr1=[], i, en, specchar, dislist;
 		
@@ -278,7 +273,8 @@ export default Component.extend({
 			
 			// Change the Hinderances set by the iconicf.
 			var newhind;	
-			newhind = this.changehind(syshind, newhindarray, 'icf');
+			// newhind = this.changehind(syshind, newhindarray, 'icf');
+			newhind = this.changedges(syshind, newhindarray, 'icf');
 
 		},
 		
