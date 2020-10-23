@@ -259,7 +259,7 @@ export default Component.extend({
 			
 			myval='hdhdhd ';
 			var myval=this.testfunction(myval);
-			console.log("New val: "+newval);
+			console.log("New val: "+myval);
 
 		},
 		
