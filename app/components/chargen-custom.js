@@ -248,7 +248,7 @@ export default Component.extend({
   
 	actions: {
 		iconicfChanged(val) {
-			var charif, charcgp, chosenifarray, cgslots, newifpoints, newval, resetifpoints, newrating, cgedg, cghind, swiconicf, swiconicfall, dislist44, newedgarray, newhindarray, sysedg, syshind, swrace, swraceall, newtrait;
+			var charif, charcgp, chosenifarray, cgslots, newifpoints, newval, resetifpoints, newrating, cgedg, cghind, swiconicf, swiconicfall, dislist44, newedgarray, newhindarray, newcyberarray, sysedg, syshind, swrace, swraceall, newtrait;
 
 
 			// Common things to do 
