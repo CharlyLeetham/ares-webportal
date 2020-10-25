@@ -94,78 +94,143 @@ export default Component.extend({
 	},
 
 
-	checktrait: function(swraceall, swiconicfall, swrace, newval, traittype) {
+	checktrait: function(swraceall, swiconicfall, swrace, swiconicf, newval, traittype) {
 		
 		// Check the Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
-		var i = 0, dislist44, evalrace=[], en1, complrace, newedgarray, newhindarray, newcyberarray, comptypearray=[], comptypearray2=[], comptypearray3=[], comptypearray4=[], chosenifarray, lowedgarray;
+		var i = 0, dislist44, evalrace=[], en1, complrace, newedgarray, newhindarray, newcyberarray, comptypearray=[], comptypearray2=[], comptypearray3=[], comptypearray4=[], chosenifarray, lowedgarray, racecompl, fullsys, listsys;
 		
-		chosenifarray = swiconicfall.filter(slots => slots.name.toString().toLowerCase() == newval); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
+		if (traittype == 'icf') {
+			fullsys = swiconicfall;
+			listsys = swiconicf;
+		else {
+			fullsys = swraceall;
+			listsys = swrace;
+		}
+		
+		chosenifarray = fullsys.filter(slots => slots.name.toString().toLowerCase() == newval); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 		
 		newedgarray = chosenifarray[0].edges; // Select the edges for the new if
 		if (newedgarray) {
 			lowedgarray = newedgarray.map(newedgarray => newedgarray.toLowerCase());	
 		}
 		newhindarray = chosenifarray[0].hinderances; // Select the hinderances for the new if
-		newcyberarray = chosenifarray[0].cybernetics; // Select the cybernetics for the new if		
+		newcyberarray = chosenifarray[0].cybernetics; // Select the cybernetics for the new if
+		racecompl = chosenifarray[0].complications;		
 		
 		comptypearray = ['ab miracles*', 'ab magic*']; // Used for PPE check
 		comptypearray2 = ['ab psionics*']; // Used for psionics check
 		comptypearray3 = ['power armor jock*']; // Used for cyber check
 		comptypearray4 = ['juicer', 'crazy']; // Used for Bizarre Physiology
-		
-		for (const [key, value] of Object.entries(swraceall)) { //Loop through the race values. We want to know which races an Iconic Framework can't have.		
+		rppe = "Restricted Path PPE^";
+		risp = "Restricted Path ISP^";
+		rcyber = "Cyber Resistant^";
+		rnsb = "Non-Standard Build^";
+		rbp = "Bizarre Physiology^";
 			
-			complrace = value.hasOwnProperty('complications');
-
-			if (complrace && newedgarray) { //Complications exist on the character
-				for (const [k, v] of Object.entries(value.complications)) {
-					var ppe_check = v.includes("Restricted Path PPE^") // see if the race has the value
-					var isp_check = v.includes("Restricted Path ISP^") //see if the race has the value
-					var cyber_check = v.includes("Cyber Resistant^") //see if the race has the value
-					var nsb_check = v.includes("Non-Standard Build^") //see if the race has the value
-					var bp_check = v.includes("Bizarre Physiology^") //see if the race has the value	
-					if (ppe_check == true) {
-						var ppetest = lowedgarray.some(v => comptypearray.includes(v));		
-					}
-
-					if (ppe_check == true) {
-						var ppetest = lowedgarray.some(v => comptypearray.includes(v));		
-						// Check if the race can use this 
-					}	
-
-					if (isp_check == true) {
-						var isptest = lowedgarray.some(v => comptypearray2.includes(v));		
-					}											
-					
-					if (nsb_check == true) {
-						var nsbtest = lowedgarray.some(v => comptypearray3.includes(v));		
-					}						
-					
-					if (bp_check == true) {
-						var bptest = lowedgarray.some(v => comptypearray4.includes(v));		
-					}
-
-					if (newcyberarray) {
-					}
-
-					if (ppe_check==true || isp_check==true || nsb_check == true || bp_check == true || newcyberarray) {
-						// console.log(en1);
-						en1 = value.name.split('*')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
-						if (evalrace.includes(en1)) {
-							// console.log('in there dummy');
-						} else {
-							evalrace[i]=en1;
-							i = i+1;								
-						}
-					}	
-				}
+		if (traittype == 'icf') {
+			for (const [key, value] of Object.entries(swraceall)) { //Loop through the race values. We want to know which races an Iconic Framework can't have.		
 				
+				complrace = value.hasOwnProperty('complications');
+
+				if (complrace && newedgarray) { //Complications exist on the character
+					for (const [k, v] of Object.entries(value.complications)) {
+						var ppe_check = v.includes(rppe) // see if the race has the value
+						var isp_check = v.includes(risp) //see if the race has the value
+						var cyber_check = v.includes(rcyber) //see if the race has the value
+						var nsb_check = v.includes(rnsb) //see if the race has the value
+						var bp_check = v.includes(rbp) //see if the race has the value	
+						if (ppe_check == true) {
+							var ppetest = lowedgarray.some(v => comptypearray.includes(v));		
+						}
+
+						if (ppe_check == true) {
+							var ppetest = lowedgarray.some(v => comptypearray.includes(v));		
+							// Check if the race can use this 
+						}	
+
+						if (isp_check == true) {
+							var isptest = lowedgarray.some(v => comptypearray2.includes(v));		
+						}											
+						
+						if (nsb_check == true) {
+							var nsbtest = lowedgarray.some(v => comptypearray3.includes(v));		
+						}						
+						
+						if (bp_check == true) {
+							var bptest = lowedgarray.some(v => comptypearray4.includes(v));		
+						}
+
+						if (newcyberarray) {
+						}
+
+						if (ppe_check==true || isp_check==true || nsb_check == true || bp_check == true || newcyberarray) {
+							// console.log(en1);
+							en1 = value.name.split('*')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
+							if (evalrace.includes(en1)) {
+								// console.log('in there dummy');
+							} else {
+								evalrace[i]=en1;
+								i = i+1;								
+							}
+						}	
+					}
+					
+				}
 			}
-		}
-		
-		console.log ('PPE: '+ppe_check+" ISP: "+isp_check+" nsb_check: "+nsb_check+"bp check: "+bp_check);
-		console.log(evalrace);
-		dislist44 = Object.values(swrace).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
+		} else {		
+			if (racecompl) {
+				// Check to see if the Race includes things that the IF can't have //
+				
+				var ppe_check = racecompl.includes(rppe) // see if the race has the value
+				var isp_check = racecompl.includes(risp) //see if the race has the value
+				var cyber_check = racecompl.includes(rcyber) //see if the race has the value
+				var nsb_check = racecompl.includes(rnsb) //see if the race has the value
+				var bp_check = racecompl.includes(rbp) //see if the race has the value				
+	
+				// Check the Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
+				var i = 0;				
+				for (const [key, value] of Object.entries(fullsys)) { //Loop through the race values. We want to know which races an Iconic Framework can't have.			
+					if (value.edges) { //Complications exist on the character
+						for (const [k, v] of Object.entries(value.edges)) {
+							// console.log('Key: '+k);
+							// console.log('Vlaue:' +v.toLowerCase());
+							if (ppe_check == true) {
+								var ppetest = comptypearray.includes(v.toLowerCase());	
+								// Check if the race can use this 
+							}	
+
+							if (isp_check == true) {
+								var isptest = comptypearray2.includes(v.toLowerCase());		
+							}											
+							
+							if (nsb_check == true) {
+								var nsbtest = comptypearray3.includes(v.toLowerCase());		
+							}						
+							
+							if (bp_check == true) {
+								var bptest = comptypearray4.includes(v.toLowerCase());		
+							}
+
+							if (newcyberarray) {
+							}
+
+							if (ppe_check==true || isp_check==true || nsb_check == true || bp_check == true || newcyberarray) {
+								
+								// console.log (value.name);
+								// We need to determine if the IF has this edge
+								if (!evalrace.includes(value.name)) {
+									evalrace[i]=value.name;	
+									i=i+1;
+								}
+							}	
+						}
+						
+					}
+				}
+			}
+		}		
+
+		dislist44 = Object.values(listsys).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 				
 		
 		for (const [key, value] of Object.entries(dislist44)) {
@@ -173,15 +238,14 @@ export default Component.extend({
 			value['disabled'] = false //Set disabled for this element to false
 		}					
 		
-		for (const [k, v] of Object.entries(evalrace)) {
-
-			var dislist44 = Object.values(swrace).filter(slots => slots.class.toString().toLowerCase() == v); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.	
-			console.log (v);
-			console.log(dislist44);
-			for (const [k1, v1] of Object.entries(dislist44)) {
-				v1['disabled'] = true //Set disabled for this element to true							
+		if (evalrace) {
+			for (const [k, v] of Object.entries(evalrace)) {
+				var dislist44 = Object.values(listsys).filter(slots => slots.class.toString().toLowerCase() == v); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.	
+				for (const [k1, v1] of Object.entries(dislist44)) {
+					v1['disabled'] = true //Set disabled for this element to true							
+				}
 			}
-		}
+		}		
 	},		
   
 	actions: {
@@ -241,7 +305,7 @@ export default Component.extend({
 			
 			// Check race
 			var newtrait;
-			newtrait = this.checktrait(swraceall, swiconicfall, swrace, newval, 'iconicf');			
+			newtrait = this.checktrait(swraceall, swiconicfall, swrace, swiconicf, newval, 'icf');			
 			
 			// Change the Edges set by the iconicf.
 						
@@ -277,6 +341,8 @@ export default Component.extend({
 			cghind = this.get('char.custom.cghind'); // Hinderances on the Character. Is this needed????
 			
 			
+			//This can move to a reset function.
+			
 			if (val.class.toLowerCase() == 'none') {
 
 				// Need to reset the ICF dropdown if this is the case.
@@ -292,91 +358,8 @@ export default Component.extend({
 			
 			this.set('char.custom.charrace', val) //Set the Race to the chosen race				
 			
-			chosenifarray = swraceall.filter(slots => slots.name.toString().toLowerCase() == newval); // Convert the race list to an array and filter for any entries that match the new framework selected.
-			
-			newedgarray = chosenifarray[0].edges; // Select the edges for the new if
-			if (newedgarray) {
-				lowedgarray = newedgarray.map(newedgarray => newedgarray.toLowerCase());	
-			}
-				
-			newhindarray = chosenifarray[0].hinderances; // Select the hinderances for the new if
-			newcyberarray = chosenifarray[0].cybernetics; // Select the cybernetics for the new if
-			racecompl = chosenifarray[0].complications;
-			
-			
-			if (racecompl) {
-				// Check to see if the Race includes things that the IF can't have //
-				
-				var ppe_check = racecompl.includes("Restricted Path PPE^") // see if the race has the value
-				var isp_check = racecompl.includes("Restricted Path ISP^") //see if the race has the value
-				var cyber_check = racecompl.includes("Cyber Resistant^") //see if the race has the value
-				var nsb_check = racecompl.includes("Non-Standard Build^") //see if the race has the value
-				var bp_check = racecompl.includes("Bizarre Physiology^") //see if the race has the value				
-
-				comptypearray = ['ab miracles*', 'ab magic*']; // Used for PPE check
-				comptypearray2 = ['ab psionics*']; // Used for psionics check
-				comptypearray3 = ['power armor jock*']; // Used for cyber check
-				comptypearray4 = ['juicer', 'crazy']; // Used for Bizarre Physiology
-		
-				var evalrace=[], en1;
-				
-				// Check the Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
-				var i = 0;				
-				for (const [key, value] of Object.entries(swiconicfall)) { //Loop through the race values. We want to know which races an Iconic Framework can't have.			
-					if (value.edges) { //Complications exist on the character
-						for (const [k, v] of Object.entries(value.edges)) {
-							// console.log('Key: '+k);
-							// console.log('Vlaue:' +v.toLowerCase());
-							if (ppe_check == true) {
-								var ppetest = comptypearray.includes(v.toLowerCase());	
-								// Check if the race can use this 
-							}	
-
-							if (isp_check == true) {
-								var isptest = comptypearray2.includes(v.toLowerCase());		
-							}											
-							
-							if (nsb_check == true) {
-								var nsbtest = comptypearray3.includes(v.toLowerCase());		
-							}						
-							
-							if (bp_check == true) {
-								var bptest = comptypearray4.includes(v.toLowerCase());		
-							}
-
-							if (newcyberarray) {
-							}
-
-							if (ppe_check==true || isp_check==true || nsb_check == true || bp_check == true || newcyberarray) {
-								
-								// console.log (value.name);
-								// We need to determine if the IF has this edge
-								if (!evalrace.includes(value.name)) {
-									evalrace[i]=value.name;	
-									i=i+1;
-								}
-							}	
-						}
-						
-					}
-				}
-			}
-			 
-			dislist55 = Object.values(swiconicf).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
-			
-			for (const [key, value] of Object.entries(dislist55)) {
-				//console.log (value['name']+' disabled='+value['disabled']);
-				value['disabled'] = false //Set disabled for this element to false
-			}					
-			
-			if (evalrace) {
-				for (const [k, v] of Object.entries(evalrace)) {
-					var dislist55 = Object.values(swiconicf).filter(slots => slots.name.toString().toLowerCase().includes(v.toLowerCase())); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.	
-					for (const [k1, v1] of Object.entries(dislist55)) {
-						v1['disabled'] = true //Set disabled for this element to true							
-					}
-				}
-			}
+			// I/F Check 
+			newtrait = this.checktrait(swraceall, swiconicfall, swrace, swiconicf, newval, 'race');				
 						
 			//Modify the CGen counters
 			
