@@ -99,14 +99,6 @@ export default Component.extend({
 		// Check the Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
 		var i = 0, dislist44, evalrace=[], en1, complrace, newedgarray, newhindarray, newcyberarray, comptypearray=[], comptypearray2=[], comptypearray3=[], comptypearray4=[], lowedgarray, racecompl, fullsys, listsys, rppe, risp, rnsb, rcyber, rbp;
 		
-		// if (traittype == 'icf') {
-			// fullsys = swiconicfall;
-			// listsys = swiconicf;
-		// } else {
-			// fullsys = swraceall;
-			// listsys = swrace;
-		// }
-		
 		if (traittype == 'icf') {
 			fullsys = swraceall;
 			listsys = swrace;
@@ -241,17 +233,12 @@ export default Component.extend({
 				
 		
 		for (const [key, value] of Object.entries(dislist44)) {
-			//console.log (value['name']+' disabled='+value['disabled']);
 			value['disabled'] = false //Set disabled for this element to false
 		}					
 		
-		console.log (listsys);
 		if (evalrace) {
 			for (const [k, v] of Object.entries(evalrace)) {
-				console.log ('key: '+k+' val: '+v);
 				var dislist44 = Object.values(listsys).filter(slots => slots.class.toString().toLowerCase() == v.toLowerCase()); 					
-				
-				console.log (dislist44);
 				
 				// Convert the iconic framework list to an array and filter for any entries that match the new framework selected.	
 				for (const [k1, v1] of Object.entries(dislist44)) {
@@ -264,7 +251,6 @@ export default Component.extend({
 	actions: {
 		iconicfChanged(val) {
 			var charif, charcgp, chosenifarray, cgslots, newifpoints, newval, resetifpoints, newrating, cgedg, cghind, swiconicf, swiconicfall, dislist44, newedgarray, newhindarray, newcyberarray, racecompl, sysedg, syshind, swrace, swraceall, newtrait;
-
 
 			// Common things to do 
 			charif = this.get('char.custom.charicf'); //Get the value that was selected in the dropdown.
