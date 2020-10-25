@@ -186,7 +186,15 @@ export default Component.extend({
 				var bp_check = racecompl.includes(rbp) //see if the race has the value				
 	
 				// Check the Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
-				var i = 0;				
+				var i = 0;
+
+				if (traittype == 'icf') {
+					fullsys = swraceall;
+					listsys = swrace;
+				} else {
+					fullsys = swiconicfall;
+					listsys = swiconicf;					
+				}				
 				for (const [key, value] of Object.entries(fullsys)) { //Loop through the race values. We want to know which races an Iconic Framework can't have.			
 					if (value.edges) { //Complications exist on the character
 						for (const [k, v] of Object.entries(value.edges)) {
