@@ -365,7 +365,7 @@ export default Component.extend({
 			this.set('char.custom.charrace', val) //Set the Race to the chosen race				
 			
 			// I/F Check 
-			newtrait = this.checktrait(swraceall, swiconicfall, swrace, swiconicf, newval, 'race');				
+			newtrait = this.checktrait(swraceall, swiconicfall, swrace, swiconicf, chosenifarray, newval, 'race');		
 						
 			//Modify the CGen counters
 			
