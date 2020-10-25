@@ -279,7 +279,7 @@ export default Component.extend({
 				return;
 			}
 
-			chosenifarray = fullsys.filter(slots => slots.name.toString().toLowerCase() == newval); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
+			chosenifarray = swiconicfall.filter(slots => slots.name.toString().toLowerCase() == newval); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 			
 			newedgarray = chosenifarray[0].edges; // Select the edges for the new if
 			newhindarray = chosenifarray[0].hinderances; // Select the hinderances for the new if
@@ -339,13 +339,12 @@ export default Component.extend({
 			cgedg = this.get('char.custom.cgedges'); // Get the edges on the character now.
 
 			// Common things to do 
-			newval = val['name'].split('~')[0].toLowerCase().trim(); //Take whatever Race has been selected and chop every from ~ in the name, remove the trailing space.			
+			newval = val['name'].split('~')[0].toLowerCase().trim(); //Take whatever Race has been selected and chop every from ~ in the name, remove the trailing space.
 
 			swiconicf = this.get('char.custom.iconicf'); // Get the system iconic frameworks formatted for drop down. This is needed to send the updated races back to the page for selection.			
 			swrace = this.get('char.custom.cgrace'); // Get the system races. This is needed to send the updated races back to the page for selection.	
 			
-			cghind = this.get('char.custom.cghind'); // Hinderances on the Character. Is this needed????
-			
+			cghind = this.get('char.custom.cghind'); // Hinderances on the Character. Is this needed????			
 			
 			//This can move to a reset function.
 			
@@ -362,7 +361,14 @@ export default Component.extend({
 				return;
 			}
 			
-			this.set('char.custom.charrace', val) //Set the Race to the chosen race				
+			this.set('char.custom.charrace', val) //Set the Race to the chosen race	
+
+			chosenifarray = swraceall.filter(slots => slots.name.toString().toLowerCase() == newval); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
+			
+			newedgarray = chosenifarray[0].edges; // Select the edges for the new if
+			newhindarray = chosenifarray[0].hinderances; // Select the hinderances for the new if
+			newcyberarray = chosenifarray[0].cybernetics; // Select the cybernetics for the new if
+			racecompl = chosenifarray[0].complications;			
 			
 			// I/F Check 
 			newtrait = this.checktrait(swraceall, swiconicfall, swrace, swiconicf, chosenifarray, newval, 'race');		
