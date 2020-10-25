@@ -285,7 +285,20 @@ export default Component.extend({
 			newedgarray = chosenifarray[0].edges; // Select the edges for the new if
 			newhindarray = chosenifarray[0].hinderances; // Select the hinderances for the new if
 			newcyberarray = chosenifarray[0].cybernetics; // Select the cybernetics for the new if
-			racecompl = chosenifarray[0].complications;				
+			racecompl = chosenifarray[0].complications;	
+
+			// Check race
+			var newtrait;
+			newtrait = this.checktrait(swraceall, swiconicfall, swrace, swiconicf, chosenifarray, newval, 'icf');			
+			
+			// Change the Edges set by the iconicf.		
+			var newedg;		
+			newedg = this.changedges(sysedg, newedgarray, 'edge', 'icf');
+			
+			// Change the Hinderances set by the iconicf.
+			var newhind;	
+			// newhind = this.changehind(syshind, newhindarray, 'icf');
+			newhind = this.changedges(syshind, newhindarray, 'hind', 'icf');			
 					
 			//Modify the CGen counters
 			
@@ -310,18 +323,7 @@ export default Component.extend({
 				document.getElementById("inp-" + value['class']).value = newrating;  //Set the counters on the website.
 			}
 			
-			// Check race
-			var newtrait;
-			newtrait = this.checktrait(swraceall, swiconicfall, swrace, swiconicf, chosenifarray, newval, 'icf');			
-			
-			// Change the Edges set by the iconicf.		
-			var newedg;		
-			newedg = this.changedges(sysedg, newedgarray, 'edge', 'icf');
-			
-			// Change the Hinderances set by the iconicf.
-			var newhind;	
-			// newhind = this.changehind(syshind, newhindarray, 'icf');
-			newhind = this.changedges(syshind, newhindarray, 'hind', 'icf');
+
 
 		},
 		
@@ -344,7 +346,7 @@ export default Component.extend({
 			swiconicf = this.get('char.custom.iconicf'); // Get the system iconic frameworks formatted for drop down. This is needed to send the updated races back to the page for selection.			
 			swrace = this.get('char.custom.cgrace'); // Get the system races. This is needed to send the updated races back to the page for selection.	
 			
-			cghind = this.get('char.custom.cghind'); // Hinderances on the Character. Is this needed????			
+			cghind = this.get('char.custom.cghind'); // Hinderances on the Character. 		
 			
 			//This can move to a reset function.
 			
@@ -372,7 +374,16 @@ export default Component.extend({
 			
 			// I/F Check 
 			newtrait = this.checktrait(swraceall, swiconicfall, swrace, swiconicf, chosenifarray, newval, 'race');		
-						
+
+
+			// Change the Edges set by the race.
+			
+			var newedg;		
+			newedg = this.changedges(sysedg, newedgarray, 'edge', 'race');
+			
+			// Change the Hinderances set by the race.
+			var newhind;	
+			newhind = this.changedges(syshind, newhindarray, 'hind', 'race');						
 			//Modify the CGen counters
 			
 			charcgp = this.get('char.custom.inicgpoints');  // This is the array of all the if's and values
@@ -394,14 +405,7 @@ export default Component.extend({
 				document.getElementById("inp-" + value['class']).value = newrating;  //Set the counters on the website.
 			}
 
-			// Change the Edges set by the race.
 			
-			var newedg;		
-			newedg = this.changedges(sysedg, newedgarray, 'edge', 'race');
-			
-			// Change the Hinderances set by the race.
-			var newhind;	
-			newhind = this.changedges(syshind, newhindarray, 'hind', 'race');			
 		},		
 		
 		edgeChanged(val) {
