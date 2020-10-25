@@ -236,6 +236,7 @@ export default Component.extend({
 			value['disabled'] = false //Set disabled for this element to false
 		}					
 		
+		console.log (listsys);
 		if (evalrace) {
 			for (const [k, v] of Object.entries(evalrace)) {
 				console.log ('key: '+k+' val: '+v);
