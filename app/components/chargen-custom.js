@@ -97,7 +97,7 @@ export default Component.extend({
 	checktrait: function(swraceall, swiconicfall, swrace, swiconicf, newval, traittype) {
 		
 		// Check the Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
-		var i = 0, dislist44, evalrace=[], en1, complrace, newedgarray, newhindarray, newcyberarray, comptypearray=[], comptypearray2=[], comptypearray3=[], comptypearray4=[], chosenifarray, lowedgarray, racecompl, fullsys, listsys;
+		var i = 0, dislist44, evalrace=[], en1, complrace, newedgarray, newhindarray, newcyberarray, comptypearray=[], comptypearray2=[], comptypearray3=[], comptypearray4=[], chosenifarray, lowedgarray, racecompl, fullsys, listsys, rppe, risp, rnsb, rcyber, rbp;
 		
 		if (traittype == 'icf') {
 			fullsys = swiconicfall;
