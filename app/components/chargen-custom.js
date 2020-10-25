@@ -97,10 +97,9 @@ export default Component.extend({
 	checktrait: function(swraceall, swrace, newedgarray, traittype) {
 		
 		// Check the Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
-		var i = 0, dislist44, evalrace, en1;
+		var i = 0, dislist44, evalrace, en1, complrace;
 		
 		for (const [key, value] of Object.entries(swraceall)) { //Loop through the race values. We want to know which races an Iconic Framework can't have.		
-			// console.log (value);
 			
 			complrace = value.hasOwnProperty('complications');
 
