@@ -163,6 +163,7 @@ export default Component.extend({
 			}
 		}
 		
+		console.log ('PPE: '+ppe_check+" ISP: "+isp_check+" nsb_check: "+nsb_check+"bp check: "+bp_check);
 		console.log(evalrace);
 		dislist44 = Object.values(swrace).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 				
