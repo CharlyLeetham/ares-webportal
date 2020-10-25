@@ -94,7 +94,7 @@ export default Component.extend({
 	},
 
 
-	checktrait: function(swraceall, swiconicfall, swrace, traittype) {
+	checktrait: function(swraceall, swiconicfall, swrace, newval, traittype) {
 		
 		// Check the Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
 		var i = 0, dislist44, evalrace, en1, complrace, newcyberarray, comptypearray=[], comptypearray2=[], comptypearray3=[], comptypearray4=[], chosenifarray, newedgarray, lowedgarray;
@@ -240,7 +240,7 @@ export default Component.extend({
 			
 			// Check race
 			var newtrait;
-			newtrait = this.checktrait(swraceall, swiconicfall, swrace, 'iconicf');			
+			newtrait = this.checktrait(swraceall, swiconicfall, swrace, newval, 'iconicf');			
 			
 			// Change the Edges set by the iconicf.
 						
