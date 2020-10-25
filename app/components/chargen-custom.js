@@ -99,14 +99,6 @@ export default Component.extend({
 		// Check the Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
 		var i = 0, dislist44, evalrace=[], en1, complrace, newedgarray, newhindarray, newcyberarray, comptypearray=[], comptypearray2=[], comptypearray3=[], comptypearray4=[], lowedgarray, racecompl, fullsys, listsys, rppe, risp, rnsb, rcyber, rbp;
 		
-		if (traittype == 'icf') {
-			fullsys = swiconicfall;
-			listsys = swiconicf;
-		} else {
-			fullsys = swraceall;
-			listsys = swrace;
-		}
-		
 		newedgarray = chosenifarray[0].edges; // Select the edges for the new if
 		if (newedgarray) {
 			lowedgarray = newedgarray.map(newedgarray => newedgarray.toLowerCase());	
@@ -128,7 +120,7 @@ export default Component.extend({
 		if (traittype == 'icf') {
 			for (const [key, value] of Object.entries(swraceall)) { //Loop through the race values. We want to know which races an Iconic Framework can't have.		
 				
-				complrace = value.hasOwnProperty('complications');
+				complrace = value.hasOwnProperty('complications');			
 
 				if (complrace && newedgarray) { //Complications exist on the character
 					for (const [k, v] of Object.entries(value.complications)) {
@@ -187,14 +179,7 @@ export default Component.extend({
 	
 				// Check the Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
 				var i = 0;
-
-				if (traittype == 'icf') {
-					fullsys = swraceall;
-					listsys = swrace;
-				} else {
-					fullsys = swiconicfall;
-					listsys = swiconicf;					
-				}				
+				
 				for (const [key, value] of Object.entries(fullsys)) { //Loop through the race values. We want to know which races an Iconic Framework can't have.			
 					if (value.edges) { //Complications exist on the character
 						for (const [k, v] of Object.entries(value.edges)) {
@@ -236,6 +221,15 @@ export default Component.extend({
 			}
 		}		
 
+
+		if (traittype == 'icf') {
+			fullsys = swraceall;
+			listsys = swrace;
+		} else {
+			fullsys = swiconicfall;
+			listsys = swiconicf;					
+		}
+
 		dislist44 = Object.values(listsys).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 				
 		
@@ -244,14 +238,11 @@ export default Component.extend({
 			value['disabled'] = false //Set disabled for this element to false
 		}					
 		
-		console.log (listsys);
 		if (evalrace) {
 			for (const [k, v] of Object.entries(evalrace)) {
 				console.log ('key: '+k+' val: '+v);
 				var dislist44 = Object.values(listsys).filter(slots => slots.class.toString().toLowerCase() == v.toLowerCase()); 					
-				
-				console.log (dislist44);
-				
+
 				// Convert the iconic framework list to an array and filter for any entries that match the new framework selected.	
 				for (const [k1, v1] of Object.entries(dislist44)) {
 					v1['disabled'] = true //Set disabled for this element to true							
@@ -327,8 +318,7 @@ export default Component.extend({
 			var newtrait;
 			newtrait = this.checktrait(swraceall, swiconicfall, swrace, swiconicf, chosenifarray, newval, 'icf');			
 			
-			// Change the Edges set by the iconicf.
-						
+			// Change the Edges set by the iconicf.		
 			var newedg;		
 			newedg = this.changedges(sysedg, newedgarray, 'edge', 'icf');
 			
@@ -340,7 +330,7 @@ export default Component.extend({
 		},
 		
 		newRaceChanged(val) {
-			var charif, charcgp, charrace, cgslots, newifpoints, newval, resetifpoints, newrating, cgedg, cghind, swiconicf, swiconicfall, dislist, dislist1, en, i, cgtr1=[], cgtr2=[], chosenifarray, newedgarray, newhindarray, sysedg, syshind, swrace, sysrace, swraceall, complrace, newcomprace=[], newcyberarray, racecompl, newtrait;
+			var charif, charcgp, charrace, cgslots, newifpoints, newval, resetifpoints, newrating, cgedg, cghind, swiconicf, swiconicfall, dislist, chosenifarray, newedgarray, newhindarray, sysedg, syshind, swrace, swraceall, newcyberarray, racecompl, newtrait;
 
 			charrace = this.get('char.custom.charrace');  //Get the value that was selected in the dropdown.	
 			
