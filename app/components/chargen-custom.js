@@ -138,11 +138,11 @@ export default Component.extend({
 						var nsb_check = v.includes(rnsb) //see if the race has the value
 						var bp_check = v.includes(rbp) //see if the race has the value	
 						if (ppe_check == true) {
-							var ppetest = lowedgarray.some(v => comptypearray.includes(v));		
+							var ppetest = lowedgarray.some(v => comptypearray.includes(v));
 						}
 
 						if (ppe_check == true) {
-							var ppetest = lowedgarray.some(v => comptypearray.includes(v));		
+							var ppetest = lowedgarray.some(v => comptypearray.includes(v));
 							// Check if the race can use this 
 						}	
 
@@ -155,7 +155,7 @@ export default Component.extend({
 						}						
 						
 						if (bp_check == true) {
-							var bptest = lowedgarray.some(v => comptypearray4.includes(v));		
+							var bptest = lowedgarray.some(v => comptypearray4.includes(v));
 						}
 
 						if (newcyberarray) {
@@ -329,9 +329,6 @@ export default Component.extend({
 				}
 				document.getElementById("inp-" + value['class']).value = newrating;  //Set the counters on the website.
 			}
-			
-
-
 		},
 		
 		newRaceChanged(val) {
