@@ -288,7 +288,7 @@ export default Component.extend({
 			// If the None option is selected, reset the lists.
 			if (val.class.toLowerCase() == 'none') {
 				// Need to reset the ICF dropdown if this is the case.
-				self.fwreset(swrace);
+				this.fwreset(swrace);
 				return;
 			}			
 
@@ -363,7 +363,7 @@ export default Component.extend({
 			// If the None option is selected, reset the lists.
 			if (val.class.toLowerCase() == 'none') {
 				// Need to reset the ICF dropdown if this is the case.
-				self.fwreset(swiconicf);
+				this.fwreset(swiconicf);
 				return;
 			}	
 			
