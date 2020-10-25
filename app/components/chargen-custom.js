@@ -251,18 +251,13 @@ export default Component.extend({
 
 	fwreset: function(fwname, traittype) {
 		var dislist;
-		// Move this to a reset function
-		if (charif.class == 'none') {
-			dislist = Object.values(fwname).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
-					
-			
-			for (const [key, value] of Object.entries(dislist)) {
-				value['disabled'] = false //Set disabled for this element to false
-			}
-			return;
-		}
+		dislist = Object.values(fwname).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
+				
 		
-	
+		for (const [key, value] of Object.entries(dislist)) {
+			value['disabled'] = false //Set disabled for this element to false
+		}
+		return;
 	},
   
 	actions: {
