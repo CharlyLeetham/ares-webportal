@@ -263,7 +263,7 @@ export default Component.extend({
 		}
 		
 	
-	}
+	},
   
 	actions: {
 		iconicfChanged(val) {
