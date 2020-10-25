@@ -257,18 +257,6 @@ export default Component.extend({
 			charif = this.get('char.custom.charicf'); //Get the value that was selected in the dropdown.
 			this.set('char.custom.charicf', val) //Set the selected Iconic Framework on the site.
 			
-			if (charif.class == 'none') {
-				dislist44 = Object.values(swrace).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
-						
-				
-				for (const [key, value] of Object.entries(dislist44)) {
-					//console.log (value['name']+' disabled='+value['disabled']);
-					value['disabled'] = false //Set disabled for this element to false
-				}
-
-				return;
-			}
-			
 			swiconicfall = this.get('char.custom.sysiconicf');	// Get all the Iconic Frameworks.
 			swraceall = this.get('char.custom.swrifts_race'); // Get all the system races.			
 			sysedg = this.get('char.custom.sysedges'); // Get all the System Edges
@@ -279,6 +267,19 @@ export default Component.extend({
 			swiconicf = this.get('char.custom.iconicf'); // Get the iconic frameworks formatted for drop down. This is needed to send the updated races back to the page for selection.		
 			swrace = this.get('char.custom.cgrace'); // Get the system races formatted for drop down. This is needed to send the updated races back to the page for selection.		
 			cghind = this.get('char.custom.cghind'); // Hinderances on the Character. Is this needed???? 
+			
+			// Move this to a reset function
+			if (charif.class == 'none') {
+				dislist44 = Object.values(swrace).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
+						
+				
+				for (const [key, value] of Object.entries(dislist44)) {
+					//console.log (value['name']+' disabled='+value['disabled']);
+					value['disabled'] = false //Set disabled for this element to false
+				}
+
+				return;
+			}			
 					
 			//Modify the CGen counters
 			
