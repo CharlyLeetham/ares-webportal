@@ -97,7 +97,7 @@ export default Component.extend({
 	checktrait: function(swraceall, swiconicfall, swrace, newval, traittype) {
 		
 		// Check the Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
-		var i = 0, dislist44, evalrace, en1, complrace, newcyberarray, comptypearray=[], comptypearray2=[], comptypearray3=[], comptypearray4=[], chosenifarray, newedgarray, lowedgarray;
+		var i = 0, dislist44, evalrace, en1, complrace, newedgarray, newhindarray, newcyberarray, comptypearray=[], comptypearray2=[], comptypearray3=[], comptypearray4=[], chosenifarray, lowedgarray;
 		
 		chosenifarray = swiconicfall.filter(slots => slots.name.toString().toLowerCase() == newval); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 		
