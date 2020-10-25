@@ -94,10 +94,24 @@ export default Component.extend({
 	},
 
 
-	checktrait: function(swraceall, swrace, newedgarray, traittype) {
+	checktrait: function(swraceall, swiconfall, swrace, traittype) {
 		
 		// Check the Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
-		var i = 0, dislist44, evalrace, en1, complrace, newcyberarray;
+		var i = 0, dislist44, evalrace, en1, complrace, newcyberarray, comptypearray=[], comptypearray2=[], comptypearray3=[], comptypearray4=[], chosenifarray, newedgarray, lowedgarray;
+		
+		chosenifarray = swiconicfall.filter(slots => slots.name.toString().toLowerCase() == newval); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
+		
+		newedgarray = chosenifarray[0].edges; // Select the edges for the new if
+		if (newedgarray) {
+			lowedgarray = newedgarray.map(newedgarray => newedgarray.toLowerCase());	
+		}
+		newhindarray = chosenifarray[0].hinderances; // Select the hinderances for the new if
+		newcyberarray = chosenifarray[0].cybernetics; // Select the cybernetics for the new if		
+		
+		comptypearray = ['ab miracles*', 'ab magic*']; // Used for PPE check
+		comptypearray2 = ['ab psionics*']; // Used for psionics check
+		comptypearray3 = ['power armor jock*']; // Used for cyber check
+		comptypearray4 = ['juicer', 'crazy']; // Used for Bizarre Physiology
 		
 		for (const [key, value] of Object.entries(swraceall)) { //Loop through the race values. We want to know which races an Iconic Framework can't have.		
 			
@@ -200,22 +214,6 @@ export default Component.extend({
 			swiconicf = this.get('char.custom.iconicf'); // Get the iconic frameworks formatted for drop down. This is needed to send the updated races back to the page for selection.		
 			swrace = this.get('char.custom.cgrace'); // Get the system races formatted for drop down. This is needed to send the updated races back to the page for selection.		
 			cghind = this.get('char.custom.cghind'); // Hinderances on the Character. Is this needed???? 
-			
-			chosenifarray = swiconicfall.filter(slots => slots.name.toString().toLowerCase() == newval); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
-			
-			newedgarray = chosenifarray[0].edges; // Select the edges for the new if
-			if (newedgarray) {
-				lowedgarray = newedgarray.map(newedgarray => newedgarray.toLowerCase());	
-			}
-			newhindarray = chosenifarray[0].hinderances; // Select the hinderances for the new if
-			newcyberarray = chosenifarray[0].cybernetics; // Select the cybernetics for the new if
-			
-			comptypearray = ['ab miracles*', 'ab magic*']; // Used for PPE check
-			comptypearray2 = ['ab psionics*']; // Used for psionics check
-			comptypearray3 = ['power armor jock*']; // Used for cyber check
-			comptypearray4 = ['juicer', 'crazy']; // Used for Bizarre Physiology
-			
-			// Race check etc.
 					
 			//Modify the CGen counters
 			
@@ -240,12 +238,12 @@ export default Component.extend({
 				document.getElementById("inp-" + value['class']).value = newrating;  //Set the counters on the website.
 			}
 			
-			// Change the Edges set by the iconicf.
-			
+			// Check race
 			var newtrait;
-
-			newtrait = this.checktrait(swraceall, swrace, newedgarray, 'iconicf');			
+			newtrait = this.checktrait(swraceall, swiconicfall, swrace, 'iconicf');			
 			
+			// Change the Edges set by the iconicf.
+						
 			var newedg;		
 			newedg = this.changedges(sysedg, newedgarray, 'edge', 'icf');
 			
