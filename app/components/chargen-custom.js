@@ -94,10 +94,10 @@ export default Component.extend({
 	},
 
 
-	checktrait: function(swraceall, swiconicfall, swrace, swiconicf, newval, traittype) {
+	checktrait: function(swraceall, swiconicfall, swrace, swiconicf, chosenifarray, newval, traittype) {
 		
 		// Check the Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
-		var i = 0, dislist44, evalrace=[], en1, complrace, newedgarray, newhindarray, newcyberarray, comptypearray=[], comptypearray2=[], comptypearray3=[], comptypearray4=[], chosenifarray, lowedgarray, racecompl, fullsys, listsys, rppe, risp, rnsb, rcyber, rbp;
+		var i = 0, dislist44, evalrace=[], en1, complrace, newedgarray, newhindarray, newcyberarray, comptypearray=[], comptypearray2=[], comptypearray3=[], comptypearray4=[], lowedgarray, racecompl, fullsys, listsys, rppe, risp, rnsb, rcyber, rbp;
 		
 		if (traittype == 'icf') {
 			fullsys = swiconicfall;
@@ -106,8 +106,6 @@ export default Component.extend({
 			fullsys = swraceall;
 			listsys = swrace;
 		}
-		
-		chosenifarray = fullsys.filter(slots => slots.name.toString().toLowerCase() == newval); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 		
 		newedgarray = chosenifarray[0].edges; // Select the edges for the new if
 		if (newedgarray) {
@@ -250,7 +248,7 @@ export default Component.extend({
   
 	actions: {
 		iconicfChanged(val) {
-			var charif, charcgp, cgslots, newifpoints, newval, resetifpoints, newrating, cgedg, cghind, swiconicf, swiconicfall, dislist44, dislist1, en, i, cgtr1=[], cgtr2=[], chosenifarray, newedgarray, newhindarray, sysedg, syshind, swrace, sysrace, swraceall, complrace, newcomprace=[], newcyberarray, lowedgarray, comptypearray=[], comptypearray2=[], comptypearray3=[], comptypearray4=[], newcif=[], newtrait;
+			var charif, charcgp, chosenif, cgslots, newifpoints, newval, resetifpoints, newrating, cgedg, cghind, swiconicf, swiconicfall, dislist44, newedgarray, newhindarray, sysedg, syshind, swrace, swraceall, newtrait;
 
 
 			// Common things to do 
@@ -279,7 +277,14 @@ export default Component.extend({
 				}
 
 				return;
-			}			
+			}
+
+			chosenifarray = fullsys.filter(slots => slots.name.toString().toLowerCase() == newval); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
+			
+			newedgarray = chosenifarray[0].edges; // Select the edges for the new if
+			newhindarray = chosenifarray[0].hinderances; // Select the hinderances for the new if
+			newcyberarray = chosenifarray[0].cybernetics; // Select the cybernetics for the new if
+			racecompl = chosenifarray[0].complications;				
 					
 			//Modify the CGen counters
 			
@@ -306,7 +311,7 @@ export default Component.extend({
 			
 			// Check race
 			var newtrait;
-			newtrait = this.checktrait(swraceall, swiconicfall, swrace, swiconicf, newval, 'icf');			
+			newtrait = this.checktrait(swraceall, swiconicfall, swrace, swiconicf, chosenifarray, newval, 'icf');			
 			
 			// Change the Edges set by the iconicf.
 						
