@@ -239,7 +239,11 @@ export default Component.extend({
 		if (evalrace) {
 			for (const [k, v] of Object.entries(evalrace)) {
 				console.log ('key: '+k+' val: '+v);
-				var dislist44 = Object.values(listsys).filter(slots => slots.class.toString().toLowerCase() == v); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.	
+				var dislist44 = Object.values(listsys).filter(slots => slots.class.toString().toLowerCase() == v); 
+				
+				console.log (dislist44);
+				
+				// Convert the iconic framework list to an array and filter for any entries that match the new framework selected.	
 				for (const [k1, v1] of Object.entries(dislist44)) {
 					v1['disabled'] = true //Set disabled for this element to true							
 				}
