@@ -245,8 +245,25 @@ export default Component.extend({
 					v1['disabled'] = true //Set disabled for this element to true							
 				}
 			}
-		}		
-	},		
+		}
+		return;
+	},
+
+	fwreset: function(fwname, traittype) {
+		var dislist;
+		// Move this to a reset function
+		if (charif.class == 'none') {
+			dislist = Object.values(fwname).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
+					
+			
+			for (const [key, value] of Object.entries(dislist)) {
+				value['disabled'] = false //Set disabled for this element to false
+			}
+			return;
+		}
+		
+	
+	}
   
 	actions: {
 		iconicfChanged(val) {
@@ -266,19 +283,14 @@ export default Component.extend({
 			swiconicf = this.get('char.custom.iconicf'); // Get the iconic frameworks formatted for drop down. This is needed to send the updated races back to the page for selection.		
 			swrace = this.get('char.custom.cgrace'); // Get the system races formatted for drop down. This is needed to send the updated races back to the page for selection.		
 			cghind = this.get('char.custom.cghind'); // Hinderances on the Character. Is this needed???? 
-			
-			// Move this to a reset function
-			if (charif.class == 'none') {
-				dislist44 = Object.values(swrace).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
-						
-				
-				for (const [key, value] of Object.entries(dislist44)) {
-					//console.log (value['name']+' disabled='+value['disabled']);
-					value['disabled'] = false //Set disabled for this element to false
-				}
 
+
+			// If the None option is selected, reset the lists.
+			if (val.class.toLowerCase() == 'none') {
+				// Need to reset the ICF dropdown if this is the case.
+				self.fwreset(swrace);
 				return;
-			}
+			}			
 
 			chosenifarray = swiconicfall.filter(slots => slots.name.toString().toLowerCase() == newval); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 			
@@ -348,20 +360,12 @@ export default Component.extend({
 			
 			cghind = this.get('char.custom.cghind'); // Hinderances on the Character. 		
 			
-			//This can move to a reset function.
-			
+			// If the None option is selected, reset the lists.
 			if (val.class.toLowerCase() == 'none') {
-
 				// Need to reset the ICF dropdown if this is the case.
-				//Change all items in the sysedg dropdown to enabled. 	
-				dislist = Object.values(swiconicf).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
-				
-				for (const [key, value] of Object.entries(dislist)) {
-					//console.log (value['name']+' disabled='+value['disabled']);
-					value['disabled'] = false //Set disabled for this element to false
-				}	
+				self.fwreset(swiconicf);
 				return;
-			}
+			}	
 			
 			this.set('char.custom.charrace', val) //Set the Race to the chosen race	
 
