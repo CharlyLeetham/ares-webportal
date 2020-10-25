@@ -102,7 +102,7 @@ export default Component.extend({
 		if (traittype == 'icf') {
 			fullsys = swiconicfall;
 			listsys = swiconicf;
-		else {
+		} else {
 			fullsys = swraceall;
 			listsys = swrace;
 		}
