@@ -217,7 +217,7 @@ export default Component.extend({
 								// console.log (value.name);
 								// We need to determine if the IF has this edge
 								if (!evalrace.includes(value.name)) {
-									evalrace[i]=value.name.downcase;	
+									evalrace[i]=value.name;	
 									i=i+1;
 								}
 							}	
