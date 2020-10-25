@@ -240,7 +240,11 @@ export default Component.extend({
 		if (evalrace) {
 			for (const [k, v] of Object.entries(evalrace)) {
 				console.log ('key: '+k+' val: '+v);
-				var dislist44 = Object.values(listsys).filter(slots => slots.class.toString().toLowerCase() == v); 
+				if (traittype == 'icf') {
+					var dislist44 = Object.values(swrace).filter(slots => slots.class.toString().toLowerCase() == v); 
+				} else {
+					var dislist44 = Object.values(swiconicf).filter(slots => slots.class.toString().toLowerCase() == v); 					
+				}
 				
 				console.log (dislist44);
 				
