@@ -238,6 +238,7 @@ export default Component.extend({
 		
 		if (evalrace) {
 			for (const [k, v] of Object.entries(evalrace)) {
+				console.log ('key: '+k+' val: '+v);
 				var dislist44 = Object.values(listsys).filter(slots => slots.class.toString().toLowerCase() == v); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.	
 				for (const [k1, v1] of Object.entries(dislist44)) {
 					v1['disabled'] = true //Set disabled for this element to true							
@@ -326,7 +327,7 @@ export default Component.extend({
 		},
 		
 		newRaceChanged(val) {
-			var charif, charcgp, charrace, cgslots, newifpoints, newval, resetifpoints, newrating, cgedg, cghind, swiconicf, swiconicfall, dislist, dislist1, en, i, cgtr1=[], cgtr2=[], chosenifarray, newedgarray, newhindarray, sysedg, syshind, swrace, sysrace, swraceall, complrace, newcomprace=[], newcyberarray, lowedgarray, comptypearray=[], comptypearray2=[], comptypearray3=[], comptypearray4=[], newcif=[], racecompl, newtrait;
+			var charif, charcgp, charrace, cgslots, newifpoints, newval, resetifpoints, newrating, cgedg, cghind, swiconicf, swiconicfall, dislist, dislist1, en, i, cgtr1=[], cgtr2=[], chosenifarray, newedgarray, newhindarray, sysedg, syshind, swrace, sysrace, swraceall, complrace, newcomprace=[], newcyberarray, racecompl, newtrait;
 
 			charrace = this.get('char.custom.charrace');  //Get the value that was selected in the dropdown.	
 			
