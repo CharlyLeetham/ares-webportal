@@ -53,7 +53,7 @@ export default Component.extend({
 		}
 		
 		if ( traittype=="edge" ) {
-			exedg = this.get(char.custom.cgedges);
+			exedg = this.get('char.custom.cgedges');
 			console.log (exedg);
 		}
 		
