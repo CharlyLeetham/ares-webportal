@@ -387,18 +387,15 @@ export default Component.extend({
 			newhind = this.changedges(syshind, newhindarray, 'hind', 'icf');			
 					
 			//Modify the CGen counters
-			
 			charcgp = this.get('char.custom.inicgpoints');  // This is the array of all the if's and values
 			cgslots = this.get('char.custom.cgslots');  // This is the cgslots at init and their values.
 			
 			newifpoints = Object.values(charcgp).filter(slots => slots.ifname.toString() == newval); // Convert charcgp to an array and filter for any entries that match the new framework selected.
-			 			// console.log ('here4');
 			for (const [key, value] of Object.entries(cgslots)) { //Loop through the init values. This is our yardstick.
 				resetifpoints = newifpoints.filter(slots => slots.name.toString() == value['class']);  // Test to see if the slot is modified by the Iconic Framework. 
 				
-							// console.log ('here5');
 				if (Object.keys(resetifpoints).length === 0) { // If it isn't, do this.
-					//console.log ('newrating='+value['rating']);
+				
 					newrating = value['rating'];  // Set the value we're going to send back to the web. This is going to equal CGINIT.
 				} else {
 					for (const [key1, value1] of Object.entries(resetifpoints)) {
