@@ -44,7 +44,7 @@ export default Component.extend({
   },
  
 	changedges: function(sysedg, newedgarray, traittype, fw) {
-		var cgtr1=[], i, en, specchar, dislist, exedg;
+		var cgtr1=[], i, en, specchar, dislist, exedg, traitclass;
 
 		if (traittype=='edge') {
 			exedg = this.get('char.custom.cgedges');
@@ -92,6 +92,9 @@ export default Component.extend({
 		// Clear the edges list for the framework
 
 		//If there are new edges or hinderances, go through and set these to disabled in the edge drop down.
+		
+		var dislist55;
+		
 		if (newedgarray) {
 
 			for (const [key, value1] of Object.entries(newedgarray)) {
@@ -107,7 +110,7 @@ export default Component.extend({
 					cgtr1[i]['rating'] = value['desc'];
 					i=i+1
 				}
-			}	
+			}
 		}
 		
 		if (traittype == 'edge') {
