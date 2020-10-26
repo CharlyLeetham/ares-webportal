@@ -56,7 +56,7 @@ export default Component.extend({
 		}
 
 		i = 0;		
-		if ( traittype=="edge" ) {
+		if ( traittype=="edge" && fw=='icf' ) {
 			for (const[ed, desc] of Object.entries(exedg)) {
 					console.log (desc['class']);
 					if (desc['class'].includes('^')) {
@@ -66,7 +66,7 @@ export default Component.extend({
 						i=i+1;
 					}
 			}
-		} else {
+		} elseif ( traittype=='edge' && fw=='race') {
 			for (const[ed, desc] of Object.entries(exedg)) {
 					console.log (desc['class']);
 					if (desc['class'].includes('*')) {
