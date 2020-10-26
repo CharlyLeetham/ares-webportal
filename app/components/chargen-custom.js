@@ -281,10 +281,16 @@ export default Component.extend({
 		var dislist;
 		dislist = Object.values(fwname).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 				
-		
 		for (const [key, value] of Object.entries(dislist)) {
 			value['disabled'] = false //Set disabled for this element to false
 		}
+		
+		if (traittype=='edge') {
+			this.set('char.custom.cgedges', '');
+		} else {
+			this.get('char.custom.cghind', '');		
+		}
+		
 		return;
 	},
   
