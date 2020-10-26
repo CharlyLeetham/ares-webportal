@@ -287,12 +287,6 @@ export default Component.extend({
 		exedg = this.get('char.custom.cgedges');
 		exhind = this.get('char.custom.cghind');		
 
-		if (fw == 'icf') {
-			specchar = '*';
-		} else {
-			specchar ='^';
-		}
-
 		i = 0;		
 		if ( fw=='icf' ) {
 			for (const[ed, desc] of Object.entries(exedg)) {
