@@ -44,7 +44,7 @@ export default Component.extend({
   },
  
 	changedges: function(sysedg, newedgarray, traittype, fw) {
-		var cgtr1=[], i, en, specchar, dislist, exedg, exhind;
+		var cgtr1=[], cgtr2=[], i, en, specchar, dislist, exedg, exhind;
 
 		exedg = this.get('char.custom.cgedges');		
 		exhind = this.get('char.custom.cghind');		
@@ -61,9 +61,9 @@ export default Component.extend({
 					// console.log (desc['class']);
 					if (desc['class'].includes('*')) {
 						console.log (desc);
-						cgtr1[i]['class']=desc['class'];
-						cgtr1[i]['name']=desc['name'];
-						cgtr1[i]['rating']=desc['rating'];
+						cgtr2[i]['class']=desc['class'];
+						cgtr2[i]['name']=desc['name'];
+						cgtr2[i]['rating']=desc['rating'];
 						i=i+1;
 					}
 			}
