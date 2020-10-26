@@ -44,7 +44,7 @@ export default Component.extend({
   },
  
 	changedges: function(sysedg, newedgarray, traittype, fw) {
-		var cgtr1=[], i, en, specchar, dislist;
+		var cgtr1=[], i, en, specchar, dislist, exedg;
 		
 		console.log(traittype);
 		
@@ -52,6 +52,11 @@ export default Component.extend({
 			specchar = '*';
 		} else {
 			specchar ='^';
+		}
+		
+		if ( traittype=="edges" ) {
+			exedg = this.get(char.custom.cgedges);
+			console.log (exedg);
 		}
 		
 		//Change all items in the sysedg dropdown to enabled. 	
@@ -64,11 +69,11 @@ export default Component.extend({
 
 		// Clear the edges list for the framework
 
-		//If there are new edges, go through and set these to disabled in the edge drop down.
+		//If there are new edges or hinderances, go through and set these to disabled in the edge drop down.
 		if (newedgarray) {
 			i = 0;
 			for (const [key, value1] of Object.entries(newedgarray)) {
-				en = value1.split(specchar)[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
+				en = value1.split(specchar)[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's
 				dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 
 				for (const [key, value] of Object.entries(dislist)) {
