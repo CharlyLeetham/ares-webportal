@@ -61,24 +61,23 @@ export default Component.extend({
 		i = 0;		
 		if ( fw=='icf' ) {
 			for (const[ed, desc] of Object.entries(exedg)) {
-					if (desc['class'].includes('^')) {
-						console.log (desc);
-						cgtr1[i] = [];
-						cgtr1[i]['class']=desc['class'];
-						cgtr1[i]['name']=desc['name'];
-						cgtr1[i]['rating']=desc['rating'];
-						i=i+1;
-					}
+				if (desc['class'].includes('^')) {
+					cgtr1[i] = [];
+					cgtr1[i]['class']=desc['class'];
+					cgtr1[i]['name']=desc['name'];
+					cgtr1[i]['rating']=desc['rating'];
+					i=i+1;
+				}
 			}
 		} else if ( fw=='race') {
 			for (const[ed, desc] of Object.entries(exedg)) {
-					if (desc['class'].includes('*')) {
-						cgtr1[i]=[];
-						cgtr1[i]['class']=desc['class'];
-						cgtr1[i]['name']=desc['name'];
-						cgtr1[i]['rating']=desc['rating'];
-						i=i+1;
-					}
+				if (desc['class'].includes('*')) {
+					cgtr1[i]=[];
+					cgtr1[i]['class']=desc['class'];
+					cgtr1[i]['name']=desc['name'];
+					cgtr1[i]['rating']=desc['rating'];
+					i=i+1;
+				}
 			}
 		}		
 				
@@ -278,18 +277,70 @@ export default Component.extend({
 	},
 
 	fwreset: function(fwname, traittype) {
-		var dislist;
+		var dislist, exedg, exhind, i, cgtr1=[], cgtr2=[];
 		dislist = Object.values(fwname).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 				
 		for (const [key, value] of Object.entries(dislist)) {
 			value['disabled'] = false //Set disabled for this element to false
 		}
 		
-		if (traittype=='edge') {
-			this.set('char.custom.cgedges', '');
+		exedg = this.get('char.custom.cgedges');
+		exhind = this.get('char.custom.cghind');		
+
+		if (fw == 'icf') {
+			specchar = '*';
 		} else {
-			this.get('char.custom.cghind', '');		
+			specchar ='^';
 		}
+
+		i = 0;		
+		if ( fw=='icf' ) {
+			for (const[ed, desc] of Object.entries(exedg)) {
+					if (desc['class'].includes('^')) {
+						cgtr1[i] = [];
+						cgtr1[i]['class']=desc['class'];
+						cgtr1[i]['name']=desc['name'];
+						cgtr1[i]['rating']=desc['rating'];
+						i=i+1;
+					}
+			}
+		} else if ( fw=='race') {
+			for (const[ed, desc] of Object.entries(exedg)) {
+					if (desc['class'].includes('*')) {
+						cgtr1[i]=[];
+						cgtr1[i]['class']=desc['class'];
+						cgtr1[i]['name']=desc['name'];
+						cgtr1[i]['rating']=desc['rating'];
+						i=i+1;
+					}
+			}
+		}
+		
+		i = 0;		
+		if ( fw=='icf' ) {
+			for (const[ed, desc] of Object.entries(exhind)) {
+				if (desc['class'].includes('^')) {
+					cgtr2[i] = [];
+					cgtr2[i]['class']=desc['class'];
+					cgtr2[i]['name']=desc['name'];
+					cgtr2[i]['rating']=desc['rating'];
+					i=i+1;
+				}
+			}
+		} else if ( fw=='race') {
+			for (const[ed, desc] of Object.entries(exhind)) {
+				if (desc['class'].includes('*')) {
+					cgtr2[i]=[];
+					cgtr2[i]['class']=desc['class'];
+					cgtr2[i]['name']=desc['name'];
+					cgtr2[i]['rating']=desc['rating'];
+					i=i+1;
+				}
+			}
+		}		
+		
+		this.set('char.custom.cgedges', cgtr1); //Send the new array back to the page for nice display. 		
+		this.set('char.custom.cghind', cgtr2); //Send the new array back to the page for nice display.
 		
 		return;
 	},
@@ -317,7 +368,7 @@ export default Component.extend({
 			// If the None option is selected, reset the lists.
 			if (val.class.toLowerCase() == 'none') {
 				// Need to reset the ICF dropdown if this is the case.
-				this.fwreset(swrace);
+				this.fwreset(swrace, 'icf');
 				return;
 			}			
 
@@ -389,7 +440,7 @@ export default Component.extend({
 			// If the None option is selected, reset the lists.
 			if (val.class.toLowerCase() == 'none') {
 				// Need to reset the ICF dropdown if this is the case.
-				this.fwreset(swiconicf);
+				this.fwreset(swiconicf, 'race');
 				return;
 			}	
 			
