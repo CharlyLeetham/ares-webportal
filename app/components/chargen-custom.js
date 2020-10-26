@@ -57,7 +57,7 @@ export default Component.extend({
 			for (const[ed, desc] of Object.entries(exedg)) {
 					console.log (desc['class']);
 					if (desc['class'].includes('*')) {
-						console.log (desc['class'].+" is a framework edge");
+						console.log (desc['class']+" is a framework edge");
 					}
 			}
 		}		
