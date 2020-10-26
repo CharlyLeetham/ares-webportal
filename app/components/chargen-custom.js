@@ -44,7 +44,7 @@ export default Component.extend({
   },
  
 	changedges: function(sysedg, newedgarray, traittype, fw) {
-		var cgtr1=[], i, en, specchar, dislist, exedg;
+		var cgtr1=[], i, en, specchar, dislist, exedg, exhind;
 
 		exedg = this.get('char.custom.cgedges');		
 		exhind = this.get('char.custom.cghind');		
