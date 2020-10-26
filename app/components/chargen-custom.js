@@ -70,10 +70,10 @@ export default Component.extend({
 			for (const[ed, desc] of Object.entries(exedg)) {
 					console.log (desc['class']);
 					if (desc['class'].includes('*')) {
-						cgtr1[i]['class']=desc['class'];
-						cgtr1[i]['name']=desc['name'];
-						cgtr1[i]['rating']=desc['rating'];
-						i=i+1;
+						// cgtr1[i]['class']=desc['class'];
+						// cgtr1[i]['name']=desc['name'];
+						// cgtr1[i]['rating']=desc['rating'];
+						// i=i+1;
 					}
 			}
 		}		
