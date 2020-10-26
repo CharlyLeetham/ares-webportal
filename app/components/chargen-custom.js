@@ -54,8 +54,11 @@ export default Component.extend({
 		
 		if ( traittype=="edge" ) {
 			exedg = this.get('char.custom.cgedges');
-			console.log (exedg);
-		}
+			for (const[ed, desc]) {
+				console.log ('Ed: '+ed+' Desc: '+desc);
+			}
+		}		
+		
 		
 		//Change all items in the sysedg dropdown to enabled. 	
 		dislist = Object.values(sysedg).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
