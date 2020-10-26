@@ -62,7 +62,7 @@ export default Component.extend({
 					if (desc['class'].includes('*')) {
 						console.log (desc);
 						var newdesc = desc['class'];
-						cgtr2[i]['class']=newdesc;
+						cgtr2[i]['classic']=newdesc;
 						cgtr2[i]['name']=desc['name'];
 						cgtr2[i]['rating']=desc['rating'];
 						i=i+1;
