@@ -55,7 +55,9 @@ export default Component.extend({
 		if ( traittype=="edge" ) {
 			exedg = this.get('char.custom.cgedges');
 			for (const[ed, desc] of Object.entries(exedg)) {
-				console.log ('Ed: '+ed+' Desc: '+desc);
+				for (const[k1, v1] of Object.entries(desc)) {
+					console.log ('Ed: '+k1+' Desc: '+v1);
+				}
 			}
 		}		
 		
