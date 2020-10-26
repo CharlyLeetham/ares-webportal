@@ -66,7 +66,7 @@ export default Component.extend({
 						i=i+1;
 					}
 			}
-		} elseif ( traittype=='edge' && fw=='race') {
+		} else if ( traittype=='edge' && fw=='race') {
 			for (const[ed, desc] of Object.entries(exedg)) {
 					console.log (desc['class']);
 					if (desc['class'].includes('*')) {
