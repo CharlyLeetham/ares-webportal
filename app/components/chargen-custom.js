@@ -46,15 +46,13 @@ export default Component.extend({
 	changedges: function(sysedg, newedgarray, traittype, fw) {
 		var cgtr1=[], i, en, specchar, dislist, exedg;
 		
-		console.log(traittype);
-		
 		if (fw == 'icf') {
 			specchar = '*';
 		} else {
 			specchar ='^';
 		}
 		
-		if ( traittype=="edges" ) {
+		if ( traittype=="edge" ) {
 			exedg = this.get(char.custom.cgedges);
 			console.log (exedg);
 		}
