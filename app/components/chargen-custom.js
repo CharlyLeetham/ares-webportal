@@ -55,12 +55,10 @@ export default Component.extend({
 		if ( traittype=="edge" ) {
 			exedg = this.get('char.custom.cgedges');
 			for (const[ed, desc] of Object.entries(exedg)) {
-				for (const[k1, v1] of Object.entries(desc)) {
 					console.log (desc['class']);
-					// if (k1['class'].includes('*')) {
-						// console.log ('Ed: '+k1+' Desc: '+v1);
-					// }
-				}
+					if (desc['class'].includes('*')) {
+						console.log (desc['class'].+" is a framework edge");
+					}
 			}
 		}		
 		
