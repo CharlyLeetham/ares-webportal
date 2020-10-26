@@ -45,19 +45,35 @@ export default Component.extend({
  
 	changedges: function(sysedg, newedgarray, traittype, fw) {
 		var cgtr1=[], i, en, specchar, dislist, exedg;
-		
+
+		exedg = this.get('char.custom.cgedges');		
+		exhind = this.get('char.custom.cghind');		
+
 		if (fw == 'icf') {
 			specchar = '*';
 		} else {
 			specchar ='^';
 		}
-		
+
+		i = 0;		
 		if ( traittype=="edge" ) {
-			exedg = this.get('char.custom.cgedges');
+			for (const[ed, desc] of Object.entries(exedg)) {
+					console.log (desc['class']);
+					if (desc['class'].includes('^')) {
+						cgtr1[i]['class']=desc['class'];
+						cgtr1[i]['name']=desc['name'];
+						cgtr1[i]['rating']=desc['rating'];
+						i=i+1;
+					}
+			}
+		} else {
 			for (const[ed, desc] of Object.entries(exedg)) {
 					console.log (desc['class']);
 					if (desc['class'].includes('*')) {
-						console.log (desc['class']+" is a framework edge");
+						cgtr1[i]['class']=desc['class'];
+						cgtr1[i]['name']=desc['name'];
+						cgtr1[i]['rating']=desc['rating'];
+						i=i+1;
 					}
 			}
 		}		
@@ -75,7 +91,7 @@ export default Component.extend({
 
 		//If there are new edges or hinderances, go through and set these to disabled in the edge drop down.
 		if (newedgarray) {
-			i = 0;
+
 			for (const [key, value1] of Object.entries(newedgarray)) {
 				en = value1.split(specchar)[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's
 				dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
