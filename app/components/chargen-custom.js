@@ -44,10 +44,13 @@ export default Component.extend({
   },
  
 	changedges: function(sysedg, newedgarray, traittype, fw) {
-		var cgtr1=[], i, en, specchar, dislist, exedg, exhind;
+		var cgtr1=[], i, en, specchar, dislist, exedg;
 
-		exedg = this.get('char.custom.cgedges');		
-		exhind = this.get('char.custom.cghind');		
+		if (traittype=='edge') {
+			exedg = this.get('char.custom.cgedges');
+		} else {
+			exedg = this.get('char.custom.cghind');		
+		}
 
 		if (fw == 'icf') {
 			specchar = '*';
@@ -56,9 +59,8 @@ export default Component.extend({
 		}
 
 		i = 0;		
-		if ( traittype=="edge" && fw=='icf' ) {
+		if ( fw=='icf' ) {
 			for (const[ed, desc] of Object.entries(exedg)) {
-					// console.log (desc['class']);
 					if (desc['class'].includes('^')) {
 						console.log (desc);
 						cgtr1[i] = [];
@@ -68,9 +70,8 @@ export default Component.extend({
 						i=i+1;
 					}
 			}
-		} else if ( traittype=='edge' && fw=='race') {
+		} else if ( fw=='race') {
 			for (const[ed, desc] of Object.entries(exedg)) {
-					
 					if (desc['class'].includes('*')) {
 						cgtr1[i]=[];
 						cgtr1[i]['class']=desc['class'];
@@ -80,9 +81,7 @@ export default Component.extend({
 					}
 			}
 		}		
-		
-		console.log(cgtr1);
-		
+				
 		//Change all items in the sysedg dropdown to enabled. 	
 		dislist = Object.values(sysedg).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 
