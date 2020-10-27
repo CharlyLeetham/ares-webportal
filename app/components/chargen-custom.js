@@ -113,6 +113,15 @@ export default Component.extend({
 			}
 		}
 		
+		// Check for duplicate edges - if so, put the appropriate marks and remove dupes.
+		
+		var a = 0;
+		var b = 0;
+		
+		for const[k1, v1] of Object.entries(cgtr1)) {
+			console.log(v1);
+		}
+		
 		if (traittype == 'edge') {
 			this.set('char.custom.sysedges', sysedg); //Send the new dropdown back to the page. 
 			this.set('char.custom.cgedges', cgtr1); //Send the new array back to the page for nice display. 	
