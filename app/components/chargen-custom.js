@@ -128,9 +128,9 @@ export default Component.extend({
 					}
 				} else {
 					cgtr3[i]=[]
-					cgtr3[i]['class'] = value1;
-					cgtr3[i]['name'] = en;
-					cgtr3[i]['rating'] = value['desc'];
+					cgtr3[i]['class'] = v2['class'];
+					cgtr3[i]['name'] = v2['name'];
+					cgtr3[i]['rating'] = v2['desc'];
 					i=i+1
 				}
 			}
