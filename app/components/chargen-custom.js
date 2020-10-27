@@ -115,20 +115,28 @@ export default Component.extend({
 		
 		// Check for duplicate edges - if so, put the appropriate marks and remove dupes.
 		
-		var a = 0;
-		var b = 0;
+		i=0;
 		var ed1;
+		var cgtr3=[];
 		
 		for (const[k1, v1] of Object.entries(cgtr1)) {
 			ed1 = v1['name'];
 			for (const[k2, v2] of Object.entries(cgtr1)) {
 				if (ed1 == v2['name']) {
 					if (v1['class'].includes('*') == v2['class'].includes('^')) {
-						console.log (ed1);
+						// console.log (ed1);
 					}
+				} else {
+					cgtr3[i]=[]
+					cgtr3[i]['class'] = value1;
+					cgtr3[i]['name'] = en;
+					cgtr3[i]['rating'] = value['desc'];
+					i=i+1
 				}
 			}
 		}
+		
+		console.log(cgtr3);
 		
 		if (traittype == 'edge') {
 			this.set('char.custom.sysedges', sysedg); //Send the new dropdown back to the page. 
