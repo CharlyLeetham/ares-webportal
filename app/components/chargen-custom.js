@@ -118,7 +118,7 @@ export default Component.extend({
 		var a = 0;
 		var b = 0;
 		
-		for const[k1, v1] of Object.entries(cgtr1)) {
+		for (const[k1, v1] of Object.entries(cgtr1)) {
 			console.log(v1);
 		}
 		
