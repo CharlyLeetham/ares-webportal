@@ -117,9 +117,15 @@ export default Component.extend({
 		
 		var a = 0;
 		var b = 0;
+		var ed1;
 		
 		for (const[k1, v1] of Object.entries(cgtr1)) {
-			console.log(v1);
+			ed1 = v1['name'];
+			for (const[k2, v2] of Object.entries(cgtr1)) {
+				if (ed1 == v2['name']) {
+					console.log (ed1);
+				}
+			}
 		}
 		
 		if (traittype == 'edge') {
