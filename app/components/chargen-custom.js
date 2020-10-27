@@ -123,7 +123,9 @@ export default Component.extend({
 			ed1 = v1['name'];
 			for (const[k2, v2] of Object.entries(cgtr1)) {
 				if (ed1 == v2['name']) {
-					console.log (ed1);
+					if (v1['class'].includes('*') == v2['class'].includes('^')) {
+						console.log (ed1);
+					}
 				}
 			}
 		}
