@@ -119,19 +119,21 @@ export default Component.extend({
 		var ed1;
 		var cgtr3=[];
 		
-		for (const[k1, v1] of Object.entries(cgtr1)) {
-			ed1 = v1['name'];
-			for (const[k2, v2] of Object.entries(cgtr1)) {
-				if (ed1 == v2['name']) {
-					if (v1['class'].includes('*') == v2['class'].includes('^')) {
-						// console.log (ed1);
+		if (traittype == 'edge') {
+			for (const[k1, v1] of Object.entries(cgtr1)) {
+				ed1 = v1['name'];
+				for (const[k2, v2] of Object.entries(cgtr1)) {
+					if (ed1 == v2['name']) {
+						if (v1['class'].includes('*') == v2['class'].includes('^')) {
+							// console.log (ed1);
+						}
+					} else {
+						cgtr3[i]=[]
+						cgtr3[i]['class'] = v2['class'];
+						cgtr3[i]['name'] = v2['name'];
+						cgtr3[i]['rating'] = v2['desc'];
+						i=i+1
 					}
-				} else {
-					cgtr3[i]=[]
-					cgtr3[i]['class'] = v1['class'];
-					cgtr3[i]['name'] = v1['name'];
-					cgtr3[i]['rating'] = v1['desc'];
-					i=i+1
 				}
 			}
 		}
