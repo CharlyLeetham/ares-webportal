@@ -125,14 +125,14 @@ export default Component.extend({
 				for (const[k2, v2] of Object.entries(cgtr1)) {
 					if (ed1 == v2['name']) {
 						if (v1['class'].includes('*') == v2['class'].includes('^')) {
-							// console.log (ed1);
+							cgtr3[i]=[]
+							cgtr3[i]['class'] = v2['class'];
+							cgtr3[i]['name'] = v2['name'];
+							cgtr3[i]['rating'] = v2['desc'];
+							i=i+1
 						}
 					} else {
-						cgtr3[i]=[]
-						cgtr3[i]['class'] = v2['class'];
-						cgtr3[i]['name'] = v2['name'];
-						cgtr3[i]['rating'] = v2['desc'];
-						i=i+1
+
 					}
 				}
 			}
