@@ -134,57 +134,34 @@ export default Component.extend({
 						for (var j = 0; j < dislist55.length; j++) {
 							console.log (dislist55);
 							newclass = dislist55[j]['class'];
-							console.log(newclass);
 							if ( fw=='icf' ) {
 								if (newclass.includes('^')) {
 									loc1 = newclass.replace("^", "*^");
-									// cgtr1[i]['class'] = loc1;
 								}
 							} else if ( fw == 'race') {
 								if (newclass.includes('*')) {
 									loc1 = newclass.replace("*", "*^");
-									// cgtr1[i]['class'] = loc1;
 								}							
 							}
 						}
-					} else {
-						// cgtr1[i]['class'] = loc1;
 					}
+					
 					cgtr1[i]=[]	
 					cgtr1[i]['class'] = loc1;
 					cgtr1[i]['name'] = en;
 					cgtr1[i]['rating'] = value['desc'];
 					i=i+1
-					
-					if (traittype == 'edge') {
-						console.log(cgtr1);
-					}
 				}
 			}
 		}
 		
+		// sort the data
+		cgtr1.sort(function (x, y) {
+			let a = x.name.toLowerCase(),
+				b = y.name.toLowerCase();
+			return a == b ? 0 : a > b ? 1 : -1;
+		});		
 
-		
-		// if (traittype == 'edge') {
-			// for (const[k1, v1] of Object.entries(cgtr1)) {
-				// ed1 = v1['name'];
-				// for (const[k2, v2] of Object.entries(cgtr1)) {
-					// if (ed1 == v2['name']) {
-						// if (v1['class'].includes('*') == v2['class'].includes('^')) {
-							// cgtr3[i]=[]
-							// cgtr3[i]['class'] = v2['class'];
-							// cgtr3[i]['name'] = v2['name'];
-							// cgtr3[i]['rating'] = v2['desc'];
-							// i=i+1
-						// }
-					// } else {
-
-					// }
-				// }
-			// }
-		// }
-		
-		// console.log(cgtr3);
 		
 		if (traittype == 'edge') {
 			this.set('char.custom.sysedges', sysedg); //Send the new dropdown back to the page. 
