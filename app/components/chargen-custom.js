@@ -116,14 +116,14 @@ export default Component.extend({
 		
 		if (newedgarray) {
 
-			for (const [key, value1] of Object.entries(newedgarray)) {
-				en = value1.split(specchar)[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's
-				loc1=value1;
+			for (const [key, value] of Object.entries(newedgarray)) {
+				en = value.split(specchar)[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's
+				loc1=value;
 				dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 
-				for (const [key, value] of Object.entries(dislist)) {
+				for (const [key1, value1] of Object.entries(dislist)) {
 				
-					value['disabled'] = true //Set disabled for this element to true
+					value1['disabled'] = true //Set disabled for this element to true
 					// Write the new CG Edges array for a nice display
 					// Does this already exist as an edge?
 					
