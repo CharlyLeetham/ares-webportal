@@ -151,6 +151,7 @@ export default Component.extend({
 			});
 
 			cgtr3.forEach(function (item) {
+			  console.log(item);
 			  if(!object[item])
 				  object[item] = 0;
 				object[item] += 1;
