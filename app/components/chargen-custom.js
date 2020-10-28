@@ -131,17 +131,8 @@ export default Component.extend({
 				return a == b ? 0 : a > b ? 1 : -1;
 			});
 
-			var prev = {};
-			var filteredData = cgtr3.filter( function(arr) {
-			  var key = arr[0];
-			  console.log (key);
-			  if (prev[key])
-				return false;
-			  return (prev[key] = true);
-			});
-
-			console.log(filteredData);			
-			// console.log(cgtr3);
+			cgtr3 = find_duplicate_in_array(cgtr3);
+			console.log(cgtr3);
 		}
 		
 		// if (traittype == 'edge') {
@@ -175,6 +166,25 @@ export default Component.extend({
 		return;
 	},
 
+
+	find_duplicate_in_array: function(arra1) {
+		var object = {};
+		var result = [];
+
+		arra1.forEach(function (item) {
+		  if(!object[item])
+			  object[item] = 0;
+			object[item] += 1;
+		})
+
+		for (var prop in object) {
+		   if(object[prop] >= 2) {
+			   result.push(prop);
+		   }
+		}
+
+		return result;
+	}
 
 	checktrait: function(swraceall, swiconicfall, swrace, swiconicf, chosenifarray, newval, traittype) {
 		
