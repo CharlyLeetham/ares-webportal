@@ -130,15 +130,15 @@ export default Component.extend({
 					
 					if ( dislist55.length > 0 ) { // If so, check to see if it's a IF Trait or Race Trait
 						console.log(dislist55);
-						// if ( fw=='icf' ) {
-							// if (dislist55['class'].includes('^')) {
-								// en = en+"*^";
-							// }
-						// } else if ( fw == 'race') {
-							// if (dislist55['class'].includes('^')) {
-								// en = en+"*^";
-							// }							
-						// }
+						if ( fw=='icf' ) {
+							if (dislist55['class'].includes('^')) {
+								en = en+"*^";
+							}
+						} else if ( fw == 'race') {
+							if (dislist55['class'].includes('^')) {
+								en = en+"*^";
+							}							
+						}
 					}
 					cgtr1[i]=[]
 					cgtr1[i]['class'] = value1;
