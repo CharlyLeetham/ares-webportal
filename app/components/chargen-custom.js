@@ -135,7 +135,7 @@ export default Component.extend({
 								en = en+"*^";
 							}
 						} else if ( fw == 'race') {
-							if (dislist55['class'].includes('^')) {
+							if (dislist55['class'].includes('*')) {
 								en = en+"*^";
 							}							
 						}
