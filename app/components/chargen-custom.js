@@ -134,6 +134,7 @@ export default Component.extend({
 			var prev = {};
 			var filteredData = cgtr3.filter( function(arr) {
 			  var key = arr[0];
+			  console.log (key);
 			  if (prev[key])
 				return false;
 			  return (prev[key] = true);
