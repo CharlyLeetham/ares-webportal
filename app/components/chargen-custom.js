@@ -130,7 +130,8 @@ export default Component.extend({
 					dislist55 = Object.values(cgtr1).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 					
 					for (const [key2, value2] of Object.entries(cgtr1)) {
-						console.log(`${key2}: ${value2}`);
+						console.log(key2);
+						console.log (value2);
 					}
 					
 					if ( dislist55.length > 0 ) { // If so, check to see if it's a IF Trait or Race Trait
