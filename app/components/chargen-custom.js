@@ -141,8 +141,7 @@ export default Component.extend({
 							} else if ( fw == 'race') {
 								if (newclass.includes('*')) {
 									loc1 = newclass.replace("*", "*^");
-									index = Object.entries(cgtr1);
-									console.log(index);									
+									console.log(key);									
 								}							
 							}
 						}
