@@ -160,7 +160,7 @@ export default Component.extend({
 				console.log (v1['class'].includes('*'));
 				console.log (v1['class'].includes('^'));
 			  }
-			})
+			}
 
 			console.log (object);
 			
