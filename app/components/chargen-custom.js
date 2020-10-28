@@ -112,7 +112,7 @@ export default Component.extend({
 
 		//If there are new edges or hinderances, go through and set these to disabled in the edge drop down.
 		
-		var dislist55, loc1, newclass;
+		var dislist55, loc1, newclass, index;
 		
 		if (newedgarray) {
 
@@ -132,15 +132,19 @@ export default Component.extend({
 					
 					if ( dislist55.length > 0 ) { // If so, check to see if it's a IF Trait or Race Trait
 						for (var j = 0; j < dislist55.length; j++) {
-							console.log (dislist55);
 							newclass = dislist55[j]['class'];
 							if ( fw=='icf' ) {
 								if (newclass.includes('^')) {
 									loc1 = newclass.replace("^", "*^");
+
 								}
 							} else if ( fw == 'race') {
 								if (newclass.includes('*')) {
 									loc1 = newclass.replace("*", "*^");
+									index = cgtr1.findIndex(function(person) {
+										return person.class == newclass;
+									}
+									console.log(index);									
 								}							
 							}
 						}
