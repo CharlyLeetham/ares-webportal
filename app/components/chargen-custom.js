@@ -119,9 +119,15 @@ export default Component.extend({
 		var ed1;
 		var cgtr3=[];
 		cgtr3 = cgtr1;
-		cgtr3.sort;
+		
+	
 		
 		if (traittype == 'edge') {
+			cgtr3.sort(function (x, y) {
+				let a = x.name.toLowerCase(),
+					b = y.name.toLowercaseCase();
+				return a == b ? 0 : a > b ? 1 : -1;
+			});				
 			console.log(cgtr3);
 		}
 		
