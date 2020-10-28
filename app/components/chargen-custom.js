@@ -150,7 +150,9 @@ export default Component.extend({
 					cgtr1[i]['rating'] = value['desc'];
 					i=i+1
 					
-					console.log(cgtr1);
+					if (traittype == 'edge') {
+						console.log(cgtr1);
+					}
 				}
 			}
 		}
