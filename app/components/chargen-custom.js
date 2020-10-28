@@ -132,17 +132,17 @@ export default Component.extend({
 					console.log(dislist55.length);
 					
 					if ( dislist55.length > 0 ) { // If so, check to see if it's a IF Trait or Race Trait
-						var newclass = dislist55['class'];
-						console.log('DL: '+dislist55);						
-						console.log(newclass);						
-						if ( fw=='icf' ) {
-							if (newclass.includes('^')) {
-								en = en+"*^";
+						for (var i = 0; i < dislist55.length; i++) {
+							var newclass = dislist55[i]['class'];						
+							if ( fw=='icf' ) {
+								if (newclass.includes('^')) {
+									en = en+"*^";
+								}
+							} else if ( fw == 'race') {
+								if (newclass.includes('*')) {
+									en = en+"*^";
+								}							
 							}
-						} else if ( fw == 'race') {
-							if (newclass.includes('*')) {
-								en = en+"*^";
-							}							
 						}
 					}
 					cgtr1[i]=[]
