@@ -125,7 +125,7 @@ export default Component.extend({
 		if (traittype == 'edge') {
 			cgtr3.sort(function (x, y) {
 				let a = x.name.toLowerCase(),
-					b = y.name.toLowercaseCase();
+					b = y.name.toLowerCase();
 				return a == b ? 0 : a > b ? 1 : -1;
 			});				
 			console.log(cgtr3);
