@@ -151,14 +151,15 @@ export default Component.extend({
 				return a == b ? 0 : a > b ? 1 : -1;
 			});
 
-			for (const [k1, v1] of Object.entries(cgtr3)) {
-			  ed1 = (v1['name']);
+
+			arra1.forEach(function (item) {
+			  ed1 = (item['name']);
 			  if(!object[ed1]) {
 				  object[ed1] = 0;
 			  } else {
 				object[ed1] += 1;
 			  }
-			}
+			})
 
 			console.log (object);
 			
