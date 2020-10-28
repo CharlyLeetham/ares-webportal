@@ -136,6 +136,7 @@ export default Component.extend({
 		
 		i=0;
 		var ed1;
+		var ed2;
 		var cgtr3=[];
 		cgtr3 = cgtr1;
         var object = {};
@@ -157,6 +158,8 @@ export default Component.extend({
 				object[ed1] += 1;
 			})
 
+			console.log (object);
+			
 			for (var prop in object) {
 			   if(object[prop] >= 2) {
 				   result.push(prop);
