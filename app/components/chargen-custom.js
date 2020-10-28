@@ -122,7 +122,7 @@ export default Component.extend({
 				dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 
 				for (const [key, value] of Object.entries(dislist)) {
-					cgtr1[i]=[]					
+				
 					value['disabled'] = true //Set disabled for this element to true
 					// Write the new CG Edges array for a nice display
 					// Does this already exist as an edge?
@@ -131,27 +131,27 @@ export default Component.extend({
 					
 					
 					if ( dislist55.length > 0 ) { // If so, check to see if it's a IF Trait or Race Trait
-						for (var i = 0; i < dislist55.length; i++) {
+						for (var j = 0; j < dislist55.length; j++) {
 							console.log (dislist55);
-							newclass = dislist55[i]['class'];
+							newclass = dislist55[j]['class'];
 							console.log(newclass);
 							if ( fw=='icf' ) {
 								if (newclass.includes('^')) {
 									loc1 = newclass.replace("^", "*^");
-									cgtr1[i]['class'] = loc1;
+									// cgtr1[i]['class'] = loc1;
 								}
 							} else if ( fw == 'race') {
 								if (newclass.includes('*')) {
 									loc1 = newclass.replace("*", "*^");
-									cgtr1[i]['class'] = loc1;
+									// cgtr1[i]['class'] = loc1;
 								}							
 							}
 						}
 					} else {
-						cgtr1[i]['class'] = loc1;
+						// cgtr1[i]['class'] = loc1;
 					}
-
-					// cgtr1[i]['class'] = loc1;
+					cgtr1[i]=[]	
+					cgtr1[i]['class'] = loc1;
 					cgtr1[i]['name'] = en;
 					cgtr1[i]['rating'] = value['desc'];
 					i=i+1
