@@ -151,10 +151,10 @@ export default Component.extend({
 			});
 
 			cgtr3.forEach(function (item) {
-			  console.log(item['name']);
-			  if(!object[item])
-				  object[item] = 0;
-				object[item] += 1;
+			  ed1 = (item['name']);
+			  if(!object[ed1])
+				  object[ed1] = 0;
+				object[ed1] += 1;
 			})
 
 			for (var prop in object) {
