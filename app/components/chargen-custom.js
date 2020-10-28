@@ -120,7 +120,10 @@ export default Component.extend({
 		var cgtr3=[];
 		cgtr3 = cgtr1;
 		cgtr3.sort;
-		console.log(cgtr3);
+		
+		if (traittype == 'edge') {
+			console.log(cgtr3);
+		}
 		
 		// if (traittype == 'edge') {
 			// for (const[k1, v1] of Object.entries(cgtr1)) {
