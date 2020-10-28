@@ -132,6 +132,9 @@ export default Component.extend({
 					for (const [key2, value2] of Object.entries(cgtr1)) {
 						console.log(key2);
 						console.log (value2['class']);
+						if (value2['name'].toLowerCase == en) {
+							console.log('YEAH MATCH: '+key2);
+						}
 					}
 					
 					if ( dislist55.length > 0 ) { // If so, check to see if it's a IF Trait or Race Trait
