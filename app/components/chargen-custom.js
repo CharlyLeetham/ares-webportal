@@ -130,6 +130,7 @@ export default Component.extend({
 					
 					if ( dislist55.length > 0 ) { // If so, check to see if it's a IF Trait or Race Trait
 						var newclass = dislist55['class'];
+						console.log('DL: '+dislist55);						
 						console.log(newclass);						
 						if ( fw=='icf' ) {
 							if (newclass.includes('^')) {
