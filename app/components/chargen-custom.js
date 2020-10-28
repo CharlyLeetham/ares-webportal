@@ -140,6 +140,7 @@ export default Component.extend({
 								}
 							} else if ( fw == 'race') {
 								if (newclass.includes('*')) {
+									console.log (newclass.indexOf('*'));
 									en = en+"*^";
 								}							
 							}
