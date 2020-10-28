@@ -137,12 +137,12 @@ export default Component.extend({
 							if ( fw=='icf' ) {
 								if (newclass.includes('^')) {
 									loc1 = indexOf('^');
-									value1 = str.replace("^", "*^");
+									value1 = value1.replace("^", "*^");
 								}
 							} else if ( fw == 'race') {
 								if (newclass.includes('*')) {
 									console.log (newclass.indexOf('*'));
-									value1 = str.replace("*", "*^");
+									value1 = value1.replace("*", "*^");
 								}							
 							}
 						}
