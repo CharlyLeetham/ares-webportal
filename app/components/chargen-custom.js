@@ -138,16 +138,16 @@ export default Component.extend({
 							if ( fw=='icf' ) {
 								if (newclass.includes('^')) {
 									loc1 = value1.replace("*", "*^");
-									console.log (loc1);
 								}
 							} else if ( fw == 'race') {
 								if (newclass.includes('*')) {
 									loc1 = value1.replace("^", "*^");
-									console.log (loc1);
 								}							
 							}
 						}
 					}
+					
+					console.log (loc1);
 					cgtr1[i]=[]
 					cgtr1[i]['class'] = loc1;
 					cgtr1[i]['name'] = en;
