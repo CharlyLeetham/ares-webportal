@@ -136,11 +136,11 @@ export default Component.extend({
 							console.log(newclass);
 							if ( fw=='icf' ) {
 								if (newclass.includes('^')) {
-									loc1 = value['class'].replace("*", "*^");
+									loc1 = newclass.replace("^", "*^");
 								}
 							} else if ( fw == 'race') {
 								if (newclass.includes('*')) {
-									loc1 = value['class'].replace("^", "*^");
+									loc1 = newclass.replace("*", "*^");
 								}							
 							}
 						}
