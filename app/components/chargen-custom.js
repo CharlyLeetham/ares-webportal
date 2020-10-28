@@ -122,6 +122,7 @@ export default Component.extend({
 				dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 
 				for (const [key, value] of Object.entries(dislist)) {
+					cgtr1[i]=[]					
 					value['disabled'] = true //Set disabled for this element to true
 					// Write the new CG Edges array for a nice display
 					// Does this already exist as an edge?
@@ -137,16 +138,20 @@ export default Component.extend({
 							if ( fw=='icf' ) {
 								if (newclass.includes('^')) {
 									loc1 = newclass.replace("^", "*^");
+									cgtr1[i]['class'] = loc1;
 								}
 							} else if ( fw == 'race') {
 								if (newclass.includes('*')) {
 									loc1 = newclass.replace("*", "*^");
+									cgtr1[i]['class'] = loc1;
 								}							
 							}
 						}
+					} else {
+						cgtr1[i]['class'] = loc1;
 					}
-					cgtr1[i]=[]
-					cgtr1[i]['class'] = loc1;
+
+					// cgtr1[i]['class'] = loc1;
 					cgtr1[i]['name'] = en;
 					cgtr1[i]['rating'] = value['desc'];
 					i=i+1
