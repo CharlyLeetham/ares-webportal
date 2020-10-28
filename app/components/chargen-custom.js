@@ -131,7 +131,7 @@ export default Component.extend({
 					
 					for (const [key2, value2] of Object.entries(cgtr1)) {
 						console.log(key2);
-						console.log (value2);
+						console.log (value2['class']);
 					}
 					
 					if ( dislist55.length > 0 ) { // If so, check to see if it's a IF Trait or Race Trait
