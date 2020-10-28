@@ -134,11 +134,11 @@ export default Component.extend({
 							console.log (dislist55);
 							if ( fw=='icf' ) {
 								if (newclass.includes('^')) {
-									value['class'] = value['class'].replace("*", "*^");
+									// value['class'] = value['class'].replace("*", "*^");
 								}
 							} else if ( fw == 'race') {
 								if (newclass.includes('*')) {
-									value['class'] = value['class'].replace("^", "*^");
+									// value['class'] = value['class'].replace("^", "*^");
 								}							
 							}
 						}
