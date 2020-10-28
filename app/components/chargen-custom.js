@@ -184,7 +184,7 @@ export default Component.extend({
 		}
 
 		return result;
-	}
+	},
 
 	checktrait: function(swraceall, swiconicfall, swrace, swiconicf, chosenifarray, newval, traittype) {
 		
