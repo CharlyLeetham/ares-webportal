@@ -130,10 +130,10 @@ export default Component.extend({
 					dislist55 = Object.values(cgtr1).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 					
 					for (const [key2, value2] of Object.entries(cgtr1)) {
-						console.log(key2);
-						console.log (value2['class']);
 						if (value2['name'].toLowerCase().startsWith(en)) {
 							console.log('YEAH MATCH: '+key2);
+							loc1 = value2['name'].replace("^", "*^");
+							cgtr1[key]['class'] = loc1;
 						}
 					}
 					
