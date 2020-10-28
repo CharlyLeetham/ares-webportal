@@ -157,8 +157,8 @@ export default Component.extend({
 				  object[ed1] = 0;
 			  } else {
 				object[ed1] += 1;
-				console.log (v1['class'].includes('*'));
-				console.log (v1['class'].includes('^'));
+				console.log ("Includes *: "+v1['class'].includes('*'));
+				console.log ("Includes ^: "+v1['class'].includes('^'));
 			  }
 			}
 
