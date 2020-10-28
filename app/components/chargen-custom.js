@@ -123,12 +123,24 @@ export default Component.extend({
 	
 		
 		if (traittype == 'edge') {
+			
+			// sort the data
 			cgtr3.sort(function (x, y) {
 				let a = x.name.toLowerCase(),
 					b = y.name.toLowerCase();
 				return a == b ? 0 : a > b ? 1 : -1;
-			});				
-			console.log(cgtr3);
+			});
+
+			var prev = {};
+			var filteredData = cgtr3.filter( function(arr) {
+			  var key = arr[0];
+			  if (prev[key])
+				return false;
+			  return (prev[key] = true);
+			});
+
+			console.log(filteredData);			
+			// console.log(cgtr3);
 		}
 		
 		// if (traittype == 'edge') {
