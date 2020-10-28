@@ -152,7 +152,7 @@ export default Component.extend({
 			});
 
 
-			arra1.forEach(function (item) {
+			cgtr3.forEach(function (item) {
 				console.log (item);
 			  ed1 = (item['name']);
 			  if(!object[ed1]) {
