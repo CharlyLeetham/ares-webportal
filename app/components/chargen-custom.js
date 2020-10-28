@@ -130,20 +130,20 @@ export default Component.extend({
 					dislist55 = Object.values(cgtr1).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 					
 					
-					if ( dislist55.length > 0 ) { // If so, check to see if it's a IF Trait or Race Trait
-						for (var i = 0; i < dislist55.length; i++) {
-							var newclass = dislist55[i]['class'];
-							if ( fw=='icf' ) {
-								if (newclass.includes('^')) {
-									loc1 = value1.replace("*", "*^");
-								}
-							} else if ( fw == 'race') {
-								if (newclass.includes('*')) {
-									loc1 = value1.replace("^", "*^");
-								}							
-							}
-						}
-					}
+					// if ( dislist55.length > 0 ) { // If so, check to see if it's a IF Trait or Race Trait
+						// for (var i = 0; i < dislist55.length; i++) {
+							// var newclass = dislist55[i]['class'];
+							// if ( fw=='icf' ) {
+								// if (newclass.includes('^')) {
+									// loc1 = value1.replace("*", "*^");
+								// }
+							// } else if ( fw == 'race') {
+								// if (newclass.includes('*')) {
+									// loc1 = value1.replace("^", "*^");
+								// }							
+							// }
+						// }
+					// }
 					cgtr1[i]=[]
 					cgtr1[i]['class'] = loc1;
 					cgtr1[i]['name'] = en;
