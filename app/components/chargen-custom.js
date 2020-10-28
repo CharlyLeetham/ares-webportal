@@ -134,15 +134,15 @@ export default Component.extend({
 							console.log (dislist55);
 							newclass = dislist55[i]['class'];
 							console.log(newclass);
-							// if ( fw=='icf' ) {
-								// if (newclass.includes('^')) {
-									// loc1 = value['class'].replace("*", "*^");
-								// }
-							// } else if ( fw == 'race') {
-								// if (newclass.includes('*')) {
-									// loc1 = value['class'].replace("^", "*^");
-								// }							
-							// }
+							if ( fw=='icf' ) {
+								if (newclass.includes('^')) {
+									loc1 = value['class'].replace("*", "*^");
+								}
+							} else if ( fw == 'race') {
+								if (newclass.includes('*')) {
+									loc1 = value['class'].replace("^", "*^");
+								}							
+							}
 						}
 					}
 					cgtr1[i]=[]
