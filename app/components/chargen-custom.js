@@ -42,6 +42,25 @@ export default Component.extend({
     // return { goals: this.get('char.custom.goals') };
 	return { iconicf: this.get('char.custom.charicf'), race: this.get('char.custom.charrace'), cgedges: this.get('char.custom.cgedges'), cgedgesnofw: this.get('char.custom.cgedgesnofw'), cghind: this.get('char.custom.cghind'), cghindnofw: this.get('char.custom.cghindnofw') };
   },
+  
+  	find_duplicate_in_array: function(arra1) {
+		var object = {};
+		var result = [];
+
+		arra1.forEach(function (item) {
+		  if(!object[item])
+			  object[item] = 0;
+			object[item] += 1;
+		})
+
+		for (var prop in object) {
+		   if(object[prop] >= 2) {
+			   result.push(prop);
+		   }
+		}
+
+		return result;
+	},
  
 	changedges: function(sysedg, newedgarray, traittype, fw) {
 		var cgtr1=[], i, en, specchar, dislist, exedg, traitclass;
@@ -164,26 +183,6 @@ export default Component.extend({
 			this.set('char.custom.cghind', cgtr1); //Send the new array back to the page for nice display.			
 		}
 		return;
-	},
-
-
-	find_duplicate_in_array: function(arra1) {
-		var object = {};
-		var result = [];
-
-		arra1.forEach(function (item) {
-		  if(!object[item])
-			  object[item] = 0;
-			object[item] += 1;
-		})
-
-		for (var prop in object) {
-		   if(object[prop] >= 2) {
-			   result.push(prop);
-		   }
-		}
-
-		return result;
 	},
 
 	checktrait: function(swraceall, swiconicfall, swrace, swiconicf, chosenifarray, newval, traittype) {
