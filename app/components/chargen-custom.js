@@ -138,9 +138,9 @@ export default Component.extend({
 		var ed1;
 		var cgtr3=[];
 		cgtr3 = cgtr1;
-		
-	
-		
+        var object = {};
+        var result = [];
+
 		if (traittype == 'edge') {
 			
 			// sort the data
@@ -150,8 +150,18 @@ export default Component.extend({
 				return a == b ? 0 : a > b ? 1 : -1;
 			});
 
-			cgtr3 = find_duplicate_in_array(cgtr3);
-			console.log(cgtr3);
+			cgtr3.forEach(function (item) {
+			  if(!object[item])
+				  object[item] = 0;
+				object[item] += 1;
+			})
+
+			for (var prop in object) {
+			   if(object[prop] >= 2) {
+				   result.push(prop);
+			   }
+			}
+				console.log(result);
 		}
 		
 		// if (traittype == 'edge') {
