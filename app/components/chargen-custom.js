@@ -143,7 +143,7 @@ export default Component.extend({
 									loc1 = newclass.replace("*", "*^");
 									index = cgtr1.findIndex(function(person) {
 										return person.class == newclass;
-									}
+									},
 									console.log(index);									
 								}							
 							}
