@@ -112,7 +112,7 @@ export default Component.extend({
 
 		//If there are new edges or hinderances, go through and set these to disabled in the edge drop down.
 		
-		var dislist55;
+		var dislist55, loc1;
 		
 		if (newedgarray) {
 
@@ -136,12 +136,13 @@ export default Component.extend({
 							console.log (newclass);
 							if ( fw=='icf' ) {
 								if (newclass.includes('^')) {
-									en = en+"*^";
+									loc1 = indexOf('^');
+									value1 = str.replace("^", "*^");
 								}
 							} else if ( fw == 'race') {
 								if (newclass.includes('*')) {
 									console.log (newclass.indexOf('*'));
-									en = en+"*^";
+									value1 = str.replace("*", "*^");
 								}							
 							}
 						}
