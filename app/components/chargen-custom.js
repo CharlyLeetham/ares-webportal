@@ -123,6 +123,16 @@ export default Component.extend({
 				for (const [key, value] of Object.entries(dislist)) {
 					value['disabled'] = true //Set disabled for this element to true
 					// Write the new CG Edges array for a nice display
+					
+					// Does this already exist as an edge?
+					
+					dislist55 = Object.values(cgtr1).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
+					
+					if (dislist55) { // If so, check to see if it's a IF Trait or Race Trait
+						console.log(dislst55);
+						
+						
+					}
 					cgtr1[i]=[]
 					cgtr1[i]['class'] = value1;
 					cgtr1[i]['name'] = en;
@@ -132,44 +142,7 @@ export default Component.extend({
 			}
 		}
 		
-		// Check for duplicate edges - if so, put the appropriate marks and remove dupes.
-		
-		i=0;
-		var ed1;
-		var ed2;
-		var cgtr3=[];
-		cgtr3 = cgtr1;
-        var object = {};
-        var result = [];
 
-		if (traittype == 'edge') {
-			
-			// sort the data
-			cgtr3.sort(function (x, y) {
-				let a = x.name.toLowerCase(),
-					b = y.name.toLowerCase();
-				return a == b ? 0 : a > b ? 1 : -1;
-			});
-
-
-			cgtr3.forEach(function (item) {
-				console.log (item);
-			  ed1 = (item['name']);
-			  if(!object[ed1]) {
-				  object[ed1] = 0;
-			  }
-			  object[ed1] += 1;
-			})
-
-			console.log (object);
-			
-			for (var prop in object) {
-			   if(object[prop] >= 2) {
-				   result.push(prop);
-			   }
-			}
-				console.log(result);
-		}
 		
 		// if (traittype == 'edge') {
 			// for (const[k1, v1] of Object.entries(cgtr1)) {
