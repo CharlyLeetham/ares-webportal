@@ -118,6 +118,7 @@ export default Component.extend({
 
 			for (const [key, value1] of Object.entries(newedgarray)) {
 				en = value1.split(specchar)[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's
+				loc1 = value1;
 				dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 
 				for (const [key, value] of Object.entries(dislist)) {
@@ -137,18 +138,18 @@ export default Component.extend({
 							if ( fw=='icf' ) {
 								if (newclass.includes('^')) {
 									loc1 = indexOf('^');
-									value1 = value1.replace("^", "*^");
+									loc1 = value1.replace("^", "*^");
 								}
 							} else if ( fw == 'race') {
 								if (newclass.includes('*')) {
 									console.log (newclass.indexOf('*'));
-									value1 = value1.replace("*", "*^");
+									loc1 = value1.replace("*", "*^");
 								}							
 							}
 						}
 					}
 					cgtr1[i]=[]
-					cgtr1[i]['class'] = value1;
+					cgtr1[i]['class'] = loc1;
 					cgtr1[i]['name'] = en;
 					cgtr1[i]['rating'] = value['desc'];
 					i=i+1
