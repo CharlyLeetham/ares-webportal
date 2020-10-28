@@ -120,7 +120,7 @@ export default Component.extend({
 				en = value1.split(specchar)[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's
 				dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 
-				console.log(dislist);
+				console.log(cgtr1);
 				for (const [key, value] of Object.entries(dislist)) {
 					value['disabled'] = true //Set disabled for this element to true
 					// Write the new CG Edges array for a nice display
