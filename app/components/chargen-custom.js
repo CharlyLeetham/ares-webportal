@@ -112,7 +112,7 @@ export default Component.extend({
 
 		//If there are new edges or hinderances, go through and set these to disabled in the edge drop down.
 		
-		var loc1, newclass, index;
+		var loc1, loc2, newclass, index;
 		
 		if (newedgarray) {
 
