@@ -125,7 +125,7 @@ export default Component.extend({
 				console.log(dislist);				
 
 				for (const [key1, value1] of Object.entries(dislist)) {
-				
+					console.log(value1);
 					value1['disabled'] = true //Set disabled for this element to true
 					// Write the new CG Edges array for a nice display
 					// Does this already exist as an edge?
