@@ -137,7 +137,7 @@ export default Component.extend({
 					
 					// if (cgtr1.length > 0) {
 						// for (const [key2, value2] of Object.entries(cgtr1)) {
-							console.log(value2);
+							// console.log(value2);
 							// if (value2['name'].toLowerCase().startsWith(en)) {
 								// newclass='yes';
 								// console.log('YEAH MATCH: '+key2+" : "+value2['class']);
