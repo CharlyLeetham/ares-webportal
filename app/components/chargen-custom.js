@@ -153,8 +153,6 @@ export default Component.extend({
 								console.log("Loc1bb: "+loc1);
 								cgtr1.splice(key,1);
 							}
-							
-							cgtr1[key]['class'] = loc1;
 						}
 					}
 					
