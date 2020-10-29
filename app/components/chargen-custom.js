@@ -130,13 +130,14 @@ export default Component.extend({
 					dislist55 = Object.values(cgtr1).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 					
 					for (const [key2, value2] of Object.entries(cgtr1)) {
-						console.log(value2);
+						// console.log(value2);
 						if (value2['name'].toLowerCase().startsWith(en)) {
 							console.log('YEAH MATCH: '+key2+" : "+value2['class']);
 							if (fw=='edge') {
 								loc1 = value2['class'].split('^')[0].trim(); // Take the trailing * from the edge for I/F's
 								console.log("Loc1a: "+loc1);
 								loc1 = loc1+'*^';
+								cgtr1[key2]['class']=loc1;
 								console.log("Loc1aa: "+loc1);
 
 							} else {
@@ -144,34 +145,18 @@ export default Component.extend({
 								console.log("Loc1b: "+loc1);
 								loc1 = loc1+'*^';
 								console.log("Loc1bb: "+loc1);
+								cgtr1[key2]['class']=loc1;
 							}
 							
 							cgtr1[key]['class'] = loc1;
+						} else {
+							cgtr1[i]=[]
+							cgtr1[i]['class'] = loc1;
+							cgtr1[i]['name'] = en;
+							cgtr1[i]['rating'] = value['desc'];
+							i=i+1
 						}
 					}
-					
-					// if ( dislist55.length > 0 ) { // If so, check to see if it's a IF Trait or Race Trait
-						// for (var j = 0; j < dislist55.length; j++) {
-							// newclass = dislist55[j]['class'];
-							// if ( fw=='icf' ) {
-								// if (newclass.includes('^')) {
-									// loc1 = newclass.replace("^", "*^");
-
-								// }
-							// } else if ( fw == 'race') {
-								// if (newclass.includes('*')) {
-									// loc1 = newclass.replace("*", "*^");
-									// console.log(key);									
-								// }							
-							// }
-						// }
-					// }
-					
-					cgtr1[i]=[]
-					cgtr1[i]['class'] = loc1;
-					cgtr1[i]['name'] = en;
-					cgtr1[i]['rating'] = value['desc'];
-					i=i+1
 				}
 			}
 		}
