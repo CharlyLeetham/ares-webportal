@@ -133,7 +133,10 @@ export default Component.extend({
 						console.log(value2);
 						if (value2['name'].toLowerCase().startsWith(en)) {
 							console.log('YEAH MATCH: '+key2+" : "+loc1);
-							loc1 = value2['class'].replace("^", "*^");
+							if (fw=='edge') {
+								loc1 = value2['class'].replace("^", "*^");
+							} else {
+								loc1 = value2['class'].replace("*", "*^");
 							console.log("Loc1: "+loc1);
 							cgtr1[key]['class'] = loc1;
 						}
