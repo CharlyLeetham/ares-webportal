@@ -144,14 +144,14 @@ export default Component.extend({
 								loc1 = value2['class'].split('^')[0].trim(); // Take the trailing * from the edge for I/F's
 								console.log("Loc1a: "+loc1);
 								loc1 = loc1+'*^';
-								cgtr1[key2]['class']=loc1;
+								cgtr1.splice(key,1);
 								console.log("Loc1aa: "+loc1);
 							} else {
 								loc1 = value2['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
 								console.log("Loc1b: "+loc1);
 								loc1 = loc1+'*^';
 								console.log("Loc1bb: "+loc1);
-								cgtr1[key2]['class']=loc1;
+								cgtr1.splice(key,1);
 							}
 							
 							cgtr1[key]['class'] = loc1;
