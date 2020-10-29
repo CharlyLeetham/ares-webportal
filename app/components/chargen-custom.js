@@ -137,22 +137,22 @@ export default Component.extend({
 						}
 					}
 					
-					if ( dislist55.length > 0 ) { // If so, check to see if it's a IF Trait or Race Trait
-						for (var j = 0; j < dislist55.length; j++) {
-							newclass = dislist55[j]['class'];
-							if ( fw=='icf' ) {
-								if (newclass.includes('^')) {
-									loc1 = newclass.replace("^", "*^");
+					// if ( dislist55.length > 0 ) { // If so, check to see if it's a IF Trait or Race Trait
+						// for (var j = 0; j < dislist55.length; j++) {
+							// newclass = dislist55[j]['class'];
+							// if ( fw=='icf' ) {
+								// if (newclass.includes('^')) {
+									// loc1 = newclass.replace("^", "*^");
 
-								}
-							} else if ( fw == 'race') {
-								if (newclass.includes('*')) {
-									loc1 = newclass.replace("*", "*^");
-									console.log(key);									
-								}							
-							}
-						}
-					}
+								// }
+							// } else if ( fw == 'race') {
+								// if (newclass.includes('*')) {
+									// loc1 = newclass.replace("*", "*^");
+									// console.log(key);									
+								// }							
+							// }
+						// }
+					// }
 					
 					cgtr1[i]=[]
 					cgtr1[i]['class'] = loc1;
