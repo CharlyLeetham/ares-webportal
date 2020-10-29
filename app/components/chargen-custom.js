@@ -137,6 +137,7 @@ export default Component.extend({
 								loc1 = value2['class'].replace("^", "*^");
 							} else {
 								loc1 = value2['class'].replace("*", "*^");
+							}
 							console.log("Loc1: "+loc1);
 							cgtr1[key]['class'] = loc1;
 						}
