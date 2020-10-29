@@ -134,9 +134,12 @@ export default Component.extend({
 						if (value2['name'].toLowerCase().startsWith(en)) {
 							console.log('YEAH MATCH: '+key2+" : "+loc1);
 							if (fw=='edge') {
-								loc1 = value2['class'].replace("^", "*^");
+								loc1 = value2.split('^')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's
+								loc1 << '*^';
+
 							} else {
-								loc1 = value2['class'].replace("*", "*^");
+								loc1 = value2.split('*')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's
+								loc1 << '*^';
 							}
 							console.log("Loc1: "+loc1);
 							cgtr1[key]['class'] = loc1;
