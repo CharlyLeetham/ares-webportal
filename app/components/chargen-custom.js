@@ -154,13 +154,12 @@ export default Component.extend({
 									console.log("Loc1bb: "+loc1);
 									cgtr1.splice(key,1);
 								}
-							} else {
-								cgtr1[i]=[]
-								cgtr1[i]['class'] = loc1;
-								cgtr1[i]['name'] = en;
-								cgtr1[i]['rating'] = value['desc'];
-								i=i+1;
 							}
+							cgtr1[i]=[]
+							cgtr1[i]['class'] = loc1;
+							cgtr1[i]['name'] = en;
+							cgtr1[i]['rating'] = value['desc'];
+							i=i+1;
 						}
 					} else {					
 						cgtr1[i]=[]
