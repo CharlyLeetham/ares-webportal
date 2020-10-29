@@ -158,7 +158,7 @@ export default Component.extend({
 						cgtr1[i]=[]
 						cgtr1[i]['class'] = loc1;
 						cgtr1[i]['name'] = en;
-						cgtr1[i]['rating'] = value['desc'];
+						cgtr1[i]['rating'] = value1['desc'];
 						i=i+1;
 					}
 				}
