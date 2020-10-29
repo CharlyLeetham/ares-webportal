@@ -131,7 +131,7 @@ export default Component.extend({
 					
 					for (const [key2, value2] of Object.entries(cgtr1)) {
 						if (value2['name'].toLowerCase().startsWith(en)) {
-							console.log('YEAH MATCH: '+key2);
+							console.log('YEAH MATCH: '+key2'+" : "+loc1);
 							loc1 = value2['name'].replace("^", "*^");
 							cgtr1[key]['class'] = loc1;
 						}
