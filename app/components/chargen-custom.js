@@ -100,13 +100,13 @@ export default Component.extend({
 			}
 		}		
 				
-		//Change all items in the sysedg dropdown to enabled. 	
-		dislist = Object.values(sysedg).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
+		// Change all items in the sysedg dropdown to enabled. 	
+		// dislist = Object.values(sysedg).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 
-		for (const [key, value] of Object.entries(dislist)) {
-			//console.log (value['name']+' disabled='+value['disabled']);
-			value['disabled'] = false //Set disabled for this element to false
-		}		
+		// for (const [key, value] of Object.entries(dislist)) {
+			// console.log (value['name']+' disabled='+value['disabled']);
+			// value['disabled'] = false //Set disabled for this element to false
+		// }		
 
 		// Clear the edges list for the framework
 
@@ -125,7 +125,7 @@ export default Component.extend({
 				console.log(dislist);				
 
 				for (const [key1, value1] of Object.entries(dislist)) {
-					value1['disabled'] = true //Set disabled for this element to true
+					value1['disabled'] = true; //Set disabled for this element to true
 					// Write the new CG Edges array for a nice display
 					// Does this already exist as an edge?
 
