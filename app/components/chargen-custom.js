@@ -142,26 +142,25 @@ export default Component.extend({
 								newclass='yes';
 								console.log('YEAH MATCH: '+key2+" : "+value2['class']);
 								if (fw=='edge') {
-									loc1 = value2['class'].split('^')[0].trim(); // Take the trailing * from the edge for I/F's
-									console.log("Loc1a: "+loc1);
-									loc1 = loc1+'*^';
-									cgtr1.splice(key,1);
-									console.log("Loc1aa: "+loc1);
+									loc2 = value2['class'].split('^')[0].trim(); // Take the trailing * from the edge for I/F's
+									console.log("Loc1a: "+loc2);
+									loc2 = loc2+'*^';
+									cgtr1[key2]['class'] = loc2;
+									console.log("Loc1aa: "+loc2);
+									loc1 = '';
 								} else {
-									loc1 = value2['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
-									console.log("Loc1b: "+loc1);
-									loc1 = loc1+'*^';
-									console.log("Loc1bb: "+loc1);
-									cgtr1.splice(key,1);
+									loc2 = value2['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
+									console.log("Loc1b: "+loc2);
+									loc2 = loc2+'*^';
+									console.log("Loc1bb: "+loc2);
+									cgtr1[key2]['class'] = loc2;
+									loc1 = '';
 								}
 							}
-							cgtr1[i]=[]
-							cgtr1[i]['class'] = loc1;
-							cgtr1[i]['name'] = en;
-							cgtr1[i]['rating'] = value['desc'];
-							i=i+1;
 						}
-					} else {					
+					} 
+					
+					if (loc1.length > 0) {					
 						cgtr1[i]=[]
 						cgtr1[i]['class'] = loc1;
 						cgtr1[i]['name'] = en;
