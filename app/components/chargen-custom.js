@@ -112,7 +112,7 @@ export default Component.extend({
 
 		//If there are new edges or hinderances, go through and set these to disabled in the edge drop down.
 		
-		var dislist55, loc1, newclass, index;
+		var loc1, newclass, index;
 		
 		if (newedgarray) {
 
@@ -127,44 +127,42 @@ export default Component.extend({
 					// Write the new CG Edges array for a nice display
 					// Does this already exist as an edge?
 					
-					dislist55 = Object.values(cgtr1).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
-					
 					if (cgtr1.length < 1) {
 						cgtr1[i]=[]
 						cgtr1[i]['class'] = loc1;
 						cgtr1[i]['name'] = en;
 						cgtr1[i]['rating'] = value['desc'];
 						i=i+1;
-					} else {					
-						for (const [key2, value2] of Object.entries(cgtr1)) {
-							// console.log(value2);
-							if (value2['name'].toLowerCase().startsWith(en)) {
-								console.log('YEAH MATCH: '+key2+" : "+value2['class']);
-								if (fw=='edge') {
-									loc1 = value2['class'].split('^')[0].trim(); // Take the trailing * from the edge for I/F's
-									console.log("Loc1a: "+loc1);
-									loc1 = loc1+'*^';
-									cgtr1[key2]['class']=loc1;
-									console.log("Loc1aa: "+loc1);
-
-								} else {
-									loc1 = value2['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
-									console.log("Loc1b: "+loc1);
-									loc1 = loc1+'*^';
-									console.log("Loc1bb: "+loc1);
-									cgtr1[key2]['class']=loc1;
-								}
-								
-								cgtr1[key]['class'] = loc1;
+					} 
+										
+					for (const [key2, value2] of Object.entries(cgtr1)) {
+						// console.log(value2);
+						if (value2['name'].toLowerCase().startsWith(en)) {
+							newclass='yes';
+							console.log('YEAH MATCH: '+key2+" : "+value2['class']);
+							if (fw=='edge') {
+								loc1 = value2['class'].split('^')[0].trim(); // Take the trailing * from the edge for I/F's
+								console.log("Loc1a: "+loc1);
+								loc1 = loc1+'*^';
+								cgtr1[key2]['class']=loc1;
+								console.log("Loc1aa: "+loc1);
 							} else {
-								// cgtr1[i]=[]
-								// cgtr1[i]['class'] = loc1;
-								// cgtr1[i]['name'] = en;
-								// cgtr1[i]['rating'] = value['desc'];
-								// i=i+1
+								loc1 = value2['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
+								console.log("Loc1b: "+loc1);
+								loc1 = loc1+'*^';
+								console.log("Loc1bb: "+loc1);
+								cgtr1[key2]['class']=loc1;
 							}
+							
+							cgtr1[key]['class'] = loc1;
 						}
 					}
+					
+					cgtr1[i]=[]
+					cgtr1[i]['class'] = loc1;
+					cgtr1[i]['name'] = en;
+					cgtr1[i]['rating'] = value['desc'];
+					i=i+1
 				}
 			}
 		}
