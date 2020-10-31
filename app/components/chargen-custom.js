@@ -167,6 +167,7 @@ export default Component.extend({
 			return a == b ? 0 : a > b ? 1 : -1;
 		});		
 
+
 		
 		if (traittype == 'edge') {
 			this.set('char.custom.sysedges', sysedg); //Send the new dropdown back to the page. 
