@@ -134,20 +134,14 @@ export default Component.extend({
 					if (cgtr1.length > 0) {
 						for (const [key2, value2] of Object.entries(cgtr1)) {
 							if (value2['name'].toLowerCase().startsWith(en)) {
-								newclass='yes';
-								console.log('YEAH MATCH: '+key2+" : "+value2['class']);
 								if (fw=='edge') {
 									loc2 = value2['class'].split('^')[0].trim(); // Take the trailing * from the edge for I/F's
-									console.log("Loc1a: "+loc2);
 									loc2 = loc2+'*^';
 									cgtr1[key2]['class'] = loc2;
-									console.log("Loc1aa: "+loc2);
 									loc1 = '';
 								} else {
 									loc2 = value2['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
-									console.log("Loc1b: "+loc2);
 									loc2 = loc2+'*^';
-									console.log("Loc1bb: "+loc2);
 									cgtr1[key2]['class'] = loc2;
 									loc1 = '';
 								}
@@ -340,7 +334,8 @@ export default Component.extend({
 	},
 
 	fwreset: function(fwname, fw) {
-		var dislist, exedg, exhind, i, cgtr1=[], cgtr2=[];
+		var dislist, exedg, exhind, i, cgtr1=[], cgtr2=[], newclass;
+		
 		dislist = Object.values(fwname).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 				
 		for (const [key, value] of Object.entries(dislist)) {
@@ -353,23 +348,39 @@ export default Component.extend({
 		i = 0;		
 		if ( fw=='icf' ) {
 			for (const[ed, desc] of Object.entries(exedg)) {
-					if (desc['class'].includes('^')) {
-						cgtr1[i] = [];
-						cgtr1[i]['class']=desc['class'];
-						cgtr1[i]['name']=desc['name'];
-						cgtr1[i]['rating']=desc['rating'];
-						i=i+1;
-					}
+				if (desc['class'].endsWith('*^')) {
+					cgtr1[i]=[];
+					newclass = desc['class'].name.split('*^')[0].trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
+					newclass =  newclass+"*";
+					cgtr1[i]['class']=newclass;
+					cgtr1[i]['name']=desc['name'];
+					cgtr1[i]['rating']=desc['rating'];
+					i=i+1;
+				} else ifif (desc['class'].includes('^')) {
+					cgtr1[i] = [];
+					cgtr1[i]['class']=desc['class'];
+					cgtr1[i]['name']=desc['name'];
+					cgtr1[i]['rating']=desc['rating'];
+					i=i+1;
+				}
 			}
 		} else if ( fw=='race') {
 			for (const[ed, desc] of Object.entries(exedg)) {
-					if (desc['class'].includes('*')) {
-						cgtr1[i]=[];
-						cgtr1[i]['class']=desc['class'];
-						cgtr1[i]['name']=desc['name'];
-						cgtr1[i]['rating']=desc['rating'];
-						i=i+1;
-					}
+				if (desc['class'].endsWith('*^')) {
+					cgtr1[i]=[];
+					newclass = desc['class'].name.split('*^')[0].trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
+					newclass =  newclass+"^";						
+					cgtr1[i]['class']=desc['class'];
+					cgtr1[i]['name']=desc['name'];
+					cgtr1[i]['rating']=desc['rating'];
+					i=i+1;
+				} else if (desc['class'].endsWith('*')) {
+					cgtr1[i]=[];
+					cgtr1[i]['class']=desc['class'];
+					cgtr1[i]['name']=desc['name'];
+					cgtr1[i]['rating']=desc['rating'];
+					i=i+1;
+				}
 			}
 		}
 		
