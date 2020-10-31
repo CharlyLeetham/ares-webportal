@@ -356,7 +356,7 @@ export default Component.extend({
 					cgtr1[i]['name']=desc['name'];
 					cgtr1[i]['rating']=desc['rating'];
 					i=i+1;
-				} else if (desc['class'].includes('^')) {
+				} else if (desc['class'].endsWith('^')) {
 					cgtr1[i] = [];
 					cgtr1[i]['class']=desc['class'];
 					cgtr1[i]['name']=desc['name'];
@@ -387,7 +387,15 @@ export default Component.extend({
 		i = 0;		
 		if ( fw=='icf' ) {
 			for (const[ed, desc] of Object.entries(exhind)) {
-				if (desc['class'].includes('^')) {
+				if (desc['class'].endsWith('*^')) {
+					cgtr1[i]=[];
+					newclass = desc['class'].split('*^')[0].trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
+					newclass =  newclass+"^";
+					cgtr1[i]['class']=newclass;
+					cgtr1[i]['name']=desc['name'];
+					cgtr1[i]['rating']=desc['rating'];
+					i=i+1;
+				} else if (desc['class'].endsWith('^')) {
 					cgtr2[i] = [];
 					cgtr2[i]['class']=desc['class'];
 					cgtr2[i]['name']=desc['name'];
@@ -397,7 +405,15 @@ export default Component.extend({
 			}
 		} else if ( fw=='race') {
 			for (const[ed, desc] of Object.entries(exhind)) {
-				if (desc['class'].includes('*')) {
+				if (desc['class'].endsWith('*^')) {
+					cgtr1[i]=[];
+					newclass = desc['class'].split('*^')[0].trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
+					newclass =  newclass+"*";
+					cgtr1[i]['class']=newclass;
+					cgtr1[i]['name']=desc['name'];
+					cgtr1[i]['rating']=desc['rating'];
+					i=i+1;
+				} else if (desc['class'].endsWith('*')) {
 					cgtr2[i]=[];
 					cgtr2[i]['class']=desc['class'];
 					cgtr2[i]['name']=desc['name'];
