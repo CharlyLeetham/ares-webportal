@@ -343,7 +343,9 @@ export default Component.extend({
 		}
 		
 		exedg = this.get('char.custom.cgedges');
-		exhind = this.get('char.custom.cghind');		
+		exhind = this.get('char.custom.cghind');
+
+		console.log(exedg);
 
 		i = 0;		
 		if ( fw=='icf' ) {
