@@ -372,8 +372,8 @@ export default Component.extend({
 				if (desc['class'].endsWith('*^')) {
 					cgtr1[i]=[];
 					newclass = desc['class'].split('*^')[0].trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
-					//newclass =  newclass+"*";						
-					cgtr1[i]['class']=desc['class'];
+					newclass =  newclass+"*";						
+					cgtr1[i]['class']=newclass;
 					cgtr1[i]['name']=desc['name'];
 					cgtr1[i]['rating']=desc['rating'];
 					i=i+1;
