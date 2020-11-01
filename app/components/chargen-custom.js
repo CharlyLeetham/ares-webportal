@@ -2,7 +2,7 @@ import Component from '@ember/component';
 import { computed } from '@ember/object';
 
 export default Component.extend({
-  tagName: '',
+	tagName: '',
   
 	swiconicfsel: computed(function() {
 		var swiconicf;
@@ -31,17 +31,17 @@ export default Component.extend({
 	}),
 	
 
-  didInsertElement: function() {
-    let self = this;
-    this.set('updateCallback', function() { return self.onUpdate(); } );
-  },
-  
-  onUpdate: function() {
-    // Return a hash containing your data.  Character data will be in 'char'.  For example:
-    // 
-    // return { goals: this.get('char.custom.goals') };
+	didInsertElement: function() {
+	let self = this;
+	this.set('updateCallback', function() { return self.onUpdate(); } );
+	},
+
+	onUpdate: function() {
+	// Return a hash containing your data.  Character data will be in 'char'.  For example:
+	// 
+	// return { goals: this.get('char.custom.goals') };
 	return { iconicf: this.get('char.custom.charicf'), race: this.get('char.custom.charrace'), cgedges: this.get('char.custom.cgedges'), cgedgesnofw: this.get('char.custom.cgedgesnofw'), cghind: this.get('char.custom.cghind'), cghindnofw: this.get('char.custom.cghindnofw') };
-  },
+	},
   
 	ck_excludes: function(dislist, sysedg, traittype) {
 		var trexcludes;
