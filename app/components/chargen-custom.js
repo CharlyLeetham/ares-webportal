@@ -43,7 +43,7 @@ export default Component.extend({
 	return { iconicf: this.get('char.custom.charicf'), race: this.get('char.custom.charrace'), cgedges: this.get('char.custom.cgedges'), cgedgesnofw: this.get('char.custom.cgedgesnofw'), cghind: this.get('char.custom.cghind'), cghindnofw: this.get('char.custom.cghindnofw') };
   },
   
-	ck_excludes: function(dislist, traittype) {
+	ck_excludes: function(dislist, sysedg, traittype) {
 		var trexcludes;
 		// Check to see the Hinderance excludes others and mark them as disabled.
 		if (dislist[0]['trexcludes'].length > 0) {
@@ -130,7 +130,7 @@ export default Component.extend({
 					// Does this already exist as an edge?
 
 				if (traittype == 'hind') {
-					trexcludes = this.ckexcludes(dislist,traittype);
+					trexcludes = this.ck_excludes(dislist, sysedg, traittype);
 				}
 					
 					if (cgtr1.length > 0) {
@@ -586,11 +586,7 @@ export default Component.extend({
 				dislist[0]['disabled'] = true;
 				// Check to see the Hinderance excludes others and mark them as disabled.
 				if (dislist[0]['trexcludes'].length > 0) {
-					// for (const [k1, v1] of Object.entries(dislist[0]['trexcludes'])) {
-						// trexcludes = Object.values(charhind).filter(slots => slots.name.toString() == v1);
-						// trexcludes[0]['disabled']= true;
-					// }
-					trexcludes = this.ck_excludes(dislist,'hind');
+					trexcludes = this.ck_excludes(dislist, charhind, 'hind');
 				}
 
 			}			
