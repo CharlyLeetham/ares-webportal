@@ -558,7 +558,7 @@ export default Component.extend({
 			sysedges = this.get('char.custom.sysedges');
 			for (const [key, value] of Object.entries(val)) {
 				dislist = Object.values(sysedges).filter(slots => slots.name.toString() == value['name']); // Convert sysedges to an array and filter for any entries that match the new framework selected.
-				console.log(dislist);
+				dislist[0]['disabled'] = true;
 			}
 
 			// for (const [key, value] of Object.entries(dislist)) {
