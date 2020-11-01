@@ -554,23 +554,22 @@ export default Component.extend({
 		},		
 		
 		edgeChanged(val) {
-			var charhind, sysedges, dislist;
+			var sysedges, dislist;
 			sysedges = this.get('char.custom.sysedges');
 			for (const [key, value] of Object.entries(val)) {
 				dislist = Object.values(sysedges).filter(slots => slots.name.toString() == value['name']); // Convert sysedges to an array and filter for any entries that match the new framework selected.
 				dislist[0]['disabled'] = true;
 			}
-
-			// for (const [key, value] of Object.entries(dislist)) {
-				// value['disabled'] = true; //Set disabled for this element to false
-			// }			
-			// this.set('char.custom.cgedges', dislist); //Send the new array back to the page for nice display.
 			this.set('char.custom.cgedgesnofw', val);
 		},		
 		
 		hindChanged(val) {
 			var charhind;
-			// charif = this.get('char.custom.charicf'); //Get the value that was selected in the dropdown.
+			charhind = this.get('char.custom.syshind');
+			for (const [key, value] of Object.entries(val)) {
+				dislist = Object.values(syshind).filter(slots => slots.name.toString() == value['name']); // Convert sysedges to an array and filter for any entries that match the new framework selected.
+				dislist[0]['disabled'] = true;
+			}
 			this.set('char.custom.cghindnofw', val);
 		},
 		
