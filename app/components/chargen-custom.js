@@ -579,15 +579,17 @@ export default Component.extend({
 		},		
 		
 		hindChanged(val) {
-			var charhind, dislist, trexcludes;
-			charhind = this.get('char.custom.swsyshind');
+			var syshind, charhind, dislist, trexcludes, ;
+			syshind = this.get('char.custom.swsyshind');
+			charhind = this.get('char.custom.cghind');
+			console.log (charhind);
 			console.log (val);
 			for (const [key, value] of Object.entries(val)) {
-				dislist = Object.values(charhind).filter(slots => slots.name.toString().toLowerCase() == value['name'].toLowerCase()); // Convert sysedges to an array and filter for any entries that match the new framework selected.
+				dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == value['name'].toLowerCase()); // Convert sysedges to an array and filter for any entries that match the new framework selected.
 				dislist[0]['disabled'] = true;
 				// Check to see the Hinderance excludes others and mark them as disabled.
 				if (dislist[0]['trexcludes'].length > 0) {
-					trexcludes = this.ck_excludes(dislist, charhind, 'hind');
+					trexcludes = this.ck_excludes(dislist, syshind, 'hind');
 				}
 
 			}
