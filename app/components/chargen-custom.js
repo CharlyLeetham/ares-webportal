@@ -560,7 +560,7 @@ export default Component.extend({
 			for (const [key, value] of Object.entries(dislist)) {
 				value['disabled'] = true; //Set disabled for this element to false
 			}			
-			// dislist[0]['disabled'] = true; //Set disabled for this element to false
+			console.log(dislist);
 			this.set('char.custom.cgedges', dislist); //Send the new array back to the page for nice display.
 			this.set('char.custom.cgedgesnofw', val);
 		},		
