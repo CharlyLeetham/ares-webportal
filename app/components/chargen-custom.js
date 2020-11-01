@@ -73,7 +73,7 @@ export default Component.extend({
 
 		if (fw == 'icf') {
 			specchar = '*';
-		} else {
+		} else if (fw == 'race') {
 			specchar ='^';
 		}
 
@@ -98,15 +98,7 @@ export default Component.extend({
 					i=i+1;
 				}
 			}
-		}		
-				
-		// Change all items in the sysedg dropdown to enabled. 	
-		// dislist = Object.values(sysedg).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
-
-		// for (const [key, value] of Object.entries(dislist)) {
-			// console.log (value['name']+' disabled='+value['disabled']);
-			// value['disabled'] = false //Set disabled for this element to false
-		// }		
+		}
 
 		// Clear the edges list for the framework
 
@@ -121,15 +113,10 @@ export default Component.extend({
 				loc1=value;
 
 				dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
-				
-				console.log(dislist);				
-
 				for (const [key1, value1] of Object.entries(dislist)) {
 					value1['disabled'] = true; //Set disabled for this element to true
 					// Write the new CG Edges array for a nice display
-					// Does this already exist as an edge?
-
-					console.log(value1);					
+					// Does this already exist as an edge?			
 					
 					if (cgtr1.length > 0) {
 						for (const [key2, value2] of Object.entries(cgtr1)) {
@@ -165,9 +152,7 @@ export default Component.extend({
 			let a = x.name.toLowerCase(),
 				b = y.name.toLowerCase();
 			return a == b ? 0 : a > b ? 1 : -1;
-		});		
-
-
+		});
 		
 		if (traittype == 'edge') {
 			this.set('char.custom.sysedges', sysedg); //Send the new dropdown back to the page. 
@@ -345,9 +330,6 @@ export default Component.extend({
 		
 		exedg = this.get('char.custom.cgedges');
 		exhind = this.get('char.custom.cghind');
-
-		console.log(exedg);
-
 		i = 0;		
 		if ( fw=='icf' ) {
 			for (const[ed, desc] of Object.entries(exedg)) {
@@ -572,8 +554,9 @@ export default Component.extend({
 		},		
 		
 		edgeChanged(val) {
-			var charhind;
-			// charif = this.get('char.custom.charicf'); //Get the value that was selected in the dropdown.
+			var charhind, sysedges;
+			sysedges = this.get('char.custom.swsysedges');
+			console.log (sysedges);
 			this.set('char.custom.cgedgesnofw', val);
 		},		
 		
