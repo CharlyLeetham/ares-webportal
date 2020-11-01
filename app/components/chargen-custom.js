@@ -554,7 +554,7 @@ export default Component.extend({
 		},		
 		
 		edgeChanged(val) {
-			var sysedges, dislist;
+			var sysedges, dislist, trexcludes;
 			sysedges = this.get('char.custom.sysedges');
 			for (const [key, value] of Object.entries(val)) {
 				dislist = Object.values(sysedges).filter(slots => slots.name.toString() == value['name']); // Convert sysedges to an array and filter for any entries that match the new framework selected.
@@ -564,7 +564,7 @@ export default Component.extend({
 		},		
 		
 		hindChanged(val) {
-			var charhind, dislist;
+			var charhind, dislist, trexcludes;
 			charhind = this.get('char.custom.swsyshind');
 			for (const [key, value] of Object.entries(val)) {
 				dislist = Object.values(charhind).filter(slots => slots.name.toString() == value['name']); // Convert sysedges to an array and filter for any entries that match the new framework selected.
@@ -572,8 +572,9 @@ export default Component.extend({
 			}
 			
 			// Check to see the Hinderance excludes others and mark them as disabled.
-			for (const [key, value] of Object.entries(charhind)) {
-				console.log(value);
+			trexcludes = Object.values(charhind).filter(slots => slots.trexclude.length > 0); // Convert sysedges to an array and filter for any entries that match the new framework selected.			
+			for (const [key, value] of Object.entries(trexcludes)) {
+				console.log(value['name']);
 			}
 			
 			this.set('char.custom.cghindnofw', val);
