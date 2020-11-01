@@ -37,7 +37,10 @@
 									<span class="tooltiptext">{{counter.rating}}</span>
 								</span></li>
 							{{/each-in}}
-							</ul></p>
+							</ul>
+							{{{ansi-format text=char.custom.swsyshind}}}
+							
+							</p>
 						</div>
 						<div class="row">
 							<PowerSelectMultiple @searchEnabled={{true}} @searchField="name" @searchPlaceholder="Type a name..." @selected={{char.custom.cgedgesnofw}} @options={{this.swsysedges}} @onChange={{action "edgeChanged"}} as |edg|>
