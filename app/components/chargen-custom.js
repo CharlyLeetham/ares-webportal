@@ -572,12 +572,13 @@ export default Component.extend({
 				// Check to see the Hinderance excludes others and mark them as disabled.
 				if (dislist[0]['trexcludes'].length > 0) {
 					for (const [k1, v1] of Object.entries(dislist[0]['trexcludes'])) {
-						console.log (v1);
+						trexcludes = Object.values(charhind).filter(slots => slots.name.toString() == v1);
+						trexcludes[0]['disabled']= true;
 					}
 				}
 			}			
 
-			// trexcludes = Object.values(charhind).filter(slots => slots.trexcludes.length >  0 && slots.name.toString() == value['name']  );// Convert charhind to an array and filter for any entries that have exclusions on them.	
+			// 
 			
 			// for (const [key, value] of Object.entries(trexcludes)) {
 				// console.log(value['trexcludes']);
