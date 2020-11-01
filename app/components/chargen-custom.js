@@ -569,10 +569,11 @@ export default Component.extend({
 			for (const [key, value] of Object.entries(val)) {
 				dislist = Object.values(charhind).filter(slots => slots.name.toString() == value['name']); // Convert sysedges to an array and filter for any entries that match the new framework selected.
 				dislist[0]['disabled'] = true;
+				// Check to see the Hinderance excludes others and mark them as disabled.			
 			}			
-			// Check to see the Hinderance excludes others and mark them as disabled.
-			trexcludes = Object.values(charhind).filter(slots => slots.trexcludes.length >  0 );// Convert sysedges to an array and filter for any entries that match the new framework selected.
-			console.log(trexcludes);			
+
+			trexcludes = Object.values(charhind).filter(slots => slots.trexcludes.length >  0 && slots.name.toString() == value['name']  );// Convert charhind to an array and filter for any entries that have exclusions on them.	
+			
 			for (const [key, value] of Object.entries(trexcludes)) {
 				console.log(value['trexcludes']);
 			}
