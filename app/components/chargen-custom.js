@@ -579,7 +579,7 @@ export default Component.extend({
 		},		
 		
 		hindChanged(val) {
-			var syshind, charhind, dislist, trexcludes, ;
+			var syshind, charhind, dislist, trexcludes;
 			syshind = this.get('char.custom.swsyshind');
 			charhind = this.get('char.custom.cghind');
 			console.log (charhind);
