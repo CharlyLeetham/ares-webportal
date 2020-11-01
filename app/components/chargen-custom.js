@@ -556,8 +556,8 @@ export default Component.extend({
 		edgeChanged(val) {
 			var charhind, sysedges, dislist;
 			sysedges = this.get('char.custom.sysedges');
-			dislist = Object.values(sysedges).filter(slots => slots.class.toString() == val); // Convert charcgp to an array and filter for any entries that match the new framework selected.
-			console.log (dislist);			
+			// dislist = Object.values(sysedges).filter(slots => slots.class.toString() == val); // Convert charcgp to an array and filter for any entries that match the new framework selected.
+			console.log (sysedges);			
 			this.set('char.custom.cgedgesnofw', val);
 		},		
 		
