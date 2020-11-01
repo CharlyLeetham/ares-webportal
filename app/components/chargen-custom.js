@@ -50,7 +50,7 @@ export default Component.extend({
 		if (dislist[0]['trexcludes'].length > 0) {
 			for (const [k1, v1] of Object.entries(dislist[0]['trexcludes'])) {
 				trexcludes = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == v1.toLowerCase());
-				consoloe.log(trexcludes);
+				console.log(trexcludes);
 				trexcludes[0]['disabled']= true;
 			}
 		}	
