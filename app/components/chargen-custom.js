@@ -582,6 +582,7 @@ export default Component.extend({
 			var syshind, charhind, dislist, dislist33, trexcludes;
 			syshind = this.get('char.custom.swsyshind');
 			charhind = this.get('char.custom.cghind');
+			console.log (syshind);
 			console.log (charhind);
 			console.log (val);
 			for (const[k1, v1] of Object.entries(val)) {
