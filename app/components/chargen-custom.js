@@ -584,8 +584,8 @@ export default Component.extend({
 			charhind = this.get('char.custom.cghind');
 			console.log (charhind);
 			console.log (val);
-			for (const(k1, v1) of Object.entries(charhind)) {
-				dislist33 = Object.values(charhind).filter(slots => slots.class.toString().toLowerCase() != value['class'].toLowerCase());
+			for (const[k1, v1] of Object.entries(val)) {
+				dislist33 = Object.values(charhind).filter(slots => slots.class.toString().toLowerCase() != v1['class'].toLowerCase());
 				console.log(dislist33);			
 			}
 			
