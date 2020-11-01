@@ -130,7 +130,7 @@ export default Component.extend({
 					// Does this already exist as an edge?
 
 				if (traittype == 'hind') {
-					trexcludes = check_excludes(dislist,traittype);
+					trexcludes = this.check_excludes(dislist,traittype);
 				}
 					
 					if (cgtr1.length > 0) {
@@ -590,7 +590,7 @@ export default Component.extend({
 						// trexcludes = Object.values(charhind).filter(slots => slots.name.toString() == v1);
 						// trexcludes[0]['disabled']= true;
 					// }
-					trexcludes = check_excludes(dislist,'hind');
+					trexcludes = this.check_excludes(dislist,'hind');
 				}
 
 			}			
