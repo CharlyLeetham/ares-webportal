@@ -565,9 +565,9 @@ export default Component.extend({
 		
 		hindChanged(val) {
 			var charhind;
-			charhind = this.get('char.custom.syshind');
+			charhind = this.get('char.custom.swsyshind');
 			for (const [key, value] of Object.entries(val)) {
-				dislist = Object.values(swsyshind).filter(slots => slots.name.toString() == value['name']); // Convert sysedges to an array and filter for any entries that match the new framework selected.
+				dislist = Object.values(syshind).filter(slots => slots.name.toString() == value['name']); // Convert sysedges to an array and filter for any entries that match the new framework selected.
 				dislist[0]['disabled'] = true;
 			}
 			this.set('char.custom.cghindnofw', val);
