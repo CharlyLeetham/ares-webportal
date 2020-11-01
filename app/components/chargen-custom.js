@@ -582,14 +582,12 @@ export default Component.extend({
 			var syshind, charhind, dislist, dislist33, trexcludes;
 			syshind = this.get('char.custom.swsyshind');
 			charhind = this.get('char.custom.cghind');
-			// console.log (syshind);
-			// console.log (charhind);
-			// console.log (val);
 			for (const[k1, v1] of Object.entries(charhind)) {
 				if (!v1['class'].endsWith('*^') && !v1['class'].endsWith('*') && !v1['class'].endsWith('^') ) {
-					console.log(v1['class'], val);
 					dislist33 = Object.values(val).filter(slots => slots.name.toString().toLowerCase() == v1['name'].toLowerCase());
-					console.log(dislist33);	
+					if (dislist33.length < 1) {
+						v1['disabled'] = false;
+					}
 				}
 			}
 			
