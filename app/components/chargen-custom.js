@@ -572,8 +572,9 @@ export default Component.extend({
 			}
 			
 			// Check to see the Hinderance excludes others and mark them as disabled.
-			// if (charhind.length > 0) {
-				console.log(charhind);
+			for (const [key, value] of Object.entries(charhind)) {
+				console.log(value);
+			}
 			
 			this.set('char.custom.cghindnofw', val);
 		},
