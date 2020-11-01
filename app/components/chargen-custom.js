@@ -53,6 +53,17 @@ export default Component.extend({
 			}
 		}	
 	},
+
+	ck_includes: function(dislist, sysedg, traittype) {
+		var trexcludes;
+		// Check to see the Hinderance excludes others and mark them as disabled.
+		if (dislist[0]['trexcludes'].length > 0) {
+			for (const [k1, v1] of Object.entries(dislist[0]['trexcludes'])) {
+				trexcludes = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == v1.toLowerCase());
+				trexcludes[0]['disabled']= false;
+			}
+		}	
+	},
   
   	find_duplicate_in_array: function(arra1) {
 		var object = {};
@@ -588,7 +599,10 @@ export default Component.extend({
 					if (dislist33.length < 1) {
 						v1['disabled'] = false;
 						dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == v1['name'].toLowerCase());
-						console.log (dislist);
+						dislist[0]['disabled'] = false;
+						if (dislist[0]['trexcludes'].length > 0) {
+							trexcludes = this.ck_includes(dislist, syshind, 'hind');
+						}						
 					}
 				}
 			}
