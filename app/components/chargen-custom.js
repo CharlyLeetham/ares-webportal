@@ -43,6 +43,17 @@ export default Component.extend({
 	return { iconicf: this.get('char.custom.charicf'), race: this.get('char.custom.charrace'), cgedges: this.get('char.custom.cgedges'), cgedgesnofw: this.get('char.custom.cgedgesnofw'), cghind: this.get('char.custom.cghind'), cghindnofw: this.get('char.custom.cghindnofw') };
   },
   
+	check_excludes: function(dislist, traittype) {
+		var trexcludes;
+		// Check to see the Hinderance excludes others and mark them as disabled.
+		if (dislist[0]['trexcludes'].length > 0) {
+			for (const [k1, v1] of Object.entries(dislist[0]['trexcludes'])) {
+				trexcludes = Object.values(sysedg).filter(slots => slots.name.toString() == v1);
+				trexcludes[0]['disabled']= true;
+			}
+		}	
+	}
+  
   	find_duplicate_in_array: function(arra1) {
 		var object = {};
 		var result = [];
@@ -119,13 +130,7 @@ export default Component.extend({
 					// Does this already exist as an edge?
 
 				if (traittype == 'hind') {
-					// Check to see the Hinderance excludes others and mark them as disabled.
-					if (dislist[0]['trexcludes'].length > 0) {
-						for (const [k1, v1] of Object.entries(dislist[0]['trexcludes'])) {
-							trexcludes = Object.values(sysedg).filter(slots => slots.name.toString() == v1);
-							trexcludes[0]['disabled']= true;
-						}
-					}
+					trexcludes = check_excludes(dislist,traittype);
 				}
 					
 					if (cgtr1.length > 0) {
@@ -581,11 +586,13 @@ export default Component.extend({
 				dislist[0]['disabled'] = true;
 				// Check to see the Hinderance excludes others and mark them as disabled.
 				if (dislist[0]['trexcludes'].length > 0) {
-					for (const [k1, v1] of Object.entries(dislist[0]['trexcludes'])) {
-						trexcludes = Object.values(charhind).filter(slots => slots.name.toString() == v1);
-						trexcludes[0]['disabled']= true;
-					}
+					// for (const [k1, v1] of Object.entries(dislist[0]['trexcludes'])) {
+						// trexcludes = Object.values(charhind).filter(slots => slots.name.toString() == v1);
+						// trexcludes[0]['disabled']= true;
+					// }
+					trexcludes = check_excludes(dislist,'hind');
 				}
+
 			}			
 
 			// 
