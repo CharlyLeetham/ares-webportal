@@ -104,7 +104,7 @@ export default Component.extend({
 
 		//If there are new edges or hinderances, go through and set these to disabled in the edge drop down.
 		
-		var loc1, loc2, newclass, index;
+		var loc1, loc2, newclass, index, trexcludes;
 		
 		if (newedgarray) {
 
@@ -116,7 +116,17 @@ export default Component.extend({
 				for (const [key1, value1] of Object.entries(dislist)) {
 					value1['disabled'] = true; //Set disabled for this element to true
 					// Write the new CG Edges array for a nice display
-					// Does this already exist as an edge?			
+					// Does this already exist as an edge?
+
+				if (traittype == 'hind') {
+					// Check to see the Hinderance excludes others and mark them as disabled.
+					if (dislist[0]['trexcludes'].length > 0) {
+						for (const [k1, v1] of Object.entries(dislist[0]['trexcludes'])) {
+							trexcludes = Object.values(sysedg).filter(slots => slots.name.toString() == v1);
+							trexcludes[0]['disabled']= true;
+						}
+					}
+				}
 					
 					if (cgtr1.length > 0) {
 						for (const [key2, value2] of Object.entries(cgtr1)) {
