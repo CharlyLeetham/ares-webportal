@@ -570,6 +570,11 @@ export default Component.extend({
 				dislist = Object.values(charhind).filter(slots => slots.name.toString() == value['name']); // Convert sysedges to an array and filter for any entries that match the new framework selected.
 				dislist[0]['disabled'] = true;
 			}
+			
+			// Check to see the Hinderance excludes others and mark them as disabled.
+			// if (charhind.length > 0) {
+				console.log(charhind);
+			
 			this.set('char.custom.cghindnofw', val);
 		},
 		
