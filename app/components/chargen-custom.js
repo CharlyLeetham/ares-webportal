@@ -579,11 +579,16 @@ export default Component.extend({
 		},		
 		
 		hindChanged(val) {
-			var syshind, charhind, dislist, trexcludes;
+			var syshind, charhind, dislist, dislist33, trexcludes;
 			syshind = this.get('char.custom.swsyshind');
 			charhind = this.get('char.custom.cghind');
 			console.log (charhind);
 			console.log (val);
+			for (const(k1, v1) of Object.entries(charhind)) {
+				dislist33 = Object.values(charhind).filter(slots => slots.class.toString().toLowerCase() != value['class'].toLowerCase());
+				console.log(dislist33);			
+			}
+			
 			for (const [key, value] of Object.entries(val)) {
 				dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == value['name'].toLowerCase()); // Convert sysedges to an array and filter for any entries that match the new framework selected.
 				dislist[0]['disabled'] = true;
