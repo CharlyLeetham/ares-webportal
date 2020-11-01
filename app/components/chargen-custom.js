@@ -571,8 +571,8 @@ export default Component.extend({
 				dislist[0]['disabled'] = true;
 			}
 			
-			Check to see the Hinderance excludes others and mark them as disabled.
-			trexcludes = Object.values(charhind).filter(slots => slots.trexcludes.length > 0); // Convert sysedges to an array and filter for any entries that match the new framework selected.			
+			// Check to see the Hinderance excludes others and mark them as disabled.
+			trexcludes = Object.values(charhind).filter(slots => slots.trexcludes.length > 0);// Convert sysedges to an array and filter for any entries that match the new framework selected.			
 			for (const [key, value] of Object.entries(trexcludes)) {
 				console.log(value['name']);
 			}
