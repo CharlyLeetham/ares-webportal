@@ -558,9 +558,9 @@ export default Component.extend({
 			sysedges = this.get('char.custom.sysedges');
 			dislist = Object.values(sysedges).filter(slots => slots.name.toString() == val[0]['name']); // Convert charcgp to an array and filter for any entries that match the new framework selected.
 			for (const [key, value] of Object.entries(dislist)) {
-				value['disabled'] = false //Set disabled for this element to false
+				value['disabled'] = true; //Set disabled for this element to false
 			}			
-			dislist[0]['disabled'] = true; //Set disabled for this element to false
+			// dislist[0]['disabled'] = true; //Set disabled for this element to false
 			this.set('char.custom.cgedges', dislist); //Send the new array back to the page for nice display.
 			this.set('char.custom.cgedgesnofw', val);
 		},		
