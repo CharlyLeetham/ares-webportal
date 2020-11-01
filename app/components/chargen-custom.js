@@ -52,7 +52,7 @@ export default Component.extend({
 				trexcludes[0]['disabled']= true;
 			}
 		}	
-	}
+	},
   
   	find_duplicate_in_array: function(arra1) {
 		var object = {};
