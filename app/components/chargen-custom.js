@@ -587,7 +587,8 @@ export default Component.extend({
 					dislist33 = Object.values(val).filter(slots => slots.name.toString().toLowerCase() == v1['name'].toLowerCase());
 					if (dislist33.length < 1) {
 						v1['disabled'] = false;
-						console.log (charhind);
+						dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == v1['name'].toLowerCase());
+						console.log (dislist);
 					}
 				}
 			}
