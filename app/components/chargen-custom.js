@@ -574,7 +574,7 @@ export default Component.extend({
 			trexcludes = Object.values(charhind).filter(slots => slots.trexcludes.length >  0 );// Convert sysedges to an array and filter for any entries that match the new framework selected.
 			console.log(trexcludes);			
 			for (const [key, value] of Object.entries(trexcludes)) {
-				console.log(value['value']);
+				console.log(value['trexcludes']);
 			}
 			
 			this.set('char.custom.cghindnofw', val);
