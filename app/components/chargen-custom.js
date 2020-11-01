@@ -573,11 +573,8 @@ export default Component.extend({
 			// Check to see the Hinderance excludes others and mark them as disabled.
 			trexcludes = Object.values(charhind).filter(slots => slots.trexcludes.length >  0 );// Convert sysedges to an array and filter for any entries that match the new framework selected.
 			console.log(trexcludes);			
-			for (const [key, value] of Object.entries(charhind)) {
-				if (value['trexcludes'] != '') {
-					console.log(value['name']);
-					console.log(value['trexcludes']);
-				}
+			for (const [key, value] of Object.entries(trexcludes)) {
+				console.log(value['value']);
 			}
 			
 			this.set('char.custom.cghindnofw', val);
