@@ -556,7 +556,7 @@ export default Component.extend({
 		edgeChanged(val) {
 			var charhind, sysedges;
 			sysedges = this.get('char.custom.sysedges');
-			console.log (sysedges);
+			console.log (sysedges, val);
 			this.set('char.custom.cgedgesnofw', val);
 		},		
 		
