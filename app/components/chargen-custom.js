@@ -576,6 +576,7 @@ export default Component.extend({
 			for (const [key, value] of Object.entries(charhind)) {
 				if (value['trexcludes'] != '') {
 					console.log(value['name']);
+					console.log(value['trexcludes']);
 				}
 			}
 			
