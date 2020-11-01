@@ -46,11 +46,9 @@ export default Component.extend({
 	ck_excludes: function(dislist, sysedg, traittype) {
 		var trexcludes;
 		// Check to see the Hinderance excludes others and mark them as disabled.
-		console.log (sysedg, dislist);
 		if (dislist[0]['trexcludes'].length > 0) {
 			for (const [k1, v1] of Object.entries(dislist[0]['trexcludes'])) {
 				trexcludes = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == v1.toLowerCase());
-				console.log(trexcludes);
 				trexcludes[0]['disabled']= true;
 			}
 		}	
@@ -592,7 +590,6 @@ export default Component.extend({
 				}
 
 			}
-			
 			this.set('char.custom.cghindnofw', val);
 		},
 		
