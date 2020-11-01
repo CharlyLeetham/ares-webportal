@@ -581,7 +581,7 @@ export default Component.extend({
 		hindChanged(val) {
 			var charhind, dislist, trexcludes;
 			charhind = this.get('char.custom.swsyshind');
-			console.log (val);
+			console.log (val, charhind);
 			for (const [key, value] of Object.entries(val)) {
 				dislist = Object.values(charhind).filter(slots => slots.name.toString() == value['name']); // Convert sysedges to an array and filter for any entries that match the new framework selected.
 				console.log (dislist);
