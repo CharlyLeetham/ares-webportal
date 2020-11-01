@@ -589,7 +589,7 @@ export default Component.extend({
 				if (!v1['class'].endsWith('*^') && !v1['class'].endsWith('*') && !v1['class'].endsWith('^') ) {
 					console.log(v1['class'], val);
 					dislist33 = Object.values(val).filter(slots => slots.name.toString().toLowerCase() == v1['name'].toLowerCase());
-					// console.log(dislist33);	
+					console.log(dislist33);	
 				}
 			}
 			
