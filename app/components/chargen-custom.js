@@ -571,7 +571,7 @@ export default Component.extend({
 				dislist[0]['disabled'] = true;
 				// Check to see the Hinderance excludes others and mark them as disabled.
 				if (dislist[0]['trexcludes'].length > 0) {
-					console.log (value['trexcludes']);
+					console.log (value['trexcludes'].typeOf());
 				}
 			}			
 
