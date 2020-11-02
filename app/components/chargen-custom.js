@@ -437,7 +437,7 @@ export default Component.extend({
 			}
 		}
 
-		this.resetcounter('icf');
+		this.resetcounter('icf', fwname);
 		
 		this.set('char.custom.cgedges', cgtr1); //Send the new array back to the page for nice display. 		
 		this.set('char.custom.cghind', cgtr2); //Send the new array back to the page for nice display.
@@ -451,7 +451,7 @@ export default Component.extend({
 		cgslots = this.get('char.custom.cgslots');  // This is the cgslots at init and their values.
 		newval = '';
 		
-		console.log("CGSLOTS:",cgslots);
+		console.log("CGSLOTS:",cgslots, fwname);
 		
 		if (fw == 'if') {
 			
