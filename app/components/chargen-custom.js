@@ -453,22 +453,15 @@ export default Component.extend({
 		newicf = this.get('char.custom.charicf');
 		newrace = this.get('char.custom.charrace');
 		
-		console.log(racecgp);
-		console.log(newrace);
-		
 		if (newrace['class'].toLowerCase() != 'none') {
 			newracepoints = Object.values(racecgp).filter(slots => slots.ifname.toString() == newrace['class'].toLowerCase()); // Convert charcgp to an array and filter for any entries that match the new framework selected.	
 			newval = newrace['class'].toLowerCase();
-			console.log(newracepoints);
 		}		
 		
 		for (const [key, value] of Object.entries(cgslots)) { //Loop through the init values. This is our yardstick.
 			newifpoints = Object.values(racecgp).filter(slots => slots.ifname.toString() == newval); // Convert charcgp to an array and filter for any entries that match the new framework selected.
 			
 			console.log(newifpoints);
-			if (Object.keys(newifpoints).length === 0) { // If it isn't, do this.
-			
-			}
 			// if (Object.keys(resetifpoints).length === 0) { // If it isn't, do this.
 				// newrating = value['rating'];  // Set the value we're going to send back to the web. This is going to equal CGINIT.
 			// } else {
