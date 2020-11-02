@@ -358,6 +358,7 @@ export default Component.extend({
 		
 		exedg = this.get('char.custom.cgedges');
 		exhind = this.get('char.custom.cghind');
+
 		i = 0;		
 		if ( fw=='icf' ) {
 			for (const[ed, desc] of Object.entries(exedg)) {
@@ -434,12 +435,40 @@ export default Component.extend({
 					i=i+1;
 				}
 			}
-		}		
+		}
+
+		self.resetcounter('icf');
 		
 		this.set('char.custom.cgedges', cgtr1); //Send the new array back to the page for nice display. 		
 		this.set('char.custom.cghind', cgtr2); //Send the new array back to the page for nice display.
 		
 		return;
+	},
+	
+	resetcounter: function(fw) {
+		charcgp = this.get('char.custom.inicgpoints');  // This is the array of all the if's and values
+		cgslots = this.get('char.custom.cgslots');  // This is the cgslots at init and their values.
+		
+		console.log("CGSLOTS:",cgslots);
+		
+		if (fw == 'if') {
+			
+		}
+		
+		newifpoints = Object.values(charcgp).filter(slots => slots.ifname.toString() == newval); // Convert charcgp to an array and filter for any entries that match the new framework selected.
+		for (const [key, value] of Object.entries(cgslots)) { //Loop through the init values. This is our yardstick.
+			resetifpoints = newifpoints.filter(slots => slots.name.toString() == value['class']);  // Test to see if the slot is modified by the Iconic Framework. 
+			
+			if (Object.keys(resetifpoints).length === 0) { // If it isn't, do this.
+				newrating = value['rating'];  // Set the value we're going to send back to the web. This is going to equal CGINIT.
+			} else {
+				for (const [key1, value1] of Object.entries(resetifpoints)) {
+					//console.log ('newrating='+value1['rating']+'+'+value['value']);
+					newrating = value1['rating'] + value['rating'];  //If there's a match, set the value to whatever is in CGINIT PLUS the iconfic framework.
+				}
+			}
+			document.getElementById("inp-" + value['class']).value = newrating;  //Set the counters on the website.		
+		}
 	},
   
 	actions: {
@@ -459,7 +488,7 @@ export default Component.extend({
 			
 			swiconicf = this.get('char.custom.iconicf'); // Get the iconic frameworks formatted for drop down. This is needed to send the updated races back to the page for selection.		
 			swrace = this.get('char.custom.cgrace'); // Get the system races formatted for drop down. This is needed to send the updated races back to the page for selection.		
-			cghind = this.get('char.custom.cghind'); // Hinderances on the Character. Is this needed???? 
+			cghind = this.get('char.custom.cghind'); // Hinderances on the Character.
 
 
 			// If the None option is selected, reset the lists.
