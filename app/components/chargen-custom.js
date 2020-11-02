@@ -452,6 +452,7 @@ export default Component.extend({
 		cgslots = this.get('char.custom.cgslots');  // This is the cgslots at init and their values.
 		newicf = this.get('char.custom.charicf');
 		newrace = this.get('char.custom.charrace');
+		newrating = 0;
 		
 		if (newicf['class'].toLowerCase() != 'none') {
 			newicfpoints = Object.values(charcgp).filter(slots => slots.ifname.toString() == newicf['class'].toLowerCase()); // Convert charcgp to an array and filter for any entries that match the new framework selected.	
@@ -478,7 +479,7 @@ export default Component.extend({
 			newifpoints = Object.values(charcgp).filter(slots => slots.ifname.toString() == icfval); // Convert charcgp to an array and filter for any entries that match the new framework selected.
 			console.log(value['class'], newifpoints);
 			if (Object.keys(newifpoints).length === 0) { // If it isn't, do this.
-				newrating = value['rating'];  // Set the value we're going to send back to the web. This is going to equal CGINIT.
+				newrating = value['rating']+newrating;  // Set the value we're going to send back to the web. This is going to equal CGINIT.
 			} else {
 				for (const [key1, value1] of Object.entries(newifpoints)) {
 					// console.log ('newrating='+value1['rating']+'+'+value['rating']);
