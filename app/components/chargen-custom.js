@@ -479,7 +479,7 @@ export default Component.extend({
 			
 			newifpoints = Object.values(charcgp).filter(slots => slots.ifname.toString() == icfval); // Convert charcgp to an array and filter for any entries that match the new framework selected.
 			if (Object.keys(newifpoints).length === 0) { // If it isn't, do this.
-				newrating = value['rating']+newrating;  // Set the value we're going to send back to the web. This is going to equal CGINIT.
+				newrating = value['rating'];  // Set the value we're going to send back to the web. This is going to equal CGINIT.
 			} else {
 				for (const [key1, value1] of Object.entries(newifpoints)) {
 					newrating = value1['rating'] + value['rating'];  //If there's a match, set the value to whatever is in CGINIT PLUS the iconfic framework.
