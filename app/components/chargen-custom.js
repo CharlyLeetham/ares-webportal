@@ -454,7 +454,7 @@ export default Component.extend({
 		newrace = this.get('char.custom.charrace');
 		console.log(newrace);
 		
-		
+		console.log(cgslots);
 		newifpoints = Object.values(charcgp).filter(slots => slots.ifname.toString() == newval); // Convert charcgp to an array and filter for any entries that match the new framework selected.	
 
 		for (const [key, value] of Object.entries(cgslots)) { //Loop through the init values. This is our yardstick.
