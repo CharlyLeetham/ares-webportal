@@ -466,6 +466,9 @@ export default Component.extend({
 			newifpoints = Object.values(racecgp).filter(slots => slots.ifname.toString() == newval); // Convert charcgp to an array and filter for any entries that match the new framework selected.
 			
 			console.log(newifpoints);
+			if (Object.keys(newifpoints).length === 0) { // If it isn't, do this.
+			
+			}
 			// if (Object.keys(resetifpoints).length === 0) { // If it isn't, do this.
 				// newrating = value['rating'];  // Set the value we're going to send back to the web. This is going to equal CGINIT.
 			// } else {
