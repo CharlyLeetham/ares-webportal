@@ -458,13 +458,12 @@ export default Component.extend({
 		
 		if (newrace['class'].toLowerCase() != 'none') {
 			newracepoints = Object.values(racecgp).filter(slots => slots.ifname.toString() == newrace['class'].toLowerCase()); // Convert charcgp to an array and filter for any entries that match the new framework selected.	
+			newval = newrace['class'].toLowerCase();
 			console.log(newracepoints);
-		}
+		}		
 		
-		newifpoints = Object.values(charcgp).filter(slots => slots.ifname.toString() == newval); // Convert charcgp to an array and filter for any entries that match the new framework selected.	
-
 		for (const [key, value] of Object.entries(cgslots)) { //Loop through the init values. This is our yardstick.
-			resetifpoints = newifpoints.filter(slots => slots.name.toString() == value['class']);  // Test to see if the slot is modified by the Iconic Framework. 
+			newifpoints = Object.values(charcgp).filter(slots => slots.ifname.toString() == newval); // Convert charcgp to an array and filter for any entries that match the new framework selected.
 			
 			if (Object.keys(resetifpoints).length === 0) { // If it isn't, do this.
 				newrating = value['rating'];  // Set the value we're going to send back to the web. This is going to equal CGINIT.
@@ -475,7 +474,13 @@ export default Component.extend({
 				}
 			}
 			document.getElementById("inp-" + value['class']).value = newrating;  //Set the counters on the website.		
-		}
+		}		
+		
+
+		
+		newifpoints = Object.values(charcgp).filter(slots => slots.ifname.toString() == newval); // Convert charcgp to an array and filter for any entries that match the new framework selected.	
+
+
 	},
   
 	actions: {
