@@ -581,7 +581,7 @@ export default Component.extend({
 		},
 		
 		edgeChanged(val) {
-			var sysedges, charedges, dislist, trexcludes;
+			var sysedges, charedges, dislist, dislist33, trexcludes;
 			sysedges = this.get('char.custom.sysedges');
 			charedges = this.get('char.custom.cgedges');
 			
