@@ -449,11 +449,11 @@ export default Component.extend({
 		var charcgp, cgslots, newifpoints, resetifpoints, newrating, newval, newrace;
 		charcgp = this.get('char.custom.inicgpoints');  // This is the array of all the if's and values
 		cgslots = this.get('char.custom.cgslots');  // This is the cgslots at init and their values.
+		newicf = this.get('char.custom.charicf');
+		console.log(newicf);
+		newrace = this.get('char.custom.charrace');
+		console.log(newrace);
 		
-		if (fw == 'icf') {
-			newrace = this.get('char.custom.charrace');
-			console.log(newrace);
-		}
 		
 		newifpoints = Object.values(charcgp).filter(slots => slots.ifname.toString() == newval); // Convert charcgp to an array and filter for any entries that match the new framework selected.	
 
