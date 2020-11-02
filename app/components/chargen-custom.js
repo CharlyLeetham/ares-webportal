@@ -437,7 +437,7 @@ export default Component.extend({
 			}
 		}
 
-		this.resetcounter('icf', fwname);
+		this.resetcounter(fwname);
 		
 		this.set('char.custom.cgedges', cgtr1); //Send the new array back to the page for nice display. 		
 		this.set('char.custom.cghind', cgtr2); //Send the new array back to the page for nice display.
@@ -445,7 +445,7 @@ export default Component.extend({
 		return;
 	},
 	
-	resetcounter: function(fw, fwname) {
+	resetcounter: function(fwname) {
 		var charcgp, racecgp, cgslots, newicfpoints, newifpoints, newracepoints, newrcpoints, newrating, raceval, icfval, newicf, newrace;
 		charcgp = this.get('char.custom.inicgpoints');  // This is the array of all the if's and values
 		racecgp = this.get('char.custom.initracepoints'); // An array of all races and values.
