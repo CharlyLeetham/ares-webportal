@@ -454,6 +454,7 @@ export default Component.extend({
 		newrace = this.get('char.custom.charrace');
 		
 		console.log(racecgp);
+		console.log(newrace);
 		
 		if (newrace['class'].toLowerCase() != 'none') {
 			newracepoints = Object.values(racecgp).filter(slots => slots.ifname.toString() == newrace['class']); // Convert charcgp to an array and filter for any entries that match the new framework selected.	
