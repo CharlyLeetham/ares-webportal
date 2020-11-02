@@ -437,7 +437,7 @@ export default Component.extend({
 			}
 		}
 
-		self.resetcounter('icf');
+		this.resetcounter('icf');
 		
 		this.set('char.custom.cgedges', cgtr1); //Send the new array back to the page for nice display. 		
 		this.set('char.custom.cghind', cgtr2); //Send the new array back to the page for nice display.
