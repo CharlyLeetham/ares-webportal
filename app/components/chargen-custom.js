@@ -587,6 +587,7 @@ export default Component.extend({
 				dislist[0]['disabled'] = true;
 			}
 			this.set('char.custom.cgedgesnofw', val);
+			this.set('char.custom.cgedges', val);
 		},		
 		
 		hindChanged(val) {
