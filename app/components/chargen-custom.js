@@ -454,6 +454,8 @@ export default Component.extend({
 		newrace = this.get('char.custom.charrace');
 		newrating = 0;
 		
+		console.log(cgslots);
+		
 		if (newicf['class'].toLowerCase() != 'none') {
 			newicfpoints = Object.values(charcgp).filter(slots => slots.ifname.toString() == newicf['class'].toLowerCase()); // Convert charcgp to an array and filter for any entries that match the new framework selected.	
 			icfval = newicf['class'].toLowerCase();
