@@ -467,7 +467,7 @@ export default Component.extend({
 				newrating = value['rating'];  // Set the value we're going to send back to the web. This is going to equal CGINIT.
 			} else {
 				for (const [key1, value1] of Object.entries(newifpoints)) {
-					console.log ('newrating='+value1['rating']+'+'+value['value']);
+					console.log ('newrating='+value1['rating']+'+'+value['rating']);
 					newrating = value1['rating'] + value['rating'];  //If there's a match, set the value to whatever is in CGINIT PLUS the iconfic framework.
 				}
 			}
