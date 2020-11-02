@@ -467,7 +467,7 @@ export default Component.extend({
 		
 		for (const [key, value] of Object.entries(cgslots)) { //Loop through the init values. This is our yardstick.
 			newrcpoints = Object.values(racecgp).filter(slots => slots.ifname.toString() == raceval); // Convert charcgp to an array and filter for any entries that match the new framework selected.
-			console.log(value['class'], newifpoints);
+			console.log(value['class'], newrcpoints);
 			if (Object.keys(newrcpoints).length === 0) { // If it isn't, do this.
 				newrating = value['rating'];  // Set the value we're going to send back to the web. This is going to equal CGINIT.
 			} else {
