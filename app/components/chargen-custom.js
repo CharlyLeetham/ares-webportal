@@ -576,20 +576,35 @@ export default Component.extend({
 						newrating = value1['rating'] + value['rating'];  //If there's a match, set the value to whatever is in CGINIT PLUS the iconfic framework.
 					}
 				}
-				//console.log ("inp-" + value['class']+".value= "+newrating);
 				document.getElementById("inp-" + value['class']).value = newrating;  //Set the counters on the website.
 			}
-		},		
+		},
 		
 		edgeChanged(val) {
-			var sysedges, dislist, trexcludes;
+			var sysedges, charedges, dislist, trexcludes;
 			sysedges = this.get('char.custom.sysedges');
+			charedges = this.get('char.custom.cgedges');
+			
+			for (const[k1, v1] of Object.entries(charedges)) {
+				if (!v1['class'].endsWith('*^') && !v1['class'].endsWith('*') && !v1['class'].endsWith('^') ) {
+					dislist33 = Object.values(val).filter(slots => slots.name.toString(). () == v1['name'].toLowerCase());
+					if (dislist33.length < 1) {
+						v1['disabled'] = false;
+						dislist = Object.values(sysedges).filter(slots => slots.name.toString().toLowerCase() == v1['name'].toLowerCase());
+						dislist[0]['disabled'] = false;
+						if (dislist[0]['trexcludes'].length > 0) {
+							trexcludes = this.ck_includes(dislist, sysedges, 'edge');
+						}						
+					}
+				}
+			}
+			
 			for (const [key, value] of Object.entries(val)) {
 				dislist = Object.values(sysedges).filter(slots => slots.name.toString().toLowerCase() == value['name'].toLowerCase()); // Convert sysedges to an array and filter for any entries that match the new framework selected.
 				dislist[0]['disabled'] = true;
 			}
 			this.set('char.custom.cgedgesnofw', val);
-		},		
+		},	
 		
 		hindChanged(val) {
 			var syshind, charhind, dislist, dislist33, trexcludes;
@@ -597,7 +612,7 @@ export default Component.extend({
 			charhind = this.get('char.custom.cghind');
 			for (const[k1, v1] of Object.entries(charhind)) {
 				if (!v1['class'].endsWith('*^') && !v1['class'].endsWith('*') && !v1['class'].endsWith('^') ) {
-					dislist33 = Object.values(val).filter(slots => slots.name.toString().toLowerCase() == v1['name'].toLowerCase());
+					dislist33 = Object.values(val).filter(slots => slots.name.toString(). () == v1['name'].toLowerCase());
 					if (dislist33.length < 1) {
 						v1['disabled'] = false;
 						dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == v1['name'].toLowerCase());
