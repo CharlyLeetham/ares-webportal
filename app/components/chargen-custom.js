@@ -446,27 +446,32 @@ export default Component.extend({
 	},
 	
 	resetcounter: function(fw, fwname) {
-		var charcgp, racecgp, cgslots, newifpoints, resetifpoints, newrating, newval, newicf, newicfpoints, newracepoints, newrace;
+		var charcgp, racecgp, cgslots, newicfpoints, newifpoints, newracepoints, newrcpoints, newrating, raceval, icfval, newicf, newrace;
 		charcgp = this.get('char.custom.inicgpoints');  // This is the array of all the if's and values
 		racecgp = this.get('char.custom.initracepoints'); // An array of all races and values.
 		cgslots = this.get('char.custom.cgslots');  // This is the cgslots at init and their values.
 		newicf = this.get('char.custom.charicf');
 		newrace = this.get('char.custom.charrace');
 		
+		if (newicf['class'].toLowerCase() != 'none') {
+			newicfpoints = Object.values(charcgp).filter(slots => slots.ifname.toString() == newicf['class'].toLowerCase()); // Convert charcgp to an array and filter for any entries that match the new framework selected.	
+			icfval = newicf['class'].toLowerCase();
+		}
+		
 		if (newrace['class'].toLowerCase() != 'none') {
 			newracepoints = Object.values(racecgp).filter(slots => slots.ifname.toString() == newrace['class'].toLowerCase()); // Convert charcgp to an array and filter for any entries that match the new framework selected.	
-			newval = newrace['class'].toLowerCase();
+			raceval = newrace['class'].toLowerCase();
 		}
 		
 		console.log (cgslots);
 		
 		for (const [key, value] of Object.entries(cgslots)) { //Loop through the init values. This is our yardstick.
-			newifpoints = Object.values(racecgp).filter(slots => slots.ifname.toString() == newval); // Convert charcgp to an array and filter for any entries that match the new framework selected.
+			newrcpoints = Object.values(racecgp).filter(slots => slots.ifname.toString() == raceval); // Convert charcgp to an array and filter for any entries that match the new framework selected.
 			console.log(value['class'], newifpoints);
-			if (Object.keys(newifpoints).length === 0) { // If it isn't, do this.
+			if (Object.keys(newrcpoints).length === 0) { // If it isn't, do this.
 				newrating = value['rating'];  // Set the value we're going to send back to the web. This is going to equal CGINIT.
 			} else {
-				for (const [key1, value1] of Object.entries(newifpoints)) {
+				for (const [key1, value1] of Object.entries(newrcpoints)) {
 					console.log ('newrating='+value1['rating']+'+'+value['rating']);
 					newrating = value1['rating'] + value['rating'];  //If there's a match, set the value to whatever is in CGINIT PLUS the iconfic framework.
 				}
