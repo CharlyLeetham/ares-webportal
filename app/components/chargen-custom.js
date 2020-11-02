@@ -462,10 +462,10 @@ export default Component.extend({
 			console.log(newracepoints);
 		}		
 		
-		for (const [key, value] of Object.entries(cgslots)) { //Loop through the init values. This is our yardstick.
-			newifpoints = Object.values(racecgp).filter(slots => slots.ifname.toString() == newval); // Convert charcgp to an array and filter for any entries that match the new framework selected.
+		// for (const [key, value] of Object.entries(cgslots)) { //Loop through the init values. This is our yardstick.
+			// newifpoints = Object.values(racecgp).filter(slots => slots.ifname.toString() == newval); // Convert charcgp to an array and filter for any entries that match the new framework selected.
 			
-			console.log(newifpoints);
+			// console.log(newifpoints);
 			// if (Object.keys(resetifpoints).length === 0) { // If it isn't, do this.
 				// newrating = value['rating'];  // Set the value we're going to send back to the web. This is going to equal CGINIT.
 			// } else {
@@ -474,8 +474,8 @@ export default Component.extend({
 					// newrating = value1['rating'] + value['rating'];  //If there's a match, set the value to whatever is in CGINIT PLUS the iconfic framework.
 				// }
 			// }
-			document.getElementById("inp-" + value['class']).value = newrating;  //Set the counters on the website.		
-		}		
+			// document.getElementById("inp-" + value['class']).value = newrating;  //Set the counters on the website.		
+		// }		
 		
 
 		
