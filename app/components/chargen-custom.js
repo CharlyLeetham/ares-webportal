@@ -446,9 +446,10 @@ export default Component.extend({
 	},
 	
 	resetcounter: function(fw) {
-		var charcgp, cgslots, newifpoints, resetifpoints, newrating;
+		var charcgp, cgslots, newifpoints, resetifpoints, newrating, newval;
 		charcgp = this.get('char.custom.inicgpoints');  // This is the array of all the if's and values
 		cgslots = this.get('char.custom.cgslots');  // This is the cgslots at init and their values.
+		newval = '';
 		
 		console.log("CGSLOTS:",cgslots);
 		
