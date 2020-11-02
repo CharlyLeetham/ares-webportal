@@ -446,18 +446,16 @@ export default Component.extend({
 	},
 	
 	resetcounter: function(fw, fwname) {
-		var charcgp, cgslots, newifpoints, resetifpoints, newrating, newval;
+		var charcgp, cgslots, newifpoints, resetifpoints, newrating, newval, newrace;
 		charcgp = this.get('char.custom.inicgpoints');  // This is the array of all the if's and values
 		cgslots = this.get('char.custom.cgslots');  // This is the cgslots at init and their values.
-		newval = fwname.toLowerCase;
 		
-		if (fw == 'if') {
-			
+		if (fw == 'icf') {
+			newrace = this.get('char.custom.charrace');
+			console.log(newrace);
 		}
 		
-		newifpoints = Object.values(charcgp).filter(slots => slots.ifname.toString() == newval); // Convert charcgp to an array and filter for any entries that match the new framework selected.
-		
-		console.log(fwname);		
+		newifpoints = Object.values(charcgp).filter(slots => slots.ifname.toString() == newval); // Convert charcgp to an array and filter for any entries that match the new framework selected.	
 
 		for (const [key, value] of Object.entries(cgslots)) { //Loop through the init values. This is our yardstick.
 			resetifpoints = newifpoints.filter(slots => slots.name.toString() == value['class']);  // Test to see if the slot is modified by the Iconic Framework. 
