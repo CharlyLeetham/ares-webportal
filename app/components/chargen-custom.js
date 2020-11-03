@@ -630,10 +630,13 @@ export default Component.extend({
 		},
 		
 		edgeChanged(val) {
-			var sysedges, charedges, dislist, dislist33, trexcludes;
+			var sysedges, charedges, charedgesall, dislist, dislist33, trexcludes;
 			sysedges = this.get('char.custom.sysedges');
 			charedges = this.get('char.custom.cgedges');
+			charedgesall = this.get('char.custom.cgedgesnofw');
 
+			console.log(charedges);	
+			console.log(charedgesall);				
 			for (const[k1, v1] of Object.entries(charedges)) {
 				console.log(v1['class']);				
 				if (!v1['class'].endsWith('*^') && !v1['class'].endsWith('*') && !v1['class'].endsWith('^') ) {
