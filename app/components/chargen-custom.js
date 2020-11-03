@@ -636,6 +636,7 @@ export default Component.extend({
 			
 			for (const[k1, v1] of Object.entries(charedges)) {
 				if (!v1['class'].endsWith('*^') && !v1['class'].endsWith('*') && !v1['class'].endsWith('^') ) {
+					console.log (v1['class'];
 					dislist33 = Object.values(val).filter(slots => slots.name.toString().toLowerCase() == v1['name'].toLowerCase());
 					if (dislist33.length < 1) {
 						v1['disabled'] = false;
