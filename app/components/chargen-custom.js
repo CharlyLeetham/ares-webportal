@@ -633,9 +633,9 @@ export default Component.extend({
 			var sysedges, charedges, dislist, dislist33, trexcludes;
 			sysedges = this.get('char.custom.sysedges');
 			charedges = this.get('char.custom.cgedges');
-			
-			console.log(v1['class']);
-			for (const[k1, v1] of Object.entries(charedges)) {				
+
+			for (const[k1, v1] of Object.entries(charedges)) {
+				console.log(v1['class']);				
 				if (!v1['class'].endsWith('*^') && !v1['class'].endsWith('*') && !v1['class'].endsWith('^') ) {
 					console.log(v1['class']);
 					dislist33 = Object.values(val).filter(slots => slots.name.toString().toLowerCase() == v1['name'].toLowerCase());
