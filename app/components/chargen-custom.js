@@ -637,8 +637,7 @@ export default Component.extend({
 
 			console.log(charedges);	
 			console.log(charedgesall);				
-			for (const[k1, v1] of Object.entries(charedges)) {
-				console.log(v1['class']);				
+			for (const[k1, v1] of Object.entries(charedges)) {			
 				if (!v1['class'].endsWith('*^') && !v1['class'].endsWith('*') && !v1['class'].endsWith('^') ) {
 					console.log(v1['class']);
 					dislist33 = Object.values(val).filter(slots => slots.name.toString().toLowerCase() == v1['name'].toLowerCase());
