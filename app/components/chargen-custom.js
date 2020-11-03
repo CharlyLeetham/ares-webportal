@@ -634,6 +634,7 @@ export default Component.extend({
 			sysedges = this.get('char.custom.sysedges');
 			charedges = this.get('char.custom.cgedges');
 			
+			console.log(v1['class']);
 			for (const[k1, v1] of Object.entries(charedges)) {				
 				if (!v1['class'].endsWith('*^') && !v1['class'].endsWith('*') && !v1['class'].endsWith('^') ) {
 					console.log(v1['class']);
