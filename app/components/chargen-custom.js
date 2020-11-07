@@ -668,7 +668,7 @@ export default Component.extend({
 			console.log(charhind);	
 			console.log(syshind);			
 			
-			for (const[k1, v1] of Object.entries(charhind)) {
+			for (const[k1, v1] of Object.entries(syshind)) {
 				if (!v1['class'].endsWith('*^') && !v1['class'].endsWith('*') && !v1['class'].endsWith('^') ) {
 					dislist33 = Object.values(val).filter(slots => slots.name.toString().toLowerCase() == v1['name'].toLowerCase());
 					if (dislist33.length < 1) {
