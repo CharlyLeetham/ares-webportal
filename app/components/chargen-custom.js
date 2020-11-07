@@ -140,9 +140,9 @@ export default Component.extend({
 					// Write the new CG Edges array for a nice display
 					// Does this already exist as an edge?
 
-				if (traittype == 'hind') {
-					trexcludes = this.ck_excludes(dislist, sysedg, traittype);
-				}
+					if (traittype == 'hind') {
+						trexcludes = this.ck_excludes(dislist, sysedg, traittype);
+					}
 					
 					if (cgtr1.length > 0) {
 						for (const [key2, value2] of Object.entries(cgtr1)) {
@@ -438,7 +438,6 @@ export default Component.extend({
 		}
 
 		this.resetcounter(fwname);
-		
 		this.set('char.custom.cgedges', cgtr1); //Send the new array back to the page for nice display. 		
 		this.set('char.custom.cghind', cgtr2); //Send the new array back to the page for nice display.
 		
@@ -663,6 +662,13 @@ export default Component.extend({
 			charhind = this.get('char.custom.cghind');
 			
 			console.log(val);
+			
+			// Reset all hinderances to available.
+			
+			for (const[k3, v3] of Object.entries(syshind)) {
+				v3['disabled']=false;
+			}
+			
 			// What is this really supposed to do now?
 			
 			for (const[k1, v1] of Object.entries(charhind)) {
@@ -680,9 +686,6 @@ export default Component.extend({
 			}
 			
 			for (const [key, value] of Object.entries(val)) {
-				console.log(value['disabled']);
-				value['disabled']=false;
-				console.log(value['disabled']);
 				dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == value['name'].toLowerCase()); // Convert sysedges to an array and filter for any entries that match the new framework selected.
 				dislist[0]['disabled'] = true;
 				// Check to see the Hinderance excludes others and mark them as disabled.
