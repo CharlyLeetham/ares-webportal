@@ -629,17 +629,14 @@ export default Component.extend({
 		},
 		
 		edgeChanged(val) {
-			var sysedges, charedges, charedgesall, dislist, dislist33, trexcludes, testedges;
+			var sysedges, charedges, charedgesall, dislist, dislist33, trexcludes, nonfwedges;
 			sysedges = this.get('char.custom.sysedges');
 			charedges = this.get('char.custom.cgedges');
 			charedgesall = this.get('char.custom.cgedgesfw');
-			testedges = this.get('char.custom.cgedgesnofw');
+			nonfwedges = this.get('char.custom.cgedgesnofw');
 			
-			console.log(val);
-			console.log(testedges);
-			
-			// Reset all hinderances to available.	
-			for (const[k3, v3] of Object.entries(testedges)) {
+			// Reset the non-framework and race edges on the character.	
+			for (const[k3, v3] of Object.entries(nonfwedges)) {
 				v3['disabled']=false;
 			}
 			
@@ -666,13 +663,14 @@ export default Component.extend({
 		},	
 		
 		hindChanged(val) {
-			var syshind, charhind, dislist, dislist33, trexcludes;
+			var syshind, charhind, dislist, dislist33, trexcludes, nofwhind;
 			syshind = this.get('char.custom.swsyshind');
 			charhind = this.get('char.custom.cghind');
+			nofwhind = this.get('char.custom.cghindnofw');
 		
 			
 			// Reset all hinderances to available.	
-			for (const[k3, v3] of Object.entries(syshind)) {
+			for (const[k3, v3] of Object.entries(nofwhind)) {
 				v3['disabled']=false;
 			}
 			
