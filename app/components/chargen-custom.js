@@ -634,12 +634,9 @@ export default Component.extend({
 			sysedges = this.get('char.custom.sysedges');
 			charedges = this.get('char.custom.cgedges');
 			charedgesall = this.get('char.custom.cgedgesfw');
-
-			console.log(charedges);	
-			console.log(charedgesall);				
+			
 			for (const[k1, v1] of Object.entries(charedges)) {			
 				if (!v1['class'].endsWith('*^') && !v1['class'].endsWith('*') && !v1['class'].endsWith('^') ) {
-					console.log(v1['class']);
 					dislist33 = Object.values(val).filter(slots => slots.name.toString().toLowerCase() == v1['name'].toLowerCase());
 					if (dislist33.length < 1) {
 						v1['disabled'] = false;
@@ -653,6 +650,7 @@ export default Component.extend({
 			}
 			
 			for (const [key, value] of Object.entries(val)) {
+				value['disabled']=false;				
 				dislist = Object.values(sysedges).filter(slots => slots.name.toString().toLowerCase() == value['name'].toLowerCase()); // Convert sysedges to an array and filter for any entries that match the new framework selected.
 				dislist[0]['disabled'] = true;
 			}
@@ -663,10 +661,6 @@ export default Component.extend({
 			var syshind, charhind, dislist, dislist33, trexcludes;
 			syshind = this.get('char.custom.swsyshind');
 			charhind = this.get('char.custom.cghind');
-			
-			console.log(val);
-			console.log(charhind);	
-			console.log(syshind);			
 			
 			// What is this really supposed to do now?
 			
@@ -694,8 +688,6 @@ export default Component.extend({
 				}
 
 			}
-			
-			
 			
 			this.set('char.custom.cghindnofw', val);
 		},
