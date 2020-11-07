@@ -639,8 +639,8 @@ export default Component.extend({
 			console.log(testedges);
 			
 			// Reset all hinderances to available.	
-			for (const[k3, v3] of Object.entries(sysedges)) {
-				// v3['disabled']=false;
+			for (const[k3, v3] of Object.entries(testedges)) {
+				v3['disabled']=false;
 			}
 			
 			for (const[k1, v1] of Object.entries(charedges)) {			
