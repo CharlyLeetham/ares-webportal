@@ -672,6 +672,11 @@ export default Component.extend({
 			// Reset all hinderances to available.	
 			for (const[k3, v3] of Object.entries(nofwhind)) {
 				v3['disabled']=false;
+				dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == v3['name'].toLowerCase());
+				dislist[0]['disabled'] = false;
+				if (dislist[0]['trexcludes'].length > 0) {
+					trexcludes = this.ck_includes(dislist, syshind, 'hind');
+				}					
 			}
 			
 			// What is this really supposed to do now?
