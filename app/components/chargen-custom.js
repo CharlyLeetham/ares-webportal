@@ -662,9 +662,11 @@ export default Component.extend({
 		hindChanged(val) {
 			var syshind, charhind, dislist, dislist33, trexcludes;
 			syshind = this.get('char.custom.swsyshind');
-			charhind = this.get('char.custom.cghindnofw');
+			charhind = this.get('char.custom.cghind');
 			
 			console.log(val);
+			console.log(charhind);	
+			console.log(syshind);			
 			
 			for (const[k1, v1] of Object.entries(charhind)) {
 				if (!v1['class'].endsWith('*^') && !v1['class'].endsWith('*') && !v1['class'].endsWith('^') ) {
@@ -690,8 +692,7 @@ export default Component.extend({
 
 			}
 			
-			console.log(charhind);	
-			console.log(syshind);			
+			
 			
 			this.set('char.custom.cghindnofw', val);
 		},
