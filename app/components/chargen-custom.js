@@ -662,6 +662,7 @@ export default Component.extend({
 			syshind = this.get('char.custom.swsyshind');
 			charhind = this.get('char.custom.cghind');
 			
+			console.log(val);
 			// What is this really supposed to do now?
 			
 			for (const[k1, v1] of Object.entries(charhind)) {
@@ -686,7 +687,6 @@ export default Component.extend({
 				if (dislist[0]['trexcludes'].length > 0) {
 					trexcludes = this.ck_excludes(dislist, syshind, 'hind');
 				}
-
 			}
 			
 			this.set('char.custom.cghindnofw', val);
