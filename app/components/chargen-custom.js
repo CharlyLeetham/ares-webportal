@@ -638,6 +638,11 @@ export default Component.extend({
 			// Reset the non-framework and race edges on the character.	
 			for (const[k3, v3] of Object.entries(nonfwedges)) {
 				v3['disabled']=false;
+				dislist = Object.values(sysedges).filter(slots => slots.name.toString().toLowerCase() == v3['name'].toLowerCase());
+				dislist[0]['disabled'] = false;
+				if (dislist[0]['trexcludes'].length > 0) {
+					trexcludes = this.ck_includes(dislist, sysedges, 'edge');
+				}				
 			}
 			
 			for (const[k1, v1] of Object.entries(charedges)) {			
