@@ -637,18 +637,17 @@ export default Component.extend({
 			// Reset all hinderances to available.	
 			for (const[k3, v3] of Object.entries(sysedges)) {
 				v3['disabled']=false;
-			}			
-			
-			for (const[k1, v1] of Object.entries(charedges)) {			
-				if (!v1['class'].endsWith('*^') && !v1['class'].endsWith('*') && !v1['class'].endsWith('^') ) {
-					dislist33 = Object.values(val).filter(slots => slots.name.toString().toLowerCase() == v1['name'].toLowerCase());
-					if (dislist33.length < 1) {
-						v1['disabled'] = false;
-						dislist = Object.values(sysedges).filter(slots => slots.name.toString().toLowerCase() == v1['name'].toLowerCase());
-						dislist[0]['disabled'] = false;
-						if (dislist[0]['trexcludes'].length > 0) {
-							trexcludes = this.ck_includes(dislist, sysedges, 'edge');
-						}						
+				for (const[k1, v1] of Object.entries(charedges)) {			
+					if (!v1['class'].endsWith('*^') && !v1['class'].endsWith('*') && !v1['class'].endsWith('^') ) {
+						dislist33 = Object.values(val).filter(slots => slots.name.toString().toLowerCase() == v1['name'].toLowerCase());
+						if (dislist33.length < 1) {
+							v1['disabled'] = false;
+							dislist = Object.values(sysedges).filter(slots => slots.name.toString().toLowerCase() == v1['name'].toLowerCase());
+							dislist[0]['disabled'] = false;
+							if (dislist[0]['trexcludes'].length > 0) {
+								trexcludes = this.ck_includes(dislist, sysedges, 'edge');
+							}						
+						}
 					}
 				}
 			}
