@@ -680,9 +680,9 @@ export default Component.extend({
 			}
 			
 			for (const [key, value] of Object.entries(val)) {
-				console.log(value['disabled'];
+				console.log(value['disabled']);
 				value['disabled']=false;
-				console.log(value['disabled'];
+				console.log(value['disabled']);
 				dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == value['name'].toLowerCase()); // Convert sysedges to an array and filter for any entries that match the new framework selected.
 				dislist[0]['disabled'] = true;
 				// Check to see the Hinderance excludes others and mark them as disabled.
