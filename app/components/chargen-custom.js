@@ -633,7 +633,7 @@ export default Component.extend({
 			var sysedges, charedges, charedgesall, dislist, dislist33, trexcludes;
 			sysedges = this.get('char.custom.sysedges');
 			charedges = this.get('char.custom.cgedges');
-			charedgesall = this.get('char.custom.cgedgesnofw');
+			charedgesall = this.get('char.custom.cgedgesfw');
 
 			console.log(charedges);	
 			console.log(charedgesall);				
@@ -686,6 +686,9 @@ export default Component.extend({
 				}
 
 			}
+			
+			console.log(charhind);	
+			console.log(syshind);			
 			
 			this.set('char.custom.cghindnofw', val);
 		},
