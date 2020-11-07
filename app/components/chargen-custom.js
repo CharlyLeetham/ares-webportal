@@ -634,6 +634,11 @@ export default Component.extend({
 			charedges = this.get('char.custom.cgedges');
 			charedgesall = this.get('char.custom.cgedgesfw');
 			
+			// Reset all hinderances to available.	
+			for (const[k3, v3] of Object.entries(sysedges)) {
+				v3['disabled']=false;
+			}			
+			
 			for (const[k1, v1] of Object.entries(charedges)) {			
 				if (!v1['class'].endsWith('*^') && !v1['class'].endsWith('*') && !v1['class'].endsWith('^') ) {
 					dislist33 = Object.values(val).filter(slots => slots.name.toString().toLowerCase() == v1['name'].toLowerCase());
@@ -660,11 +665,9 @@ export default Component.extend({
 			var syshind, charhind, dislist, dislist33, trexcludes;
 			syshind = this.get('char.custom.swsyshind');
 			charhind = this.get('char.custom.cghind');
+		
 			
-			console.log(val);
-			
-			// Reset all hinderances to available.
-			
+			// Reset all hinderances to available.	
 			for (const[k3, v3] of Object.entries(syshind)) {
 				v3['disabled']=false;
 			}
