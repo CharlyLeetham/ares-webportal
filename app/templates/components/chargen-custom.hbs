@@ -87,6 +87,11 @@
 					
 					<span class="hjstuff">
 						{{{ansi-format text=char.custom.hjslots}}} 
+							{{#each-in char.custom.hjslots as |key counter|}}
+								<li><span class="tooltiptext">{{counter}}</span>
+								</li>
+							{{/each-in}}						
+						
 					</span>
 				
 				
