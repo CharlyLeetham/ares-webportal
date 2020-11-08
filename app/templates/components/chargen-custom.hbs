@@ -93,7 +93,7 @@
 								{{#each-in value.hjtables as |k v|}}
 								<pre>{{{ansi-format text=k}}}</pre>
 
-									{{each v as |hjt1| }}
+									{{#each v as |hjt1| }}
 										{{hjt1}}
 									{{/each}}
 								{{/each-in}}
