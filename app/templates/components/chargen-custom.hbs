@@ -87,10 +87,11 @@
 					<pre>{{{ansi-format text=char.custom.hjslots}}}						</pre>
 					{{#each-in char.custom.hjslots as |hjt value|}}
 						<div class="col-sm-4 {{k1}}">
-						<pre>{{{ansi-format text=value}}}						</pre>
+
 								First: {{hjt}}<br />
 								Last: {{value}}
 								{{#each value as |k|}}
+								<pre>{{{ansi-format text=k}}}						</pre>
 									Table: {{k.hjtable}}<br />
 								{{/each}}
 								<<PowerSelect @searchEnabled={{true}} @searchField="name" @searchPlaceholder="Type a name..." @selected={{k1}} @options={{value.value}}  @onChange={{action "hjtables"}} as |icf|>
