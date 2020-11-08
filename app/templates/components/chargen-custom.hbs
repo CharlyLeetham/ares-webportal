@@ -91,13 +91,13 @@
 									<li><span class="tooltiptext">{{counter}}</span>
 									</li>				
 							{{/each}}							
-							{{#each char.custom.hjslots as |k1 c1|}}
+							{{#each-in char.custom.hjslots as |k1 c1|}}
 								K1: {{k1}}<br />
 								{{#each-in c1 as |k2 c2|}}
 									<li><span class="tooltiptext">{{c2}}</span>
 									</li>
 								{{/each-in}}						
-							{{/each}}						
+							{{/each-in}}						
 						
 					</span>
 				
