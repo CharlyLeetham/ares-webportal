@@ -84,17 +84,14 @@
 				</div>
 				
 				<div class="row"> <!-- Display Heroes Journey Options -->
-					
-					<div class="col-sm-4">			
-							{{#each-in char.custom.hjslots as |k1 c1|}}
+					{{#each-in char.custom.hjslots as |k1 c1|}}
+						<div class="col-sm-4">		
 								{{k1}}<br />
 								<PowerSelect @searchEnabled={{true}} @searchField="name" @searchPlaceholder="Type a name..." @options={{c1}}  @onChange={{action "newRaceChanged"}} as |icf|>
 								  {{icf}}
-								</PowerSelect>					
-							{{/each-in}}						
-					</div>			
-				
-				
+								</PowerSelect>
+						</div>
+					{{/each-in}}
 				</div> <!-- HJ Options -->
 			</div> <!-- left column -->
 
