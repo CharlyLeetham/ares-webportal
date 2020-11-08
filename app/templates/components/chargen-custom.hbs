@@ -85,23 +85,14 @@
 				
 				<div class="row"> <!-- Display Heroes Journey Options -->
 					
-					<span class="hjstuff">
-						Ansi: {{{ansi-format text=char.custom.hjslots}}}<br />
-							{{#each char.custom.hjslots as |counter|}}
-									<li><span class="tooltiptext">{{counter}}</span>
-									</li>				
-							{{/each}}							
+					<div class="col-sm-4">			
 							{{#each-in char.custom.hjslots as |k1 c1|}}
 								{{k1}}<br />
-							<PowerSelect @searchEnabled={{true}} @searchField="name" @searchPlaceholder="Type a name..." @options={{c1}}  @onChange={{action "newRaceChanged"}} as |icf|>
-							  {{icf}}
-							</PowerSelect>										
-								{{#each-in c1 as |k2 c2|}}
-									<li><span class="tooltiptext">{{c2}}</span>
-									</li>
-								{{/each-in}}						
+								<PowerSelect @searchEnabled={{true}} @searchField="name" @searchPlaceholder="Type a name..." @options={{c1}}  @onChange={{action "newRaceChanged"}} as |icf|>
+								  {{icf}}
+								</PowerSelect>					
 							{{/each-in}}						
-					</span>			
+					</div>			
 				
 				
 				</div> <!-- HJ Options -->
