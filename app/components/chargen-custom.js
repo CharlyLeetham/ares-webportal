@@ -30,16 +30,6 @@ export default Component.extend({
 		return swiconicf;
 	}),
 	
-	hj_tables: computed (function() {
-		var swrifts_hjslots;
-		swrifts_hjslots = this.get('char.custom.hjslots');
-		for (const [k1, v1] of Object.entries(swrifts_hjslots)) {
-			console.log(k1 , v1);
-		}		
-		return swrifts_hjslots;
-	}),
-	
-
 	didInsertElement: function() {
 	let self = this;
 	this.set('updateCallback', function() { return self.onUpdate(); } );
@@ -723,7 +713,7 @@ export default Component.extend({
 		
 		hjtables(val) {
 			console.log(val);
-			// this.set('char.custom.hjslots', val);
+			return(val);
 		},
 		
 	}
