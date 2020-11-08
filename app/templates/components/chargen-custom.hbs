@@ -92,14 +92,17 @@
 									</li>				
 							{{/each}}							
 							{{#each-in char.custom.hjslots as |k1 c1|}}
-								K1: {{k1}}<br />
+								{{k1}}<br />
 								{{#each-in c1 as |k2 c2|}}
 									<li><span class="tooltiptext">{{c2}}</span>
 									</li>
 								{{/each-in}}						
 							{{/each-in}}						
-						
 					</span>
+					
+							<PowerSelect @searchEnabled={{true}} @searchField="name" @searchPlaceholder="Type a name..." @options={{c1}} as |icf|>
+							  {{icf}}
+							</PowerSelect>					
 				
 				
 				</div> <!-- HJ Options -->
