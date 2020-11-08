@@ -55,7 +55,6 @@
 						
 						<div class="row">
 							<p><ul class="hind">
-							{{{ansi-format text=char.custom.cghindfw}}}	
 							{{#each-in char.custom.cghindfw as |key counter|}}
 								<li><span class="cgtooltip">{{counter.class}} 
 									<span class="tooltiptext">{{counter.rating}}</span>
@@ -91,7 +90,7 @@
 						
 								HJT: {{value.hjtable}}<br />
 								{{#each hjt as |v|}}
-								{{v.hjt}}
+								{{v}}
 								<PowerSelect @searchEnabled={{true}} @searchField="name" @searchPlaceholder="Type a name..." @selected={{k1}} @options={{v}}  @onChange={{action "hjtables"}} as |icf|>
 								  {{icf.value}}
 								</PowerSelect>
