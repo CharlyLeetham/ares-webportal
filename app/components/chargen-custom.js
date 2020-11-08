@@ -30,6 +30,14 @@ export default Component.extend({
 		return swiconicf;
 	}),
 	
+	hj_tables: computed (function() {
+		var swrifts_icf, charicf;
+		swrifts_icf = this.get('char_custom_sysiconicf');
+		char_icf = this.get('char.custom.charicf');
+		console.log (char_icf);
+		return ("Getting HJs");
+	}),
+	
 
 	didInsertElement: function() {
 	let self = this;
