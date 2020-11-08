@@ -30,7 +30,7 @@ export default Component.extend({
 		return swiconicf;
 	}),
 	
-	hjtables: computed (function() {
+	hj_tables: computed (function() {
 		var swrifts_hjslots;
 		swrifts_hjslots = this.get('char.custom.hjslots');
 		for (const [k1, v1] of Object.entries(swrifts_hjslots)) {
