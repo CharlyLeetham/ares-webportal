@@ -720,7 +720,7 @@ export default Component.extend({
 		
 		hjtables(val) {
 			console.log(val);
-			// this.set('char.custom.hjslots', val);
+			this.set('char.custom.hjslots', val);
 		},
 		
 	}
