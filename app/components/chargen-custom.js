@@ -33,6 +33,9 @@ export default Component.extend({
 	hjtables: computed (function() {
 		var swrifts_hjslots;
 		swrifts_hjslots = this.get('char.custom.hjslots');
+		for (const [k1, v1] of Object.entries(swrifts_hjslots)) {
+			console.log(k1 , v1);
+		}		
 		return swrifts_hjslots;
 	}),
 	

@@ -89,7 +89,7 @@
 						<div class="col-sm-4 {{k1}}">
 
 								First: {{hjt}}<br />
-								<<PowerSelect @searchEnabled={{true}} @searchField="name" @searchPlaceholder="Type a name..." @selected={{k1}} @options={{v}}  @onChange={{action "hjtables"}} as |icf|>
+								<<PowerSelect @searchEnabled={{true}} @searchField="name" @searchPlaceholder="Type a name..." @selected={{k1}} @options={{this.hjslots}}  @onChange={{action "hjtables"}} as |icf|>
 								  {{icf}}
 								</PowerSelect>
 						</div>
