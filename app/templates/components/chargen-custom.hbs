@@ -90,7 +90,7 @@
 						
 								HJT: {{hjt}}<br />
 								{{#each hjt as |v|}}
-								{{v}}
+								{{v.hjt}}
 								<PowerSelect @searchEnabled={{true}} @searchField="name" @searchPlaceholder="Type a name..." @selected={{k1}} @options={{v}}  @onChange={{action "hjtables"}} as |icf|>
 								  {{icf.value}}
 								</PowerSelect>
