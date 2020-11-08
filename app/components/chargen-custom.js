@@ -30,7 +30,7 @@ export default Component.extend({
 		return swiconicf;
 	}),
 	
-	hj_tables: computed (function() {
+	hjtables: computed (function() {
 		var swrifts_hjslots;
 		swrifts_hjslots = this.get('char.custom.hjslots');
 		return swrifts_hjslots;
@@ -716,6 +716,11 @@ export default Component.extend({
 			}
 			
 			this.set('char.custom.cghindnofw', val);
+		},
+		
+		hj_tables(val) {
+			console.log(val);
+			// this.set('char.custom.hjslots', val);
 		},
 		
 	}
