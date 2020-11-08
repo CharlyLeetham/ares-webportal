@@ -85,10 +85,10 @@
 				
 				<div class="row"> <!-- Display Heroes Journey Options -->
 					{{{ansi-format text=char.custom.hjslots}}}						
-					{{#each char.custom.hjslots as |k1|}}
+					{{#each char.custom.hjslots as |k1 c1|}}
 						<div class="col-sm-4 {{k1}}">
 						
-								{{k1.hjtable}}<br />
+								{{k1}}  {{c1}}<br />
 								<PowerSelect @searchEnabled={{true}} @searchField="name" @searchPlaceholder="Type a name..." @selected={{k1}} @options={{c1}}  @onChange={{action "hjtables"}} as |icf|>
 								  {{icf.value}}
 								</PowerSelect>
