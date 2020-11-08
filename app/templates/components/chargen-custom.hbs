@@ -89,7 +89,7 @@
 						<div class="col-sm-4 {{k1}}">
 						
 								HJT: {{value.hjtable}}<br />
-								{{#each hjt as |v|}}
+								{{#each value as |v|}}
 								{{v}}
 								<PowerSelect @searchEnabled={{true}} @searchField="name" @searchPlaceholder="Type a name..." @selected={{k1}} @options={{v}}  @onChange={{action "hjtables"}} as |icf|>
 								  {{icf.value}}
