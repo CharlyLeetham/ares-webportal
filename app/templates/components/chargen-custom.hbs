@@ -100,7 +100,7 @@
 							{{/each-in}}						
 					</span>
 					
-							<PowerSelect @searchEnabled={{true}} @searchField="name" @searchPlaceholder="Type a name..." @options={{c1}} as |icf|>
+							<PowerSelect @searchEnabled={{true}} @searchField="name" @searchPlaceholder="Type a name..." @options={{c1}}  @onChange={{action "newRaceChanged"}} as |icf|>
 							  {{icf}}
 							</PowerSelect>					
 				
