@@ -87,7 +87,7 @@
 					{{#each-in char.custom.hjslots as |k1 c1|}}
 						<div class="col-sm-4 {{k1}}">		
 								{{k1}}<br />
-								<PowerSelect @searchEnabled={{true}} @searchField="name" @searchPlaceholder="Type a name..." @selected={{k1}} @options={{c1}}  @onChange={{action "hj_tables"}} as |icf|>
+								<PowerSelect @searchEnabled={{true}} @searchField="name" @searchPlaceholder="Type a name..." @selected={{k1}} @options={{c1}}  @onChange={{action "hjtables"}} as |icf|>
 								  {{icf}}
 								</PowerSelect>
 						</div>

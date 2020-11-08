@@ -718,7 +718,7 @@ export default Component.extend({
 			this.set('char.custom.cghindnofw', val);
 		},
 		
-		hj_tables(val) {
+		hjtables(val) {
 			console.log(val);
 			// this.set('char.custom.hjslots', val);
 		},
