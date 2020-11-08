@@ -92,7 +92,7 @@
 								
 								{{#each-in value.hjtables as |k v|}}
 									K: {{k}}<br />
-									v: {{v.hjtables}}								
+									v: {{v.hjtable}}								
 								{{/each-in}}
 									<<PowerSelect @searchEnabled={{true}} @searchField="name" @searchPlaceholder="Type a name..." @selected={{k1}} @options={{v.hjtables}}  @onChange={{action "hjtables"}} as |icf|>
 									  {{icf.hjtables}}
