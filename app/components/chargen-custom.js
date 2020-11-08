@@ -31,11 +31,9 @@ export default Component.extend({
 	}),
 	
 	hj_tables: computed (function() {
-		var swrifts_icf, charicf;
-		swrifts_icf = this.get('char_custom_sysiconicf');
-		char_icf = this.get('char.custom.charicf');
-		console.log (char_icf);
-		return ("Getting HJs");
+		var swrifts_hjslots;
+		swrifts_hjslots = this.get('char.custom.hjslots');
+		return swrifts_hjslots;
 	}),
 	
 
