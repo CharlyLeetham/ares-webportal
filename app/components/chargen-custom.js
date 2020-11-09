@@ -715,7 +715,7 @@ export default Component.extend({
 			var elms;
 			console.log(val);
 			elms = document.getElementsByClassName(val['table']);
-			elms[0].setAttribute("value", val['httable']);
+			elms.setAttribute("value", val['httable']);
 			console.log(elms);
 		},
 		
