@@ -715,13 +715,8 @@ export default Component.extend({
 			var elms;
 			console.log(val);
 			elms = document.getElementsByClassName(val['table']);
+			elms[i].setAttribute("value", val['httable']);
 			console.log(elms);
-			for (const[k1, v1] of Object.entries(val)) {
-				// document.getElementById(v1['table']).value;
-
-			}
-			
-			return(val);
 		},
 		
 	}
