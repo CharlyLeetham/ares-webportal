@@ -712,7 +712,14 @@ export default Component.extend({
 		},
 		
 		hjtables(val) {
+			var elms;
 			console.log(val);
+			for (const[k1, v1] of Object.entries(val)) {
+				document.getElementById(v1['table']).value;
+				elms = document.getElementsByClassName(v1['table']);
+				console.log(elms);
+			}
+			
 			return(val);
 		},
 		
