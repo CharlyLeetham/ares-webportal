@@ -714,8 +714,9 @@ export default Component.extend({
 		hjtables(val) {
 			var elms;
 			console.log(val);
+			console.log(val['httable']);
 			elms = document.getElementsByClassName(val['table']);
-			elms.setAttribute("value", val['httable']);
+			elms[0].setAttribute("value", val['httable']);
 			console.log(elms);
 		},
 		
