@@ -30,8 +30,9 @@ export default Component.extend({
 		return swiconicf;
 	}),
 	
-	selhjtables: computed(function() {
+	selhjtables: computed(function(val) {
 		var selectedhjtables;
+		console.log (val);
 		selectedhjtables = this.get('char.custom.hjtables');
 		console.log (selectedhjtables);
 		return selectedhjtables;
@@ -731,7 +732,7 @@ export default Component.extend({
 			console.log (group);
 			console.log (val);
           if (val) {
-            this.set(`custom.char.hjtables.${group}`, val);		
+            // this.set(`custom.char.hjtables.${group}`, val);		
           } else {
 			this.set('custom.char.hjtables.${group}', '');
             this.set('custom.char.hjtables.${group}', '');
