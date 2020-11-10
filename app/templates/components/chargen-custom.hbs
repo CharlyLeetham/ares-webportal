@@ -104,7 +104,7 @@
 						<div class="col-sm-4">
 								First: <span class="key">{{key}}</span><br />
 								
-								<pre>{{group.hjtable}}</pre>
+								<pre>{{group.httable}}</pre>
 								<div id="{{key}}">
 									<PowerSelect @selected={{get char.custom.hjslots key}} @options={{get (get char.custom.hjslots key) "values"}} @searchField="value" @allowClear={{true}} @onChange={{action "groupChanged" key}} as |g|>
 										{{g.hjtable}} {{if g.table '-'}} {{g.table}}
