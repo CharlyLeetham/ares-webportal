@@ -721,12 +721,14 @@ export default Component.extend({
 		},
 		
         groupChanged(group, val) {
-          if (val) {
-            this.set('custom.char.hjslots.${httable}', val);
-          } else {
-            this.set('custom.char.hjslots.${httable}', '');
-            this.set('custom.char.hjslots.${httable}', '');
-          }
+			console.log (group);
+			console.logt (val);
+          // if (val) {
+            // this.set('custom.char.hjslots.${httable}', val);
+          // } else {
+            // this.set('custom.char.hjslots.${httable}', '');
+            // this.set('custom.char.hjslots.${httable}', '');
+          // }
 		},
 		
 	}
