@@ -30,6 +30,13 @@ export default Component.extend({
 		return swiconicf;
 	}),
 	
+	selhjtables: computed(function() {
+		var selectedhjtables;
+		selectedhjtables = this.get('char.custom.cjtables');
+		// console.log (swiconicf);
+		return selectedhjtables;
+	}),
+	
 	didInsertElement: function() {
 	let self = this;
 	this.set('updateCallback', function() { return self.onUpdate(); } );
