@@ -47,7 +47,7 @@ export default Component.extend({
 	// Return a hash containing your data.  Character data will be in 'char'.  For example:
 	// 
 	// return { goals: this.get('char.custom.goals') };
-	return { iconicf: this.get('char.custom.charicf'), race: this.get('char.custom.charrace'), cgedges: this.get('char.custom.cgedges'), cgedgesnofw: this.get('char.custom.cgedgesnofw'), cghind: this.get('char.custom.cghind'), cghindnofw: this.get('char.custom.cghindnofw') };
+	return { iconicf: this.get('char.custom.charicf'), race: this.get('char.custom.charrace'), cgedges: this.get('char.custom.cgedges'), cgedgesnofw: this.get('char.custom.cgedgesnofw'), cghind: this.get('char.custom.cghind'), cghindnofw: this.get('char.custom.cghindnofw'), hjtables: this.get('char.custom.hjtables') };
 	},
   
 	ck_excludes: function(dislist, sysedg, traittype) {
@@ -733,7 +733,7 @@ export default Component.extend({
 			// console.log (val);
           if (val) {
             // this.set(`custom.char.hjtables.${group}`, val);	
-			this.set('char.custom.cgedgesnofw', val);			
+			this.set('char.custom.hjtables', val);			
           } else {
 			this.set('custom.char.hjtables.${group}', '');
             this.set('custom.char.hjtables.${group}', '');
