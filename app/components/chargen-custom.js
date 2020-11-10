@@ -32,7 +32,7 @@ export default Component.extend({
 	
 	selhjtables: computed(function() {
 		var selectedhjtables;
-		selectedhjtables = this.get('char.custom.cjtables');
+		selectedhjtables = this.get('char.custom.hjtables');
 		// console.log (swiconicf);
 		return selectedhjtables;
 	}),
@@ -733,8 +733,8 @@ export default Component.extend({
           if (val) {
             this.set(`custom.char.hjtables.${group}`, val);		
           } else {
-			this.set('custom.char.hjslots.${group}', '');
-            this.set('custom.char.hjslots.${group}', '');
+			this.set('custom.char.htables.${group}', '');
+            this.set('custom.char.hjtables.${group}', '');
           }
 		},
 		
