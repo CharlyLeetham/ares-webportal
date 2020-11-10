@@ -720,6 +720,15 @@ export default Component.extend({
 			console.log(elms);
 		},
 		
+        groupChanged(group, val) {
+          if (val) {
+            this.set('custom.char.hjslots.${httable}', val);
+          } else {
+            this.set('custom.char.hjslots.${httable}', '');
+            this.set('custom.char.hjslots.${httable}', '');
+          }
+		},
+		
 	}
   
 });
