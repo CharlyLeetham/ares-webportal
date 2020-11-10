@@ -33,7 +33,7 @@ export default Component.extend({
 	selhjtables: computed(function() {
 		var selectedhjtables;
 		selectedhjtables = this.get('char.custom.hjtables');
-		// console.log (swiconicf);
+		console.log (selectedhjtables);
 		return selectedhjtables;
 	}),
 	
