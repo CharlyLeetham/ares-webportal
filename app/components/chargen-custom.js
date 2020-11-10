@@ -724,7 +724,7 @@ export default Component.extend({
 			console.log (group);
 			console.log (val);
           // if (val) {
-            this.set('custom.char.hjslots.${group}', val);
+            this.set('custom.char.hjslots', val);
           // } else {
             // this.set('custom.char.hjslots.${httable}', '');
             // this.set('custom.char.hjslots.${httable}', '');
