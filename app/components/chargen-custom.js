@@ -726,8 +726,8 @@ export default Component.extend({
           if (val) {
             this.set('custom.char.hjtables.${group}', val);		
           } else {
-			this.set('custom.char.hjslots.${httable}', '');
-            this.set('custom.char.hjslots.${httable}', '');
+			this.set('custom.char.hjslots.${group}', '');
+            this.set('custom.char.hjslots.${group}', '');
           }
 		},
 		
