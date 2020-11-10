@@ -722,7 +722,7 @@ export default Component.extend({
 		
         groupChanged(group, val) {
 			console.log (group);
-			console.logt (val);
+			console.log (val);
           // if (val) {
             // this.set('custom.char.hjslots.${httable}', val);
           // } else {
