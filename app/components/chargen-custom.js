@@ -723,12 +723,12 @@ export default Component.extend({
         groupChanged(group, val) {
 			console.log (group);
 			console.log (val);
-          // if (val) {
+          if (val) {
             this.set('custom.char.hjtables.${group}', val);		
-          // } else {
-            // this.set('custom.char.hjslots.${httable}', '');
-            // this.set('custom.char.hjslots.${httable}', '');
-          // }
+          } else {
+			this.set('custom.char.hjslots.${httable}', '');
+            this.set('custom.char.hjslots.${httable}', '');
+          }
 		},
 		
 	}
