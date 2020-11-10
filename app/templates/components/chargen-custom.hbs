@@ -106,7 +106,7 @@
 								
 								<pre>{{group.httable}}</pre>
 								<div id="{{key}}">
-									<PowerSelect @selected={{get char.custom.hjslots key}} @options={{group}} @searchField="value" @allowClear={{true}} @onChange={{action "groupChanged" key}} as |g|>
+									<PowerSelect @selected="" @options={{group}} @searchField="value" @allowClear={{true}} @onChange={{action "groupChanged" key}} as |g|>
 										{{g.httable}}
 									</PowerSelect>
 								</div>
