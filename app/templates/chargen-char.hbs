@@ -116,8 +116,8 @@
                         <PowerSelect @selected={{get model.char.groups key}} @options={{get (get model.cgInfo.group_options key) "values"}} @searchField="value" @allowClear={{true}} @onChange={{action "groupChanged" key}} as |g|>
                         {{g.value}} {{if g.desc '-'}} {{g.desc}}
                       </PowerSelect>
+					  
                       {{/if}}
-                         <p class="cg-tip"> {{get (get model.cgInfo.group_options key) 'desc'}} </p>
                          
                       </div>
                       
