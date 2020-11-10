@@ -728,15 +728,14 @@ export default Component.extend({
 			// console.log(elms);
 		},
 		
-        groupChanged(val) {
-			// console.log (group);
+        groupChanged(group, val) {
+			console.log (group);
 			console.log (val);
           if (val) {
-            // this.set(`custom.char.hjtables.${group}`, val);			
-            this.set('custom.char.hjtables', val);			
+            this.set(`custom.char.hjtables.${group}`, val);					
           } else {
-			// this.set('custom.char.hjtables.${group}', '');
-            // this.set('custom.char.hjtables.${group}', '');
+			this.set('custom.char.hjtables.${group}', '');
+            this.set('custom.char.hjtables.${group}', '');
           }
 		},
 		
