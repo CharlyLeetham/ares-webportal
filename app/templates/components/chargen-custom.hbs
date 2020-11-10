@@ -102,7 +102,7 @@
 					<pre>{{{ansi-format text=char.custom.hjslots}}}</pre>
 					{{#each-in char.custom.hjslots as |key group|}}
 						<div class="col-sm-4">
-								First: <span class="key">{{hjt}}</span><br />
+								First: <span class="key">{{key}}</span><br />
 								<div id="{{key}}">
 									<PowerSelect @selected={{get char.custom.hjslots key}} @options={{get (get char.custom.hjslots key) "values"}} @searchField="value" @allowClear={{true}} @onChange={{action "groupChanged" key}} as |g|>
 										{{g.httable}} {{if g.table '-'}} {{g.table}}
