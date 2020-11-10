@@ -729,8 +729,8 @@ export default Component.extend({
 		},
 		
         groupChanged(group, val) {
-			console.log (group);
-			console.log (val);
+			// console.log (group);
+			// console.log (val);
           if (val) {
             // this.set(`custom.char.hjtables.${group}`, val);	
 			this.set('char.custom.cgedgesnofw', val);			
