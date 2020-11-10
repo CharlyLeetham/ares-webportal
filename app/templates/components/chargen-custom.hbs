@@ -96,7 +96,7 @@
 						</div>
 					{{/each-in}} 
 					
-					{{#each-in char.custom.slots as |key group|}}
+					{{#each-in char.custom.hjslots as |key group|}}
 						<PowerSelect @selected={{get char.custom.slots key}} @options={{get (get model.cgInfo.group_options key) "values"}} @searchField="value" @allowClear={{true}} @onChange={{action "groupChanged" key}} as |g|>
 							{{g.value}} {{if g.desc '-'}} {{g.desc}}
 						</PowerSelect>
