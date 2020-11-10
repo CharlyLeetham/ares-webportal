@@ -733,7 +733,7 @@ export default Component.extend({
           if (val) {
             // this.set(`custom.char.hjtables.${group}`, val);		
           } else {
-			this.set('custom.char.htables.${group}', '');
+			this.set('custom.char.hjtables.${group}', '');
             this.set('custom.char.hjtables.${group}', '');
           }
 		},
