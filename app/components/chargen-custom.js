@@ -32,7 +32,7 @@ export default Component.extend({
 	
 	selhjtables: computed(function(val) {
 		var selectedhjtables;
-		console.log (val);
+		console.log ('Val: '+val);
 		selectedhjtables = this.get('char.custom.hjtables');
 		console.log (selectedhjtables);
 		return selectedhjtables;
