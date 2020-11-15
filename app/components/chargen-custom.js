@@ -719,15 +719,7 @@ export default Component.extend({
 			this.set('char.custom.cghindnofw', val);
 		},
 		
-		hjtables(val) {
-			// var elms;
-			// console.log(val);
-			// console.log(val['httable']);
-			// elms = document.getElementsByClassName(val['table']);
-			// elms[0].setAttribute("value", val['httable']);
-			// console.log(elms);
-		},
-		
+	
         groupChanged(group, val) {
 			console.log (group);
 			console.log (val);
