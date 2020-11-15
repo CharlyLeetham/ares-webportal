@@ -90,7 +90,7 @@
 								First: <span class="hjtname">{{hjt}}</span><br />
 								<div id="{{hjt}}">
 									<<PowerSelect @searchEnabled={{true}} @searchField="name" @triggerClass="{{hjt}}" @searchPlaceholder="Type a name..." @selected={{get this.selhjtables hjt}} @options={{value}} @onChange={{action "groupChanged" hjt}} as |icf|>
-										{{icf.httable}}
+										{{icf.table}}
 									</PowerSelect>
 								</div>
 						</div>
