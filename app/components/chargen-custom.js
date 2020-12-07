@@ -721,11 +721,12 @@ export default Component.extend({
 		
 	
         groupChanged(group, val) {
+			var hjtable;
 			console.log (group);
 			console.log (val);
           if (val) {
 			console.log ('here');
-            this.set('char.custom.hjslots.' + group, val);				
+            this.set('char.custom.hjtables.', val);				
           } else {
 			this.set('char.custom.hjtables.${group}', '');
             this.set('char.custom.hjtables.${group}', '');
