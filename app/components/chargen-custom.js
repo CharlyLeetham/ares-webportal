@@ -723,16 +723,11 @@ export default Component.extend({
         groupChanged(group, val) {
 			var hjtable, tmptable;
 			hjtable = this.get('char.custom.hjtables');
-			console.log(hjtable);
+			console.log(hjtable.object);
 			console.log (group);
 			console.log (val);
           if (val) {
-			for (const [key, value] of Object.entries(hjtable)) {
-				console.log (value);
-				// tmptable = Object.values(hjtable).filter(slots => slots.name.toString().toLowerCase() == va1['name'].toLowerCase());			  
-				// console.log (tmptable.object);
-				// this.set('char.custom.hjtables', val);
-			}
+				//do something!
           } else {
 			this.set('char.custom.hjtables.${group}', '');
             this.set('char.custom.hjtables.${group}', '');
