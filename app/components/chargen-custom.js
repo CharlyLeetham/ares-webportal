@@ -727,9 +727,12 @@ export default Component.extend({
 			console.log (group);
 			console.log (val);
           if (val) {
-			tmptable = Object.values(hjtable).filter(slots => slots.name.toString().toLowerCase() == va1['name'].toLowerCase());			  
-			console.log (tmptable.object);
-            // this.set('char.custom.hjtables', val);			
+			for (const [key, value] of Object.entries(hjtable)) {
+				console.log(key, value);
+				// tmptable = Object.values(hjtable).filter(slots => slots.name.toString().toLowerCase() == va1['name'].toLowerCase());			  
+				// console.log (tmptable.object);
+				// this.set('char.custom.hjtables', val);
+			}
           } else {
 			this.set('char.custom.hjtables.${group}', '');
             this.set('char.custom.hjtables.${group}', '');
