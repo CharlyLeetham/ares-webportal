@@ -728,7 +728,7 @@ export default Component.extend({
 			console.log (val);
           if (val) {
 			for (const [key, value] of Object.entries(hjtable)) {
-				for (const [k, v] of Object.entries(value)) {
+				for (const [k, v] of Object.entries(key)) {
 					console.log(k, v);
 				}
 				// tmptable = Object.values(hjtable).filter(slots => slots.name.toString().toLowerCase() == va1['name'].toLowerCase());			  
