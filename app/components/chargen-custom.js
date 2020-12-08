@@ -722,7 +722,8 @@ export default Component.extend({
 	
         groupChanged(group, val) {
 			var hjtable;
-			console.log(char.custom.hjtables);
+			hjtables = this.get('char.custom.hjtables');
+			console.log(hjtables);
 			console.log (group);
 			console.log (val);
           if (val) {
