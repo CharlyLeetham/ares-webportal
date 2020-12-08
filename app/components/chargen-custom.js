@@ -727,7 +727,9 @@ export default Component.extend({
 			console.log (group);
 			console.log (val);
           if (val) {
-				//do something!
+				for (const [key, value] of Object.entries(hjtables)) {
+					console.log(key, value);
+				}
           } else {
 			this.set('char.custom.hjtables.${group}', '');
             this.set('char.custom.hjtables.${group}', '');
