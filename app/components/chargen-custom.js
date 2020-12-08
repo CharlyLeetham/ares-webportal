@@ -729,7 +729,7 @@ export default Component.extend({
           if (val) {
 				for (const [key, value] of Object.entries(hjtable)) {
 					console.log(key, value);
-					if value.name.toLowerCase == val.name.toLowerCase {
+					if (value.name.toLowerCase == val.name.toLowerCase) {
 						hjtable.table=val.table;
 					}
 				}
