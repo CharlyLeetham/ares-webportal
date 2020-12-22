@@ -739,7 +739,7 @@ export default Component.extend({
 						// console.log(key, value);
 						// console.log (val);	
 					// }
-					tmptable['table']=value;
+					// tmptable['table']=value;
 
 				// }
 				this.set ('char.custom.hjtables', hjtable);
