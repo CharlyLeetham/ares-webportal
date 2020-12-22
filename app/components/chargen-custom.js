@@ -728,7 +728,7 @@ export default Component.extend({
 			// console.log (group);
 			
           if (val) {
-				for (const [key, value] of Object.entries(hjtable)) {
+				for (const [key, value] of Object.entries(val)) {
 					console.log ('Here: ');
 					console.log(key, value);
 					console.log (val);
