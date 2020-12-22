@@ -724,7 +724,8 @@ export default Component.extend({
 			var hjtable, tmptable, hjslots;
 			hjslots = this.get('char.custom.hjslots');
 			hjtable = this.get('char.custom.hjtables');
-			console.log ('HJ Table: ', hjtable);
+			console.log ('hjslots: ', hjslots);
+			console.log ('hjtable: ', hjtable);
 			console.log ('Val: ', val);
 			
           if (val) {
