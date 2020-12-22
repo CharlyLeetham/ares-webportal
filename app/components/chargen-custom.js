@@ -734,7 +734,7 @@ export default Component.extend({
 					tmptable[0]['table'] = val.table;
 					console.log (hjtable);
 			}
-				// this.set ('char.custom.hjtables', hjtable);
+			this.set ('char.custom.hjtables', hjtable);
           } else {
 			// this.set('char.custom.hjtables.${group}', '');
             // this.set('char.custom.hjtables.${group}', '');
