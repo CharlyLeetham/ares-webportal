@@ -721,25 +721,19 @@ export default Component.extend({
 		
 	
         groupChanged(group, val) {
-			var hjtable, tmptable;
+			var hjtable, tmptable, hjslots;
+			hjslots = this.get('char.custom.hjslots');
 			hjtable = this.get('char.custom.hjtables');
-			console.log ('HJ Table:');
-			console.log(hjtable);
-			console.log (val);
+			console.log ('HJ Table: ', hjtable);
+			console.log ('Val: ', val);
 			
           if (val) {
 			tmptable = Object.values(hjtable).filter(slots => slots.name.toString().toLowerCase() == val.name.toLowerCase()); // Convert sysedges to an array and filter for any entries that match the new framework selected.
 			if (tmptable) {
 					console.log ('tmptable: ',tmptable);
 					tmptable[0]['table'] = val.table;
-					console.log (hjtable);
 			}
 			this.set ('char.custom.hjtables', hjtable);
-			hjtable = this.get('char.custom.hjtables');
-			console.log(hjtable);
-          } else {
-			// this.set('char.custom.hjtables.${group}', '');
-            // this.set('char.custom.hjtables.${group}', '');
           }
 		},
 		
