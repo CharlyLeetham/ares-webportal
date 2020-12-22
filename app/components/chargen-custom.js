@@ -729,17 +729,17 @@ export default Component.extend({
 			
           if (val) {
 				for (const [key, value] of Object.entries(val)) {
-					console.log ('Here: ');
-					console.log(key, value);
-					console.log (val);
 					tmptable = Object.values(hjtable).filter(slots => slots.name.toString().toLowerCase() == value.toLowerCase()); // Convert sysedges to an array and filter for any entries that match the new framework selected.
 					
-					console.log ('tmptable');
-					console.log (tmptable);
-					
-					// if (value.name.toLowerCase == val.name.toLowerCase) {
-						// hjtable['table']=val.table;
-					// }
+					if (tmptable) {
+						console.log ('tmptable');
+						console.log (tmptable);			
+						console.log ('Here: ');
+						console.log(key, value);
+						console.log (val);	
+					}
+					//tmptable['table']=value;
+
 				}
 				this.set ('char.custom.hjtables', hjtable);
           } else {
