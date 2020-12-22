@@ -725,22 +725,23 @@ export default Component.extend({
 			hjtable = this.get('char.custom.hjtables');
 			console.log ('HJ Table:');
 			console.log(hjtable);
-			// console.log (group);
+			console.log (group);
+			console.log (val);
 			
           if (val) {
-				for (const [key, value] of Object.entries(val)) {
-					tmptable = Object.values(hjtable).filter(slots => slots.name.toString().toLowerCase() == value.toLowerCase()); // Convert sysedges to an array and filter for any entries that match the new framework selected.
+				// for (const [key, value] of Object.entries(val)) {
+					// tmptable = Object.values(hjtable).filter(slots => slots.name.toString().toLowerCase() == value.toLowerCase()); // Convert sysedges to an array and filter for any entries that match the new framework selected.
 					
-					if (tmptable) {
-						console.log ('tmptable1');
-						console.log (tmptable);			
-						console.log ('Here: ');
-						console.log(key, value);
-						console.log (val);	
-					}
-					//tmptable['table']=value;
+					// if (tmptable) {
+						// console.log ('tmptable1');
+						// console.log (tmptable);			
+						// console.log ('Here: ');
+						// console.log(key, value);
+						// console.log (val);	
+					// }
+					tmptable['table']=value;
 
-				}
+				// }
 				this.set ('char.custom.hjtables', hjtable);
           } else {
 			this.set('char.custom.hjtables.${group}', '');
