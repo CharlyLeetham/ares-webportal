@@ -731,6 +731,8 @@ export default Component.extend({
 			tmptable = Object.values(hjtable).filter(slots => slots.name.toString().toLowerCase() == val.name.toLowerCase()); // Convert sysedges to an array and filter for any entries that match the new framework selected.
 			if (tmptable) {
 					console.log ('tmptable: ',tmptable);
+					tmptable[0]['table'] = val.table;
+					console.log (hjtable);
 			}
 				// this.set ('char.custom.hjtables', hjtable);
           } else {
