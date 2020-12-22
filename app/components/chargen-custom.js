@@ -735,6 +735,8 @@ export default Component.extend({
 					console.log (hjtable);
 			}
 			this.set ('char.custom.hjtables', hjtable);
+			hjtable = this.get('char.custom.hjtables');
+			console.log(hjtable);
           } else {
 			// this.set('char.custom.hjtables.${group}', '');
             // this.set('char.custom.hjtables.${group}', '');
