@@ -84,11 +84,11 @@
 				</div>
 				
 				<div class="row"> <!-- Display Heroes Journey Options -->
-					<pre>{{{ansi-format text=char.custom.hjtables}}}</pre>
-					<pre>{{{ansi-format text=char.custom.hjslots}}}</pre>
+					<!-- <pre>{{{ansi-format text=char.custom.hjtables}}}</pre>
+					<pre>{{{ansi-format text=char.custom.hjslots}}}</pre> -->
 					{{#each-in char.custom.hjslots as |hjt value|}}
 						<div class="col-sm-4">
-								First: <span class="hjtname">{{value}}</span><br />
+								First: <span class="hjt">{{hjt}}</span><br />
 								<div id="{{hjt}}">
 									<PowerSelect @searchEnabled={{true}} @searchField="name" @triggerClass="{{hjt}}" @searchPlaceholder="Type a name..." @selected={{get char.custom.hjtables hjt}} @options={{value}} @onChange={{action "groupChanged" hjt}} as |icf|>
 										{{icf.table}}
