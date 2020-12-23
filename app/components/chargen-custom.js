@@ -722,14 +722,14 @@ export default Component.extend({
 	
         groupChanged(group, val) {
 			var hjtable, tmptable, hjslots, newhjtable={};
-			hjslots = this.get('char.custom.hjslots');
-			hjtable = this.get('char.custom.hjtables');
-			console.log ('hjslots: ', hjslots);
-			console.log ('hjtable: ', hjtable);
-			console.log ('Val: ', val);
+			// hjslots = this.get('char.custom.hjslots');
+			// hjtable = this.get('char.custom.hjtables');
+			// console.log ('hjslots: ', hjslots);
+			// console.log ('hjtable: ', hjtable);
+			// console.log ('Val: ', val);
 			
 			for (const[k1, v1] of Object.entries(hjslots)) {
-				console.log('hjslots: ',k1, v1);
+				console.log('hjslots: ', 'K1: ', k1, 'V1: ', v1);
 			}
 		
 		if (val) {
