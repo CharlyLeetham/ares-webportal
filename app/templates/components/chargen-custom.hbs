@@ -90,9 +90,10 @@
 						<div class="col-sm-4">
 								First: <span class="hjt">
 								{{#each-in value as |k1 v1|}}
-									{<pre>{{{ansi-format text=k1}}}</pre></span><br />
-									{<pre>{{{ansi-format text=v1}}}</pre></span><br />
+									{<pre>{{{ansi-format text=k1}}}</pre><br />
+									{<pre>{{{ansi-format text=v1}}}</pre><br />
 								{{//each-in}}
+								</span>
 								<div id="{{hjt}}">
 									<PowerSelect @searchEnabled={{true}} @searchField="name" @searchPlaceholder="Type a name..." @selected={{get char.custom.hjtables hjt}} @options={{value}} @onChange={{action "groupChanged" hjt}} as |icf|>
 										{{icf.table}}
