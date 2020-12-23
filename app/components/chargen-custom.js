@@ -729,7 +729,7 @@ export default Component.extend({
 			// console.log ('Val: ', val);
 			
 			for (const[k1, v1] of Object.entries(hjslots)) {
-				console.log('hjslots: K1: ',k1,);
+				console.log('hjslots: K1: ',k1);
 				console.log ('V1: ', v1);
 			}
 		
