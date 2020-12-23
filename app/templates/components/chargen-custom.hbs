@@ -88,7 +88,11 @@
 					<pre>{{{ansi-format text=char.custom.hjslots}}}</pre> -->
 					{{#each-in char.custom.hjslots as |hjt value|}}
 						<div class="col-sm-4">
-								First: <span class="hjt">{<pre>{{{ansi-format text=value}}}</pre></span><br />
+								First: <span class="hjt">
+								{{#each-in value as |k1 v1|}}
+									{<pre>{{{ansi-format text=k1}}}</pre></span><br />
+									{<pre>{{{ansi-format text=v1}}}</pre></span><br />
+								{{//each-in}}
 								<div id="{{hjt}}">
 									<PowerSelect @searchEnabled={{true}} @searchField="name" @searchPlaceholder="Type a name..." @selected={{get char.custom.hjtables hjt}} @options={{value}} @onChange={{action "groupChanged" hjt}} as |icf|>
 										{{icf.table}}
