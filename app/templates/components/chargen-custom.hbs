@@ -125,7 +125,25 @@
 						Nothing here
 					</div>
 				  </div>
-                 {{/each-in}}					
+                 {{/each-in}}
+
+				<p class="txthding"> CGen Points Set On Character </p>
+                 {{#each-in char.custom.cgpoints as |key counter|}}
+						 <div class="form-group row">
+							 <div class="col-sm-9">
+									 <b>{{counter.name}}</b> 
+							 </div>
+							 <div class="col-sm-3">
+									 <Input id="inp-{{counter.class}}" @type="text" disabled="disabled" @size={{4}} @value={{counter.rating}} />
+							 </div>
+						 </div>	 	
+				 {{else}}
+                 <div class="form-group row">
+                     <div class="col-sm-12">
+						Nothing here
+					</div>
+				  </div>
+                 {{/each-in}}					 
 			
 			</div>
 		</div>
