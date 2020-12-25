@@ -84,8 +84,8 @@
 				</div>
 				
 				<div class="row"> <!-- Display Heroes Journey Options -->
-					<pre>{{{ansi-format text=char.custom.hjtables}}}</pre>
-					<pre>{{{ansi-format text=char.custom.hjslots}}}</pre> 
+					<!-- <pre>{{{ansi-format text=char.custom.hjtables}}}</pre>
+					<pre>{{{ansi-format text=char.custom.hjslots}}}</pre>  -->
 					{{#each-in char.custom.hjslots as |hjt value|}}
 						<div class="col-sm-4">
 								First: <span class="hjt">
@@ -128,6 +128,8 @@
                  {{/each-in}}
 
 				<p class="txthding"> CGen Points Set On Character </p>
+				
+					<pre>{{{ansi-format text=char.custom.cgpoints}}}</pre> 
                  {{#each-in char.custom.cgpoints as |key counter|}}
 						 <div class="form-group row">
 							 <div class="col-sm-9">
