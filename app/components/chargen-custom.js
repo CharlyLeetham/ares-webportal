@@ -533,7 +533,7 @@ export default Component.extend({
 
 			// Check race
 			var newtrait;
-			newtrait = this.checktrait(swraceall, swiconicfall, swrace, swiconicf, chosenifarray, newval, 'icf');			
+			newtrait = this.checktrait(swraceall, swiconicfall, swrace, swiconicf, chosenifarray, newval, 'icf');	//All system races, all icf's, race chosen by player, icf chosen by player, filtered if array, 	Pure ICF without the trailing ~	
 			
 			// Change the Edges set by the iconicf.		
 			var newedg;		
@@ -542,7 +542,12 @@ export default Component.extend({
 			// Change the Hinderances set by the iconicf.
 			var newhind;	
 			// newhind = this.changehind(syshind, newhindarray, 'icf');
-			newhind = this.changedges(syshind, newhindarray, 'hind', 'icf');			
+			newhind = this.changedges(syshind, newhindarray, 'hind', 'icf');
+
+			//Update the Heroic Journey Tables
+			var newhjtables;
+			newhjtables = this.get('char.custom.hjslots');
+			this.set('char.custom.hjtables', newhjstables); //Send the new array back to the page for nice display.			
 					
 			//Modify the CGen counters
 			charcgp = this.get('char.custom.inicgpoints');  // This is the array of all the if's and values
