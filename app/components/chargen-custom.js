@@ -547,7 +547,7 @@ export default Component.extend({
 			//Update the Heroic Journey Tables
 			var newhjtables;
 			newhjtables = this.get('char.custom.hjslots');
-			this.set('char.custom.hjtables', newhjstables); //Send the new array back to the page for nice display.			
+			this.set('char.custom.hjtables', newhjtables); //Send the new array back to the page for nice display.			
 					
 			//Modify the CGen counters
 			charcgp = this.get('char.custom.inicgpoints');  // This is the array of all the if's and values
