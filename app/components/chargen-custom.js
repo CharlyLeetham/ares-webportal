@@ -547,6 +547,7 @@ export default Component.extend({
 			//Update the Heroic Journey Tables
 			var newhjtables;
 			newhjtables = this.get('char.custom.hjslots');
+			
 			this.set('char.custom.hjtables', newhjtables); //Send the new array back to the page for nice display.			
 					
 			//Modify the CGen counters
@@ -731,7 +732,7 @@ export default Component.extend({
 			hjtable = this.get('char.custom.hjtables');
 			// console.log ('hjslots: ', hjslots);
 			console.log ('hjtable: ', hjtable);
-			// console.log ('Val: ', val);
+			console.log ('Val: ', val);
 			
 			for (const[k1, v1] of Object.entries(hjslots)) {
 				// console.log('hjslots: K1: ',k1);
