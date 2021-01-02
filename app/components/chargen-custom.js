@@ -557,7 +557,7 @@ export default Component.extend({
 			var mappedItems
 
 			// newhjtables = Object.values(newhjtables.filter(o => Object.keys(o).some(k => k.includes('hj')));
-			const mytemp = newhjtables.find(item => item.key === "hj1");
+			const mytemp = newhjtables.find(item => item.key === "hj1_options");
 			
 			
 			console.log (mytemp);
