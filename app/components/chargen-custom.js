@@ -547,6 +547,7 @@ export default Component.extend({
 			//Update the Heroic Journey Tables
 			var newhjtables;
 			newhjtables = this.get('char.custom.hjslots');
+			console.log (newhjtables);
 			
 			this.set('char.custom.hjtables', newhjtables); //Send the new array back to the page for nice display.			
 					
@@ -744,7 +745,7 @@ export default Component.extend({
 			if (tmptable.length > 0) {
 					console.log ('tmptable: ',tmptable);
 					tmptable[0]['table'] = val.table;
-			} else {
+			} else { // We're looking at hjtable not being populated. This might not be needed.
 				tmptable[0] = [];
 				tmptable[0]['table']=val.table;
 				tmptable[0]['name']=val.name;
