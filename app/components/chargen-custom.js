@@ -554,9 +554,13 @@ export default Component.extend({
 			
 			newhjtables = Object.values(swiconicfall).filter(slots => slots.name.toString().toLowerCase() == newval); // Convert swiconicfall to an array and filter for any entries that match the new framework selected.
 			
-			newhjtables = newhjtables.filter(o => Object.keys(o).some(k => k.includes('hj')));
+			var mappedItems
+
+			newhjtables = Object.values(newhjtables.filter(o => Object.keys(o).some(k => k.includes('hj')));
+			const mytemp = newhjtables.find(item => item.key === "hj1");
 			
 			
+			console.log (mytemp);
 			console.log (newhjtables);
 			
 			this.set('char.custom.hjtables', newhjtables); //Send the new array back to the page for nice display.			
