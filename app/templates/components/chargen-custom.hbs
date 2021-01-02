@@ -86,8 +86,6 @@
 				<div class="row"> Display Heroes Journey Options
 
 					<!-- <pre>{{{ansi-format text=char.custom.hjtables}}}</pre> -->					<pre>{{{ansi-format text=char.custom.hjslots}}}</pre>
-					<!-- <pre>{{{ansi-format text=char.custom.hjtables}}}</pre> -->
-					<pre>{{{ansi-format text=char.custom.hjslots}}}</pre> 
 
 					{{#each-in char.custom.hjslots as |hjt value|}}
 						<div class="col-sm-4">
@@ -100,6 +98,10 @@
 									</PowerSelect>
 								</div>
 						</div>
+					{{else}}
+						<div class="col-sm-4">
+						<p class="font-weight: bold; font-style: italic;">No Heroe's Journey's to pick from.</p>
+						</div>			
 					{{/each-in}} 
 					
 				</div> <!-- HJ Options -->
