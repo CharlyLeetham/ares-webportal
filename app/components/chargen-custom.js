@@ -545,8 +545,12 @@ export default Component.extend({
 			newhind = this.changedges(syshind, newhindarray, 'hind', 'icf');
 
 			//Update the Heroic Journey Tables
-			var newhjtables;
-			newhjtables = this.get('char.custom.hjslots');
+			var newhjtables = [];
+			// newhjtables = this.gethj(val, 'icf');  //val is the charicf set
+			
+			//Filter all the icfs' for only the one that has been chosen.
+			
+			newhjtables = Object.values(swiconicfall).filter(slots => slots.name.toString() == newval); // Convert swiconicfall to an array and filter for any entries that match the new framework selected.
 			console.log (newhjtables);
 			
 			this.set('char.custom.hjtables', newhjtables); //Send the new array back to the page for nice display.			
