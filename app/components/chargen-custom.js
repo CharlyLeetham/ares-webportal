@@ -552,13 +552,14 @@ export default Component.extend({
 			
 			console.log (newval);
 			
-			newhjtables = Object.values(swiconicfall).filter(slots => slots.name.toString().toLowerCase() == newval); // Convert swiconicfall to an array and filter for any entries that match the new framework selected.
+			newhjtables = Object.values(swiconicfall).filter(slots => slots.name.toString().toLowerCase() == newval); // Convert swiconicfall to an array and filter for any entries that match the new framework selected.			
 			
-
-
-			newhjtables = Object.values(newhjtables.filter(o => Object.keys(o).some(k => k.includes('hj'))));
 			console.log (newhjtables);
-			
+
+			for (const [key, value] of Object.entries(newhjtables)) {
+				console.log('Key: ', key, 'Value: ', value);
+			}
+		
 			this.set('char.custom.hjtables', newhjtables); //Send the new array back to the page for nice display.			
 					
 			//Modify the CGen counters
@@ -736,7 +737,6 @@ export default Component.extend({
 			this.set('char.custom.cghindnofw', val);
 		},
 		
-	
         groupChanged(group, val) {
 			var hjtable, tmptable, hjslots, newhjtable={};
 			hjslots = this.get('char.custom.hjslots');
