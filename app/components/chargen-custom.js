@@ -560,14 +560,18 @@ export default Component.extend({
 
 			
 
-			var tmptable=[];
+			var tmptable=[], hjname;
 			for (const [key, value] of Object.entries(newhjtables)) {
 				if (key.startsWith('hj')) {
 					console.log('Key: ', key, 'Value: ', value);
-				}
+					hjname = key.split('_')[0].toLowerCase().trim(); //Take the key name and remove the _ and everything after.
+					tmptable[0]=[];
+					tmptable[0]['table']=hjname;
+					tmptable[0]['name']=value;				}
 			}
 		
-			this.set('char.custom.hjtables', newhjtables); //Send the new array back to the page for nice display.			
+			console.log (tmptable);
+			this.set('char.custom.hjtables', tmptable); //Send the new array back to the page for nice display.			
 					
 			//Modify the CGen counters
 			charcgp = this.get('char.custom.inicgpoints');  // This is the array of all the if's and values
