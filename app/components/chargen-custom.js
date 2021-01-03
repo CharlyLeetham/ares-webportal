@@ -558,9 +558,13 @@ export default Component.extend({
 			
 			console.log (newhjtables);
 
+			
 
+			var tmptable=[];
 			for (const [key, value] of Object.entries(newhjtables)) {
-				console.log('Key: ', key, 'Value: ', value);
+				if (key.startsWith('hj')) {
+					console.log('Key: ', key, 'Value: ', value);
+				}
 			}
 		
 			this.set('char.custom.hjtables', newhjtables); //Send the new array back to the page for nice display.			
