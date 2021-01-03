@@ -558,7 +558,7 @@ export default Component.extend({
 			
 			console.log (newhjtables);
 
-			console.log (newhjtables.length);
+			console.log ('Size:', newhjtables.length);
 
 			var tmptable=[], hjname, i;
 			for (const [key, value] of Object.entries(newhjtables)) {
