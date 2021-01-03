@@ -569,8 +569,9 @@ export default Component.extend({
 							tmptable[i]['name']=v1;
 							tmptable[i]['table']=hjname;
 						}
+					i++ // increment our counter so our array grows.						
 				}
-				i++ // increment our counter so our array grows.
+
 			}
 		
 			console.log (tmptable);
