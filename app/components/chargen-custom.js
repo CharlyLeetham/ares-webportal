@@ -558,9 +558,9 @@ export default Component.extend({
 			
 			console.log (newhjtables);
 
-			
+			console.log (newhjtables.length);
 
-			var tmptable=[], hjname;
+			var tmptable=[], hjname, i;
 			for (const [key, value] of Object.entries(newhjtables)) {
 				if (key.startsWith('hj')) {
 					console.log('Key: ', key, 'Value: ', value);
