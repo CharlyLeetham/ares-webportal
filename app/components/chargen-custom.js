@@ -462,9 +462,8 @@ export default Component.extend({
 		newrace = this.get('char.custom.charrace');
 		newrating = 0;
 		
-		console.log(newicf['class'].class);
 		
-		if (newicf['class'].toString() != 'none') {
+		if (newicf['class'] != 'none') {
 			
 			newicfpoints = Object.values(charcgp).filter(slots => slots.ifname.toString() == newicf['class'].toLowerCase()); // Convert charcgp to an array and filter for any entries that match the new framework selected.			
 			icfval = newicf['class'].toLowerCase();
@@ -472,7 +471,7 @@ export default Component.extend({
 		
 		console.log('here4');
 		
-		if (newrace['class'].toLowerCase() != 'none') {
+		if (newrace['class'] != 'none') {
 			newracepoints = Object.values(racecgp).filter(slots => slots.ifname.toString() == newrace['class'].toLowerCase()); // Convert charcgp to an array and filter for any entries that match the new framework selected.	
 			raceval = newrace['class'].toLowerCase();
 		}
