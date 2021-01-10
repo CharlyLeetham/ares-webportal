@@ -474,7 +474,7 @@ export default Component.extend({
 		if (newrace['class'] != 'none') {
 			console.log('here4');
 			newracepoints = Object.values(racecgp).filter(slots => slots.ifname.toString() == newrace['class']); // Convert charcgp to an array and filter for any entries that match the new framework selected.	
-			raceval = newrace['class'].toLowerCase();
+			raceval = newrace['class'];
 		}
 		
 		console.log('here5');
