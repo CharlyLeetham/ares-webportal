@@ -519,7 +519,7 @@ export default Component.extend({
 
 			console.log(val);
 			// If the None option is selected, reset the lists.
-			if (val.toLowerCase() == 'none') {
+			if (val['class'].toLowerCase() == 'none') {
 				// Need to reset the ICF dropdown if this is the case.
 				this.fwreset(swrace, 'icf');
 				return;
