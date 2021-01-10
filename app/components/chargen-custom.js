@@ -556,14 +556,14 @@ export default Component.extend({
 			
 			newhjtables = Object.values(swiconicfall).filter(slots => slots.name.toString().toLowerCase() == newval); // Convert swiconicfall to an array and filter for any entries that match the new framework selected.	
 
-			console.log (newhjtables);
+			console.log (newhjtables[0]);
 
 			if (newhjtables.length > 0) {
 				console.log ('here');
 				var tmptable=[], hjname, i;
 				i=0
 				for (const [key, value] of Object.entries(newhjtables)) {
-					console.log('Key: '+key+' Value: '+value);
+					console.log('Key: '+key+' Value: '+value.inspect);
 					if (key.startsWith('hj')) {
 						hjname = key.split('_')[0].toLowerCase().trim(); //Take the key name and remove the _ and everything after.
 						tmptable[i]=[];
