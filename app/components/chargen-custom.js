@@ -462,7 +462,7 @@ export default Component.extend({
 		newrace = this.get('char.custom.charrace');
 		newrating = 0;
 		
-		console.log(newicf['class']);
+		console.log(newicf['class'].toLowerCase());
 		
 		if (newicf['class'].toString().toLowerCase() != 'none') {
 			newicfpoints = Object.values(charcgp).filter(slots => slots.ifname.toString() == newicf['class'].toLowerCase()); // Convert charcgp to an array and filter for any entries that match the new framework selected.	
@@ -497,6 +497,7 @@ export default Component.extend({
 			document.getElementById("inp-" + value['class']).value = newrating;  //Set the counters on the website.		
 		}
 	
+		console.log('here5');
 	},
   
 	actions: {
