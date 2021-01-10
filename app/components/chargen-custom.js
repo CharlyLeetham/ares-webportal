@@ -464,7 +464,7 @@ export default Component.extend({
 		
 		console.log(newicf['class'].toLowerCase());
 		
-		if (newicf['class'].toString().toLowerCase() != 'none') {
+		if (newicf['class'].toString() != 'none') {
 			
 			newicfpoints = Object.values(charcgp).filter(slots => slots.ifname.toString() == newicf['class'].toLowerCase()); // Convert charcgp to an array and filter for any entries that match the new framework selected.			
 			icfval = newicf['class'].toLowerCase();
