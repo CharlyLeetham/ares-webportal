@@ -462,7 +462,7 @@ export default Component.extend({
 		newrace = this.get('char.custom.charrace');
 		newrating = 0;
 		
-		console.log(newicf['class'].toLowerCase());
+		console.log(newicf['class'].class);
 		
 		if (newicf['class'].toString() != 'none') {
 			
