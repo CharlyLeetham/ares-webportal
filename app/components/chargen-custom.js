@@ -470,7 +470,7 @@ export default Component.extend({
 			icfval = newicf['class'].toLowerCase();
 		}
 		
-		if (newrace['class'].toLowerCase() != 'none') {
+		if (newrace['class'] != 'none') {
 			newracepoints = Object.values(racecgp).filter(slots => slots.ifname.toString() == newrace['class'].toLowerCase()); // Convert charcgp to an array and filter for any entries that match the new framework selected.	
 			raceval = newrace['class'].toLowerCase();
 		}
