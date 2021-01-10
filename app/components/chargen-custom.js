@@ -359,7 +359,7 @@ export default Component.extend({
 		
 		dislist = Object.values(fwname).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 		
-		console.log ('here2');		
+	
 				
 		for (const [key, value] of Object.entries(dislist)) {
 			value['disabled'] = false //Set disabled for this element to false
@@ -462,7 +462,7 @@ export default Component.extend({
 		newrace = this.get('char.custom.charrace');
 		newrating = 0;
 		
-		console.log(cgslots);
+		console.log(newicf);
 		
 		if (newicf['class'].toLowerCase() != 'none') {
 			newicfpoints = Object.values(charcgp).filter(slots => slots.ifname.toString() == newicf['class'].toLowerCase()); // Convert charcgp to an array and filter for any entries that match the new framework selected.	
