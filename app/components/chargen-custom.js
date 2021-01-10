@@ -558,20 +558,21 @@ export default Component.extend({
 			
 			console.log (newhjtables);
 
-			var tmptable=[], hjname, i;
-			i=0
-			for (const [key, value] of Object.entries(newhjtables)) {
-				if (key.startsWith('hj')) {
-					console.log('Key: ', key, 'Value: ', value);
-					hjname = key.split('_')[0].toLowerCase().trim(); //Take the key name and remove the _ and everything after.
-					tmptable[i]=[];
-						for (const [k1, v1] of Object.entries(value)) {
-							tmptable[i]['name']=v1;
-							tmptable[i]['table']=hjname;
-						}
-					i++ // increment our counter so our array grows.						
-				}
+			if (newhjtables) {
+				var tmptable=[], hjname, i;
+				i=0
+				for (const [key, value] of Object.entries(newhjtables)) {
+					if (key.startsWith('hj')) {
+						hjname = key.split('_')[0].toLowerCase().trim(); //Take the key name and remove the _ and everything after.
+						tmptable[i]=[];
+							for (const [k1, v1] of Object.entries(value)) {
+								tmptable[i]['name']=v1;
+								tmptable[i]['table']=hjname;
+							}
+						i++ // increment our counter so our array grows.						
+					}
 
+				}
 			}
 		
 			console.log (tmptable);
