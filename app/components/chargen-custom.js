@@ -464,8 +464,8 @@ export default Component.extend({
 		
 		console.log(newicf['class'].toLowerCase());
 		
-		if (newicf['class'].toLowerCase() != 'none') {
-			console.log('here5');
+		if (newicf['class'].toString().toLowerCase() != 'none') {
+			
 			newicfpoints = Object.values(charcgp).filter(slots => slots.ifname.toString() == newicf['class'].toLowerCase()); // Convert charcgp to an array and filter for any entries that match the new framework selected.			
 			icfval = newicf['class'].toLowerCase();
 		}
@@ -474,6 +474,8 @@ export default Component.extend({
 			newracepoints = Object.values(racecgp).filter(slots => slots.ifname.toString() == newrace['class'].toLowerCase()); // Convert charcgp to an array and filter for any entries that match the new framework selected.	
 			raceval = newrace['class'].toLowerCase();
 		}
+		
+		console.log('here5');
 		
 		for (const [key, value] of Object.entries(cgslots)) { //Loop through the init values. This is our yardstick.
 			newrating = 0;
