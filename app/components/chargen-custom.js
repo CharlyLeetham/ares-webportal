@@ -357,7 +357,7 @@ export default Component.extend({
 	fwreset: function(fwname, fw) {
 		var dislist, exedg, exhind, i, cgtr1=[], cgtr2=[], newclass;
 		
-		console.log ('fwname');
+		console.log (fwname);
 		console.log ('here2');
 		dislist = Object.values(fwname).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 				
