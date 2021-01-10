@@ -550,15 +550,15 @@ export default Component.extend({
 			
 			//Filter all the icfs' for only the one that has been chosen.
 			
-			console.log (newval);
+			// console.log (newval);
 			
 			newhjtables = Object.values(swiconicfall).filter(slots => slots.name.toString().toLowerCase() == newval); // Convert swiconicfall to an array and filter for any entries that match the new framework selected.			
 
 			newhjtables = newhjtables[0]; //there's only ever going to be one result, so let's reduce the multidimensional array to a single dimension.
 			
-			console.log (newhjtables.length > 0);
+			console.log (newhjtables);
 
-			if (newhjtables) {
+			if (newhjtables.length > 0) {
 				var tmptable=[], hjname, i;
 				i=0
 				for (const [key, value] of Object.entries(newhjtables)) {
