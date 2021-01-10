@@ -521,11 +521,11 @@ export default Component.extend({
 			// If the None option is selected, reset the lists.
 			if (val['class'].toLowerCase() == 'none') {
 				// Need to reset the ICF dropdown if this is the case.
+				console.log ('here2');				
 				this.fwreset(swrace, 'icf');
 				return;
 			}			
-			
-			console.log ('here2');
+		
 			
 			chosenifarray = swiconicfall.filter(slots => slots.name.toString().toLowerCase() == newval); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 			
