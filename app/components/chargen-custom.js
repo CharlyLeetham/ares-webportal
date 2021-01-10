@@ -517,7 +517,7 @@ export default Component.extend({
 			cghind = this.get('char.custom.cghind'); // Hinderances on the Character.
 
 
-			console.log(val);
+			console.log(val['class']);
 			// If the None option is selected, reset the lists.
 			if (val['class'].toLowerCase() == 'none') {
 				// Need to reset the ICF dropdown if this is the case.
