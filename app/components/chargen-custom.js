@@ -524,7 +524,9 @@ export default Component.extend({
 				this.fwreset(swrace, 'icf');
 				return;
 			}			
-
+			
+			console.log ('here2');
+			
 			chosenifarray = swiconicfall.filter(slots => slots.name.toString().toLowerCase() == newval); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 			
 			newedgarray = chosenifarray[0].edges; // Select the edges for the new if
