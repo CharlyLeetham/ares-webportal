@@ -556,9 +556,10 @@ export default Component.extend({
 
 			newhjtables = newhjtables[0]; //there's only ever going to be one result, so let's reduce the multidimensional array to a single dimension.
 			
-			console.log (newhjtables);
+			// console.log (newhjtables);
 
 			if (newhjtables.length > 0) {
+				console.log ('here');
 				var tmptable=[], hjname, i;
 				i=0
 				for (const [key, value] of Object.entries(newhjtables)) {
