@@ -373,7 +373,7 @@ export default Component.extend({
 			for (const[ed, desc] of Object.entries(exedg)) {
 				if (desc['class'].endsWith('*^')) {
 					cgtr1[i]=[];
-					newclass = desc['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
+					newclass = desc['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
 					newclass =  newclass+"^";
 					cgtr1[i]['class']=newclass;
 					cgtr1[i]['name']=desc['name'];
@@ -391,7 +391,7 @@ export default Component.extend({
 			for (const[ed, desc] of Object.entries(exedg)) {
 				if (desc['class'].endsWith('*^')) {
 					cgtr1[i]=[];
-					newclass = desc['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
+					newclass = desc['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
 					newclass =  newclass+"*";						
 					cgtr1[i]['class']=newclass;
 					cgtr1[i]['name']=desc['name'];
