@@ -451,6 +451,8 @@ export default Component.extend({
 		//Reset Heroes Journeys
 		hjtables = this.get('char.custom.hjtables');
 		console.log (hjtables);
+		hjtables[]=[];
+		this.set('char.custom.hjtables', hjtables);
 		
 
 		this.resetcounter(fwname);
