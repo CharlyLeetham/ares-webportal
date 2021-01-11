@@ -355,7 +355,7 @@ export default Component.extend({
 	},
 
 	fwreset: function(fwname, fw) {
-		var dislist, exedg, exhind, i, cgtr1=[], cgtr2=[], newclass, hjslots;
+		var dislist, exedg, exhind, i, cgtr1=[], cgtr2=[], newclass, hjslots, hjtables;
 		
 		dislist = Object.values(fwname).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 		
@@ -454,6 +454,10 @@ export default Component.extend({
 		hjslots="";
 		this.set('char.custom.hjslots', hjslots);
 		
+		hjtables = this.get('char.custom.hjtables');
+		for (const[k1, v1] of Object.entries(hjtables)) {
+			console.log ('K1: '+k1+' V1: '+v1);
+		}
 
 		this.resetcounter(fwname);
 		this.set('char.custom.cgedges', cgtr1); //Send the new array back to the page for nice display. 		
