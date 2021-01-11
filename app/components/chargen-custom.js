@@ -355,7 +355,7 @@ export default Component.extend({
 	},
 
 	fwreset: function(fwname, fw) {
-		var dislist, exedg, exhind, i, cgtr1=[], cgtr2=[], newclass;
+		var dislist, exedg, exhind, i, cgtr1=[], cgtr2=[], newclass, hjtables;
 		
 		dislist = Object.values(fwname).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 		
@@ -368,6 +368,7 @@ export default Component.extend({
 		exedg = this.get('char.custom.cgedges');
 		exhind = this.get('char.custom.cghind');
 
+		//Reset Edges
 		i = 0;		
 		if ( fw=='icf' ) {
 			for (const[ed, desc] of Object.entries(exedg)) {
@@ -407,6 +408,7 @@ export default Component.extend({
 			}
 		}
 		
+		//Reset Hinderances
 		i = 0;		
 		if ( fw=='icf' ) {
 			for (const[ed, desc] of Object.entries(exhind)) {
@@ -445,6 +447,11 @@ export default Component.extend({
 				}
 			}
 		}
+		
+		//Reset Heroes Journeys
+		hjtables = this.get('char.custom.hjtables');
+		console.log (hjtables);
+		
 
 		this.resetcounter(fwname);
 		this.set('char.custom.cgedges', cgtr1); //Send the new array back to the page for nice display. 		
@@ -547,16 +554,10 @@ export default Component.extend({
 			newhind = this.changedges(syshind, newhindarray, 'hind', 'icf');
 
 			//Update the Heroic Journey Tables
-			var newhjtables = [];
-			// newhjtables = this.gethj(val, 'icf');  //val is the charicf set
-			
-			//Filter all the icfs' for only the one that has been chosen.
-			
-			// console.log (newval);
-			
+			var newhjtables = [];			
+	
 			newhjtables = Object.values(swiconicfall).filter(slots => slots.name.toString().toLowerCase() == newval); // Convert swiconicfall to an array and filter for any entries that match the new framework selected.	
-
-
+			
 			newhjtables = newhjtables[0];
 			
 			if (newhjtables) {
