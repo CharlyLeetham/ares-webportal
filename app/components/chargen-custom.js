@@ -449,21 +449,13 @@ export default Component.extend({
 		}
 		
 		//Reset Heroes Journeys
-		hjslots = this.get('char.custom.hjslots');
-		console.log ('HJTables: '+hjslots);
-		hjslots="";
-		this.set('char.custom.hjslots', hjslots);
-		
-		hjtables = this.get('char.custom.hjtables');
-		for (const[k1, v1] of Object.entries(hjtables)) {
-			console.log ('K1: '+k1+' V1: '+v1);
-		}
 		hjtables = [];
-		this.set('char.custom.hjtables');
+
 
 		this.resetcounter(fwname);
 		this.set('char.custom.cgedges', cgtr1); //Send the new array back to the page for nice display. 		
 		this.set('char.custom.cghind', cgtr2); //Send the new array back to the page for nice display.
+		this.set('char.custom.hjtables');  //Set Heroes Journey 
 		
 		return;
 	},
@@ -780,16 +772,16 @@ export default Component.extend({
 		
 		if (val) {
 			tmptable = Object.values(hjtable).filter(slots => slots.name.toString().toLowerCase() == val.name.toLowerCase()); // Convert sysedges to an array and filter for any entries that match the new framework selected.
-			// if (tmptable.length > 0) {
-					console.log ('tmptable: ',tmptable);
-					tmptable[0]['table'] = val.table;
-			// } else { // We're looking at hjtable not being populated. This might not be needed.
-				// tmptable[0] = [];
-				// tmptable[0]['table']=val.table;
-				// tmptable[0]['name']=val.name;
-				// hjtable = tmptable;
-				// console.log('tmptable: ', tmptable);
-			// }
+			if (tmptable.length > 0) {
+					// console.log ('tmptable: ',tmptable);
+					// tmptable[0]['table'] = val.table;
+			} else { // We're looking at hjtable not being populated. This might not be needed.
+				tmptable[0] = [];
+				tmptable[0]['table']=val.table;
+				tmptable[0]['name']=val.name;
+				hjtable = tmptable;
+				console.log('tmptable: ', tmptable);
+			}
 			this.set ('char.custom.hjtables', hjtable);
           }
 		},
