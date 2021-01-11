@@ -458,6 +458,8 @@ export default Component.extend({
 		for (const[k1, v1] of Object.entries(hjtables)) {
 			console.log ('K1: '+k1+' V1: '+v1);
 		}
+		hjtables = [];
+		this.set('char.custom.hjtables');
 
 		this.resetcounter(fwname);
 		this.set('char.custom.cgedges', cgtr1); //Send the new array back to the page for nice display. 		
