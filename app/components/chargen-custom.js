@@ -568,11 +568,11 @@ export default Component.extend({
 				for (const [key, value] of Object.entries(newhjtables)) {
 					if (key.startsWith('hj')) {
 						hjname = key.split('_')[0].toLowerCase().trim(); //Take the key name and remove the _ and everything after.
-						tmptable[i]=[];
+						tmptable[key]=[];
 							for (const [k1, v1] of Object.entries(value)) {
 								console.log('Key: '+key+' K1: '+k1+' Value: '+v1);
-								tmptable[i]['name']=v1;
-								tmptable[i]['table']=hjname;
+								tmptable[key]['name']=v1;
+								tmptable[key]['table']=hjname;
 							}
 						i++ // increment our counter so our array grows.						
 					}
