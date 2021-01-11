@@ -571,6 +571,7 @@ export default Component.extend({
 						tmptable[hjname]=[];
 							for (const [k1, v1] of Object.entries(value)) {
 								console.log('Key: '+key+' K1: '+k1+' Value: '+v1);
+								tmptable[hjname][i]=[];
 								tmptable[hjname][i]['name']=v1;
 								tmptable[hjname][i]['table']=hjname;
 							}
