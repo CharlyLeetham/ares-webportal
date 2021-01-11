@@ -570,8 +570,8 @@ export default Component.extend({
 							for (const [k1, v1] of Object.entries(value)) {
 								// console.log('Key: '+key+' K1: '+k1+' Value: '+v1);
 								tmptable[hjname][i]=[];
-								tmptable[hjname][i]['name']=v1;
-								tmptable[hjname][i]['table']=hjname;
+								tmptable[hjname][i]['name']=hjname;
+								tmptable[hjname][i]['table']=v1;
 								i++ // increment our counter so our array grows.									
 							}
 					
