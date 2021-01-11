@@ -570,7 +570,7 @@ export default Component.extend({
 						hjname = key.split('_')[0].toLowerCase().trim(); //Take the key name and remove the _ and everything after.
 						tmptable[i]=[];
 							for (const [k1, v1] of Object.entries(value)) {
-								console.log('Key: '+k1+' Value: '+v1);
+								console.log('Key: '+key+' K1: '+k1+' Value: '+v1);
 								tmptable[i]['name']=v1;
 								tmptable[i]['table']=hjname;
 							}
