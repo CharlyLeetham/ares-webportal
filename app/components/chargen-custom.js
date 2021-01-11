@@ -561,7 +561,7 @@ export default Component.extend({
 
 			console.log (newhjtables);
 			
-			if (newhjtables.length > 0) {
+			if (newhjtables) {
 				console.log ('here');
 				var tmptable=[], hjname, i;
 				i=0
