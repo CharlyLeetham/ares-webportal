@@ -355,7 +355,7 @@ export default Component.extend({
 	},
 
 	fwreset: function(fwname, fw) {
-		var dislist, exedg, exhind, i, cgtr1=[], cgtr2=[], newclass, hjtables;
+		var dislist, exedg, exhind, i, cgtr1=[], cgtr2=[], newclass, hjslots;
 		
 		dislist = Object.values(fwname).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 		
@@ -449,10 +449,10 @@ export default Component.extend({
 		}
 		
 		//Reset Heroes Journeys
-		hjtables = this.get('char.custom.hjtables');
-		console.log ('HJTables: '+hjtables);
-		hjtables="";
-		this.set('char.custom.hjtables', hjtables);
+		hjslots = this.get('char.custom.hjslots');
+		console.log ('HJTables: '+hjslots);
+		hjslots="";
+		this.set('char.custom.hjslots', hjslots);
 		
 
 		this.resetcounter(fwname);
@@ -529,8 +529,7 @@ export default Component.extend({
 
 			// If the None option is selected, reset the lists.
 			if (val['class'].toLowerCase() == 'none') {
-				// Need to reset the ICF dropdown if this is the case.
-console.log ('here');				
+				// Need to reset the ICF dropdown if this is the case.			
 				this.fwreset(swrace, 'icf');
 				return;
 			}			
