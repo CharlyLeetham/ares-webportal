@@ -560,7 +560,6 @@ export default Component.extend({
 			newhjtables = newhjtables[0];
 			
 			if (newhjtables) {
-				// console.log ('here');
 				var tmptable=[], hjname, i;
 				for (const [key, value] of Object.entries(newhjtables)) {
 					if (key.startsWith('hj')) {
@@ -568,7 +567,6 @@ export default Component.extend({
 						tmptable[hjname]=[];
 						i=0
 							for (const [k1, v1] of Object.entries(value)) {
-								// console.log('Key: '+key+' K1: '+k1+' Value: '+v1);
 								tmptable[hjname][i]=[];
 								tmptable[hjname][i]['name']=hjname;
 								tmptable[hjname][i]['table']=v1;
