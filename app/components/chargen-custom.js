@@ -771,12 +771,14 @@ export default Component.extend({
 			} else { // We're looking at hjtable not being populated. 
 			    console.log ('jjjjj');
 				tmptable[val.name] = [];
-				// tmptable[val.name][0] = [];
+				tmptable[val.name][0] = [];
 				tmptable[val.name][0]['table']=val.table;
 				tmptable[val.name][0]['name']=val.name;
-				hjtable = tmptable;
+				console.log (tmptable);
+				this.set ('char.custom.hjtables', tmptable);
+				return;
 			}
-			console.log (hjtable);
+			
 			this.set ('char.custom.hjtables', hjtable);
           }
 		},
