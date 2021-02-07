@@ -765,7 +765,7 @@ export default Component.extend({
 		if (val) {
 			tmptable = Object.values(hjtable).filter(slots => slots.name.toString().toLowerCase() == val.name.toLowerCase()); // Convert sysedges to an array and filter for any entries that match the new framework selected.
 			
-			console.log('Tmptable: '+tmptable);
+			console.log('Tmptable: '+tmptable.inspect);
 			if (tmptable.length > 0) {
 					tmptable[0]['table'] = val.table;
 			} else { // We're looking at hjtable not being populated. 
