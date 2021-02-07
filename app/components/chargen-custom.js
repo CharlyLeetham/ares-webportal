@@ -784,6 +784,7 @@ export default Component.extend({
 				tmptable[val.name][0]['table']=val.table;
 				tmptable[val.name][0]['name']=val.name;
 				console.log (tmptable);
+				hjtable = tmptable;
 			}
 			
 			this.set ('char.custom.hjtables', hjtable);
