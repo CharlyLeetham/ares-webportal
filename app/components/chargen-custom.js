@@ -770,7 +770,7 @@ export default Component.extend({
 					tmptable[0]['table'] = val.table;
 			} else { // We're looking at hjtable not being populated. 
 			    console.log ('jjjjj');
-				tmptable[val.name] = [];
+				// tmptable[val.name] = [];
 				// tmptable[val.name+'_options'][0] = [];
 				tmptable[val.name]['table']=val.table;
 				tmptable[val.name]['name']=val.name;
