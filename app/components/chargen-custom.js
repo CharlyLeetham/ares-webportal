@@ -773,8 +773,8 @@ export default Component.extend({
 				tmptable = [];
 				tmptable[val.name] = [];
 				// tmptable[val.name+'_options'][0] = [];
-				tmptable[0]['table']=val.table;
-				tmptable[0]['name']=val.name;
+				tmptable[val.name]['table'] = val.table;
+				tmptable[val.name]['name'] = val.name;
 				console.log (tmptable);
 				this.set ('char.custom.hjtables', tmptable);
 				return;
