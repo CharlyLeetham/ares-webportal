@@ -778,7 +778,7 @@ export default Component.extend({
 				this.set ('char.custom.hjtables', tmptable);
 				return;
 			}
-			
+			console.log (hjtable);
 			this.set ('char.custom.hjtables', hjtable);
           }
 		},
