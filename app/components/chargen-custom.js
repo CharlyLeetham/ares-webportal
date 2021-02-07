@@ -777,7 +777,7 @@ export default Component.extend({
 			if (tmptable.length > 0) {
 					console.log ('tmptable: ',tmptable);
 					tmptable[0]['table'] = val.table;
-			} else { // We're looking at hjtable not being populated. This might not be needed.
+			} else { // We're looking at hjtable not being populated. 
 			    // console.log ('jjjjj');
 				// tmptable[val.name] = [];
 				// tmptable[val.name][0] = [];
