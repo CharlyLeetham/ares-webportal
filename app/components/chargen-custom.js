@@ -580,7 +580,6 @@ export default Component.extend({
 				}
 			}
 		
-			console.log (tmptable);
 			this.set('char.custom.hjslots', tmptable); //Send the new array back to the page for nice display.			
 					
 			//Modify the CGen counters

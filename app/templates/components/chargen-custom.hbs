@@ -85,12 +85,12 @@
 				
 				<div class="row"> Display Heroes Journey Options
 
-					<!-- <pre>{{{ansi-format text=char.custom.hjtables}}}</pre> -->					<pre>{{{ansi-format text=char.custom.hjslots}}}</pre>
+					<!-- <pre>{{{ansi-format text=char.custom.hjtables}}}</pre> -->				
 
 					{{#each-in char.custom.hjslots as |hjt value|}}
 						<div class="col-sm-4">
 							<span class="hjt">
-								{{{ansi-format text=hjt}}}<br />
+								Table: {{{ansi-format text=hjt}}}<br />
 							</span>
 							<div id="{{hjt}}">
 								<PowerSelect @searchEnabled={{true}} @searchField="name" @searchPlaceholder="Type a name..." @selected={{get char.custom.hjtables hjt}} @options={{value}} @onChange={{action "groupChanged" hjt}} as |icf|>
@@ -108,11 +108,6 @@
 							
 			</div> <!-- left column -->
 
-
-
-						
-			
-		
 			<div class="col-sm-3">
 				<p class="txthding"> CGen Points Available </p>
                  {{#each-in char.custom.cgslots as |key counter|}}
