@@ -778,12 +778,12 @@ export default Component.extend({
 					console.log ('tmptable: ',tmptable);
 					tmptable[0]['table'] = val.table;
 			} else { // We're looking at hjtable not being populated. This might not be needed.
+			    console.log ('jjjjj');
 				tmptable[0] = [];
 				tmptable[0]['table']=val.table;
 				tmptable[0]['name']=val.name;
 			}
 			
-			console.log('tmptable: ', tmptable);
 			this.set ('char.custom.hjtables', hjtable);
           }
 		},
