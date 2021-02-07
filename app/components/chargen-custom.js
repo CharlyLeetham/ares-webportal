@@ -772,8 +772,8 @@ export default Component.extend({
 			    console.log ('jjjjj');
 				tmptable[val.name] = [];
 				// tmptable[val.name][0] = [];
-				tmptable[val.name]['table']=val.table;
-				tmptable[val.name]['name']=val.name;
+				tmptable[val.name][0]['table']=val.table;
+				tmptable[val.name][0]['name']=val.name;
 				hjtable = tmptable;
 			}
 			console.log (hjtable);
