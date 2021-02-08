@@ -769,14 +769,12 @@ export default Component.extend({
 			if (tmptable.length > 0) {
 					tmptable[0]['table'] = val.table;
 			} else { // We're looking at hjtable not being populated. 
-			    console.log ('jjjjj');
 				var tmptable1 = {};
 				tmptable1[val.name] = {};
 				tmptable1[val.name]['table'] = val.table;
 				tmptable1[val.name]['name'] = val.name;
 				console.log (tmptable1);
-				this.set ('char.custom.hjtables', tmptable1);
-				return;
+				hjtable = tmptable1;
 			}
 			console.log (hjtable);
 			this.set ('char.custom.hjtables', hjtable);
