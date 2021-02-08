@@ -419,8 +419,6 @@ export default Component.extend({
 					cgtr2[i]['rating']=desc['rating'];
 					i=i+1;
 				}
-				cgedgefw = [];
-				cghindfw = 
 			}
 		} else if ( fw=='race') {
 			for (const[ed, desc] of Object.entries(exhind)) {
