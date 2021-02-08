@@ -765,22 +765,22 @@ export default Component.extend({
 		if (val) {
 			tmptable = Object.values(hjtable).filter(slots => slots.name.toString().toLowerCase() == val.name.toLowerCase()); // Convert sysedges to an array and filter for any entries that match the new framework selected.
 			
-			console.log('Tmptable: '+tmptable);
+			// console.log('Tmptable: '+tmptable);
 			if (tmptable.length > 0) {
 					tmptable[0]['table'] = val.table;
 			} else { // We're looking at hjtable not being populated. Need to cycle through HJSlots to ensure the hjtable object is setup correctly.
-				console.log (hjslots);
+				// console.log (hjslots);
 				var tmptable1 = {};				
 				for (const [key, value] of Object.entries(hjslots)) {
-					console.log(key,value);
+					console.log ('Key: '+key+' Value:'+value);
 				}
 				tmptable1[val.name] = {};
 				tmptable1[val.name]['table'] = val.table;
 				tmptable1[val.name]['name'] = val.name;
-				console.log (tmptable1);
+				// console.log (tmptable1);
 				hjtable = tmptable1;
 			}
-			console.log (hjtable);
+			// console.log (hjtable);
 			this.set ('char.custom.hjtables', hjtable);
           }
 		},
