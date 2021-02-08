@@ -440,12 +440,19 @@ export default Component.extend({
 			}
 		}
 		
+		//Clear the Framwork and Race Edges and Hinderances for a reset
+		
+		var cghindfw;
+		cghindfw=[];
+		
 		//Reset Heroes Journeys
 		hjtables = [];
 		hjslots = [];
 
 
 		this.resetcounter(fwname);
+		this.set('char.custom.cgedgesfw', cghindfw); //Clear the edges set by the framework
+		this.set('char.custom.cghindfw', cghindfw); //Clear the hinderances set by the framework
 		this.set('char.custom.cgedges', cgtr1); //Send the new array back to the page for nice display. 		
 		this.set('char.custom.cghind', cgtr2); //Send the new array back to the page for nice display.
 		this.set('char.custom.hjtables', hjtables);  //Set Heroes Journey 
