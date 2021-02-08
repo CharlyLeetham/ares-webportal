@@ -30,6 +30,7 @@ export default Component.extend({
 		return swiconicf;
 	}),
 	
+	// I don't think this is used anymore?
 	selhjtables: computed(function(val) {
 		var selectedhjtables;
 		// console.log ('Val: '+val);
@@ -198,6 +199,22 @@ export default Component.extend({
 		}
 		return;
 	},
+	
+	// Used to set the select Hero Journey's table to None.
+	remselhj: function() {
+		var tmptable1 = {};				
+		for (const [key, value] of Object.entries(hjslots)) {
+			console.log ('Key: '+key+' Value:'+value);
+			tmptable1[key] = {};
+			if (val.name == key) {			
+				tmptable1[val.name]['table'] = val.table;
+				tmptable1[val.name]['name'] = val.name;	
+			} else {
+				tmptable1[key]['table'] = 'None';
+				tmptable1[key]['name'] = key;
+			}					
+		}		
+	}
 
 	checktrait: function(swraceall, swiconicfall, swrace, swiconicf, chosenifarray, newval, traittype) {
 		
@@ -509,7 +526,7 @@ export default Component.extend({
   
 	actions: {
 		iconicfChanged(val) {
-			var charif, charcgp, chosenifarray, cgslots, newifpoints, newval, resetifpoints, newrating, cgedg, cghind, swiconicf, swiconicfall, dislist44, newedgarray, newhindarray, newcyberarray, racecompl, sysedg, syshind, swrace, swraceall, newtrait;
+			var charif, charcgp, chosenifarray, cgslots, newifpoints, newval, resetifpoints, newrating, cgedg, cghind, swiconicf, swiconicfall, dislist44, newedgarray, newhindarray, newcyberarray, racecompl, sysedg, syshind, swrace, swraceall, newtrait, hjtables;
 
 			// Common things to do 
 			charif = this.get('char.custom.charicf'); //Get the value that was selected in the dropdown.
@@ -532,7 +549,6 @@ export default Component.extend({
 				this.fwreset(swrace, 'icf');
 				return;
 			}			
-		
 			
 			chosenifarray = swiconicfall.filter(slots => slots.name.toString().toLowerCase() == newval); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 			
@@ -555,10 +571,9 @@ export default Component.extend({
 			newhind = this.changedges(syshind, newhindarray, 'hind', 'icf');
 
 			//Update the Heroic Journey Tables
+			// Change the options displayed to the player
 			var newhjtables = [];			
-	
 			newhjtables = Object.values(swiconicfall).filter(slots => slots.name.toString().toLowerCase() == newval); // Convert swiconicfall to an array and filter for any entries that match the new framework selected.	
-			
 			newhjtables = newhjtables[0];
 			
 			if (newhjtables) {
@@ -579,8 +594,12 @@ export default Component.extend({
 
 				}
 			}
+			this.set('char.custom.hjslots', tmptable); //Send the new array back to the page for nice display.
+
+			//Reset Heroes Journeys already set on the character
+			hjtables = [];
+			this.set('char.custom.hjtables', hjtables);  //Set Heroes Journey 
 		
-			this.set('char.custom.hjslots', tmptable); //Send the new array back to the page for nice display.			
 					
 			//Modify the CGen counters
 			charcgp = this.get('char.custom.inicgpoints');  // This is the array of all the if's and values
@@ -643,17 +662,15 @@ export default Component.extend({
 			// I/F Check 
 			newtrait = this.checktrait(swraceall, swiconicfall, swrace, swiconicf, chosenifarray, newval, 'race');		
 
-
 			// Change the Edges set by the race.
-			
 			var newedg;		
 			newedg = this.changedges(sysedg, newedgarray, 'edge', 'race');
 			
 			// Change the Hinderances set by the race.
 			var newhind;	
-			newhind = this.changedges(syshind, newhindarray, 'hind', 'race');						
-			//Modify the CGen counters
+			newhind = this.changedges(syshind, newhindarray, 'hind', 'race');		
 			
+			//Modify the CGen counters	
 			charcgp = this.get('char.custom.inicgpoints');  // This is the array of all the if's and values
 			cgslots = this.get('char.custom.cgslots');  // This is the cgslots at init and their values.
 			newifpoints = Object.values(charcgp).filter(slots => slots.ifname.toString() == newval); // Convert charcgp to an array and filter for any entries that match the new framework selected.
@@ -753,7 +770,6 @@ export default Component.extend({
 					trexcludes = this.ck_excludes(dislist, syshind, 'hind');
 				}
 			}
-			
 			this.set('char.custom.cghindnofw', val);
 		},
 		
@@ -762,31 +778,27 @@ export default Component.extend({
 			hjslots = this.get('char.custom.hjslots');
 			hjtable = this.get('char.custom.hjtables');
 		
-		if (val) {
-			tmptable = Object.values(hjtable).filter(slots => slots.name.toString().toLowerCase() == val.name.toLowerCase()); // Convert sysedges to an array and filter for any entries that match the new framework selected.
-			
-			// console.log('Tmptable: '+tmptable);
-			if (tmptable.length > 0) {
-					tmptable[0]['table'] = val.table;
-			} else { // We're looking at hjtable not being populated. Need to cycle through HJSlots to ensure the hjtable object is setup correctly.
-				// console.log (hjslots);
-				var tmptable1 = {};				
-				for (const [key, value] of Object.entries(hjslots)) {
-					console.log ('Key: '+key+' Value:'+value);
-					tmptable1[key] = {};
-					if (val.name == key) {			
-						tmptable1[val.name]['table'] = val.table;
-						tmptable1[val.name]['name'] = val.name;	
-					} else {
-						tmptable1[key]['table'] = 'None';
-						tmptable1[key]['name'] = key;
-					}					
+			if (val) {
+				tmptable = Object.values(hjtable).filter(slots => slots.name.toString().toLowerCase() == val.name.toLowerCase()); // Convert hjtables to an array and filter for any entries that match the new framework selected.
+				
+				if (tmptable.length > 0) {
+						tmptable[0]['table'] = val.table;
+				} else { // We're looking at hjtable not being populated. Need to cycle through HJSlots to ensure the hjtable object is setup correctly.
+					var tmptable1 = {};				
+					for (const [key, value] of Object.entries(hjslots)) {
+						console.log ('Key: '+key+' Value:'+value);
+						tmptable1[key] = {};
+						if (val.name == key) {			
+							tmptable1[val.name]['table'] = val.table;
+							tmptable1[val.name]['name'] = val.name;	
+						} else {
+							tmptable1[key]['table'] = 'None';
+							tmptable1[key]['name'] = key;
+						}					
+					}
+					hjtable = tmptable1;
 				}
-				// console.log (tmptable1);
-				hjtable = tmptable1;
-			}
-			// console.log (hjtable);
-			this.set ('char.custom.hjtables', hjtable);
+				this.set ('char.custom.hjtables', hjtable);
           }
 		},
 		
