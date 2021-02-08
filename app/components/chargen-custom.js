@@ -771,7 +771,7 @@ export default Component.extend({
 			} else { // We're looking at hjtable not being populated. 
 			    console.log ('jjjjj');
 				var tmptable1 = [];
-				var tmptable1.val.name] = [];
+				var tmptable1[val.name] = [];
 				// tmptable[val.name+'_options'][0] = [];
 				tmptable1[val.name]['table'] = val.table;
 				tmptable1[val.name]['name'] = val.name;
