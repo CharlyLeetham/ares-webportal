@@ -200,22 +200,6 @@ export default Component.extend({
 		return;
 	},
 	
-	// Used to set the select Hero Journey's table to None.
-	remselhj: function() {
-		var tmptable1 = {};				
-		for (const [key, value] of Object.entries(hjslots)) {
-			console.log ('Key: '+key+' Value:'+value);
-			tmptable1[key] = {};
-			if (val.name == key) {			
-				tmptable1[val.name]['table'] = val.table;
-				tmptable1[val.name]['name'] = val.name;	
-			} else {
-				tmptable1[key]['table'] = 'None';
-				tmptable1[key]['name'] = key;
-			}					
-		}		
-	}
-
 	checktrait: function(swraceall, swiconicfall, swrace, swiconicf, chosenifarray, newval, traittype) {
 		
 		// Check the Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
