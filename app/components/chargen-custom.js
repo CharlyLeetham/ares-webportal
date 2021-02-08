@@ -30,15 +30,6 @@ export default Component.extend({
 		return swiconicf;
 	}),
 	
-	// I don't think this is used anymore?
-	selhjtables: computed(function(val) {
-		var selectedhjtables;
-		// console.log ('Val: '+val);
-		selectedhjtables = this.get('char.custom.hjtables');
-		// console.log (selectedhjtables);
-		return selectedhjtables;
-	}),
-	
 	didInsertElement: function() {
 	let self = this;
 	this.set('updateCallback', function() { return self.onUpdate(); } );
