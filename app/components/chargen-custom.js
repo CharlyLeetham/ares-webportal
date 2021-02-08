@@ -770,7 +770,10 @@ export default Component.extend({
 					tmptable[0]['table'] = val.table;
 			} else { // We're looking at hjtable not being populated. Need to cycle through HJSlots to ensure the hjtable object is setup correctly.
 				console.log (hjslots);
-				var tmptable1 = {};
+				var tmptable1 = {};				
+				for (const [key, value] of Object.entries(hjslots)) {
+					console.log(key,value);
+				}
 				tmptable1[val.name] = {};
 				tmptable1[val.name]['table'] = val.table;
 				tmptable1[val.name]['name'] = val.name;
