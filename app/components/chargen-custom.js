@@ -773,10 +773,10 @@ export default Component.extend({
 				var tmptable1 = {};				
 				for (const [key, value] of Object.entries(hjslots)) {
 					console.log ('Key: '+key+' Value:'+value);
+					tmptable1[key] = {};
 				}
-				tmptable1[val.name] = {};
 				tmptable1[val.name]['table'] = val.table;
-				tmptable1[val.name]['name'] = val.name;
+				tmptable1[val.name]['name'] = val.name;					
 				// console.log (tmptable1);
 				hjtable = tmptable1;
 			}
