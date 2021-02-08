@@ -100,7 +100,7 @@ export default Component.extend({
 
 		i = 0;		
 		if ( fw=='icf' ) {
-			cgtr1[i] = [];
+			// cgtr1[i] = [];
 			for (const[ed, desc] of Object.entries(exedg)) {
 				if (desc['class'].includes('^')) {
 					cgtr1[i] = [];
@@ -111,7 +111,7 @@ export default Component.extend({
 				}
 			}
 		} else if ( fw=='race') {
-			cgtr1[i]=[];			
+			// cgtr1[i]=[];			
 			for (const[ed, desc] of Object.entries(exedg)) {
 				if (desc['class'].includes('*')) {
 					cgtr1[i]=[];
