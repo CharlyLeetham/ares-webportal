@@ -447,7 +447,7 @@ export default Component.extend({
 		hjslots = [];
 
 
-		this.resetcounter(fwname);
+		// this.resetcounter(fwname);
 		this.set('char.custom.cgedges', cgtr1); //Send the new array back to the page for nice display. 		
 		this.set('char.custom.cghind', cgtr2); //Send the new array back to the page for nice display.
 		this.set('char.custom.hjtables', hjtables);  //Set Heroes Journey 
