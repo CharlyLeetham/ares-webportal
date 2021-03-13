@@ -8,7 +8,7 @@ export default Route.extend(DefaultRoute, {
     
     model: function() {
         let api = this.gameApi;
-        return api.requestOne('swrifts-edges');
+        return api.requestOne('edges');
     },
     
     afterModel: function() {
