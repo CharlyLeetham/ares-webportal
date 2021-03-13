@@ -3,4 +3,5 @@ export default function setupCustomRoutes(router) {
   // For example:
   // router.route('yourroute');
   
+  router.route('swrifts-edges'); // Define the page to display all the SWRifts edges.
 }
