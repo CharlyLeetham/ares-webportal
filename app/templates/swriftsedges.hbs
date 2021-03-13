@@ -4,3 +4,12 @@
 <h2>Edge</h2>
 
 <p> Does this actually work? </p>
+
+{{{ansi-format text=model.edges}}}
+
+<!-- 
+{{#each model.edges as |gear|}}
+    <td><LinkTo @route="fs3combat-gear-detail" @models={{array 'weapon' gear.key}}>{{gear.name}}</LinkTo></td> 
+    <td>{{gear.description}}</td>
+{{/each}}
+-->
