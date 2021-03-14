@@ -12,7 +12,7 @@
 			<ul>
 				{{#each-in edge.pre-reqs as |k v|}}
 					{{#each-in v as |j l|}}
-						<li><strong>{{j}}</strong>:  {{l}} </li>
+						<li class="prereq"><strong>{{j}}</strong>:  {{l}} </li>
 					{{/each-in}}
 				{{else}}
 					<li>None</li>
