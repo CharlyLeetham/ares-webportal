@@ -11,9 +11,9 @@
 		<p>Pre Requisite:</p>
 		{{#each-in edge.pre-reqs as |k v|}}
 		{{k}}
-			{{#each v as |j|}}
-				{{j}} <br />
-			{{/each}}
+			{{#each-in v as |j l|}}
+				{{j}}:  {{l}} <br />
+			{{/each-in}}
 		{{/each-in}} <br />	
     </div>
 {{/each}}
