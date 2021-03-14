@@ -9,8 +9,8 @@
         <h2>{{edge.name}}</h2>
         <p>{{edge.description}}</p>
 		<p>Pre Requisite: {{edge.pre-reqs}}</p>
-		{{#each edge.pre-reqs as |pq|}}
-			{{pq}}
+		{{#each edge.pre-reqs as |k v|}}
+			{{k}}: {{v}}
 		{{/each}}<br />	
     </div>
 {{/each}}
