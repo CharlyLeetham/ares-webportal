@@ -1,0 +1,25 @@
+{{page-title 'SWRIFTS Edges'}}
+<h1>SWRIFTS Edges</h1>
+
+<div class="edgrow">
+{{#each model.edges as |edge|}}
+    <div class="edgcol">
+        <h3 class="txthding">{{edge.name}}</h3>
+        <p>{{edge.description}}</p>
+		<p><strong>Type:</strong> {{edge.type}}</p>
+		<p><strong>Book:</strong> {{edge.book_reference}}</p>
+		<p><strong>Pre Requisites:</strong><br />
+			<ul>
+				{{#each-in edge.pre-reqs as |k v|}}
+					{{#each-in v as |j l|}}
+						<li class="prereq"><strong>{{j}}</strong>:  {{l}} </li>
+					{{/each-in}}
+				{{else}}
+					<li>None</li>
+				{{/each-in}} 
+			</ul>
+		</p>		
+    </div>
+{{/each}}
+</div>
+
