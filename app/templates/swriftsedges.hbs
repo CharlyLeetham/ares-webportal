@@ -10,10 +10,11 @@
         <p>{{edge.description}}</p>
 		<p>Pre Requisite:</p>
 		{{#each-in edge.pre-reqs as |k v|}}
+		{{k}}
 			{{#each v as |j|}}
-				{{j}}<br />
+				{{j}} <br />
 			{{//each}}
-		{{/each-in}}<br />	
+		{{/each-in}} <br />	
     </div>
 {{/each}}
 </div>
