@@ -8,7 +8,7 @@
     <div class="col">
         <h2>{{edge.name}}</h2>
         <p>{{edge.description}}</p>
-		<p>Pre Requisite: {{edge.pre-reqs}}</p>
+		<p>Pre Requisite:</p>
 		{{#each-in edge.pre-reqs as |k v|}}
 			{{k}}: {{v}}
 		{{/each-in}}<br />	
