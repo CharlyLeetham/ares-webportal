@@ -1,9 +1,9 @@
 {{page-title 'SWRIFTS Edges'}}
 <h1>SWRIFTS Edges</h1>
 
-<div class="row">
+<div class="edgrow">
 {{#each model.edges as |edge|}}
-    <div class="col">
+    <div class="edgcol">
         <h3 class="txthding">{{edge.name}}</h3>
         <p>{{edge.description}}</p>
 		<p>Type: {{edge.type}}</p>
@@ -22,3 +22,4 @@
     </div>
 {{/each}}
 </div>
+
