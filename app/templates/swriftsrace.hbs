@@ -1,0 +1,79 @@
+{{page-title 'SWRIFTS Races'}}
+<h1>SWRIFTS Races</h1>
+
+<div class="edgrow">
+{{#each model.races as |race|}}
+    <div class="edgcol">
+        <h3 class="txthding">{{race.name}}</h3>
+        <p>{{race.desc}}</p>
+		<p><strong>Book:</strong> {{race.book_reference}}</p>
+		<p><strong>Stats:</strong><br />
+			<ul>
+				{{#each-in race.stats as |k v|}}
+					{{#each-in v as |j l|}}
+						<li class="prereq"><strong>{{j}}</strong>:  {{l}} </li>
+					{{/each-in}}
+				{{else}}
+					<li>None</li>
+				{{/each-in}} 
+			</ul>
+		</p>
+		<p><strong>Skills:</strong><br />
+			<ul>
+				{{#each-in race.skills as |k v|}}
+					{{#each-in v as |j l|}}
+						<li class="prereq"><strong>{{j}}</strong>:  {{l}} </li>
+					{{/each-in}}
+				{{else}}
+					<li>None</li>
+				{{/each-in}} 
+			</ul>
+		</p>
+		<p><strong>Hinderances:</strong><br />
+			<ul>
+				{{#each-in race.hinderances as |k v|}}
+					{{#each-in v as |j l|}}
+						<li class="prereq"><strong>{{j}}</strong>:  {{l}} </li>
+					{{/each-in}}
+				{{else}}
+					<li>None</li>
+				{{/each-in}} 
+			</ul>
+		</p>
+		<p><strong>Edges:</strong><br />
+			<ul>
+				{{#each-in race.edges as |k v|}}
+					{{#each-in v as |j l|}}
+						<li class="prereq"><strong>{{j}}</strong>:  {{l}} </li>
+					{{/each-in}}
+				{{else}}
+					<li>None</li>
+				{{/each-in}} 
+			</ul>
+		</p>
+		<p><strong>Magic Powers:</strong><br />
+			<ul>
+				{{#each-in race.powers as |k v|}}
+					{{#each-in v as |j l|}}
+						<li class="prereq"><strong>{{j}}</strong>:  {{l}} </li>
+					{{/each-in}}
+				{{else}}
+					<li>None</li>
+				{{/each-in}} 
+			</ul>
+		</p>
+		<p><strong>Complications:</strong><br />
+			<ul>
+				{{#each-in race.complications as |k v|}}
+					{{#each-in v as |j l|}}
+						<li class="prereq"><strong>{{j}}</strong>:  {{l}} </li>
+					{{/each-in}}
+				{{else}}
+					<li>None</li>
+				{{/each-in}} 
+			</ul>
+		</p>
+    </div>
+{{/each}}
+</div>
+

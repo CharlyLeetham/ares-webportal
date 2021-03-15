@@ -1,0 +1,23 @@
+{{page-title 'SWRIFTS Skills'}}
+<h1>SWRIFTS Skills</h1>
+
+<div class="edgrow">
+{{#each model.skills as |skill|}}
+    <div class="edgcol">
+        <h3 class="txthding">{{skill.name}}</h3>
+        <p>{{skill.description}}</p>
+		<p><strong>Linked Stat:</strong><br />
+			<ul>
+				{{#each-in skill.linked_stat as |k v|}}
+					{{#each-in v as |j l|}}
+						<li class="prereq"><strong>{{j}}</strong>:  {{l}} </li>
+					{{/each-in}}
+				{{else}}
+					<li>None</li>
+				{{/each-in}} 
+			</ul>
+		</p>
+    </div>
+{{/each}}
+</div>
+

@@ -1,0 +1,113 @@
+{{page-title 'SWRIFTS Iconic Framework'}}
+<h1>SWRIFTS Iconic Frameworks</h1>
+
+<div class="edgrow">
+{{#each model.icf as |icf|}}
+    <div class="edgcol">
+        <h3 class="txthding">{{icf.name}}</h3>
+        <p>{{icf.description}}</p>
+		<p><strong>Book:</strong> {{icf.book_reference}}</p>
+		<p><strong>Traits:</strong><br />
+			<ul>
+				{{#each-in icf.traits as |k v|}}
+					{{#each-in v as |j l|}}
+						<li class="prereq"><strong>{{j}}</strong>:  {{l}} </li>
+					{{/each-in}}
+				{{else}}
+					<li>None</li>
+				{{/each-in}} 
+			</ul>
+		</p>		
+		<p><strong>Stats:</strong><br />
+			<ul>
+				{{#each-in icf.stats as |k v|}}
+					{{#each-in v as |j l|}}
+						<li class="prereq"><strong>{{j}}</strong>:  {{l}} </li>
+					{{/each-in}}
+				{{else}}
+					<li>None</li>
+				{{/each-in}} 
+			</ul>
+		</p>
+		<p><strong>Skills:</strong><br />
+			<ul>
+				{{#each-in icf.skills as |k v|}}
+					{{#each-in v as |j l|}}
+						<li class="prereq"><strong>{{j}}</strong>:  {{l}} </li>
+					{{/each-in}}
+				{{else}}
+					<li>None</li>
+				{{/each-in}} 
+			</ul>
+		</p>
+		<p><strong>Hinderances:</strong><br />
+			<ul>
+				{{#each-in icf.hinderances as |k v|}}
+					{{#each-in v as |j l|}}
+						<li class="prereq"><strong>{{j}}</strong>:  {{l}} </li>
+					{{/each-in}}
+				{{else}}
+					<li>None</li>
+				{{/each-in}} 
+			</ul>
+		</p>
+		<p><strong>Edges:</strong><br />
+			<ul>
+				{{#each-in icf.edges as |k v|}}
+					{{#each-in v as |j l|}}
+						<li class="prereq"><strong>{{j}}</strong>:  {{l}} </li>
+					{{/each-in}}
+				{{else}}
+					<li>None</li>
+				{{/each-in}} 
+			</ul>
+		</p>
+		<p><strong>Magic Powers:</strong><br />
+			<ul>
+				{{#each-in icf.magic_powers as |k v|}}
+					{{#each-in v as |j l|}}
+						<li class="prereq"><strong>{{j}}</strong>:  {{l}} </li>
+					{{/each-in}}
+				{{else}}
+					<li>None</li>
+				{{/each-in}} 
+			</ul>
+		</p>
+		<p><strong>Abilities:</strong><br />
+			<ul>
+				{{#each-in icf.abilities as |k v|}}
+					{{#each-in v as |j l|}}
+						<li class="prereq"><strong>{{j}}</strong>:  {{l}} </li>
+					{{/each-in}}
+				{{else}}
+					<li>None</li>
+				{{/each-in}} 
+			</ul>
+		</p>
+		<p><strong>Complications:</strong><br />
+			<ul>
+				{{#each-in icf.complications as |k v|}}
+					{{#each-in v as |j l|}}
+						<li class="prereq"><strong>{{j}}</strong>:  {{l}} </li>
+					{{/each-in}}
+				{{else}}
+					<li>None</li>
+				{{/each-in}} 
+			</ul>
+		</p>
+		<p><strong>Complications:</strong><br />
+			<ul>
+				{{#each-in icf.complications as |k v|}}
+					{{#each-in v as |j l|}}
+						<li class="prereq"><strong>{{j}}</strong>:  {{l}} </li>
+					{{/each-in}}
+				{{else}}
+					<li>None</li>
+				{{/each-in}} 
+			</ul>
+		</p>
+		<p>List the HJ tables here</p>
+    </div>
+{{/each}}
+</div>
+
