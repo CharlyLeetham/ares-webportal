@@ -450,7 +450,7 @@ export default Component.extend({
 
 
 		// this.resetcounter(fwname);
-		this.set('char.custom.cgedges', cgtr1); //Send the new array back to the page for nice display. 		
+		this.set('char.custom.cgedgesfw', cgtr1); //Send the new array back to the page for nice display. 		
 		this.set('char.custom.cghind', cgtr2); //Send the new array back to the page for nice display.
 		this.set('char.custom.hjtables', hjtables);  //Set Heroes Journey 
 		this.set('char.custom.hjslots', hjslots);  //Set Heroes Journey 
