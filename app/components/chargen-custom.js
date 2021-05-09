@@ -353,7 +353,8 @@ export default Component.extend({
 		
 		dislist = Object.values(fwname).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 		
-	
+	    console.log ('fwname');
+	    console.log ('fw');
 				
 		for (const [key, value] of Object.entries(dislist)) {
 			value['disabled'] = false //Set disabled for this element to false
@@ -520,11 +521,10 @@ export default Component.extend({
 			swrace = this.get('char.custom.cgrace'); // Get the system races formatted for drop down. This is needed to send the updated races back to the page for selection.		
 			cghind = this.get('char.custom.cghind'); // Hinderances on the Character.
 
-			console.log(val['class']);
+
 			// If the None option is selected, reset the lists.
 			if (val['class'].toLowerCase() == 'none') {
 				// Need to reset the ICF dropdown if this is the case.	
-				console.log ('here');
 				this.fwreset(swrace, 'icf');
 				return;
 			}			
