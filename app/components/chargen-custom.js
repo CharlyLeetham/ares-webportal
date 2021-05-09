@@ -375,15 +375,15 @@ export default Component.extend({
 					cgtr1[i]['name']=desc['name'];
 					cgtr1[i]['rating']=desc['rating'];
 					i=i+1;
-				} else if (desc['class'].endsWith('*')) {
+				} else if (desc['class'].endsWith('^')) {
 					cgtr1[i] = [];
 					cgtr1[i]['class']=desc['class'];
 					cgtr1[i]['name']=desc['name'];
 					cgtr1[i]['rating']=desc['rating'];
 					i=i+1;
 				}
-				console.log(cgtr1);
 			}
+			console.log(cgtr1);
 		} else if ( fw=='race') {
 			for (const[ed, desc] of Object.entries(exedg)) {
 				if (desc['class'].endsWith('*^')) {
