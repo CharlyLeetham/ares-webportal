@@ -349,7 +349,7 @@ export default Component.extend({
 	},
 
 	fwreset: function(fwname, fw) {
-		var cgedgfw, cghindfw, dislist, exedg, exhind, i, cgtr1=[], cgtr2=[], newclass, hjslots, hjtables;
+		var cgedgfw, cghindfw, dislist, exedg, exhind, i, cgtr1=[], cgtr2=[], newclass, hjslots, hjtables, swiconicf;
 		
 		dislist = Object.values(fwname).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 				
@@ -362,6 +362,9 @@ export default Component.extend({
 
 		console.log (fwname);
 		console.log (fw);
+		
+		swiconicf = this.get('char.custom.iconicf');
+		console.log (swiconicf);
 		//Reset Edges
 		i = 0;	
 		// if ( fw=='icf' ) {
