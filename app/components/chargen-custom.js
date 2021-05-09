@@ -360,50 +360,69 @@ export default Component.extend({
 		exedg = this.get('char.custom.cgedges');
 		exhind = this.get('char.custom.cghind');
 
+		console.log (exedg);
+		console.log (exhind);
 		//Reset Edges
-		i = 0;
-		console.log (cgtr1);		
-		if ( fw=='icf' ) {
-			for (const[ed, desc] of Object.entries(exedg)) {
-				if (desc['class'].endsWith('*^')) {
-					cgtr1[i]=[];
-					newclass = desc['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
-					newclass =  newclass+"^";
-					cgtr1[i]['class']=newclass;
-					cgtr1[i]['name']=desc['name'];
-					cgtr1[i]['rating']=desc['rating'];
-					i=i+1;
-				} else if (desc['class'].endsWith('^')) {
-					cgtr1[i] = [];
-					cgtr1[i]['class']=desc['class'];
-					cgtr1[i]['name']=desc['name'];
-					cgtr1[i]['rating']=desc['rating'];
-					i=i+1;
-				}
-			}
-		} else if ( fw=='race') {
-			for (const[ed, desc] of Object.entries(exedg)) {
-				if (desc['class'].endsWith('*^')) {
-					cgtr1[i]=[];
-					newclass = desc['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
-					newclass =  newclass+"*";						
-					cgtr1[i]['class']=newclass;
-					cgtr1[i]['name']=desc['name'];
-					cgtr1[i]['rating']=desc['rating'];
-					i=i+1;
-				} else if (desc['class'].endsWith('*')) {
-					cgtr1[i]=[];
-					cgtr1[i]['class']=desc['class'];
-					cgtr1[i]['name']=desc['name'];
-					cgtr1[i]['rating']=desc['rating'];
-					i=i+1;
-				}
-			}
-		}
+		i = 0;	
+		// if ( fw=='icf' ) {
+			// for (const[ed, desc] of Object.entries(exedg)) {
+				// if (desc['class'].endsWith('*^')) {
+					// cgtr1[i]=[];
+					// newclass = desc['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
+					// newclass =  newclass+"^";
+					// cgtr1[i]['class']=newclass;
+					// cgtr1[i]['name']=desc['name'];
+					// cgtr1[i]['rating']=desc['rating'];
+					// i=i+1;
+				// } else if (desc['class'].endsWith('^')) {
+					// cgtr1[i] = [];
+					// cgtr1[i]['class']=desc['class'];
+					// cgtr1[i]['name']=desc['name'];
+					// cgtr1[i]['rating']=desc['rating'];
+					// i=i+1;
+				// }
+			// }
+		// } else if ( fw=='race') {
+			// for (const[ed, desc] of Object.entries(exedg)) {
+				// if (desc['class'].endsWith('*^')) {
+					// cgtr1[i]=[];
+					// newclass = desc['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
+					// newclass =  newclass+"*";						
+					// cgtr1[i]['class']=newclass;
+					// cgtr1[i]['name']=desc['name'];
+					// cgtr1[i]['rating']=desc['rating'];
+					// i=i+1;
+				// } else if (desc['class'].endsWith('*')) {
+					// cgtr1[i]=[];
+					// cgtr1[i]['class']=desc['class'];
+					// cgtr1[i]['name']=desc['name'];
+					// cgtr1[i]['rating']=desc['rating'];
+					// i=i+1;
+				// }
+			// }
+		// }
+		
+		
+		// for (const[ed, desc] of Object.entries(exedg)) {
+			// if (desc['class'].endsWith('*^')) {
+				// cgtr1[i]=[];
+				// newclass = desc['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
+				// newclass =  newclass+"^";
+				// cgtr1[i]['class']=newclass;
+				// cgtr1[i]['name']=desc['name'];
+				// cgtr1[i]['rating']=desc['rating'];
+				// i=i+1;
+			// } else if (desc['class'].endsWith('^')) {
+				// cgtr1[i] = [];
+				// cgtr1[i]['class']=desc['class'];
+				// cgtr1[i]['name']=desc['name'];
+				// cgtr1[i]['rating']=desc['rating'];
+				// i=i+1;
+			// }
+		// }		
 		
 		//Reset Hinderances
 		i = 0;	
-		console.log (cgtr1);
 		if ( fw=='icf' ) {
 			for (const[ed, desc] of Object.entries(exhind)) {
 				if (desc['class'].endsWith('*^')) {
