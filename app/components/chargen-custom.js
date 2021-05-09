@@ -359,9 +359,6 @@ export default Component.extend({
 		
 		exedg = this.get('char.custom.cgedges');
 		exhind = this.get('char.custom.cghind');
-		
-		console.log (exedg);
-		console.log (exhind);
 
 		//Reset Edges
 		i = 0;		
@@ -383,7 +380,6 @@ export default Component.extend({
 					i=i+1;
 				}
 			}
-			console.log(cgtr1);
 		} else if ( fw=='race') {
 			for (const[ed, desc] of Object.entries(exedg)) {
 				if (desc['class'].endsWith('*^')) {
@@ -451,7 +447,7 @@ export default Component.extend({
 
 		// this.resetcounter(fwname);
 		this.set('char.custom.cgedgesfw', cgtr1); //Send the new array back to the page for nice display. 		
-		this.set('char.custom.cghind', cgtr2); //Send the new array back to the page for nice display.
+		this.set('char.custom.cghindfw', cgtr2); //Send the new array back to the page for nice display.
 		this.set('char.custom.hjtables', hjtables);  //Set Heroes Journey 
 		this.set('char.custom.hjslots', hjslots);  //Set Heroes Journey 
 		return;
