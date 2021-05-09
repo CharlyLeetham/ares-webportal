@@ -360,8 +360,8 @@ export default Component.extend({
 		exedg = this.get('char.custom.cgedges');
 		exhind = this.get('char.custom.cghind');
 
-		console.log (exedg);
-		console.log (exhind);
+		console.log (fwname);
+		console.log (fw);
 		//Reset Edges
 		i = 0;	
 		// if ( fw=='icf' ) {
