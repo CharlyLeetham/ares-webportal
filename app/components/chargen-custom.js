@@ -363,7 +363,7 @@ export default Component.extend({
 		console.log (fwname);
 		console.log (fw);
 		
-		swiconicf = this.get('char.custom.iconicf');
+		swiconicf = this.get('char.custom.charicf');
 		console.log (swiconicf);
 		//Reset Edges
 		i = 0;	
