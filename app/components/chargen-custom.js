@@ -361,7 +361,8 @@ export default Component.extend({
 		exhind = this.get('char.custom.cghind');
 
 		//Reset Edges
-		i = 0;		
+		i = 0;
+		console.log (cgtr1);		
 		if ( fw=='icf' ) {
 			for (const[ed, desc] of Object.entries(exedg)) {
 				if (desc['class'].endsWith('*^')) {
