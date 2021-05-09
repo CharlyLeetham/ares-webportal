@@ -401,7 +401,8 @@ export default Component.extend({
 		}
 		
 		//Reset Hinderances
-		i = 0;		
+		i = 0;	
+		console.log (cgtr1);
 		if ( fw=='icf' ) {
 			for (const[ed, desc] of Object.entries(exhind)) {
 				if (desc['class'].endsWith('*^')) {
@@ -439,7 +440,8 @@ export default Component.extend({
 				}
 			}
 		}
-			
+		
+		console.log (cgtr1);		
 		//Reset Heroes Journeys
 		hjtables = [];
 		hjslots = [];
