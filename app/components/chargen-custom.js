@@ -352,9 +352,6 @@ export default Component.extend({
 		var cgedgfw, cghindfw, dislist, exedg, exhind, i, cgtr1=[], cgtr2=[], newclass, hjslots, hjtables;
 		
 		dislist = Object.values(fwname).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
-		
-	    console.log (fwname);
-	    console.log (fw);
 				
 		for (const [key, value] of Object.entries(dislist)) {
 			value['disabled'] = false //Set disabled for this element to false
@@ -362,6 +359,9 @@ export default Component.extend({
 		
 		exedg = this.get('char.custom.cgedges');
 		exhind = this.get('char.custom.cghind');
+		
+		console.log (exedg);
+		console.log (exhind);
 
 		//Reset Edges
 		i = 0;		
