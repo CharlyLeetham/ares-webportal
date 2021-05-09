@@ -520,9 +520,11 @@ export default Component.extend({
 			swrace = this.get('char.custom.cgrace'); // Get the system races formatted for drop down. This is needed to send the updated races back to the page for selection.		
 			cghind = this.get('char.custom.cghind'); // Hinderances on the Character.
 
+			console.log(val['class']);
 			// If the None option is selected, reset the lists.
 			if (val['class'].toLowerCase() == 'none') {
-				// Need to reset the ICF dropdown if this is the case.			
+				// Need to reset the ICF dropdown if this is the case.	
+				console.log ('here');
 				this.fwreset(swrace, 'icf');
 				return;
 			}			
@@ -621,10 +623,8 @@ export default Component.extend({
 			cghind = this.get('char.custom.cghind'); // Hinderances on the Character. 		
 			
 			// If the None option is selected, reset the lists.
-			console.log (val.class);
 			if (val.class.toLowerCase() == 'none') {
 				// Need to reset the ICF dropdown if this is the case.
-				console.log ('here');
 				this.fwreset(swiconicf, 'race');
 				return;
 			}	
