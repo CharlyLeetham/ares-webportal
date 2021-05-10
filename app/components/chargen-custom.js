@@ -366,7 +366,7 @@ export default Component.extend({
 		//Because we have to set edges and such based on the selected ICF and Race, we need to know what's selected where. 
 		curricf = this.get('char.custom.charicf');
 		currrace = this.get('char.custom.charrace');
-		console.log ('Curricf: '+curricf+' Currrace: '+currrace);
+		console.log ('Curricf: '+curricf.object+' Currrace: '+currrace.object);
 
 		//Reset Edges
 		i = 0;	
