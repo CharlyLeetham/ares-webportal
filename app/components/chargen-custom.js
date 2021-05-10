@@ -368,21 +368,6 @@ export default Component.extend({
 		currrace = this.get('char.custom.charrace');
 		console.log (curricf, currrace);
 
-		if ICF = None but Race is set
-			Get edges for Race. 
-			Get hind for Race.
-			
-		If ICF = Set but Race = None
-			Get edges for ICF
-			Get hind for ICF
-			
-		If both = None
-			Clear all
-			
-
-
-		
-
 		//Reset Edges
 		i = 0;	
 		if ( curricf['class'].toLowerCase == 'none' && currrace['class'].toLowerCase == 'none' ) {
