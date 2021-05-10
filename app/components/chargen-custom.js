@@ -372,7 +372,9 @@ export default Component.extend({
 		i = 0;	
 		if ( curricf['class'].toLowerCase == 'none' && currrace['class'].toLowerCase == 'none' ) {
 			cgtr1[i] = [];
-		} else if ( fw=='icf' ) {
+		}
+		
+		if ( curricf['class'].toLowerCase == 'none' ) {
 			for (const[ed, desc] of Object.entries(exedg)) {
 				if (desc['class'].endsWith('*^')) {
 					cgtr1[i]=[];
@@ -390,7 +392,9 @@ export default Component.extend({
 					i=i+1;
 				}
 			}
-		} else if ( fw=='race') {
+		}
+		
+		if ( currrace['class'].toLowerCase == 'none') {
 			for (const[ed, desc] of Object.entries(exedg)) {
 				if (desc['class'].endsWith('*^')) {
 					cgtr1[i]=[];
@@ -416,7 +420,9 @@ export default Component.extend({
 		if ( curricf['class'].toLowerCase == 'none' && currrace['class'].toLowerCase == 'none' ) {
 			cgtr1[i] = [];
 			cgtr2[i] = [];
-		} else if ( fw=='icf' ) {
+		}
+		
+		if ( curricf['class'].toLowerCase == 'none' ) {
 			for (const[ed, desc] of Object.entries(exhind)) {
 				if (desc['class'].endsWith('*^')) {
 					cgtr1[i]=[];
@@ -434,7 +440,9 @@ export default Component.extend({
 					i=i+1;
 				}
 			}
-		} else if ( fw=='race') {
+		}
+
+	    if ( currrace['class'].toLowerCase == 'none' ) {
 			for (const[ed, desc] of Object.entries(exhind)) {
 				if (desc['class'].endsWith('*^')) {
 					cgtr1[i]=[];
