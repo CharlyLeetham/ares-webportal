@@ -371,7 +371,7 @@ export default Component.extend({
 		//Reset Edges
 		i = 0;	
 		if ( curricf['class'].toLowerCase == 'none' && currrace['class'].toLowerCase == 'none' ) {
-			cgtr1[i]=[];
+			cgtr1[i] = [];
 		} else if ( fw=='icf' ) {
 			for (const[ed, desc] of Object.entries(exedg)) {
 				if (desc['class'].endsWith('*^')) {
@@ -411,8 +411,12 @@ export default Component.extend({
 		}		
 		
 		//Reset Hinderances
-		i = 0;	
-		if ( fw=='icf' ) {
+		i = 0;
+
+		if ( curricf['class'].toLowerCase == 'none' && currrace['class'].toLowerCase == 'none' ) {
+			cgtr1[i] = [];
+			cgtr2[i] = [];
+		} else if ( fw=='icf' ) {
 			for (const[ed, desc] of Object.entries(exhind)) {
 				if (desc['class'].endsWith('*^')) {
 					cgtr1[i]=[];
