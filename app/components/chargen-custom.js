@@ -349,10 +349,13 @@ export default Component.extend({
 	},
 
 	fwreset: function(fwname, fw) {
-		var cgedgfw, cghindfw, dislist, exedg, exhind, i, cgtr1=[], cgtr2=[], newclass, hjslots, hjtables, swiconicf;
+		
+		//fwname is either all the icf's or all the races. fw is icf or race depending on what is reset
+		
+		var cgedgfw, cghindfw, dislist, exedg, exhind, i, cgtr1=[], cgtr2=[], newclass, hjslots, hjtables, curricf, currrace;
 		
 		dislist = Object.values(fwname).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
-				
+					
 		for (const [key, value] of Object.entries(dislist)) {
 			value['disabled'] = false //Set disabled for this element to false
 		}
@@ -360,69 +363,67 @@ export default Component.extend({
 		exedg = this.get('char.custom.cgedges');
 		exhind = this.get('char.custom.cghind');
 
-		console.log (fwname);
-		console.log (fw);
+		//Because we have to set edges and such based on the selected ICF and Race, we need to know what's selected where. 
+		curricf = this.get('char.custom.charicf');
+		currrace = this.get('char.custom.charrace');
+		console.log (curricf, currrace);
+
+		if ICF = None but Race is set
+			Get edges for Race. 
+			Get hind for Race.
+			
+		If ICF = Set but Race = None
+			Get edges for ICF
+			Get hind for ICF
+			
+		If both = None
+			Clear all
+			
+
+
 		
-		swiconicf = this.get('char.custom.charicf');
-		console.log (swiconicf);
+
 		//Reset Edges
 		i = 0;	
-		// if ( fw=='icf' ) {
-			// for (const[ed, desc] of Object.entries(exedg)) {
-				// if (desc['class'].endsWith('*^')) {
-					// cgtr1[i]=[];
-					// newclass = desc['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
-					// newclass =  newclass+"^";
-					// cgtr1[i]['class']=newclass;
-					// cgtr1[i]['name']=desc['name'];
-					// cgtr1[i]['rating']=desc['rating'];
-					// i=i+1;
-				// } else if (desc['class'].endsWith('^')) {
-					// cgtr1[i] = [];
-					// cgtr1[i]['class']=desc['class'];
-					// cgtr1[i]['name']=desc['name'];
-					// cgtr1[i]['rating']=desc['rating'];
-					// i=i+1;
-				// }
-			// }
-		// } else if ( fw=='race') {
-			// for (const[ed, desc] of Object.entries(exedg)) {
-				// if (desc['class'].endsWith('*^')) {
-					// cgtr1[i]=[];
-					// newclass = desc['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
-					// newclass =  newclass+"*";						
-					// cgtr1[i]['class']=newclass;
-					// cgtr1[i]['name']=desc['name'];
-					// cgtr1[i]['rating']=desc['rating'];
-					// i=i+1;
-				// } else if (desc['class'].endsWith('*')) {
-					// cgtr1[i]=[];
-					// cgtr1[i]['class']=desc['class'];
-					// cgtr1[i]['name']=desc['name'];
-					// cgtr1[i]['rating']=desc['rating'];
-					// i=i+1;
-				// }
-			// }
-		// }
-		
-		
-		// for (const[ed, desc] of Object.entries(exedg)) {
-			// if (desc['class'].endsWith('*^')) {
-				// cgtr1[i]=[];
-				// newclass = desc['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
-				// newclass =  newclass+"^";
-				// cgtr1[i]['class']=newclass;
-				// cgtr1[i]['name']=desc['name'];
-				// cgtr1[i]['rating']=desc['rating'];
-				// i=i+1;
-			// } else if (desc['class'].endsWith('^')) {
-				// cgtr1[i] = [];
-				// cgtr1[i]['class']=desc['class'];
-				// cgtr1[i]['name']=desc['name'];
-				// cgtr1[i]['rating']=desc['rating'];
-				// i=i+1;
-			// }
-		// }		
+		if ( curricf['class'].toLowerCase == 'none' && currrace['class'].toLowerCase == 'none' ) {
+			cgtr1[i]=[];
+		} else if ( fw=='icf' ) {
+			for (const[ed, desc] of Object.entries(exedg)) {
+				if (desc['class'].endsWith('*^')) {
+					cgtr1[i]=[];
+					newclass = desc['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
+					newclass =  newclass+"^";
+					cgtr1[i]['class']=newclass;
+					cgtr1[i]['name']=desc['name'];
+					cgtr1[i]['rating']=desc['rating'];
+					i=i+1;
+				} else if (desc['class'].endsWith('^')) {
+					cgtr1[i] = [];
+					cgtr1[i]['class']=desc['class'];
+					cgtr1[i]['name']=desc['name'];
+					cgtr1[i]['rating']=desc['rating'];
+					i=i+1;
+				}
+			}
+		} else if ( fw=='race') {
+			for (const[ed, desc] of Object.entries(exedg)) {
+				if (desc['class'].endsWith('*^')) {
+					cgtr1[i]=[];
+					newclass = desc['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
+					newclass =  newclass+"*";						
+					cgtr1[i]['class']=newclass;
+					cgtr1[i]['name']=desc['name'];
+					cgtr1[i]['rating']=desc['rating'];
+					i=i+1;
+				} else if (desc['class'].endsWith('*')) {
+					cgtr1[i]=[];
+					cgtr1[i]['class']=desc['class'];
+					cgtr1[i]['name']=desc['name'];
+					cgtr1[i]['rating']=desc['rating'];
+					i=i+1;
+				}
+			}
+		}		
 		
 		//Reset Hinderances
 		i = 0;	
@@ -547,7 +548,7 @@ export default Component.extend({
 			// If the None option is selected, reset the lists.
 			if (val['class'].toLowerCase() == 'none') {
 				// Need to reset the ICF dropdown if this is the case.	
-				this.fwreset(swrace, 'icf');
+				this.fwreset(swrace, 'icf') //Send all the icf's through and the fact we're changing the icf;
 				return;
 			}			
 			
@@ -647,7 +648,7 @@ export default Component.extend({
 			// If the None option is selected, reset the lists.
 			if (val.class.toLowerCase() == 'none') {
 				// Need to reset the ICF dropdown if this is the case.
-				this.fwreset(swiconicf, 'race');
+				this.fwreset(swiconicf, 'race'); //Send all the race's through and the fact we're changing the race;
 				return;
 			}	
 			
