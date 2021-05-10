@@ -475,6 +475,7 @@ export default Component.extend({
 		this.set('char.custom.cgedgesfw', cgtr1); //Send the new array back to the page for nice display. 		
 		this.set('char.custom.cghindfw', cgtr2); //Send the new array back to the page for nice display.
 		this.set('char.custom.cgedges', cgtr1); //Update the edges set on the Character
+		this.set('char.custom.cghind', cgtr2); //Update the hinderances set on the Character.
 		this.set('char.custom.hjtables', hjtables);  //Set Heroes Journey 
 		this.set('char.custom.hjslots', hjslots);  //Set Heroes Journey 
 		return;
