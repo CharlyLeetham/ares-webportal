@@ -61,6 +61,7 @@
      <div class="body-wrap">
  
        <div class="row body-row">
+         
          {{#if (not hideSidebar)}}
              {{#if model.left_sidebar}}
              <div class="col-md-3 left-sidebar" role="navigation" aria-labelledby="sidebar">
@@ -104,14 +105,13 @@
 </div>
 
   
-<BsModalSimple @title="Select Alt" @submitTitle="Done" @size={{null}} @fade={{false}} @closeTitle="Cancel" @open={{showAltSelection}}  @onHide={{action (mut showAltSelection) null}} @onSubmit={{action (mut showAltSelection) null}}>
+<BsModalSimple @title="Select Alt" @submitTitle="Done" @size={{null}} @fade={{false}} @closeTitle="Cancel" @open={{showAltSelection}}  @onHide={{action (mut showAltSelection) false}} @onSubmit={{action (mut showAltSelection) false}}>
 
   <table class="alts-switcher">
-  
     {{#each model.alts as |alt|}}
       {{#if (not (eq alt.name currentUser.name)) }}
         <tr><td>
-        <CharIconInline @char={{alt}} @hideLink="true" /> {{alt.name}}
+        <CharIconInline @char={{alt}} @hideLink="true" />
         </td>
         <td><a href="#" {{action 'switchAlt' alt.name}} class="btn btn-default">Switch</a></td>
         </tr>

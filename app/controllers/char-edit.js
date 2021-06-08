@@ -39,6 +39,7 @@ export default Controller.extend({
 
         
         descs['current'] = this.get('model.char.descs.current');
+        descs['short'] = this.get('model.char.shortdesc');
         descs['outfits'] = {};
         descs['details'] = {};
         this.get('model.char.descs.outfits').forEach(function(p) {
@@ -79,6 +80,10 @@ export default Controller.extend({
         };
     }, 
     actions: {
+      
+        rolesChanged(roles) {
+          this.set('model.char.roles', roles);
+        },
         
         save() {
             if (this.get('model.char.profile').filter(p => p.name.length == 0).length > 0) {

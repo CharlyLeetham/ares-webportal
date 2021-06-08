@@ -20,7 +20,7 @@ export default Controller.extend(AuthenticatedController, SceneUpdate, {
     selectedChannel: null,
     showNewConversation: false,
     newConversationList: null,
-    showAddChannel: null,
+    showAddChannel: false,
     showAllChannels: false,
     showAllPms: false,
       
@@ -97,7 +97,9 @@ export default Controller.extend(AuthenticatedController, SceneUpdate, {
       }
       channel.messages.pushObject({message: newMessage, timestamp: localTimestamp, author: author});
       set(channel, 'last_activity', Date.now());
-      set(channel, 'is_recent', true);
+      if (!channel.is_hidden) {
+        set(channel, 'is_recent', true);
+      }
       if (channelKey === this.get('selectedChannel.key')) {
           this.scrollWindow();
           if (channel.is_page) {
@@ -124,7 +126,7 @@ export default Controller.extend(AuthenticatedController, SceneUpdate, {
 
       this.set('showNewConversation', false);
       this.set('newConversationList', false);
-      this.set('showAddChannel', null);
+      this.set('showAddChannel', false);
       this.set('scrollPaused', false);
     },
     
