@@ -374,23 +374,13 @@ export default Component.extend({
 
 		//Reset Edges
 		i = 0;	
-		console.log (curricf['class'].toLowerCase());
-		var curricfclass = curricf['class'].toLowerCase();
-		console.log (curricfclass);
-		if ( curricf['class'].toLowerCase() == 'none' ) {
-			console.log ('ICF is none');
-		}
-
-		if ( currrace['class'].toLowerCase() == 'none' ) {
-			console.log ('Race is none');
-		}
 
 		if ( curricf['class'].toLowerCase() == 'none' && currrace['class'].toLowerCase() == 'none' ) {
 			console.log ('Both are none');
 			cgtr1[i] = [];
 		}
 		
-		if ( curricf['class'].toLowerCase == 'none' ) {
+		if ( curricf['class'].toLowerCase() == 'none' ) {
 			for (const[ed, desc] of Object.entries(exedg)) {
 				if (desc['class'].endsWith('*^')) {
 					cgtr1[i]=[];
@@ -410,7 +400,7 @@ export default Component.extend({
 			}
 		}
 		
-		if ( currrace['class'].toLowerCase == 'none') {
+		if ( currrace['class'].toLowerCase() == 'none') {
 			for (const[ed, desc] of Object.entries(exedg)) {
 				if (desc['class'].endsWith('*^')) {
 					cgtr1[i]=[];
@@ -433,12 +423,12 @@ export default Component.extend({
 		//Reset Hinderances
 		i = 0;
 
-		if ( curricf['class'].toLowerCase == 'none' && currrace['class'].toLowerCase == 'none' ) {
+		if ( curricf['class'].toLowerCase() == 'none' && currrace['class'].toLowerCase() == 'none' ) {
 			cgtr1[i] = [];
 			cgtr2[i] = [];
 		}
 		
-		if ( curricf['class'].toLowerCase == 'none' ) {
+		if ( curricf['class'].toLowerCase() == 'none' ) {
 			for (const[ed, desc] of Object.entries(exhind)) {
 				if (desc['class'].endsWith('*^')) {
 					cgtr1[i]=[];
@@ -458,7 +448,7 @@ export default Component.extend({
 			}
 		}
 
-	    if ( currrace['class'].toLowerCase == 'none' ) {
+	    if ( currrace['class'].toLowerCase() == 'none' ) {
 			for (const[ed, desc] of Object.entries(exhind)) {
 				if (desc['class'].endsWith('*^')) {
 					cgtr1[i]=[];
