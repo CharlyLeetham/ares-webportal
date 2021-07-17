@@ -101,7 +101,10 @@ export default Component.extend({
 		console.log('EXEDG: ');
 		console.log (exedg);
 		
-
+		if (exedg) {
+			console.log ('woohoo');
+		}
+		
 		i = 0;		
 		if ( fw=='icf' ) {
 			// cgtr1[i] = [];
