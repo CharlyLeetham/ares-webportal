@@ -102,6 +102,7 @@ export default Component.extend({
 			i = 0;		
 			if ( fw=='icf' ) { // If we're looking at changing the Iconic Framework, find out which attributes are marked as Racial features. We want to keep these and remove all the ICF ones)
 				for (const[ed, desc] of Object.entries(exedg)) {
+					console.log (exedg);
 					if (desc['class'].includes('^')) {
 						cgtr1[i] = [];
 						cgtr1[i]['class']=desc['class'];
