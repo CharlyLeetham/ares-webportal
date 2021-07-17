@@ -98,7 +98,7 @@ export default Component.extend({
 			specchar ='^';
 		}
 		
-		console.log (exedg);
+		console.log ('Already set: ' + exedg);
 		
 		if ( Object.keys(exedg).length > 1 ) {	// If there are edges or hinderances already set on the character, get them back and 	
 			i = 0;		
