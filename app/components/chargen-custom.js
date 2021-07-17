@@ -395,7 +395,7 @@ export default Component.extend({
 					cgtr1[i]['rating']=desc['rating'];
 					i=i+1;
 				} else if (desc['class'].endsWith('*')) {
-					ctr1[i]='';
+					cgtr1[i]='';
 				}
 			}
 		}
