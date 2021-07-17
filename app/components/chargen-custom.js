@@ -374,6 +374,14 @@ export default Component.extend({
 
 		//Reset Edges
 		i = 0;	
+		if ( curricf['class'].toLowerCase == 'none' ) {
+			console.log ('ICF is none');
+		}
+
+		if ( currrace['class'].toLowerCase == 'none' ) {
+			console.log ('Race is none');
+		}
+
 		if ( curricf['class'].toLowerCase == 'none' && currrace['class'].toLowerCase == 'none' ) {
 			console.log ('Both are none');
 			cgtr1[i] = [];
