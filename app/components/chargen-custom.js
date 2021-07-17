@@ -375,6 +375,8 @@ export default Component.extend({
 		//Reset Edges
 		i = 0;	
 		console.log (curricf['class'].toLowerCase);
+		var curricfclass = curricf['class'].toLowerCase;
+		console.log (curricfclass);
 		if ( curricf['class'].toLowerCase == 'none' ) {
 			console.log ('ICF is none');
 		}
