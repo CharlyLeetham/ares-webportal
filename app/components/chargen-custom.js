@@ -103,35 +103,36 @@ export default Component.extend({
 		
 		console.log ('Size: ' + Object.keys(exedg).length);
 		
-		if (exedg) {
+		if ( Object.keys(exedg).length > 1 ) {
 			console.log ('woohoo');
 		}
 		
-		i = 0;		
-		if ( fw=='icf' ) {
-			// cgtr1[i] = [];
-			for (const[ed, desc] of Object.entries(exedg)) {
-				if (desc['class'].includes('^')) {
-					cgtr1[i] = [];
-					cgtr1[i]['class']=desc['class'];
-					cgtr1[i]['name']=desc['name'];
-					cgtr1[i]['rating']=desc['rating'];
-					i=i+1;
+		if ( Object.keys(exedg).length > 1 ) {		
+			i = 0;		
+			if ( fw=='icf' ) {
+				// cgtr1[i] = [];
+				for (const[ed, desc] of Object.entries(exedg)) {
+					if (desc['class'].includes('^')) {
+						cgtr1[i] = [];
+						cgtr1[i]['class']=desc['class'];
+						cgtr1[i]['name']=desc['name'];
+						cgtr1[i]['rating']=desc['rating'];
+						i=i+1;
+					}
 				}
-			}
-		} else if ( fw=='race') {
-			// cgtr1[i]=[];			
-			for (const[ed, desc] of Object.entries(exedg)) {
-				if (desc['class'].includes('*')) {
-					cgtr1[i]=[];
-					cgtr1[i]['class']=desc['class'];
-					cgtr1[i]['name']=desc['name'];
-					cgtr1[i]['rating']=desc['rating'];
-					i=i+1;
+			} else if ( fw=='race') {
+				// cgtr1[i]=[];			
+				for (const[ed, desc] of Object.entries(exedg)) {
+					if (desc['class'].includes('*')) {
+						cgtr1[i]=[];
+						cgtr1[i]['class']=desc['class'];
+						cgtr1[i]['name']=desc['name'];
+						cgtr1[i]['rating']=desc['rating'];
+						i=i+1;
+					}
 				}
 			}
 		}
-
 		// Clear the edges list for the framework
 
 		//If there are new edges or hinderances, go through and set these to disabled in the edge drop down.
