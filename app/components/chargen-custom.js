@@ -124,7 +124,7 @@ export default Component.extend({
 		}
 		
 		//At this point cgtr1[] should be a list of either ICF or race features only.
-		console.log('What have we here? ');
+	console.log('What have we here? ' + cgtr1);
 		
 		// Clear the edges list for the framework
 
