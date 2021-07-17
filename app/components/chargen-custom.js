@@ -97,6 +97,9 @@ export default Component.extend({
 		} else if (fw == 'race') {
 			specchar ='^';
 		}
+		
+		console.log(exedg);
+		
 
 		i = 0;		
 		if ( fw=='icf' ) {
