@@ -348,6 +348,7 @@ export default Component.extend({
 		return;
 	},
 
+	// Reset ICF or Race to none.
 	fwreset: function(fwname, fw) {
 		
 		//fwname is either all the icf's or all the races. fw is icf or race depending on what is reset
@@ -374,6 +375,7 @@ export default Component.extend({
 		//Reset Edges
 		i = 0;	
 		if ( curricf['class'].toLowerCase == 'none' && currrace['class'].toLowerCase == 'none' ) {
+			console.log ('Both are none');
 			cgtr1[i] = [];
 		}
 		
