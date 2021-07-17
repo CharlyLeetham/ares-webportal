@@ -351,7 +351,7 @@ export default Component.extend({
 	},
 
 	// Reset ICF or Race to none.
-	fwreset: function(fwname, fw) {
+	fwreset: function(fwname, fw) { //Array of system settings, what we're working on (Race or ICF)
 		
 		//fwname is either all the icf's or all the races. fw is icf or race depending on what is reset
 		
@@ -376,12 +376,8 @@ export default Component.extend({
 
 		//Reset Edges
 		i = 0;	
-
-		// if ( curricf['class'].toLowerCase() == 'none' && currrace['class'].toLowerCase() == 'none' ) {
-			// console.log ('Both are none');
-			// cgtr1[i] = [];
-		// }
 		
+		// Reset attributes for ICF set to None
 		if ( curricf['class'].toLowerCase() == 'none' ) {
 			for (const[ed, desc] of Object.entries(exedg)) {
 				if (desc['class'].endsWith('*^')) {
@@ -398,9 +394,13 @@ export default Component.extend({
 					cgtr1[i]['name']=desc['name'];
 					cgtr1[i]['rating']=desc['rating'];
 					i=i+1;
+				} else if (desc['class'].endsWith('*')) {
+					ctr1[i]='';
 				}
 			}
 		}
+		
+		// Reset attributes for Race set to None
 		
 		if ( currrace['class'].toLowerCase() == 'none') {
 			for (const[ed, desc] of Object.entries(exedg)) {
