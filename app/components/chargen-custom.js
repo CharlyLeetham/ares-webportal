@@ -375,10 +375,10 @@ export default Component.extend({
 		//Reset Edges
 		i = 0;	
 
-		if ( curricf['class'].toLowerCase() == 'none' && currrace['class'].toLowerCase() == 'none' ) {
-			console.log ('Both are none');
-			cgtr1[i] = [];
-		}
+		// if ( curricf['class'].toLowerCase() == 'none' && currrace['class'].toLowerCase() == 'none' ) {
+			// console.log ('Both are none');
+			// cgtr1[i] = [];
+		// }
 		
 		if ( curricf['class'].toLowerCase() == 'none' ) {
 			for (const[ed, desc] of Object.entries(exedg)) {
