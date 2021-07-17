@@ -98,7 +98,7 @@ export default Component.extend({
 			specchar ='^';
 		}
 		
-		console.log(exedg);
+		console.log('EXEDG: '.exedg);
 		
 
 		i = 0;		
