@@ -98,6 +98,8 @@ export default Component.extend({
 			specchar ='^';
 		}
 		
+		console.log (exedg);
+		
 		if ( Object.keys(exedg).length > 1 ) {	// If there are edges or hinderances already set on the character, get them back and 	
 			i = 0;		
 			if ( fw=='icf' ) { // If we're looking at changing the Iconic Framework, find out which attributes are marked as Racial features. We want to keep these and remove all the ICF ones)
