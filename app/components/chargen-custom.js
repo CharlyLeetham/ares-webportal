@@ -98,19 +98,9 @@ export default Component.extend({
 			specchar ='^';
 		}
 		
-		console.log('EXEDG: ');
-		console.log (exedg);
-		
-		console.log ('Size: ' + Object.keys(exedg).length);
-		
-		if ( Object.keys(exedg).length > 1 ) {
-			console.log ('woohoo');
-		}
-		
-		if ( Object.keys(exedg).length > 1 ) {		
+		if ( Object.keys(exedg).length > 1 ) {	// If there are edges or hinderances already set on the character, get them back and 	
 			i = 0;		
-			if ( fw=='icf' ) {
-				// cgtr1[i] = [];
+			if ( fw=='icf' ) { // If we're looking at changing the Iconic Framework, find out which attributes are marked as Racial features. We want to keep these and remove all the ICF ones)
 				for (const[ed, desc] of Object.entries(exedg)) {
 					if (desc['class'].includes('^')) {
 						cgtr1[i] = [];
@@ -120,8 +110,7 @@ export default Component.extend({
 						i=i+1;
 					}
 				}
-			} else if ( fw=='race') {
-				// cgtr1[i]=[];			
+			} else if ( fw=='race') {	// If we're looking at changing the Race, find out which attributes are marked as ICF features. We want to keep these and remove all the race ones)
 				for (const[ed, desc] of Object.entries(exedg)) {
 					if (desc['class'].includes('*')) {
 						cgtr1[i]=[];
@@ -133,6 +122,10 @@ export default Component.extend({
 				}
 			}
 		}
+		
+		//At this point cgtr1[] should be a list of either ICF or race features only.
+		console.log('What have we here? ' + cgtr1[]);
+		
 		// Clear the edges list for the framework
 
 		//If there are new edges or hinderances, go through and set these to disabled in the edge drop down.
