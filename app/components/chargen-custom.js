@@ -101,6 +101,8 @@ export default Component.extend({
 		console.log('EXEDG: ');
 		console.log (exedg);
 		
+		console.log ('Size: ' + Object.keys(exedg).length);
+		
 		if (exedg) {
 			console.log ('woohoo');
 		}
