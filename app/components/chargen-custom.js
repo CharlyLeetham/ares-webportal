@@ -112,10 +112,10 @@ export default Component.extend({
 
 
 		///// Debugging /////
-		if (traittype == 'edge') {
-			console.log ('Exedg: ');
-			console.log (exedg);
-		}
+		// if (traittype == 'edge') {
+			// console.log ('Exedg: ');
+			// console.log (exedg);
+		// }
 		///// End Debug /////
 				
 		if ( Object.keys(exedg).length > 1 ) {	// If there are edges or hinderances already set on the character, get them back	
@@ -152,10 +152,10 @@ export default Component.extend({
 			// console.log (newedgarray);
 			// console.log (traittype);
 			// console.log (fw);		
-			console.log ('CGTR1');
-			console.log (cgtrnewedg);
-			console.log ('New Edge Array: ');
-			console.log (newedgarray);			
+			// console.log ('CGTR1');
+			// console.log (cgtrnewedg);
+			// console.log ('New Edge Array: ');
+			// console.log (newedgarray);			
 		}
 
 
@@ -179,20 +179,23 @@ export default Component.extend({
 		var loc1, loc2, newclass, index, trexcludes, cgtr1=[];
 		if (newedgarray) {
 			///// Debugging /////
-			console.log ('Now we are here');
+			if ( traittype=='edge' ) {
+				console.log ( 'Now we are here' );
+			}
 			///// End Debug /////
 			
 			for (const [key, value] of Object.entries(newedgarray)) {
 				en = value.split(specchar)[0].toLowerCase().trim(); // Take the trailing * or ^ from the edge for I/F's
 				loc1=value;
-				if (traittype=='edge') {
-					console.log ('checking en: '+key+' '+value);					
-					console.log ('En: '+en);
+				if ( traittype=='edge' ) {
+					console.log ( 'checking en: '+key+' '+value );					
+					console.log ( 'En: '+en );
 				}
 				dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 				if ( traittype == 'edge' ) {
-					console.log('Dislist: '+dislist);
-					console.log ('Step 1');
+					console.log( 'Dislist: ' );
+					console.log ( dislist );
+					console.log ( 'Step 1' );
 				}
 				continue;
 				for (const [key1, value1] of Object.entries(dislist)) {
