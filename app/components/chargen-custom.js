@@ -258,6 +258,14 @@ export default Component.extend({
 										///// End Debug /////										
 										// loc1 = '';
 									}
+								} else { //There's no match, but we need to keep the values
+									///// Debugging /////
+									console.log ( 'No match: ');
+									console.log ( 'Key2: ' +key2 );
+									console.log ( 'Value2:');
+									console.log ( value2['name'] );	
+									console.log ( 'en:' +  en);									
+									///// End Debug /////
 								}
 							}
 						} 
