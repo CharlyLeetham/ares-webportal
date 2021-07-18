@@ -227,6 +227,7 @@ export default Component.extend({
 							for (const [key2, value2] of Object.entries(cgtrnewedg)) {
 								
 								///// Debugging /////
+								console.log ( 'en: ' + en);
 								console.log ( 'Key2: ' +key2 );
 								console.log ( 'Value2:');
 								console.log ( value2['name'] );
