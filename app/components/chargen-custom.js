@@ -591,6 +591,7 @@ export default Component.extend({
 			/// newval = Pure ICF without the trailing ~
 			/// 'icf' = Tells function we're working on the iconicframework. 
 			
+			console.log ('New Trait:')
 			console.log (newtrait);
 			
 			// Change the Edges set by the iconicf.		
