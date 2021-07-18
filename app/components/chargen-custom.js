@@ -217,8 +217,14 @@ export default Component.extend({
 //////  START HERE NEXT TIME !!!!!  When Race is changed, it has to rewrite the edges and hinderances and vice versa.
 					
 					if (cgtrnewedg.length > 0) {  // Checking to see if the trait already exists in the new array. This allows for Race and ICF to add the same things. 
-
 						for (const [key2, value2] of Object.entries(cgtrnewedg)) {
+							
+							///// Debugging /////
+							console.log ( 'Key2: ' +key2 );
+							console.log ( 'Value2:');
+							console.log ( value2 );
+							///// End Debug /////
+							
 							if (value2['name'].toLowerCase().startsWith(en)) { //Does the name in the array of traits for the fw selected, match one that is already set on the character?
 								if (fw=='icf') { // If so, are looking at changing the ICF?
 									loc2 = value2['class'].split('^')[0].trim(); // Take the trailing * from the edge for I/F's
