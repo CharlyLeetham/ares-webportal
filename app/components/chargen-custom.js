@@ -161,9 +161,10 @@ export default Component.extend({
 		
 		// if (cgtrnewedg.length > 0 ) {
 			var cgtrupd=[];
-			newedgarray.forEach(function(number) {
-				console.log(number);
-			});
+			
+			for (i = 0; i < newedgarray.length; i++) {
+			  console.log(newedgarray[i]);
+			} 			
 		// }
 					
 		
