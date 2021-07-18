@@ -162,8 +162,7 @@ export default Component.extend({
 		
 		//At this point cgtr1[] should be a list of either ICF or race features only that were previously set. We still need to add the new edges / hinderances to the array.
 		
-		// if (cgtrnewedg.length > 0 && newedgarray) {
-		if (newedgarray) {
+		if (cgtrnewedg.length > 0 && newedgarray) {
 			var cgtrupd=[];
 			for (i = 0; i < newedgarray.length; i++) {
 			  console.log(newedgarray[i]);
@@ -171,21 +170,18 @@ export default Component.extend({
 		}
 					
 		
-		
-		
 		// Clear the edges list for the framework
 		//If there are new edges or hinderances, go through and set these to disabled in the edge drop down.
 		
-	var acldebug = false;
+	var acldebug = true;
 	if (acldebug == true) {		
+		console.log ('Now we are here');
 		var loc1, loc2, newclass, index, trexcludes, cgtr1=[];
-		
 		if (newedgarray) {
-			
 			for (const [key, value] of Object.entries(newedgarray)) {
-				en = value.split(specchar)[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's
+				en = value.split(specchar)[0].toLowerCase().trim(); // Take the trailing * or ^ from the edge for I/F's
 				loc1=value;
-				// console.log ('En: '+en);
+				console.log ('En: '+en);
 
 				dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 				// console.log (dislist);
