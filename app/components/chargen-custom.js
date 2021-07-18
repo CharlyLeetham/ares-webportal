@@ -111,7 +111,6 @@ export default Component.extend({
 					}
 				}
 			} else if ( fw=='race') {	// If we're looking at changing the Race, find out which attributes are marked as ICF features. We want to keep these and remove all the race ones)
-				console.log ("We're HERE!!!!!");
 				for (const[ed, desc] of Object.entries(exedg)) {
 					if (desc['class'].includes('*')) {
 						cgtr1[i]=[];
@@ -133,6 +132,8 @@ export default Component.extend({
 		var loc1, loc2, newclass, index, trexcludes;
 		
 		if (newedgarray) {
+			
+			console.log ("We're HERE!!!!!");
 
 			for (const [key, value] of Object.entries(newedgarray)) {
 				en = value.split(specchar)[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's
