@@ -267,11 +267,11 @@ export default Component.extend({
 		}
 		
 		// sort the data
-		cgtr1.sort(function (x, y) {
-			let a = x.name.toLowerCase(),
-				b = y.name.toLowerCase();
-			return a == b ? 0 : a > b ? 1 : -1;
-		});
+		// cgtr1.sort(function (x, y) {
+			// let a = x.name.toLowerCase(),
+				// b = y.name.toLowerCase();
+			// return a == b ? 0 : a > b ? 1 : -1;
+		// });
 				
 		if ( traittype == 'edge' ) {
 			console.log ( 'here' );
