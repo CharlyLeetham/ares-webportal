@@ -163,9 +163,9 @@ export default Component.extend({
 			var cgtrupd=[];
 			
 			console.log (newedgarray);
-			for (i = 0; i < newedgarray.length; i++) {
-			  console.log(newedgarray[i]);
-			} 			
+			// for (i = 0; i < newedgarray.length; i++) {
+			  // console.log(newedgarray[i]);
+			// } 			
 		// }
 					
 		
