@@ -84,6 +84,14 @@ export default Component.extend({
 	},
  
 	changedges: function(sysedg, newedgarray, traittype, fw) {
+		// This changes the arrays on the page for Hinderances and Edges based on the Race / ICF that has been changed. Whilst something is returned, the return value is not used. 
+		
+		/// Passed In: ///
+		/// sysedg = All System edges
+		/// newedgarray = Edges for selected ICF
+		/// traittype = Edge or Hinderance
+		/// fw = ICF or Race
+		
 		var cgtr1=[], i, en, specchar, dislist, exedg, traitclass;
 
 		if (traittype=='edge') {
@@ -122,10 +130,7 @@ export default Component.extend({
 				}
 			}
 		}
-		
-		console.log (cgtr1.length);
-		console.log (newedgarray);
-		
+			
 		//At this point cgtr1[] should be a list of either ICF or race features only.
 		// Clear the edges list for the framework
 		//If there are new edges or hinderances, go through and set these to disabled in the edge drop down.
@@ -197,7 +202,7 @@ export default Component.extend({
 			this.set('char.custom.cghind', cgtr1); //Send the new array back to the page for nice display.			
 			this.set('char.custom.cghindfw', cgtr1); //Send the new array back to the page for nice display.			
 		}
-		return;
+		return (cgtr1);
 	},
 	
 	checktrait: function(swraceall, swiconicfall, swrace, swiconicf, chosenifarray, newval, traittype) {	
@@ -603,6 +608,11 @@ export default Component.extend({
 			// Change the Edges set by the iconicf.		
 			var newedg;		
 			newedg = this.changedges(sysedg, newedgarray, 'edge', 'icf');
+			/// Passed out: ///
+			/// sysedg = All System edges
+			/// newedgarray = Edges for selected ICF
+			/// 'edge' = Tell function we're working on edges
+			/// 'icf' = Tell function we're working on a change in the ICF.
 			
 			console.log ('Newedg:' + newedg);
 			
@@ -610,6 +620,11 @@ export default Component.extend({
 			var newhind;	
 			// newhind = this.changehind(syshind, newhindarray, 'icf');
 			newhind = this.changedges(syshind, newhindarray, 'hind', 'icf');
+			/// Passed out: ///
+			/// sysedg = All System edges
+			/// newedgarray = Edges for selected ICF
+			/// 'hind' = Tell function we're working on hinderances
+			/// 'icf' = Tell function we're working on a change in the ICF.
 
 			//Update the Heroic Journey Tables
 			// Change the options displayed to the player
@@ -705,10 +720,20 @@ export default Component.extend({
 			// Change the Edges set by the race.
 			var newedg;		
 			newedg = this.changedges(sysedg, newedgarray, 'edge', 'race');
+			/// Passed out: ///
+			/// sysedg = All System edges
+			/// newedgarray = Edges for selected race
+			/// 'edge' = Tell function we're working on edges
+			/// 'race' = Tell function we're working on a change in the race.			
 			
 			// Change the Hinderances set by the race.
 			var newhind;	
-			newhind = this.changedges(syshind, newhindarray, 'hind', 'race');		
+			newhind = this.changedges(syshind, newhindarray, 'hind', 'race');
+			/// Passed out: ///
+			/// sysedg = All System edges
+			/// newedgarray = Edges for selected race
+			/// 'hind' = Tell function we're working on hinderances
+			/// 'race' = Tell function we're working on a change in the race.			
 			
 			//Modify the CGen counters	
 			charcgp = this.get('char.custom.inicgpoints');  // This is the array of all the if's and values
