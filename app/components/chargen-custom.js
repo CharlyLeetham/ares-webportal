@@ -203,7 +203,7 @@ export default Component.extend({
 					if (cgtrnewedg.length > 0) {  // Checking to see if the trait already exists in the new array. This allows for Race and ICF to add the same things. 
 					console.log ('Step 2');
 						for (const [key2, value2] of Object.entries(cgtrnewedg)) {
-							console.log ('Step 3: ' + value2);
+							console.log ('Step 3: ' + key2 + value2['name']);
 							if (value2['name'].toLowerCase().startsWith(en)) {  //Does the name in the array of traits for the fw selected, match one that is already set on the character?
 								if (fw=='icf') { // If so, are looking at changing the ICF?
 									loc2 = value2['class'].split('^')[0].trim(); // Take the trailing * from the edge for I/F's
