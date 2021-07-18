@@ -179,9 +179,9 @@ export default Component.extend({
 		var loc1, loc2, newclass, index, trexcludes, cgtr1=[];
 		if (newedgarray) {
 			///// Debugging /////
-			if ( traittype=='edge' ) {
-				console.log ( 'Now we are here' );
-			}
+			// if ( traittype=='edge' ) {
+				// console.log ( 'Now we are here' );
+			// }
 			///// End Debug /////
 			
 			for (const [key, value] of Object.entries(newedgarray)) {
@@ -189,21 +189,21 @@ export default Component.extend({
 				loc1=value;
 				
 				///// Debugging /////
-				if ( traittype=='edge' ) {
-					console.log ( 'checking en: '+key+' '+value );					
-					console.log ( 'En: '+en );
-				}
+				// if ( traittype=='edge' ) {
+					// console.log ( 'checking en: '+key+' '+value );					
+					// console.log ( 'En: '+en );
+				// }
 				///// End Debug /////
 				
 				dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 
 				///// Debugging /////
-				if ( traittype == 'edge' ) {
-					console.log( 'Dislist: ' );
-					console.log ( dislist );
-					console.log ( 'Step 1' );
-				}
-				continue;
+				// if ( traittype == 'edge' ) {
+					// console.log( 'Dislist: ' );
+					// console.log ( dislist );
+					// console.log ( 'Step 1' );
+				// }
+				// continue;
 				///// End Debug /////
 				
 				for (const [key1, value1] of Object.entries(dislist)) {
