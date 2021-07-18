@@ -125,10 +125,9 @@ export default Component.extend({
 		
 		console.log (cgtr1.length);
 		console.log (newedgarray);
-		//At this point cgtr1[] should be a list of either ICF or race features only.
 		
+		//At this point cgtr1[] should be a list of either ICF or race features only.
 		// Clear the edges list for the framework
-
 		//If there are new edges or hinderances, go through and set these to disabled in the edge drop down.
 		
 		var loc1, loc2, newclass, index, trexcludes;
