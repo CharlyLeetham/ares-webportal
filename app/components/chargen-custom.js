@@ -163,7 +163,7 @@ export default Component.extend({
 		//If there are new edges or hinderances, go through and set these to disabled in the edge drop down.
 		
 	var acldebug = false;
-	if (acldebug = true) {		
+	if (acldebug == true) {		
 		var loc1, loc2, newclass, index, trexcludes, cgtr1[];
 		
 		if (newedgarray) {
