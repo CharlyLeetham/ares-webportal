@@ -183,13 +183,17 @@ export default Component.extend({
 			///// End Debug /////
 			
 			for (const [key, value] of Object.entries(newedgarray)) {
-				console.log ('checking en: '+key+' '+value);
 				en = value.split(specchar)[0].toLowerCase().trim(); // Take the trailing * or ^ from the edge for I/F's
 				loc1=value;
-				console.log ('En: '+en);
+				if (traittype=='edge') {
+					console.log ('checking en: '+key+' '+value);					
+					console.log ('En: '+en);
+				}
 				dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
-				console.log(dislist);
-				console.log ('Step 1');
+				if ( traittype == 'edge' ) {
+					console.log('Dislist: '+dislist);
+					console.log ('Step 1');
+				}
 				continue;
 				for (const [key1, value1] of Object.entries(dislist)) {
 					value1['disabled'] = true; //Set disabled for this element to true
