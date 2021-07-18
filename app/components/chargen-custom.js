@@ -190,58 +190,59 @@ export default Component.extend({
 				dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 				console.log(dislist);
 				console.log ('Step 1');
-				// for (const [key1, value1] of Object.entries(dislist)) {
-					// value1['disabled'] = true; //Set disabled for this element to true
+				continue;
+				for (const [key1, value1] of Object.entries(dislist)) {
+					value1['disabled'] = true; //Set disabled for this element to true
 					
-					// if (traittype == 'hind') { // What are we checking for here exactly?????
-						// trexcludes = this.ck_excludes(dislist, sysedg, traittype);
-					// }
+					if (traittype == 'hind') { // What are we checking for here exactly?????
+						trexcludes = this.ck_excludes(dislist, sysedg, traittype);
+					}
 					
 					
 //////  START HERE NEXT TIME !!!!!  When Race is changed, it has to rewrite the edges and hinderances and vice versa.
 					
-					// if (cgtrnewedg.length > 0) {  // Checking to see if the trait already exists in the new array. This allows for Race and ICF to add the same things. 
-					// console.log ('Step 2');
-						// for (const [key2, value2] of Object.entries(cgtrnewedg)) {
-							// console.log ('Step 3: ' + key2 + value2['name']);
-							// var tst1 = value2['name'].toLowerCase();
-							// console.log ('tst1: !'+tst1+'!');
-							// if (tst1.toLowerCase().startsWith(en)) { //Does the name in the array of traits for the fw selected, match one that is already set on the character?
-								// console.log ('Step 3.5: ~'+tst1);
-								// if (fw=='icf') { // If so, are looking at changing the ICF?
-									// loc2 = value2['class'].split('^')[0].trim(); // Take the trailing * from the edge for I/F's
-									// console.log ('Loc2: '+loc2);
-									// loc2 = loc2+'*^';
-									// cgtr1[key2]['class'] = loc2;
-									// loc1 = '';
-								// } else {  // otherwise we must be changing Race.
-									// console.log ('Step 4');
-									// loc2 = value2['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
-									// loc2 = loc2+'*^';
-									// console.log ('Step 5: ' + loc2);
-									// cgtr1[key2] = [];
-									// cgtr1[key2]['class'] = loc2;
-									// console.log ('Step 6: ' +cgtr1[key2]['class'] );
-									// loc1 = '';
-								// }
-							// }
-						// }
-					// } 
+					if (cgtrnewedg.length > 0) {  // Checking to see if the trait already exists in the new array. This allows for Race and ICF to add the same things. 
+					console.log ('Step 2');
+						for (const [key2, value2] of Object.entries(cgtrnewedg)) {
+							console.log ('Step 3: ' + key2 + value2['name']);
+							var tst1 = value2['name'].toLowerCase();
+							console.log ('tst1: !'+tst1+'!');
+							if (tst1.toLowerCase().startsWith(en)) { //Does the name in the array of traits for the fw selected, match one that is already set on the character?
+								console.log ('Step 3.5: ~'+tst1);
+								if (fw=='icf') { // If so, are looking at changing the ICF?
+									loc2 = value2['class'].split('^')[0].trim(); // Take the trailing * from the edge for I/F's
+									console.log ('Loc2: '+loc2);
+									loc2 = loc2+'*^';
+									cgtr1[key2]['class'] = loc2;
+									loc1 = '';
+								} else {  // otherwise we must be changing Race.
+									console.log ('Step 4');
+									loc2 = value2['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
+									loc2 = loc2+'*^';
+									console.log ('Step 5: ' + loc2);
+									cgtr1[key2] = [];
+									cgtr1[key2]['class'] = loc2;
+									console.log ('Step 6: ' +cgtr1[key2]['class'] );
+									loc1 = '';
+								}
+							}
+						}
+					} 
 					
-					// if (loc1.length > 0) {	
-						/// Debugging /////
-						// console.log ("Do we get here?" );
-						// console.log (loc1);
-						/// End Debug /////
-						// cgtr1[i]=[]
-						// cgtr1[i]['class'] = loc1;
-						// cgtr1[i]['name'] = en;
-						// cgtr1[i]['rating'] = value1['desc'];
-						// i=i+1;
-					// }
+					if (loc1.length > 0) {	
+						///// Debugging /////
+						console.log ("Do we get here?" );
+						console.log (loc1);
+						///// End Debug /////
+						cgtr1[i]=[]
+						cgtr1[i]['class'] = loc1;
+						cgtr1[i]['name'] = en;
+						cgtr1[i]['rating'] = value1['desc'];
+						i=i+1;
+					}
 				}
 			}
-		// }
+		}
 		
 		// sort the data
 		// cgtr1.sort(function (x, y) {
