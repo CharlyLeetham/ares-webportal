@@ -93,20 +93,25 @@ export default Component.extend({
 		/// fw = ICF or Race
 		
 		var cgtr1=[], i, en, specchar, dislist, exedg, traitclass;
-
+		
+		
+		// Get either edges or hinderances based on the traittype passed in.
 		if (traittype=='edge') {
 			exedg = this.get('char.custom.cgedges');
 		} else {
 			exedg = this.get('char.custom.cghind');		
 		}
 
+
+		// Set the special character to add to the end of edges or hinderances based on the fw passed in.
 		if (fw == 'icf') {
 			specchar = '*';
 		} else if (fw == 'race') {
 			specchar ='^';
 		}
+
 				
-		if ( Object.keys(exedg).length > 1 ) {	// If there are edges or hinderances already set on the character, get them back and 	
+		if ( Object.keys(exedg).length > 1 ) {	// If there are edges or hinderances already set on the character, get them back	
 			i = 0;		
 			if ( fw=='icf' ) { // If we're looking at changing the Iconic Framework, find out which attributes are marked as Racial features. We want to keep these and remove all the ICF ones)
 				for (const[ed, desc] of Object.entries(exedg)) {
@@ -130,7 +135,11 @@ export default Component.extend({
 				}
 			}
 		}
-			
+		
+		///// Debugging /////
+		console.log ('CGTR1');
+		console.log (cgtr1);
+		/////
 		//At this point cgtr1[] should be a list of either ICF or race features only.
 		// Clear the edges list for the framework
 		//If there are new edges or hinderances, go through and set these to disabled in the edge drop down.
@@ -142,10 +151,10 @@ export default Component.extend({
 			for (const [key, value] of Object.entries(newedgarray)) {
 				en = value.split(specchar)[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's
 				loc1=value;
-				console.log ('En: '+en);
+				// console.log ('En: '+en);
 
 				dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
-				console.log (dislist);
+				// console.log (dislist);
 				for (const [key1, value1] of Object.entries(dislist)) {
 					value1['disabled'] = true; //Set disabled for this element to true
 					// Write the new CG Edges array for a nice display
@@ -156,12 +165,12 @@ export default Component.extend({
 					}
 					
 					if (cgtr1.length > 0) {
-						console.log ('dkdkdkd');
+						// console.log ('dkdkdkd');
 						for (const [key2, value2] of Object.entries(cgtr1)) {
 							if (value2['name'].toLowerCase().startsWith(en)) {
 								if (fw=='edge') {
 									loc2 = value2['class'].split('^')[0].trim(); // Take the trailing * from the edge for I/F's
-									console.log ('Loc2: '+loc2);
+									// console.log ('Loc2: '+loc2);
 									loc2 = loc2+'*^';
 									cgtr1[key2]['class'] = loc2;
 									loc1 = '';
@@ -387,11 +396,7 @@ export default Component.extend({
 		//Because we have to set edges and such based on the selected ICF and Race, we need to know what's selected where. 
 		curricf = this.get('char.custom.charicf');
 		currrace = this.get('char.custom.charrace');
-		console.log ('Curricf: ');
-		console.log ( curricf );
-		console.log ( ' Currrace: ' );
-		console.log ( currrace );
-
+		
 		//Reset Edges
 		i = 0;	
 		
@@ -490,7 +495,6 @@ export default Component.extend({
 			}
 		}
 		
-		console.log (cgtr1);		
 		//Reset Heroes Journeys
 		hjtables = [];
 		hjslots = [];
@@ -614,7 +618,11 @@ export default Component.extend({
 			/// 'edge' = Tell function we're working on edges
 			/// 'icf' = Tell function we're working on a change in the ICF.
 			
+			
+			///// Debugging /////
 			console.log ('Newedg:' + newedg);
+			///// End Debug /////
+			
 			
 			// Change the Hinderances set by the iconicf.
 			var newhind;	
