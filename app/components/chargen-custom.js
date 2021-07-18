@@ -217,8 +217,8 @@ export default Component.extend({
 //////  START HERE NEXT TIME !!!!!  When Race is changed, it has to rewrite the edges and hinderances and vice versa.
 
 					///// Debugging /////
-					console.log ( 'cgtrnewedg:');
-					console.log ( cgtrnewedg );
+					// console.log ( 'cgtrnewedg:');
+					// console.log ( cgtrnewedg );
 					///// End Debug /////
 					
 					var acldebug1 = true;
@@ -229,7 +229,7 @@ export default Component.extend({
 								///// Debugging /////
 								console.log ( 'Key2: ' +key2 );
 								console.log ( 'Value2:');
-								console.log ( value2 );
+								console.log ( value2['name'] );
 								///// End Debug /////
 								
 								if (value2['name'].toLowerCase().startsWith(en)) { //Does the name in the array of traits for the fw selected, match one that is already set on the character?
@@ -251,8 +251,8 @@ export default Component.extend({
 					
 						if (loc1.length > 0) {	
 							///// Debugging /////
-							console.log ("Do we get here?" );
-							console.log (loc1);
+							// console.log ("Do we get here?" );
+							// console.log (loc1);
 							///// End Debug /////
 
 							cgtr1[i]=[]
@@ -274,9 +274,9 @@ export default Component.extend({
 		// });
 				
 		if ( traittype == 'edge' ) {
-			console.log ( 'here' );
-			console.log ( 'Sysedg' );
-			console.log ( sysedg );
+			// console.log ( 'here' );
+			// console.log ( 'Sysedg' );
+			// console.log ( sysedg );
 			console.log ( 'cgtr1' );
 			console.log ( cgtr1 );
 			this.set('char.custom.sysedges', sysedg); //Send the new dropdown back to the page. 
