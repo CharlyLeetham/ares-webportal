@@ -541,7 +541,6 @@ export default Component.extend({
   
 	actions: {
 		iconicfChanged(val) {
-			console.log ('Selected ICF: '+val['name']);
 			var charif, charcgp, chosenifarray, cgslots, newifpoints, newval, resetifpoints, newrating, cgedg, cghind, swiconicf, swiconicfall, dislist44, newedgarray, newhindarray, newcyberarray, racecompl, sysedg, syshind, swrace, swraceall, newtrait, hjtables;
 
 			// Common things to do 
@@ -573,6 +572,9 @@ export default Component.extend({
 			newhindarray = chosenifarray[0].hinderances; // Select the hinderances for the new if
 			newcyberarray = chosenifarray[0].cybernetics; // Select the cybernetics for the new if
 			racecompl = chosenifarray[0].complications;	
+
+			console.log ('Edges: ');
+			console.log (newedgarray);
 
 			// Check race
 			var newtrait;
