@@ -161,7 +161,7 @@ export default Component.extend({
 		
 		// if (cgtrnewedg.length > 0 ) {
 			var cgtrupd=[];
-			for (const[ed, desc] of Object.entries(newedgarray)) {
+			for (const[ed, desc] of newedgarray) {
 				console.log (desc);
 			}
 		// }
