@@ -111,6 +111,7 @@ export default Component.extend({
 					}
 				}
 			} else if ( fw=='race') {	// If we're looking at changing the Race, find out which attributes are marked as ICF features. We want to keep these and remove all the race ones)
+				console.log ("We're HERE!!!!!");
 				for (const[ed, desc] of Object.entries(exedg)) {
 					if (desc['class'].includes('*')) {
 						cgtr1[i]=[];
@@ -645,14 +646,13 @@ export default Component.extend({
 			sysedg = this.get('char.custom.sysedges'); // Get all the System Edges
 			syshind = this.get('char.custom.swsyshind');// Get all the System Hinderances		
 			cgedg = this.get('char.custom.cgedges'); // Get the edges on the character now.
+			cghind = this.get('char.custom.cghind'); // Hinderances on the Character. 			
 
 			// Common things to do 
 			newval = val['name'].split('~')[0].toLowerCase().trim(); //Take whatever Race has been selected and chop every from ~ in the name, remove the trailing space.
 
 			swiconicf = this.get('char.custom.iconicf'); // Get the system iconic frameworks formatted for drop down. This is needed to send the updated races back to the page for selection.			
 			swrace = this.get('char.custom.cgrace'); // Get the system races. This is needed to send the updated races back to the page for selection.	
-			
-			cghind = this.get('char.custom.cghind'); // Hinderances on the Character. 		
 			
 			// If the None option is selected, reset the lists.
 			if (val.class.toLowerCase() == 'none') {
