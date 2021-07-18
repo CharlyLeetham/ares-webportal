@@ -187,17 +187,25 @@ export default Component.extend({
 			for (const [key, value] of Object.entries(newedgarray)) {
 				en = value.split(specchar)[0].toLowerCase().trim(); // Take the trailing * or ^ from the edge for I/F's
 				loc1=value;
+				
+				///// Debugging /////
 				if ( traittype=='edge' ) {
 					console.log ( 'checking en: '+key+' '+value );					
 					console.log ( 'En: '+en );
 				}
+				///// End Debug /////
+				
 				dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
+
+				///// Debugging /////
 				if ( traittype == 'edge' ) {
 					console.log( 'Dislist: ' );
 					console.log ( dislist );
 					console.log ( 'Step 1' );
 				}
 				continue;
+				///// End Debug /////
+				
 				for (const [key1, value1] of Object.entries(dislist)) {
 					value1['disabled'] = true; //Set disabled for this element to true
 					
@@ -209,27 +217,19 @@ export default Component.extend({
 //////  START HERE NEXT TIME !!!!!  When Race is changed, it has to rewrite the edges and hinderances and vice versa.
 					
 					if (cgtrnewedg.length > 0) {  // Checking to see if the trait already exists in the new array. This allows for Race and ICF to add the same things. 
-					console.log ('Step 2');
+
 						for (const [key2, value2] of Object.entries(cgtrnewedg)) {
-							console.log ('Step 3: ' + key2 + value2['name']);
-							var tst1 = value2['name'].toLowerCase();
-							console.log ('tst1: !'+tst1+'!');
-							if (tst1.toLowerCase().startsWith(en)) { //Does the name in the array of traits for the fw selected, match one that is already set on the character?
-								console.log ('Step 3.5: ~'+tst1);
+							if (value2['name'].toLowerCase().startsWith(en)) { //Does the name in the array of traits for the fw selected, match one that is already set on the character?
 								if (fw=='icf') { // If so, are looking at changing the ICF?
 									loc2 = value2['class'].split('^')[0].trim(); // Take the trailing * from the edge for I/F's
-									console.log ('Loc2: '+loc2);
 									loc2 = loc2+'*^';
 									cgtr1[key2]['class'] = loc2;
 									loc1 = '';
 								} else {  // otherwise we must be changing Race.
-									console.log ('Step 4');
 									loc2 = value2['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
 									loc2 = loc2+'*^';
-									console.log ('Step 5: ' + loc2);
 									cgtr1[key2] = [];
 									cgtr1[key2]['class'] = loc2;
-									console.log ('Step 6: ' +cgtr1[key2]['class'] );
 									loc1 = '';
 								}
 							}
@@ -241,6 +241,7 @@ export default Component.extend({
 						console.log ("Do we get here?" );
 						console.log (loc1);
 						///// End Debug /////
+
 						cgtr1[i]=[]
 						cgtr1[i]['class'] = loc1;
 						cgtr1[i]['name'] = en;
@@ -251,23 +252,23 @@ export default Component.extend({
 			}
 		}
 		
-		// sort the data
-		// cgtr1.sort(function (x, y) {
-			// let a = x.name.toLowerCase(),
-				// b = y.name.toLowerCase();
-			// return a == b ? 0 : a > b ? 1 : -1;
-		// });
+		sort the data
+		cgtr1.sort(function (x, y) {
+			let a = x.name.toLowerCase(),
+				b = y.name.toLowerCase();
+			return a == b ? 0 : a > b ? 1 : -1;
+		});
 				
-		// if (traittype == 'edge') {
-			// this.set('char.custom.sysedges', sysedg); //Send the new dropdown back to the page. 
-			// this.set('char.custom.cgedges', cgtr1); //Send the new array back to the page for nice display. 	
-			// this.set('char.custom.cgedgesfw', cgtr1); //Send the new array back to the page for nice display. 	
-		// } else {
-			// this.set('char.custom.swsyshind', sysedg); //Send the new dropdown back to the page. 
-			// this.set('char.custom.cghind', cgtr1); //Send the new array back to the page for nice display.			
-			// this.set('char.custom.cghindfw', cgtr1); //Send the new array back to the page for nice display.			
-		// }
-		// return (cgtr1);
+		if (traittype == 'edge') {
+			this.set('char.custom.sysedges', sysedg); //Send the new dropdown back to the page. 
+			this.set('char.custom.cgedges', cgtr1); //Send the new array back to the page for nice display. 	
+			this.set('char.custom.cgedgesfw', cgtr1); //Send the new array back to the page for nice display. 	
+		} else {
+			this.set('char.custom.swsyshind', sysedg); //Send the new dropdown back to the page. 
+			this.set('char.custom.cghind', cgtr1); //Send the new array back to the page for nice display.			
+			this.set('char.custom.cghindfw', cgtr1); //Send the new array back to the page for nice display.			
+		}
+		return (cgtr1);
 	},
 	
 	checktrait: function(swraceall, swiconicfall, swrace, swiconicf, chosenifarray, newval, traittype) {	
@@ -799,7 +800,7 @@ export default Component.extend({
 			
 			// Change the Hinderances set by the race.
 			var newhind;	
-			newhind = this.changedges(syshind, newhindarray, 'hind', 'race');
+			// newhind = this.changedges(syshind, newhindarray, 'hind', 'race');
 			/// Passed out: ///
 			/// sysedg = All System edges
 			/// newedgarray = Edges for selected race
