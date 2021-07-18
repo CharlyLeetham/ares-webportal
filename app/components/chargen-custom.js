@@ -112,10 +112,10 @@ export default Component.extend({
 
 
 		///// Debugging /////
-		if (traittype == 'edge') {
-			console.log ('Exedg: ');
-			console.log (exedg);
-		}
+		// if (traittype == 'edge') {
+			// console.log ('Exedg: ');
+			// console.log (exedg);
+		// }
 		///// End Debug /////
 				
 		if ( Object.keys(exedg).length > 1 ) {	// If there are edges or hinderances already set on the character, get them back	
@@ -145,21 +145,21 @@ export default Component.extend({
 		
 		
 		/// Debugging /////
-		if (traittype == 'edge') {
-			console.log (sysedg);
-			console.log ('New Edges: ');
-			console.log (newedgarray);
-			console.log (traittype);
-			console.log (fw);		
-			console.log ('CGTR1');
-			console.log (cgtrnewedg);
-			console.log ('New Edge Array: ');
-			console.log (newedgarray);			
-		}
+		// if (traittype == 'edge') {
+			// console.log (sysedg);
+			// console.log ('New Edges: ');
+			// console.log (newedgarray);
+			// console.log (traittype);
+			// console.log (fw);		
+			// console.log ('CGTR1');
+			// console.log (cgtrnewedg);
+			// console.log ('New Edge Array: ');
+			// console.log (newedgarray);			
+		// }
 		///// End Debug /////
 
 		
-		//At this point cgtr1[] should be a list of either ICF or race features only that were previously set. We still need to add the new edges / hinderances to the array.
+		//At this point cgtrnewedg[] should be a list of either ICF or race features only that were previously set. We still need to add the new edges / hinderances to the array.
 		
 		if (cgtrnewedg.length > 0 && newedgarray) {
 			var cgtrupd=[];
@@ -194,11 +194,11 @@ export default Component.extend({
 				dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 
 				///// Debugging /////
-				// if ( traittype == 'edge' ) {
-					// console.log( 'Dislist: ' );
-					// console.log ( dislist );
-					// console.log ( 'Step 1' );
-				// }
+				if ( traittype == 'edge' ) {
+					console.log( 'Dislist: ' );
+					console.log ( dislist );
+					console.log ( 'Step 1' );
+				}
 				// continue;
 				///// End Debug /////
 				
