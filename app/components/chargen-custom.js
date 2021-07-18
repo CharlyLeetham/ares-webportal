@@ -156,6 +156,7 @@ export default Component.extend({
 			console.log (cgtrnewedg);
 		}
 
+		console.log ('New Edge Array: ');
 		console.log (newedgarray);
 		
 		//At this point cgtr1[] should be a list of either ICF or race features only that were previously set. We still need to add the new edges / hinderances to the array.
