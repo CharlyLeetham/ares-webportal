@@ -131,6 +131,8 @@ export default Component.extend({
 		
 		var loc1, loc2, newclass, index, trexcludes;
 		
+		console.log ('lllll');
+		
 		if (newedgarray) {
 			
 			for (const [key, value] of Object.entries(newedgarray)) {
