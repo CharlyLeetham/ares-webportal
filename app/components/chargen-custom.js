@@ -144,19 +144,19 @@ export default Component.extend({
 		}
 		
 		
-		///// Debugging /////
-		// if (traittype == 'edge') {
-			// console.log (sysedg);
-			// console.log ('New Edges: ');
-			// console.log (newedgarray);
-			// console.log (traittype);
-			// console.log (fw);		
-			// console.log ('CGTR1');
-			// console.log (cgtrnewedg);
-		// }
+		/// Debugging /////
+		if (traittype == 'edge') {
+			console.log (sysedg);
+			console.log ('New Edges: ');
+			console.log (newedgarray);
+			console.log (traittype);
+			console.log (fw);		
+			console.log ('CGTR1');
+			console.log (cgtrnewedg);
+		}
 
-		// console.log ('New Edge Array: ');
-		// console.log (newedgarray);
+		console.log ('New Edge Array: ');
+		console.log (newedgarray);
 		
 		///// End Debug /////
 
@@ -194,6 +194,9 @@ export default Component.extend({
 					if (traittype == 'hind') { // What are we checking for here exactly?????
 						trexcludes = this.ck_excludes(dislist, sysedg, traittype);
 					}
+					
+					
+//////  START HERE NEXT TIME !!!!!  When Race is changed, it has to rewrite the edges and hinderances and vice versa.
 					
 					if (cgtrnewedg.length > 0) {  // Checking to see if the trait already exists in the new array. This allows for Race and ICF to add the same things. 
 					console.log ('Step 2');
