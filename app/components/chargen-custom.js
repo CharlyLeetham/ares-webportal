@@ -176,7 +176,11 @@ export default Component.extend({
 		
 		var loc1, loc2, newclass, index, trexcludes, cgtr1=[];
 		if (newedgarray) {
-			console.log ('Now we are here');			
+			
+			///// Debugging /////
+			console.log ('Now we are here');
+			///// End Debug /////
+			
 			for (const [key, value] of Object.entries(newedgarray)) {
 				en = value.split(specchar)[0].toLowerCase().trim(); // Take the trailing * or ^ from the edge for I/F's
 				loc1=value;
@@ -209,8 +213,10 @@ export default Component.extend({
 						}
 					} 
 					
-					//i = 0;
-					if (loc1.length > 0) {					
+					if (loc1.length > 0) {	
+						///// Debugging /////
+						console.log ("Do we get here?" );
+						///// End Debug /////
 						cgtr1[i]=[]
 						cgtr1[i]['class'] = loc1;
 						cgtr1[i]['name'] = en;
