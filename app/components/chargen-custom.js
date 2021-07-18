@@ -252,7 +252,7 @@ export default Component.extend({
 			}
 		}
 		
-		sort the data
+		// sort the data
 		cgtr1.sort(function (x, y) {
 			let a = x.name.toLowerCase(),
 				b = y.name.toLowerCase();
