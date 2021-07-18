@@ -168,7 +168,7 @@ export default Component.extend({
 		if (cgtrnewedg.length > 0 && newedgarray) {
 			var cgtrupd=[];
 			for (i = 0; i < newedgarray.length; i++) {
-			  console.log(newedgarray[i]);
+			  console.log('New edge array: ' + newedgarray[i]);
 			} 			
 		}
 					
