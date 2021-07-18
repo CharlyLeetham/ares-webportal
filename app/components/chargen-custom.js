@@ -604,7 +604,7 @@ export default Component.extend({
 			var newedg;		
 			newedg = this.changedges(sysedg, newedgarray, 'edge', 'icf');
 			
-			console.log (newedg);
+			console.log ('Newedg:' + newedg);
 			
 			// Change the Hinderances set by the iconicf.
 			var newhind;	
