@@ -198,11 +198,11 @@ export default Component.extend({
 				dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 
 				///// Debugging /////
-				if ( traittype == 'edge' ) {
-					console.log( 'Dislist: ' );
-					console.log ( dislist );
-					console.log ( 'Step 1' );
-				}
+				// if ( traittype == 'edge' ) {
+					// console.log( 'Dislist: ' );
+					// console.log ( dislist );
+					// console.log ( 'Step 1' );
+				// }
 				// continue;
 				///// End Debug /////
 				
@@ -221,7 +221,7 @@ export default Component.extend({
 					console.log ( cgtrnewedg );
 					///// End Debug /////
 					
-					var acldebug1 = false;
+					var acldebug1 = true;
 					if ( acldebug1 == true ) {
 						if (cgtrnewedg.length > 0) {  // Checking to see if the trait already exists in the new array. This allows for Race and ICF to add the same things. 
 							for (const [key2, value2] of Object.entries(cgtrnewedg)) {
