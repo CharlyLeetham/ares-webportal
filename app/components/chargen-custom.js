@@ -259,9 +259,12 @@ export default Component.extend({
 			return a == b ? 0 : a > b ? 1 : -1;
 		});
 				
-		if (traittype == 'edge') {
-			console.log ('here');
-			
+		if ( traittype == 'edge' ) {
+			console.log ( 'here' );
+			console.log ( 'Sysedg' );
+			console.log ( sysedg );
+			console.log ( 'cgtr1' );
+			console.log ( cgtr1 );
 			this.set('char.custom.sysedges', sysedg); //Send the new dropdown back to the page. 
 			this.set('char.custom.cgedges', cgtr1); //Send the new array back to the page for nice display. 	
 			this.set('char.custom.cgedgesfw', cgtr1); //Send the new array back to the page for nice display. 	
