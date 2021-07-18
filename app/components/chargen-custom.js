@@ -164,7 +164,7 @@ export default Component.extend({
 		
 	var acldebug = false;
 	if (acldebug = true) {		
-		var loc1, loc2, newclass, index, trexcludes;
+		var loc1, loc2, newclass, index, trexcludes, cgtr1[];
 		
 		if (newedgarray) {
 			
