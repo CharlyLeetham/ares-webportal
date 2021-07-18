@@ -573,12 +573,25 @@ export default Component.extend({
 			newcyberarray = chosenifarray[0].cybernetics; // Select the cybernetics for the new if
 			racecompl = chosenifarray[0].complications;	
 
+
+			/////  Debugging /////
 			console.log ('Edges: ');
 			console.log (newedgarray);
+			///// End Debug /////
 
 			// Check race
 			var newtrait;
-			newtrait = this.checktrait(swraceall, swiconicfall, swrace, swiconicf, chosenifarray, newval, 'icf');	//All system races, all icf's, race chosen by player, icf chosen by player, filtered if array, 	Pure ICF without the trailing ~	
+			newtrait = this.checktrait(swraceall, swiconicfall, swrace, swiconicf, chosenifarray, newval, 'icf');	
+			//// Passed out: ///
+			/// swraceall = All system races
+			/// swiconicfall = All icf's
+			/// swrace = race chosen by player
+			/// swiconicf = icf chosen by player
+			/// chosenifarray = filtered icf array
+			/// newval = Pure ICF without the trailing ~
+			/// 'icf' = Tells function we're working on the iconicframework. 
+			
+			console.log (newtrait);
 			
 			// Change the Edges set by the iconicf.		
 			var newedg;		
