@@ -162,6 +162,8 @@ export default Component.extend({
 		// Clear the edges list for the framework
 		//If there are new edges or hinderances, go through and set these to disabled in the edge drop down.
 		
+	var acldebug = false;
+	if (acldebug = true) {		
 		var loc1, loc2, newclass, index, trexcludes;
 		
 		if (newedgarray) {
@@ -230,6 +232,7 @@ export default Component.extend({
 			this.set('char.custom.cghindfw', cgtr1); //Send the new array back to the page for nice display.			
 		}
 		return (cgtr1);
+	}
 	},
 	
 	checktrait: function(swraceall, swiconicfall, swrace, swiconicf, chosenifarray, newval, traittype) {	
