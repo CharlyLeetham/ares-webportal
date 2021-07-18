@@ -206,7 +206,7 @@ export default Component.extend({
 							console.log ('Step 3: ' + key2 + value2['name']);
 							var tst1 = value2['name'].toLowerCase();
 							console.log ('tst1: '+tst1);
-							if (value2['name'].toLowerCase().startsWith(en)) { //Does the name in the array of traits for the fw selected, match one that is already set on the character?
+							if (tst1.toLowerCase().startsWith(en)) { //Does the name in the array of traits for the fw selected, match one that is already set on the character?
 								console.log ('Step 3.5');
 								if (fw=='icf') { // If so, are looking at changing the ICF?
 									loc2 = value2['class'].split('^')[0].trim(); // Take the trailing * from the edge for I/F's
