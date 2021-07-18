@@ -210,7 +210,7 @@ export default Component.extend({
 								// console.log ('Step 3.5: ~'+tst1);
 								// if (fw=='icf') { // If so, are looking at changing the ICF?
 									// loc2 = value2['class'].split('^')[0].trim(); // Take the trailing * from the edge for I/F's
-									console.log ('Loc2: '+loc2);
+									// console.log ('Loc2: '+loc2);
 									// loc2 = loc2+'*^';
 									// cgtr1[key2]['class'] = loc2;
 									// loc1 = '';
@@ -244,11 +244,11 @@ export default Component.extend({
 		}
 		
 		// sort the data
-		cgtr1.sort(function (x, y) {
-			let a = x.name.toLowerCase(),
-				b = y.name.toLowerCase();
-			return a == b ? 0 : a > b ? 1 : -1;
-		});
+		// cgtr1.sort(function (x, y) {
+			// let a = x.name.toLowerCase(),
+				// b = y.name.toLowerCase();
+			// return a == b ? 0 : a > b ? 1 : -1;
+		// });
 				
 		if (traittype == 'edge') {
 			this.set('char.custom.sysedges', sysedg); //Send the new dropdown back to the page. 
