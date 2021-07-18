@@ -110,6 +110,11 @@ export default Component.extend({
 			specchar ='^';
 		}
 
+
+		///// Debugging /////
+		console.log ('Exedg: ');
+		console.log (exedg);
+		///// End Debug /////
 				
 		if ( Object.keys(exedg).length > 1 ) {	// If there are edges or hinderances already set on the character, get them back	
 			i = 0;		
