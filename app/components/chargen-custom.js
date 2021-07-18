@@ -137,6 +137,10 @@ export default Component.extend({
 		}
 		
 		///// Debugging /////
+		console.log (sysedg);
+		console.log (newedgarray);
+		console.log (traittype);
+		console.log (fw);		
 		console.log ('CGTR1');
 		console.log (cgtr1);
 		/////
