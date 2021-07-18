@@ -751,6 +751,13 @@ export default Component.extend({
 			// I/F Check 
 			newtrait = this.checktrait(swraceall, swiconicfall, swrace, swiconicf, chosenifarray, newval, 'race');		
 
+
+			/////  Debugging /////
+			console.log ('Edges: ');
+			console.log (newedgarray);
+			///// End Debug /////
+			
+			
 			// Change the Edges set by the race.
 			var newedg;		
 			newedg = this.changedges(sysedg, newedgarray, 'edge', 'race');
