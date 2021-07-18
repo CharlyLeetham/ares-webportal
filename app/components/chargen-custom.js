@@ -265,6 +265,7 @@ export default Component.extend({
 									console.log ( value2['class'] );	
 									console.log ( 'en:' +  en);									
 									///// End Debug /////
+									var cgtr1[key2] = []
 									cgtr1[key2]['class'] = loc2;									
 								}
 							}
