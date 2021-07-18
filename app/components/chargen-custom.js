@@ -541,6 +541,7 @@ export default Component.extend({
   
 	actions: {
 		iconicfChanged(val) {
+			console.log ('Selected ICF: '+val);
 			var charif, charcgp, chosenifarray, cgslots, newifpoints, newval, resetifpoints, newrating, cgedg, cghind, swiconicf, swiconicfall, dislist44, newedgarray, newhindarray, newcyberarray, racecompl, sysedg, syshind, swrace, swraceall, newtrait, hjtables;
 
 			// Common things to do 
