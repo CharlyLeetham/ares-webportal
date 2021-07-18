@@ -198,11 +198,11 @@ export default Component.extend({
 				dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 
 				///// Debugging /////
-				// if ( traittype == 'edge' ) {
-					// console.log( 'Dislist: ' );
-					// console.log ( dislist );
-					// console.log ( 'Step 1' );
-				// }
+				if ( traittype == 'edge' ) {
+					console.log( 'Dislist: ' );
+					console.log ( dislist );
+					console.log ( 'Step 1' );
+				}
 				// continue;
 				///// End Debug /////
 				
@@ -221,43 +221,46 @@ export default Component.extend({
 					console.log ( cgtrnewedg );
 					///// End Debug /////
 					
-					if (cgtrnewedg.length > 0) {  // Checking to see if the trait already exists in the new array. This allows for Race and ICF to add the same things. 
-						for (const [key2, value2] of Object.entries(cgtrnewedg)) {
-							
-							///// Debugging /////
-							console.log ( 'Key2: ' +key2 );
-							console.log ( 'Value2:');
-							console.log ( value2 );
-							///// End Debug /////
-							
-							if (value2['name'].toLowerCase().startsWith(en)) { //Does the name in the array of traits for the fw selected, match one that is already set on the character?
-								if (fw=='icf') { // If so, are looking at changing the ICF?
-									loc2 = value2['class'].split('^')[0].trim(); // Take the trailing * from the edge for I/F's
-									loc2 = loc2+'*^';
-									cgtr1[key2]['class'] = loc2;
-									loc1 = '';
-								} else {  // otherwise we must be changing Race.
-									loc2 = value2['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
-									loc2 = loc2+'*^';
-									cgtr1[key2] = [];
-									cgtr1[key2]['class'] = loc2;
-									loc1 = '';
+					acldebug1 = false;
+					if ( acldebug1 == true ) {
+						if (cgtrnewedg.length > 0) {  // Checking to see if the trait already exists in the new array. This allows for Race and ICF to add the same things. 
+							for (const [key2, value2] of Object.entries(cgtrnewedg)) {
+								
+								///// Debugging /////
+								console.log ( 'Key2: ' +key2 );
+								console.log ( 'Value2:');
+								console.log ( value2 );
+								///// End Debug /////
+								
+								if (value2['name'].toLowerCase().startsWith(en)) { //Does the name in the array of traits for the fw selected, match one that is already set on the character?
+									if (fw=='icf') { // If so, are looking at changing the ICF?
+										loc2 = value2['class'].split('^')[0].trim(); // Take the trailing * from the edge for I/F's
+										loc2 = loc2+'*^';
+										cgtr1[key2]['class'] = loc2;
+										loc1 = '';
+									} else {  // otherwise we must be changing Race.
+										loc2 = value2['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
+										loc2 = loc2+'*^';
+										cgtr1[key2] = [];
+										cgtr1[key2]['class'] = loc2;
+										loc1 = '';
+									}
 								}
 							}
-						}
-					} 
+						} 
 					
-					if (loc1.length > 0) {	
-						///// Debugging /////
-						console.log ("Do we get here?" );
-						console.log (loc1);
-						///// End Debug /////
+						if (loc1.length > 0) {	
+							///// Debugging /////
+							console.log ("Do we get here?" );
+							console.log (loc1);
+							///// End Debug /////
 
-						cgtr1[i]=[]
-						cgtr1[i]['class'] = loc1;
-						cgtr1[i]['name'] = en;
-						cgtr1[i]['rating'] = value1['desc'];
-						i=i+1;
+							cgtr1[i]=[]
+							cgtr1[i]['class'] = loc1;
+							cgtr1[i]['name'] = en;
+							cgtr1[i]['rating'] = value1['desc'];
+							i=i+1;
+						}
 					}
 				}
 			}
