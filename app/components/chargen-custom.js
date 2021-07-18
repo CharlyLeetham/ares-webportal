@@ -262,7 +262,7 @@ export default Component.extend({
 									console.log ( 'No match: ');
 									console.log ( 'Key2: ' +key2 );
 									console.log ( 'Value2:');
-									console.log ( value2['name'] );	
+									console.log ( value2['class'] );	
 									console.log ( 'en:' +  en);									
 									///// End Debug /////
 								}
