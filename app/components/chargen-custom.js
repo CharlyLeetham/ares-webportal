@@ -131,8 +131,6 @@ export default Component.extend({
 		
 		var loc1, loc2, newclass, index, trexcludes;
 		
-		console.log ('lllll');
-		
 		if (newedgarray) {
 			
 			for (const [key, value] of Object.entries(newedgarray)) {
@@ -151,6 +149,7 @@ export default Component.extend({
 					}
 					
 					if (cgtr1.length > 0) {
+						console.log ('dkdkdkd');
 						for (const [key2, value2] of Object.entries(cgtr1)) {
 							if (value2['name'].toLowerCase().startsWith(en)) {
 								if (fw=='edge') {
