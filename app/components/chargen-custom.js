@@ -187,24 +187,22 @@ export default Component.extend({
 				// console.log (dislist);
 				for (const [key1, value1] of Object.entries(dislist)) {
 					value1['disabled'] = true; //Set disabled for this element to true
-					// Write the new CG Edges array for a nice display
-					// Does this already exist as an edge?
 
-					if (traittype == 'hind') {
+					if (traittype == 'hind') { // What are we checking for here exactly?????
 						trexcludes = this.ck_excludes(dislist, sysedg, traittype);
 					}
 					
-					if (cgtr1.length > 0) {
+					if (cgtrnewedg.length > 0) {  // Checking to see if the trait already exists in the new array. This allows for Race and ICF to add the same things. 
 						// console.log ('dkdkdkd');
-						for (const [key2, value2] of Object.entries(cgtr1)) {
-							if (value2['name'].toLowerCase().startsWith(en)) {
-								if (fw=='edge') {
+						for (const [key2, value2] of Object.entries(cgtrnewedg)) {
+							if (value2['name'].toLowerCase().startsWith(en)) {  //Does the name in the array of traits for the fw selected, match one that is already set on the character?
+								if (fw=='icf') { // If so, are looking at changing the ICF?
 									loc2 = value2['class'].split('^')[0].trim(); // Take the trailing * from the edge for I/F's
 									// console.log ('Loc2: '+loc2);
 									loc2 = loc2+'*^';
 									cgtr1[key2]['class'] = loc2;
 									loc1 = '';
-								} else {
+								} else {  // otherwise we must be changing Race.
 									loc2 = value2['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
 									loc2 = loc2+'*^';
 									cgtr1[key2]['class'] = loc2;
@@ -214,6 +212,7 @@ export default Component.extend({
 						}
 					} 
 					
+					//i = 0;
 					if (loc1.length > 0) {					
 						cgtr1[i]=[]
 						cgtr1[i]['class'] = loc1;
