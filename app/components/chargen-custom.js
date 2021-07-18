@@ -136,6 +136,7 @@ export default Component.extend({
 			for (const [key, value] of Object.entries(newedgarray)) {
 				en = value.split(specchar)[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's
 				loc1=value;
+				console.log ('En: '+en);
 
 				dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 				for (const [key1, value1] of Object.entries(dislist)) {
