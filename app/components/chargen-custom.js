@@ -175,9 +175,9 @@ export default Component.extend({
 		
 	var acldebug = true;
 	if (acldebug == true) {		
-		console.log ('Now we are here');
 		var loc1, loc2, newclass, index, trexcludes, cgtr1=[];
 		if (newedgarray) {
+			console.log ('Now we are here');			
 			for (const [key, value] of Object.entries(newedgarray)) {
 				en = value.split(specchar)[0].toLowerCase().trim(); // Take the trailing * or ^ from the edge for I/F's
 				loc1=value;
