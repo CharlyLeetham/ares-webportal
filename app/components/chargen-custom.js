@@ -260,6 +260,8 @@ export default Component.extend({
 		});
 				
 		if (traittype == 'edge') {
+			console.log ('here');
+			
 			this.set('char.custom.sysedges', sysedg); //Send the new dropdown back to the page. 
 			this.set('char.custom.cgedges', cgtr1); //Send the new array back to the page for nice display. 	
 			this.set('char.custom.cgedgesfw', cgtr1); //Send the new array back to the page for nice display. 	
