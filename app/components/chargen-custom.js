@@ -749,6 +749,7 @@ export default Component.extend({
 			cghind = this.get('char.custom.cghind'); // Hinderances on the Character. 			
 
 			// Common things to do 
+			console.log ('Newval: '+val);
 			newval = val['name'].split('~')[0].toLowerCase().trim(); //Take whatever Race has been selected and chop every from ~ in the name, remove the trailing space.
 
 			swiconicf = this.get('char.custom.iconicf'); // Get the system iconic frameworks formatted for drop down. This is needed to send the updated races back to the page for selection.			
