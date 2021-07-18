@@ -133,7 +133,6 @@ export default Component.extend({
 			} else if ( fw=='race') {	// If we're looking at changing the Race, find out which attributes are marked as ICF features. We want to keep these and remove all the race ones)
 				for (const[ed, desc] of Object.entries(exedg)) {
 					if (desc['class'].includes('*')) {
-						console.log ('Loop: ' + desc['class']);
 						cgtrnewedg[i]=[];
 						cgtrnewedg[i]['class']=desc['class'];
 						cgtrnewedg[i]['name']=desc['name'];
@@ -168,7 +167,7 @@ export default Component.extend({
 		if (cgtrnewedg.length > 0 && newedgarray) {
 			var cgtrupd=[];
 			for (i = 0; i < newedgarray.length; i++) {
-			  console.log('New edge array: ' + newedgarray[i]);
+			  // console.log('New edge array: ' + newedgarray[i]);
 			} 			
 		}
 					
