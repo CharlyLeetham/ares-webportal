@@ -216,6 +216,7 @@ export default Component.extend({
 					if (loc1.length > 0) {	
 						///// Debugging /////
 						console.log ("Do we get here?" );
+						console.log (loc1);
 						///// End Debug /////
 						cgtr1[i]=[]
 						cgtr1[i]['class'] = loc1;
