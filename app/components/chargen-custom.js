@@ -112,10 +112,10 @@ export default Component.extend({
 
 
 		///// Debugging /////
-		if (traittype == 'edge') {
-			console.log ('Exedg: ');
-			console.log (exedg);
-		}
+		// if (traittype == 'edge') {
+			// console.log ('Exedg: ');
+			// console.log (exedg);
+		// }
 		///// End Debug /////
 				
 		if ( Object.keys(exedg).length > 1 ) {	// If there are edges or hinderances already set on the character, get them back	
@@ -143,21 +143,22 @@ export default Component.extend({
 			}
 		}
 		
-		console.log (fw);
 		
 		///// Debugging /////
-		if (traittype == 'edge') {
-			console.log (sysedg);
-			console.log ('New Edges: ');
-			console.log (newedgarray);
-			console.log (traittype);
-			console.log (fw);		
-			console.log ('CGTR1');
-			console.log (cgtrnewedg);
-		}
+		// if (traittype == 'edge') {
+			// console.log (sysedg);
+			// console.log ('New Edges: ');
+			// console.log (newedgarray);
+			// console.log (traittype);
+			// console.log (fw);		
+			// console.log ('CGTR1');
+			// console.log (cgtrnewedg);
+		// }
 
-		console.log ('New Edge Array: ');
-		console.log (newedgarray);
+		// console.log ('New Edge Array: ');
+		// console.log (newedgarray);
+		
+		///// End Debug /////
 
 		
 		//At this point cgtr1[] should be a list of either ICF or race features only that were previously set. We still need to add the new edges / hinderances to the array.
@@ -173,8 +174,6 @@ export default Component.extend({
 		// Clear the edges list for the framework
 		//If there are new edges or hinderances, go through and set these to disabled in the edge drop down.
 		
-	var acldebug = true;
-	if (acldebug == true) {		
 		var loc1, loc2, newclass, index, trexcludes, cgtr1=[];
 		if (newedgarray) {
 			console.log ('Now we are here');			
@@ -184,17 +183,14 @@ export default Component.extend({
 				console.log ('En: '+en);
 
 				dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
-				console.log ('Dislist: ');
-				console.log (dislist);
 				for (const [key1, value1] of Object.entries(dislist)) {
 					value1['disabled'] = true; //Set disabled for this element to true
-
+					
 					if (traittype == 'hind') { // What are we checking for here exactly?????
 						trexcludes = this.ck_excludes(dislist, sysedg, traittype);
 					}
 					
 					if (cgtrnewedg.length > 0) {  // Checking to see if the trait already exists in the new array. This allows for Race and ICF to add the same things. 
-						// console.log ('dkdkdkd');
 						for (const [key2, value2] of Object.entries(cgtrnewedg)) {
 							if (value2['name'].toLowerCase().startsWith(en)) {  //Does the name in the array of traits for the fw selected, match one that is already set on the character?
 								if (fw=='icf') { // If so, are looking at changing the ICF?
@@ -231,10 +227,7 @@ export default Component.extend({
 				b = y.name.toLowerCase();
 			return a == b ? 0 : a > b ? 1 : -1;
 		});
-		
-		console.log ('And now we are here: ');
-		console.log (cgtr1);
-		
+				
 		if (traittype == 'edge') {
 			this.set('char.custom.sysedges', sysedg); //Send the new dropdown back to the page. 
 			this.set('char.custom.cgedges', cgtr1); //Send the new array back to the page for nice display. 	
@@ -245,7 +238,6 @@ export default Component.extend({
 			this.set('char.custom.cghindfw', cgtr1); //Send the new array back to the page for nice display.			
 		}
 		return (cgtr1);
-	}
 	},
 	
 	checktrait: function(swraceall, swiconicfall, swrace, swiconicf, chosenifarray, newval, traittype) {	
