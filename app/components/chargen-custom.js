@@ -137,7 +137,7 @@ export default Component.extend({
 		}
 		
 		///// Debugging /////
-		if (traittype == 'icf') {
+		if (fw == 'icf') {
 			console.log (sysedg);
 			console.log (newedgarray);
 			console.log (traittype);
@@ -145,6 +145,7 @@ export default Component.extend({
 			console.log ('CGTR1');
 			console.log (cgtr1);
 		}
+		
 		/////
 		//At this point cgtr1[] should be a list of either ICF or race features only.
 		// Clear the edges list for the framework
