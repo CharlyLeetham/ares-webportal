@@ -133,8 +133,6 @@ export default Component.extend({
 		
 		if (newedgarray) {
 			
-			console.log ("We're HERE!!!!!");
-
 			for (const [key, value] of Object.entries(newedgarray)) {
 				en = value.split(specchar)[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's
 				loc1=value;
@@ -154,6 +152,7 @@ export default Component.extend({
 							if (value2['name'].toLowerCase().startsWith(en)) {
 								if (fw=='edge') {
 									loc2 = value2['class'].split('^')[0].trim(); // Take the trailing * from the edge for I/F's
+									console.log ('Loc2: '+loc2);
 									loc2 = loc2+'*^';
 									cgtr1[key2]['class'] = loc2;
 									loc1 = '';
