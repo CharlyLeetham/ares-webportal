@@ -162,7 +162,8 @@ export default Component.extend({
 		
 		//At this point cgtr1[] should be a list of either ICF or race features only that were previously set. We still need to add the new edges / hinderances to the array.
 		
-		if (cgtrnewedg.length > 0 && newedgarray) {
+		// if (cgtrnewedg.length > 0 && newedgarray) {
+		if (newedgarray) {
 			var cgtrupd=[];
 			for (i = 0; i < newedgarray.length; i++) {
 			  console.log(newedgarray[i]);
