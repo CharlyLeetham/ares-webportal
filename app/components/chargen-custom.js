@@ -238,30 +238,34 @@ export default Component.extend({
 										loc2 = value2['class'].split('^')[0].trim(); // Take the trailing * from the edge for I/F's
 										loc2 = loc2+'*^';
 										cgtr1[key2]['class'] = loc2;
-										loc1 = '';
+										// loc1 = '';
 									} else {  // otherwise we must be changing Race.
 										loc2 = value2['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
 										loc2 = loc2+'*^';
 										cgtr1[key2] = [];
 										cgtr1[key2]['class'] = loc2;
-										loc1 = '';
+										///// Debugging /////
+										console.log ( 'cgtr1["name"]:');
+										console.log ( cgtr1['name'] );
+										///// End Debug /////										
+										// loc1 = '';
 									}
 								}
 							}
 						} 
 					
-						if (loc1.length > 0) {	
-							///// Debugging /////
-							// console.log ("Do we get here?" );
-							// console.log (loc1);
-							///// End Debug /////
+						// if (loc1.length > 0) {	
+							/// Debugging /////
+							console.log ("Do we get here?" );
+							console.log (loc1);
+							/// End Debug /////
 
-							cgtr1[i]=[]
-							cgtr1[i]['class'] = loc1;
-							cgtr1[i]['name'] = en;
-							cgtr1[i]['rating'] = value1['desc'];
-							i=i+1;
-						}
+							// cgtr1[i]=[]
+							// cgtr1[i]['class'] = loc1;
+							// cgtr1[i]['name'] = en;
+							// cgtr1[i]['rating'] = value1['desc'];
+							// i=i+1;
+						// }
 					}
 				}
 			}
