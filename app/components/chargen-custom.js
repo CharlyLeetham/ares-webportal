@@ -214,7 +214,7 @@ export default Component.extend({
 					// console.log ( cgtrnewedg );
 					///// End Debug /////
 					
-					if (cgtrnewedg.length > 0) {  // Checking to see if the trait already exists in the new array. This allows for Race and ICF to add the same things. 
+					if (cgtrnewedg.length > 0) {  // Are there existing traits? Then, check to see if the trait already exists in the new array. This allows for Race and ICF to add the same things. 
 						for (const [key2, value2] of Object.entries(cgtrnewedg)) {
 							
 							///// Debugging /////
@@ -261,7 +261,15 @@ export default Component.extend({
 								cgtr1[key2]['class'] = value2['class'];									
 							}
 						}
-					} 
+					} else {
+						// We have no existing traits, so we have to write the array. 
+						for (const [key2, value2] of Object.entries(cgtrnewedg)) {						
+							if ( fw == 'icf') {
+								cgtr1[key2] = [];
+								cgtr1[key2]['class'] = value2['class'];
+							}
+						}
+					}
 				}
 			}
 		}
