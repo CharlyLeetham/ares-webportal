@@ -205,9 +205,9 @@ export default Component.extend({
 						for (const [key2, value2] of Object.entries(cgtrnewedg)) {
 							console.log ('Step 3: ' + key2 + value2['name']);
 							var tst1 = value2['name'].toLowerCase();
-							console.log ('tst1: '+tst1);
+							console.log ('tst1: !'+tst1+'!');
 							if (tst1.toLowerCase().startsWith(en)) { //Does the name in the array of traits for the fw selected, match one that is already set on the character?
-								console.log ('Step 3.5');
+								console.log ('Step 3.5: ~'+tst1);
 								if (fw=='icf') { // If so, are looking at changing the ICF?
 									loc2 = value2['class'].split('^')[0].trim(); // Take the trailing * from the edge for I/F's
 									// console.log ('Loc2: '+loc2);
@@ -749,7 +749,6 @@ export default Component.extend({
 			cghind = this.get('char.custom.cghind'); // Hinderances on the Character. 			
 
 			// Common things to do 
-			console.log ('Newval: '+val);
 			newval = val['name'].split('~')[0].toLowerCase().trim(); //Take whatever Race has been selected and chop every from ~ in the name, remove the trailing space.
 
 			swiconicf = this.get('char.custom.iconicf'); // Get the system iconic frameworks formatted for drop down. This is needed to send the updated races back to the page for selection.			
