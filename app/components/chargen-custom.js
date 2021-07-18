@@ -146,19 +146,16 @@ export default Component.extend({
 		
 		/// Debugging /////
 		if (traittype == 'edge') {
-			// console.log (sysedg);
-			// console.log ('New Edges: ');
-			// console.log (newedgarray);
-			// console.log (traittype);
-			// console.log (fw);		
-			// console.log ('CGTR1');
-			// console.log (cgtrnewedg);
-			// console.log ('New Edge Array: ');
-			// console.log (newedgarray);			
+			console.log (sysedg);
+			console.log ('New Edges: ');
+			console.log (newedgarray);
+			console.log (traittype);
+			console.log (fw);		
+			console.log ('CGTR1');
+			console.log (cgtrnewedg);
+			console.log ('New Edge Array: ');
+			console.log (newedgarray);			
 		}
-
-
-		
 		///// End Debug /////
 
 		
@@ -212,78 +209,59 @@ export default Component.extend({
 						trexcludes = this.ck_excludes(dislist, sysedg, traittype);
 					}
 					
-					
-//////  START HERE NEXT TIME !!!!!  When Race is changed, it has to rewrite the edges and hinderances and vice versa.
-
 					///// Debugging /////
 					// console.log ( 'cgtrnewedg:');
 					// console.log ( cgtrnewedg );
 					///// End Debug /////
 					
-					var acldebug1 = true;
-					if ( acldebug1 == true ) {
-						if (cgtrnewedg.length > 0) {  // Checking to see if the trait already exists in the new array. This allows for Race and ICF to add the same things. 
-							for (const [key2, value2] of Object.entries(cgtrnewedg)) {
-								
+					if (cgtrnewedg.length > 0) {  // Checking to see if the trait already exists in the new array. This allows for Race and ICF to add the same things. 
+						for (const [key2, value2] of Object.entries(cgtrnewedg)) {
+							
+							///// Debugging /////
+							// console.log ( 'en: ' + en);
+							// console.log ( 'Key2: ' +key2 );
+							// console.log ( 'Value2:');
+							// console.log ( value2['name'] );
+							///// End Debug /////
+							
+							if (value2['name'].toLowerCase().startsWith(en)) { //Does the name in the array of traits for the fw selected, match one that is already set on the character?
+							
 								///// Debugging /////
-								// console.log ( 'en: ' + en);
+								// console.log ( 'We have a match: ');
 								// console.log ( 'Key2: ' +key2 );
 								// console.log ( 'Value2:');
-								// console.log ( value2['name'] );
-								///// End Debug /////
-								
-								if (value2['name'].toLowerCase().startsWith(en)) { //Does the name in the array of traits for the fw selected, match one that is already set on the character?
-								
+								// console.log ( value2['name'] );	
+								// console.log ( 'en:' +  en);
+								///// End Debug /////									
+								if (fw=='icf') { // If so, are looking at changing the ICF?
+									loc2 = value2['class'].split('^')[0].trim(); // Take the trailing * from the edge for I/F's
+									loc2 = loc2+'*^';
+									cgtr1[key2]['class'] = loc2;
+									// loc1 = '';
+								} else {  // otherwise we must be changing Race.
+									loc2 = value2['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
+									loc2 = loc2+'*^';
+									cgtr1[key2] = [];
+									cgtr1[key2]['class'] = loc2;
 									///// Debugging /////
-									console.log ( 'We have a match: ');
-									console.log ( 'Key2: ' +key2 );
-									console.log ( 'Value2:');
-									console.log ( value2['name'] );	
-									console.log ( 'en:' +  en);
-									///// End Debug /////									
-									if (fw=='icf') { // If so, are looking at changing the ICF?
-										loc2 = value2['class'].split('^')[0].trim(); // Take the trailing * from the edge for I/F's
-										loc2 = loc2+'*^';
-										cgtr1[key2]['class'] = loc2;
-										// loc1 = '';
-									} else {  // otherwise we must be changing Race.
-										loc2 = value2['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
-										loc2 = loc2+'*^';
-										cgtr1[key2] = [];
-										cgtr1[key2]['class'] = loc2;
-										///// Debugging /////
-										// console.log ( 'cgtr1["name"]:');
-										// console.log ( cgtr1['name'] );
-										///// End Debug /////										
-										// loc1 = '';
-									}
-								} else { //There's no match, but we need to keep the values
-									///// Debugging /////
-									console.log ( 'No match: ');
-									console.log ( 'Key2: ' +key2 );
-									console.log ( 'Value2:');
-									console.log ( value2['class'] );	
-									console.log ( 'en:' +  en);									
-									///// End Debug /////
-									cgtr1[key2] = []
-									cgtr1[key2]['class'] = value2['class'];									
+									// console.log ( 'cgtr1["name"]:');
+									// console.log ( cgtr1['name'] );
+									///// End Debug /////										
+									// loc1 = '';
 								}
+							} else { //There's no match, but we need to keep the values
+								///// Debugging /////
+								// console.log ( 'No match: ');
+								// console.log ( 'Key2: ' +key2 );
+								// console.log ( 'Value2:');
+								// console.log ( value2['class'] );	
+								// console.log ( 'en:' +  en);									
+								///// End Debug /////
+								cgtr1[key2] = []
+								cgtr1[key2]['class'] = value2['class'];									
 							}
-						} 
-					
-						// if (loc1.length > 0) {	
-							/// Debugging /////
-							// console.log ("Do we get here?" );
-							// console.log (loc1);
-							/// End Debug /////
-
-							// cgtr1[i]=[]
-							// cgtr1[i]['class'] = loc1;
-							// cgtr1[i]['name'] = en;
-							// cgtr1[i]['rating'] = value1['desc'];
-							// i=i+1;
-						// }
-					}
+						}
+					} 
 				}
 			}
 		}
