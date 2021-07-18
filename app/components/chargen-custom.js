@@ -112,7 +112,7 @@ export default Component.extend({
 				}
 			} else if ( fw=='race') {	// If we're looking at changing the Race, find out which attributes are marked as ICF features. We want to keep these and remove all the race ones)
 				for (const[ed, desc] of Object.entries(exedg)) {
-					if (desc['class'].includes('^')) {
+					if (desc['class'].includes('*')) {
 						cgtr1[i]=[];
 						cgtr1[i]['class']=desc['class'];
 						cgtr1[i]['name']=desc['name'];
