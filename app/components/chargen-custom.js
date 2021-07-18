@@ -217,8 +217,9 @@ export default Component.extend({
 									loc2 = value2['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
 									loc2 = loc2+'*^';
 									console.log ('Step 5: ' + loc2);
-									//cgtr1[key2]['class'] = loc2;
-									console.log ('Step 6');
+									cgtr1[key2] = [];
+									cgtr1[key2]['class'] = loc2;
+									console.log ('Step 6: ' +cgtr1[key2]['class'] );
 									loc1 = '';
 								}
 							}
