@@ -157,8 +157,18 @@ export default Component.extend({
 		}
 
 		
-		/////
-		//At this point cgtr1[] should be a list of either ICF or race features only.
+		//At this point cgtr1[] should be a list of either ICF or race features only that were previously set. We still need to add the new edges / hinderances to the array.
+		
+		// if (cgtrnewedg.length > 0 ) {
+			var cgtrupd=[];
+			for (const[ed, desc] of Object.entries(newedgarray)) {
+				console.log (desc);
+			}
+		// }
+					
+		
+		
+		
 		// Clear the edges list for the framework
 		//If there are new edges or hinderances, go through and set these to disabled in the edge drop down.
 		
