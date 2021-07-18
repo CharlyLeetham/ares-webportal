@@ -194,11 +194,11 @@ export default Component.extend({
 				dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 
 				///// Debugging /////
-				if ( traittype == 'edge' ) {
-					console.log( 'Dislist: ' );
-					console.log ( dislist );
-					console.log ( 'Step 1' );
-				}
+				// if ( traittype == 'edge' ) {
+					// console.log( 'Dislist: ' );
+					// console.log ( dislist );
+					// console.log ( 'Step 1' );
+				// }
 				// continue;
 				///// End Debug /////
 				
@@ -218,10 +218,10 @@ export default Component.extend({
 						for (const [key2, value2] of Object.entries(cgtrnewedg)) {
 							
 							///// Debugging /////
-							// console.log ( 'en: ' + en);
-							// console.log ( 'Key2: ' +key2 );
-							// console.log ( 'Value2:');
-							// console.log ( value2['name'] );
+							console.log ( 'en: ' + en);
+							console.log ( 'Key2: ' +key2 );
+							console.log ( 'Value2:');
+							console.log ( value2['name'] );
 							///// End Debug /////
 							
 							if (value2['name'].toLowerCase().startsWith(en)) { //Does the name in the array of traits for the fw selected, match one that is already set on the character?
