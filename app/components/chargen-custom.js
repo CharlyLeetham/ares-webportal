@@ -200,9 +200,17 @@ export default Component.extend({
 		return;
 	},
 	
-	checktrait: function(swraceall, swiconicfall, swrace, swiconicf, chosenifarray, newval, traittype) {
+	checktrait: function(swraceall, swiconicfall, swrace, swiconicf, chosenifarray, newval, traittype) {	
+		//// Passed in: ///
+		/// swraceall = All system races
+		/// swiconicfall = All icf's
+		/// swrace = race chosen by player
+		/// swiconicf = icf chosen by player
+		/// chosenifarray = filtered icf array
+		/// newval = Pure ICF without the trailing ~
+		/// traittype = Tells function whether we're working on icf or race		
 		
-		// Check the Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
+		// Check ICF / Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
 		var i = 0, dislist44, evalrace=[], en1, complrace, newedgarray, newhindarray, newcyberarray, comptypearray=[], comptypearray2=[], comptypearray3=[], comptypearray4=[], lowedgarray, racecompl, fullsys, listsys, rppe, risp, rnsb, rcyber, rbp;
 		
 		if (traittype == 'icf') {
@@ -581,7 +589,7 @@ export default Component.extend({
 
 			// Check race
 			var newtrait;
-			newtrait = this.checktrait(swraceall, swiconicfall, swrace, swiconicf, chosenifarray, newval, 'icf');	
+			newtrait = this.checktrait(swraceall, swiconicfall, swrace, swiconicf, chosenifarray, newval, 'icf');	// This returns nothing. It's not used in this function, it's used to adjust other arrays on the page.
 			//// Passed out: ///
 			/// swraceall = All system races
 			/// swiconicfall = All icf's
@@ -590,13 +598,13 @@ export default Component.extend({
 			/// chosenifarray = filtered icf array
 			/// newval = Pure ICF without the trailing ~
 			/// 'icf' = Tells function we're working on the iconicframework. 
-			
-			console.log ('New Trait:')
-			console.log (newtrait);
+
 			
 			// Change the Edges set by the iconicf.		
 			var newedg;		
 			newedg = this.changedges(sysedg, newedgarray, 'edge', 'icf');
+			
+			console.log (newedg);
 			
 			// Change the Hinderances set by the iconicf.
 			var newhind;	
