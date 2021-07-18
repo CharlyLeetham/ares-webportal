@@ -92,7 +92,7 @@ export default Component.extend({
 		/// traittype = Edge or Hinderance
 		/// fw = ICF or Race
 		
-		var cgtr1=[], i, en, specchar, dislist, exedg, traitclass;
+		var cgtrnewedg=[], i, en, specchar, dislist, exedg, traitclass;
 		
 		
 		// Get either edges or hinderances based on the traittype passed in.
@@ -123,21 +123,20 @@ export default Component.extend({
 			if ( fw=='icf' ) { // If we're looking at changing the Iconic Framework, find out which attributes are marked as Racial features. We want to keep these and remove all the ICF ones)
 				for (const[ed, desc] of Object.entries(exedg)) {
 					if (desc['class'].includes('^')) {
-						console.log ('Class: '+desc['class']);
-						cgtr1[i] = [];
-						cgtr1[i]['class']=desc['class'];
-						cgtr1[i]['name']=desc['name'];
-						cgtr1[i]['rating']=desc['rating'];
+						cgtrnewedg[i] = [];
+						cgtrnewedg[i]['class']=desc['class'];
+						cgtrnewedg[i]['name']=desc['name'];
+						cgtrnewedg[i]['rating']=desc['rating'];
 						i=i+1;
 					}
 				}
 			} else if ( fw=='race') {	// If we're looking at changing the Race, find out which attributes are marked as ICF features. We want to keep these and remove all the race ones)
 				for (const[ed, desc] of Object.entries(exedg)) {
 					if (desc['class'].includes('*')) {
-						cgtr1[i]=[];
-						cgtr1[i]['class']=desc['class'];
-						cgtr1[i]['name']=desc['name'];
-						cgtr1[i]['rating']=desc['rating'];
+						cgtrnewedg[i]=[];
+						cgtrnewedg[i]['class']=desc['class'];
+						cgtrnewedg[i]['name']=desc['name'];
+						cgtrnewedg[i]['rating']=desc['rating'];
 						i=i+1;
 					}
 				}
@@ -154,7 +153,7 @@ export default Component.extend({
 			console.log (traittype);
 			console.log (fw);		
 			console.log ('CGTR1');
-			console.log (cgtr1);
+			console.log (cgtrnewedg);
 		}
 
 		
