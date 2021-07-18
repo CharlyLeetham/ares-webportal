@@ -139,7 +139,7 @@ export default Component.extend({
 		console.log (fw);
 		
 		///// Debugging /////
-		if (fw == 'icf') {
+		if (traittype == 'edge') {
 			console.log (sysedg);
 			console.log ('New Edges: ');
 			console.log (newedgarray);
