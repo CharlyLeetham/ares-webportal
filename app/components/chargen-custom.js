@@ -178,12 +178,12 @@ export default Component.extend({
 		
 		var loc1, loc2, newclass, index, trexcludes, cgtr1=[];
 		if (newedgarray) {
-			
 			///// Debugging /////
 			console.log ('Now we are here');
 			///// End Debug /////
 			
 			for (const [key, value] of Object.entries(newedgarray)) {
+				console.log ('checking en: '+key+' '+value);
 				en = value.split(specchar)[0].toLowerCase().trim(); // Take the trailing * or ^ from the edge for I/F's
 				loc1=value;
 				console.log ('En: '+en);
@@ -206,8 +206,7 @@ export default Component.extend({
 							console.log ('Step 3: ' + key2 + value2['name']);
 							var tst1 = value2['name'].toLowerCase();
 							console.log ('tst1: '+tst1);
-							// if (tst1.toLowerCase().startsWith(en)) { //Does the name in the array of traits for the fw selected, match one that is already set on the character?
-							if (tst1.startsWith(en)) { //Does the name in the array of traits for the fw selected, match one that is already set on the character?
+							if (tst1.toLowerCase().startsWith(en)) { //Does the name in the array of traits for the fw selected, match one that is already set on the character?
 								console.log ('Step 3.5');
 								if (fw=='icf') { // If so, are looking at changing the ICF?
 									loc2 = value2['class'].split('^')[0].trim(); // Take the trailing * from the edge for I/F's
@@ -216,8 +215,7 @@ export default Component.extend({
 									cgtr1[key2]['class'] = loc2;
 									loc1 = '';
 								} else {  // otherwise we must be changing Race.
-								
-								console.log ('Step 4');
+									console.log ('Step 4');
 									loc2 = value2['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
 									loc2 = loc2+'*^';
 									console.log ('Step 5: ' + loc2);
