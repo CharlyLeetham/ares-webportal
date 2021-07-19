@@ -263,7 +263,14 @@ export default Component.extend({
 						}
 					} else {
 						// We have no existing traits, so we have to write the array. 
-						for (const [key2, value2] of Object.entries(newedgarray)) {						
+						for (const [key2, value2] of Object.entries(newedgarray)) {	
+
+							///// Debugging /////
+							console.log ( 'Key2: ' +key2 );
+							console.log ( 'Value2:');
+							console.log ( value2['class'] );									
+							///// End Debug /////
+								
 							if ( fw == 'icf') {
 								cgtr1[key2] = [];
 								cgtr1[key2]['class'] = value2;
