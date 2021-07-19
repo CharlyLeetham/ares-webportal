@@ -266,7 +266,7 @@ export default Component.extend({
 						for (const [key2, value2] of Object.entries(newedgarray)) {						
 							if ( fw == 'icf') {
 								cgtr1[key2] = [];
-								cgtr1[key2]['class'] = value2['class'];
+								cgtr1[key2]['class'] = value2;
 							}
 						}
 					}
