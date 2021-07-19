@@ -277,7 +277,7 @@ export default Component.extend({
 								dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == value2.toLowerCase()); // Convert the system edges list to an array and filter for any entries that match the new framework selected.
 								///// Debugging /////
 								console.log ( 'Dislist:' );
-								console.log ( distlist);									
+								console.log ( dislist);									
 								///// End Debug /////								
 								for (const [key1, value1] of Object.entries(dislist)) { // cycle through the result and create a new array
 									cgtr1[key2]['name'] = value1['name'];
