@@ -251,7 +251,7 @@ export default Component.extend({
 								}
 							} else { //There's no match, but we need to keep the values
 								///// Debugging /////
-								// console.log ( 'No match: ');
+								console.log ( 'No match: ');
 								// console.log ( 'Key2: ' +key2 );
 								// console.log ( 'Value2:');
 								// console.log ( value2['class'] );	
@@ -265,9 +265,9 @@ export default Component.extend({
 						// We have no existing traits, so we have to write the array. 
 						for (const [key2, value2] of Object.entries(newedgarray)) {	
 							///// Debugging /////
-							console.log ( 'Key2: ' +key2 );
-							console.log ( 'Value2:');
-							console.log ( value2['class'] );									
+							// console.log ( 'Key2: ' +key2 );
+							// console.log ( 'Value2:');
+							// console.log ( value2['class'] );									
 							///// End Debug /////
 								
 							if ( fw == 'icf') {
