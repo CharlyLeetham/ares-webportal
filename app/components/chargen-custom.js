@@ -275,6 +275,10 @@ export default Component.extend({
 								cgtr1[key2]['class'] = value2;
 								// Because we don't have all the details for the trait, we have to get them from the system file. 
 								dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == value2.toLowerCase()); // Convert the system edges list to an array and filter for any entries that match the new framework selected.
+								///// Debugging /////
+								console.log ( 'Dislist:' );
+								console.log ( distlist);									
+								///// End Debug /////								
 								for (const [key1, value1] of Object.entries(dislist)) { // cycle through the result and create a new array
 									cgtr1[key2]['name'] = value1['name'];
 									cgtr1[key2]['rating'] = value1['description']
