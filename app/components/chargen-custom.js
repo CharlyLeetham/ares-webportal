@@ -218,20 +218,20 @@ export default Component.extend({
 						for (const [key2, value2] of Object.entries(cgtrnewedg)) {
 							
 							///// Debugging /////
-							console.log ( 'en: ' + en);
-							console.log ( 'Key2: ' +key2 );
-							console.log ( 'Value2:');
-							console.log ( value2['name'] );
+							// console.log ( 'en: ' + en);
+							// console.log ( 'Key2: ' +key2 );
+							// console.log ( 'Value2:');
+							// console.log ( value2['name'] );
 							///// End Debug /////
 							
 							if (value2['name'].toLowerCase().startsWith(en)) { //Does the name in the array of traits for the fw selected, match one that is already set on the character?
 							
 								///// Debugging /////
-								// console.log ( 'We have a match: ');
-								// console.log ( 'Key2: ' +key2 );
-								// console.log ( 'Value2:');
-								// console.log ( value2['name'] );	
-								// console.log ( 'en:' +  en);
+								console.log ( 'We have a match: ');
+								console.log ( 'Key2: ' +key2 );
+								console.log ( 'Value2:');
+								console.log ( value2['name'] );	
+								console.log ( 'en:' +  en);
 								///// End Debug /////									
 								if (fw=='icf') { // If so, are looking at changing the ICF?
 									loc2 = value2['class'].split('^')[0].trim(); // Take the trailing * from the edge for I/F's
