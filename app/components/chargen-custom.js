@@ -271,10 +271,7 @@ export default Component.extend({
 								// cgtr1[key2] = []
 								// cgtr1[key2]['class'] = value2['class'];	
 								///// Debugging /////
-								console.log ( 'No match: ');
-								console.log ( 'Key2: ' +key2 );
-								console.log ( 'Value2:');
-								console.log ( value2['class'] );	
+								console.log ( '*No match* Key2: ' + key2 + 'Value2:' + value2['class'] );	
 								// console.log ( 'cgtr1: ' );	
 								// console.log ( cgtr1 );	
 								// console.log ( 'en:' +  en);									
