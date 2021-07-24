@@ -145,17 +145,17 @@ export default Component.extend({
 		
 		
 		/// Debugging /////
-		// if (traittype == 'edge') {
+		if (traittype == 'edge') {
 			// console.log (sysedg);
 			// console.log ('New Edges: ');
 			// console.log (newedgarray);
 			// console.log (traittype);
 			// console.log (fw);		
-			// console.log ('CGTR1');
-			// console.log (cgtrnewedg);
+			console.log ('cgtrnewedg:');
+			console.log (cgtrnewedg);
 			// console.log ('New Edge Array: ');
 			// console.log (newedgarray);			
-		// }
+		}
 		///// End Debug /////
 
 		
