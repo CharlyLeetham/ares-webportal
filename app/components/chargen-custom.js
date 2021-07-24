@@ -258,6 +258,12 @@ export default Component.extend({
 									///// End Debug /////										
 									// loc1 = '';
 								}
+								///// Debugging /////
+								console.log 'End Loop 1');
+								console.log ( 'cgtr1: ' );	
+								console.log ( cgtr1 );	
+								console.log ( 'en:' +  en);									
+								///// End Debug /////								
 							} else { //There's no match, but we need to keep the values
 								cgtr1[key2] = []
 								cgtr1[key2]['class'] = value2['class'];	
