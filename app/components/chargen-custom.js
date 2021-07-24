@@ -249,8 +249,8 @@ export default Component.extend({
 									cgtr1[key2] = [];
 									cgtr1[key2]['class'] = loc2;
 									///// Debugging /////
-									// console.log ( 'cgtr1["name"]:');
-									// console.log ( cgtr1['name'] );
+									console.log ( 'cgtr1:');
+									console.log ( cgtr1 );
 									///// End Debug /////										
 									// loc1 = '';
 								}
@@ -283,14 +283,14 @@ export default Component.extend({
 								//START HERE NEXT TIME. 
 								//dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the system edges list to an array and filter for any entries that match the new framework selected.
 								///// Debugging /////
-								console.log ( 'Key1:' );
-								console.log ( key1);
-								console.log ( 'Value1:' );
-								console.log ( value1);									
-								console.log ( 'Key2:' );
-								console.log ( key2);									
-								console.log ( 'Value:' );
-								console.log ( value2);									
+								// console.log ( 'Key1:' );
+								// console.log ( key1);
+								// console.log ( 'Value1:' );
+								// console.log ( value1);									
+								// console.log ( 'Key2:' );
+								// console.log ( key2);									
+								// console.log ( 'Value:' );
+								// console.log ( value2);									
 								///// End Debug /////								
 								for (const [key1, value1] of Object.entries(dislist)) { // cycle through the result and create a new array
 									cgtr1[key2]['name'] = value1['name'];
@@ -314,8 +314,8 @@ export default Component.extend({
 			// console.log ( 'here' );
 			// console.log ( 'Sysedg' );
 			// console.log ( sysedg );
-			console.log ( 'cgtr1' );
-			console.log ( cgtr1 );
+			// console.log ( 'cgtr1' );
+			// console.log ( cgtr1 );
 			this.set('char.custom.sysedges', sysedg); //Send the new dropdown back to the page. 
 			this.set('char.custom.cgedges', cgtr1); //Send the new array back to the page for nice display. 	
 			this.set('char.custom.cgedgesfw', cgtr1); //Send the new array back to the page for nice display. 	
