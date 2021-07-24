@@ -268,8 +268,8 @@ export default Component.extend({
 								// console.log ( 'en:' +  en);									
 								///// End Debug /////								
 							} else { //There's no match, but we need to keep the values
-								cgtr1[key2] = []
-								cgtr1[key2]['class'] = value2['class'];	
+								// cgtr1[key2] = []
+								// cgtr1[key2]['class'] = value2['class'];	
 								///// Debugging /////
 								// console.log ( 'No match: ');
 								// console.log ( 'Key2: ' +key2 );
