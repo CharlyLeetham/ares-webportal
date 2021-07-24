@@ -251,6 +251,9 @@ export default Component.extend({
 									///// Debugging /////
 									console.log ( 'cgtr1:');
 									console.log ( cgtr1 );
+									if (loc2 == 'alertness*^') {
+										die();
+									}
 									///// End Debug /////										
 									// loc1 = '';
 								}
