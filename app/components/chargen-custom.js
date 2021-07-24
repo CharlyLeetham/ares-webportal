@@ -252,7 +252,7 @@ export default Component.extend({
 									console.log ( 'cgtr1:');
 									console.log ( cgtr1 );
 									if (loc2 == 'alertness*^') {
-										die();
+										console.log (cgtr1[key2]['class']);
 									}
 									///// End Debug /////										
 									// loc1 = '';
