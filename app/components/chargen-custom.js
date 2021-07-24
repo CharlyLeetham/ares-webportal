@@ -271,10 +271,10 @@ export default Component.extend({
 								// cgtr1[key2] = []
 								// cgtr1[key2]['class'] = value2['class'];	
 								///// Debugging /////
-								// console.log ( 'No match: ');
-								// console.log ( 'Key2: ' +key2 );
-								// console.log ( 'Value2:');
-								// console.log ( value2['class'] );	
+								console.log ( 'No match: ');
+								console.log ( 'Key2: ' +key2 );
+								console.log ( 'Value2:');
+								console.log ( value2['class'] );	
 								// console.log ( 'cgtr1: ' );	
 								// console.log ( cgtr1 );	
 								// console.log ( 'en:' +  en);									
@@ -282,12 +282,6 @@ export default Component.extend({
 							}
 						}
 					} else {
-						
-						///// Debugging /////
-						console.log ( 'cgtrnewedg: ' );
-						console.log ( cgtrnewedg );	
-						console.log ( 'FW: ' + fw );
-						///// End Debug /////
 							
 						// We have no existing traits, so we have to write the array. 
 						for (const [key2, value2] of Object.entries(newedgarray)) {	
