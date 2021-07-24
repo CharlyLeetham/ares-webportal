@@ -258,8 +258,8 @@ export default Component.extend({
 									///// End Debug /////										
 									// loc1 = '';
 								}
-								///// Debugging /////
-								console.log 'End Loop 1');
+								///// Debugging ///// 
+								console.log ( 'End Loop 1' );
 								console.log ( 'cgtr1: ' );	
 								console.log ( cgtr1 );	
 								console.log ( 'en:' +  en);									
