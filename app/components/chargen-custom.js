@@ -282,6 +282,13 @@ export default Component.extend({
 							}
 						}
 					} else {
+						
+						///// Debugging /////
+						console.log ( 'cgtrnewedg: ' );
+						console.log ( cgtrnewedg );	
+						console.log ( 'FW: ' + fw );
+						///// End Debug /////
+							
 						// We have no existing traits, so we have to write the array. 
 						for (const [key2, value2] of Object.entries(newedgarray)) {	
 							///// Debugging /////
