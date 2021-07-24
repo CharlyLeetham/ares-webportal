@@ -113,8 +113,8 @@ export default Component.extend({
 
 		///// Debugging /////
 		// if (traittype == 'edge') {
-			// console.log ('Exedg: ');
-			// console.log (exedg);
+			console.log ('Exedg: ');
+			console.log (exedg);
 		// }
 		///// End Debug /////
 				
@@ -218,10 +218,10 @@ export default Component.extend({
 						for (const [key2, value2] of Object.entries(cgtrnewedg)) {
 							
 							///// Debugging /////
-							console.log ( 'en: ' + en);
-							console.log ( 'Key2: ' +key2 );
-							console.log ( 'Value2:');
-							console.log ( value2['name'] );
+							// console.log ( 'en: ' + en);
+							// console.log ( 'Key2: ' +key2 );
+							// console.log ( 'Value2:');
+							// console.log ( value2['name'] );
 							///// End Debug /////
 							
 							if (value2['name'].toLowerCase().startsWith(en)) { //Does the name in the array of traits for the fw selected, match one that is already set on the character?
