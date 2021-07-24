@@ -241,6 +241,11 @@ export default Component.extend({
 								} else {  // otherwise we must be changing Race.
 									loc2 = value2['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
 									loc2 = loc2+'*^';
+									///// Debugging /////
+									console.log ( 'Value2:');
+									console.log ( value2['class'] );	
+									console.log ( 'loc2:' +  loc2);
+									///// End Debug /////									
 									cgtr1[key2] = [];
 									cgtr1[key2]['class'] = loc2;
 									///// Debugging /////
@@ -251,7 +256,7 @@ export default Component.extend({
 								}
 							} else { //There's no match, but we need to keep the values
 								///// Debugging /////
-								console.log ( 'No match: ');
+								// console.log ( 'No match: ');
 								// console.log ( 'Key2: ' +key2 );
 								// console.log ( 'Value2:');
 								// console.log ( value2['class'] );	
