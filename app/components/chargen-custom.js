@@ -252,6 +252,7 @@ export default Component.extend({
 									console.log ( 'cgtr1:');
 									console.log ( cgtr1 );
 									if (loc2 == 'alertness*^') {
+										console.log ('alertness*^: ');
 										console.log (cgtr1[key2]['class']);
 									}
 									///// End Debug /////										
@@ -279,8 +280,8 @@ export default Component.extend({
 							///// End Debug /////
 								
 							if ( fw == 'icf' || fw == 'race') {
-								cgtr1[key2] = [];
-								cgtr1[key2]['class'] = value2;
+								// cgtr1[key2] = [];
+								// cgtr1[key2]['class'] = value2;
 								// Because we don't have all the details for the trait, we have to get them from the system file. WE DON'T NEED THIS iteration.
 								
 								//START HERE NEXT TIME. 
@@ -295,10 +296,10 @@ export default Component.extend({
 								// console.log ( 'Value:' );
 								// console.log ( value2);									
 								///// End Debug /////								
-								for (const [key1, value1] of Object.entries(dislist)) { // cycle through the result and create a new array
-									cgtr1[key2]['name'] = value1['name'];
-									cgtr1[key2]['rating'] = value1['description']
-								}
+								// for (const [key1, value1] of Object.entries(dislist)) { // cycle through the result and create a new array
+									// cgtr1[key2]['name'] = value1['name'];
+									// cgtr1[key2]['rating'] = value1['description']
+								// }
 							}
 						}
 					}
