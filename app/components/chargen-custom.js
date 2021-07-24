@@ -273,11 +273,19 @@ export default Component.extend({
 							if ( fw == 'icf') {
 								cgtr1[key2] = [];
 								cgtr1[key2]['class'] = value2;
-								// Because we don't have all the details for the trait, we have to get them from the system file. 
-								dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == value2.toLowerCase()); // Convert the system edges list to an array and filter for any entries that match the new framework selected.
+								// Because we don't have all the details for the trait, we have to get them from the system file. WE DON'T NEED THIS iteration.
+								
+								//START HERE NEXT TIME. 
+								//dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the system edges list to an array and filter for any entries that match the new framework selected.
 								///// Debugging /////
-								console.log ( 'Dislist:' );
-								console.log ( dislist);									
+								console.log ( 'Key1:' );
+								console.log ( key1);
+								console.log ( 'Value1:' );
+								console.log ( value1);									
+								console.log ( 'Key2:' );
+								console.log ( key2);									
+								console.log ( 'Value:' );
+								console.log ( value2);									
 								///// End Debug /////								
 								for (const [key1, value1] of Object.entries(dislist)) { // cycle through the result and create a new array
 									cgtr1[key2]['name'] = value1['name'];
