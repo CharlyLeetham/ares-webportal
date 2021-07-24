@@ -259,15 +259,17 @@ export default Component.extend({
 									// loc1 = '';
 								}
 							} else { //There's no match, but we need to keep the values
+								cgtr1[key2] = []
+								cgtr1[key2]['class'] = value2['class'];	
 								///// Debugging /////
-								// console.log ( 'No match: ');
+								console.log ( 'No match: ');
 								// console.log ( 'Key2: ' +key2 );
 								// console.log ( 'Value2:');
 								// console.log ( value2['class'] );	
-								// console.log ( 'en:' +  en);									
+								console.log ( 'cgtr1: ' );	
+								console.log ( cgtr1 );	
+								console.log ( 'en:' +  en);									
 								///// End Debug /////
-								cgtr1[key2] = []
-								cgtr1[key2]['class'] = value2['class'];									
 							}
 						}
 					} else {
