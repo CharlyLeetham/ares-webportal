@@ -242,18 +242,18 @@ export default Component.extend({
 									loc2 = value2['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
 									loc2 = loc2+'*^';
 									///// Debugging /////
-									console.log ( 'Value2:');
-									console.log ( value2['class'] );	
-									console.log ( 'loc2:' +  loc2);
+									// console.log ( 'Value2:');
+									// console.log ( value2['class'] );	
+									// console.log ( 'loc2:' +  loc2);
 									///// End Debug /////									
 									cgtr1[key2] = [];
 									cgtr1[key2]['class'] = loc2;
 									///// Debugging /////
-									console.log ( 'cgtr1:');
-									console.log ( cgtr1 );
+									// console.log ( 'cgtr1:');
+									// console.log ( cgtr1 );
 									if (loc2 == 'alertness*^') {
 										console.log ('alertness*^: ');
-										console.log (cgtr1[key2]['class']);
+										console.log ( cgtr1[key2]['class'] );
 										console.log ( 'Key2: ' + key2 );
 										console.log ( 'cgtr1: ' ); 
 										console.log ( cgtr1 );
@@ -263,9 +263,9 @@ export default Component.extend({
 								}
 								///// Debugging ///// 
 								console.log ( 'End Loop 1' );
-								console.log ( 'cgtr1: ' );	
-								console.log ( cgtr1 );	
-								console.log ( 'en:' +  en);									
+								// console.log ( 'cgtr1: ' );	
+								// console.log ( cgtr1 );	
+								// console.log ( 'en:' +  en);									
 								///// End Debug /////								
 							} else { //There's no match, but we need to keep the values
 								cgtr1[key2] = []
