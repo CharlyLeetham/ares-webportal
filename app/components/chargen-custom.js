@@ -251,13 +251,13 @@ export default Component.extend({
 									///// Debugging /////
 									// console.log ( 'cgtr1:');
 									// console.log ( cgtr1 );
-									if (loc2 == 'alertness*^') {
-										console.log ('alertness*^: ');
-										console.log ( cgtr1[key2]['class'] );
-										console.log ( 'Key2: ' + key2 );
-										console.log ( 'cgtr1: ' ); 
-										console.log ( cgtr1 );
-									}
+									// if (loc2 == 'alertness*^') {
+										// console.log ('alertness*^: ');
+										// console.log ( cgtr1[key2]['class'] );
+										// console.log ( 'Key2: ' + key2 );
+										// console.log ( 'cgtr1: ' ); 
+										// console.log ( cgtr1 );
+									// }
 									///// End Debug /////										
 									// loc1 = '';
 								}
