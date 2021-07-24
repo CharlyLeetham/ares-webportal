@@ -270,7 +270,7 @@ export default Component.extend({
 							// console.log ( value2['class'] );									
 							///// End Debug /////
 								
-							if ( fw == 'icf') {
+							if ( fw == 'icf' || fw == 'race') {
 								cgtr1[key2] = [];
 								cgtr1[key2]['class'] = value2;
 								// Because we don't have all the details for the trait, we have to get them from the system file. WE DON'T NEED THIS iteration.
