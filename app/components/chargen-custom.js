@@ -227,11 +227,11 @@ export default Component.extend({
 							if (value2['name'].toLowerCase().startsWith(en)) { //Does the name in the array of traits for the fw selected, match one that is already set on the character?
 							
 								///// Debugging /////
-								console.log ( 'We have a match: ');
-								console.log ( 'Key2: ' +key2 );
-								console.log ( 'Value2:');
-								console.log ( value2['name'] );	
-								console.log ( 'en:' +  en);
+								// console.log ( 'We have a match: ');
+								// console.log ( 'Key2: ' +key2 );
+								// console.log ( 'Value2:');
+								// console.log ( value2['name'] );	
+								// console.log ( 'en:' +  en);
 								///// End Debug /////									
 								if (fw=='icf') { // If so, are looking at changing the ICF?
 									loc2 = value2['class'].split('^')[0].trim(); // Take the trailing * from the edge for I/F's
@@ -254,6 +254,7 @@ export default Component.extend({
 									if (loc2 == 'alertness*^') {
 										console.log ('alertness*^: ');
 										console.log (cgtr1[key2]['class']);
+										console.log (cgtr1);
 									}
 									///// End Debug /////										
 									// loc1 = '';
@@ -268,13 +269,13 @@ export default Component.extend({
 								cgtr1[key2] = []
 								cgtr1[key2]['class'] = value2['class'];	
 								///// Debugging /////
-								console.log ( 'No match: ');
+								// console.log ( 'No match: ');
 								// console.log ( 'Key2: ' +key2 );
 								// console.log ( 'Value2:');
 								// console.log ( value2['class'] );	
-								console.log ( 'cgtr1: ' );	
-								console.log ( cgtr1 );	
-								console.log ( 'en:' +  en);									
+								// console.log ( 'cgtr1: ' );	
+								// console.log ( cgtr1 );	
+								// console.log ( 'en:' +  en);									
 								///// End Debug /////
 							}
 						}
