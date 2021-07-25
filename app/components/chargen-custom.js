@@ -147,7 +147,7 @@ export default Component.extend({
 		
 		/// Debugging /////
 		// if (traittype == 'edge') {
-			console.log (sysedg);
+			// console.log (sysedg);
 			// console.log ('New Edges: ');
 			// console.log (newedgarray);
 			// console.log (traittype);
@@ -175,22 +175,20 @@ export default Component.extend({
 					cgtr1[ctr1]['rating'] = dislist[0]['desc'];
 					ctr1++;
 				}
-			}	
-			///// Debugging /////
-			console.log (cgtr1);
-			///// End Debug /////			
-		}
-					
+			}				
+
+
+			// cgtr1 now has a list of the new traits that aren't already on the character.
 		
-		// Clear the edges list for the framework
-		//If there are new edges or hinderances, go through and set these to disabled in the edge drop down.
-		
-		if ( newedgarray ) {	
+			//If there are new traits, go through and set these to disabled in the edge drop down.
+			
 			ctr = 0; //counter for new trait array that will be created of traits common to both race and icf.		
 			for ( const [key, value] of Object.entries(newedgarray) ) {  // We need to find matching traits and apply the appropriate special characters to the end.
 				en = value.split(specchar)[0].toLowerCase().trim(); // Take the trailing * or ^ from the edge for I/F's			
 				dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 			
+				console.log(dislist);
+				
 				for ( const [key1, value1] of Object.entries(dislist) ) {
 					value1['disabled'] = true; //Set disabled for this element to true
 					
