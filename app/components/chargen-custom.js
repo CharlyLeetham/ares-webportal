@@ -201,6 +201,9 @@ export default Component.extend({
 				console.log (cgtrnewedg);			
 			}
 			///// End Debug /////
+			
+			const obj = Object.assign({}, cgtr1, cgtrnewedg);
+			console.log (obj);
 			// cgtr1 now has a list of the new traits that aren't already on the character.
 		
 			//If there are new traits, go through and set these to disabled in the edge drop down.
