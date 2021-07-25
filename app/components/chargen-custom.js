@@ -214,7 +214,7 @@ export default Component.extend({
 					dislist[0]['disabled'] = true;
 					ctr1++;	
 				} else if ( Object.keys(tmplist).length == 0 && Object.keys(dislist).length == 0 ) {
-					console.log ('Trait: ' + en + (' not found in ' + traittype + ' file' );
+					console.log ('Trait: ' + en + ' not found in ' + traittype + ' file' );
 				} else if ( Object.keys(dislist).length > 0 ) { // If there is a match or not
 					// set disabled to true 
 					dislist[0]['disabled'] = true;
