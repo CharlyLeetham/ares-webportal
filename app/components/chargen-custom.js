@@ -147,8 +147,8 @@ export default Component.extend({
 		/// Debugging /////
 		// if (traittype == 'edge') {
 			// console.log (sysedg);
-			console.log ('New Edges: ');
-			console.log (newedgarray);
+			// console.log ('New Edges: ');
+			// console.log (newedgarray);
 			// console.log (traittype);
 			// console.log (fw);		
 			console.log ('cgtrnewedg:');
@@ -215,6 +215,7 @@ export default Component.extend({
 								loc2 = loc2+'*^';
 								cgtr1[ctr]['class'] = loc2;
 								cgtr1[ctr]['name'] = value2['name'];
+								cgtr1[ctr]['rating'] = value2['rating'];
 								ctr++;
 							} else {  // otherwise we must be changing Race.
 								cgtr1[ctr]=[]; // create an element in our array.
@@ -227,6 +228,7 @@ export default Component.extend({
 								///// End Debug /////									
 								cgtr1[ctr]['class'] = loc2;
 								cgtr1[ctr]['name'] = value2['name'];								
+								cgtr1[ctr]['rating'] = value2['rating'];								
 								ctr++;								
 								///// Debugging /////
 								// console.log ( 'cgtr1:');
