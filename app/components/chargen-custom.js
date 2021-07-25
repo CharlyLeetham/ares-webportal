@@ -112,10 +112,10 @@ export default Component.extend({
 
 
 		///// Debugging /////
-		// if (traittype == 'edge') {
-			// console.log ('Exedg: ');
-			// console.log (exedg);
-		// }
+		if (traittype == 'edge') {
+			console.log ('Exedg: ');
+			console.log (exedg);
+		}
 		///// End Debug /////
 				
 		if ( Object.keys(exedg).length > 1 ) {	// If there are edges or hinderances already set on the character, get them back	
@@ -222,9 +222,9 @@ export default Component.extend({
 					}
 					
 					for ( const [newkey, newval] of Object.entries(swriftstmp) ) {
-						console.log ( 'newkey: ' + newkey);
-						console.log ( 'newval: ');
-						console.log ( newval);
+						// console.log ( 'newkey: ' + newkey);
+						// console.log ( 'newval: ');
+						// console.log ( newval);
 					}
 						
 						
