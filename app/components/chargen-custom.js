@@ -234,7 +234,7 @@ export default Component.extend({
 							// console.log ( value2['name'] );	
 							// console.log ( 'en:' +  en);
 							///// End Debug /////									
-							if ( fw=='icf' ) { // If so, are looking at changing the ICF?
+							if ( fw =='icf' ) { // If so, are looking at changing the ICF?
 								loc2 = value2['class'].split('^')[0].trim(); // Take the trailing * from the edge for I/F's
 								loc2 = loc2+'*^';
 								cgtr1[key2]['class'] = loc2;
