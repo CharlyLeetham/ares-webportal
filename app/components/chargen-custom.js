@@ -230,11 +230,9 @@ export default Component.extend({
 						if (value2['name'].toLowerCase().startsWith(en)) { //Does the name in the array of traits for the fw selected, match one that is already set on the character?
 						
 							///// Debugging /////
-							// console.log ( 'We have a match: ');
-							// console.log ( 'Key2: ' +key2 );
-							// console.log ( 'Value2:');
-							// console.log ( value2['name'] );	
-							// console.log ( 'en:' +  en);
+							console.log ( 'Value2: ' + value2['name'] );	
+							console.log ( 'en:' +  en);
+							console.log ( 'ctr:' +  ctr);
 							///// End Debug /////									
 							if ( fw =='icf' ) { // If so, are looking at changing the ICF?
 								cgtr1[ctr]=[]; // create an element in our array.							
