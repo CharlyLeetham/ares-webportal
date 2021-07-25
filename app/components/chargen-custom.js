@@ -216,6 +216,7 @@ export default Component.extend({
 								cgtr1[ctr]['class'] = loc2;
 								cgtr1[ctr]['name'] = value2['name'];
 								cgtr1[ctr]['rating'] = value2['rating'];
+								cgtrnewedg[key2]['class'] = loc2;
 								ctr++;
 							} else {  // otherwise we must be changing Race.
 								cgtr1[ctr]=[]; // create an element in our array.
@@ -228,7 +229,8 @@ export default Component.extend({
 								///// End Debug /////									
 								cgtr1[ctr]['class'] = loc2;
 								cgtr1[ctr]['name'] = value2['name'];								
-								cgtr1[ctr]['rating'] = value2['rating'];								
+								cgtr1[ctr]['rating'] = value2['rating'];
+								cgtrnewedg[key2]['class'] = loc2;
 								ctr++;								
 								///// Debugging /////
 								// console.log ( 'cgtr1:');
@@ -272,8 +274,8 @@ export default Component.extend({
 					}
 				}
 				///// Debugging /////
-				console.log ( 'cgtr1: ' );	
-				console.log ( cgtr1 );	
+				console.log ( 'cgtrnewedg: ' );	
+				console.log ( cgtrnewedg );	
 				///// End Debug /////					
 			}
 		}
