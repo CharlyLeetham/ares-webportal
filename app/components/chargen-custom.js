@@ -209,27 +209,34 @@ export default Component.extend({
 							console.log ( 'en:' +  en);
 							console.log ( 'ctr:' +  ctr);
 							///// End Debug /////									
-							if ( fw =='icf' ) { // If so, are looking at changing the ICF?
-								cgtr1[ctr]=[]; // create an element in our array.							
+							if ( fw =='icf' ) { // If so, are looking at changing the ICF?						
 								loc2 = value2['class'].split('^')[0].trim(); // Take the trailing * from the edge for I/F's
 								loc2 = loc2+'*^';
-								cgtr1[ctr]['class'] = loc2;
-								cgtr1[ctr]['name'] = value2['name'];
-								cgtr1[ctr]['rating'] = value2['rating'];
+								
+								// **** This may not be needed. **** //		
+								//cgtr1[ctr]=[]; // create an element in our array.	
+								// cgtr1[ctr]['class'] = loc2;
+								// cgtr1[ctr]['name'] = value2['name'];
+								// cgtr1[ctr]['rating'] = value2['rating'];
+								// ********************************** //								
 								cgtrnewedg[key2]['class'] = loc2;
 								ctr++;
 							} else {  // otherwise we must be changing Race.
-								cgtr1[ctr]=[]; // create an element in our array.
+
 								loc2 = value2['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
 								loc2 = loc2+'*^';
 								///// Debugging /////
 								// console.log ( 'Value2:');
 								// console.log ( value2['class'] );	
 								// console.log ( 'loc2:' +  loc2);
-								///// End Debug /////									
-								cgtr1[ctr]['class'] = loc2;
-								cgtr1[ctr]['name'] = value2['name'];								
-								cgtr1[ctr]['rating'] = value2['rating'];
+								///// End Debug /////	
+
+								// **** This may not be needed. **** //
+								// cgtr1[ctr]=[]; // create an element in our array.								
+								// cgtr1[ctr]['class'] = loc2;
+								// cgtr1[ctr]['name'] = value2['name'];								
+								// cgtr1[ctr]['rating'] = value2['rating'];
+								// ********************************** //
 								cgtrnewedg[key2]['class'] = loc2;
 								ctr++;								
 								///// Debugging /////
@@ -256,9 +263,7 @@ export default Component.extend({
 							// cgtr1[key2]['class'] = value2['class'];
 							
 							///// Debugging /////
-							// console.log ( '*No match* Key2: ' + key2 + 'Value2: ' + value2['class'] );	
-							// console.log ( 'cgtr1['+key2+']: '+ cgtr1[key2]['class'] );	
-							// console.log ( 'en:' +  en);									
+							console.log (cgtrnewedg.length());
 							///// End Debug /////
 						}
 					
@@ -274,8 +279,8 @@ export default Component.extend({
 					}
 				}
 				///// Debugging /////
-				console.log ( 'cgtrnewedg: ' );	
-				console.log ( cgtrnewedg );	
+				// console.log ( 'cgtrnewedg: ' );	
+				// console.log ( cgtrnewedg );	
 				///// End Debug /////					
 			}
 		}
