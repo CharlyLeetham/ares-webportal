@@ -134,7 +134,10 @@ export default Component.extend({
 			i = 0;		
 			if ( fw=='icf' ) { // If we're looking at changing the Iconic Framework, find out which attributes are marked as Racial features. We want to keep these and remove all the ICF ones)
 				for ( const[ed, desc] of Object.entries(exedg) ) {
-					en = desc['name'];
+					///// Debugging /////
+						console.log ('Checking  ICF ');
+					///// End Debug /////
+					en = desc['name'];					
 					dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the trait list to an array and filter for any entries that match the new traits selected.				
 					if (desc['class'].includes('^')) {						
 						cgtrnewedg[i] = [];
@@ -146,6 +149,9 @@ export default Component.extend({
 				}
 			} else if ( fw=='race') {	// If we're looking at changing the Race, find out which attributes are marked as ICF features. We want to keep these and remove all the race ones)
 				for ( const[ed, desc] of Object.entries(exedg) ) {
+					///// Debugging /////
+						console.log ('Checking  Race ');
+					///// End Debug /////
 					en = desc['name'];
 					dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the trait list to an array and filter for any entries that match the new traits selected.	
 					if (desc['class'].includes('*')) {
