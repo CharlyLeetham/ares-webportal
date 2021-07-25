@@ -647,7 +647,7 @@ export default Component.extend({
 			
 			
 			///// Debugging /////
-			console.log ('Newedg:' + newedg);
+			// console.log ('Newedg:' + newedg);
 			///// End Debug /////
 			
 			
