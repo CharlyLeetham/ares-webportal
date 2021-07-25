@@ -113,8 +113,8 @@ export default Component.extend({
 
 		///// Debugging /////
 		if (traittype == 'edge') {
-			console.log ('Exedg: ');
-			console.log (exedg);
+			// console.log ('Exedg: ');
+			// console.log (exedg);
 		}
 		///// End Debug /////
 				
@@ -144,6 +144,7 @@ export default Component.extend({
 		}
 		
 		
+		
 		/// Debugging /////
 		// if (traittype == 'edge') {
 			// console.log (sysedg);
@@ -159,13 +160,16 @@ export default Component.extend({
 		///// End Debug /////
 
 		
-		//At this point cgtrnewedg[] should be a list of either ICF or race features only that were previously set. We still need to add the new edges / hinderances to the array.
+		//Get all the details for the New Edges passed in.
 		
-		if ( cgtrnewedg.length > 0 && newedgarray ) {
-			var cgtrupd=[];
-			for (i = 0; i < newedgarray.length; i++) {
-			  // console.log('New edge array: ' + newedgarray[i]);
-			} 			
+		if ( newedgarray ) {
+			for ( const [key, value] of Object.entries(newedgarray) ) {  // We need to find matching traits and apply the appropriate special characters to the end.
+				en = value.split(specchar)[0].toLowerCase().trim(); // Take the trailing * or ^ from the edge for I/F's
+				dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the trait list to an array and filter for any entries that match the new traits selected.
+				///// Debugging /////
+				console.log (dislist);
+				///// End Debug /////
+			}
 		}
 					
 		
@@ -201,7 +205,6 @@ export default Component.extend({
 								cgtrnewedg[key2]['class'] = loc2;
 								ctr++;
 							} else {  // otherwise we must be changing Race.
-
 								loc2 = value2['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
 								loc2 = loc2+'*^';
 								cgtrnewedg[key2]['class'] = loc2;
