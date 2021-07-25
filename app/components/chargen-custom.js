@@ -204,6 +204,7 @@ export default Component.extend({
 					cgtr1[ctr1]['rating'] = dislist[0]['desc'];					
 					// Set this trait as disabled in the drop list for traits.
 					dislist[0]['disabled'] = true;
+					ctr1++;	
 				} else { // If there is a match
 
 					// set disabled to true 
@@ -215,7 +216,7 @@ export default Component.extend({
 					loc2 = loc2+'*^'; // Add the right special characters to it.
 					tmplist[0]['class'] = loc2;												
 				}
-				ctr1++;				
+			
 			}
 
 			/// Debugging /////
