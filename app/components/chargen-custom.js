@@ -126,7 +126,7 @@ export default Component.extend({
 					dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the trait list to an array and filter for any entries that match the new traits selected.				
 					if (desc['class'].includes('^')) {						
 						cgtrnewedg[i] = [];
-						cgtrnewedg[i]['class']=dislist['name']+'^';
+						cgtrnewedg[i]['class']=dislist[0]['name']+'^';
 						cgtrnewedg[i]['name']=desc['name'];
 						cgtrnewedg[i]['rating']=desc['rating'];
 						i=i+1;
@@ -138,7 +138,7 @@ export default Component.extend({
 					dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the trait list to an array and filter for any entries that match the new traits selected.	
 					if (desc['class'].includes('*')) {
 						cgtrnewedg[i]=[];
-					cgtrnewedg[i]['class']=dislist['name']+'*';
+						cgtrnewedg[i]['class']=dislist[0]['name']+'*';
 						cgtrnewedg[i]['name']=desc['name'];
 						cgtrnewedg[i]['rating']=desc['rating'];
 						i=i+1;
