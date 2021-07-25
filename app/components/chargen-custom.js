@@ -147,12 +147,12 @@ export default Component.extend({
 		
 		/// Debugging /////
 		// if (traittype == 'edge') {
-			console.log (sysedg);
+			// console.log (sysedg);
 			// console.log ('New Edges: ');
 			// console.log (newedgarray);
 			// console.log (traittype);
 			// console.log (fw);		
-			// console.log ('cgtrnewedg:');
+			console.log ('cgtrnewedg:');
 			// console.log (cgtrnewedg);
 			// console.log ('New Edge Array: ');
 			// console.log (newedgarray);			
@@ -171,6 +171,7 @@ export default Component.extend({
 				
 				dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the trait list to an array and filter for any entries that match the new traits selected.
 				///// Debugging /////
+				console.log (en);
 				console.log (tmplist);
 				///// End Debug /////
 				cgtr1[ctr1]=[];
@@ -180,7 +181,8 @@ export default Component.extend({
 				ctr1++;
 			}
 			///// Debugging /////
-			console.log (cgtr1);
+		
+			// console.log (cgtr1);
 			///// End Debug /////			
 		}
 					
