@@ -136,7 +136,10 @@ export default Component.extend({
 				for ( const[ed, desc] of Object.entries(exedg) ) {
 					///// Debugging /////
 						console.log ('Checking  ICF ');
+						console.log ('Exeedg: ');
+						console.log (exedg);
 					///// End Debug /////
+					
 					en = desc['name'];					
 					dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the trait list to an array and filter for any entries that match the new traits selected.				
 					if (desc['class'].includes('^')) {						
@@ -190,7 +193,6 @@ export default Component.extend({
 				en = value.split(specchar)[0].toLowerCase().trim(); // Take the trailing * or ^ from the edge for I/F's
 				tmplist = Object.values(cgtrnewedg).filter(slots => slots.name.toString().toLowerCase() == en);
 				dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the trait list to an array and filter for any entries that match the new traits selected.
-				console.log (dislist);
 				
 				if ( Object.keys(tmplist).length == 0 ) { // If there's no match in the existing edge array, we want this entry							
 					cgtr1[ctr1]=[];
