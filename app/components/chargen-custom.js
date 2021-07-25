@@ -214,6 +214,8 @@ export default Component.extend({
 					// Set this trait as disabled in the drop list for traits.
 					dislist[0]['disabled'] = true;
 					ctr1++;	
+				} else if ( Object.keys(tmplist).length == 0 && Object.keys(dislist).length == 0 ) {
+					console.log ('Trait: ' + en + (' not found in ' + traittype + ' file' );
 				} else { // If there is a match or not
 					if ( Object.keys(dislist).length > 0 ) {
 					// set disabled to true 
