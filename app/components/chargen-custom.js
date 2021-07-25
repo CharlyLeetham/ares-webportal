@@ -213,7 +213,7 @@ export default Component.extend({
 			///// End Debug /////
 			
 			var obj=[];
-			obj = mergeArrays(cgtr1,cgtrnewedg);
+			obj = this.mergeArrays(cgtr1,cgtrnewedg);
 			console.log (obj);
 			// cgtr1 now has a list of the new traits that aren't already on the character.
 		
