@@ -196,7 +196,13 @@ export default Component.extend({
 				en = value.split(specchar)[0].toLowerCase().trim(); // Take the trailing * or ^ from the edge for I/F's
 				tmplist = Object.values(cgtrnewedg).filter(slots => slots.name.toString().toLowerCase() == en);
 				dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the trait list to an array and filter for any entries that match the new traits selected.
-				
+
+				/// Debugging /////
+				if (traittype == 'edge') {
+					console.log ('Dislist');			
+					console.log (dislist);							
+				}
+				///// End Debug /////				
 				if ( Object.keys(tmplist).length == 0 ) { // If there's no match in the existing edge array, we want this entry							
 					cgtr1[ctr1]=[];
 					cgtr1[ctr1]['class'] = value;
