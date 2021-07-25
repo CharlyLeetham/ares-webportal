@@ -274,7 +274,7 @@ export default Component.extend({
 							
 							///// Debugging /////
 							// console.log ( '*No match* Key2: ' + key2 + 'Value2: ' + value2['class'] );	
-							console.log ( 'cgtr1['+key2+']: '+ cgtr1[key2] );	
+							console.log ( 'cgtr1['+key2+']: '+ cgtr1[key2]['class'] );	
 							// console.log ( 'en:' +  en);									
 							///// End Debug /////
 						}
