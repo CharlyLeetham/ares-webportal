@@ -122,9 +122,9 @@ export default Component.extend({
 
 
 		///// Debugging /////
-		if (traittype == 'hind') {
-			// console.log ('Exedg: ');
-			// console.log (exedg);
+		if (traittype == 'edge') {
+			console.log ('Exedg: ');
+			console.log (exedg);
 			// console.log ('newedgarray: ');
 			// console.log (newedgarray);
 		}
@@ -135,10 +135,12 @@ export default Component.extend({
 			if ( fw=='icf' ) { // If we're looking at changing the Iconic Framework, find out which attributes are marked as Racial features. We want to keep these and remove all the ICF ones)
 				for ( const[ed, desc] of Object.entries(exedg) ) {
 					///// Debugging /////
+					if ( traittype = 'edged' ) {
 						console.log ('Checking  ICF ');
 						console.log ('Trait Type: '+traittype);
 						console.log ('Exeedg: ');
 						console.log (exedg);
+					}
 					///// End Debug /////
 					
 					en = desc['name'];					
@@ -154,7 +156,7 @@ export default Component.extend({
 			} else if ( fw=='race') {	// If we're looking at changing the Race, find out which attributes are marked as ICF features. We want to keep these and remove all the race ones)
 				for ( const[ed, desc] of Object.entries(exedg) ) {
 					///// Debugging /////
-						console.log ('Checking  Race ');
+						// console.log ('Checking  Race ');
 					///// End Debug /////
 					en = desc['name'];
 					dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the trait list to an array and filter for any entries that match the new traits selected.	
@@ -237,8 +239,8 @@ export default Component.extend({
 			// console.log ( 'here' );
 			// console.log ( 'Sysedg' );
 			// console.log ( sysedg );
-			// console.log ( 'cgtr1' );
-			// console.log ( cgtr1 );
+			console.log ( 'Final Traits' );
+			console.log ( finaltraits );
 			this.set('char.custom.sysedges', sysedg); //Send the new dropdown back to the page. 
 			this.set('char.custom.cgedges', finaltraits); //Send the new array back to the page for nice display. 	
 			this.set('char.custom.cgedgesfw', finaltraits); //Send the new array back to the page for nice display. 	
