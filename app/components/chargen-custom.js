@@ -269,21 +269,20 @@ export default Component.extend({
 							// console.log ( 'en:' +  en);									
 							///// End Debug /////								
 						} else { //There's no match, but we need to keep the values
-							cgtr1[key2] = [];
-							cgtr1[key2]['class'] = value2['class'];
+							// cgtr1[key2] = [];
+							// cgtr1[key2]['class'] = value2['class'];
 							
 							///// Debugging /////
 							// console.log ( '*No match* Key2: ' + key2 + 'Value2: ' + value2['class'] );	
-							// console.log ( 'cgtr1: ' );	
-							// console.log ( cgtr1 );	
+							console.log ( 'cgtr1['+key2+']: '+ cgtr1[key2] );	
 							// console.log ( 'en:' +  en);									
 							///// End Debug /////
 						}
 					///// Debugging /////
 					if ( en == 'alertness' || en == 'ab psionics' ) {
-						console.log ( 'Key2: ' + key2 + ' Value2: ' + value2['class'] + ' en: ' + en );	
-						console.log ( 'cgtr1: ' );	
-						console.log ( cgtr1 );	
+						// console.log ( 'Key2: ' + key2 + ' Value2: ' + value2['class'] + ' en: ' + en );	
+						// console.log ( 'cgtr1: ' );	
+						// console.log ( cgtr1 );	
 					}
 					///// End Debug /////						
 					}
