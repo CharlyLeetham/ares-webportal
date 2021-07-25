@@ -122,11 +122,11 @@ export default Component.extend({
 			i = 0;		
 			if ( fw=='icf' ) { // If we're looking at changing the Iconic Framework, find out which attributes are marked as Racial features. We want to keep these and remove all the ICF ones)
 				for ( const[ed, desc] of Object.entries(exedg) ) {
-					// en = value.split(specchar)[0].toLowerCase().trim(); // Take the trailing * or ^ from the edge for I/F's
-					// dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the trait list to an array and filter for any entries that match the new traits selected.					
+					en = desc['name'];
+					dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the trait list to an array and filter for any entries that match the new traits selected.				
 					if (desc['class'].includes('^')) {						
 						cgtrnewedg[i] = [];
-						cgtrnewedg[i]['class']=desc['class'];
+						cgtrnewedg[i]['class']=dislist['name']+'^';
 						cgtrnewedg[i]['name']=desc['name'];
 						cgtrnewedg[i]['rating']=desc['rating'];
 						i=i+1;
@@ -136,10 +136,9 @@ export default Component.extend({
 				for ( const[ed, desc] of Object.entries(exedg) ) {
 					en = desc['name'];
 					dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the trait list to an array and filter for any entries that match the new traits selected.	
-					console.log (dislist);
 					if (desc['class'].includes('*')) {
 						cgtrnewedg[i]=[];
-						cgtrnewedg[i]['class']=desc['class'];
+					cgtrnewedg[i]['class']=dislist['name']+'*';
 						cgtrnewedg[i]['name']=desc['name'];
 						cgtrnewedg[i]['rating']=desc['rating'];
 						i=i+1;
@@ -157,8 +156,8 @@ export default Component.extend({
 			// console.log (newedgarray);
 			// console.log (traittype);
 			// console.log (fw);		
-			// console.log ('cgtrnewedg:');
-			// console.log (cgtrnewedg);
+			console.log ('cgtrnewedg:');
+			console.log (cgtrnewedg);
 			// console.log ('New Edge Array: ');
 			// console.log (newedgarray);			
 		// }
@@ -197,10 +196,10 @@ export default Component.extend({
 			}				
 
 			/// Debugging /////
-			// if (traittype == 'edge') {
-				// console.log (tmplist);			
-				// console.log (cgtrnewedg);			
-			// }
+			if (traittype == 'edge') {
+				console.log (tmplist);			
+				console.log (cgtrnewedg);			
+			}
 			///// End Debug /////
 			// cgtr1 now has a list of the new traits that aren't already on the character.
 		
