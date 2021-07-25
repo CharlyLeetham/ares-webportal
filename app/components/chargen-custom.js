@@ -113,8 +113,8 @@ export default Component.extend({
 
 		///// Debugging /////
 		if (traittype == 'edge') {
-			// console.log ('Exedg: ');
-			// console.log (exedg);
+			console.log ('Exedg: ');
+			console.log (exedg);
 		}
 		///// End Debug /////
 				
@@ -122,7 +122,7 @@ export default Component.extend({
 			i = 0;		
 			if ( fw=='icf' ) { // If we're looking at changing the Iconic Framework, find out which attributes are marked as Racial features. We want to keep these and remove all the ICF ones)
 				for ( const[ed, desc] of Object.entries(exedg) ) {
-					if (desc['class'].includes('^')) {
+					if (desc['class'].includes('^')) {						
 						cgtrnewedg[i] = [];
 						cgtrnewedg[i]['class']=desc['class'];
 						cgtrnewedg[i]['name']=desc['name'];
@@ -154,8 +154,8 @@ export default Component.extend({
 			// console.log (fw);		
 			// console.log ('cgtrnewedg:');
 			// console.log (cgtrnewedg);
-			console.log ('New Edge Array: ');
-			console.log (newedgarray);			
+			// console.log ('New Edge Array: ');
+			// console.log (newedgarray);			
 		// }
 		///// End Debug /////
 
@@ -167,9 +167,7 @@ export default Component.extend({
 			for ( const [key, value] of Object.entries(newedgarray) ) {  // We need to find matching traits and apply the appropriate special characters to the end.
 				en = value.split(specchar)[0].toLowerCase().trim(); // Take the trailing * or ^ from the edge for I/F's
 				tmplist = Object.values(cgtrnewedg).filter(slots => slots.name.toString().toLowerCase() == en);
-				dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the trait list to an array and filter for any entries that match the new traits selected.		
-
-
+				dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the trait list to an array and filter for any entries that match the new traits selected.
 				console.log (dislist);
 				
 				if ( Object.keys(tmplist).length == 0 ) { // If there's no match in the existing edge array, we want this entry							
