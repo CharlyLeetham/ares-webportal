@@ -112,20 +112,16 @@ export default Component.extend({
 
 
 		///// Debugging /////
-		if (traittype == 'edge') {
-			console.log ('Exedg: ');
-			console.log (exedg);
-		}
+		// if (traittype == 'edge') {
+			// console.log ('Exedg: ');
+			// console.log (exedg);
+		// }
 		///// End Debug /////
 				
 		if ( Object.keys(exedg).length > 1 ) {	// If there are edges or hinderances already set on the character, get them back	
 			i = 0;		
 			if ( fw=='icf' ) { // If we're looking at changing the Iconic Framework, find out which attributes are marked as Racial features. We want to keep these and remove all the ICF ones)
 				for ( const[ed, desc] of Object.entries(exedg) ) {
-					console.log ('ed: ');
-					console.log (ed);
-					console.log ('desc: ');
-					console.log (desc);
 					// en = value.split(specchar)[0].toLowerCase().trim(); // Take the trailing * or ^ from the edge for I/F's
 					// dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the trait list to an array and filter for any entries that match the new traits selected.					
 					if (desc['class'].includes('^')) {						
@@ -138,10 +134,9 @@ export default Component.extend({
 				}
 			} else if ( fw=='race') {	// If we're looking at changing the Race, find out which attributes are marked as ICF features. We want to keep these and remove all the race ones)
 				for ( const[ed, desc] of Object.entries(exedg) ) {
-					console.log ('ed: ');
-					console.log (ed);
-					console.log ('desc: ');
-					console.log (desc);					
+					en = desc['name'];
+					dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the trait list to an array and filter for any entries that match the new traits selected.	
+					console.log (dislist);
 					if (desc['class'].includes('*')) {
 						cgtrnewedg[i]=[];
 						cgtrnewedg[i]['class']=desc['class'];
@@ -203,8 +198,8 @@ export default Component.extend({
 
 			/// Debugging /////
 			// if (traittype == 'edge') {
-				console.log (tmplist);			
-				console.log (cgtrnewedg);			
+				// console.log (tmplist);			
+				// console.log (cgtrnewedg);			
 			// }
 			///// End Debug /////
 			// cgtr1 now has a list of the new traits that aren't already on the character.
