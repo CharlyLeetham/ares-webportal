@@ -173,13 +173,8 @@ export default Component.extend({
 		//If there are new edges or hinderances, go through and set these to disabled in the edge drop down.
 		
 		var loc1, loc2, newclass, index, trexcludes, cgtr1=[];
-		if (newedgarray) {
-			///// Debugging /////
-			// if ( traittype=='edge' ) {
-				// console.log ( 'Now we are here' );
-			// }
-			///// End Debug /////
-			
+		if (newedgarray) {	
+			var ctr = 0; //counter for new trait array that will be created of traits common to both race and icf.		
 			for (const [key, value] of Object.entries(newedgarray)) {
 				en = value.split(specchar)[0].toLowerCase().trim(); // Take the trailing * or ^ from the edge for I/F's
 				loc1=value;
@@ -216,7 +211,6 @@ export default Component.extend({
 				}
 					
 				if (cgtrnewedg.length > 0) {  // Are there existing traits? Then, check to see if the trait already exists in the new array. This allows for Race and ICF to add the same things. 
-					var ctr = 0; //counter for new trait array that will be created of traits common to both race and icf.
 					
 					for (const [key2, value2] of Object.entries(cgtrnewedg)) {
 						
