@@ -176,13 +176,12 @@ export default Component.extend({
 		// if (traittype == 'edge') {
 			// console.log (sysedg);
 			// console.log ('New Edges: ');
-			// console.log (newedgarray);
 			// console.log (traittype);
 			// console.log (fw);		
 			console.log ('cgtrnewedg:');
 			console.log (cgtrnewedg);
-			// console.log ('New Edge Array: ');
-			// console.log (newedgarray);			
+			console.log ('New Edge Array: ');
+			console.log (newedgarray);			
 		// }
 		///// End Debug /////
 
