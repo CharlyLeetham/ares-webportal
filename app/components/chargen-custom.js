@@ -229,7 +229,7 @@ export default Component.extend({
 						
 						if (value2['name'].toLowerCase().startsWith(en)) { //Does the name in the array of traits for the fw selected, match one that is already set on the character?
 						
-							var cgtr1[ctr]=[]; // create an element in our array.
+							cgtr1[ctr]=[]; // create an element in our array.
 							///// Debugging /////
 							// console.log ( 'We have a match: ');
 							// console.log ( 'Key2: ' +key2 );
