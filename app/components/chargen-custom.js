@@ -168,11 +168,11 @@ export default Component.extend({
 				en = value.split(specchar)[0].toLowerCase().trim(); // Take the trailing * or ^ from the edge for I/F's
 				tmplist = Object.values(cgtrnewedg).filter(slots => slots.name.toString().toLowerCase() == en);
 				if ( Object.keys(tmplist).length == 0 ) { // If there's no match in the existing edge array, we want this entry
-					dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the trait list to an array and filter for any entries that match the new traits selected.			
+					dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the trait list to an array and filter for any entries that match the new traits selected.							
 					cgtr1[ctr1]=[];
 					cgtr1[ctr1]['class'] = value;
 					cgtr1[ctr1]['name'] = dislist[0]['name'].toString().toLowerCase();
-					cgtr1[ctr1]['rating'] = dislist['desc'];
+					cgtr1[ctr1]['rating'] = dislist[0]['desc'];
 					ctr1++;
 				}
 			}	
