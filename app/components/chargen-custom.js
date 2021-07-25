@@ -123,10 +123,10 @@ export default Component.extend({
 
 		///// Debugging /////
 		if (traittype == 'hind') {
-			console.log ('Exedg: ');
-			console.log (exedg);
-			console.log ('newedgarray: ');
-			console.log (newedgarray);
+			// console.log ('Exedg: ');
+			// console.log (exedg);
+			// console.log ('newedgarray: ');
+			// console.log (newedgarray);
 		}
 		///// End Debug /////
 				
