@@ -212,10 +212,10 @@ export default Component.extend({
 					// Combine cgtrnewedg and newedgarray - removing any duplicates.  
 					
 					// Find out which is smaller, so we can use that as our base.
-					ee = Object.keys(cgtrnewedg).length;
-					ne = Object.keys(newedgarray).length;
+					eesize = Object.keys(cgtrnewedg).length;
+					nesize = Object.keys(newedgarray).length;
 					
-					if ( ee < ne ) {
+					if ( eesize < nesize ) {
 						swriftstmp = cgtrnewedg;
 					} else {
 						swriftstmp = newedgarray;
