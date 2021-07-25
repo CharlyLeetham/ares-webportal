@@ -219,10 +219,12 @@ export default Component.extend({
 			}
 
 			/// Debugging /////
-			// if (traittype == 'edge') {
-				// console.log (cgtr1);			
-				// console.log (cgtrnewedg);			
-			// }
+			if (traittype == 'edge') {
+				console.log ('cgtrnewedg');			
+				console.log (cgtrnewedg);	
+				console.log ('cgtr1');					
+				console.log (cgtr1);						
+			}
 			///// End Debug /////
 		}	
 		
