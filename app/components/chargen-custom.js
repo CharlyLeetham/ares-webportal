@@ -172,7 +172,7 @@ export default Component.extend({
 				dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the trait list to an array and filter for any entries that match the new traits selected.
 				///// Debugging /////
 				console.log (en);
-				console.log (tmplist);
+				console.log (Object.keys(tmplist).length);
 				///// End Debug /////
 				cgtr1[ctr1]=[];
 				cgtr1[ctr1]['class'] = value;
