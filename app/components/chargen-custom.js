@@ -199,12 +199,11 @@ export default Component.extend({
 				dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the trait list to an array and filter for any entries that match the new traits selected.
 
 				/// Debugging /////
-				console.log ('Dislist');			
-				console.log (dislist);
-				console.log ('TmpList');			
-				console.log (tmplist);
-				console.log ('Traittype: ' + traittype);
-
+				// console.log ('Dislist');			
+				// console.log (dislist);
+				// console.log ('TmpList');			
+				// console.log (tmplist);
+				// console.log ('Traittype: ' + traittype);
 				///// End Debug /////				
 				if ( Object.keys(tmplist).length == 0 && Object.keys(dislist).length > 0 ) { // If there's no match in the existing edge array, we want this entry				
 					cgtr1[ctr1]=[];
@@ -216,8 +215,7 @@ export default Component.extend({
 					ctr1++;	
 				} else if ( Object.keys(tmplist).length == 0 && Object.keys(dislist).length == 0 ) {
 					console.log ('Trait: ' + en + (' not found in ' + traittype + ' file' );
-				} else { // If there is a match or not
-					if ( Object.keys(dislist).length > 0 ) {
+				} else if ( Object.keys(dislist).length > 0 ) { // If there is a match or not
 					// set disabled to true 
 					dislist[0]['disabled'] = true;
 						if ( traittype == 'hind' ) { // What are we checking for here exactly?????
@@ -226,7 +224,6 @@ export default Component.extend({
 						loc2 = dislist[0]['name']; // Get the nice name from System Edges file
 						loc2 = loc2+'*^'; // Add the right special characters to it.
 						tmplist[0]['class'] = loc2;
-					}
 				}
 			
 			}
