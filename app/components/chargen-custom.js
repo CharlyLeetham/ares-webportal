@@ -208,7 +208,7 @@ export default Component.extend({
 			//If there are new traits, go through and set these to disabled in the edge drop down.
 			
 			ctr = 0; //counter for new trait array that will be created of traits common to both race and icf.		
-			for ( const [key, value] of Object.entries(newedgarray) ) {  // We need to find matching traits and apply the appropriate special characters to the end.
+			// for ( const [key, value] of Object.entries(newedgarray) ) {  // We need to find matching traits and apply the appropriate special characters to the end.
 				// en = value.split(specchar)[0].toLowerCase().trim(); // Take the trailing * or ^ from the edge for I/F's			
 				// dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 						
@@ -249,20 +249,20 @@ export default Component.extend({
 						
 					
 					
-				} else { // We have no existing traits, so we have to write the array. 
-					for (const [key2, value2] of Object.entries(newedgarray)) {	
+				// } else { // We have no existing traits, so we have to write the array. 
+					// for (const [key2, value2] of Object.entries(newedgarray)) {	
 						///// Debugging /////
 						// console.log ( 'Key2: ' +key2 );
 						// console.log ( 'Value2:');
 						// console.log ( value2['class'] );									
 						///// End Debug /////
-					}
-				}
+					// }
+				// }
 				///// Debugging /////
 				// console.log ( 'cgtrnewedg: ' );	
 				// console.log ( cgtrnewedg );	
 				///// End Debug /////					
-			}
+			// }
 		}
 		
 		// sort the data
