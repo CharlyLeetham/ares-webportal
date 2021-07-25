@@ -234,7 +234,7 @@ export default Component.extend({
 							// console.log ( value2['name'] );	
 							// console.log ( 'en:' +  en);
 							///// End Debug /////									
-							if (fw=='icf') { // If so, are looking at changing the ICF?
+							if ( fw=='icf' ) { // If so, are looking at changing the ICF?
 								loc2 = value2['class'].split('^')[0].trim(); // Take the trailing * from the edge for I/F's
 								loc2 = loc2+'*^';
 								cgtr1[key2]['class'] = loc2;
@@ -261,10 +261,7 @@ export default Component.extend({
 								// }
 								///// End Debug /////										
 								// loc1 = '';
-							} else {
-								cgtr[key2] = [];
-								cgtr1[key2]['class'] = value2['class'];
-							}
+							} 
 							///// Debugging ///// 
 							// console.log ( 'End Loop 1' );
 							// console.log ( 'cgtr1: ' );	
@@ -272,8 +269,9 @@ export default Component.extend({
 							// console.log ( 'en:' +  en);									
 							///// End Debug /////								
 						} else { //There's no match, but we need to keep the values
-							// cgtr1[key2] = []
-							// cgtr1[key2]['class'] = value2['class'];	
+							cgtr1[key2] = [];
+							cgtr1[key2]['class'] = value2['class'];
+							
 							///// Debugging /////
 							// console.log ( '*No match* Key2: ' + key2 + 'Value2: ' + value2['class'] );	
 							// console.log ( 'cgtr1: ' );	
@@ -282,8 +280,13 @@ export default Component.extend({
 							///// End Debug /////
 						}
 					}
+					///// Debugging /////
+					console.log ( 'Key2: ' + key2 + ' Value2: ' + value2['class'] + ' en: ' + en );	
+					console.log ( 'cgtr1: ' );	
+					console.log ( cgtr1 );										
+					///// End Debug /////	
+					return;
 				} else {
-						
 					// We have no existing traits, so we have to write the array. 
 					for (const [key2, value2] of Object.entries(newedgarray)) {	
 						///// Debugging /////
@@ -291,29 +294,6 @@ export default Component.extend({
 						// console.log ( 'Value2:');
 						// console.log ( value2['class'] );									
 						///// End Debug /////
-							
-						if ( fw == 'icf' || fw == 'race') {
-							// cgtr1[key2] = [];
-							// cgtr1[key2]['class'] = value2;
-							// Because we don't have all the details for the trait, we have to get them from the system file. WE DON'T NEED THIS iteration.
-							
-							//START HERE NEXT TIME. 
-							//dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the system edges list to an array and filter for any entries that match the new framework selected.
-							///// Debugging /////
-							// console.log ( 'Key1:' );
-							// console.log ( key1);
-							// console.log ( 'Value1:' );
-							// console.log ( value1);									
-							// console.log ( 'Key2:' );
-							// console.log ( key2);									
-							// console.log ( 'Value:' );
-							// console.log ( value2);									
-							///// End Debug /////								
-							// for (const [key1, value1] of Object.entries(dislist)) { // cycle through the result and create a new array
-								// cgtr1[key2]['name'] = value1['name'];
-								// cgtr1[key2]['rating'] = value1['description']
-							// }
-						}
 					}
 				}
 			}
