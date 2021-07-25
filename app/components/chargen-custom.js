@@ -160,16 +160,21 @@ export default Component.extend({
 		///// End Debug /////
 
 		
-		//Get all the details for the New Edges passed in.
+		//Get all the details for the New Edges passed in. This is need to do the combination of the arrays below.
 		
 		if ( newedgarray ) {
+			var ctr1=0;
 			for ( const [key, value] of Object.entries(newedgarray) ) {  // We need to find matching traits and apply the appropriate special characters to the end.
 				en = value.split(specchar)[0].toLowerCase().trim(); // Take the trailing * or ^ from the edge for I/F's
 				dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the trait list to an array and filter for any entries that match the new traits selected.
-				///// Debugging /////
-				console.log (dislist);
-				///// End Debug /////
+				cgtr1[ctr1]['class'] = value;
+				cgtr1[ctr1]['name'] = dislist['name'].toLowerCase();
+				cgtr1[ctr1]['rating'] = dislist['desc'];
+				ctr1++;
 			}
+			///// Debugging /////
+			console.log (dislist);
+			///// End Debug /////			
 		}
 					
 		
