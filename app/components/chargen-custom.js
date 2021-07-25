@@ -122,12 +122,12 @@ export default Component.extend({
 
 
 		///// Debugging /////
-		if (traittype == 'edge') {
-			console.log ('Exedg: ');
-			console.log (exedg);
+		// if (traittype == 'edge') {
+			// console.log ('Exedg: ');
+			// console.log (exedg);
 			// console.log ('newedgarray: ');
 			// console.log (newedgarray);
-		}
+		// }
 		///// End Debug /////
 				
 		if ( Object.keys(exedg).length > 1 ) {	// If there are edges or hinderances already set on the character, get them back	
@@ -198,10 +198,10 @@ export default Component.extend({
 				dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the trait list to an array and filter for any entries that match the new traits selected.
 
 				/// Debugging /////
-				if (traittype == 'edge') {
-					console.log ('Dislist');			
-					console.log (dislist);							
-				}
+				console.log ('Dislist');			
+				console.log (dislist);
+				console.log ('Traittype: ' + traittype);
+
 				///// End Debug /////				
 				if ( Object.keys(tmplist).length == 0 ) { // If there's no match in the existing edge array, we want this entry							
 					cgtr1[ctr1]=[];
@@ -226,12 +226,12 @@ export default Component.extend({
 			}
 
 			/// Debugging /////
-			if (traittype == 'edge') {
-				console.log ('cgtrnewedg');			
-				console.log (cgtrnewedg);	
-				console.log ('cgtr1');					
-				console.log (cgtr1);						
-			}
+			// if (traittype == 'edge') {
+				// console.log ('cgtrnewedg');			
+				// console.log (cgtrnewedg);	
+				// console.log ('cgtr1');					
+				// console.log (cgtr1);						
+			// }
 			///// End Debug /////
 		}	
 		
