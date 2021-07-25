@@ -135,12 +135,12 @@ export default Component.extend({
 			if ( fw=='icf' ) { // If we're looking at changing the Iconic Framework, find out which attributes are marked as Racial features. We want to keep these and remove all the ICF ones)
 				for ( const[ed, desc] of Object.entries(exedg) ) {
 					///// Debugging /////
-					if ( traittype == 'edge' ) {
-						console.log ('Checking  ICF ');
-						console.log ('Trait Type: '+traittype);
-						console.log ('Exeedg: ');
-						console.log (exedg);
-					}
+					// if ( traittype == 'edge' ) {
+						// console.log ('Checking  ICF ');
+						// console.log ('Trait Type: '+traittype);
+						// console.log ('Exeedg: ');
+						// console.log (exedg);
+					// }
 					///// End Debug /////
 					en = desc['name'];					
 					dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the trait list to an array and filter for any entries that match the new traits selected.				
@@ -179,8 +179,8 @@ export default Component.extend({
 			// console.log (newedgarray);
 			// console.log (traittype);
 			// console.log (fw);		
-			// console.log ('cgtrnewedg:');
-			// console.log (cgtrnewedg);
+			console.log ('cgtrnewedg:');
+			console.log (cgtrnewedg);
 			// console.log ('New Edge Array: ');
 			// console.log (newedgarray);			
 		// }
@@ -193,7 +193,6 @@ export default Component.extend({
 			var ctr1=0;
 			for ( const [key, value] of Object.entries(newedgarray) ) {  // We need to find matching traits and apply the appropriate special characters to the end.
 				en = value.split(specchar)[0].toLowerCase().trim(); // Take the trailing * or ^ from the edge for I/F's
-				console.log ('En: ' + en);
 				tmplist = Object.values(cgtrnewedg).filter(slots => slots.name.toString().toLowerCase() == en);
 				dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the trait list to an array and filter for any entries that match the new traits selected.
 
