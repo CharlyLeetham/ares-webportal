@@ -172,7 +172,7 @@ export default Component.extend({
 		// Clear the edges list for the framework
 		//If there are new edges or hinderances, go through and set these to disabled in the edge drop down.
 		
-		var loc2, trexcludes, cgtr1=[], ctr;
+		var loc2, trexcludes, cgtr1=[], ctr, nesize, eesize;
 		if (newedgarray) {	
 			ctr = 0; //counter for new trait array that will be created of traits common to both race and icf.		
 			for (const [key, value] of Object.entries(newedgarray)) {  // We need to find matching traits and apply the appropriate special characters to the end.
@@ -262,8 +262,12 @@ export default Component.extend({
 							// cgtr1[key2] = [];
 							// cgtr1[key2]['class'] = value2['class'];
 							
+							// We need to find out which is longer. The existing traits or the new traits (some frameworks will add more than what was there to begin with. Get the length of each object to start.
+							nesize = Object.keys(newedgarray).length;
+							eesize = Object.keys(cgtrnewedg).length
+							
 							///// Debugging /////
-							console.log (Object.keys(cgtrnewedg).length);
+							console.log ( 'nesize: ' + nesize + ' eesize: ' + eesize  );
 							///// End Debug /////
 						}
 					
