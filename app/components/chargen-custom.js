@@ -147,7 +147,7 @@ export default Component.extend({
 		
 		/// Debugging /////
 		// if (traittype == 'edge') {
-			// console.log (sysedg);
+			console.log (sysedg);
 			// console.log ('New Edges: ');
 			// console.log (newedgarray);
 			// console.log (traittype);
