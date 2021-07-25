@@ -280,6 +280,8 @@ export default Component.extend({
 							// console.log ( 'en:' +  en);									
 							///// End Debug /////
 						}
+					
+					}
 					///// Debugging /////
 					if ( en == 'alertness' || en == 'ab psionics' ) {
 						// console.log ( 'Key2: ' + key2 + ' Value2: ' + value2['class'] + ' en: ' + en );	
@@ -287,7 +289,6 @@ export default Component.extend({
 						console.log ( cgtr1 );	
 					}
 					///// End Debug /////						
-					}
 				} else {
 					// We have no existing traits, so we have to write the array. 
 					for (const [key2, value2] of Object.entries(newedgarray)) {	
