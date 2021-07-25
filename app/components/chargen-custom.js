@@ -299,7 +299,7 @@ export default Component.extend({
 		});
 		
 		return newarr;
-	}
+	},
 	
 	checktrait: function(swraceall, swiconicfall, swrace, swiconicf, chosenifarray, newval, traittype) {	
 		//// Passed in: ///
