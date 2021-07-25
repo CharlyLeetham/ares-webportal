@@ -203,7 +203,7 @@ export default Component.extend({
 
 			/// Debugging /////
 			// if (traittype == 'edge') {
-				console.log (dislist);			
+				console.log (tmplist);			
 			// }
 			///// End Debug /////
 			// cgtr1 now has a list of the new traits that aren't already on the character.
