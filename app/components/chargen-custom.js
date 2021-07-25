@@ -216,7 +216,7 @@ export default Component.extend({
 				}
 					
 				if (cgtrnewedg.length > 0) {  // Are there existing traits? Then, check to see if the trait already exists in the new array. This allows for Race and ICF to add the same things. 
-					var ctr = 0 //counter for new trait array that will be created of traits common to both race and icf.
+					var ctr = 0; //counter for new trait array that will be created of traits common to both race and icf.
 					
 					for (const [key2, value2] of Object.entries(cgtrnewedg)) {
 						
