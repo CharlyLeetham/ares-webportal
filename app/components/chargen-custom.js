@@ -102,7 +102,7 @@ export default Component.extend({
 		/// traittype = Edge or Hinderance
 		/// fw = ICF or Race
 		
-		var cgtrnewedg=[], i, en, specchar, dislist, exedg, traitclass, loc2, trexcludes, cgtr1=[], ctr, nesize, eesize, swriftstmp, tmplist;
+		var cgtrnewedg=[], i, en, specchar, dislist, exedg, traitclass, loc2, trexcludes, cgtr1=[], ctr, nesize, eesize, swriftstmp, tmplist, finaltraits=[];
 		
 		
 		// Get either edges or hinderances based on the traittype passed in.
@@ -206,83 +206,20 @@ export default Component.extend({
 			}				
 
 			/// Debugging /////
-			if (traittype == 'edge') {
+			// if (traittype == 'edge') {
 				// console.log (cgtr1);			
 				// console.log (cgtrnewedg);			
-			}
+			// }
 			///// End Debug /////
 			
-			var obj=[];
-			obj = this.mergeArrays(cgtr1,cgtrnewedg);
-			console.log (obj);
-			// cgtr1 now has a list of the new traits that aren't already on the character.
-		
-			//If there are new traits, go through and set these to disabled in the edge drop down.
-			
-			ctr = 0; //counter for new trait array that will be created of traits common to both race and icf.		
-			// for ( const [key, value] of Object.entries(newedgarray) ) {  // We need to find matching traits and apply the appropriate special characters to the end.
-				// en = value.split(specchar)[0].toLowerCase().trim(); // Take the trailing * or ^ from the edge for I/F's			
-				// dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
-						
-				// if ( cgtrnewedg.length > 0 ) {  // Are there existing traits? Then, check to see if the trait already exists in the new array. This allows for Race and ICF to add the same things. 
-					// for ( const [key2, value2] of Object.entries(cgtrnewedg) ) {					
-						// if (value2['name'].toLowerCase().startsWith(en)) { //Does the name in the array of traits for the fw selected, match one that is already set on the character?								
-							// if ( fw =='icf' ) { // If so, are looking at changing the ICF?						
-								// loc2 = value2['class'].split('^')[0].trim(); // Take the trailing * from the edge for I/F's
-								// loc2 = loc2+'*^';					
-								// cgtrnewedg[key2]['class'] = loc2;
-								// ctr++;
-							// } else {  // otherwise we must be changing Race.
-								// loc2 = value2['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
-								// loc2 = loc2+'*^';
-								// cgtrnewedg[key2]['class'] = loc2;
-								// ctr++;								
-							// } 						
-						// }					
-					// }
-					// Combine cgtrnewedg and newedgarray - removing any duplicates.  
-					
-					// Find out which is smaller, so we can use that as our base.
-					// eesize = Object.keys(cgtrnewedg).length;
-					// nesize = Object.keys(newedgarray).length;
-					
-					// if ( eesize < nesize ) {
-						// swriftstmp = cgtrnewedg;
-					// } else {
-						// swriftstmp = newedgarray;
-					// }
-					
-					// for ( const [newkey, newval] of Object.entries(swriftstmp) ) {
-						// console.log ( 'newkey: ' + newkey);
-						// console.log ( 'newval: ');
-						// console.log ( newval);
-					// }
-						
-						
-					
-					
-				// } else { // We have no existing traits, so we have to write the array. 
-					// for (const [key2, value2] of Object.entries(newedgarray)) {	
-						///// Debugging /////
-						// console.log ( 'Key2: ' +key2 );
-						// console.log ( 'Value2:');
-						// console.log ( value2['class'] );									
-						///// End Debug /////
-					// }
-				// }
-				///// Debugging /////
-				// console.log ( 'cgtrnewedg: ' );	
-				// console.log ( cgtrnewedg );	
-				///// End Debug /////					
-			// }
-		}
-		
+			finaltraits = this.mergeArrays(cgtr1,cgtrnewedg);
+	
 		// sort the data
-		// cgtr1.sort(function (x, y) {
-			// let a = x.name.toLowerCase(),
-				// b = y.name.toLowerCase();
-			// return a == b ? 0 : a > b ? 1 : -1;
-		// });
+		finaltraits.sort(function (x, y) {
+			let a = x.name.toLowerCase(),
+				b = y.name.toLowerCase();
+			return a == b ? 0 : a > b ? 1 : -1;
+		});
 				
 		if ( traittype == 'edge' ) {
 			// console.log ( 'here' );
@@ -291,14 +228,14 @@ export default Component.extend({
 			// console.log ( 'cgtr1' );
 			// console.log ( cgtr1 );
 			this.set('char.custom.sysedges', sysedg); //Send the new dropdown back to the page. 
-			this.set('char.custom.cgedges', cgtr1); //Send the new array back to the page for nice display. 	
-			this.set('char.custom.cgedgesfw', cgtr1); //Send the new array back to the page for nice display. 	
+			this.set('char.custom.cgedges', finaltraits); //Send the new array back to the page for nice display. 	
+			this.set('char.custom.cgedgesfw', finaltraits); //Send the new array back to the page for nice display. 	
 		} else {
 			this.set('char.custom.swsyshind', sysedg); //Send the new dropdown back to the page. 
-			this.set('char.custom.cghind', cgtr1); //Send the new array back to the page for nice display.			
-			this.set('char.custom.cghindfw', cgtr1); //Send the new array back to the page for nice display.			
+			this.set('char.custom.cghind', finaltraits); //Send the new array back to the page for nice display.			
+			this.set('char.custom.cghindfw', finaltraits); //Send the new array back to the page for nice display.			
 		}
-		return (cgtr1);
+		return (finaltraits);
 	},
 	
 	checktrait: function(swraceall, swiconicfall, swrace, swiconicf, chosenifarray, newval, traittype) {	
