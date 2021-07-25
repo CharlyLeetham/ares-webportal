@@ -279,13 +279,12 @@ export default Component.extend({
 							// console.log ( 'en:' +  en);									
 							///// End Debug /////
 						}
-					}
 					///// Debugging /////
 					console.log ( 'Key2: ' + key2 + ' Value2: ' + value2['class'] + ' en: ' + en );	
 					console.log ( 'cgtr1: ' );	
 					console.log ( cgtr1 );										
-					///// End Debug /////	
-					return;
+					///// End Debug /////						
+					}
 				} else {
 					// We have no existing traits, so we have to write the array. 
 					for (const [key2, value2] of Object.entries(newedgarray)) {	
@@ -701,8 +700,8 @@ export default Component.extend({
 
 
 			/////  Debugging /////
-			console.log ('Edges: ');
-			console.log (newedgarray);
+			// console.log ('Edges: ');
+			// console.log (newedgarray);
 			///// End Debug /////
 
 			// Check race
@@ -836,8 +835,8 @@ export default Component.extend({
 
 
 			/////  Debugging /////
-			console.log ('Edges: ');
-			console.log (newedgarray);
+			// console.log ('Edges: ');
+			// console.log (newedgarray);
 			///// End Debug /////
 			
 			
