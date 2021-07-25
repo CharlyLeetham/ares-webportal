@@ -197,13 +197,13 @@ export default Component.extend({
 
 			/// Debugging /////
 			if (traittype == 'edge') {
-				console.log (cgtr1);			
-				console.log (cgtrnewedg);			
+				// console.log (cgtr1);			
+				// console.log (cgtrnewedg);			
 			}
 			///// End Debug /////
 			
 			var obj=[];
-			obj.push(cgtr1,cgtrnewedg);
+			obj = mergeArrays(cgtr1,cgtrnewedg);
 			console.log (obj);
 			// cgtr1 now has a list of the new traits that aren't already on the character.
 		
@@ -290,6 +290,16 @@ export default Component.extend({
 		}
 		return (cgtr1);
 	},
+	
+	mergeArrays: function(...arrays) {
+		var newarr=[];
+		
+		arrays.forEach( array => {
+			newarr.push(...array);
+		});
+		
+		return newarr;
+	}
 	
 	checktrait: function(swraceall, swiconicfall, swrace, swiconicf, chosenifarray, newval, traittype) {	
 		//// Passed in: ///
