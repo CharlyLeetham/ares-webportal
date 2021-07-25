@@ -122,12 +122,12 @@ export default Component.extend({
 
 
 		///// Debugging /////
-		// if (traittype == 'edge') {
-			// console.log ('Exedg: ');
-			// console.log (exedg);
-			// console.log ('newedgarray: ');
-			// console.log (newedgarray);
-		// }
+		if (traittype == 'edge') {
+			console.log ('Exedg: ');
+			console.log (exedg);
+			console.log ('newedgarray: ');
+			console.log (newedgarray);
+		}
 		///// End Debug /////
 				
 		if ( Object.keys(exedg).length > 1 ) {	// If there are edges or hinderances already set on the character, get them back	
@@ -178,10 +178,10 @@ export default Component.extend({
 			// console.log ('New Edges: ');
 			// console.log (traittype);
 			// console.log (fw);		
-			console.log ('cgtrnewedg:');
-			console.log (cgtrnewedg);
-			console.log ('New Edge Array: ');
-			console.log (newedgarray);			
+			// console.log ('cgtrnewedg:');
+			// console.log (cgtrnewedg);
+			// console.log ('New Edge Array: ');
+			// console.log (newedgarray);			
 		// }
 		///// End Debug /////
 
