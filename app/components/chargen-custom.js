@@ -261,6 +261,9 @@ export default Component.extend({
 								// }
 								///// End Debug /////										
 								// loc1 = '';
+							} else {
+								cgtr[key2] = [];
+								cgtr1[key2]['class'] = value2['class'];
 							}
 							///// Debugging ///// 
 							// console.log ( 'End Loop 1' );
