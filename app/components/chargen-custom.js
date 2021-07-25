@@ -193,7 +193,7 @@ export default Component.extend({
 						// ctr++;
 					} else {  // otherwise we must be changing Race.
 						// loc2 = tmplist[0]['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
-						loc2 = distlist[0]['name']; // Get the nice name from System Edges file
+						loc2 = dislist[0]['name']; // Get the nice name from System Edges file
 						loc2 = loc2+'*^'; // Add the right special characters to it.
 						tmplist[0]['class'] = loc2;
 						// ctr++;								
