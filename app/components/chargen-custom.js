@@ -237,13 +237,13 @@ export default Component.extend({
 							// console.log ( 'en:' +  en);
 							///// End Debug /////									
 							if ( fw =='icf' ) { // If so, are looking at changing the ICF?
-								var cgtr1[ctr]=[]; // create an element in our array.							
+								cgtr1[ctr]=[]; // create an element in our array.							
 								loc2 = value2['class'].split('^')[0].trim(); // Take the trailing * from the edge for I/F's
 								loc2 = loc2+'*^';
 								cgtr1[ctr]['class'] = loc2;
 								ctr++;
 							} else {  // otherwise we must be changing Race.
-								var cgtr1[ctr]=[]; // create an element in our array.
+								cgtr1[ctr]=[]; // create an element in our array.
 								loc2 = value2['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
 								loc2 = loc2+'*^';
 								///// Debugging /////
