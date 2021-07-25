@@ -171,13 +171,13 @@ export default Component.extend({
 				console.log (dislist);
 				///// End Debug /////
 				cgtr1[ctr1]=[];
-				// cgtr1[ctr1]['class'] = value;
+				cgtr1[ctr1]['class'] = value;
 				cgtr1[ctr1]['name'] = dislist[0]['name'].toString().toLowerCase();
-				// cgtr1[ctr1]['rating'] = dislist['desc'];
+				cgtr1[ctr1]['rating'] = dislist['desc'];
 				ctr1++;
 			}
 			///// Debugging /////
-			console.log (dislist);
+			console.log (cgtr1);
 			///// End Debug /////			
 		}
 					
