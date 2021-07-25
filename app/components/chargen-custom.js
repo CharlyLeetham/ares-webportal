@@ -205,7 +205,8 @@ export default Component.extend({
 				console.log ('Traittype: ' + traittype);
 
 				///// End Debug /////				
-				if ( Object.keys(tmplist).length == 0 ) { // If there's no match in the existing edge array, we want this entry							
+				if ( Object.keys(tmplist).length == 0 ) { // If there's no match in the existing edge array, we want this entry	
+						console.log ('Is this where we are? ');				
 					cgtr1[ctr1]=[];
 					cgtr1[ctr1]['class'] = value;
 					cgtr1[ctr1]['name'] = dislist[0]['name'].toString().toLowerCase();
@@ -215,7 +216,6 @@ export default Component.extend({
 					ctr1++;	
 				} else { // If there is a match or not
 					if ( Object.keys(dislist).length > 0 ) {
-						console.log ('Is this where we are? ');
 					// set disabled to true 
 					dislist[0]['disabled'] = true;
 						if ( traittype == 'hind' ) { // What are we checking for here exactly?????
