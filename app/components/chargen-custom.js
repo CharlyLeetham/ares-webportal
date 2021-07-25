@@ -216,7 +216,7 @@ export default Component.extend({
 				}
 					
 				if (cgtrnewedg.length > 0) {  // Are there existing traits? Then, check to see if the trait already exists in the new array. This allows for Race and ICF to add the same things. 
-					var ctr = 0; //counter for new trait array that will be created of traits common to both race and icf.
+					var ctr = 0 //counter for new trait array that will be created of traits common to both race and icf.
 					
 					for (const [key2, value2] of Object.entries(cgtrnewedg)) {
 						
@@ -229,7 +229,6 @@ export default Component.extend({
 						
 						if (value2['name'].toLowerCase().startsWith(en)) { //Does the name in the array of traits for the fw selected, match one that is already set on the character?
 						
-							cgtr1[ctr]=[]; // create an element in our array.
 							///// Debugging /////
 							// console.log ( 'We have a match: ');
 							// console.log ( 'Key2: ' +key2 );
@@ -238,11 +237,13 @@ export default Component.extend({
 							// console.log ( 'en:' +  en);
 							///// End Debug /////									
 							if ( fw =='icf' ) { // If so, are looking at changing the ICF?
+								var cgtr1[ctr]=[]; // create an element in our array.							
 								loc2 = value2['class'].split('^')[0].trim(); // Take the trailing * from the edge for I/F's
 								loc2 = loc2+'*^';
 								cgtr1[ctr]['class'] = loc2;
-								// loc1 = '';
+								ctr++;
 							} else {  // otherwise we must be changing Race.
+								var cgtr1[ctr]=[]; // create an element in our array.
 								loc2 = value2['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
 								loc2 = loc2+'*^';
 								///// Debugging /////
@@ -251,6 +252,7 @@ export default Component.extend({
 								// console.log ( 'loc2:' +  loc2);
 								///// End Debug /////									
 								cgtr1[ctr]['class'] = loc2;
+								ctr++;								
 								///// Debugging /////
 								// console.log ( 'cgtr1:');
 								// console.log ( cgtr1 );
@@ -286,8 +288,6 @@ export default Component.extend({
 						console.log ( 'cgtr1: ' );	
 						console.log ( cgtr1 );	
 					}
-					
-					ctr++;
 					///// End Debug /////						
 					}
 				} else {
