@@ -154,8 +154,8 @@ export default Component.extend({
 			// console.log (fw);		
 			// console.log ('cgtrnewedg:');
 			// console.log (cgtrnewedg);
-			// console.log ('New Edge Array: ');
-			// console.log (newedgarray);			
+			console.log ('New Edge Array: ');
+			console.log (newedgarray);			
 		// }
 		///// End Debug /////
 
@@ -186,18 +186,9 @@ export default Component.extend({
 					if ( traittype == 'hind' ) { // What are we checking for here exactly?????
 						trexcludes = this.ck_excludes(dislist, sysedg, traittype);
 					}	
-					if ( fw =='icf' ) { // If so, are looking at changing the ICF?						
-						// loc2 = dislist[0]['class'].split('^')[0].trim(); // Take the trailing * from the edge for I/F's
-						// loc2 = loc2+'*^';					
-						// dislist[0]['class'] = loc2;
-						// ctr++;
-					} else {  // otherwise we must be changing Race.
-						// loc2 = tmplist[0]['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
-						loc2 = dislist[0]['name']; // Get the nice name from System Edges file
-						loc2 = loc2+'*^'; // Add the right special characters to it.
-						tmplist[0]['class'] = loc2;
-						// ctr++;								
-					} 					
+					loc2 = dislist[0]['name']; // Get the nice name from System Edges file
+					loc2 = loc2+'*^'; // Add the right special characters to it.
+					tmplist[0]['class'] = loc2;												
 				}
 				ctr1++;				
 			}				
