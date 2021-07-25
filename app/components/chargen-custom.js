@@ -135,7 +135,7 @@ export default Component.extend({
 			if ( fw=='icf' ) { // If we're looking at changing the Iconic Framework, find out which attributes are marked as Racial features. We want to keep these and remove all the ICF ones)
 				for ( const[ed, desc] of Object.entries(exedg) ) {
 					///// Debugging /////
-					if ( traittype = 'edged' ) {
+					if ( traittype = 'edge' ) {
 						console.log ('Checking  ICF ');
 						console.log ('Trait Type: '+traittype);
 						console.log ('Exeedg: ');
