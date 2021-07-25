@@ -151,8 +151,8 @@ export default Component.extend({
 			// console.log (newedgarray);
 			// console.log (traittype);
 			// console.log (fw);		
-			// console.log ('cgtrnewedg:');
-			// console.log (cgtrnewedg);
+			console.log ('cgtrnewedg:');
+			console.log (cgtrnewedg);
 			// console.log ('New Edge Array: ');
 			// console.log (newedgarray);			
 		// }
@@ -213,103 +213,103 @@ export default Component.extend({
 					// console.log ( 'cgtrnewedg:');
 					// console.log ( cgtrnewedg );
 					///// End Debug /////
+				}
 					
-					if (cgtrnewedg.length > 0) {  // Are there existing traits? Then, check to see if the trait already exists in the new array. This allows for Race and ICF to add the same things. 
-						for (const [key2, value2] of Object.entries(cgtrnewedg)) {
-							
+				if (cgtrnewedg.length > 0) {  // Are there existing traits? Then, check to see if the trait already exists in the new array. This allows for Race and ICF to add the same things. 
+					for (const [key2, value2] of Object.entries(cgtrnewedg)) {
+						
+						///// Debugging /////
+						// console.log ( 'en: ' + en);
+						// console.log ( 'Key2: ' +key2 );
+						// console.log ( 'Value2:');
+						// console.log ( value2['name'] );
+						///// End Debug /////
+						
+						if (value2['name'].toLowerCase().startsWith(en)) { //Does the name in the array of traits for the fw selected, match one that is already set on the character?
+						
 							///// Debugging /////
-							// console.log ( 'en: ' + en);
+							// console.log ( 'We have a match: ');
 							// console.log ( 'Key2: ' +key2 );
 							// console.log ( 'Value2:');
-							// console.log ( value2['name'] );
-							///// End Debug /////
-							
-							if (value2['name'].toLowerCase().startsWith(en)) { //Does the name in the array of traits for the fw selected, match one that is already set on the character?
-							
+							// console.log ( value2['name'] );	
+							// console.log ( 'en:' +  en);
+							///// End Debug /////									
+							if (fw=='icf') { // If so, are looking at changing the ICF?
+								loc2 = value2['class'].split('^')[0].trim(); // Take the trailing * from the edge for I/F's
+								loc2 = loc2+'*^';
+								cgtr1[key2]['class'] = loc2;
+								// loc1 = '';
+							} else {  // otherwise we must be changing Race.
+								loc2 = value2['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
+								loc2 = loc2+'*^';
 								///// Debugging /////
-								// console.log ( 'We have a match: ');
-								// console.log ( 'Key2: ' +key2 );
 								// console.log ( 'Value2:');
-								// console.log ( value2['name'] );	
-								// console.log ( 'en:' +  en);
+								// console.log ( value2['class'] );	
+								// console.log ( 'loc2:' +  loc2);
 								///// End Debug /////									
-								if (fw=='icf') { // If so, are looking at changing the ICF?
-									loc2 = value2['class'].split('^')[0].trim(); // Take the trailing * from the edge for I/F's
-									loc2 = loc2+'*^';
-									cgtr1[key2]['class'] = loc2;
-									// loc1 = '';
-								} else {  // otherwise we must be changing Race.
-									loc2 = value2['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
-									loc2 = loc2+'*^';
-									///// Debugging /////
-									// console.log ( 'Value2:');
-									// console.log ( value2['class'] );	
-									// console.log ( 'loc2:' +  loc2);
-									///// End Debug /////									
-									cgtr1[key2] = [];
-									cgtr1[key2]['class'] = loc2;
-									///// Debugging /////
-									// console.log ( 'cgtr1:');
+								cgtr1[key2] = [];
+								cgtr1[key2]['class'] = loc2;
+								///// Debugging /////
+								// console.log ( 'cgtr1:');
+								// console.log ( cgtr1 );
+								// if (loc2 == 'alertness*^') {
+									// console.log ('alertness*^: ');
+									// console.log ( cgtr1[key2]['class'] );
+									// console.log ( 'Key2: ' + key2 );
+									// console.log ( 'cgtr1: ' ); 
 									// console.log ( cgtr1 );
-									// if (loc2 == 'alertness*^') {
-										// console.log ('alertness*^: ');
-										// console.log ( cgtr1[key2]['class'] );
-										// console.log ( 'Key2: ' + key2 );
-										// console.log ( 'cgtr1: ' ); 
-										// console.log ( cgtr1 );
-									// }
-									///// End Debug /////										
-									// loc1 = '';
-								}
-								///// Debugging ///// 
-								console.log ( 'End Loop 1' );
-								// console.log ( 'cgtr1: ' );	
-								// console.log ( cgtr1 );	
-								// console.log ( 'en:' +  en);									
-								///// End Debug /////								
-							} else { //There's no match, but we need to keep the values
-								// cgtr1[key2] = []
-								// cgtr1[key2]['class'] = value2['class'];	
-								///// Debugging /////
-								console.log ( '*No match* Key2: ' + key2 + 'Value2:' + value2['class'] );	
-								// console.log ( 'cgtr1: ' );	
-								// console.log ( cgtr1 );	
-								// console.log ( 'en:' +  en);									
-								///// End Debug /////
-							}
-						}
-					} else {
-							
-						// We have no existing traits, so we have to write the array. 
-						for (const [key2, value2] of Object.entries(newedgarray)) {	
-							///// Debugging /////
-							// console.log ( 'Key2: ' +key2 );
-							// console.log ( 'Value2:');
-							// console.log ( value2['class'] );									
-							///// End Debug /////
-								
-							if ( fw == 'icf' || fw == 'race') {
-								// cgtr1[key2] = [];
-								// cgtr1[key2]['class'] = value2;
-								// Because we don't have all the details for the trait, we have to get them from the system file. WE DON'T NEED THIS iteration.
-								
-								//START HERE NEXT TIME. 
-								//dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the system edges list to an array and filter for any entries that match the new framework selected.
-								///// Debugging /////
-								// console.log ( 'Key1:' );
-								// console.log ( key1);
-								// console.log ( 'Value1:' );
-								// console.log ( value1);									
-								// console.log ( 'Key2:' );
-								// console.log ( key2);									
-								// console.log ( 'Value:' );
-								// console.log ( value2);									
-								///// End Debug /////								
-								// for (const [key1, value1] of Object.entries(dislist)) { // cycle through the result and create a new array
-									// cgtr1[key2]['name'] = value1['name'];
-									// cgtr1[key2]['rating'] = value1['description']
 								// }
+								///// End Debug /////										
+								// loc1 = '';
 							}
+							///// Debugging ///// 
+							// console.log ( 'End Loop 1' );
+							// console.log ( 'cgtr1: ' );	
+							// console.log ( cgtr1 );	
+							// console.log ( 'en:' +  en);									
+							///// End Debug /////								
+						} else { //There's no match, but we need to keep the values
+							// cgtr1[key2] = []
+							// cgtr1[key2]['class'] = value2['class'];	
+							///// Debugging /////
+							// console.log ( '*No match* Key2: ' + key2 + 'Value2: ' + value2['class'] );	
+							// console.log ( 'cgtr1: ' );	
+							// console.log ( cgtr1 );	
+							// console.log ( 'en:' +  en);									
+							///// End Debug /////
+						}
+					}
+				} else {
+						
+					// We have no existing traits, so we have to write the array. 
+					for (const [key2, value2] of Object.entries(newedgarray)) {	
+						///// Debugging /////
+						// console.log ( 'Key2: ' +key2 );
+						// console.log ( 'Value2:');
+						// console.log ( value2['class'] );									
+						///// End Debug /////
+							
+						if ( fw == 'icf' || fw == 'race') {
+							// cgtr1[key2] = [];
+							// cgtr1[key2]['class'] = value2;
+							// Because we don't have all the details for the trait, we have to get them from the system file. WE DON'T NEED THIS iteration.
+							
+							//START HERE NEXT TIME. 
+							//dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the system edges list to an array and filter for any entries that match the new framework selected.
+							///// Debugging /////
+							// console.log ( 'Key1:' );
+							// console.log ( key1);
+							// console.log ( 'Value1:' );
+							// console.log ( value1);									
+							// console.log ( 'Key2:' );
+							// console.log ( key2);									
+							// console.log ( 'Value:' );
+							// console.log ( value2);									
+							///// End Debug /////								
+							// for (const [key1, value1] of Object.entries(dislist)) { // cycle through the result and create a new array
+								// cgtr1[key2]['name'] = value1['name'];
+								// cgtr1[key2]['rating'] = value1['description']
+							// }
 						}
 					}
 				}
