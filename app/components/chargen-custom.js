@@ -280,7 +280,7 @@ export default Component.extend({
 							///// End Debug /////
 						}
 					///// Debugging /////
-					if (en == 'alertness' || en == 'ab psionics') {
+					if ( en == 'alertness' || en == 'ab psionics' ) {
 						console.log ( 'Key2: ' + key2 + ' Value2: ' + value2['class'] + ' en: ' + en );	
 						console.log ( 'cgtr1: ' );	
 						console.log ( cgtr1 );	
