@@ -215,6 +215,7 @@ export default Component.extend({
 					ctr1++;	
 				} else { // If there is a match or not
 					if ( Object.keys(dislist).length > 0 ) {
+						console.log ('Is this where we are? ');
 					// set disabled to true 
 					dislist[0]['disabled'] = true;
 						if ( traittype == 'hind' ) { // What are we checking for here exactly?????
