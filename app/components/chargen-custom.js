@@ -167,7 +167,11 @@ export default Component.extend({
 			for ( const [key, value] of Object.entries(newedgarray) ) {  // We need to find matching traits and apply the appropriate special characters to the end.
 				en = value.split(specchar)[0].toLowerCase().trim(); // Take the trailing * or ^ from the edge for I/F's
 				tmplist = Object.values(cgtrnewedg).filter(slots => slots.name.toString().toLowerCase() == en);
-				dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the trait list to an array and filter for any entries that match the new traits selected.				
+				dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the trait list to an array and filter for any entries that match the new traits selected.		
+
+
+				console.log (dislist);
+				
 				if ( Object.keys(tmplist).length == 0 ) { // If there's no match in the existing edge array, we want this entry							
 					cgtr1[ctr1]=[];
 					cgtr1[ctr1]['class'] = value;
@@ -185,15 +189,15 @@ export default Component.extend({
 						trexcludes = this.ck_excludes(dislist, sysedg, traittype);
 					}	
 					if ( fw =='icf' ) { // If so, are looking at changing the ICF?						
-						loc2 = dislist[0]['class'].split('^')[0].trim(); // Take the trailing * from the edge for I/F's
-						loc2 = loc2+'*^';					
-						dislist[0]['class'] = loc2;
-						ctr++;
+						// loc2 = dislist[0]['class'].split('^')[0].trim(); // Take the trailing * from the edge for I/F's
+						// loc2 = loc2+'*^';					
+						// dislist[0]['class'] = loc2;
+						// ctr++;
 					} else {  // otherwise we must be changing Race.
-						loc2 = dislist[0]['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
-						loc2 = loc2+'*^';
-						dislist[0]['class'] = loc2;
-						ctr++;								
+						// loc2 = dislist[0]['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
+						// loc2 = loc2+'*^';
+						// dislist[0]['class'] = loc2;
+						// ctr++;								
 					} 					
 				}
 			}				
