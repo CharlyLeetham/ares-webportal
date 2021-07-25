@@ -176,9 +176,7 @@ export default Component.extend({
 					cgtr1[ctr1]=[];
 					cgtr1[ctr1]['class'] = value;
 					cgtr1[ctr1]['name'] = dislist[0]['name'].toString().toLowerCase();
-					cgtr1[ctr1]['rating'] = dislist[0]['desc'];
-					ctr1++;
-					
+					cgtr1[ctr1]['rating'] = dislist[0]['desc'];					
 					// Set this trait as disabled in the drop list for traits.
 					dislist[0]['disabled'] = true;
 				} else { // If there is a match
@@ -194,12 +192,13 @@ export default Component.extend({
 						// dislist[0]['class'] = loc2;
 						// ctr++;
 					} else {  // otherwise we must be changing Race.
-						// loc2 = dislist[0]['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
-						// loc2 = loc2+'*^';
-						// dislist[0]['class'] = loc2;
+						loc2 = tmplist[0]['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
+						loc2 = loc2+'*^';
+						tmplist[0]['class'] = loc2;
 						// ctr++;								
 					} 					
 				}
+				ctr1++;				
 			}				
 
 			/// Debugging /////
