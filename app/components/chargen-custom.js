@@ -92,7 +92,7 @@ export default Component.extend({
 		/// traittype = Edge or Hinderance
 		/// fw = ICF or Race
 		
-		var cgtrnewedg=[], i, en, specchar, dislist, exedg, traitclass, loc2, trexcludes, cgtr1=[], ctr, nesize, eesize, swriftstmp;
+		var cgtrnewedg=[], i, en, specchar, dislist, exedg, traitclass, loc2, trexcludes, cgtr1=[], ctr, nesize, eesize, swriftstmp, tmplist;
 		
 		
 		// Get either edges or hinderances based on the traittype passed in.
@@ -152,7 +152,7 @@ export default Component.extend({
 			// console.log (newedgarray);
 			// console.log (traittype);
 			// console.log (fw);		
-			console.log ('cgtrnewedg:');
+			// console.log ('cgtrnewedg:');
 			// console.log (cgtrnewedg);
 			// console.log ('New Edge Array: ');
 			// console.log (newedgarray);			
@@ -166,23 +166,18 @@ export default Component.extend({
 			var ctr1=0;
 			for ( const [key, value] of Object.entries(newedgarray) ) {  // We need to find matching traits and apply the appropriate special characters to the end.
 				en = value.split(specchar)[0].toLowerCase().trim(); // Take the trailing * or ^ from the edge for I/F's
-				var tmplist;
 				tmplist = Object.values(cgtrnewedg).filter(slots => slots.name.toString().toLowerCase() == en);
-				
-				dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the trait list to an array and filter for any entries that match the new traits selected.
-				///// Debugging /////
-				console.log (en);
-				console.log (Object.keys(tmplist).length);
-				///// End Debug /////
-				cgtr1[ctr1]=[];
-				cgtr1[ctr1]['class'] = value;
-				cgtr1[ctr1]['name'] = dislist[0]['name'].toString().toLowerCase();
-				cgtr1[ctr1]['rating'] = dislist['desc'];
-				ctr1++;
-			}
+				if ( Object.keys(tmplist).length = 0 ) { // If there's no match in the existing edge array, we want this entry
+					dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the trait list to an array and filter for any entries that match the new traits selected.			
+					cgtr1[ctr1]=[];
+					cgtr1[ctr1]['class'] = value;
+					cgtr1[ctr1]['name'] = dislist[0]['name'].toString().toLowerCase();
+					cgtr1[ctr1]['rating'] = dislist['desc'];
+					ctr1++;
+				}
+			}	
 			///// Debugging /////
-		
-			// console.log (cgtr1);
+			console.log (cgtr1);
 			///// End Debug /////			
 		}
 					
