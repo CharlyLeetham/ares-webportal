@@ -200,6 +200,8 @@ export default Component.extend({
 				/// Debugging /////
 				console.log ('Dislist');			
 				console.log (dislist);
+				console.log ('TmpList');			
+				console.log (tmplist);
 				console.log ('Traittype: ' + traittype);
 
 				///// End Debug /////				
