@@ -142,7 +142,6 @@ export default Component.extend({
 						console.log (exedg);
 					}
 					///// End Debug /////
-					
 					en = desc['name'];					
 					dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the trait list to an array and filter for any entries that match the new traits selected.				
 					if (desc['class'].includes('^')) {						
@@ -251,8 +250,8 @@ export default Component.extend({
 			// console.log ( 'here' );
 			// console.log ( 'Sysedg' );
 			// console.log ( sysedg );
-			console.log ( 'Final Traits' );
-			console.log ( finaltraits );
+			// console.log ( 'Final Traits' );
+			// console.log ( finaltraits );
 			this.set('char.custom.sysedges', sysedg); //Send the new dropdown back to the page. 
 			this.set('char.custom.cgedges', finaltraits); //Send the new array back to the page for nice display. 	
 			this.set('char.custom.cgedgesfw', finaltraits); //Send the new array back to the page for nice display. 	
