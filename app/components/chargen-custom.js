@@ -92,7 +92,7 @@ export default Component.extend({
 		/// traittype = Edge or Hinderance
 		/// fw = ICF or Race
 		
-		var cgtrnewedg=[], i, en, specchar, dislist, exedg, traitclass;
+		var cgtrnewedg=[], i, en, specchar, dislist, exedg, traitclass, loc2, trexcludes, cgtr1=[], ctr, nesize, eesize, swriftstmp;
 		
 		
 		// Get either edges or hinderances based on the traittype passed in.
@@ -182,7 +182,6 @@ export default Component.extend({
 		// Clear the edges list for the framework
 		//If there are new edges or hinderances, go through and set these to disabled in the edge drop down.
 		
-		var loc2, trexcludes, cgtr1=[], ctr, nesize, eesize, swriftstmp;
 		if ( newedgarray ) {	
 			ctr = 0; //counter for new trait array that will be created of traits common to both race and icf.		
 			for ( const [key, value] of Object.entries(newedgarray) ) {  // We need to find matching traits and apply the appropriate special characters to the end.
