@@ -174,67 +174,77 @@ export default Component.extend({
 					cgtr1[ctr1]['name'] = dislist[0]['name'].toString().toLowerCase();
 					cgtr1[ctr1]['rating'] = dislist[0]['desc'];
 					ctr1++;
+					
+					// Set this trait as disabled in the drop list for traits.
+					dislist[0]['disabled'] = true;
+				} else { // If there is a match
+
+					// set disabled to true 
+					dislist[0]['disabled'] = true;
+					if ( traittype == 'hind' ) { // What are we checking for here exactly?????
+						trexcludes = this.ck_excludes(dislist, sysedg, traittype);
+					}	
+					if ( fw =='icf' ) { // If so, are looking at changing the ICF?						
+						loc2 = dislist[0]['class'].split('^')[0].trim(); // Take the trailing * from the edge for I/F's
+						loc2 = loc2+'*^';					
+						dislist[0]['class'] = loc2;
+						ctr++;
+					} else {  // otherwise we must be changing Race.
+						loc2 = dislist[0]['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
+						loc2 = loc2+'*^';
+						dislist[0]['class'] = loc2;
+						ctr++;								
+					} 					
 				}
 			}				
 
-
+			/// Debugging /////
+			// if (traittype == 'edge') {
+				console.log (dislist);			
+			// }
+			///// End Debug /////
 			// cgtr1 now has a list of the new traits that aren't already on the character.
 		
 			//If there are new traits, go through and set these to disabled in the edge drop down.
 			
 			ctr = 0; //counter for new trait array that will be created of traits common to both race and icf.		
 			for ( const [key, value] of Object.entries(newedgarray) ) {  // We need to find matching traits and apply the appropriate special characters to the end.
-				en = value.split(specchar)[0].toLowerCase().trim(); // Take the trailing * or ^ from the edge for I/F's			
-				dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
-			
-				console.log(dislist);
-				
-				for ( const [key1, value1] of Object.entries(dislist) ) {
-					value1['disabled'] = true; //Set disabled for this element to true
-					
-					if ( traittype == 'hind' ) { // What are we checking for here exactly?????
-						trexcludes = this.ck_excludes(dislist, sysedg, traittype);
-					}
-					
-					///// Debugging /////
-					// console.log ( 'cgtrnewedg:');
-					// console.log ( cgtrnewedg );
-					///// End Debug /////
-				}
-					
-				if ( cgtrnewedg.length > 0 ) {  // Are there existing traits? Then, check to see if the trait already exists in the new array. This allows for Race and ICF to add the same things. 
-					for ( const [key2, value2] of Object.entries(cgtrnewedg) ) {					
-						if (value2['name'].toLowerCase().startsWith(en)) { //Does the name in the array of traits for the fw selected, match one that is already set on the character?								
-							if ( fw =='icf' ) { // If so, are looking at changing the ICF?						
-								loc2 = value2['class'].split('^')[0].trim(); // Take the trailing * from the edge for I/F's
-								loc2 = loc2+'*^';					
-								cgtrnewedg[key2]['class'] = loc2;
-								ctr++;
-							} else {  // otherwise we must be changing Race.
-								loc2 = value2['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
-								loc2 = loc2+'*^';
-								cgtrnewedg[key2]['class'] = loc2;
-								ctr++;								
-							} 						
-						}					
-					}
+				// en = value.split(specchar)[0].toLowerCase().trim(); // Take the trailing * or ^ from the edge for I/F's			
+				// dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
+						
+				// if ( cgtrnewedg.length > 0 ) {  // Are there existing traits? Then, check to see if the trait already exists in the new array. This allows for Race and ICF to add the same things. 
+					// for ( const [key2, value2] of Object.entries(cgtrnewedg) ) {					
+						// if (value2['name'].toLowerCase().startsWith(en)) { //Does the name in the array of traits for the fw selected, match one that is already set on the character?								
+							// if ( fw =='icf' ) { // If so, are looking at changing the ICF?						
+								// loc2 = value2['class'].split('^')[0].trim(); // Take the trailing * from the edge for I/F's
+								// loc2 = loc2+'*^';					
+								// cgtrnewedg[key2]['class'] = loc2;
+								// ctr++;
+							// } else {  // otherwise we must be changing Race.
+								// loc2 = value2['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
+								// loc2 = loc2+'*^';
+								// cgtrnewedg[key2]['class'] = loc2;
+								// ctr++;								
+							// } 						
+						// }					
+					// }
 					// Combine cgtrnewedg and newedgarray - removing any duplicates.  
 					
 					// Find out which is smaller, so we can use that as our base.
-					eesize = Object.keys(cgtrnewedg).length;
-					nesize = Object.keys(newedgarray).length;
+					// eesize = Object.keys(cgtrnewedg).length;
+					// nesize = Object.keys(newedgarray).length;
 					
-					if ( eesize < nesize ) {
-						swriftstmp = cgtrnewedg;
-					} else {
-						swriftstmp = newedgarray;
-					}
+					// if ( eesize < nesize ) {
+						// swriftstmp = cgtrnewedg;
+					// } else {
+						// swriftstmp = newedgarray;
+					// }
 					
-					for ( const [newkey, newval] of Object.entries(swriftstmp) ) {
+					// for ( const [newkey, newval] of Object.entries(swriftstmp) ) {
 						// console.log ( 'newkey: ' + newkey);
 						// console.log ( 'newval: ');
 						// console.log ( newval);
-					}
+					// }
 						
 						
 					
