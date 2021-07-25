@@ -194,6 +194,7 @@ export default Component.extend({
 			var ctr1=0;
 			for ( const [key, value] of Object.entries(newedgarray) ) {  // We need to find matching traits and apply the appropriate special characters to the end.
 				en = value.split(specchar)[0].toLowerCase().trim(); // Take the trailing * or ^ from the edge for I/F's
+				console.log ('En: ' + en);
 				tmplist = Object.values(cgtrnewedg).filter(slots => slots.name.toString().toLowerCase() == en);
 				dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the trait list to an array and filter for any entries that match the new traits selected.
 
@@ -205,8 +206,7 @@ export default Component.extend({
 				console.log ('Traittype: ' + traittype);
 
 				///// End Debug /////				
-				if ( Object.keys(tmplist).length == 0 ) { // If there's no match in the existing edge array, we want this entry	
-						console.log ('Is this where we are? ');				
+				if ( Object.keys(tmplist).length == 0 && Object.keys(dislist).length > 0 ) { // If there's no match in the existing edge array, we want this entry				
 					cgtr1[ctr1]=[];
 					cgtr1[ctr1]['class'] = value;
 					cgtr1[ctr1]['name'] = dislist[0]['name'].toString().toLowerCase();
