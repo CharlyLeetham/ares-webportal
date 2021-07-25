@@ -263,7 +263,7 @@ export default Component.extend({
 							// cgtr1[key2]['class'] = value2['class'];
 							
 							///// Debugging /////
-							console.log (cgtrnewedg.length());
+							console.log (Object.keys(cgtrnewedg).length);
 							///// End Debug /////
 						}
 					
