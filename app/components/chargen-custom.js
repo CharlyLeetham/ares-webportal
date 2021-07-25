@@ -213,16 +213,17 @@ export default Component.extend({
 					// Set this trait as disabled in the drop list for traits.
 					dislist[0]['disabled'] = true;
 					ctr1++;	
-				} else { // If there is a match
-
+				} else { // If there is a match or not
+					if ( Object.keys(dislist).length > 0 ) {
 					// set disabled to true 
 					dislist[0]['disabled'] = true;
-					if ( traittype == 'hind' ) { // What are we checking for here exactly?????
-						trexcludes = this.ck_excludes(dislist, sysedg, traittype);
-					}	
-					loc2 = dislist[0]['name']; // Get the nice name from System Edges file
-					loc2 = loc2+'*^'; // Add the right special characters to it.
-					tmplist[0]['class'] = loc2;												
+						if ( traittype == 'hind' ) { // What are we checking for here exactly?????
+							trexcludes = this.ck_excludes(dislist, sysedg, traittype);
+						}	
+						loc2 = dislist[0]['name']; // Get the nice name from System Edges file
+						loc2 = loc2+'*^'; // Add the right special characters to it.
+						tmplist[0]['class'] = loc2;
+					}
 				}
 			
 			}
