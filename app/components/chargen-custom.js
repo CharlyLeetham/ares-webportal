@@ -178,25 +178,9 @@ export default Component.extend({
 			for (const [key, value] of Object.entries(newedgarray)) {
 				en = value.split(specchar)[0].toLowerCase().trim(); // Take the trailing * or ^ from the edge for I/F's
 				loc1=value;
-				
-				///// Debugging /////
-				// if ( traittype=='edge' ) {
-					// console.log ( 'checking en: '+key+' '+value );					
-					// console.log ( 'En: '+en );
-				// }
-				///// End Debug /////
-				
+							
 				dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
-
-				///// Debugging /////
-				// if ( traittype == 'edge' ) {
-					// console.log( 'Dislist: ' );
-					// console.log ( dislist );
-					// console.log ( 'Step 1' );
-				// }
-				// continue;
-				///// End Debug /////
-				
+			
 				for (const [key1, value1] of Object.entries(dislist)) {
 					value1['disabled'] = true; //Set disabled for this element to true
 					
@@ -211,7 +195,6 @@ export default Component.extend({
 				}
 					
 				if (cgtrnewedg.length > 0) {  // Are there existing traits? Then, check to see if the trait already exists in the new array. This allows for Race and ICF to add the same things. 
-					
 					for (const [key2, value2] of Object.entries(cgtrnewedg)) {
 						
 						///// Debugging /////
@@ -275,14 +258,7 @@ export default Component.extend({
 							///// End Debug /////
 						}
 					
-					}
-					///// Debugging /////
-					if ( en == 'alertness' || en == 'ab psionics' ) {
-						// console.log ( 'Key2: ' + key2 + ' Value2: ' + value2['class'] + ' en: ' + en );	
-						console.log ( 'cgtr1: ' );	
-						console.log ( cgtr1 );	
-					}
-					///// End Debug /////						
+					}					
 				} else {
 					// We have no existing traits, so we have to write the array. 
 					for (const [key2, value2] of Object.entries(newedgarray)) {	
@@ -293,6 +269,10 @@ export default Component.extend({
 						///// End Debug /////
 					}
 				}
+				///// Debugging /////
+				console.log ( 'cgtr1: ' );	
+				console.log ( cgtr1 );	
+				///// End Debug /////					
 			}
 		}
 		
