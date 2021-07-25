@@ -82,6 +82,16 @@ export default Component.extend({
 
 		return result;
 	},
+	
+	mergeArrays: function(...arrays) {
+		var newarr=[];
+		
+		arrays.forEach( array => {
+			newarr.push(...array);
+		});
+		
+		return newarr;
+	},	
  
 	changedges: function( sysedg, newedgarray, traittype, fw ) {
 		// This changes the arrays on the page for Hinderances and Edges based on the Race / ICF that has been changed. Whilst something is returned, the return value is not used. 
@@ -289,16 +299,6 @@ export default Component.extend({
 			this.set('char.custom.cghindfw', cgtr1); //Send the new array back to the page for nice display.			
 		}
 		return (cgtr1);
-	},
-	
-	mergeArrays: function(...arrays) {
-		var newarr=[];
-		
-		arrays.forEach( array => {
-			newarr.push(...array);
-		});
-		
-		return newarr;
 	},
 	
 	checktrait: function(swraceall, swiconicfall, swrace, swiconicf, chosenifarray, newval, traittype) {	
