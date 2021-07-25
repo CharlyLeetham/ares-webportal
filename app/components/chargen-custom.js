@@ -216,6 +216,8 @@ export default Component.extend({
 				}
 					
 				if (cgtrnewedg.length > 0) {  // Are there existing traits? Then, check to see if the trait already exists in the new array. This allows for Race and ICF to add the same things. 
+					var ctr = 0 //counter for new trait array that will be created of traits common to both race and icf.
+					
 					for (const [key2, value2] of Object.entries(cgtrnewedg)) {
 						
 						///// Debugging /////
@@ -227,6 +229,7 @@ export default Component.extend({
 						
 						if (value2['name'].toLowerCase().startsWith(en)) { //Does the name in the array of traits for the fw selected, match one that is already set on the character?
 						
+							var cgtr1[ctr]=[]; // create an element in our array.
 							///// Debugging /////
 							// console.log ( 'We have a match: ');
 							// console.log ( 'Key2: ' +key2 );
@@ -237,7 +240,7 @@ export default Component.extend({
 							if ( fw =='icf' ) { // If so, are looking at changing the ICF?
 								loc2 = value2['class'].split('^')[0].trim(); // Take the trailing * from the edge for I/F's
 								loc2 = loc2+'*^';
-								cgtr1[key2]['class'] = loc2;
+								cgtr1[ctr]['class'] = loc2;
 								// loc1 = '';
 							} else {  // otherwise we must be changing Race.
 								loc2 = value2['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
@@ -247,8 +250,7 @@ export default Component.extend({
 								// console.log ( value2['class'] );	
 								// console.log ( 'loc2:' +  loc2);
 								///// End Debug /////									
-								cgtr1[key2] = [];
-								cgtr1[key2]['class'] = loc2;
+								cgtr1[ctr]['class'] = loc2;
 								///// Debugging /////
 								// console.log ( 'cgtr1:');
 								// console.log ( cgtr1 );
@@ -274,16 +276,18 @@ export default Component.extend({
 							
 							///// Debugging /////
 							// console.log ( '*No match* Key2: ' + key2 + 'Value2: ' + value2['class'] );	
-							console.log ( 'cgtr1['+key2+']: '+ cgtr1[key2]['class'] );	
+							// console.log ( 'cgtr1['+key2+']: '+ cgtr1[key2]['class'] );	
 							// console.log ( 'en:' +  en);									
 							///// End Debug /////
 						}
 					///// Debugging /////
 					if ( en == 'alertness' || en == 'ab psionics' ) {
 						// console.log ( 'Key2: ' + key2 + ' Value2: ' + value2['class'] + ' en: ' + en );	
-						// console.log ( 'cgtr1: ' );	
-						// console.log ( cgtr1 );	
+						console.log ( 'cgtr1: ' );	
+						console.log ( cgtr1 );	
 					}
+					
+					ctr++;
 					///// End Debug /////						
 					}
 				} else {
