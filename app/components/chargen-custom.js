@@ -83,7 +83,7 @@ export default Component.extend({
 		return result;
 	},
  
-	changedges: function(sysedg, newedgarray, traittype, fw) {
+	changedges: function( sysedg, newedgarray, traittype, fw ) {
 		// This changes the arrays on the page for Hinderances and Edges based on the Race / ICF that has been changed. Whilst something is returned, the return value is not used. 
 		
 		/// Passed In: ///
@@ -96,7 +96,7 @@ export default Component.extend({
 		
 		
 		// Get either edges or hinderances based on the traittype passed in.
-		if (traittype=='edge') {
+		if ( traittype=='edge' ) {
 			exedg = this.get('char.custom.cgedges');
 		} else {
 			exedg = this.get('char.custom.cghind');		
@@ -104,9 +104,9 @@ export default Component.extend({
 
 
 		// Set the special character to add to the end of edges or hinderances based on the fw passed in.
-		if (fw == 'icf') {
+		if ( fw == 'icf' ) {
 			specchar = '*';
-		} else if (fw == 'race') {
+		} else if ( fw == 'race' ) {
 			specchar ='^';
 		}
 
@@ -121,7 +121,7 @@ export default Component.extend({
 		if ( Object.keys(exedg).length > 1 ) {	// If there are edges or hinderances already set on the character, get them back	
 			i = 0;		
 			if ( fw=='icf' ) { // If we're looking at changing the Iconic Framework, find out which attributes are marked as Racial features. We want to keep these and remove all the ICF ones)
-				for (const[ed, desc] of Object.entries(exedg)) {
+				for ( const[ed, desc] of Object.entries(exedg) ) {
 					if (desc['class'].includes('^')) {
 						cgtrnewedg[i] = [];
 						cgtrnewedg[i]['class']=desc['class'];
@@ -131,7 +131,7 @@ export default Component.extend({
 					}
 				}
 			} else if ( fw=='race') {	// If we're looking at changing the Race, find out which attributes are marked as ICF features. We want to keep these and remove all the race ones)
-				for (const[ed, desc] of Object.entries(exedg)) {
+				for ( const[ed, desc] of Object.entries(exedg) ) {
 					if (desc['class'].includes('*')) {
 						cgtrnewedg[i]=[];
 						cgtrnewedg[i]['class']=desc['class'];
@@ -151,8 +151,8 @@ export default Component.extend({
 			// console.log (newedgarray);
 			// console.log (traittype);
 			// console.log (fw);		
-			console.log ('cgtrnewedg:');
-			console.log (cgtrnewedg);
+			// console.log ('cgtrnewedg:');
+			// console.log (cgtrnewedg);
 			// console.log ('New Edge Array: ');
 			// console.log (newedgarray);			
 		// }
@@ -161,7 +161,7 @@ export default Component.extend({
 		
 		//At this point cgtrnewedg[] should be a list of either ICF or race features only that were previously set. We still need to add the new edges / hinderances to the array.
 		
-		if (cgtrnewedg.length > 0 && newedgarray) {
+		if ( cgtrnewedg.length > 0 && newedgarray ) {
 			var cgtrupd=[];
 			for (i = 0; i < newedgarray.length; i++) {
 			  // console.log('New edge array: ' + newedgarray[i]);
@@ -172,17 +172,17 @@ export default Component.extend({
 		// Clear the edges list for the framework
 		//If there are new edges or hinderances, go through and set these to disabled in the edge drop down.
 		
-		var loc2, trexcludes, cgtr1=[], ctr, nesize, eesize;
-		if (newedgarray) {	
+		var loc2, trexcludes, cgtr1=[], ctr, nesize, eesize, swriftstmp;
+		if ( newedgarray ) {	
 			ctr = 0; //counter for new trait array that will be created of traits common to both race and icf.		
-			for (const [key, value] of Object.entries(newedgarray)) {  // We need to find matching traits and apply the appropriate special characters to the end.
+			for ( const [key, value] of Object.entries(newedgarray) ) {  // We need to find matching traits and apply the appropriate special characters to the end.
 				en = value.split(specchar)[0].toLowerCase().trim(); // Take the trailing * or ^ from the edge for I/F's			
 				dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 			
-				for (const [key1, value1] of Object.entries(dislist)) {
+				for ( const [key1, value1] of Object.entries(dislist) ) {
 					value1['disabled'] = true; //Set disabled for this element to true
 					
-					if (traittype == 'hind') { // What are we checking for here exactly?????
+					if ( traittype == 'hind' ) { // What are we checking for here exactly?????
 						trexcludes = this.ck_excludes(dislist, sysedg, traittype);
 					}
 					
@@ -192,88 +192,45 @@ export default Component.extend({
 					///// End Debug /////
 				}
 					
-				if (cgtrnewedg.length > 0) {  // Are there existing traits? Then, check to see if the trait already exists in the new array. This allows for Race and ICF to add the same things. 
-					for (const [key2, value2] of Object.entries(cgtrnewedg)) {
-						
-						///// Debugging /////
-						// console.log ( 'en: ' + en);
-						// console.log ( 'Key2: ' +key2 );
-						// console.log ( 'Value2:');
-						// console.log ( value2['name'] );
-						///// End Debug /////
-						
-						if (value2['name'].toLowerCase().startsWith(en)) { //Does the name in the array of traits for the fw selected, match one that is already set on the character?
-						
-							///// Debugging /////
-							console.log ( 'Value2: ' + value2['name'] );	
-							console.log ( 'en:' +  en);
-							console.log ( 'ctr:' +  ctr);
-							///// End Debug /////									
+				if ( cgtrnewedg.length > 0 ) {  // Are there existing traits? Then, check to see if the trait already exists in the new array. This allows for Race and ICF to add the same things. 
+					for ( const [key2, value2] of Object.entries(cgtrnewedg) ) {					
+						if (value2['name'].toLowerCase().startsWith(en)) { //Does the name in the array of traits for the fw selected, match one that is already set on the character?								
 							if ( fw =='icf' ) { // If so, are looking at changing the ICF?						
 								loc2 = value2['class'].split('^')[0].trim(); // Take the trailing * from the edge for I/F's
-								loc2 = loc2+'*^';
-								
-								// **** This may not be needed. **** //		
-								//cgtr1[ctr]=[]; // create an element in our array.	
-								// cgtr1[ctr]['class'] = loc2;
-								// cgtr1[ctr]['name'] = value2['name'];
-								// cgtr1[ctr]['rating'] = value2['rating'];
-								// ********************************** //								
+								loc2 = loc2+'*^';					
 								cgtrnewedg[key2]['class'] = loc2;
 								ctr++;
 							} else {  // otherwise we must be changing Race.
 
 								loc2 = value2['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
 								loc2 = loc2+'*^';
-								///// Debugging /////
-								// console.log ( 'Value2:');
-								// console.log ( value2['class'] );	
-								// console.log ( 'loc2:' +  loc2);
-								///// End Debug /////	
-
-								// **** This may not be needed. **** //
-								// cgtr1[ctr]=[]; // create an element in our array.								
-								// cgtr1[ctr]['class'] = loc2;
-								// cgtr1[ctr]['name'] = value2['name'];								
-								// cgtr1[ctr]['rating'] = value2['rating'];
-								// ********************************** //
 								cgtrnewedg[key2]['class'] = loc2;
 								ctr++;								
-								///// Debugging /////
-								// console.log ( 'cgtr1:');
-								// console.log ( cgtr1 );
-								// if (loc2 == 'alertness*^') {
-									// console.log ('alertness*^: ');
-									// console.log ( cgtr1[key2]['class'] );
-									// console.log ( 'Key2: ' + key2 );
-									// console.log ( 'cgtr1: ' ); 
-									// console.log ( cgtr1 );
-								// }
-								///// End Debug /////										
-								// loc1 = '';
-							} 
-							///// Debugging ///// 
-							// console.log ( 'End Loop 1' );
-							// console.log ( 'cgtr1: ' );	
-							// console.log ( cgtr1 );	
-							// console.log ( 'en:' +  en);									
-							///// End Debug /////								
-						} else { //There's no match, but we need to keep the values
-							// cgtr1[key2] = [];
-							// cgtr1[key2]['class'] = value2['class'];
-							
-							// We need to find out which is longer. The existing traits or the new traits (some frameworks will add more than what was there to begin with. Get the length of each object to start.
-							nesize = Object.keys(newedgarray).length;
-							eesize = Object.keys(cgtrnewedg).length
-							
-							///// Debugging /////
-							console.log ( 'nesize: ' + nesize + ' eesize: ' + eesize  );
-							///// End Debug /////
-						}
+							} 						
+						}					
+					}
+					// Combine cgtrnewedg and newedgarray - removing any duplicates.  
 					
-					}					
-				} else {
-					// We have no existing traits, so we have to write the array. 
+					// Find out which is smaller, so we can use that as our base.
+					ee = Object.keys(cgtrnewedg).length;
+					ne = Object.keys(newedgarray).length;
+					
+					if ( ee < ne ) {
+						swriftstmp = cgtrnewedg;
+					} else {
+						swriftstmp = newedgarray;
+					}
+					
+					for ( const [newkey, newval] of Object.entries(swriftstmp) ) {
+						console.log ( 'newkey: ' + newkey);
+						console.log ( 'newval: ');
+						console.log ( newval);
+					}
+						
+						
+					
+					
+				} else { // We have no existing traits, so we have to write the array. 
 					for (const [key2, value2] of Object.entries(newedgarray)) {	
 						///// Debugging /////
 						// console.log ( 'Key2: ' +key2 );
