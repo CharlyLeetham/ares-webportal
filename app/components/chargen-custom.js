@@ -172,13 +172,11 @@ export default Component.extend({
 		// Clear the edges list for the framework
 		//If there are new edges or hinderances, go through and set these to disabled in the edge drop down.
 		
-		var loc1, loc2, newclass, index, trexcludes, cgtr1=[];
+		var loc2, trexcludes, cgtr1=[], ctr;
 		if (newedgarray) {	
-			var ctr = 0; //counter for new trait array that will be created of traits common to both race and icf.		
-			for (const [key, value] of Object.entries(newedgarray)) {
-				en = value.split(specchar)[0].toLowerCase().trim(); // Take the trailing * or ^ from the edge for I/F's
-				loc1=value;
-							
+			ctr = 0; //counter for new trait array that will be created of traits common to both race and icf.		
+			for (const [key, value] of Object.entries(newedgarray)) {  // We need to find matching traits and apply the appropriate special characters to the end.
+				en = value.split(specchar)[0].toLowerCase().trim(); // Take the trailing * or ^ from the edge for I/F's			
 				dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 			
 				for (const [key1, value1] of Object.entries(dislist)) {
@@ -216,6 +214,7 @@ export default Component.extend({
 								loc2 = value2['class'].split('^')[0].trim(); // Take the trailing * from the edge for I/F's
 								loc2 = loc2+'*^';
 								cgtr1[ctr]['class'] = loc2;
+								cgtr1[ctr]['name'] = value2['name'];
 								ctr++;
 							} else {  // otherwise we must be changing Race.
 								cgtr1[ctr]=[]; // create an element in our array.
@@ -227,6 +226,7 @@ export default Component.extend({
 								// console.log ( 'loc2:' +  loc2);
 								///// End Debug /////									
 								cgtr1[ctr]['class'] = loc2;
+								cgtr1[ctr]['name'] = value2['name'];								
 								ctr++;								
 								///// Debugging /////
 								// console.log ( 'cgtr1:');
