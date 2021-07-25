@@ -125,6 +125,8 @@ export default Component.extend({
 		if (traittype == 'hind') {
 			console.log ('Exedg: ');
 			console.log (exedg);
+			console.log ('newedgarray: ');
+			console.log (newedgarray);
 		}
 		///// End Debug /////
 				
