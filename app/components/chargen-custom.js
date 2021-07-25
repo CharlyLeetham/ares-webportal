@@ -202,7 +202,8 @@ export default Component.extend({
 			}
 			///// End Debug /////
 			
-			const obj = Object.assign({}, cgtr1, cgtrnewedg);
+			var obj=[];
+			obj.push(cgtr1,cgtrnewedg);
 			console.log (obj);
 			// cgtr1 now has a list of the new traits that aren't already on the character.
 		
