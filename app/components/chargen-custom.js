@@ -203,7 +203,7 @@ export default Component.extend({
 					tmplist[0]['class'] = loc2;												
 				}
 				ctr1++;				
-			}				
+			}
 
 			/// Debugging /////
 			// if (traittype == 'edge') {
@@ -211,9 +211,10 @@ export default Component.extend({
 				// console.log (cgtrnewedg);			
 			// }
 			///// End Debug /////
-			
-			finaltraits = this.mergeArrays(cgtr1,cgtrnewedg);
-	
+		}	
+		
+		finaltraits = this.mergeArrays(cgtr1,cgtrnewedg);	
+
 		// sort the data
 		finaltraits.sort(function (x, y) {
 			let a = x.name.toLowerCase(),
