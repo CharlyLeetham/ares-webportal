@@ -136,6 +136,7 @@ export default Component.extend({
 				for ( const[ed, desc] of Object.entries(exedg) ) {
 					///// Debugging /////
 						console.log ('Checking  ICF ');
+						console.log ('Trait Type: '+traittype);
 						console.log ('Exeedg: ');
 						console.log (exedg);
 					///// End Debug /////
