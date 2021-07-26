@@ -455,7 +455,7 @@ export default Component.extend({
 		console.log ( 'Hind: ' + Object.keys(exhind).length );		
 		
 		// Reset attributes for ICF set to None
-		if ( curricf['class'].toLowerCase() == 'none' && Object.keys(exedg).length > 0 ) {
+		if ( curricf['class'].toLowerCase() == 'none' && Object.keys(exedg).length > 1 ) {
 			console.log ('Loop 1');
 			for (const[ed, desc] of Object.entries(exedg)) {
 				if (desc['class'].endsWith('*^')) {
