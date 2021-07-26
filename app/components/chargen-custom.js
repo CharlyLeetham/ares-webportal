@@ -476,6 +476,9 @@ export default Component.extend({
 					cgtr1[i]='';
 				}
 			}
+			
+			console.log ( ' Cgtr1 size: ' + Object.keys(cgtr1).length );
+			console.log ( cgtr1 );
 		}
 		
 		// Reset attributes for Race set to None
