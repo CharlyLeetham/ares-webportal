@@ -130,7 +130,7 @@ export default Component.extend({
 		}
 		///// End Debug /////
 				
-		if ( Object.keys(exedg).length > 1 ) {	// If there are edges or hinderances already set on the character, get them back	
+		if ( Object.keys(exedg).length > 0 ) {	// If there are edges or hinderances already set on the character, get them back	
 			i = 0;		
 			if ( fw=='icf' ) { // If we're looking at changing the Iconic Framework, find out which attributes are marked as Racial features. We want to keep these and remove all the ICF ones)
 				for ( const[ed, desc] of Object.entries(exedg) ) {
@@ -452,116 +452,116 @@ export default Component.extend({
 		console.log ( 'Edg: ' + Object.keys(exedg).length );		
 		console.log ( 'Edg Array: ' );
 		console.log ( exedg );		
-		console.log ( 'Hind: ' + Object.keys(exhind).length );		
-		
-		// Reset attributes for ICF set to None
-		if ( curricf['class'].toLowerCase() == 'none' && Object.keys(exedg).length > 1 ) {
-			console.log ('Loop 1');
-			for (const[ed, desc] of Object.entries(exedg)) {
-				if (desc['class'].endsWith('*^')) {
-					cgtr1[i]=[];
-					newclass = desc['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
-					newclass =  newclass+"^";
-					cgtr1[i]['class']=newclass;
-					cgtr1[i]['name']=desc['name'];
-					cgtr1[i]['rating']=desc['rating'];
-					i=i+1;
-				} else if (desc['class'].endsWith('^')) {
-					cgtr1[i] = [];
-					cgtr1[i]['class']=desc['class'];
-					cgtr1[i]['name']=desc['name'];
-					cgtr1[i]['rating']=desc['rating'];
-					i=i+1;
-				} else if (desc['class'].endsWith('*')) {
-					cgtr1[i]='';
-				}
-			}
-			
-			console.log ( ' Cgtr1 size: ' + Object.keys(cgtr1).length );
-			console.log ( cgtr1 );
-		}
-		
-		// Reset attributes for Race set to None
-		
-		if ( currrace['class'].toLowerCase() == 'none' && Object.keys(exedg).length > 1) {
-			console.log ('Loop 2');			
-			for (const[ed, desc] of Object.entries(exedg)) {
-				if (desc['class'].endsWith('*^')) {
-					cgtr1[i]=[];
-					newclass = desc['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
-					newclass =  newclass+"*";						
-					cgtr1[i]['class']=newclass;
-					cgtr1[i]['name']=desc['name'];
-					cgtr1[i]['rating']=desc['rating'];
-					i=i+1;
-				} else if (desc['class'].endsWith('*')) {
-					cgtr1[i]=[];
-					cgtr1[i]['class']=desc['class'];
-					cgtr1[i]['name']=desc['name'];
-					cgtr1[i]['rating']=desc['rating'];
-					i=i+1;
-				} else if (desc['class'].endsWith('^')) {
-					cgtr1[i]='';
-				}
-			}
-		}		
-		
-		//Reset Hinderances
-		i = 0;
+		console.log ( 'Hind: ' + Object.keys(exhind).length );	
 
+		// If both Race and ICF are set to none, reset everything
+		
 		if ( curricf['class'].toLowerCase() == 'none' && currrace['class'].toLowerCase() == 'none' ) {
 			console.log ('Loop 2.5');
 			cgtr1[i] = [];
 			cgtr2[i] = [];
-		}
-		
-		if ( curricf['class'].toLowerCase() == 'none' && Object.keys(exhind).length > 1 ) {
-			console.log ('Loop 3');			
-			for (const[ed, desc] of Object.entries(exhind)) {
-				if (desc['class'].endsWith('*^')) {
-					cgtr1[i]=[];
-					newclass = desc['class'].split('*^')[0].trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
-					newclass =  newclass+"^";
-					cgtr1[i]['class']=newclass;
-					cgtr1[i]['name']=desc['name'];
-					cgtr1[i]['rating']=desc['rating'];
-					i=i+1;
-				} else if (desc['class'].endsWith('^')) {
-					cgtr2[i] = [];
-					cgtr2[i]['class']=desc['class'];
-					cgtr2[i]['name']=desc['name'];
-					cgtr2[i]['rating']=desc['rating'];
-					i=i+1;
+		} else {
+			// Reset attributes for ICF set to None
+			if ( curricf['class'].toLowerCase() == 'none' && Object.keys(exedg).length > 1 ) {
+				console.log ('Loop 1');
+				for (const[ed, desc] of Object.entries(exedg)) {
+					if (desc['class'].endsWith('*^')) {
+						cgtr1[i]=[];
+						newclass = desc['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
+						newclass =  newclass+"^";
+						cgtr1[i]['class']=newclass;
+						cgtr1[i]['name']=desc['name'];
+						cgtr1[i]['rating']=desc['rating'];
+						i=i+1;
+					} else if (desc['class'].endsWith('^')) {
+						cgtr1[i] = [];
+						cgtr1[i]['class']=desc['class'];
+						cgtr1[i]['name']=desc['name'];
+						cgtr1[i]['rating']=desc['rating'];
+						i=i+1;
+					} else if (desc['class'].endsWith('*')) {
+						cgtr1[i]='';
+					}
+				}
+				
+				console.log ( ' Cgtr1 size: ' + Object.keys(cgtr1).length );
+				console.log ( cgtr1 );
+			}
+			
+			// Reset attributes for Race set to None
+			
+			if ( currrace['class'].toLowerCase() == 'none' && Object.keys(exedg).length > 1) {
+				console.log ('Loop 2');			
+				for (const[ed, desc] of Object.entries(exedg)) {
+					if (desc['class'].endsWith('*^')) {
+						cgtr1[i]=[];
+						newclass = desc['class'].split('*')[0].trim(); // Take the trailing * from the edge for I/F's
+						newclass =  newclass+"*";						
+						cgtr1[i]['class']=newclass;
+						cgtr1[i]['name']=desc['name'];
+						cgtr1[i]['rating']=desc['rating'];
+						i=i+1;
+					} else if (desc['class'].endsWith('*')) {
+						cgtr1[i]=[];
+						cgtr1[i]['class']=desc['class'];
+						cgtr1[i]['name']=desc['name'];
+						cgtr1[i]['rating']=desc['rating'];
+						i=i+1;
+					} else if (desc['class'].endsWith('^')) {
+						cgtr1[i]='';
+					}
+				}
+			}		
+			
+			//Reset Hinderances
+			i = 0;
+			
+			if ( curricf['class'].toLowerCase() == 'none' && Object.keys(exhind).length > 1 ) {
+				console.log ('Loop 3');			
+				for (const[ed, desc] of Object.entries(exhind)) {
+					if (desc['class'].endsWith('*^')) {
+						cgtr1[i]=[];
+						newclass = desc['class'].split('*^')[0].trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
+						newclass =  newclass+"^";
+						cgtr1[i]['class']=newclass;
+						cgtr1[i]['name']=desc['name'];
+						cgtr1[i]['rating']=desc['rating'];
+						i=i+1;
+					} else if (desc['class'].endsWith('^')) {
+						cgtr2[i] = [];
+						cgtr2[i]['class']=desc['class'];
+						cgtr2[i]['name']=desc['name'];
+						cgtr2[i]['rating']=desc['rating'];
+						i=i+1;
+					}
 				}
 			}
-		}
 
-	    if ( currrace['class'].toLowerCase() == 'none' && Object.keys(exhind).length > 1 ) {
-			console.log ('Loop 4');			
-			for (const[ed, desc] of Object.entries(exhind)) {
-				if (desc['class'].endsWith('*^')) {
-					cgtr1[i]=[];
-					newclass = desc['class'].split('*^')[0].trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
-					newclass =  newclass+"*";
-					cgtr1[i]['class']=newclass;
-					cgtr1[i]['name']=desc['name'];
-					cgtr1[i]['rating']=desc['rating'];
-					i=i+1;
-				} else if (desc['class'].endsWith('*')) {
-					cgtr2[i]=[];
-					cgtr2[i]['class']=desc['class'];
-					cgtr2[i]['name']=desc['name'];
-					cgtr2[i]['rating']=desc['rating'];
-					i=i+1;
+			if ( currrace['class'].toLowerCase() == 'none' && Object.keys(exhind).length > 1 ) {
+				console.log ('Loop 4');			
+				for (const[ed, desc] of Object.entries(exhind)) {
+					if (desc['class'].endsWith('*^')) {
+						cgtr1[i]=[];
+						newclass = desc['class'].split('*^')[0].trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
+						newclass =  newclass+"*";
+						cgtr1[i]['class']=newclass;
+						cgtr1[i]['name']=desc['name'];
+						cgtr1[i]['rating']=desc['rating'];
+						i=i+1;
+					} else if (desc['class'].endsWith('*')) {
+						cgtr2[i]=[];
+						cgtr2[i]['class']=desc['class'];
+						cgtr2[i]['name']=desc['name'];
+						cgtr2[i]['rating']=desc['rating'];
+						i=i+1;
+					}
 				}
 			}
 		}
-		
 		//Reset Heroes Journeys
 		hjtables = [];
 		hjslots = [];
-
-
+		
 		// this.resetcounter(fwname);
 		this.set('char.custom.cgedgesfw', cgtr1); //Send the new array back to the page for nice display. 		
 		this.set('char.custom.cghindfw', cgtr2); //Send the new array back to the page for nice display.
