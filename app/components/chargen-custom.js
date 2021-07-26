@@ -450,7 +450,7 @@ export default Component.extend({
 		i = 0;	
 		
 		// Reset attributes for ICF set to None
-		if ( curricf['class'].toLowerCase() == 'none' ) {
+		if ( curricf['class'].toLowerCase() == 'none'  && Object.keys(exedg).length > 0 ) {
 			for (const[ed, desc] of Object.entries(exedg)) {
 				if (desc['class'].endsWith('*^')) {
 					cgtr1[i]=[];
@@ -474,7 +474,7 @@ export default Component.extend({
 		
 		// Reset attributes for Race set to None
 		
-		if ( currrace['class'].toLowerCase() == 'none') {
+		if ( currrace['class'].toLowerCase() == 'none' && Object.keys(exedg).length > 0) {
 			for (const[ed, desc] of Object.entries(exedg)) {
 				if (desc['class'].endsWith('*^')) {
 					cgtr1[i]=[];
@@ -504,7 +504,7 @@ export default Component.extend({
 			cgtr2[i] = [];
 		}
 		
-		if ( curricf['class'].toLowerCase() == 'none' ) {
+		if ( curricf['class'].toLowerCase() == 'none' && Object.keys(exhind).length > 0 ) {
 			for (const[ed, desc] of Object.entries(exhind)) {
 				if (desc['class'].endsWith('*^')) {
 					cgtr1[i]=[];
@@ -524,7 +524,7 @@ export default Component.extend({
 			}
 		}
 
-	    if ( currrace['class'].toLowerCase() == 'none' ) {
+	    if ( currrace['class'].toLowerCase() == 'none' && Object.keys(exhind).length > 0 ) {
 			for (const[ed, desc] of Object.entries(exhind)) {
 				if (desc['class'].endsWith('*^')) {
 					cgtr1[i]=[];
