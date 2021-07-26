@@ -449,7 +449,7 @@ export default Component.extend({
 		//Reset Edges
 		i = 0;
 
-		console.log ( 'Hind: ' + Object.keys(exhind).length );		
+		console.log ( 'Edg: ' + Object.keys(exedg).length );		
 		console.log ( 'Hind: ' + Object.keys(exhind).length );		
 		
 		// Reset attributes for ICF set to None
