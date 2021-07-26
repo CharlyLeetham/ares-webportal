@@ -450,6 +450,7 @@ export default Component.extend({
 		i = 0;
 
 		console.log ( 'Edg: ' + Object.keys(exedg).length );		
+		console.log ( 'Edg Array: ' + exedg );		
 		console.log ( 'Hind: ' + Object.keys(exhind).length );		
 		
 		// Reset attributes for ICF set to None
