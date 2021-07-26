@@ -483,7 +483,7 @@ export default Component.extend({
 		
 		// Reset attributes for Race set to None
 		
-		if ( currrace['class'].toLowerCase() == 'none' && Object.keys(exedg).length > 0) {
+		if ( currrace['class'].toLowerCase() == 'none' && Object.keys(exedg).length > 1) {
 			console.log ('Loop 2');			
 			for (const[ed, desc] of Object.entries(exedg)) {
 				if (desc['class'].endsWith('*^')) {
@@ -519,7 +519,7 @@ export default Component.extend({
 			cgtr2.length = 0;
 		}
 		
-		if ( curricf['class'].toLowerCase() == 'none' && Object.keys(exhind).length > 0 ) {
+		if ( curricf['class'].toLowerCase() == 'none' && Object.keys(exhind).length > 1 ) {
 			console.log ('Loop 3');			
 			for (const[ed, desc] of Object.entries(exhind)) {
 				if (desc['class'].endsWith('*^')) {
@@ -540,7 +540,7 @@ export default Component.extend({
 			}
 		}
 
-	    if ( currrace['class'].toLowerCase() == 'none' && Object.keys(exhind).length > 0 ) {
+	    if ( currrace['class'].toLowerCase() == 'none' && Object.keys(exhind).length > 1 ) {
 			console.log ('Loop 4');			
 			for (const[ed, desc] of Object.entries(exhind)) {
 				if (desc['class'].endsWith('*^')) {
