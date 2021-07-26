@@ -510,13 +510,9 @@ export default Component.extend({
 		i = 0;
 
 		if ( curricf['class'].toLowerCase() == 'none' && currrace['class'].toLowerCase() == 'none' ) {
+			console.log ('Loop 2.5');
 			cgtr1[i] = [];
 			cgtr2[i] = [];
-			
-			// Testing something
-			
-			cgtr1.length = 0;
-			cgtr2.length = 0;
 		}
 		
 		if ( curricf['class'].toLowerCase() == 'none' && Object.keys(exhind).length > 1 ) {
