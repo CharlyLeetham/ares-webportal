@@ -509,6 +509,11 @@ export default Component.extend({
 		if ( curricf['class'].toLowerCase() == 'none' && currrace['class'].toLowerCase() == 'none' ) {
 			cgtr1[i] = [];
 			cgtr2[i] = [];
+			
+			// Testing something
+			
+			cgtr1.length = 0;
+			cgtr2.length = 0;
 		}
 		
 		if ( curricf['class'].toLowerCase() == 'none' && Object.keys(exhind).length > 0 ) {
