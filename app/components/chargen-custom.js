@@ -447,7 +447,9 @@ export default Component.extend({
 		currrace = this.get('char.custom.charrace');
 		
 		//Reset Edges
-		i = 0;	
+		i = 0;
+
+		console.log ( 'Hind: ' + Object.keys(exhind).length );		
 		
 		// Reset attributes for ICF set to None
 		if ( curricf['class'].toLowerCase() == 'none'  && Object.keys(exedg).length > 0 ) {
