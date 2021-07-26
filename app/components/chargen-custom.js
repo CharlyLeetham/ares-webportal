@@ -504,6 +504,8 @@ export default Component.extend({
 			cgtr2[i] = [];
 		}
 		
+		console.log ( 'Hind: ' + Object.keys(exhind).length );
+		
 		if ( curricf['class'].toLowerCase() == 'none' && Object.keys(exhind).length > 0 ) {
 			for (const[ed, desc] of Object.entries(exhind)) {
 				if (desc['class'].endsWith('*^')) {
