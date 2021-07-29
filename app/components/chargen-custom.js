@@ -131,7 +131,10 @@ export default Component.extend({
 		}
 		///// End Debug /////
 				
-		if ( Object.keys(exedg).length > 0 && Object.keys(exedg[0]).length > 0) {	// If there are edges or hinderances already set on the character, get them back	
+		if ( Object.keys(exedg).length > 0 && Object.keys(exedg[0]).length > 0) {	
+		
+								console.log ('here2');
+		// If there are edges or hinderances already set on the character, get them back	
 			i = 0;		
 			if ( fw=='icf' ) { // If we're looking at changing the Iconic Framework, find out which attributes are marked as Racial features. We want to keep these and remove all the ICF ones)
 				for ( const[ed, desc] of Object.entries(exedg) ) {
@@ -170,8 +173,6 @@ export default Component.extend({
 				}
 			}
 		}
-		
-					console.log ('here2');
 		
 		
 		// At this point, cgtrnewedg is a nicely formatted array of the traits we want to keep. (Edges or Hinderances depending on the cycle).
