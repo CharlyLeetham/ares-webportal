@@ -156,7 +156,8 @@ export default Component.extend({
 				}
 			} else if ( fw=='race') {	// If we're looking at changing the Race, find out which attributes are marked as ICF features. We want to keep these and remove all the race ones)
 				
-								console.log ('here2');
+								console.log ( 'Length of exedg[0]: ' );
+								console.log ( Object.keys(exedg[0]).length );
 				for ( const[ed, desc] of Object.entries(exedg)&& Object.keys(exedg[0]).length > 0 ) {
 					///// Debugging /////
 						console.log ('Checking  Race ');
