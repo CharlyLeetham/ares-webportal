@@ -98,7 +98,7 @@ export default Component.extend({
 		
 		/// Passed In: ///
 		/// sysedg = All System edges
-		/// newedgarray = Edges for selected ICF
+		/// newedgarray = Edges for selected framework
 		/// traittype = Edge or Hinderance
 		/// fw = ICF or Race
 		
@@ -171,6 +171,7 @@ export default Component.extend({
 			}
 		}
 		
+					console.log ('here2');
 		
 		
 		// At this point, cgtrnewedg is a nicely formatted array of the traits we want to keep. (Edges or Hinderances depending on the cycle).
