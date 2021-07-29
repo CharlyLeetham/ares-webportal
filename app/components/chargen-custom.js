@@ -136,12 +136,12 @@ export default Component.extend({
 			if ( fw=='icf' ) { // If we're looking at changing the Iconic Framework, find out which attributes are marked as Racial features. We want to keep these and remove all the ICF ones)
 				for ( const[ed, desc] of Object.entries(exedg) ) {
 					///// Debugging /////
-					if ( traittype == 'edge' ) {
+					// if ( traittype == 'edge' ) {
 						console.log ('Checking  ICF ');
 						console.log ('Trait Type: '+traittype);
 						console.log ('Exeedg: ');
 						console.log (exedg);
-					}
+					// }
 					///// End Debug /////
 					en = desc['name'];					
 					dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the trait list to an array and filter for any entries that match the new traits selected.				
@@ -176,8 +176,7 @@ export default Component.extend({
 		// At this point, cgtrnewedg is a nicely formatted array of the traits we want to keep. (Edges or Hinderances depending on the cycle).
 		
 		/// Debugging /////
-		console.log ('here2');
-		if (traittype == 'edge') {
+		// if (traittype == 'edge') {
 			// console.log (sysedg);
 			// console.log ('New Edges: ');
 			// console.log (traittype);
@@ -186,7 +185,7 @@ export default Component.extend({
 			console.log (cgtrnewedg);
 			// console.log ('New Edge Array: ');
 			// console.log (newedgarray);			
-		}
+		// }
 		///// End Debug /////
 
 		
@@ -451,21 +450,21 @@ export default Component.extend({
 		//Reset Edges
 		i = 0;
 
-		console.log ( 'Edg: ' + Object.keys(exedg).length );		
-		console.log ( 'Edg Array: ' );
-		console.log ( exedg );		
-		console.log ( 'Hind: ' + Object.keys(exhind).length );	
+		///// Debugging /////
+		// console.log ( 'Edg: ' + Object.keys(exedg).length );		
+		// console.log ( 'Edg Array: ' );
+		// console.log ( exedg );		
+		// console.log ( 'Hind: ' + Object.keys(exhind).length );	
+		///// End Debugging /////
 
 		// If both Race and ICF are set to none, reset everything
 		
 		if ( curricf['class'].toLowerCase() == 'none' && currrace['class'].toLowerCase() == 'none' ) {
-			console.log ('Loop 2.5');
 			cgtr1[i] = [];
 			cgtr2[i] = [];
 		} else {
 			// Reset attributes for ICF set to None
 			if ( curricf['class'].toLowerCase() == 'none' && Object.keys(exedg).length > 1 ) {
-				console.log ('Loop 1');
 				for (const[ed, desc] of Object.entries(exedg)) {
 					if (desc['class'].endsWith('*^')) {
 						cgtr1[i]=[];
@@ -485,15 +484,11 @@ export default Component.extend({
 						cgtr1[i]='';
 					}
 				}
-				
-				console.log ( ' Cgtr1 size: ' + Object.keys(cgtr1).length );
-				console.log ( cgtr1 );
 			}
 			
 			// Reset attributes for Race set to None
 			
-			if ( currrace['class'].toLowerCase() == 'none' && Object.keys(exedg).length > 1 ) {
-				console.log ('Loop 2');			
+			if ( currrace['class'].toLowerCase() == 'none' && Object.keys(exedg).length > 1 ) {		
 				for (const[ed, desc] of Object.entries(exedg)) {
 					if (desc['class'].endsWith('*^')) {
 						cgtr1[i]=[];
@@ -518,8 +513,7 @@ export default Component.extend({
 			//Reset Hinderances
 			i = 0;
 			
-			if ( curricf['class'].toLowerCase() == 'none' && Object.keys(exhind).length > 1 ) {
-				console.log ('Loop 3');			
+			if ( curricf['class'].toLowerCase() == 'none' && Object.keys(exhind).length > 1 ) {		
 				for (const[ed, desc] of Object.entries(exhind)) {
 					if (desc['class'].endsWith('*^')) {
 						cgtr1[i]=[];
@@ -539,8 +533,7 @@ export default Component.extend({
 				}
 			}
 
-			if ( currrace['class'].toLowerCase() == 'none' && Object.keys(exhind).length > 1 ) {
-				console.log ('Loop 4');			
+			if ( currrace['class'].toLowerCase() == 'none' && Object.keys(exhind).length > 1 ) {		
 				for (const[ed, desc] of Object.entries(exhind)) {
 					if (desc['class'].endsWith('*^')) {
 						cgtr1[i]=[];
