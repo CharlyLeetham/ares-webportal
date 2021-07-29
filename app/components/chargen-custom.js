@@ -127,6 +127,7 @@ export default Component.extend({
 			console.log (exedg);
 			console.log ('newedgarray: ');
 			console.log (newedgarray);
+			console.log ('here');
 		}
 		///// End Debug /////
 				
@@ -462,7 +463,7 @@ export default Component.extend({
 			cgtr2[i] = [];
 		} else {
 			// Reset attributes for ICF set to None
-			if ( curricf['class'].toLowerCase() == 'none' && Object.keys(exedg).length > 0 && Object.keys(exedg[0]).length > 0 ) {
+			if ( curricf['class'].toLowerCase() == 'none' && Object.keys(exedg).length > 1 ) {
 				console.log ('Loop 1');
 				for (const[ed, desc] of Object.entries(exedg)) {
 					if (desc['class'].endsWith('*^')) {
@@ -490,7 +491,7 @@ export default Component.extend({
 			
 			// Reset attributes for Race set to None
 			
-			if ( currrace['class'].toLowerCase() == 'none' && Object.keys(exedg).length > 0 && Object.keys(exedg[0]).length > 0 ) {
+			if ( currrace['class'].toLowerCase() == 'none' && Object.keys(exedg).length > 1 ) {
 				console.log ('Loop 2');			
 				for (const[ed, desc] of Object.entries(exedg)) {
 					if (desc['class'].endsWith('*^')) {
