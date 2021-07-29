@@ -157,7 +157,7 @@ export default Component.extend({
 			} else if ( fw=='race') {	// If we're looking at changing the Race, find out which attributes are marked as ICF features. We want to keep these and remove all the race ones)
 				for ( const[ed, desc] of Object.entries(exedg) ) {
 					///// Debugging /////
-						console.log ('Checking  Race ');
+						// console.log ('Checking  Race ');
 					///// End Debug /////
 					en = desc['name'];
 					dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the trait list to an array and filter for any entries that match the new traits selected.	
@@ -214,7 +214,7 @@ export default Component.extend({
 					dislist[0]['disabled'] = true;
 					ctr1++;	
 				} else if ( Object.keys(tmplist).length == 0 && Object.keys(dislist).length == 0 ) {
-					console.log ('Trait: ' + en + ' not found in ' + traittype + ' file' );
+					// console.log ('Trait: ' + en + ' not found in ' + traittype + ' file' );
 				} else if ( Object.keys(dislist).length > 0 ) { // If there is a match or not
 					// set disabled to true 
 					dislist[0]['disabled'] = true;
