@@ -176,6 +176,7 @@ export default Component.extend({
 		// At this point, cgtrnewedg is a nicely formatted array of the traits we want to keep. (Edges or Hinderances depending on the cycle).
 		
 		/// Debugging /////
+		console.log ('here2');
 		if (traittype == 'edge') {
 			// console.log (sysedg);
 			// console.log ('New Edges: ');
