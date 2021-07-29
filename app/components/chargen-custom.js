@@ -122,13 +122,13 @@ export default Component.extend({
 
 
 		///// Debugging /////
-		if (traittype == 'edge') {
-			console.log ('Exedg: ');
-			console.log (exedg);
-			console.log ('newedgarray: ');
-			console.log (newedgarray);
-			console.log ('here');
-		}
+		// if (traittype == 'edge') {
+			// console.log ('Exedg: ');
+			// console.log (exedg);
+			// console.log ('newedgarray: ');
+			// console.log (newedgarray);
+			// console.log ('here');
+		// }
 		///// End Debug /////
 				
 		if ( Object.keys(exedg).length > 0 && Object.keys(exedg[0]).length > 0) {	
@@ -138,10 +138,10 @@ export default Component.extend({
 				for ( const[ed, desc] of Object.entries(exedg) ) {
 					///// Debugging /////
 					// if ( traittype == 'edge' ) {
-						console.log ('Checking  ICF ');
-						console.log ('Trait Type: '+traittype);
-						console.log ('Exeedg: ');
-						console.log (exedg);
+						// console.log ('Checking  ICF ');
+						// console.log ('Trait Type: '+traittype);
+						// console.log ('Exeedg: ');
+						// console.log (exedg);
 					// }
 					///// End Debug /////
 					en = desc['name'];					
@@ -155,9 +155,6 @@ export default Component.extend({
 					}
 				}
 			} else if ( fw=='race') {	// If we're looking at changing the Race, find out which attributes are marked as ICF features. We want to keep these and remove all the race ones)
-				
-								console.log ( 'Length of exedg[0]: ' );
-								console.log ( Object.keys(exedg[0]).length );
 				for ( const[ed, desc] of Object.entries(exedg) ) {
 					///// Debugging /////
 						console.log ('Checking  Race ');
@@ -184,8 +181,8 @@ export default Component.extend({
 			// console.log ('New Edges: ');
 			// console.log (traittype);
 			// console.log (fw);		
-			console.log ('cgtrnewedg:');
-			console.log (cgtrnewedg);
+			// console.log ('cgtrnewedg:');
+			// console.log (cgtrnewedg);
 			// console.log ('New Edge Array: ');
 			// console.log (newedgarray);			
 		// }
