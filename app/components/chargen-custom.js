@@ -158,7 +158,7 @@ export default Component.extend({
 				
 								console.log ( 'Length of exedg[0]: ' );
 								console.log ( Object.keys(exedg[0]).length );
-				for ( const[ed, desc] of Object.entries(exedg)&& Object.keys(exedg[0]).length > 0 ) {
+				for ( const[ed, desc] of Object.entries(exedg) ) {
 					///// Debugging /////
 						console.log ('Checking  Race ');
 					///// End Debug /////
