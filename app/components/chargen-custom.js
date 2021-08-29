@@ -286,6 +286,13 @@ export default Component.extend({
 		}		
 		
 		newedgarray = chosenifarray[0].edges; // Select the edges for the new if
+		
+		
+		///// Debugging /////
+		console.log ( newedgarray );
+		console.log ( chosenifarray );
+		///// End Debug /////
+		
 		if (newedgarray) {
 			lowedgarray = newedgarray.map(newedgarray => newedgarray.toLowerCase());	
 		}
@@ -777,12 +784,11 @@ export default Component.extend({
 			newedgarray = chosenifarray[0].edges; // Select the edges for the new if
 			newhindarray = chosenifarray[0].hinderances; // Select the hinderances for the new if
 			newcyberarray = chosenifarray[0].cybernetics; // Select the cybernetics for the new if
-			racecompl = chosenifarray[0].complications;			
+			racecompl = chosenifarray[0].complications;				
 			
 			// I/F Check 
-			newtrait = this.checktrait(swraceall, swiconicfall, swrace, swiconicf, chosenifarray, newval, 'race');		
-
-
+			newtrait = this.checktrait(swraceall, swiconicfall, swrace, swiconicf, chosenifarray, newval, 'race');
+			
 			/////  Debugging /////
 			// console.log ('Edges: ');
 			// console.log (newedgarray);
