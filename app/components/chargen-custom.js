@@ -384,10 +384,10 @@ export default Component.extend({
 				if ( traittype == 'race' ) {
 				 console.log( 'Key: ' +key );
 			     var myvar = value.edges;
-				 console.log( 'Val: ' +myvar.length );
+				 console.log( 'Val: ' +myvar );
 				}
 				///// End Debug /////					
-					if ( value.edges != null ) { //Complications exist on the character
+					if ( value.edges ) { //Complications exist on the character
 						for (const [k, v] of Object.entries(value.edges)) {
 							///// Debugging /////
 							if ( traittype == 'race' ) {
