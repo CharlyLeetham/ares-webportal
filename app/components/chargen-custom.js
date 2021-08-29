@@ -379,7 +379,7 @@ export default Component.extend({
 							///// Debugging /////
 							if ( traittype == 'race' ) {
 							 console.log('Key: '+k);
-							 console.log('Vlaue:' +v.toLowerCase());
+							 console.log('Vlaue:' +v);
 							}
 							///// End Debug /////
 							if (ppe_check == true) {
