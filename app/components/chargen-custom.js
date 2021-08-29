@@ -192,6 +192,7 @@ export default Component.extend({
 		//Get all the details for the New Edges passed in. This is need to do the combination of the arrays below.
 		
 		if ( newedgarray ) {
+			console.log ( newedgarray );
 			var ctr1=0;
 			for ( const [key, value] of Object.entries(newedgarray) ) {  // We need to find matching traits and apply the appropriate special characters to the end.
 				en = value.split(specchar)[0].toLowerCase().trim(); // Take the trailing * or ^ from the edge for I/F's
@@ -324,7 +325,7 @@ export default Component.extend({
 				if (complrace && newedgarray) { //Complications exist on the character
 					for (const [k, v] of Object.entries(value.complications)) {
 						///// Debugging /////						
-						console.log ('v: '+v);
+						// console.log ('v: '+v);
 						///// End Debug /////
 						
 						if (v && lowedgarray) {
