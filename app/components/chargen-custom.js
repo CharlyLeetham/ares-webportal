@@ -300,6 +300,7 @@ export default Component.extend({
 		///// End Debug /////
 		
 		if ( newedgarray && newedgarray[0] != null ) {
+			console.log('here2');
 			lowedgarray = newedgarray.map(newedgarray => newedgarray.toLowerCase());	
 		}
 		newhindarray = chosenifarray[0].hinderances; // Select the hinderances for the new if
