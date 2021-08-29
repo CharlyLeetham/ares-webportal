@@ -289,14 +289,14 @@ export default Component.extend({
 		
 		
 		///// Debugging /////
-		if (traittype == 'icf' ) {
-			console.log ( newedgarray );
-			console.log ( newedgarray.length );
-			if ( newedgarray[0] == null ) {
-				console.log('here');
-			}
-			console.log ( chosenifarray );
-		}
+		// if (traittype == 'icf' ) {
+			// console.log ( newedgarray );
+			// console.log ( newedgarray.length );
+			// if ( newedgarray[0] == null ) {
+				// console.log('here');
+			// }
+			// console.log ( chosenifarray );
+		// }
 		///// End Debug /////
 		
 		if ( newedgarray && newedgarray[0] != null ) {
@@ -323,6 +323,7 @@ export default Component.extend({
 
 				if (complrace && newedgarray) { //Complications exist on the character
 					for (const [k, v] of Object.entries(value.complications)) {
+						console.log ('v: '+v);
 						if (v) {
 							var ppe_check = v.includes(rppe) // see if the race has the value
 							var isp_check = v.includes(risp) //see if the race has the value
