@@ -289,8 +289,8 @@ export default Component.extend({
 		
 		
 		///// Debugging /////
-		console.log ( newedgarray );
-		console.log ( chosenifarray );
+		// console.log ( newedgarray );
+		// console.log ( chosenifarray );
 		///// End Debug /////
 		
 		if (newedgarray) {
@@ -379,7 +379,13 @@ export default Component.extend({
 				// }
 				///// End Debug /////				
 				
-				for (const [key, value] of Object.entries(fullsys)) { //Loop through the race values. We want to know which races an Iconic Framework can't have.			
+				for (const [key, value] of Object.entries(fullsys)) { //Loop through the race values. We want to know which races an Iconic Framework can't have.	
+				///// Debugging /////
+				if ( traittype == 'race' ) {
+				 console.log( 'Key: ' +key );
+				 console.log( 'Val: ' +value );
+				}
+				///// End Debug /////					
 					if (value.edges) { //Complications exist on the character
 						for (const [k, v] of Object.entries(value.edges)) {
 							///// Debugging /////
