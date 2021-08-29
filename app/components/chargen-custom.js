@@ -289,8 +289,10 @@ export default Component.extend({
 		
 		
 		///// Debugging /////
-		// console.log ( newedgarray );
-		// console.log ( chosenifarray );
+		if (traittype == 'icf' ) {
+			console.log ( newedgarray );
+			console.log ( chosenifarray );
+		}
 		///// End Debug /////
 		
 		if (newedgarray) {
