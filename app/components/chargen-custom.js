@@ -385,6 +385,9 @@ export default Component.extend({
 				 console.log( 'Key: ' +key );
 			     var myvar = value.edges;
 				 console.log( 'Val: ' +myvar );
+				 if ( myvar) {
+					 console.log ( 'Helloe Worlds' );
+				 }
 				}
 				///// End Debug /////					
 					if ( value.edges ) { //Complications exist on the character
