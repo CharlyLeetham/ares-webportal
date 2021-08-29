@@ -383,7 +383,7 @@ export default Component.extend({
 				///// Debugging /////
 				if ( traittype == 'race' ) {
 				 console.log( 'Key: ' +key );
-				 console.log( 'Val: ' +value );
+				 console.log( 'Val: ' +value.edges );
 				}
 				///// End Debug /////					
 					if (value.edges) { //Complications exist on the character
