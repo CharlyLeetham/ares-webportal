@@ -373,14 +373,20 @@ export default Component.extend({
 				// Check the Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
 				var i = 0;
 				
+				///// Debugging /////
+				if ( traittype == 'race' ) {
+				 console.log( fullsys );
+				}
+				///// End Debug /////				
+				
 				for (const [key, value] of Object.entries(fullsys)) { //Loop through the race values. We want to know which races an Iconic Framework can't have.			
 					if (value.edges) { //Complications exist on the character
 						for (const [k, v] of Object.entries(value.edges)) {
 							///// Debugging /////
-							if ( traittype == 'race' ) {
-							 console.log('Key: '+k);
-							 console.log('Vlaue:' +v);
-							}
+							// if ( traittype == 'race' ) {
+							 // console.log('Key: '+k);
+							 // console.log('Vlaue:' +v);
+							// }
 							///// End Debug /////
 							if (ppe_check == true) {
 								var ppetest = comptypearray.includes(v.toLowerCase());	
