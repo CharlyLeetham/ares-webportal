@@ -191,7 +191,7 @@ export default Component.extend({
 		
 		//Get all the details for the New Edges passed in. This is need to do the combination of the arrays below.
 		
-		if ( newedgarray ) {
+		if ( newedgarray && newedgarray != null ) {
 			console.log ( newedgarray );
 			var ctr1=0;
 			for ( const [key, value] of Object.entries(newedgarray) ) {  // We need to find matching traits and apply the appropriate special characters to the end.
