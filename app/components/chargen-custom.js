@@ -376,8 +376,10 @@ export default Component.extend({
 				for (const [key, value] of Object.entries(fullsys)) { //Loop through the race values. We want to know which races an Iconic Framework can't have.			
 					if (value.edges) { //Complications exist on the character
 						for (const [k, v] of Object.entries(value.edges)) {
-							// console.log('Key: '+k);
-							// console.log('Vlaue:' +v.toLowerCase());
+							///// Debugging /////
+							 console.log('Key: '+k);
+							 console.log('Vlaue:' +v.toLowerCase());
+							///// End Debug /////
 							if (ppe_check == true) {
 								var ppetest = comptypearray.includes(v.toLowerCase());	
 								// Check if the race can use this 
