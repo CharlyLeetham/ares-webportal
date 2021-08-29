@@ -323,8 +323,11 @@ export default Component.extend({
 
 				if (complrace && newedgarray) { //Complications exist on the character
 					for (const [k, v] of Object.entries(value.complications)) {
+						///// Debugging /////						
 						console.log ('v: '+v);
-						if (v) {
+						///// End Debug /////
+						
+						if (v && lowedgarray) {
 							var ppe_check = v.includes(rppe) // see if the race has the value
 							var isp_check = v.includes(risp) //see if the race has the value
 							var cyber_check = v.includes(rcyber) //see if the race has the value
