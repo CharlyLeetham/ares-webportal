@@ -386,10 +386,10 @@ export default Component.extend({
 				 console.log( 'Val: ' +value.edges );
 				}
 				///// End Debug /////					
-					if (value.edges) { //Complications exist on the character
+					if ( value.edges != null ) { //Complications exist on the character
 						for (const [k, v] of Object.entries(value.edges)) {
 							///// Debugging /////
-							if ( traittype == 'race' && v.length > 0 ) {
+							if ( traittype == 'race' ) {
 							 console.log('Key: '+k);
 							 console.log('Vlaue:' +v);
 							}
