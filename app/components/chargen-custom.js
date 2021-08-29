@@ -384,7 +384,7 @@ export default Component.extend({
 				if ( traittype == 'race' ) {
 				 console.log( 'Key: ' +key );
 			     var myvar = value.edges;
-				 if ( myvar ) {
+				 if ( !myvar ) {
 					 console.log ( 'Helloe Worlds' );
 				 }
 				}
