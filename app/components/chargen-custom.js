@@ -383,10 +383,6 @@ export default Component.extend({
 				///// Debugging /////
 				if ( traittype == 'race' ) {
 				 console.log( 'Key: ' +key );
-			     var myvar = value.edges;
-				 if ( !myvar ) {
-					 console.log ( 'Helloe Worlds' );
-				 }
 				}
 				///// End Debug /////					
 					if ( value.edges ) { //Complications exist on the character
@@ -396,6 +392,7 @@ export default Component.extend({
 							 console.log('Key: '+k);
 							 console.log('Vlaue:' +v);
 							}
+						 if ( v ) {
 							///// End Debug /////
 							if (ppe_check == true) {
 								var ppetest = comptypearray.includes(v.toLowerCase());	
@@ -425,7 +422,8 @@ export default Component.extend({
 									evalrace[i]=value.name;	
 									i=i+1;
 								}
-							}	
+							}
+						 }							
 						}
 						
 					}
