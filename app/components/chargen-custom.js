@@ -389,7 +389,7 @@ export default Component.extend({
 					if (value.edges) { //Complications exist on the character
 						for (const [k, v] of Object.entries(value.edges)) {
 							///// Debugging /////
-							if ( traittype == 'race' && v != null ) {
+							if ( traittype == 'race' && v ) {
 							 console.log('Key: '+k);
 							 console.log('Vlaue:' +v);
 							}
