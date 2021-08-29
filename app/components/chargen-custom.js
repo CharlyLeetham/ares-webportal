@@ -389,10 +389,10 @@ export default Component.extend({
 					if (value.edges) { //Complications exist on the character
 						for (const [k, v] of Object.entries(value.edges)) {
 							///// Debugging /////
-							// if ( traittype == 'race' ) {
-							 // console.log('Key: '+k);
-							 // console.log('Vlaue:' +v);
-							// }
+							if ( traittype == 'race' && v != null ) {
+							 console.log('Key: '+k);
+							 console.log('Vlaue:' +v);
+							}
 							///// End Debug /////
 							if (ppe_check == true) {
 								var ppetest = comptypearray.includes(v.toLowerCase());	
