@@ -300,7 +300,6 @@ export default Component.extend({
 		///// End Debug /////
 		
 		if ( newedgarray && newedgarray[0] != null ) {
-			console.log('here2');
 			lowedgarray = newedgarray.map(newedgarray => newedgarray.toLowerCase());	
 		}
 		newhindarray = chosenifarray[0].hinderances; // Select the hinderances for the new if
@@ -324,45 +323,47 @@ export default Component.extend({
 
 				if (complrace && newedgarray) { //Complications exist on the character
 					for (const [k, v] of Object.entries(value.complications)) {
-						var ppe_check = v.includes(rppe) // see if the race has the value
-						var isp_check = v.includes(risp) //see if the race has the value
-						var cyber_check = v.includes(rcyber) //see if the race has the value
-						var nsb_check = v.includes(rnsb) //see if the race has the value
-						var bp_check = v.includes(rbp) //see if the race has the value	
-						if (ppe_check == true) {
-							var ppetest = lowedgarray.some(v => comptypearray.includes(v));
-						}
-
-						if (ppe_check == true) {
-							var ppetest = lowedgarray.some(v => comptypearray.includes(v));
-							// Check if the race can use this 
-						}	
-
-						if (isp_check == true) {
-							var isptest = lowedgarray.some(v => comptypearray2.includes(v));		
-						}											
-						
-						if (nsb_check == true) {
-							var nsbtest = lowedgarray.some(v => comptypearray3.includes(v));		
-						}						
-						
-						if (bp_check == true) {
-							var bptest = lowedgarray.some(v => comptypearray4.includes(v));
-						}
-
-						if (newcyberarray) {
-						}
-
-						if (ppe_check==true || isp_check==true || nsb_check == true || bp_check == true || newcyberarray) {
-							// console.log(en1);
-							en1 = value.name.split('*')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
-							if (evalrace.includes(en1)) {
-								// console.log('in there dummy');
-							} else {
-								evalrace[i]=en1;
-								i = i+1;								
+						if (v) {
+							var ppe_check = v.includes(rppe) // see if the race has the value
+							var isp_check = v.includes(risp) //see if the race has the value
+							var cyber_check = v.includes(rcyber) //see if the race has the value
+							var nsb_check = v.includes(rnsb) //see if the race has the value
+							var bp_check = v.includes(rbp) //see if the race has the value	
+							if (ppe_check == true) {
+								var ppetest = lowedgarray.some(v => comptypearray.includes(v));
 							}
-						}	
+
+							if (ppe_check == true) {
+								var ppetest = lowedgarray.some(v => comptypearray.includes(v));
+								// Check if the race can use this 
+							}	
+
+							if (isp_check == true) {
+								var isptest = lowedgarray.some(v => comptypearray2.includes(v));		
+							}											
+							
+							if (nsb_check == true) {
+								var nsbtest = lowedgarray.some(v => comptypearray3.includes(v));		
+							}						
+							
+							if (bp_check == true) {
+								var bptest = lowedgarray.some(v => comptypearray4.includes(v));
+							}
+
+							if (newcyberarray) {
+							}
+
+							if (ppe_check==true || isp_check==true || nsb_check == true || bp_check == true || newcyberarray) {
+								// console.log(en1);
+								en1 = value.name.split('*')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
+								if (evalrace.includes(en1)) {
+									// console.log('in there dummy');
+								} else {
+									evalrace[i]=en1;
+									i = i+1;								
+								}
+							}
+						}
 					}
 					
 				}
