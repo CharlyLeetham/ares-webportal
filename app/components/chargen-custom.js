@@ -429,7 +429,7 @@ export default Component.extend({
 
 								if (ppe_check==true || isp_check==true || nsb_check == true || bp_check == true || newcyberarray) {
 									
-									// console.log (value.name);
+									console.log (value.name);
 									// We need to determine if the IF has this edge
 									if (!evalrace.includes(value.name)) {
 										evalrace[i]=value.name;	
