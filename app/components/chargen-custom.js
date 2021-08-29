@@ -385,7 +385,7 @@ export default Component.extend({
 				 console.log( 'Key: ' +key );
 			     var myvar = value.edges;
 				 console.log( 'Val: ' +myvar );
-				 if ( myvar) {
+				 if ( myvar && myvar.length > 0 ) {
 					 console.log ( 'Helloe Worlds' );
 				 }
 				}
