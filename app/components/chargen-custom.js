@@ -291,6 +291,7 @@ export default Component.extend({
 		///// Debugging /////
 		if (traittype == 'icf' ) {
 			console.log ( newedgarray );
+			console.log ( newedgarray.length );
 			console.log ( chosenifarray );
 		}
 		///// End Debug /////
