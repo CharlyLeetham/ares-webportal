@@ -952,7 +952,7 @@ export default Component.extend({
 			
 			// What is this really supposed to do now?
 			
-			if ( charhind ) {
+			if ( charhind && charhind[0].length > 0 ) {
 				for ( const[k1, v1] of Object.entries(charhind) ) {
 					if (!v1['class'].endsWith('*^') && !v1['class'].endsWith('*') && !v1['class'].endsWith('^') ) {
 						dislist33 = Object.values(val).filter(slots => slots.name.toString().toLowerCase() == v1['name'].toLowerCase());
@@ -968,7 +968,7 @@ export default Component.extend({
 				}
 			}
 			
-			if ( val && val[0].length > 0 ) {
+			if ( val ) {
 				for (const [key, value] of Object.entries(val)) {
 					dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == value['name'].toLowerCase()); // Convert sysedges to an array and filter for any entries that match the new framework selected.
 					dislist[0]['disabled'] = true;
