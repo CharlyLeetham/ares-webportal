@@ -875,8 +875,8 @@ export default Component.extend({
 			// console.log (val);
 			// console.log ('SysEdges: ');
 			// console.log (sysedges);
-			console.log ('Charedges: ');
-			console.log (charedges);
+			// console.log ('Charedges: ');
+			// console.log (charedges);
 			// console.log ('Charedgesall: ');
 			// console.log (charedgesall);
 			// console.log ('Nonfwedges: ');
@@ -884,24 +884,24 @@ export default Component.extend({
 			///// End Debug /////			
 			
 			// Reset the non-framework and race edges on the character.	
-			if (nonfwedges) {
-				for (const[k3, v3] of Object.entries(nonfwedges)) {
+			if ( nonfwedges ) {
+				for ( const[k3, v3] of Object.entries( nonfwedges ) ) {
 					/////  Debugging /////				
 						// console.log ('Here');
 					///// End debug /////
 					v3['disabled']=false;
-					dislist = Object.values(sysedges).filter(slots => slots.name.toString().toLowerCase() == v3['name'].toLowerCase());
+					dislist = Object.values( sysedges ).filter(slots => slots.name.toString().toLowerCase() == v3['name'].toLowerCase());
 					dislist[0]['disabled'] = false;
-					if (dislist[0]['trexcludes'].length > 0) {
+					if ( dislist[0]['trexcludes'].length > 0 ) {
 						trexcludes = this.ck_includes(dislist, sysedges, 'edge');
 					}				
 				}
 			}
 			
 			if ( charedges && charedges[0].length > 0 ) {
-				for (const[k1, v1] of Object.entries(charedges)) {	
+				for ( const[k1, v1] of Object.entries( charedges ) ) {	
 					/////  Debugging /////				
-						console.log ('Here2');
+						// console.log ('Here2');
 					///// End debug /////			
 					if (!v1['class'].endsWith('*^') && !v1['class'].endsWith('*') && !v1['class'].endsWith('^') ) {
 						dislist33 = Object.values(val).filter(slots => slots.name.toString().toLowerCase() == v1['name'].toLowerCase());
@@ -917,21 +917,21 @@ export default Component.extend({
 				}
 			}
 			
-			if (val) {
-				for (const [key, value] of Object.entries(val)) {
+			if ( val ) {
+				for ( const [key, value] of Object.entries(val) ) {
 					/////  Debugging /////				
-						console.log ('Here3');
+						// console.log ('Here3');
 					///// End debug /////				
 					value['disabled']=false;				
 					dislist = Object.values(sysedges).filter(slots => slots.name.toString().toLowerCase() == value['name'].toLowerCase()); // Convert sysedges to an array and filter for any entries that match the new framework selected.
 					dislist[0]['disabled'] = true;
 				}
 			}
-			this.set('char.custom.cgedgesnofw', val);
+			this.set( 'char.custom.cgedgesnofw', val );
 			
 		},	
 		
-		hindChanged(val) {
+		hindChanged( val ) {
 			var syshind, charhind, dislist, dislist33, trexcludes, nofwhind;
 			syshind = this.get('char.custom.swsyshind');
 			charhind = this.get('char.custom.cghind');
@@ -939,37 +939,43 @@ export default Component.extend({
 		
 			
 			// Reset all hinderances to available.	
-			for (const[k3, v3] of Object.entries(nofwhind)) {
-				v3['disabled']=false;
-				dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == v3['name'].toLowerCase());
-				dislist[0]['disabled'] = false;
-				if (dislist[0]['trexcludes'].length > 0) {
-					trexcludes = this.ck_includes(dislist, syshind, 'hind');
-				}					
+			if ( nofwhind ) {
+				for (const[k3, v3] of Object.entries(nofwhind)) {
+					v3['disabled']=false;
+					dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == v3['name'].toLowerCase());
+					dislist[0]['disabled'] = false;
+					if (dislist[0]['trexcludes'].length > 0) {
+						trexcludes = this.ck_includes(dislist, syshind, 'hind');
+					}					
+				}
 			}
 			
 			// What is this really supposed to do now?
 			
-			for (const[k1, v1] of Object.entries(charhind)) {
-				if (!v1['class'].endsWith('*^') && !v1['class'].endsWith('*') && !v1['class'].endsWith('^') ) {
-					dislist33 = Object.values(val).filter(slots => slots.name.toString().toLowerCase() == v1['name'].toLowerCase());
-					if (dislist33.length < 1) {
-						v1['disabled'] = false;
-						dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == v1['name'].toLowerCase());
-						dislist[0]['disabled'] = false;
-						if (dislist[0]['trexcludes'].length > 0) {
-							trexcludes = this.ck_includes(dislist, syshind, 'hind');
-						}						
+			if ( charhind ) {
+				for ( const[k1, v1] of Object.entries(charhind) ) {
+					if (!v1['class'].endsWith('*^') && !v1['class'].endsWith('*') && !v1['class'].endsWith('^') ) {
+						dislist33 = Object.values(val).filter(slots => slots.name.toString().toLowerCase() == v1['name'].toLowerCase());
+						if (dislist33.length < 1) {
+							v1['disabled'] = false;
+							dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == v1['name'].toLowerCase());
+							dislist[0]['disabled'] = false;
+							if (dislist[0]['trexcludes'].length > 0) {
+								trexcludes = this.ck_includes(dislist, syshind, 'hind');
+							}						
+						}
 					}
 				}
 			}
 			
-			for (const [key, value] of Object.entries(val)) {
-				dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == value['name'].toLowerCase()); // Convert sysedges to an array and filter for any entries that match the new framework selected.
-				dislist[0]['disabled'] = true;
-				// Check to see the Hinderance excludes others and mark them as disabled.
-				if (dislist[0]['trexcludes'].length > 0) {
-					trexcludes = this.ck_excludes(dislist, syshind, 'hind');
+			if ( val && val[0].length > 0 ) {
+				for (const [key, value] of Object.entries(val)) {
+					dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == value['name'].toLowerCase()); // Convert sysedges to an array and filter for any entries that match the new framework selected.
+					dislist[0]['disabled'] = true;
+					// Check to see the Hinderance excludes others and mark them as disabled.
+					if (dislist[0]['trexcludes'].length > 0) {
+						trexcludes = this.ck_excludes(dislist, syshind, 'hind');
+					}
 				}
 			}
 			this.set('char.custom.cghindnofw', val);
