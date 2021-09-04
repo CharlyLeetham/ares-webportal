@@ -875,8 +875,8 @@ export default Component.extend({
 			// console.log (val);
 			// console.log ('SysEdges: ');
 			// console.log (sysedges);
-			// console.log ('Charedges: ');
-			// console.log (charedges);
+			console.log ('Charedges: ');
+			console.log (charedges);
 			// console.log ('Charedgesall: ');
 			// console.log (charedgesall);
 			// console.log ('Nonfwedges: ');
