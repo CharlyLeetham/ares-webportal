@@ -871,6 +871,8 @@ export default Component.extend({
 			nonfwedges = this.get('char.custom.cgedgesnofw');
 			
 			/////  Debugging /////
+			console.log ('Val: ');
+			console.log (val);
 			console.log ('SysEdges: ');
 			console.log (sysedges);
 			console.log ('Charedges: ');
