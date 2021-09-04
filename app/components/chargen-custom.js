@@ -898,7 +898,7 @@ export default Component.extend({
 				}
 			}
 			
-			if (charedges && charedges[0] != null) {
+			if ( charedges && strlen(charedges[0]) > 0 ) {
 				for (const[k1, v1] of Object.entries(charedges)) {	
 					/////  Debugging /////				
 						console.log ('Here2');
