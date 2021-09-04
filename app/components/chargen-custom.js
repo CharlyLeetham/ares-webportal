@@ -870,6 +870,17 @@ export default Component.extend({
 			charedgesall = this.get('char.custom.cgedgesfw');
 			nonfwedges = this.get('char.custom.cgedgesnofw');
 			
+			/////  Debugging /////
+			console.log ('SysEdges: ');
+			console.log (sysedges);
+			console.log ('Charedges: ');
+			console.log (charedges);
+			console.log ('Charedgesall: ');
+			console.log (charedgesall);
+			console.log ('Nonfwedges: ');
+			console.log (nonfwedges);
+			///// End Debug /////			
+			
 			// Reset the non-framework and race edges on the character.	
 			for (const[k3, v3] of Object.entries(nonfwedges)) {
 				v3['disabled']=false;
