@@ -35,6 +35,7 @@
   </div>
 </div>
     
+<<<<<<< HEAD
 <div class="row">
   <div class="col col-xs-12">
     {{#if this.char.description}}
@@ -42,5 +43,41 @@
     {{/if}}
     
   </div>
+=======
+<hr>
+
+{{#if this.char.fs3}}
+
+<div class="card-abilities">
+  {{#each this.char.fs3.attributes as |ability|}}
+  <span class="card-ability">{{ability.name}}: {{ability.rating}}</span>
+  {{/each}}
+</div>
+
+<div class="card-abilities">
+  {{#each this.char.fs3.action_skills as |ability|}}
+  <span class="card-ability">{{ability.name}}: {{ability.rating}}</span>
+  {{/each}}
+</div>
+
+
+<div class="card-abilities">
+  {{#each this.char.fs3.backgrounds as |ability|}}
+  <span class="card-ability">{{ability.name}}: {{ability.rating}}</span>
+  {{/each}}
+</div>
+
+<div class="card-abilities">
+  {{#each this.char.fs3.languages as |ability|}}
+  <span class="card-ability">{{ability.name}}: {{ability.rating}}</span>
+  {{/each}}
+</div>
+
+{{#if this.char.fs3.advantages}}
+<div class="card-abilities">
+  {{#each this.char.fs3.advantages as |ability|}}
+  {{ability.name}}: {{ability.rating}}
+  {{/each}}
+>>>>>>> parent of dc1500c (Improved fs3 card.)
 </div>
     
