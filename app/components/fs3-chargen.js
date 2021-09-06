@@ -11,7 +11,6 @@ export default Component.extend({
   gameApi: service(),
   
   didInsertElement: function() {
-    this._super(...arguments);
     let self = this;
     this.set('updateCallback', function() { return self.onUpdate(); } );
     this.set('validateCallback', function() { return self.validateChar(); } );

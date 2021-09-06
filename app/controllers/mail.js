@@ -15,7 +15,9 @@ export default Controller.extend(AuthenticatedController, {
         }
     }),
     
-    sentMail: computed.equal('tag', 'Sent'),
+    sentMail: computed('tag', function() {
+        return this.tag === 'Sent';
+    }),
     
     actions: {
         changeTag(tag) {

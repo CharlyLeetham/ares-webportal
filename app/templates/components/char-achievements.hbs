@@ -1,18 +1,16 @@
-<div class="char-achievements">
-  {{#each this.achievements as |achieve| }}
-  <div class="char-achievement">
-  <i class="fa fa-2x fa-fw achievement-icon {{achieve.type_icon}}" aria-hidden="true"></i>
+{{#each this.achievements as |achieve| }}
+<p>
+<i class="fa {{achieve.type_icon}} fa-2x" aria-hidden="true"></i>
 
-  <span class="achievement-message">
-  {{achieve.message}}
-  </span>
+&nbsp;
 
-  {{#if achieve.count}}
-  ({{achieve.count}})
-  {{/if}}
-  </div>
-  {{/each}}
-</div>
+{{achieve.message}} 
+
+{{#if achieve.count}}
+({{achieve.count}})
+{{/if}}
+</p>
+{{/each}}
 
 {{#if this.sceneStats}}
 <hr>

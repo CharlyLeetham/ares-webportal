@@ -6,6 +6,9 @@ export default Component.extend({
     warning: '',
     editorId: '',
     
+    didInsertElement: function() {
+        
+    },
     
     actions: {
         

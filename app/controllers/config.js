@@ -11,8 +11,9 @@ export default Controller.extend({
     confirmRestore: false,
     configErrors: null,
     
-    config: computed.reads('model.config'),
-
+    config: computed('model.config', 'configChanged', function() {
+        return this.get('model.config');
+    }),
     
     resetOnExit: function() {
         this.set('newConfigKey', '');

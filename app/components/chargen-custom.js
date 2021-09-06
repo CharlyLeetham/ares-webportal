@@ -5,7 +5,6 @@ export default Component.extend({
   
 <<<<<<< HEAD
   didInsertElement: function() {
-    this._super(...arguments);
     let self = this;
     this.set('updateCallback', function() { return self.onUpdate(); } );
   },
