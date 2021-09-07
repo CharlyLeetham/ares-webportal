@@ -34,13 +34,6 @@ export default Component.extend({
 		return swiconicf;
 	}),
 	
-	onUpdate: function() {
-	// Return a hash containing your data.  Character data will be in 'char'.  For example:
-	// 
-	// return { goals: this.get('char.custom.goals') };
-	return { iconicf: this.get('char.custom.charicf'), race: this.get('char.custom.charrace'), cgedges: this.get('char.custom.cgedges'), cgedgesnofw: this.get('char.custom.cgedgesnofw'), cghind: this.get('char.custom.cghind'), cghindnofw: this.get('char.custom.cghindnofw'), hjtables: this.get('char.custom.hjtables') };
-	},
-  
 	ck_excludes: function(dislist, sysedg, traittype) {
 		var trexcludes;
 		// Check to see the Hinderance excludes others and mark them as disabled.
@@ -1011,10 +1004,10 @@ export default Component.extend({
 		
 	},
   
-  onUpdate: function() {
-    // Return a hash containing your data.  Character data will be in 'char'.  For example:
-    // 
-    // return { goals: this.get('char.custom.goals') };
-    return {};
-  }
+	onUpdate: function() {
+	// Return a hash containing your data.  Character data will be in 'char'.  For example:
+	// 
+	// return { goals: this.get('char.custom.goals') };
+	return { iconicf: this.get('char.custom.charicf'), race: this.get('char.custom.charrace'), cgedges: this.get('char.custom.cgedges'), cgedgesnofw: this.get('char.custom.cgedgesnofw'), cghind: this.get('char.custom.cghind'), cghindnofw: this.get('char.custom.cghindnofw'), hjtables: this.get('char.custom.hjtables') };
+	}
 });
