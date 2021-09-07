@@ -13,7 +13,7 @@ export default Component.extend({
     // Return a hash containing your data.  Character data will be in 'char'.  For example:
     // 
     // return { goals: this.get('char.custom.goals') };
-	return { charicf: this.get('char.custom.charicf') };
-	return { charrace: this.get('char.custom.charrace') };
+	// return { charicf: this.get('char.custom.charicf') };
+	// return { charrace: this.get('char.custom.charrace') };
   }
 });
