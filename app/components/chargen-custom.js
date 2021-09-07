@@ -3,12 +3,11 @@ import Component from '@ember/component';
 export default Component.extend({
   tagName: '',
   
-<<<<<<< HEAD
-  didInsertElement: function() {
-    let self = this;
-    this.set('updateCallback', function() { return self.onUpdate(); } );
-  },
-=======
+	didInsertElement: function() {
+	let self = this;
+	this.set('updateCallback', function() { return self.onUpdate(); } );
+	},
+  
 	swiconicfsel: computed(function() {
 		var swiconicf;
 		swiconicf = this.get('char.custom.iconicf');	
@@ -35,11 +34,6 @@ export default Component.extend({
 		return swiconicf;
 	}),
 	
-	didInsertElement: function() {
-	let self = this;
-	this.set('updateCallback', function() { return self.onUpdate(); } );
-	},
-
 	onUpdate: function() {
 	// Return a hash containing your data.  Character data will be in 'char'.  For example:
 	// 
@@ -1016,7 +1010,6 @@ export default Component.extend({
 		},
 		
 	}
->>>>>>> parent of e8dc47a (Update chargen-custom.js)
   
   onUpdate: function() {
     // Return a hash containing your data.  Character data will be in 'char'.  For example:
