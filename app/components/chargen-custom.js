@@ -452,16 +452,16 @@ export default Component.extend({
 			value['disabled'] = false //Set disabled for this element to false
 		}					
 		
-		if (evalrace) {
-			for (const [k, v] of Object.entries(evalrace)) {
-				var dislist44 = Object.values(listsys).filter(slots => slots.class.toString().toLowerCase() == v.toLowerCase()); 					
+		// if (evalrace) {
+			// for (const [k, v] of Object.entries(evalrace)) {
+				// var dislist44 = Object.values(listsys).filter(slots => slots.class.toString().toLowerCase() == v.toLowerCase()); 					
 				
-				// Convert the iconic framework list to an array and filter for any entries that match the new framework selected.	
-				for (const [k1, v1] of Object.entries(dislist44)) {
-					v1['disabled'] = true //Set disabled for this element to true							
-				}
-			}
-		}
+				Convert the iconic framework list to an array and filter for any entries that match the new framework selected.	
+				// for (const [k1, v1] of Object.entries(dislist44)) {
+					// v1['disabled'] = true //Set disabled for this element to true							
+				// }
+			// }
+		// }
 		return;
 	},
 
