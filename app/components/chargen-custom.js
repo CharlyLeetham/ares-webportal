@@ -385,7 +385,7 @@ export default Component.extend({
 				
 				///// Debugging /////
 				// if ( traittype == 'race' ) {
-				 console.log( racecompl );
+				 // console.log( racecompl );
 				// }
 				///// End Debug /////				
 				
