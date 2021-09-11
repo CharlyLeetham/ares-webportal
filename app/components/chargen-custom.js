@@ -354,7 +354,7 @@ export default Component.extend({
 							if (newcyberarray) {
 							}
 
-							if (ppe_check==true || isp_check==true || nsb_check == true || bp_check == true || newcyberarray) {
+							if (ppe_check==true || isp_check==true || nsb_check == true || bp_check == true || dragon_check == true || newcyberarray) {
 								// console.log(en1);
 								en1 = value.name.split('*')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
 								if (evalrace.includes(en1)) {
@@ -377,7 +377,8 @@ export default Component.extend({
 				var isp_check = racecompl.includes(risp) //see if the race has the value
 				var cyber_check = racecompl.includes(rcyber) //see if the race has the value
 				var nsb_check = racecompl.includes(rnsb) //see if the race has the value
-				var bp_check = racecompl.includes(rbp) //see if the race has the value				
+				var bp_check = racecompl.includes(rbp) //see if the race has the value		
+				var dragon_check = v.includes(dragon) //see if the race has the value				
 	
 				// Check the Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
 				var i = 0;
@@ -423,7 +424,7 @@ export default Component.extend({
 								if (newcyberarray) {
 								}
 
-								if (ppe_check==true || isp_check==true || nsb_check == true || bp_check == true || newcyberarray) {
+								if (ppe_check==true || isp_check==true || nsb_check == true || bp_check == true || dragon_check == true || newcyberarray) {
 									
 									console.log (value.name);
 									// We need to determine if the IF has this edge
@@ -440,8 +441,12 @@ export default Component.extend({
 			}
 		}		
 
-		dislist44 = Object.values(listsys).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
-				
+		dislist44 = Object.values(listsys).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the list to an array and filter for any entries that match the new framework selected.
+
+
+		/// Debugging ///
+		console.log (dislist44);
+		/// End debug ///
 		
 		for (const [key, value] of Object.entries(dislist44)) {
 			value['disabled'] = false //Set disabled for this element to false
