@@ -378,7 +378,7 @@ export default Component.extend({
 				var cyber_check = racecompl.includes(rcyber) //see if the race has the value
 				var nsb_check = racecompl.includes(rnsb) //see if the race has the value
 				var bp_check = racecompl.includes(rbp) //see if the race has the value		
-				var dragon_check = v.includes(dragon) //see if the race has the value				
+				var dragon_check = racecompl.includes(dragon) //see if the race has the value				
 	
 				// Check the Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
 				var i = 0;
