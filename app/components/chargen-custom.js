@@ -354,7 +354,7 @@ export default Component.extend({
 							if (newcyberarray) {
 							}
 
-							if (ppe_check==true || isp_check==true || nsb_check == true || bp_check == true || dragon ==true || newcyberarray) {
+							if (ppe_check==true || isp_check==true || nsb_check == true || bp_check == true || dragon_check == true || newcyberarray) {
 								// console.log(en1);
 								en1 = value.name.split('*')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
 								if (evalrace.includes(en1)) {
