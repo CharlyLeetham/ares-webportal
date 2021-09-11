@@ -444,6 +444,7 @@ export default Component.extend({
 
 
 		/// Debugging ///
+		console.log (listsys);
 		console.log (dislist44);
 		/// End debug ///
 		
