@@ -444,7 +444,7 @@ export default Component.extend({
 
 
 		/// Debugging ///
-		// console.log (dislist44);
+		console.log (dislist44);
 		/// End debug ///
 		
 		for (const [key, value] of Object.entries(dislist44)) {
