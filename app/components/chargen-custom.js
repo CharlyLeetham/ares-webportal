@@ -392,9 +392,9 @@ export default Component.extend({
 				for (const [key, value] of Object.entries(fullsys)) { //Loop through the race values. We want to know which races an Iconic Framework can't have.	
 				///// Debugging /////
 				// if ( traittype == 'race' ) {
-				 console.log( 'Key: ' +key );
-				 console.log( 'Val: ' );
-				 console.log ( value );
+				 // console.log( 'Key: ' +key );
+				 // console.log( 'Val: ' );
+				 // console.log ( value );
 				// }
 				///// End Debug /////
 
@@ -408,7 +408,10 @@ export default Component.extend({
 						 // console.log( 'Key: ' +key );
 						 // console.log( 'Val: ' +value.name );
 						// }
-						///// End Debug /////									
+						///// End Debug /////
+						if ( value.complications.includes(dragon) ) {
+							console.log( value.name );
+						}
 						// if (!dragonrace.includes( value.name )) {
 							// dragonrace[dd] = value.name;
 							// dd = dd+1;
