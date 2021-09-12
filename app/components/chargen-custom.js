@@ -289,7 +289,7 @@ export default Component.extend({
 			// if ( newedgarray[0] == null ) {
 				// console.log('here');
 			// }
-			// console.log ( chosenifarray );
+			console.log ( chosenifarray );
 		// }
 		///// End Debug /////
 		
@@ -385,8 +385,8 @@ export default Component.extend({
 				var dd = 0;
 				
 				///// Debugging /////
-				console.log (racecompl);
-				console.log (fullsys);
+				// console.log (racecompl);
+				// console.log (fullsys);
 				///// End Debug /////				
 				
 				for (const [key, value] of Object.entries(fullsys)) { //Loop through the race values. We want to know which races an Iconic Framework can't have.	
@@ -436,10 +436,10 @@ export default Component.extend({
 								
 								if ( dragon_check == true ) {
 									///// Debugging /////
-									if ( traittype == 'race' ) {
-									 console.log( 'Key: ' +key );
-									 console.log( 'Val: ' +value.name );
-									}
+									// if ( traittype == 'race' ) {
+									 // console.log( 'Key: ' +key );
+									 // console.log( 'Val: ' +value.name );
+									// }
 									///// End Debug /////									
 									// if (!dragonrace.includes( value.name )) {
 										// dragonrace[dd] = value.name;
