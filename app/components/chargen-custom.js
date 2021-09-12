@@ -385,7 +385,7 @@ export default Component.extend({
 				var dd = 0;
 				
 				///// Debugging /////
-				// console.log (dragon_check);
+				console.log (racecompl);
 				///// End Debug /////				
 				
 				// if ( !dragon_check ) { // This is not a Dragon Race or ICF
