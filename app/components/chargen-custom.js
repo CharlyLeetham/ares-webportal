@@ -429,7 +429,7 @@ export default Component.extend({
 								if ( ppe_check == true || isp_check == true || nsb_check == true || bp_check == true || newcyberarray) {
 									// We need to determine if the IF has this edge
 									///// Debugging /////
-									console.log ('do we get here?');
+									// console.log ('do we get here?');
 									///// end debug /////
 									if (!evalrace.includes(value.name)) {
 										evalrace[i]=value.name;	
@@ -439,10 +439,10 @@ export default Component.extend({
 								
 								if ( dragon_check == true ) {
 									///// Debugging /////
-									if ( traittype == 'race' ) {
-									 console.log( 'Key: ' +key );
-									 console.log( 'Val: ' +value.name );
-									}
+									// if ( traittype == 'race' ) {
+									 // console.log( 'Key: ' +key );
+									 // console.log( 'Val: ' +value.name );
+									// }
 									///// End Debug /////									
 									// if (!dragonrace.includes( value.name )) {
 										// dragonrace[dd] = value.name;
@@ -462,7 +462,7 @@ export default Component.extend({
 		/// Debugging ///
 		// console.log (evalrace);
 		// console.log (listsys);
-		// console.log (dislist44);
+		console.log (dislist44);
 		/// End debug ///
 		
 		for (const [key, value] of Object.entries(dislist44)) {
