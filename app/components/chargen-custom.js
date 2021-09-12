@@ -393,8 +393,8 @@ export default Component.extend({
 				///// Debugging /////
 				// if ( traittype == 'race' ) {
 				 // console.log( 'Key: ' +key );
-				 // console.log( 'Val: ' );
-				 // console.log ( value );
+				 console.log( 'Val: ' );
+				 console.log ( value );
 				// }
 				///// End Debug /////
 
@@ -409,9 +409,9 @@ export default Component.extend({
 						 // console.log( 'Val: ' +value.name );
 						// }
 						///// End Debug /////
-						if ( value.complications.includes(dragon) ) {
-							console.log( value.name );
-						}
+						// if ( value.complications.includes(dragon) ) {
+							// console.log( value.name );
+						// }
 						// if (!dragonrace.includes( value.name )) {
 							// dragonrace[dd] = value.name;
 							// dd = dd+1;
