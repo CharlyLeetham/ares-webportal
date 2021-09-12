@@ -473,7 +473,7 @@ export default Component.extend({
 				}
 			}
 		} else {
-			console.log (dragonrace);
+			console.log ('Dragonrace: '+dragonrace);
 			// We need to find the elements that a Dragon can have and set them to active
 		}
 		
