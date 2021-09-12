@@ -269,7 +269,7 @@ export default Component.extend({
 		/// traittype = Tells function whether we're working on icf or race		
 		
 		// Check ICF / Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
-		var i = 0, dislist44, evalrace=[], en1, complrace, newedgarray, newhindarray, newcyberarray, comptypearray=[], comptypearray2=[], comptypearray3=[], comptypearray4=[], lowedgarray, racecompl, fullsys, listsys, rppe, risp, rnsb, rcyber, rbp, dragon;
+		var i = 0, dislist44, evalrace=[], dragonrace=[], en1, complrace, newedgarray, newhindarray, newcyberarray, comptypearray=[], comptypearray2=[], comptypearray3=[], comptypearray4=[], lowedgarray, racecompl, fullsys, listsys, rppe, risp, rnsb, rcyber, rbp, dragon;
 		
 		if (traittype == 'icf') {
 			fullsys = swraceall;
@@ -382,6 +382,7 @@ export default Component.extend({
 	
 				// Check the Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
 				var i = 0;
+				var dd = 0;
 				
 				///// Debugging /////
 				console.log (dragon_check);
@@ -423,12 +424,19 @@ export default Component.extend({
 									if (newcyberarray) {
 									}
 
-									if (ppe_check==true || isp_check==true || nsb_check == true || bp_check == true || dragon_check == true || newcyberarray) {
+									if ( ppe_check == true || isp_check == true || nsb_check == true || bp_check == true || newcyberarray) {
 										
 										// We need to determine if the IF has this edge
 										if (!evalrace.includes(value.name)) {
 											evalrace[i]=value.name;	
 											i=i+1;
+										}
+									}
+									
+									if ( dragon_check == true ) {
+										if (!dragonrace.includes( value.name )) {
+											dragonrace[dd] = value.name;
+											dd = dd+1;
 										}
 									}
 								}							
@@ -465,6 +473,7 @@ export default Component.extend({
 				}
 			}
 		} else {
+			console.log (dragonrace);
 			// We need to find the elements that a Dragon can have and set them to active
 		}
 		
