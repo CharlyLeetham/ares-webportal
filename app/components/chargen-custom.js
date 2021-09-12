@@ -438,7 +438,7 @@ export default Component.extend({
 									///// Debugging /////
 									if ( traittype == 'race' ) {
 									 console.log( 'Key: ' +key );
-									 console.log( 'Val: ' +value );
+									 console.log( 'Val: ' +value.name );
 									}
 									///// End Debug /////									
 									// if (!dragonrace.includes( value.name )) {
