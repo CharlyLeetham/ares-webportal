@@ -396,13 +396,13 @@ export default Component.extend({
 				 // console.log( 'Val: ' +value );
 				// }
 				///// End Debug /////	
-					if ( value.edges ) { //Complications exist on the character
+					if ( value.edges ) { //If complications exist the race chosen, check the edges for the ICF and make sure they are disabled
 						for (const [k, v] of Object.entries(value.edges)) {
 							///// Debugging /////
-							if ( traittype == 'race' ) {
-							 console.log('Key: '+k);
-							 console.log('Vlaue:' +v);
-							}
+							// if ( traittype == 'race' ) {
+							 // console.log('Key: '+k);
+							 // console.log('Vlaue:' +v);
+							// }
 							///// End Debug /////
 							if ( v ) {  // This checks that there isn't a blank entry. 
 								if (ppe_check == true) {
@@ -433,6 +433,7 @@ export default Component.extend({
 									///// end debug /////
 									if (!evalrace.includes(value.name)) {
 										evalrace[i]=value.name;	
+										console.log (evalrace[i]);
 										i=i+1;
 									}
 								}
