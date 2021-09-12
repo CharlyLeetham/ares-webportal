@@ -385,7 +385,7 @@ export default Component.extend({
 				var dd = 0;
 				
 				///// Debugging /////
-				console.log (dragon_check);
+				// console.log (dragon_check);
 				///// End Debug /////				
 				
 				if ( !dragon_check ) { // This is not a Dragon Race or ICF
@@ -398,10 +398,10 @@ export default Component.extend({
 						if ( value.edges ) { //Complications exist on the character
 							for (const [k, v] of Object.entries(value.edges)) {
 								///// Debugging /////
-								// if ( traittype == 'race' ) {
-								 // console.log('Key: '+k);
-								 // console.log('Vlaue:' +v);
-								// }
+								if ( traittype == 'race' ) {
+								 console.log('Key: '+k);
+								 console.log('Vlaue:' +v);
+								}
 								///// End Debug /////
 								if ( v ) {  // This checks that there isn't a blank entry. 
 									if (ppe_check == true) {
