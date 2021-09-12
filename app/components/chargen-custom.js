@@ -385,18 +385,35 @@ export default Component.extend({
 				var dd = 0;
 				
 				///// Debugging /////
-				// console.log (racecompl);
+				console.log (racecompl);
 				// console.log (fullsys);
 				///// End Debug /////				
 				
 				for (const [key, value] of Object.entries(fullsys)) { //Loop through the race values. We want to know which races an Iconic Framework can't have.	
 				///// Debugging /////
 				// if ( traittype == 'race' ) {
-				 // console.log( 'Key: ' +key );
-				 // console.log( 'Val: ' +value );
+				 console.log( 'Key: ' +key );
+				 console.log( 'Val: ' );
+				 console.log ( value );
 				// }
-				///// End Debug /////	
-					if ( value.edges ) { //If complications exist the race chosen, check the edges for the ICF and make sure they are disabled
+				///// End Debug /////
+
+
+
+
+
+					if ( dragon_check == true ) {  //Dragon on exists as complication on the ICF and Race. We don't need to check the edges, just find if the complication exists as well
+						///// Debugging /////
+						// if ( traittype == 'race' ) {
+						 // console.log( 'Key: ' +key );
+						 // console.log( 'Val: ' +value.name );
+						// }
+						///// End Debug /////									
+						// if (!dragonrace.includes( value.name )) {
+							// dragonrace[dd] = value.name;
+							// dd = dd+1;
+						// }
+					} else if ( value.edges ) { //If complications exist the race chosen, check the edges for the ICF and make sure they are disabled
 						console.log (value.edges);
 						for (const [k, v] of Object.entries(value.edges)) {
 							///// Debugging /////
@@ -434,22 +451,8 @@ export default Component.extend({
 									///// end debug /////
 									if (!evalrace.includes(value.name)) {
 										evalrace[i]=value.name;	
-										console.log (evalrace[i]);
 										i=i+1;
 									}
-								}
-								
-								if ( dragon_check == true ) {
-									///// Debugging /////
-									// if ( traittype == 'race' ) {
-									 // console.log( 'Key: ' +key );
-									 // console.log( 'Val: ' +value.name );
-									// }
-									///// End Debug /////									
-									// if (!dragonrace.includes( value.name )) {
-										// dragonrace[dd] = value.name;
-										// dd = dd+1;
-									// }
 								}
 							} //if (v)							
 						} // For Loop
