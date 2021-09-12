@@ -469,9 +469,14 @@ export default Component.extend({
 			value['disabled'] = false //Set disabled for this element to false
 		}					
 		
-		if ( !dragon_check ) {
+		// if ( !dragon_check ) {
 			if (evalrace) {
 				for (const [k, v] of Object.entries(evalrace)) {
+					
+					/// Debugging ///
+					console.log ('k: ' +k);
+					console.log ('v: ' +v);
+					/// End debug ///					
 					var dislist44 = Object.values(listsys).filter(slots => slots.class.toString().toLowerCase() == v.toLowerCase()); 					
 					
 					// Convert the iconic framework list to an array and filter for any entries that match the new framework selected.	
@@ -480,8 +485,8 @@ export default Component.extend({
 					}
 				}
 			}
-		} else {
-			console.log ('Dragonrace: '+dragonrace);
+		// } else {
+			// console.log ('Dragonrace: '+dragonrace);
 			// We need to find the elements that a Dragon can have and set them to active
 		}
 		
