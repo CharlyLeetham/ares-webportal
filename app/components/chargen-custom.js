@@ -387,53 +387,55 @@ export default Component.extend({
 				console.log (dragon_check);
 				///// End Debug /////				
 				
-				for (const [key, value] of Object.entries(fullsys)) { //Loop through the race values. We want to know which races an Iconic Framework can't have.	
-				///// Debugging /////
-				// if ( traittype == 'race' ) {
-				 // console.log( 'Key: ' +key );
-				// }
-				///// End Debug /////					
-					if ( value.edges ) { //Complications exist on the character
-						for (const [k, v] of Object.entries(value.edges)) {
-							///// Debugging /////
-							// if ( traittype == 'race' ) {
-							 // console.log('Key: '+k);
-							 // console.log('Vlaue:' +v);
-							// }
-							///// End Debug /////
-							if ( v ) {  // This checks that there isn't a blank entry. 
-								if (ppe_check == true) {
-									var ppetest = comptypearray.includes(v.toLowerCase());	
-									// Check if the race can use this 
-								}	
+				if ( !dragon_check ) { // This is not a Dragon Race or ICF
+					for (const [key, value] of Object.entries(fullsys)) { //Loop through the race values. We want to know which races an Iconic Framework can't have.	
+					///// Debugging /////
+					// if ( traittype == 'race' ) {
+					 // console.log( 'Key: ' +key );
+					// }
+					///// End Debug /////					
+						if ( value.edges ) { //Complications exist on the character
+							for (const [k, v] of Object.entries(value.edges)) {
+								///// Debugging /////
+								// if ( traittype == 'race' ) {
+								 // console.log('Key: '+k);
+								 // console.log('Vlaue:' +v);
+								// }
+								///// End Debug /////
+								if ( v ) {  // This checks that there isn't a blank entry. 
+									if (ppe_check == true) {
+										var ppetest = comptypearray.includes(v.toLowerCase());	
+										// Check if the race can use this 
+									}	
 
-								if (isp_check == true) {
-									var isptest = comptypearray2.includes(v.toLowerCase());		
-								}											
-								
-								if (nsb_check == true) {
-									var nsbtest = comptypearray3.includes(v.toLowerCase());		
-								}						
-								
-								if (bp_check == true) {
-									var bptest = comptypearray4.includes(v.toLowerCase());		
-								}
-
-								if (newcyberarray) {
-								}
-
-								if (ppe_check==true || isp_check==true || nsb_check == true || bp_check == true || dragon_check == true || newcyberarray) {
+									if (isp_check == true) {
+										var isptest = comptypearray2.includes(v.toLowerCase());		
+									}											
 									
-									// We need to determine if the IF has this edge
-									if (!evalrace.includes(value.name)) {
-										evalrace[i]=value.name;	
-										i=i+1;
+									if (nsb_check == true) {
+										var nsbtest = comptypearray3.includes(v.toLowerCase());		
+									}						
+									
+									if (bp_check == true) {
+										var bptest = comptypearray4.includes(v.toLowerCase());		
 									}
-								}
-							}							
+
+									if (newcyberarray) {
+									}
+
+									if (ppe_check==true || isp_check==true || nsb_check == true || bp_check == true || dragon_check == true || newcyberarray) {
+										
+										// We need to determine if the IF has this edge
+										if (!evalrace.includes(value.name)) {
+											evalrace[i]=value.name;	
+											i=i+1;
+										}
+									}
+								}							
+							}
+							
 						}
-						
-					}
+					} 						
 				}
 			}
 		}		
@@ -451,16 +453,21 @@ export default Component.extend({
 			value['disabled'] = false //Set disabled for this element to false
 		}					
 		
-		if (evalrace) {
-			for (const [k, v] of Object.entries(evalrace)) {
-				var dislist44 = Object.values(listsys).filter(slots => slots.class.toString().toLowerCase() == v.toLowerCase()); 					
-				
-				// Convert the iconic framework list to an array and filter for any entries that match the new framework selected.	
-				for (const [k1, v1] of Object.entries(dislist44)) {
-					v1['disabled'] = true //Set disabled for this element to true							
+		if ( !dragon_check ) {
+			if (evalrace) {
+				for (const [k, v] of Object.entries(evalrace)) {
+					var dislist44 = Object.values(listsys).filter(slots => slots.class.toString().toLowerCase() == v.toLowerCase()); 					
+					
+					// Convert the iconic framework list to an array and filter for any entries that match the new framework selected.	
+					for (const [k1, v1] of Object.entries(dislist44)) {
+						v1['disabled'] = true //Set disabled for this element to true							
+					}
 				}
 			}
+		} else {
+			// We need to find the elements that a Dragon can have and set them to active
 		}
+		
 		return;
 	},
 
