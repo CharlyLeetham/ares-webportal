@@ -289,7 +289,7 @@ export default Component.extend({
 			// if ( newedgarray[0] == null ) {
 				// console.log('here');
 			// }
-			console.log ( chosenifarray );
+			// console.log ( chosenifarray );
 		// }
 		///// End Debug /////
 		
@@ -428,6 +428,9 @@ export default Component.extend({
 
 								if ( ppe_check == true || isp_check == true || nsb_check == true || bp_check == true || newcyberarray) {
 									// We need to determine if the IF has this edge
+									///// Debugging /////
+									console.log ('do we get here?');
+									///// end debug /////
 									if (!evalrace.includes(value.name)) {
 										evalrace[i]=value.name;	
 										i=i+1;
@@ -436,10 +439,10 @@ export default Component.extend({
 								
 								if ( dragon_check == true ) {
 									///// Debugging /////
-									// if ( traittype == 'race' ) {
-									 // console.log( 'Key: ' +key );
-									 // console.log( 'Val: ' +value.name );
-									// }
+									if ( traittype == 'race' ) {
+									 console.log( 'Key: ' +key );
+									 console.log( 'Val: ' +value.name );
+									}
 									///// End Debug /////									
 									// if (!dragonrace.includes( value.name )) {
 										// dragonrace[dd] = value.name;
