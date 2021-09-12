@@ -389,66 +389,69 @@ export default Component.extend({
 				console.log (fullsys);
 				///// End Debug /////				
 				
-				// if ( !dragon_check ) { // This is not a Dragon Race or ICF
-					for (const [key, value] of Object.entries(fullsys)) { //Loop through the race values. We want to know which races an Iconic Framework can't have.	
-					///// Debugging /////
-					// if ( traittype == 'race' ) {
-					 // console.log( 'Key: ' +key );
-					 // console.log( 'Val: ' +value );
-					// }
-					///// End Debug /////					
-						if ( value.edges ) { //Complications exist on the character
-							for (const [k, v] of Object.entries(value.edges)) {
-								///// Debugging /////
-								// if ( traittype == 'race' ) {
-								 // console.log('Key: '+k);
-								 // console.log('Vlaue:' +v);
-								// }
-								///// End Debug /////
-								if ( v ) {  // This checks that there isn't a blank entry. 
-									if (ppe_check == true) {
-										var ppetest = comptypearray.includes(v.toLowerCase());	
-										// Check if the race can use this 
-									}	
-
-									if (isp_check == true) {
-										var isptest = comptypearray2.includes(v.toLowerCase());		
-									}											
-									
-									if (nsb_check == true) {
-										var nsbtest = comptypearray3.includes(v.toLowerCase());		
-									}						
-									
-									if (bp_check == true) {
-										var bptest = comptypearray4.includes(v.toLowerCase());		
-									}
-
-									if (newcyberarray) {
-									}
-
-									if ( ppe_check == true || isp_check == true || nsb_check == true || bp_check == true || newcyberarray) {
-										
-										// We need to determine if the IF has this edge
-										if (!evalrace.includes(value.name)) {
-											evalrace[i]=value.name;	
-											i=i+1;
-										}
-									}
-									
-									if ( dragon_check == true ) {
-										if (!dragonrace.includes( value.name )) {
-											dragonrace[dd] = value.name;
-											dd = dd+1;
-										}
-									}
-								}							
-							}
-							
-						}
-					} 						
+				for (const [key, value] of Object.entries(fullsys)) { //Loop through the race values. We want to know which races an Iconic Framework can't have.	
+				///// Debugging /////
+				// if ( traittype == 'race' ) {
+				 // console.log( 'Key: ' +key );
+				 // console.log( 'Val: ' +value );
 				// }
-			}
-		}		
+				///// End Debug /////	
+					if ( value.edges ) { //Complications exist on the character
+						for (const [k, v] of Object.entries(value.edges)) {
+							///// Debugging /////
+							// if ( traittype == 'race' ) {
+							 // console.log('Key: '+k);
+							 // console.log('Vlaue:' +v);
+							// }
+							///// End Debug /////
+							if ( v ) {  // This checks that there isn't a blank entry. 
+								if (ppe_check == true) {
+									var ppetest = comptypearray.includes(v.toLowerCase());	
+									// Check if the race can use this 
+								}	
+
+								if (isp_check == true) {
+									var isptest = comptypearray2.includes(v.toLowerCase());		
+								}											
+								
+								if (nsb_check == true) {
+									var nsbtest = comptypearray3.includes(v.toLowerCase());		
+								}						
+								
+								if (bp_check == true) {
+									var bptest = comptypearray4.includes(v.toLowerCase());		
+								}
+
+								if (newcyberarray) {
+									
+								}
+
+								if ( ppe_check == true || isp_check == true || nsb_check == true || bp_check == true || newcyberarray) {
+									// We need to determine if the IF has this edge
+									if (!evalrace.includes(value.name)) {
+										evalrace[i]=value.name;	
+										i=i+1;
+									}
+								}
+								
+								if ( dragon_check == true ) {
+									///// Debugging /////
+									if ( traittype == 'race' ) {
+									 console.log( 'Key: ' +key );
+									 console.log( 'Val: ' +value );
+									}
+									///// End Debug /////									
+									// if (!dragonrace.includes( value.name )) {
+										// dragonrace[dd] = value.name;
+										// dd = dd+1;
+									// }
+								}
+							} //if (v)							
+						} // For Loop
+					} // Check Edges
+				} // For loop
+			} //Race complication						
+		} //Traittype
 
 		dislist44 = Object.values(listsys).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the list to an array and filter for any entries that match the new framework selected.
 
