@@ -397,6 +397,7 @@ export default Component.extend({
 				// }
 				///// End Debug /////	
 					if ( value.edges ) { //If complications exist the race chosen, check the edges for the ICF and make sure they are disabled
+						console.log (value.edges);
 						for (const [k, v] of Object.entries(value.edges)) {
 							///// Debugging /////
 							// if ( traittype == 'race' ) {
