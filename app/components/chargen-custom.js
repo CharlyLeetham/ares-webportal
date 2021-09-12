@@ -388,7 +388,7 @@ export default Component.extend({
 				// console.log (dragon_check);
 				///// End Debug /////				
 				
-				if ( !dragon_check ) { // This is not a Dragon Race or ICF
+				// if ( !dragon_check ) { // This is not a Dragon Race or ICF
 					for (const [key, value] of Object.entries(fullsys)) { //Loop through the race values. We want to know which races an Iconic Framework can't have.	
 					///// Debugging /////
 					if ( traittype == 'race' ) {
@@ -444,7 +444,7 @@ export default Component.extend({
 							
 						}
 					} 						
-				}
+				// }
 			}
 		}		
 
