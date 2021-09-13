@@ -269,7 +269,7 @@ export default Component.extend({
 		/// traittype = Tells function whether we're working on icf or race		
 		
 		// Check ICF / Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
-		var i = 0, dislist44, evalrace=[], dragonrace=[], en1, complrace, newedgarray, newhindarray, newcyberarray, comptypearray=[], comptypearray2=[], comptypearray3=[], comptypearray4=[], lowedgarray, racecompl, fullsys, listsys, rppe, risp, rnsb, rcyber, rbp, dragon, dragonfw;
+		var i = 0, dislist44, evalrace=[], dragonrace=[], en1, complrace, newedgarray, newhindarray, newcyberarray, comptypearray=[], comptypearray2=[], comptypearray3=[], comptypearray4=[], lowedgarray, racecompl, fullsys, listsys, rppe, risp, rnsb, rcyber, rbp, dragon;
 		
 		if (traittype == 'icf') {
 			fullsys = swraceall;
@@ -401,8 +401,8 @@ export default Component.extend({
 					// if ( Array.isArray(value.complications) ) {
 						
 							if ( (Array.isArray(value.complications) && value.complications[0] !== null ) && value.complications.includes(dragon) ) {
-								if (!dragonfw.includes(value.name)) {
-									dragonfw[dd]=value.name;	
+								if (!dragonrace.includes(value.name)) {
+									dragonrace[dd]=value.name;	
 									dd = dd+1;
 									console.log ("Dragon!");
 								}
