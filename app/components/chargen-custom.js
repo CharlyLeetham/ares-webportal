@@ -403,11 +403,7 @@ export default Component.extend({
 					console.log( 'Name: ' +value.name );
 
 					if ( Array.isArray(value.complications) ) {
-
-							if ( value.complications[0] === null ) {
-								console.log ('Null Entry!');
-							}
-							
+						
 							if ( Array.isArray(value.complications) && value.complications[0] !== null ) {
 								console.log (value.name+' is an array');
 								console.log (value.complications);
@@ -418,8 +414,8 @@ export default Component.extend({
 					if ( value.complications && (value.complications.length > 0 || value.complications[0].length > 0 ) ) {
 						if ( traittype == 'race' ) {
 
-						 console.log( 'Val: ' );
-						 console.log ( value.complications );
+						 // console.log( 'Val: ' );
+						 // console.log ( value.complications );
 						}
 						///// End Debug /////						
 					}
