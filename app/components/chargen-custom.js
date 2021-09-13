@@ -400,7 +400,7 @@ export default Component.extend({
 
 					if ( Array.isArray(value.complications) ) {
 						
-							if ( Array.isArray(value.complications) && value.complications[0] !== null ) {
+							if ( (Array.isArray(value.complications) && value.complications[0] !== null ) && value.complications.includes(dragon) ) {
 								console.log (value.name+' is an array');
 								console.log (value.complications);
 								console.log ('Is this the right test?');
