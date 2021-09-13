@@ -405,6 +405,7 @@ export default Component.extend({
 					if ( Array.isArray(value.complications) ) {
 							console.log (value.name+' is an array');
 							console.log ('Array: '+value.complications);
+							console.log ('Array Length: ' + value.complications.length);
 					}
 					
 					if ( value.complications && (value.complications.length > 0 || value.complications[0].length > 0 ) ) {
