@@ -401,14 +401,14 @@ export default Component.extend({
 
 
 
-					if ( value.complications && (value.complications.length > 0 || value.complications[0].length > 0 ) {
+					// if ( value.complications && (value.complications.length > 0 || value.complications[0].length > 0 ) {
 						// if ( traittype == 'race' ) {
 						 // console.log( 'Key: ' +key );
-						 console.log( 'Val: ' );
-						 console.log ( value.complications );
+						 // console.log( 'Val: ' );
+						 // console.log ( value.complications );
 						// }
 						///// End Debug /////						
-					}
+					// }
 
 					if ( dragon_check == true && value.complications ) {  //Dragon on exists as complication on the ICF and Race. We don't need to check the edges, just find if the complication exists as well
 						///// Debugging /////
