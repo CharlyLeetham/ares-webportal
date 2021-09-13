@@ -401,7 +401,7 @@ export default Component.extend({
 
 
 
-					if ( value.complications ) {
+					if ( value.complications.length > 0 ) {
 						// if ( traittype == 'race' ) {
 						 // console.log( 'Key: ' +key );
 						 console.log( 'Val: ' );
