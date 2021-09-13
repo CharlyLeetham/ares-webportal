@@ -406,7 +406,9 @@ export default Component.extend({
 							console.log (value.name+' is an array');
 							console.log ('Array: '+value.complications);
 							console.log ('Array Length: ' + value.complications.length);
-							console.log ('Length of first entry: ' + value.complications[0].length);
+							if ( value.complications[0] === null ) {
+								console.log ('Null Entry!');
+							}
 					}
 					
 					if ( value.complications && (value.complications.length > 0 || value.complications[0].length > 0 ) ) {
