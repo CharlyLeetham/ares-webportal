@@ -407,8 +407,10 @@ export default Component.extend({
 							if ( value.complications[0] === null ) {
 								console.log ('Null Entry!');
 							}
+							
 							if ( Array.isArray(value.complications) && value.complications[0] !== null ) {
-								console.log (value.name+' is an array');								
+								console.log (value.name+' is an array');
+								console.log (value.complications);
 								console.log ('Is this the right test?');
 							}
 					}
