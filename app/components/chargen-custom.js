@@ -414,31 +414,36 @@ export default Component.extend({
 						for (const [k, v] of Object.entries(value.edges)) {
 							///// Debugging /////
 							if ( traittype == 'race' ) {
-							 console.log('Key: '+k);
-							 console.log('Vlaue:' +v);
+							 // console.log('Key: '+k);
+							 // console.log('Vlaue:' +v);
 							}
 							///// End Debug /////
 							if ( v ) {  // This checks that there isn't a blank entry. 
 								if (ppe_check == true) {
 									var ppetest = comptypearray.includes(v.toLowerCase());	
+									console.log ('PPE: '+ppetest);
 									// Check if the race can use this 
 								}	
 
 								if (isp_check == true) {
-									var isptest = comptypearray2.includes(v.toLowerCase());		
+									var isptest = comptypearray2.includes(v.toLowerCase());	
+									console.log ('ISP: '+isptest);									
 								}											
 								
 								if (nsb_check == true) {
-									var nsbtest = comptypearray3.includes(v.toLowerCase());		
+									var nsbtest = comptypearray3.includes(v.toLowerCase());	
+									console.log ('NSB: '+nsbtest);									
 								}						
 								
 								if (bp_check == true) {
-									var bptest = comptypearray4.includes(v.toLowerCase());		
+									var bptest = comptypearray4.includes(v.toLowerCase());	
+									console.log ('BP: '+bptest);									
 								}
 
 								if (newcyberarray) {
 									
 								}
+								
 
 								if ( ppe_check == true || isp_check == true || nsb_check == true || bp_check == true || newcyberarray) {
 									// We need to determine if the IF has this edge
@@ -450,6 +455,16 @@ export default Component.extend({
 										i=i+1;
 									}
 								}
+								// if ( ppe_check == true || isp_check == true || nsb_check == true || bp_check == true || newcyberarray) {
+									// We need to determine if the IF has this edge
+									/// Debugging /////
+									// console.log ('do we get here?');
+									/// end debug /////
+									// if (!evalrace.includes(value.name)) {
+										// evalrace[i]=value.name;	
+										// i=i+1;
+									// }
+								// }
 							} //if (v)							
 						} // For Loop
 					} // Check Edges
