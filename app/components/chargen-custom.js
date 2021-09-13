@@ -385,7 +385,7 @@ export default Component.extend({
 				var dd = 0;
 				
 				///// Debugging /////
-				console.log (racecompl);
+				// console.log (racecompl);
 				// console.log (fullsys);
 				///// End Debug /////				
 				
@@ -393,8 +393,8 @@ export default Component.extend({
 				///// Debugging /////
 				// if ( traittype == 'race' ) {
 				 // console.log( 'Key: ' +key );
-				 console.log( 'Val: ' );
-				 console.log ( value );
+				 // console.log( 'Val: ' );
+				 // console.log ( value );
 				// }
 				///// End Debug /////
 
