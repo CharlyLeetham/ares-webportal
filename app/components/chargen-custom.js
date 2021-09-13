@@ -393,8 +393,8 @@ export default Component.extend({
 				///// Debugging /////
 				// if ( traittype == 'race' ) {
 				 // console.log( 'Key: ' +key );
-				 // console.log( 'Val: ' );
-				 // console.log ( value );
+				 console.log( 'Val: ' );
+				 console.log ( value.complications );
 				// }
 				///// End Debug /////
 
@@ -404,10 +404,10 @@ export default Component.extend({
 
 					if ( dragon_check == true && value.complications ) {  //Dragon on exists as complication on the ICF and Race. We don't need to check the edges, just find if the complication exists as well
 						///// Debugging /////
-						if ( traittype == 'race' ) {
-						 console.log( 'Key: ' +key );
-						 console.log( 'Val: ' +value.name );
-						}
+						// if ( traittype == 'race' ) {
+						 // console.log( 'Key: ' +key );
+						 // console.log( 'Val: ' +value.name );
+						// }
 						///// End Debug /////
 						// if ( value.complications.includes(dragon) ) {
 							// console.log( value.name );
