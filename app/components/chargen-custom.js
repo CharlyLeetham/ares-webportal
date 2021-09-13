@@ -403,7 +403,8 @@ export default Component.extend({
 
 					// }
 					
-					if ( (Array.isArray(value.complications) && value.complications[0] !== null ) && value.complications.includes(dragon) ) {
+					// if ( (Array.isArray(value.complications) && value.complications[0] !== null ) && value.complications.includes(dragon) ) {
+					if ( value.complications.includes(dragon) ) {
 						if (!dragonrace.includes(value.name)) {
 							dragonrace[dd]=value.name;	
 							dd = dd+1;
