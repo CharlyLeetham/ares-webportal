@@ -411,10 +411,10 @@ export default Component.extend({
 					} else if ( value.edges ) { //If complications exist the race chosen, check the edges for the ICF and make sure they are disabled
 						for (const [k, v] of Object.entries(value.edges)) {
 							///// Debugging /////
-							// if ( traittype == 'race' ) {
-							 // console.log('Key: '+k);
-							 // console.log('Vlaue:' +v);
-							// }
+							if ( traittype == 'race' ) {
+							 console.log('Key: '+k);
+							 console.log('Vlaue:' +v);
+							}
 							///// End Debug /////
 							if ( v ) {  // This checks that there isn't a blank entry. 
 								if (ppe_check == true) {
