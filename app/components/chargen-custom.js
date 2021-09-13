@@ -394,7 +394,7 @@ export default Component.extend({
 				// if ( traittype == 'race' ) {
 				 // console.log( 'Key: ' +key );
 				 console.log( 'Val: ' );
-				 console.log ( value.complications );
+				 console.log ( value );
 				// }
 				///// End Debug /////
 
@@ -417,7 +417,6 @@ export default Component.extend({
 							// dd = dd+1;
 						// }
 					} else if ( value.edges ) { //If complications exist the race chosen, check the edges for the ICF and make sure they are disabled
-						console.log (value.edges);
 						for (const [k, v] of Object.entries(value.edges)) {
 							///// Debugging /////
 							// if ( traittype == 'race' ) {
