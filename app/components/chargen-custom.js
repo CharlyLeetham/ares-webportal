@@ -400,29 +400,14 @@ export default Component.extend({
 
 					// if ( Array.isArray(value.complications) ) {
 						
-							if ( (Array.isArray(value.complications) && value.complications[0] !== null ) && value.complications.includes(dragon) ) {
-								if (!dragonrace.includes(value.name)) {
-									dragonrace[dd]=value.name;	
-									dd = dd+1;
-									console.log ("Dragon!");
-								}
-							}
+
 					// }
 					
-					if ( dragon_check == true && value.complications ) {  //Dragon on exists as complication on the ICF and Race. We don't need to check the edges, just find if the complication exists as well
-						///// Debugging /////
-						// if ( traittype == 'race' ) {
-						 // console.log( 'Key: ' +key );
-						 // console.log( 'Val: ' +value.name );
-						// }
-						///// End Debug /////
-						// if ( value.complications.includes(dragon) ) {
-							// console.log( value.name );
-						// }
-						// if (!dragonrace.includes( value.name )) {
-							// dragonrace[dd] = value.name;
-							// dd = dd+1;
-						// }
+					if ( (Array.isArray(value.complications) && value.complications[0] !== null ) && value.complications.includes(dragon) ) {
+						if (!dragonrace.includes(value.name)) {
+							dragonrace[dd]=value.name;	
+							dd = dd+1;
+						}
 					} else if ( value.edges ) { //If complications exist the race chosen, check the edges for the ICF and make sure they are disabled
 						for (const [k, v] of Object.entries(value.edges)) {
 							///// Debugging /////
@@ -470,39 +455,37 @@ export default Component.extend({
 			} //Race complication						
 		} //Traittype
 
+
+
 		dislist44 = Object.values(listsys).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the list to an array and filter for any entries that match the new framework selected.
 
 
 		/// Debugging ///
-		// console.log (evalrace);
+		console.log (evalrace);
 		// console.log (listsys);
 		console.log (dislist44);
 		/// End debug ///
 		
 		for (const [key, value] of Object.entries(dislist44)) {
-			value['disabled'] = false //Set disabled for this element to false
+			// value['disabled'] = false //Set disabled for this element to false
 		}					
 		
-		// if ( !dragon_check ) {
-			if (evalrace) {
-				for (const [k, v] of Object.entries(evalrace)) {
-					
-					/// Debugging ///
-					console.log ('k: ' +k);
-					console.log ('v: ' +v);
-					/// End debug ///					
-					var dislist44 = Object.values(listsys).filter(slots => slots.class.toString().toLowerCase() == v.toLowerCase()); 					
-					
-					// Convert the iconic framework list to an array and filter for any entries that match the new framework selected.	
-					for (const [k1, v1] of Object.entries(dislist44)) {
-						v1['disabled'] = true //Set disabled for this element to true							
-					}
+		if (evalrace) {
+			for (const [k, v] of Object.entries(evalrace)) {
+				
+				/// Debugging ///
+				console.log ('k: ' +k);
+				console.log ('v: ' +v);
+				/// End debug ///					
+				var dislist44 = Object.values(listsys).filter(slots => slots.class.toString().toLowerCase() == v.toLowerCase()); 					
+				
+				// Convert the iconic framework list to an array and filter for any entries that match the new framework selected.	
+				for (const [k1, v1] of Object.entries(dislist44)) {
+					v1['disabled'] = true //Set disabled for this element to true							
 				}
 			}
-		// } else {
-			// console.log ('Dragonrace: '+dragonrace);
-			// We need to find the elements that a Dragon can have and set them to active
-		// }
+		}
+
 		
 		return;
 	},
