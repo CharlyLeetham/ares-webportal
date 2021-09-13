@@ -269,7 +269,7 @@ export default Component.extend({
 		/// traittype = Tells function whether we're working on icf or race		
 		
 		// Check ICF / Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
-		var i = 0, dislist44, evalrace=[], dragonrace=[], en1, complrace, newedgarray, newhindarray, newcyberarray, comptypearray=[], comptypearray2=[], comptypearray3=[], comptypearray4=[], lowedgarray, racecompl, fullsys, listsys, rppe, risp, rnsb, rcyber, rbp, dragon;
+		var i = 0, dislist44, evalrace=[], dragonrace=[], en1, complrace, newedgarray, newhindarray, newcyberarray, comptypearray=[], comptypearray2=[], comptypearray3=[], comptypearray4=[], lowedgarray, racecompl, fullsys, listsys, rppe, risp, rnsb, rcyber, rbp, dragon, dragonfw;
 		
 		if (traittype == 'icf') {
 			fullsys = swraceall;
@@ -398,24 +398,17 @@ export default Component.extend({
 				// }
 				///// End Debug /////
 
-					if ( Array.isArray(value.complications) ) {
+					// if ( Array.isArray(value.complications) ) {
 						
 							if ( (Array.isArray(value.complications) && value.complications[0] !== null ) && value.complications.includes(dragon) ) {
-								console.log (value.name+' is an array');
-								console.log (value.complications);
-								console.log ('Is this the right test?');
+								if (!dragonfw.includes(value.name)) {
+									dragonfw[dd]=value.name;	
+									dd = dd+1;
+									console.log ("Dragon!");
+								}
 							}
-					}
+					// }
 					
-					if ( value.complications && (value.complications.length > 0 || value.complications[0].length > 0 ) ) {
-						if ( traittype == 'race' ) {
-
-						 // console.log( 'Val: ' );
-						 // console.log ( value.complications );
-						}
-						///// End Debug /////						
-					}
-
 					if ( dragon_check == true && value.complications ) {  //Dragon on exists as complication on the ICF and Race. We don't need to check the edges, just find if the complication exists as well
 						///// Debugging /////
 						// if ( traittype == 'race' ) {
