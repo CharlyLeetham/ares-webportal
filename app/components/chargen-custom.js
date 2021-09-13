@@ -392,23 +392,23 @@ export default Component.extend({
 				for (const [key, value] of Object.entries(fullsys)) { //Loop through the race values. We want to know which races an Iconic Framework can't have.	
 				///// Debugging /////
 				// if ( traittype == 'race' ) {
-				 console.log( 'Key: ' +key );
+				 // console.log( 'Key: ' +key );
 				 // console.log( 'Val: ' );
-				 console.log ( value );
+				 // console.log ( value );
 				// }
 				///// End Debug /////
 
 
 
 
-					// if ( value.complications && (value.complications.length > 0 || value.complications[0].length > 0 ) {
-						// if ( traittype == 'race' ) {
-						 // console.log( 'Key: ' +key );
-						 // console.log( 'Val: ' );
-						 // console.log ( value.complications );
-						// }
+					if ( value.complications && (value.complications.length > 0 || value.complications[0].length > 0 ) {
+						if ( traittype == 'race' ) {
+						 console.log( 'Key: ' +key );
+						 console.log( 'Val: ' );
+						 console.log ( value.complications );
+						}
 						///// End Debug /////						
-					// }
+					}
 
 					if ( dragon_check == true && value.complications ) {  //Dragon on exists as complication on the ICF and Race. We don't need to check the edges, just find if the complication exists as well
 						///// Debugging /////
