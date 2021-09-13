@@ -402,7 +402,7 @@ export default Component.extend({
 
 					console.log( 'Name: ' +value.name );
 
-					if ( isArray(value.complications) ) {
+					if ( Array.isArray(value.complications) ) {
 							console.log (value.name+' is an array');
 							console.log ('Array: '+value.complications);
 					}
