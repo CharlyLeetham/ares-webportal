@@ -400,8 +400,13 @@ export default Component.extend({
 
 
 
-					console.log( 'Key: ' +key );
+					console.log( 'Name: ' +value.name );
 
+					if ( isArray(value.complications) ) {
+							console.log (value.name+' is an array');
+							console.log ('Array: '+value.complications);
+					}
+					
 					if ( value.complications && (value.complications.length > 0 || value.complications[0].length > 0 ) ) {
 						if ( traittype == 'race' ) {
 
