@@ -398,10 +398,6 @@ export default Component.extend({
 				// }
 				///// End Debug /////
 
-
-
-					console.log( 'Name: ' +value.name );
-
 					if ( Array.isArray(value.complications) ) {
 						
 							if ( Array.isArray(value.complications) && value.complications[0] !== null ) {
