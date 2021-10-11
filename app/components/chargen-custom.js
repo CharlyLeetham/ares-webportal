@@ -427,9 +427,9 @@ export default Component.extend({
 					// console.log( 'Key: ' +key );
 					// console.log( 'Val: '+value );
 					// console.log ( value );
-					console.log ( 'Name: '+value.name );
-					console.log ( 'Compls :');
-					console.log ( value.complications );
+					// console.log ( 'Name: '+value.name );
+					// console.log ( 'Compls :');
+					// console.log ( value.complications );
 					// console.log ( chosenifarray );
 					// console.log ( 'Edges: '+ value.edges );
 					// console.log ( 'PPE: '+ ppe_check );
@@ -458,7 +458,9 @@ export default Component.extend({
 						// console.log( 'Key: ' +key );
 						// console.log( 'Val: ' );
 						// console.log ( value );
-						// console.log ( 'Name: '+ value.name );
+						console.log ( 'Name: '+ value.name );
+						console.log ( 'Compls: ' );
+						console.log ( value.complications );
 						// console.log ( 'Edges: '+ value.edges );
 						// console.log ( 'PPE: '+ ppe_check );
 						// console.log ( 'ISP: '+isp_check );
