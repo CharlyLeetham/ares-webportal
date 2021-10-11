@@ -341,7 +341,7 @@ export default Component.extend({
 					for ( const [k, v] of Object.entries( value.complications ) ) {
 						///// Debugging /////
 						if ( value.name == 'DNorr' ) {
-							console.log ('v: '+v);
+							// console.log ('v: '+v);
 						}
 						///// End Debug /////
 						
