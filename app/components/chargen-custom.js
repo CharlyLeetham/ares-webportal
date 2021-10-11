@@ -465,7 +465,9 @@ export default Component.extend({
 						// console.log ( 'Dragon: '+dragon_check );				 
 					}
 					///// End Debug /////
-					
+
+					var dragon_check_icf = value.complications.includes(dragon) //see if the race has the value					
+										
 					if ( ( Array.isArray( value.complications ) && value.complications[0] !== null ) && value.complications.includes( dragon ) ) {  //If the framework has a complication of Dragon, do this.
 						if ( !dragonrace.includes( value.name ) ) { // If the array dragonrace doesn't already include this framework, include this race in the array;
 							dragonrace[dd]=value.name;	
@@ -519,7 +521,7 @@ export default Component.extend({
 									} 				
 								}
 								
-								if ( ppe_test == true || isp_test == true || nsb_test == true || bp_test == true || cyber_test == true ) {
+								if ( ppe_test == true || isp_test == true || nsb_test == true || bp_test == true || cyber_test == true || dragon_check_icf == true ) {
 									// We need to determine if the IF has this edge
 									///// Debugging /////
 									// console.log ('do we get here?');
