@@ -434,8 +434,10 @@ export default Component.extend({
 					}
 					///// End Debug /////
 					
-					hascyberslots = value.hasOwnProperty( 'cyber_slots' );
-					console.log ( 'Cyber: '+hascyberslots );					
+					if ( value.hasOwnProperty( 'chargen_points' ) ) {
+						hascyberslots = value.charge_points;
+						console.log ( 'Cyber: '+hascyberslots );					
+					}
 					
 					if ( ( Array.isArray( value.complications ) && value.complications[0] !== null ) && value.complications.includes( dragon ) ) {  //If the framework has a complication of Dragon, do this.
 						if ( !dragonrace.includes( value.name ) ) { // If the array dragonrace doesn't already include this framework, include this race in the array;
