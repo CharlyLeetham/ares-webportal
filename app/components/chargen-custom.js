@@ -474,15 +474,18 @@ export default Component.extend({
 								
 								if ( cyber_check == true ) {
 									// if ( newcyberarray ) {
+									console.log ( value );
+									console.log ( 'Name: '+ value.name );										
 										if ( value.hasOwnProperty( 'chargen_points' ) ) {
 											chargenslots = value.chargen_points;
-											var cyber_test = chargenslots.hasOwnProperty( 'cyber_slots' );				
+											var cyber_test = chargenslots.hasOwnProperty( 'cyber_slots' );	
+											console.log ('Has cyber slots in cg');
 										} else {
 											var cyber_test = value.hasOwnProperty( 'cybernetics' );
+											console.log ('Has cybernetics');
 										}
 									// }
-									console.log ( value );
-									console.log ( 'Name: '+ value.name );									
+									
 									console.log ( 'Cyber Test: '.cyber_test );
 								}
 								
