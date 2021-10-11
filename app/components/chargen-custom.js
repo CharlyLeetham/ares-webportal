@@ -478,12 +478,17 @@ export default Component.extend({
 									console.log ( 'Name: '+ value.name );										
 										if ( value.hasOwnProperty( 'chargen_points' ) ) {
 											chargenslots = value.chargen_points;
-											var cyber_test = chargenslots.hasOwnProperty( 'cyber_slots' );	
-											console.log ('Has cyber slots in cg');
-											console.log ( 'Cyber Test: '.cyber_test );											
-										} else {
-											var cyber_test = value.hasOwnProperty( 'cybernetics' );
+											if ( chargenslots.hasOwnProperty( 'cyber_slots' ) ) {
+												console.log ('Has cyber slots in cg');
+												var cyber_test = true;
+												console.log ( 'Cyber Test: '.cyber_test );
+											}
+										} else if ( cyber_test = value.hasOwnProperty( 'cybernetics' ) ) {
 											console.log ('Has cybernetics');
+											var cyber_test = true;
+											console.log ( 'Cyber Test: '.cyber_test );
+										} else {
+											var cyber_test = false;
 										}
 									// }
 									
