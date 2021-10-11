@@ -550,12 +550,12 @@ export default Component.extend({
 		}
 
 		/// Debugging ///
-		// console.log (evalrace);
-		// console.log (listsys);
+		console.log (evalrace);
+		console.log (listsys);
 		console.log (dislist44);
 		/// End debug ///		
 		
-return;		
+// return;		
 		if ( evalrace ) {
 			for (const [k, v] of Object.entries(evalrace)) {
 				/// Debugging ///
