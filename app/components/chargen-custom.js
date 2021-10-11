@@ -480,6 +480,7 @@ export default Component.extend({
 											chargenslots = value.chargen_points;
 											var cyber_test = chargenslots.hasOwnProperty( 'cyber_slots' );	
 											console.log ('Has cyber slots in cg');
+											console.log ( 'Cyber Test: '.cyber_test );											
 										} else {
 											var cyber_test = value.hasOwnProperty( 'cybernetics' );
 											console.log ('Has cybernetics');
