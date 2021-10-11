@@ -466,7 +466,7 @@ export default Component.extend({
 					}
 					///// End Debug /////
 
-					var dragon_check_icf = value.complications.includes(dragon) //see if the race has the value					
+					var dragon_check_icf = value.complications.includes( dragon ) //see if the race has the value					
 										
 					if ( ( Array.isArray( value.complications ) && value.complications[0] !== null ) && value.complications.includes( dragon ) ) {  //If the framework has a complication of Dragon, do this.
 						if ( !dragonrace.includes( value.name ) ) { // If the array dragonrace doesn't already include this framework, include this race in the array;
@@ -529,7 +529,7 @@ export default Component.extend({
 										// console.log( 'Key: ' +key );
 										// console.log( 'Val: ' );
 										// console.log ( value );
-										// console.log ( 'Name: '+ value.name );
+										console.log ( 'Name: '+ value.name );
 										// console.log ( 'Edges: '+ value.edges );
 										// console.log ( 'PPE: '+ ppe_check );
 										// console.log ( 'ISP: '+isp_check );
@@ -537,6 +537,7 @@ export default Component.extend({
 										// console.log ( 'NSB: '+nsb_check );
 										// console.log ( 'BP: ' +bp_check );
 										// console.log ( 'Dragon: '+dragon_check );				 
+										console.log ( 'Dragon ICF: '+dragon_check_icf );				 
 									///// End Debug /////									
 									if ( !evalrace.includes(value.name) ) {	
 										// console.log ('Value.Name: '+value.name);
