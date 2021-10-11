@@ -437,23 +437,23 @@ export default Component.extend({
 								if (ppe_check == true) {
 									var ppetest = comptypearray.includes(v.toLowerCase());	
 									// console.log ('PPE Check: '+ppe_check);
-									// console.log ('PPE: '+ppetest);
+									console.log ('PPE: '+ppetest);
 									// Check if the race can use this 
 								}	
 
 								if (isp_check == true) {
 									var isptest = comptypearray2.includes(v.toLowerCase());	
-									// console.log ('ISP: '+isptest);									
+									console.log ('ISP: '+isptest);									
 								}											
 								
 								if (nsb_check == true) {
 									var nsbtest = comptypearray3.includes(v.toLowerCase());	
-									// console.log ('NSB: '+nsbtest);									
+									console.log ('NSB: '+nsbtest);									
 								}						
 								
 								if (bp_check == true) {
 									var bptest = comptypearray4.includes(v.toLowerCase());	
-									// console.log ('BP: '+bptest);									
+									console.log ('BP: '+bptest);									
 								}
 
 								if (newcyberarray) {
@@ -461,7 +461,7 @@ export default Component.extend({
 								}
 								
 
-								if ( ppe_check == true || isp_check == true || nsb_check == true || bp_check == true || newcyberarray ) {
+								if ( ppe_check == true || isp_check == true || nsb_check == true || bp_check == true ) {
 									// We need to determine if the IF has this edge
 									///// Debugging /////
 									// console.log ('do we get here?');
