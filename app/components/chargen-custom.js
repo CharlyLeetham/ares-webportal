@@ -474,7 +474,8 @@ export default Component.extend({
 								
 								if ( cyber_check == true ) {
 									console.log ( value );
-									console.log ( 'Name: '+ value.name );																				
+									console.log ( 'Name: '+ value.name );
+									if ( value.hasOwnProperty( 'chargen_points' ) || value.hasOwnProperty( 'cyberslots' ) ) {
 										if ( value.hasOwnProperty( 'chargen_points' ) ) {
 											chargenslots = value.chargen_points;
 											console.log ( 'Has Chargen Slots: ' );
@@ -484,13 +485,14 @@ export default Component.extend({
 												var cyber_test = true;
 												// console.log ( 'Cyber Test: '+cyber_test );
 											}
-										} else if ( value.hasOwnProperty( 'cybernetics' ) ) {
+										}
+										
+										if ( value.hasOwnProperty( 'cybernetics' ) ) {
 											console.log ('Has cybernetics');
 											var cyber_test = true;
 											// console.log ( 'Cyber Test: '+cyber_test ); 
-										} else {
-											var cyber_test = false;
-										}					
+										} 
+									} 				
 								}
 								
 								if ( ppe_test == true || isp_test == true || nsb_test == true || bp_test == true || cyber_test == true ) {
@@ -516,10 +518,11 @@ export default Component.extend({
 									}
 								}
 							} //if (v)
-							var ppetest = false;
-							var isptest = false;
-							var nsbtest = false;
-							var bptest = false;
+							var ppe_test = false;
+							var isp_test = false;
+							var nsb_test = false;
+							var bp_test = false;
+							var cyber_test = false;
 							
 						} // For Loop
 					} // Check Edges
