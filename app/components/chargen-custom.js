@@ -330,83 +330,87 @@ export default Component.extend({
 			
 		if ( traittype == 'icf' ) {
 			
-			for ( const [key, value] of Object.entries( fullsys ) ) { //Loop through the race values. We want to know which races an Iconic Framework can't have.		
-				complrace = value.hasOwnProperty( 'complications' );
-				///// Debugging /////						
-				// console.log ( 'value: ' );
-				// console.log ( value.complications );
-				// console.log ( value.name );
-				///// End Debug /////
+			if ( racecompl.includes( dragon ) ) {
+				var dragon_check = true;
+			} else {
+				for ( const [key, value] of Object.entries( fullsys ) ) { //Loop through the race values. We want to know which races an Iconic Framework can't have.		
+					complrace = value.hasOwnProperty( 'complications' );
+					///// Debugging /////						
+					// console.log ( 'value: ' );
+					// console.log ( value.complications );
+					// console.log ( value.name );
+					///// End Debug /////
 
 
-				if ( complrace && newedgarray ) { //Complications exist on the character
-					for ( const [k, v] of Object.entries( value.complications ) ) {
-						///// Debugging /////
-							// console.log ('v: '+v);
-						///// End Debug /////
-						
-						if ( v && lowedgarray ) {
-							var ppe_check = v.includes( rppe ) // see if the race has the value
-							var isp_check = v.includes( risp ) //see if the race has the value
-							var cyber_check = v.includes( rcyber ) //see if the race has the value
-							var nsb_check = v.includes( rnsb ) //see if the race has the value
-							var bp_check = v.includes( rbp ) //see if the race has the value	
-							
+					if ( complrace && newedgarray ) { //Complications exist on the character
+						for ( const [k, v] of Object.entries( value.complications ) ) {
 							///// Debugging /////
-							// console.log( 'Key: ' +key );
-							// console.log( 'Val: ' );
-							// console.log ( value );
-							// console.log ( 'Name: '+ value.name );
-							// console.log ( 'Complication: '+ v );
-							// if ( value.name == 'DNorr' ) {
-								// console.log ( 'PPE: '+ ppe_check );
-								// console.log ( 'ISP: '+isp_check );
-								// console.log ( 'Cyber: '+cyber_check );
-								// console.log ( 'NSB: '+nsb_check );
-								// console.log ( 'BP: ' +bp_check );
-								console.log ( 'Dragon: '+dragon_check );	
-							// }
-							///// End Debug /////							
+								// console.log ('v: '+v);
+							///// End Debug /////
 							
-							if ( ppe_check == true ) {
-								var ppe_test = lowedgarray.some( v => comptypearray.includes( v ) );								
-							}
-
-							if ( isp_check == true ) {
-								var isp_test = lowedgarray.some( v => comptypearray2.includes( v ) );
-							}											
-							
-							if ( nsb_check == true ) {
-								var nsb_test = lowedgarray.some( v => comptypearray3.includes( v ) );		
-							}						
-							
-							if ( bp_check == true ) {
-								var bp_test = lowedgarray.some( v => comptypearray4.includes( v ) );
-							}
-
-							if ( ppe_test==true || isp_test==true || nsb_test == true || bp_test == true || cyber_check == true ) {
+							if ( v && lowedgarray ) {
+								var ppe_check = v.includes( rppe ) // see if the race has the value
+								var isp_check = v.includes( risp ) //see if the race has the value
+								var cyber_check = v.includes( rcyber ) //see if the race has the value
+								var nsb_check = v.includes( rnsb ) //see if the race has the value
+								var bp_check = v.includes( rbp ) //see if the race has the value	
 								
-								console.log ( value.name );
+								///// Debugging /////
+								// console.log( 'Key: ' +key );
+								// console.log( 'Val: ' );
+								// console.log ( value );
+								// console.log ( 'Name: '+ value.name );
+								// console.log ( 'Complication: '+ v );
 								// if ( value.name == 'DNorr' ) {
-									console.log ( 'PPE: '+ ppe_test );
-									console.log ( 'ISP: '+isp_test );
-									console.log ( 'Cyber: '+cyber_test );
-									console.log ( 'NSB: '+nsb_test );
-									console.log ( 'BP: ' +bp_test );
-								// }								
-								if ( !evalrace.includes( value.name ) ) {
-									evalrace[i]=value.name;
-									i = i+1;								
+									// console.log ( 'PPE: '+ ppe_check );
+									// console.log ( 'ISP: '+isp_check );
+									// console.log ( 'Cyber: '+cyber_check );
+									// console.log ( 'NSB: '+nsb_check );
+									// console.log ( 'BP: ' +bp_check );
+									console.log ( 'Dragon: '+dragon_check );	
+								// }
+								///// End Debug /////							
+								
+								if ( ppe_check == true ) {
+									var ppe_test = lowedgarray.some( v => comptypearray.includes( v ) );								
+								}
+
+								if ( isp_check == true ) {
+									var isp_test = lowedgarray.some( v => comptypearray2.includes( v ) );
+								}											
+								
+								if ( nsb_check == true ) {
+									var nsb_test = lowedgarray.some( v => comptypearray3.includes( v ) );		
+								}						
+								
+								if ( bp_check == true ) {
+									var bp_test = lowedgarray.some( v => comptypearray4.includes( v ) );
+								}
+
+								if ( ppe_test==true || isp_test==true || nsb_test == true || bp_test == true || cyber_check == true ) {
+									
+									console.log ( value.name );
+									// if ( value.name == 'DNorr' ) {
+										console.log ( 'PPE: '+ ppe_test );
+										console.log ( 'ISP: '+isp_test );
+										console.log ( 'Cyber: '+cyber_test );
+										console.log ( 'NSB: '+nsb_test );
+										console.log ( 'BP: ' +bp_test );
+									// }								
+									if ( !evalrace.includes( value.name ) ) {
+										evalrace[i]=value.name;
+										i = i+1;								
+									}
 								}
 							}
 						}
-					}
-				}				
-				var ppe_test = false;
-				var isp_test = false;
-				var nsb_test = false;
-				var bp_test = false;
-				var cyber_test = false;				
+					}				
+					var ppe_test = false;
+					var isp_test = false;
+					var nsb_test = false;
+					var bp_test = false;
+					var cyber_test = false;				
+				}
 			}
 		} else {
 
