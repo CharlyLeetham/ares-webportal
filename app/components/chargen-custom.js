@@ -329,7 +329,7 @@ export default Component.extend({
 		dragon = "Dragon*"
 			
 		if ( traittype == 'icf' ) {
-			for ( const [key, value] of Object.entries( swraceall ) ) { //Loop through the race values. We want to know which races an Iconic Framework can't have.		
+			for ( const [key, value] of Object.entries( fullsys ) ) { //Loop through the race values. We want to know which races an Iconic Framework can't have.		
 				complrace = value.hasOwnProperty( 'complications' );
 				///// Debugging /////						
 				// console.log ( 'value: ' );
@@ -356,7 +356,7 @@ export default Component.extend({
 							// console.log( 'Val: ' );
 							// console.log ( value );
 							console.log ( 'Name: '+ value.name );
-							console.log ( 'Edges: '+ value.edges );
+							console.log ( 'Complication: '+ v );
 							console.log ( 'PPE: '+ ppe_check );
 							console.log ( 'ISP: '+isp_check );
 							console.log ( 'Cyber: '+cyber_check );
