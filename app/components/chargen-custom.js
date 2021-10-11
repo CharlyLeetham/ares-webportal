@@ -543,13 +543,12 @@ export default Component.extend({
 		}
 		
 		if ( evalrace ) {
-				dislist44 = Object.values( listsys );  // Convert the framework list to an array			
-				for (const [k1, v1] of Object.entries(dislist44)) {
-					if ( evalrace.includes( v1['class'] ) ) {
-						v1['disabled'] = false //Set disabled for this element to false
-					} else {
-						v1['disabled'] = true //Set disabled for this element to false
-					}
+			dislist44 = Object.values( listsys );  // Convert the framework list to an array			
+			for (const [k1, v1] of Object.entries(dislist44)) {
+				if ( evalrace.includes( v1['class'] ) ) {
+					v1['disabled'] = false //Set disabled for this element to false
+				} else {
+					v1['disabled'] = true //Set disabled for this element to false
 				}
 			}
 		}
