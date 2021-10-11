@@ -355,18 +355,17 @@ export default Component.extend({
 							// console.log( 'Key: ' +key );
 							// console.log( 'Val: ' );
 							// console.log ( value );
-							console.log ( 'Name: '+ value.name );
-							console.log ( 'Complication: '+ v );
-							console.log ( 'PPE: '+ ppe_check );
-							console.log ( 'ISP: '+isp_check );
-							console.log ( 'Cyber: '+cyber_check );
-							console.log ( 'NSB: '+nsb_check );
-							console.log ( 'BP: ' +bp_check );
-							console.log ( 'Dragon: '+dragon_check );				 
+							// console.log ( 'Name: '+ value.name );
+							// console.log ( 'Complication: '+ v );
+							// console.log ( 'PPE: '+ ppe_check );
+							// console.log ( 'ISP: '+isp_check );
+							// console.log ( 'Cyber: '+cyber_check );
+							// console.log ( 'NSB: '+nsb_check );
+							// console.log ( 'BP: ' +bp_check );
+							// console.log ( 'Dragon: '+dragon_check );				 
 							///// End Debug /////							
 							
 							if ( ppe_check == true ) {
-								console.log ( 'ppe check' );
 								var ppe_test = lowedgarray.some( v => comptypearray.includes( v ) );
 							}
 
@@ -551,7 +550,7 @@ export default Component.extend({
 
 		/// Debugging ///
 		console.log (evalrace);
-		// console.log (listsys);
+		console.log (listsys);
 		// console.log (dislist44);
 		/// End debug ///
 		
