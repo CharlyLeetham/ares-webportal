@@ -441,7 +441,9 @@ export default Component.extend({
 						}
 						console.log ('Dragons: ');
 						console.log ( dragonrace);						
-					} else if ( value.edges  ) { //If complications exist for the race chosen, check the edges for the ICF and make sure they are disabled
+					} 
+					
+					if ( value.edges  ) { //If complications exist for the race chosen, check the edges for the ICF and make sure they are disabled
 						for ( const [k, v] of Object.entries( value.edges ) ) {
 							///// Debugging /////
 							// if ( traittype == 'race' ) {
