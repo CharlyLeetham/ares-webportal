@@ -481,6 +481,7 @@ export default Component.extend({
 											var cyber_test = value.hasownProperty( 'cybernetics' );
 										}
 									}
+									console.log ( 'Cyber Test: '.cyber_test );
 								}
 								
 								if ( ppe_test == true || isp_test == true || nsb_test == true || bp_test == true || cyber_test ) {
