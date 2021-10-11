@@ -531,9 +531,6 @@ export default Component.extend({
 
 		dislist44 = Object.values( listsys ).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the list to an array and filter for any entries that match the new framework selected.
 
- console.log (dislist44);
-return;
-
 		/// Debugging ///
 		// console.log (evalrace);
 		// console.log (listsys);
@@ -542,7 +539,11 @@ return;
 		
 		if ( dragonrace ) {
 			for (const [k, v] of Object.entries(dragonrace)) {
-				dislist44 = Object.values( listsys ).filter(slots => slots.disabled.toString().toLowerCase() == 'true');  // Find all the entries and filter for disabled = true. 
+				// dislist44 = Object.values( listsys ).filter(slots => slots.disabled.toString().toLowerCase() == 'false');  // Find all the entries and filter for disabled = true. 
+				dislist44 = Object.values( listsys );  // Find all the entries and filter for disabled = true. 
+				
+				console.log (dislist44);
+				return;
 				dislist44 = Object.values( listsys ).filter(slots => slots.class.toString().toLowerCase() == v.toLowerCase()); // Convert the string to lower case to allow for better checking.
 				// Convert the iconic framework list to an array and filter for any entries that match the new framework selected.	
 				for (const [k1, v1] of Object.entries(dislist44)) {
