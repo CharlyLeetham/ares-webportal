@@ -420,7 +420,7 @@ export default Component.extend({
 						if ( !dragonrace.includes(value.name) ) {
 							dragonrace[dd]=value.name;	
 							dd = dd+1;
-							console.log ('What the fuck is this? '+value.name;
+							console.log ( 'What the fuck is this? '+value.name );
 						}
 					} 
 					
