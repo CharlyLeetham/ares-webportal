@@ -310,9 +310,10 @@ export default Component.extend({
 
 		///// Debugging /////
 			if ( traittype == 'race' ) {
-				console.log ( newhindarray );
-				console.log ( newcyberarray );
-				console.log ( racecompl );
+				// console.log ( newhindarray );
+				// console.log ( newcyberarray );
+				// console.log ( racecompl );
+				console.log ( lowedgarray );
 			}
 		///// End Debug /////		
 		
@@ -465,18 +466,18 @@ export default Component.extend({
 									// We need to determine if the IF has this edge
 									///// Debugging /////
 									// console.log ('do we get here?');
-									console.log ('Value.Name: '+value.name);
-										console.log( 'Key: ' +key );
-										console.log( 'Val: ' );
-										console.log ( value );
-										console.log ( 'Name: '+ value.name );
-										console.log ( 'Edges: '+ value.edges );
-										console.log ( 'PPE: '+ ppe_check );
-										console.log ( 'ISP: '+isp_check );
-										console.log ( 'Cyber: '+cyber_check );
-										console.log ( 'NSB: '+nsb_check );
-										console.log ( 'BP: ' +bp_check );
-										console.log ( 'Dragon: '+dragon_check );				 
+									// console.log ('Value.Name: '+value.name);
+										// console.log( 'Key: ' +key );
+										// console.log( 'Val: ' );
+										// console.log ( value );
+										// console.log ( 'Name: '+ value.name );
+										// console.log ( 'Edges: '+ value.edges );
+										// console.log ( 'PPE: '+ ppe_check );
+										// console.log ( 'ISP: '+isp_check );
+										// console.log ( 'Cyber: '+cyber_check );
+										// console.log ( 'NSB: '+nsb_check );
+										// console.log ( 'BP: ' +bp_check );
+										// console.log ( 'Dragon: '+dragon_check );				 
 									///// End Debug /////									
 									if ( !evalrace.includes(value.name) ) {									
 										evalrace[i]=value.name;	
