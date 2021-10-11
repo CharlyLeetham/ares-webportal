@@ -438,9 +438,7 @@ export default Component.extend({
 						if ( !dragonrace.includes( value.name ) ) { // If the array dragonrace doesn't already include this framework, include this race in the array;
 							dragonrace[dd]=value.name;	
 							dd = dd+1;
-						}
-						console.log ('Dragons: ');
-						console.log ( dragonrace);						
+						}						
 					} 
 					
 					if ( value.edges  ) { //If complications exist for the race chosen, check the edges for the ICF and make sure they are disabled
@@ -534,6 +532,8 @@ export default Component.extend({
 		if ( dragon_check ) {
 			dislist44 = Object.values( listsys );  // Convert the framework list to an array	
 			for (const [k1, v1] of Object.entries(dislist44)) {
+										console.log ('Dragons: ');
+						console.log ( dragonrace);
 				if ( dragonrace.includes( v1['class'] ) ) {
 					v1['disabled'] = false //Set disabled for this element to false
 				} else {
