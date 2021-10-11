@@ -336,7 +336,7 @@ export default Component.extend({
 				if ( complrace && newedgarray ) { //Complications exist on the character
 					for ( const [k, v] of Object.entries( value.complications ) ) {
 						///// Debugging /////						
-						// console.log ('v: '+v);
+						console.log ('v: '+v);
 						///// End Debug /////
 						
 						if ( v && lowedgarray ) {
@@ -532,13 +532,9 @@ export default Component.extend({
 		if ( dragon_check ) {
 			dislist44 = Object.values( listsys );  // Convert the framework list to an array	
 			for (const [k1, v1] of Object.entries(dislist44)) {
-				console.log ( dragonrace);
-				console.log ( 'Class: '+v1['class'] );
 				if ( dragonrace.includes( v1['class'] ) ) {
-					console.log ( 'Disabled' );
 					v1['disabled'] = false //Set disabled for this element to false
 				} else {
-					console.log ( 'Enabled' );
 					v1['disabled'] = true //Set disabled for this element to false
 				}
 			}
