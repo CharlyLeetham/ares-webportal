@@ -332,15 +332,15 @@ export default Component.extend({
 			for ( const [key, value] of Object.entries( fullsys ) ) { //Loop through the race values. We want to know which races an Iconic Framework can't have.		
 				complrace = value.hasOwnProperty( 'complications' );
 				///// Debugging /////						
-				console.log ( 'value: ' );
-				console.log ( value );
+				// console.log ( 'value: ' );
+				// console.log ( value );
 				///// End Debug /////
 
 
 				if ( complrace && newedgarray ) { //Complications exist on the character
 					for ( const [k, v] of Object.entries( value.complications ) ) {
 						///// Debugging /////
-						if ( value.name = "D'norr" ) {
+						if ( value.name == "D'norr" ) {
 							console.log ('v: '+v);
 						}
 						///// End Debug /////
