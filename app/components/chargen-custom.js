@@ -363,7 +363,7 @@ export default Component.extend({
 								// console.log ( 'Cyber: '+cyber_check );
 								// console.log ( 'NSB: '+nsb_check );
 								// console.log ( 'BP: ' +bp_check );
-								// console.log ( 'Dragon: '+dragon_check );	
+								console.log ( 'Dragon: '+dragon_check );	
 							// }
 							///// End Debug /////							
 							
@@ -381,21 +381,6 @@ export default Component.extend({
 							
 							if ( bp_check == true ) {
 								var bp_test = lowedgarray.some( v => comptypearray4.includes( v ) );
-							}
-
-							if ( cyber_check == true ) {
-								if ( value.hasOwnProperty( 'chargen_points' ) || value.hasOwnProperty( 'cyberslots' ) ) {
-									if ( value.hasOwnProperty( 'chargen_points' ) ) {
-										chargenslots = value.chargen_points;
-										if ( chargenslots.hasOwnProperty( 'cyber_slots' ) ) {
-											var cyber_test = true;
-										}
-									}
-									
-									if ( value.hasOwnProperty( 'cybernetics' ) ) {
-										var cyber_test = true;
-									} 
-								} 				
 							}
 
 							if ( ppe_test==true || isp_test==true || nsb_test == true || bp_test == true || cyber_check == true ) {
