@@ -292,7 +292,13 @@ export default Component.extend({
 			// console.log ( chosenifarray );
 		// }
 			if ( traittype == 'race' ) {
-				console.log ( listsys );
+				console.log ( swraceall );
+				console.log ( swiconicfall );
+				console.log ( swrace );
+				console.log ( swiconicf );
+				console.log ( chosenifarray );
+				console.log ( newval );
+				return;
 			}
 			
 		///// End Debug /////
