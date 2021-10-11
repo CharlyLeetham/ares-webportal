@@ -359,27 +359,26 @@ export default Component.extend({
 							// console.log ( value );
 							// console.log ( 'Name: '+ value.name );
 							// console.log ( 'Complication: '+ v );
-							if ( value.name == 'DNorr' ) {
-								console.log ( 'PPE: '+ ppe_check );
-								console.log ( 'ISP: '+isp_check );
-								console.log ( 'Cyber: '+cyber_check );
-								console.log ( 'NSB: '+nsb_check );
-								console.log ( 'BP: ' +bp_check );
-								console.log ( 'Dragon: '+dragon_check );	
-							}
+							// if ( value.name == 'DNorr' ) {
+								// console.log ( 'PPE: '+ ppe_check );
+								// console.log ( 'ISP: '+isp_check );
+								// console.log ( 'Cyber: '+cyber_check );
+								// console.log ( 'NSB: '+nsb_check );
+								// console.log ( 'BP: ' +bp_check );
+								// console.log ( 'Dragon: '+dragon_check );	
+							// }
 							///// End Debug /////							
 							
 							if ( ppe_check == true ) {
 								var ppe_test = lowedgarray.some( v => comptypearray.includes( v ) );
 							}
 
-							if ( ppe_check == true ) {
-								var ppe_test = lowedgarray.some( v => comptypearray.includes( v ) );
-								// Check if the race can use this 
-							}	
-
 							if ( isp_check == true ) {
-								var isp_test = lowedgarray.some( v => comptypearray2.includes( v ) );		
+								var isp_test = lowedgarray.some( v => comptypearray2.includes( v ) );
+								if ( value.name == 'DNorr' ) {
+									console.log ( lowedgarray );
+									console.log ( v );
+								}
 							}											
 							
 							if ( nsb_check == true ) {
