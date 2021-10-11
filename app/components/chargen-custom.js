@@ -312,7 +312,7 @@ export default Component.extend({
 			if ( traittype == 'race' ) {
 				// console.log ( newhindarray );
 				// console.log ( newcyberarray );
-				// console.log ( racecompl );
+				console.log ( racecompl );
 				// console.log ( lowedgarray );
 			}
 		///// End Debug /////		
