@@ -376,7 +376,8 @@ export default Component.extend({
 							}
 
 							if ( ppe_test==true || isp_test==true || nsb_test == true || bp_test == true || dragon_check == true || newcyberarray ) {
-								en1 = value.name.split('*')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
+								en1 = value.name.split('*')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's 
+								console.log ( en1 );
 								if ( evalrace.includes( en1 ) ) {
 									// console.log('in there dummy');
 								} else {
