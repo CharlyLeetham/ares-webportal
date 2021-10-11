@@ -536,15 +536,17 @@ export default Component.extend({
 		// console.log (dislist44);
 		/// End debug ///
 		
-		if ( dragonrace ) {
-			for (const [k, v] of Object.entries(evalrace)) {
-				var dislist44 = Object.values( listsys ).filter(slots => slots.class.toString().toLowerCase() == v.toLowerCase()); 
-				// Convert the iconic framework list to an array and filter for any entries that match the new framework selected.	
-				for (const [k1, v1] of Object.entries(dislist44)) {
-					v1['disabled'] = false //Set disabled for this element to true							
-				}
-			}
-		} else if ( evalrace ) {
+		// if ( dragonrace ) {
+			// for (const [k, v] of Object.entries(evalrace)) {
+				// var dislist44 = Object.values( listsys ).filter(slots => slots.class.toString().toLowerCase() == v.toLowerCase()); 
+				Convert the iconic framework list to an array and filter for any entries that match the new framework selected.	
+				// for (const [k1, v1] of Object.entries(dislist44)) {
+					// v1['disabled'] = false //Set disabled for this element to true							
+				// }
+			// }
+		// } else 
+			
+		if ( evalrace ) {
 			for (const [k, v] of Object.entries(evalrace)) {
 				/// Debugging ///
 				// console.log ('k: ' +k);
