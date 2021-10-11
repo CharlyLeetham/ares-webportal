@@ -332,8 +332,8 @@ export default Component.extend({
 			for ( const [key, value] of Object.entries( swraceall ) ) { //Loop through the race values. We want to know which races an Iconic Framework can't have.		
 				complrace = value.hasOwnProperty( 'complications' );
 				///// Debugging /////						
-				console.log ( 'value: ' );
-				console.log ( value );
+				// console.log ( 'value: ' );
+				// console.log ( value );
 				///// End Debug /////
 
 
@@ -377,8 +377,8 @@ export default Component.extend({
 
 							if ( ppe_test==true || isp_test==true || nsb_test == true || bp_test == true || dragon_check == true || newcyberarray ) {
 								en1 = value.name.split('*')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's 
-								console.log ( en1 );
-								if ( evalrace.includes( en1 ) ) {
+								// console.log ( en1 );
+								if ( !evalrace.includes( en1 ) ) {
 									// console.log('in there dummy');
 								} else {
 									evalrace[i]=en1;
@@ -390,6 +390,9 @@ export default Component.extend({
 					
 				}
 			}
+			
+			console.log ( evalrace );
+			return;
 		} else {
 
 				///// Debugging /////
