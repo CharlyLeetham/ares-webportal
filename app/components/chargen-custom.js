@@ -531,6 +531,8 @@ export default Component.extend({
 
 		dislist44 = Object.values( listsys ).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the list to an array and filter for any entries that match the new framework selected.
 
+ console.log (dislist44);
+return;
 
 		/// Debugging ///
 		// console.log (evalrace);
