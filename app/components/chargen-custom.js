@@ -532,8 +532,7 @@ export default Component.extend({
 		/// End debug ///
 		
 		if ( dragon_check ) {
-			dislist44 = Object.values( listsys );  // Find all the entries and filter for disabled = true. 
-			// Convert the iconic framework list to an array and filter for any entries that match the new framework selected.	
+			dislist44 = Object.values( listsys );  // Convert the framework list to an array	
 			for (const [k1, v1] of Object.entries(dislist44)) {
 				if ( dragonrace.includes( v1['class'] ) ) {
 					v1['disabled'] = false //Set disabled for this element to false
@@ -542,20 +541,15 @@ export default Component.extend({
 				}
 			}
 		}
-
-		var dragon_check = false;
 		
 		if ( evalrace ) {
-			for (const [k, v] of Object.entries(evalrace)) {
-				/// Debugging ///
-				// console.log ('k: ' +k);
-				// console.log ('v: ' +v);
-				/// End debug ///					
-				var dislist44 = Object.values( listsys ).filter(slots => slots.class.toString().toLowerCase() == v.toLowerCase()); 					
-				
-				// Convert the iconic framework list to an array and filter for any entries that match the new framework selected.	
+				dislist44 = Object.values( listsys );  // Convert the framework list to an array			
 				for (const [k1, v1] of Object.entries(dislist44)) {
-					v1['disabled'] = true //Set disabled for this element to true							
+					if ( evalrace.includes( v1['class'] ) ) {
+						v1['disabled'] = false //Set disabled for this element to false
+					} else {
+						v1['disabled'] = true //Set disabled for this element to false
+					}
 				}
 			}
 		}
