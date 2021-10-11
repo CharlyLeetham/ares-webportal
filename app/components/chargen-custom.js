@@ -481,12 +481,12 @@ export default Component.extend({
 											if ( chargenslots.hasOwnProperty( 'cyber_slots' ) ) {
 												console.log ('Has cyber slots in cg');
 												cyber_test = true;
-												console.log ( 'Cyber Test: '.cyber_test );
+												console.log ( 'Cyber Test: '+cyber_test );
 											}
 										} else if ( cyber_test = value.hasOwnProperty( 'cybernetics' ) ) {
 											console.log ('Has cybernetics');
 											cyber_test = true;
-											console.log ( 'Cyber Test: '.cyber_test );
+											console.log ( 'Cyber Test: '+cyber_test );
 										} else {
 											cyber_test = false;
 										}					
