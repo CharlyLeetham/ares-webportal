@@ -472,25 +472,25 @@ export default Component.extend({
 									// console.log ('BP: '+bptest);									
 								}
 								
-								// if ( cyber_check == true ) {
+								if ( cyber_check == true ) {
 									// console.log ( value );
 									// console.log ( 'Name: '+ value.name );										
-										// if ( value.hasOwnProperty( 'chargen_points' ) ) {
-											// chargenslots = value.chargen_points;
+										if ( value.hasOwnProperty( 'chargen_points' ) ) {
+											chargenslots = value.chargen_points;
 											// console.log ( chargenslots );
-											// if ( chargenslots.hasOwnProperty( 'cyber_slots' ) ) {
+											if ( chargenslots.hasOwnProperty( 'cyber_slots' ) ) {
 												// console.log ('Has cyber slots in cg');
-												// var cyber_test = true;
+												var cyber_test = true;
 												// console.log ( 'Cyber Test: '+cyber_test );
-											// }
-										// } else if ( cyber_test = value.hasOwnProperty( 'cybernetics' ) ) {
+											}
+										} else if ( cyber_test = value.hasOwnProperty( 'cybernetics' ) ) {
 											// console.log ('Has cybernetics');
-											// var cyber_test = true;
+											var cyber_test = true;
 											// console.log ( 'Cyber Test: '+cyber_test );
-										// } else {
-											// var cyber_test = false;
-										// }					
-								// }
+										} else {
+											var cyber_test = false;
+										}					
+								}
 								
 								if ( ppe_test == true || isp_test == true || nsb_test == true || bp_test == true || cyber_test == true ) {
 									// We need to determine if the IF has this edge
