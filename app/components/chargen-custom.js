@@ -407,8 +407,8 @@ export default Component.extend({
 					// console.log( 'Key: ' +key );
 					// console.log( 'Val: ' );
 					// console.log ( value );
-					console.log ( 'Name: '+ value.name );
-					console.log ( 'Edges: '+ value.edges );
+					// console.log ( 'Name: '+ value.name );
+					// console.log ( 'Edges: '+ value.edges );
 					// console.log ( 'PPE: '+ ppe_check );
 					// console.log ( 'ISP: '+isp_check );
 					// console.log ( 'Cyber: '+cyber_check );
@@ -461,10 +461,11 @@ export default Component.extend({
 								}
 								
 
-								if ( ppe_check == true || isp_check == true || nsb_check == true || bp_check == true || newcyberarray) {
+								if ( ppe_check == true || isp_check == true || nsb_check == true || bp_check == true || newcyberarray ) {
 									// We need to determine if the IF has this edge
 									///// Debugging /////
 									// console.log ('do we get here?');
+									console.log ('Value.Name: '+value.name);									
 									///// end debug /////
 									if ( !evalrace.includes(value.name) ) {
 										///// Debugging /////
