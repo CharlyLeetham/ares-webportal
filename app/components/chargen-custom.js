@@ -339,8 +339,10 @@ export default Component.extend({
 
 				if ( complrace && newedgarray ) { //Complications exist on the character
 					for ( const [k, v] of Object.entries( value.complications ) ) {
-						///// Debugging /////						
-						// console.log ('v: '+v);
+						///// Debugging /////
+						if ( value.name = "D'norr" ) {
+							console.log ('v: '+v);
+						}
 						///// End Debug /////
 						
 						if ( v && lowedgarray ) {
