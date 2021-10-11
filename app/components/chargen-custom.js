@@ -413,13 +413,13 @@ export default Component.extend({
 
 							if ( ppe_test==true || isp_test==true || nsb_test == true || bp_test == true || cyber_test == true ) {
 								
-								if ( value.name == 'DNorr' ) {
-									console.log ( 'PPE: '+ ppe_test );
-									console.log ( 'ISP: '+isp_test );
-									console.log ( 'Cyber: '+cyber_test );
-									console.log ( 'NSB: '+nsb_test );
-									console.log ( 'BP: ' +bp_test );
-								}								
+								// if ( value.name == 'DNorr' ) {
+									// console.log ( 'PPE: '+ ppe_test );
+									// console.log ( 'ISP: '+isp_test );
+									// console.log ( 'Cyber: '+cyber_test );
+									// console.log ( 'NSB: '+nsb_test );
+									// console.log ( 'BP: ' +bp_test );
+								// }								
 								if ( !evalrace.includes( value.name ) ) {
 									evalrace[i]=value.name;
 									i = i+1;								
@@ -427,7 +427,12 @@ export default Component.extend({
 							}
 						}
 					}
-				}
+				}				
+				var ppe_test = false;
+				var isp_test = false;
+				var nsb_test = false;
+				var bp_test = false;
+				var cyber_test = false;				
 			}
 		} else {
 
