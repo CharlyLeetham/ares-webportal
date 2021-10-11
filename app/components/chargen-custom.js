@@ -340,9 +340,7 @@ export default Component.extend({
 				if ( complrace && newedgarray ) { //Complications exist on the character
 					for ( const [k, v] of Object.entries( value.complications ) ) {
 						///// Debugging /////
-						if ( value.name == 'DNorr' ) {
 							// console.log ('v: '+v);
-						}
 						///// End Debug /////
 						
 						if ( v && lowedgarray ) {
@@ -370,22 +368,11 @@ export default Component.extend({
 							///// End Debug /////							
 							
 							if ( ppe_check == true ) {
-								var ppe_test = lowedgarray.some( v => comptypearray.includes( v ) );
-								if ( value.name == 'DNorr' ) {
-									console.log ( lowedgarray );
-									console.log ( v );
-									console.log ( 'PPE Test: '+ppe_test );
-								}								
+								var ppe_test = lowedgarray.some( v => comptypearray.includes( v ) );								
 							}
 
 							if ( isp_check == true ) {
-								// var isp_test = lowedgarray.some( v => comptypearray2.includes( v ) );
-								var isp_test = newedgarray.includes( v ) ;
-								// if ( value.name == 'DNorr' ) {
-									// console.log ( lowedgarray );
-									// console.log ( v );
-									// console.log ( 'ISP Test: '+isp_test );
-								// }
+								var isp_test = lowedgarray.some( v => comptypearray2.includes( v ) );
 							}											
 							
 							if ( nsb_check == true ) {
@@ -413,12 +400,13 @@ export default Component.extend({
 
 							if ( ppe_test==true || isp_test==true || nsb_test == true || bp_test == true || cyber_test == true ) {
 								
+								console.log ( value.name );
 								// if ( value.name == 'DNorr' ) {
-									// console.log ( 'PPE: '+ ppe_test );
-									// console.log ( 'ISP: '+isp_test );
-									// console.log ( 'Cyber: '+cyber_test );
-									// console.log ( 'NSB: '+nsb_test );
-									// console.log ( 'BP: ' +bp_test );
+									console.log ( 'PPE: '+ ppe_test );
+									console.log ( 'ISP: '+isp_test );
+									console.log ( 'Cyber: '+cyber_test );
+									console.log ( 'NSB: '+nsb_test );
+									console.log ( 'BP: ' +bp_test );
 								// }								
 								if ( !evalrace.includes( value.name ) ) {
 									evalrace[i]=value.name;
