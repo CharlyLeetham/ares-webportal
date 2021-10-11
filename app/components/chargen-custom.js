@@ -436,7 +436,7 @@ export default Component.extend({
 					
 					if ( value.hasOwnProperty( 'chargen_points' ) ) {
 						chargenslots = value.chargen_points;
-						hascyberslots = chargenslots['cyber_slots']'
+						hascyberslots = chargenslots['cyber_slots'];
 						console.log ( 'Cyber: ' )
 						console.log ( hascyberslots );					
 					}
