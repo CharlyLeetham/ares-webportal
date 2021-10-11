@@ -313,7 +313,6 @@ export default Component.extend({
 				console.log ( newhindarray );
 				console.log ( newcyberarray );
 				console.log ( racecompl );
-				return;
 			}
 		///// End Debug /////		
 		
@@ -328,50 +327,50 @@ export default Component.extend({
 		rbp = "Bizarre Physiology^";
 		dragon = "Dragon*"
 			
-		if (traittype == 'icf') {
-			for (const [key, value] of Object.entries(swraceall)) { //Loop through the race values. We want to know which races an Iconic Framework can't have.		
+		if ( traittype == 'icf' ) {
+			for ( const [key, value] of Object.entries( swraceall ) ) { //Loop through the race values. We want to know which races an Iconic Framework can't have.		
 				
-				complrace = value.hasOwnProperty('complications');
+				complrace = value.hasOwnProperty( 'complications' );
 
-				if (complrace && newedgarray) { //Complications exist on the character
-					for (const [k, v] of Object.entries(value.complications)) {
+				if ( complrace && newedgarray ) { //Complications exist on the character
+					for ( const [k, v] of Object.entries( value.complications ) ) {
 						///// Debugging /////						
 						// console.log ('v: '+v);
 						///// End Debug /////
 						
-						if (v && lowedgarray) {
-							var ppe_check = v.includes(rppe) // see if the race has the value
-							var isp_check = v.includes(risp) //see if the race has the value
-							var cyber_check = v.includes(rcyber) //see if the race has the value
-							var nsb_check = v.includes(rnsb) //see if the race has the value
-							var bp_check = v.includes(rbp) //see if the race has the value	
-							var dragon_check = v.includes(dragon) //see if the race has the value
+						if ( v && lowedgarray ) {
+							var ppe_check = v.includes( rppe ) // see if the race has the value
+							var isp_check = v.includes( risp ) //see if the race has the value
+							var cyber_check = v.includes( rcyber ) //see if the race has the value
+							var nsb_check = v.includes( rnsb ) //see if the race has the value
+							var bp_check = v.includes( rbp ) //see if the race has the value	
+							var dragon_check = v.includes( dragon ) //see if the race has the value
 							
-							if (ppe_check == true) {
-								var ppetest = lowedgarray.some(v => comptypearray.includes(v));
+							if ( ppe_check == true ) {
+								var ppetest = lowedgarray.some( v => comptypearray.includes( v ) );
 							}
 
-							if (ppe_check == true) {
-								var ppetest = lowedgarray.some(v => comptypearray.includes(v));
+							if ( ppe_check == true ) {
+								var ppetest = lowedgarray.some( v => comptypearray.includes( v ) );
 								// Check if the race can use this 
 							}	
 
-							if (isp_check == true) {
-								var isptest = lowedgarray.some(v => comptypearray2.includes(v));		
+							if ( isp_check == true ) {
+								var isptest = lowedgarray.some( v => comptypearray2.includes( v ) );		
 							}											
 							
-							if (nsb_check == true) {
-								var nsbtest = lowedgarray.some(v => comptypearray3.includes(v));		
+							if ( nsb_check == true ) {
+								var nsbtest = lowedgarray.some( v => comptypearray3.includes( v ) );		
 							}						
 							
-							if (bp_check == true) {
-								var bptest = lowedgarray.some(v => comptypearray4.includes(v));
+							if ( bp_check == true ) {
+								var bptest = lowedgarray.some( v => comptypearray4.includes( v ) );
 							}
 
-							if (newcyberarray) {
+							if ( newcyberarray ) {
 							}
 
-							if (ppe_check==true || isp_check==true || nsb_check == true || bp_check == true || dragon_check == true || newcyberarray) {
+							if ( ppe_check==true || isp_check==true || nsb_check == true || bp_check == true || dragon_check == true || newcyberarray ) {
 								// console.log(en1);
 								en1 = value.name.split('*')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
 								if (evalrace.includes(en1)) {
@@ -387,7 +386,7 @@ export default Component.extend({
 				}
 			}
 		} else {		
-			if (racecompl) {
+			if ( racecompl ) {
 				// Check to see if the Race includes things that the IF can't have //
 				
 				var ppe_check = racecompl.includes(rppe) // see if the race has the value
@@ -402,8 +401,13 @@ export default Component.extend({
 				var dd = 0;
 				
 				///// Debugging /////
-				// console.log (racecompl);
-				// console.log (fullsys);
+				console.log ( ppe_check );
+				console.log ( isp_check );
+				console.log ( cyber_check );
+				console.log ( nsb_check );
+				console.log ( bp_check );
+				console.log ( dragon_check );
+
 				///// End Debug /////				
 				
 				for (const [key, value] of Object.entries(fullsys)) { //Loop through the race values. We want to know which races an Iconic Framework can't have.	
