@@ -422,8 +422,8 @@ export default Component.extend({
 					if ( traittype == 'race' ) {
 						// console.log( 'Key: ' +key );
 						// console.log( 'Val: ' );
-						console.log ( value );
-						console.log ( 'Name: '+ value.name );
+						// console.log ( value );
+						// console.log ( 'Name: '+ value.name );
 						// console.log ( 'Edges: '+ value.edges );
 						// console.log ( 'PPE: '+ ppe_check );
 						// console.log ( 'ISP: '+isp_check );
@@ -481,6 +481,8 @@ export default Component.extend({
 											var cyber_test = value.hasownProperty( 'cybernetics' );
 										}
 									}
+									console.log ( value );
+									console.log ( 'Name: '+ value.name );									
 									console.log ( 'Cyber Test: '.cyber_test );
 								}
 								
