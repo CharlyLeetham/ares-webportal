@@ -293,7 +293,7 @@ export default Component.extend({
 		// }
 			if ( traittype == 'race' ) {
 				// console.log ( swraceall );
-				// console.log ( swiconicfall );
+				console.log ( swiconicfall );
 				// console.log ( swrace );
 				// console.log ( swiconicf );
 				console.log ( chosenifarray );
@@ -417,7 +417,6 @@ export default Component.extend({
 				 console.log( 'Val: ' );
 				 console.log ( value );
 				}
-				return;
 				///// End Debug /////
 
 					// if ( Array.isArray(value.complications) ) {
