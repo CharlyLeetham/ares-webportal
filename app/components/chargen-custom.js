@@ -467,24 +467,11 @@ export default Component.extend({
 									// console.log ('do we get here?');
 									console.log ('Value.Name: '+value.name);									
 									///// end debug /////
-									if ( !evalrace.includes(value.name) ) {
-										///// Debugging /////
-										console.log ('Value.Name: '+value.name);
-										///// end debug /////										
+									if ( !evalrace.includes(value.name) ) {									
 										evalrace[i]=value.name;	
 										i=i+1;
 									}
 								}
-								// if ( ppe_check == true || isp_check == true || nsb_check == true || bp_check == true || newcyberarray) {
-									// We need to determine if the IF has this edge
-									/// Debugging /////
-									// console.log ('do we get here?');
-									/// end debug /////
-									// if (!evalrace.includes(value.name)) {
-										// evalrace[i]=value.name;	
-										// i=i+1;
-									// }
-								// }
 							} //if (v)							
 						} // For Loop
 					} // Check Edges
@@ -493,7 +480,10 @@ export default Component.extend({
 		} //Traittype
 
 
-
+			///// Debugging /////
+			console.log ('evalrace: '+evalrace);									
+			///// end debug /////
+		return;
 		dislist44 = Object.values(listsys).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the list to an array and filter for any entries that match the new framework selected.
 
 
