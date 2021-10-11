@@ -401,12 +401,12 @@ export default Component.extend({
 				var dd = 0;
 				
 				///// Debugging /////
-				console.log ( ppe_check );
-				console.log ( isp_check );
-				console.log ( cyber_check );
-				console.log ( nsb_check );
-				console.log ( bp_check );
-				console.log ( dragon_check );
+				console.log ( 'PPE: '+ ppe_check );
+				console.log ( 'ISP: '+isp_check );
+				console.log ( 'Cyber: '+cyber_check );
+				console.log ( 'NSB: '+nsb_check );
+				console.log ( 'BP: ' +bp_check );
+				console.log ( 'Dragon: '+dragon_check );
 
 				///// End Debug /////				
 				
