@@ -370,8 +370,12 @@ export default Component.extend({
 							///// End Debug /////							
 							
 							if ( ppe_check == true ) {
-								// var ppe_test = lowedgarray.some( v => comptypearray.includes( v ) );
-								var ppe_test = newedgarray.includes( v ) ;
+								var ppe_test = lowedgarray.some( v => comptypearray.includes( v ) );
+								if ( value.name == 'DNorr' ) {
+									console.log ( lowedgarray );
+									console.log ( v );
+									console.log ( 'PPE Test: '+ppe_test );
+								}								
 							}
 
 							if ( isp_check == true ) {
