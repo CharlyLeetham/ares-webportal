@@ -441,6 +441,9 @@ export default Component.extend({
 						}
 					} 
 					
+					console.log ('Dragons: ');
+					console.log ( dragonrace);
+					
 					if ( value.edges ) { //If complications exist for the race chosen, check the edges for the ICF and make sure they are disabled
 						for ( const [k, v] of Object.entries( value.edges ) ) {
 							///// Debugging /////
@@ -473,24 +476,16 @@ export default Component.extend({
 								}
 								
 								if ( cyber_check == true ) {
-									console.log ( value );
-									console.log ( 'Name: '+ value.name );
 									if ( value.hasOwnProperty( 'chargen_points' ) || value.hasOwnProperty( 'cyberslots' ) ) {
 										if ( value.hasOwnProperty( 'chargen_points' ) ) {
 											chargenslots = value.chargen_points;
-											console.log ( 'Has Chargen Slots: ' );
-											console.log ( chargenslots );
 											if ( chargenslots.hasOwnProperty( 'cyber_slots' ) ) {
-												console.log ('Has cyber slots in cg');
 												var cyber_test = true;
-												// console.log ( 'Cyber Test: '+cyber_test );
 											}
 										}
 										
 										if ( value.hasOwnProperty( 'cybernetics' ) ) {
-											console.log ('Has cybernetics');
 											var cyber_test = true;
-											// console.log ( 'Cyber Test: '+cyber_test ); 
 										} 
 									} 				
 								}
