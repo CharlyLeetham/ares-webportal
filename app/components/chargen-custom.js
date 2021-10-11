@@ -422,7 +422,7 @@ export default Component.extend({
 					if ( traittype == 'race' ) {
 						// console.log( 'Key: ' +key );
 						// console.log( 'Val: ' );
-						// console.log ( value );
+						console.log ( value );
 						console.log ( 'Name: '+ value.name );
 						// console.log ( 'Edges: '+ value.edges );
 						// console.log ( 'PPE: '+ ppe_check );
