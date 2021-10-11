@@ -370,7 +370,7 @@ export default Component.extend({
 							///// End Debug /////							
 							
 							
-							if ( ( Array.isArray( racecompl ) && racecompl[0] !== null ) && racecompl.includes( dragon ) ) {  //If the framework has a complication of Dragon, do this.
+							if ( ( Array.isArray( value.complications ) && value.complications[0] !== null ) && value.complications.includes( dragon ) ) {  //If the framework has a complication of Dragon, do this.
 								if ( !dragonrace.includes( value.name ) ) { // If the array dragonrace doesn't already include this framework, include this race in the array;
 									dragonrace[dd]=value.name;	
 									dd = dd+1;
