@@ -312,8 +312,8 @@ export default Component.extend({
 			if ( traittype == 'race' ) {
 				// console.log ( newhindarray );
 				// console.log ( newcyberarray );
-				console.log ( racecompl );
-				console.log ( lowedgarray );
+				// console.log ( racecompl );
+				// console.log ( lowedgarray );
 			}
 		///// End Debug /////		
 		
@@ -499,7 +499,7 @@ export default Component.extend({
 
 
 			///// Debugging /////
-			// console.log ('evalrace: '+evalrace);									
+			console.log ('evalrace: '+evalrace);									
 			///// end debug /////
 		return;
 		dislist44 = Object.values(listsys).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the list to an array and filter for any entries that match the new framework selected.
