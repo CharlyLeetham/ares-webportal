@@ -422,7 +422,7 @@ export default Component.extend({
 					if ( traittype == 'race' ) {
 						// console.log( 'Key: ' +key );
 						// console.log( 'Val: ' );
-						// console.log ( value );
+						console.log ( value );
 						console.log ( 'Name: '+ value.name );
 						// console.log ( 'Edges: '+ value.edges );
 						// console.log ( 'PPE: '+ ppe_check );
@@ -436,7 +436,9 @@ export default Component.extend({
 					
 					if ( value.hasOwnProperty( 'chargen_points' ) ) {
 						hascyberslots = value.chargen_points;
-						console.log ( 'Cyber: '+hascyberslots );					
+						// var cyberslots_check = hascyberslots.includes(')
+						console.log ( 'Cyber: ' )
+						console.log ( hascyberslots );					
 					}
 					
 					if ( ( Array.isArray( value.complications ) && value.complications[0] !== null ) && value.complications.includes( dragon ) ) {  //If the framework has a complication of Dragon, do this.
