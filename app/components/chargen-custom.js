@@ -436,11 +436,11 @@ export default Component.extend({
 					
 					if ( ( Array.isArray( value.complications ) && value.complications[0] !== null ) && value.complications.includes( dragon ) ) {  //If the framework has a complication of Dragon, do this.
 						if ( !dragonrace.includes( value.name ) ) { // If the array dragonrace doesn't already include this framework, include this race in the array;
-							evalrace[dd]=value.name;	
+							dragonrace[dd]=value.name;	
 							dd = dd+1;
 						}
 						console.log ('Dragons: ');
-						console.log ( evalrace);						
+						console.log ( dragonrace);						
 					} else if ( value.edges  ) { //If complications exist for the race chosen, check the edges for the ICF and make sure they are disabled
 						for ( const [k, v] of Object.entries( value.edges ) ) {
 							///// Debugging /////
@@ -535,8 +535,15 @@ export default Component.extend({
 		// console.log (listsys);
 		// console.log (dislist44);
 		/// End debug ///
-			
-		if ( evalrace ) {
+		
+		if ( dragonrace ) {
+			for (const [k, v] of Object.entries(evalrace)) {
+				var dislist44 = Object.values( listsys ).filter(slots => slots.class.toString().toLowerCase() == v.toLowerCase()); 
+				// Convert the iconic framework list to an array and filter for any entries that match the new framework selected.	
+				for (const [k1, v1] of Object.entries(dislist44)) {
+					v1['disabled'] = false //Set disabled for this element to true							
+				}				
+		} else if ( evalrace ) {
 			for (const [k, v] of Object.entries(evalrace)) {
 				/// Debugging ///
 				// console.log ('k: ' +k);
