@@ -436,24 +436,24 @@ export default Component.extend({
 							///// End Debug /////
 							if ( v ) {  // This checks that there isn't a blank entry. 
 								if (ppe_check == true) {
-									var ppetest = comptypearray.includes(v.toLowerCase());	
+									var ppe_test = comptypearray.includes(v.toLowerCase());	
 									// console.log ('PPE Check: '+ppe_check);
 									// console.log ('PPE: '+ppetest);
 									// Check if the race can use this 
 								}	
 
 								if (isp_check == true) {
-									var isptest = comptypearray2.includes(v.toLowerCase());	
+									var isp_test = comptypearray2.includes(v.toLowerCase());	
 									// console.log ('ISP: '+isptest);									
 								}											
 								
 								if (nsb_check == true) {
-									var nsbtest = comptypearray3.includes(v.toLowerCase());	
+									var nsb_test = comptypearray3.includes(v.toLowerCase());	
 									// console.log ('NSB: '+nsbtest);									
 								}						
 								
 								if (bp_check == true) {
-									var bptest = comptypearray4.includes(v.toLowerCase());	
+									var bp_test = comptypearray4.includes(v.toLowerCase());	
 									// console.log ('BP: '+bptest);									
 								}
 
@@ -462,7 +462,8 @@ export default Component.extend({
 								}
 								
 
-								if ( ppe_check == true || isp_check == true || nsb_check == true || bp_check == true ) {
+								// if ( ppe_check == true || isp_check == true || nsb_check == true || bp_check == true ) {
+								if ( ppe_test == true || isp_test == true || nsb_test == true || bp_test == true ) {
 									// We need to determine if the IF has this edge
 									///// Debugging /////
 									// console.log ('do we get here?');
