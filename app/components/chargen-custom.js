@@ -306,13 +306,10 @@ export default Component.extend({
 		}
 		newhindarray = chosenifarray[0].hinderances; // Select the hinderances for the new if
 		newcyberarray = chosenifarray[0].cybernetics; // Select the cybernetics for the new if
-		hascyberslots = chosenifarray[0].chargen_slots;
-		
 		racecompl = chosenifarray[0].complications;	
 
 		///// Debugging /////
 			if ( traittype == 'race' ) {
-				console.log ( 'Cyber: '+hascyberslots );
 				// console.log ( newhindarray );
 				// console.log ( newcyberarray );
 				// console.log ( racecompl );
@@ -333,8 +330,8 @@ export default Component.extend({
 			
 		if ( traittype == 'icf' ) {
 			for ( const [key, value] of Object.entries( swraceall ) ) { //Loop through the race values. We want to know which races an Iconic Framework can't have.		
-				
 				complrace = value.hasOwnProperty( 'complications' );
+				// hascyberslots = value.hasOwnProperty( 'chargen_slots' );
 
 				if ( complrace && newedgarray ) { //Complications exist on the character
 					for ( const [k, v] of Object.entries( value.complications ) ) {
@@ -422,20 +419,23 @@ export default Component.extend({
 								
 				for ( const [key, value] of Object.entries( fullsys ) ) { //Loop through the race values. We want to know which races an Iconic Framework can't have.	
 				///// Debugging /////
-				if ( traittype == 'race' ) {
-					// console.log( 'Key: ' +key );
-					// console.log( 'Val: ' );
-					// console.log ( value );
-					// console.log ( 'Name: '+ value.name );
-					// console.log ( 'Edges: '+ value.edges );
-					// console.log ( 'PPE: '+ ppe_check );
-					// console.log ( 'ISP: '+isp_check );
-					// console.log ( 'Cyber: '+cyber_check );
-					// console.log ( 'NSB: '+nsb_check );
-					// console.log ( 'BP: ' +bp_check );
-					// console.log ( 'Dragon: '+dragon_check );				 
-				}
-				///// End Debug /////
+					if ( traittype == 'race' ) {
+						// console.log( 'Key: ' +key );
+						// console.log( 'Val: ' );
+						// console.log ( value );
+						console.log ( 'Name: '+ value.name );
+						// console.log ( 'Edges: '+ value.edges );
+						// console.log ( 'PPE: '+ ppe_check );
+						// console.log ( 'ISP: '+isp_check );
+						// console.log ( 'Cyber: '+cyber_check );
+						// console.log ( 'NSB: '+nsb_check );
+						// console.log ( 'BP: ' +bp_check );
+						// console.log ( 'Dragon: '+dragon_check );				 
+					}
+					///// End Debug /////
+					
+					hascyberslots = value.hasOwnProperty( 'chargen_slots' );
+					console.log ( 'Cyber: '+hascyberslots );					
 					
 					if ( ( Array.isArray( value.complications ) && value.complications[0] !== null ) && value.complications.includes( dragon ) ) {  //If the framework has a complication of Dragon, do this.
 						if ( !dragonrace.includes( value.name ) ) { // If the array dragonrace doesn't already include this framework, include this race in the array;
@@ -476,7 +476,7 @@ export default Component.extend({
 								}
 								
 								if ( cyber_check == true ) {
-									if ( hascyberslots == true || newcyberarray ) {
+									if ( newcyberarray ) {
 										var cyber_test = true;
 									}
 								}
