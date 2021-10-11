@@ -312,8 +312,8 @@ export default Component.extend({
 			if ( traittype == 'race' ) {
 				// console.log ( newhindarray );
 				// console.log ( newcyberarray );
-				console.log ( racecompl );
-				// console.log ( lowedgarray );
+				// console.log ( racecompl );
+				console.log ( lowedgarray );
 			}
 		///// End Debug /////		
 		
@@ -366,6 +366,7 @@ export default Component.extend({
 							///// End Debug /////							
 							
 							if ( ppe_check == true ) {
+								console.log ( 'ppe check' );
 								var ppe_test = lowedgarray.some( v => comptypearray.includes( v ) );
 							}
 
