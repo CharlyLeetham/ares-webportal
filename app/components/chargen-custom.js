@@ -269,7 +269,7 @@ export default Component.extend({
 		/// traittype = Tells function whether we're working on icf or race		
 		
 		// Check ICF / Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
-		var i = 0, dislist44, evalrace=[], dragonrace=[], en1, complrace, newedgarray, newhindarray, newcyberarray, comptypearray=[], comptypearray2=[], comptypearray3=[], comptypearray4=[], lowedgarray, racecompl, fullsys, listsys, rppe, risp, rnsb, rcyber, rbp, dragon;
+		var i = 0, dislist44, evalrace=[], dragonrace=[], en1, complrace, newedgarray, newhindarray, newcyberarray, comptypearray=[], comptypearray2=[], comptypearray3=[], comptypearray4=[], lowedgarray, racecompl, fullsys, listsys, rppe, risp, rnsb, rcyber, rbp, dragon, hascyberslots;
 		
 		if (traittype == 'icf') {
 			fullsys = swraceall;
@@ -306,6 +306,7 @@ export default Component.extend({
 		}
 		newhindarray = chosenifarray[0].hinderances; // Select the hinderances for the new if
 		newcyberarray = chosenifarray[0].cybernetics; // Select the cybernetics for the new if
+		hascyberslots = chosenifarray[0].chargen_slots.cyberslots;
 		racecompl = chosenifarray[0].complications;	
 
 		///// Debugging /////
@@ -393,7 +394,7 @@ export default Component.extend({
 					// console.log( 'Key: ' +key );
 					// console.log( 'Val: '+value );
 					// console.log ( value );
-					console.log ( chosenifarray );
+					// console.log ( chosenifarray );
 					// console.log ( 'Edges: '+ value.edges );
 					// console.log ( 'PPE: '+ ppe_check );
 					// console.log ( 'ISP: '+isp_check );
@@ -408,7 +409,7 @@ export default Component.extend({
 				
 				var ppe_check = racecompl.includes(rppe) // see if the race has the value
 				var isp_check = racecompl.includes(risp) //see if the race has the value
-				var cyber_check = racecompl.includes(rcyber) //see if the race has the value
+				var cyber_check = racecompl.includes( rcyber ) //see if the race has the value
 				var nsb_check = racecompl.includes(rnsb) //see if the race has the value
 				var bp_check = racecompl.includes(rbp) //see if the race has the value		
 				var dragon_check = racecompl.includes(dragon) //see if the race has the value				
@@ -450,33 +451,35 @@ export default Component.extend({
 							}
 							///// End Debug /////
 							if ( v ) {  // This checks that there isn't a blank entry. 
-								if (ppe_check == true) {
+								if ( ppe_check == true ) {
 									var ppe_test = comptypearray.includes(v.toLowerCase());	
 									// console.log ('PPE Check: '+ppe_check);
 									// console.log ('PPE: '+ppetest);
 									// Check if the race can use this 
 								}	
 
-								if (isp_check == true) {
+								if ( isp_check == true ) {
 									var isp_test = comptypearray2.includes(v.toLowerCase());	
 									// console.log ('ISP: '+isptest);									
 								}											
 								
-								if (nsb_check == true) {
+								if ( nsb_check == true ) {
 									var nsb_test = comptypearray3.includes(v.toLowerCase());	
 									// console.log ('NSB: '+nsbtest);									
 								}						
 								
-								if (bp_check == true) {
+								if ( bp_check == true ) {
 									var bp_test = comptypearray4.includes(v.toLowerCase());	
 									// console.log ('BP: '+bptest);									
 								}
-
-								if ( newcyberarray ) {
-									
+								
+								if ( cyber_check == true ) {
+									if ( hascyberslots == true || newcyberarray ) {
+										var cyber_test = true;
+									}
 								}
 								
-								if ( ppe_test == true || isp_test == true || nsb_test == true || bp_test == true || newcyberarray ) {
+								if ( ppe_test == true || isp_test == true || nsb_test == true || bp_test == true || cyber_test ) {
 									// We need to determine if the IF has this edge
 									///// Debugging /////
 									// console.log ('do we get here?');
