@@ -510,7 +510,8 @@ export default Component.extend({
 										// console.log ( 'BP: ' +bp_check );
 										// console.log ( 'Dragon: '+dragon_check );				 
 									///// End Debug /////									
-									if ( !evalrace.includes(value.name) ) {									
+									if ( !evalrace.includes(value.name) ) {	
+										console.log ('Value.Name: '+value.name);
 										evalrace[i]=value.name;	
 										i=i+1;
 									}
