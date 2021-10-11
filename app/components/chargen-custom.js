@@ -436,6 +436,7 @@ export default Component.extend({
 							if ( v ) {  // This checks that there isn't a blank entry. 
 								if (ppe_check == true) {
 									var ppetest = comptypearray.includes(v.toLowerCase());	
+									console.log ('PPE Check: '+ppe_check);
 									console.log ('PPE: '+ppetest);
 									// Check if the race can use this 
 								}	
