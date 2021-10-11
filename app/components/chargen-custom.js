@@ -330,6 +330,8 @@ export default Component.extend({
 			
 		if ( traittype == 'icf' ) {
 			
+			var dragon_check = racecompl.includes(dragon) //see if the race has the value	
+			
 			for ( const [key, value] of Object.entries( fullsys ) ) { //Loop through the race values. We want to know which races an Iconic Framework can't have.		
 				complrace = value.hasOwnProperty( 'complications' );
 				///// Debugging /////						
@@ -351,7 +353,7 @@ export default Component.extend({
 							var cyber_check = v.includes( rcyber ) //see if the race has the value
 							var nsb_check = v.includes( rnsb ) //see if the race has the value
 							var bp_check = v.includes( rbp ) //see if the race has the value
-							var dragon_check = racecompl.includes(dragon) //see if the race has the value								
+							
 							
 							///// Debugging /////
 							// console.log( 'Key: ' +key );
@@ -365,14 +367,14 @@ export default Component.extend({
 								// console.log ( 'Cyber: '+cyber_check );
 								// console.log ( 'NSB: '+nsb_check );
 								// console.log ( 'BP: ' +bp_check );
-								console.log ( 'Dragon: '+dragon_check );	
+								// console.log ( 'Dragon: '+dragon_check );	
 							// }
 							///// End Debug /////							
 							
 							
 							if ( ( Array.isArray( value.complications ) && value.complications[0] !== null ) && value.complications.includes( dragon ) ) {  //If the framework has a complication of Dragon, do this.
-								console.log ( "It's a dragon!" );
-								console.log ( 'Name: '+ value.name );
+								// console.log ( "It's a dragon!" );
+								// console.log ( 'Name: '+ value.name );
 								if ( !dragonrace.includes( value.name ) ) { // If the array dragonrace doesn't already include this framework, include this race in the array;
 									dragonrace[dd]=value.name;	
 									dd = dd+1;
@@ -563,6 +565,7 @@ export default Component.extend({
 		/// End debug ///
 		
 		if ( dragon_check ) {
+			console.log( dragonrace );
 			dislist44 = Object.values( listsys );  // Convert the framework list to an array	
 			for (const [k1, v1] of Object.entries(dislist44)) {
 				if ( dragonrace.includes( v1['class'] ) ) {
