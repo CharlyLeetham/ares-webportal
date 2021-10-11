@@ -398,7 +398,7 @@ export default Component.extend({
 								} 				
 							}
 
-							if ( ppe_test==true || isp_test==true || nsb_test == true || bp_test == true || cyber_test == true ) {
+							if ( ppe_test==true || isp_test==true || nsb_test == true || bp_test == true || cyber_check == true ) {
 								
 								console.log ( value.name );
 								// if ( value.name == 'DNorr' ) {
