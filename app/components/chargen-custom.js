@@ -400,6 +400,21 @@ export default Component.extend({
 				var i = 0;
 				var dd = 0;
 				
+				if ( traittype == 'race' ) {
+					// console.log( 'Key: ' +key );
+					// console.log( 'Val: ' );
+					// console.log ( value );
+					// console.log ( 'Name: '+ value.name );
+					// console.log ( 'Edges: '+ value.edges );
+					// console.log ( 'PPE: '+ ppe_check );
+					console.log ( 'ISP: '+isp_check );
+					// console.log ( 'Cyber: '+cyber_check );
+					// console.log ( 'NSB: '+nsb_check );
+					// console.log ( 'BP: ' +bp_check );
+					// console.log ( 'Dragon: '+dragon_check );				 
+				}
+				///// End Debug /////				
+				
 				
 				for ( const [key, value] of Object.entries( fullsys ) ) { //Loop through the race values. We want to know which races an Iconic Framework can't have.	
 				///// Debugging /////
@@ -437,23 +452,23 @@ export default Component.extend({
 								if (ppe_check == true) {
 									var ppetest = comptypearray.includes(v.toLowerCase());	
 									// console.log ('PPE Check: '+ppe_check);
-									console.log ('PPE: '+ppetest);
+									// console.log ('PPE: '+ppetest);
 									// Check if the race can use this 
 								}	
 
 								if (isp_check == true) {
 									var isptest = comptypearray2.includes(v.toLowerCase());	
-									console.log ('ISP: '+isptest);									
+									// console.log ('ISP: '+isptest);									
 								}											
 								
 								if (nsb_check == true) {
 									var nsbtest = comptypearray3.includes(v.toLowerCase());	
-									console.log ('NSB: '+nsbtest);									
+									// console.log ('NSB: '+nsbtest);									
 								}						
 								
 								if (bp_check == true) {
 									var bptest = comptypearray4.includes(v.toLowerCase());	
-									console.log ('BP: '+bptest);									
+									// console.log ('BP: '+bptest);									
 								}
 
 								if (newcyberarray) {
