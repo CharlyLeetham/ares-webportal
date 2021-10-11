@@ -371,6 +371,8 @@ export default Component.extend({
 							
 							
 							if ( ( Array.isArray( value.complications ) && value.complications[0] !== null ) && value.complications.includes( dragon ) ) {  //If the framework has a complication of Dragon, do this.
+								console.log ( "It's a dragon!" );
+								console.log ( 'Name: '+ value.name );
 								if ( !dragonrace.includes( value.name ) ) { // If the array dragonrace doesn't already include this framework, include this race in the array;
 									dragonrace[dd]=value.name;	
 									dd = dd+1;
