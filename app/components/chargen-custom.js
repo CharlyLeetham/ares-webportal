@@ -412,11 +412,12 @@ export default Component.extend({
 				
 				for (const [key, value] of Object.entries(fullsys)) { //Loop through the race values. We want to know which races an Iconic Framework can't have.	
 				///// Debugging /////
-				// if ( traittype == 'race' ) {
-				 // console.log( 'Key: ' +key );
-				 // console.log( 'Val: ' );
-				 // console.log ( value );
-				// }
+				if ( traittype == 'race' ) {
+				 console.log( 'Key: ' +key );
+				 console.log( 'Val: ' );
+				 console.log ( value );
+				}
+				return;
 				///// End Debug /////
 
 					// if ( Array.isArray(value.complications) ) {
