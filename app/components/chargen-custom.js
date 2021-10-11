@@ -532,8 +532,9 @@ export default Component.extend({
 		if ( dragon_check ) {
 			dislist44 = Object.values( listsys );  // Convert the framework list to an array	
 			for (const [k1, v1] of Object.entries(dislist44)) {
-										console.log ('Dragons: ');
-						console.log ( dragonrace);
+				console.log ('Dragons: ');
+				console.log ( dragonrace);
+				console.log ( 'Class: '+v1['class'] );
 				if ( dragonrace.includes( v1['class'] ) ) {
 					v1['disabled'] = false //Set disabled for this element to false
 				} else {
