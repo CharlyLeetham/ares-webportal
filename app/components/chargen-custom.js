@@ -291,14 +291,14 @@ export default Component.extend({
 			// }
 			// console.log ( chosenifarray );
 		// }
-			if ( traittype == 'race' ) {
+			// if ( traittype == 'race' ) {
 				// console.log ( swraceall );
-				console.log ( swiconicfall );
+				// console.log ( swiconicfall );
 				// console.log ( swrace );
 				// console.log ( swiconicf );
-				console.log ( chosenifarray );
-				console.log ( newval );
-			}
+				// console.log ( chosenifarray );
+				// console.log ( newval );
+			// }
 		///// End Debug /////
 		
 		if ( newedgarray && newedgarray[0] != null ) {
@@ -400,22 +400,19 @@ export default Component.extend({
 				var i = 0;
 				var dd = 0;
 				
-				///// Debugging /////
-				console.log ( 'PPE: '+ ppe_check );
-				console.log ( 'ISP: '+isp_check );
-				console.log ( 'Cyber: '+cyber_check );
-				console.log ( 'NSB: '+nsb_check );
-				console.log ( 'BP: ' +bp_check );
-				console.log ( 'Dragon: '+dragon_check );
-
-				///// End Debug /////				
 				
 				for (const [key, value] of Object.entries(fullsys)) { //Loop through the race values. We want to know which races an Iconic Framework can't have.	
 				///// Debugging /////
 				if ( traittype == 'race' ) {
-				 console.log( 'Key: ' +key );
-				 console.log( 'Val: ' );
-				 console.log ( value );
+					console.log( 'Key: ' +key );
+					console.log( 'Val: ' );
+					console.log ( value );
+					console.log ( 'PPE: '+ ppe_check );
+					console.log ( 'ISP: '+isp_check );
+					console.log ( 'Cyber: '+cyber_check );
+					console.log ( 'NSB: '+nsb_check );
+					console.log ( 'BP: ' +bp_check );
+					console.log ( 'Dragon: '+dragon_check );				 
 				}
 				///// End Debug /////
 
