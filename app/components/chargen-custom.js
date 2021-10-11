@@ -477,7 +477,7 @@ export default Component.extend({
 									console.log ( 'Name: '+ value.name );																				
 										if ( value.hasOwnProperty( 'chargen_points' ) ) {
 											chargenslots = value.chargen_points;
-											console.log ( chargenslots );
+											console.log ( 'Has Chargen Slots: '+chargenslots );
 											if ( chargenslots.hasOwnProperty( 'cyber_slots' ) ) {
 												console.log ('Has cyber slots in cg');
 												var cyber_test = true;
