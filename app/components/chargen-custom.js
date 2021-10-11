@@ -460,7 +460,9 @@ export default Component.extend({
 				}
 				///// End Debug /////
 
-				var dragon_check_icf = value.complications.includes( dragon ) //see if the race has the value					
+				if ( Array.isArray( value.complications ) && value.complications[0] !== null )
+					var dragon_check_icf = value.complications.includes( dragon ) //see if the race has the value
+				}
 			
 				if ( racecompl ) {
 					// Check to see if the Race includes things that the IF can't have //
