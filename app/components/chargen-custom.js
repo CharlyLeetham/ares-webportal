@@ -540,7 +540,8 @@ export default Component.extend({
 		
 		if ( dragonrace ) {
 			for (const [k, v] of Object.entries(dragonrace)) {
-				var dislist44 = Object.values( listsys ).filter(slots => slots.class.toString().toLowerCase() == v.toLowerCase()); 
+				dislist44 = Object.values( listsys ).filter(slots => slots.disabled.toString().toLowerCase() == 'false');  // Find all the entries and filter for disabled = false. 
+				dislist44 = Object.values( listsys ).filter(slots => slots.class.toString().toLowerCase() == v.toLowerCase()); // Convert the string to lower case to allow for better checking.
 				// Convert the iconic framework list to an array and filter for any entries that match the new framework selected.	
 				for (const [k1, v1] of Object.entries(dislist44)) {
 					v1['disabled'] = false //Set disabled for this element to true							
