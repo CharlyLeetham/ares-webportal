@@ -444,10 +444,10 @@ export default Component.extend({
 					if ( value.edges ) { //If complications exist for the race chosen, check the edges for the ICF and make sure they are disabled
 						for ( const [k, v] of Object.entries( value.edges ) ) {
 							///// Debugging /////
-							if ( traittype == 'race' ) {
-								console.log('Key: '+k);
-								console.log('Vlaue:' +v);
-							}
+							// if ( traittype == 'race' ) {
+								// console.log('Key: '+k);
+								// console.log('Vlaue:' +v);
+							// }
 							///// End Debug /////
 							if ( v ) {  // This checks that there isn't a blank entry. 
 								if ( ppe_check == true ) {
@@ -473,18 +473,18 @@ export default Component.extend({
 								}
 								
 								if ( cyber_check == true ) {
-									// console.log ( value );
-									// console.log ( 'Name: '+ value.name );										
+									console.log ( value );
+									console.log ( 'Name: '+ value.name );																				
 										if ( value.hasOwnProperty( 'chargen_points' ) ) {
 											chargenslots = value.chargen_points;
-											// console.log ( chargenslots );
+											console.log ( chargenslots );
 											if ( chargenslots.hasOwnProperty( 'cyber_slots' ) ) {
-												// console.log ('Has cyber slots in cg');
+												console.log ('Has cyber slots in cg');
 												var cyber_test = true;
 												// console.log ( 'Cyber Test: '+cyber_test );
 											}
 										} else if ( cyber_test = value.hasOwnProperty( 'cybernetics' ) ) {
-											// console.log ('Has cybernetics');
+											console.log ('Has cybernetics');
 											var cyber_test = true;
 											// console.log ( 'Cyber Test: '+cyber_test );
 										} else {
