@@ -417,6 +417,7 @@ export default Component.extend({
 				///// End Debug /////
 					
 					if ( ( Array.isArray( value.complications ) && value.complications[0] !== null ) && value.complications.includes( dragon ) ) {
+						console.log ( 'What the fuck is this? '+value.name );
 						if ( !dragonrace.includes(value.name) ) {
 							dragonrace[dd]=value.name;	
 							dd = dd+1;
