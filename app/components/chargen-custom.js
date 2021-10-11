@@ -306,11 +306,13 @@ export default Component.extend({
 		}
 		newhindarray = chosenifarray[0].hinderances; // Select the hinderances for the new if
 		newcyberarray = chosenifarray[0].cybernetics; // Select the cybernetics for the new if
-		hascyberslots = chosenifarray[0].chargen_slots.cyberslots;
+		hascyberslots = chosenifarray[0].chargen_slots;
+		
 		racecompl = chosenifarray[0].complications;	
 
 		///// Debugging /////
 			if ( traittype == 'race' ) {
+				console.log ( 'Cyber: '+hascyberslots );
 				// console.log ( newhindarray );
 				// console.log ( newcyberarray );
 				// console.log ( racecompl );
