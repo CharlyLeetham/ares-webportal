@@ -404,9 +404,11 @@ export default Component.extend({
 				for ( const [key, value] of Object.entries( fullsys ) ) { //Loop through the race values. We want to know which races an Iconic Framework can't have.	
 				///// Debugging /////
 				if ( traittype == 'race' ) {
-					console.log( 'Key: ' +key );
-					console.log( 'Val: ' );
-					console.log ( value );
+					// console.log( 'Key: ' +key );
+					// console.log( 'Val: ' );
+					// console.log ( value );
+					console.log ( 'Name: '+ value.name );
+					console.log ( 'Edges: '+ value.edges );
 					// console.log ( 'PPE: '+ ppe_check );
 					// console.log ( 'ISP: '+isp_check );
 					// console.log ( 'Cyber: '+cyber_check );
@@ -424,7 +426,7 @@ export default Component.extend({
 					} 
 					
 					if ( value.edges ) { //If complications exist for the race chosen, check the edges for the ICF and make sure they are disabled
-						for (const [k, v] of Object.entries(value.edges)) {
+						for ( const [k, v] of Object.entries( value.edges ) ) {
 							///// Debugging /////
 							if ( traittype == 'race' ) {
 								console.log('Key: '+k);
