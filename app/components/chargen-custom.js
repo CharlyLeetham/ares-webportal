@@ -269,7 +269,7 @@ export default Component.extend({
 		/// traittype = Tells function whether we're working on icf or race		
 		
 		// Check ICF / Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
-		var i = 0, dislist44, evalrace=[], dragonrace=[], en1, complrace, newedgarray, newhindarray, newcyberarray, comptypearray=[], comptypearray2=[], comptypearray3=[], comptypearray4=[], lowedgarray, racecompl, fullsys, listsys, rppe, risp, rnsb, rcyber, rbp, dragon, hascyberslots, chargenslots, cyber_test;
+		var i = 0, dislist44, evalrace=[], dragonrace=[], en1, complrace, newedgarray, newhindarray, newcyberarray, comptypearray=[], comptypearray2=[], comptypearray3=[], comptypearray4=[], lowedgarray, racecompl, fullsys, listsys, rppe, risp, rnsb, rcyber, rbp, dragon, hascyberslots, chargenslots;
 		
 		if (traittype == 'icf') {
 			fullsys = swraceall;
@@ -480,15 +480,15 @@ export default Component.extend({
 											console.log ( chargenslots );
 											if ( chargenslots.hasOwnProperty( 'cyber_slots' ) ) {
 												console.log ('Has cyber slots in cg');
-												cyber_test = true;
+												var cyber_test = true;
 												console.log ( 'Cyber Test: '+cyber_test );
 											}
 										} else if ( cyber_test = value.hasOwnProperty( 'cybernetics' ) ) {
 											console.log ('Has cybernetics');
-											cyber_test = true;
+											var cyber_test = true;
 											console.log ( 'Cyber Test: '+cyber_test );
 										} else {
-											cyber_test = false;
+											var cyber_test = false;
 										}					
 								}
 								
