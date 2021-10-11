@@ -309,10 +309,10 @@ export default Component.extend({
 		racecompl = chosenifarray[0].complications;	
 
 		///// Debugging /////
-			if ( traittype == 'race' ) {
+			if ( traittype == 'icf' ) {
 				// console.log ( newhindarray );
 				// console.log ( newcyberarray );
-				// console.log ( racecompl );
+				console.log ( racecompl );
 				// console.log ( lowedgarray );
 			}
 		///// End Debug /////		
@@ -329,11 +329,13 @@ export default Component.extend({
 		dragon = "Dragon*"
 			
 		if ( traittype == 'icf' ) {
+			
 			for ( const [key, value] of Object.entries( fullsys ) ) { //Loop through the race values. We want to know which races an Iconic Framework can't have.		
 				complrace = value.hasOwnProperty( 'complications' );
 				///// Debugging /////						
-				console.log ( 'value: ' );
-				console.log ( value );
+				// console.log ( 'value: ' );
+				// console.log ( value.complications );
+				// console.log ( value.name );
 				///// End Debug /////
 
 
@@ -349,7 +351,6 @@ export default Component.extend({
 							var cyber_check = v.includes( rcyber ) //see if the race has the value
 							var nsb_check = v.includes( rnsb ) //see if the race has the value
 							var bp_check = v.includes( rbp ) //see if the race has the value	
-							var dragon_check = v.includes( dragon ) //see if the race has the value
 							
 							///// Debugging /////
 							// console.log( 'Key: ' +key );
