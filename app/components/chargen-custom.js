@@ -478,7 +478,7 @@ export default Component.extend({
 											chargenslots = value.chargen_points;
 											var cyber_test = chargenslots.hasOwnProperty( 'cyber_slots' );				
 										} else {
-											var cyber_test = value.hasownProperty( 'cybernetics' );
+											var cyber_test = value.hasOwnProperty( 'cybernetics' );
 										}
 									// }
 									console.log ( value );
