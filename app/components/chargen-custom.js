@@ -407,21 +407,19 @@ export default Component.extend({
 					console.log( 'Key: ' +key );
 					console.log( 'Val: ' );
 					console.log ( value );
-					console.log ( 'PPE: '+ ppe_check );
-					console.log ( 'ISP: '+isp_check );
-					console.log ( 'Cyber: '+cyber_check );
-					console.log ( 'NSB: '+nsb_check );
-					console.log ( 'BP: ' +bp_check );
-					console.log ( 'Dragon: '+dragon_check );				 
+					// console.log ( 'PPE: '+ ppe_check );
+					// console.log ( 'ISP: '+isp_check );
+					// console.log ( 'Cyber: '+cyber_check );
+					// console.log ( 'NSB: '+nsb_check );
+					// console.log ( 'BP: ' +bp_check );
+					// console.log ( 'Dragon: '+dragon_check );				 
 				}
 				///// End Debug /////
 					
-					if ( ( Array.isArray( value.complications ) && value.complications[0] !== null ) && value.complications.includes( dragon ) ) {
-						console.log ( 'What the fuck is this? '+value.name );
-						if ( !dragonrace.includes(value.name) ) {
+					if ( ( Array.isArray( value.complications ) && value.complications[0] !== null ) && value.complications.includes( dragon ) ) {  //If the framework has a complication of Dragon, do this.
+						if ( !dragonrace.includes( value.name ) ) { // If the array dragonrace doesn't already include this framework, include this race in the array;
 							dragonrace[dd]=value.name;	
 							dd = dd+1;
-							console.log ( 'What the fuck is this? '+value.name );
 						}
 					} 
 					
@@ -429,8 +427,8 @@ export default Component.extend({
 						for (const [k, v] of Object.entries(value.edges)) {
 							///// Debugging /////
 							if ( traittype == 'race' ) {
-							 // console.log('Key: '+k);
-							 // console.log('Vlaue:' +v);
+								console.log('Key: '+k);
+								console.log('Vlaue:' +v);
 							}
 							///// End Debug /////
 							if ( v ) {  // This checks that there isn't a blank entry. 
