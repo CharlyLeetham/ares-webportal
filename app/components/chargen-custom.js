@@ -284,7 +284,7 @@ export default Component.extend({
 		
 		///// Debugging /////
 		// if (traittype == 'icf' ) {
-			// console.log ( newedgarray );
+			console.log ( newedgarray );
 			// console.log ( newedgarray.length );
 			// if ( newedgarray[0] == null ) {
 				// console.log('here');
