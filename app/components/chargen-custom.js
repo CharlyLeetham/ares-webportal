@@ -535,8 +535,10 @@ export default Component.extend({
 				console.log ( dragonrace);
 				console.log ( 'Class: '+v1['class'] );
 				if ( dragonrace.includes( v1['class'] ) ) {
+					console.log ( 'Disabled' );
 					v1['disabled'] = false //Set disabled for this element to false
 				} else {
+					console.log ( 'Enabled' );
 					v1['disabled'] = true //Set disabled for this element to false
 				}
 			}
