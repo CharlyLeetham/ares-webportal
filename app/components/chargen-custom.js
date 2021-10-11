@@ -414,7 +414,6 @@ export default Component.extend({
 									console.log ( 'Cyber: '+cyber_test );
 									console.log ( 'NSB: '+nsb_test );
 									console.log ( 'BP: ' +bp_test );
-									console.log ( 'Dragon: '+dragon_test );	
 								}								
 								if ( !evalrace.includes( value.name ) ) {
 									evalrace[i]=value.name;
