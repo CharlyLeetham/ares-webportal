@@ -531,7 +531,7 @@ export default Component.extend({
 		// console.log (dislist44);
 		/// End debug ///
 		
-		if ( dragoncheck ) {
+		if ( dragon_check ) {
 			dislist44 = Object.values( listsys );  // Find all the entries and filter for disabled = true. 
 			// Convert the iconic framework list to an array and filter for any entries that match the new framework selected.	
 			for (const [k1, v1] of Object.entries(dislist44)) {
