@@ -477,9 +477,7 @@ export default Component.extend({
 										console.log ( 'NSB: '+nsb_check );
 										console.log ( 'BP: ' +bp_check );
 										console.log ( 'Dragon: '+dragon_check );				 
-									}
 									///// End Debug /////									
-
 									if ( !evalrace.includes(value.name) ) {									
 										evalrace[i]=value.name;	
 										i=i+1;
