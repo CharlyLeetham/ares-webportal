@@ -269,7 +269,7 @@ export default Component.extend({
 		/// traittype = Tells function whether we're working on icf or race		
 		
 		// Check ICF / Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
-		var i = 0, dislist44, evalrace=[], dragonrace=[], en1, complrace, newedgarray, newhindarray, newcyberarray, comptypearray=[], comptypearray2=[], comptypearray3=[], comptypearray4=[], lowedgarray, racecompl, fullsys, listsys, rppe, risp, rnsb, rcyber, rbp, dragon, hascyberslots, chargenslots;
+		var i = 0, dd = 0, dislist44, evalrace=[], dragonrace=[], en1, complrace, newedgarray, newhindarray, newcyberarray, comptypearray=[], comptypearray2=[], comptypearray3=[], comptypearray4=[], lowedgarray, racecompl, fullsys, listsys, rppe, risp, rnsb, rcyber, rbp, dragon, hascyberslots, chargenslots;
 		
 		if (traittype == 'icf') {
 			fullsys = swraceall;
@@ -448,8 +448,6 @@ export default Component.extend({
 				var dragon_check = racecompl.includes(dragon) //see if the race has the value				
 	
 				// Check the Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
-				var i = 0;
-				var dd = 0;	
 								
 				for ( const [key, value] of Object.entries( fullsys ) ) { //Loop through the race values. We want to know which races an Iconic Framework can't have.	
 				///// Debugging /////
