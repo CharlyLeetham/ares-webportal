@@ -535,7 +535,8 @@ export default Component.extend({
 		/// Debugging ///
 		// console.log (evalrace);
 		// console.log (listsys);
-		// console.log (dislist44);
+		console.log (dislist44);
+		return;
 		/// End debug ///
 		
 		// if ( dragonrace ) {
