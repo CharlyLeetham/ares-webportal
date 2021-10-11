@@ -457,13 +457,11 @@ export default Component.extend({
 									// console.log ('BP: '+bptest);									
 								}
 
-								if (newcyberarray) {
+								if ( newcyberarray ) {
 									
 								}
 								
-
-								// if ( ppe_check == true || isp_check == true || nsb_check == true || bp_check == true ) {
-								if ( ppe_test == true || isp_test == true || nsb_test == true || bp_test == true ) {
+								if ( ppe_test == true || isp_test == true || nsb_test == true || bp_test == true || newcyberarray ) {
 									// We need to determine if the IF has this edge
 									///// Debugging /////
 									// console.log ('do we get here?');
@@ -510,11 +508,7 @@ export default Component.extend({
 		// console.log (listsys);
 		// console.log (dislist44);
 		/// End debug ///
-		
-		for (const [key, value] of Object.entries(dislist44)) {
-			// value['disabled'] = false //Set disabled for this element to false
-		}					
-		
+			
 		if ( evalrace ) {
 			for (const [k, v] of Object.entries(evalrace)) {
 				
@@ -530,8 +524,6 @@ export default Component.extend({
 				}
 			}
 		}
-
-		
 		return;
 	},
 
