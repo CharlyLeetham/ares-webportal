@@ -372,8 +372,9 @@ export default Component.extend({
 
 							if ( ppe_check==true || isp_check==true || nsb_check == true || bp_check == true || dragon_check == true || newcyberarray ) {
 								// console.log(en1);
+								
 								en1 = value.name.split('*')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's (NOTE: Need to work out Races next)
-								if (evalrace.includes(en1)) {
+								if ( evalrace.includes( en1 ) ) {
 									// console.log('in there dummy');
 								} else {
 									evalrace[i]=en1;
@@ -398,24 +399,8 @@ export default Component.extend({
 	
 				// Check the Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
 				var i = 0;
-				var dd = 0;
-				
-				if ( traittype == 'race' ) {
-					// console.log( 'Key: ' +key );
-					// console.log( 'Val: ' );
-					// console.log ( value );
-					// console.log ( 'Name: '+ value.name );
-					// console.log ( 'Edges: '+ value.edges );
-					// console.log ( 'PPE: '+ ppe_check );
-					console.log ( 'ISP: '+isp_check );
-					// console.log ( 'Cyber: '+cyber_check );
-					// console.log ( 'NSB: '+nsb_check );
-					// console.log ( 'BP: ' +bp_check );
-					// console.log ( 'Dragon: '+dragon_check );				 
-				}
-				///// End Debug /////				
-				
-				
+				var dd = 0;	
+								
 				for ( const [key, value] of Object.entries( fullsys ) ) { //Loop through the race values. We want to know which races an Iconic Framework can't have.	
 				///// Debugging /////
 				if ( traittype == 'race' ) {
@@ -480,8 +465,21 @@ export default Component.extend({
 									// We need to determine if the IF has this edge
 									///// Debugging /////
 									// console.log ('do we get here?');
-									console.log ('Value.Name: '+value.name);									
-									///// end debug /////
+									console.log ('Value.Name: '+value.name);
+										console.log( 'Key: ' +key );
+										console.log( 'Val: ' );
+										console.log ( value );
+										console.log ( 'Name: '+ value.name );
+										console.log ( 'Edges: '+ value.edges );
+										console.log ( 'PPE: '+ ppe_check );
+										console.log ( 'ISP: '+isp_check );
+										console.log ( 'Cyber: '+cyber_check );
+										console.log ( 'NSB: '+nsb_check );
+										console.log ( 'BP: ' +bp_check );
+										console.log ( 'Dragon: '+dragon_check );				 
+									}
+									///// End Debug /////									
+
 									if ( !evalrace.includes(value.name) ) {									
 										evalrace[i]=value.name;	
 										i=i+1;
@@ -501,7 +499,7 @@ export default Component.extend({
 
 
 			///// Debugging /////
-			console.log ('evalrace: '+evalrace);									
+			// console.log ('evalrace: '+evalrace);									
 			///// end debug /////
 		return;
 		dislist44 = Object.values(listsys).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the list to an array and filter for any entries that match the new framework selected.
