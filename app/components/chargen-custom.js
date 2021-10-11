@@ -385,9 +385,6 @@ export default Component.extend({
 					}
 				}
 			}
-			
-			console.log ( evalrace );
-			return;
 		} else {
 
 				///// Debugging /////
