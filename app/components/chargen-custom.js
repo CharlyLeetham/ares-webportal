@@ -542,6 +542,7 @@ export default Component.extend({
 					v1['disabled'] = true //Set disabled for this element to false
 				}
 			}
+			return;
 		}
 		
 		if ( evalrace ) {
