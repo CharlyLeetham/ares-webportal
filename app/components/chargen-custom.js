@@ -375,10 +375,7 @@ export default Component.extend({
 							if ( newcyberarray ) {
 							}
 
-							if ( ppe_test==true || isp_test==true || nsb_test == true || bp_test == true || dragon_check == true || newcyberarray ) {
-								en1 = value.name.split('*')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's 
-								console.log (value.name);
-								console.log ( en1 );
+							if ( ppe_test==true || isp_test==true || nsb_test == true || bp_test == true || newcyberarray ) {
 								if ( !evalrace.includes( value.name ) ) {
 									evalrace[i]=value.name;
 									i = i+1;								
@@ -386,7 +383,6 @@ export default Component.extend({
 							}
 						}
 					}
-					
 				}
 			}
 			
