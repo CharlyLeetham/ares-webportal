@@ -401,7 +401,7 @@ export default Component.extend({
 				var dd = 0;
 				
 				
-				for (const [key, value] of Object.entries(fullsys)) { //Loop through the race values. We want to know which races an Iconic Framework can't have.	
+				for ( const [key, value] of Object.entries( fullsys ) ) { //Loop through the race values. We want to know which races an Iconic Framework can't have.	
 				///// Debugging /////
 				if ( traittype == 'race' ) {
 					console.log( 'Key: ' +key );
@@ -415,11 +415,6 @@ export default Component.extend({
 					console.log ( 'Dragon: '+dragon_check );				 
 				}
 				///// End Debug /////
-
-					// if ( Array.isArray(value.complications) ) {
-						
-
-					// }
 					
 					if ( (Array.isArray(value.complications) && value.complications[0] !== null ) && value.complications.includes(dragon) ) {
 						if (!dragonrace.includes(value.name)) {
@@ -439,23 +434,23 @@ export default Component.extend({
 							if ( v ) {  // This checks that there isn't a blank entry. 
 								if (ppe_check == true) {
 									var ppetest = comptypearray.includes(v.toLowerCase());	
-									console.log ('PPE: '+ppetest);
+									// console.log ('PPE: '+ppetest);
 									// Check if the race can use this 
 								}	
 
 								if (isp_check == true) {
 									var isptest = comptypearray2.includes(v.toLowerCase());	
-									console.log ('ISP: '+isptest);									
+									// console.log ('ISP: '+isptest);									
 								}											
 								
 								if (nsb_check == true) {
 									var nsbtest = comptypearray3.includes(v.toLowerCase());	
-									console.log ('NSB: '+nsbtest);									
+									// console.log ('NSB: '+nsbtest);									
 								}						
 								
 								if (bp_check == true) {
 									var bptest = comptypearray4.includes(v.toLowerCase());	
-									console.log ('BP: '+bptest);									
+									// console.log ('BP: '+bptest);									
 								}
 
 								if (newcyberarray) {
