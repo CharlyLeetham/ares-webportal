@@ -532,14 +532,13 @@ export default Component.extend({
 		/// End debug ///
 		
 		if ( dragonrace ) {
-				dislist44 = Object.values( listsys );  // Find all the entries and filter for disabled = true. 
-				// Convert the iconic framework list to an array and filter for any entries that match the new framework selected.	
-				for (const [k1, v1] of Object.entries(dislist44)) {
-					if ( dragonrace.includes( v1['class'] ) ) {
-						v1['disabled'] = false //Set disabled for this element to false
-					} else {
-						v1['disabled'] = true //Set disabled for this element to false
-					}
+			dislist44 = Object.values( listsys );  // Find all the entries and filter for disabled = true. 
+			// Convert the iconic framework list to an array and filter for any entries that match the new framework selected.	
+			for (const [k1, v1] of Object.entries(dislist44)) {
+				if ( dragonrace.includes( v1['class'] ) ) {
+					v1['disabled'] = false //Set disabled for this element to false
+				} else {
+					v1['disabled'] = true //Set disabled for this element to false
 				}
 			}
 		}
