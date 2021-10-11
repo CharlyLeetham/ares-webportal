@@ -473,11 +473,11 @@ export default Component.extend({
 								}
 								
 								if ( cyber_check == true ) {
-									// if ( newcyberarray ) {
 									console.log ( value );
 									console.log ( 'Name: '+ value.name );										
 										if ( value.hasOwnProperty( 'chargen_points' ) ) {
 											chargenslots = value.chargen_points;
+											console.log ( chargenslots );
 											if ( chargenslots.hasOwnProperty( 'cyber_slots' ) ) {
 												console.log ('Has cyber slots in cg');
 												var cyber_test = true;
@@ -489,10 +489,7 @@ export default Component.extend({
 											console.log ( 'Cyber Test: '.cyber_test );
 										} else {
 											var cyber_test = false;
-										}
-									// }
-									
-									console.log ( 'Cyber Test: '.cyber_test );
+										}					
 								}
 								
 								if ( ppe_test == true || isp_test == true || nsb_test == true || bp_test == true || cyber_test ) {
