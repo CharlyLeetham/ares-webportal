@@ -351,6 +351,20 @@ export default Component.extend({
 							var bp_check = v.includes( rbp ) //see if the race has the value	
 							var dragon_check = v.includes( dragon ) //see if the race has the value
 							
+							///// Debugging /////
+							// console.log( 'Key: ' +key );
+							// console.log( 'Val: ' );
+							// console.log ( value );
+							console.log ( 'Name: '+ value.name );
+							console.log ( 'Edges: '+ value.edges );
+							console.log ( 'PPE: '+ ppe_check );
+							console.log ( 'ISP: '+isp_check );
+							console.log ( 'Cyber: '+cyber_check );
+							console.log ( 'NSB: '+nsb_check );
+							console.log ( 'BP: ' +bp_check );
+							console.log ( 'Dragon: '+dragon_check );				 
+							///// End Debug /////							
+							
 							if ( ppe_check == true ) {
 								var ppe_test = lowedgarray.some( v => comptypearray.includes( v ) );
 							}
@@ -372,10 +386,22 @@ export default Component.extend({
 								var bp_test = lowedgarray.some( v => comptypearray4.includes( v ) );
 							}
 
-							if ( newcyberarray ) {
+							if ( cyber_check == true ) {
+								if ( value.hasOwnProperty( 'chargen_points' ) || value.hasOwnProperty( 'cyberslots' ) ) {
+									if ( value.hasOwnProperty( 'chargen_points' ) ) {
+										chargenslots = value.chargen_points;
+										if ( chargenslots.hasOwnProperty( 'cyber_slots' ) ) {
+											var cyber_test = true;
+										}
+									}
+									
+									if ( value.hasOwnProperty( 'cybernetics' ) ) {
+										var cyber_test = true;
+									} 
+								} 				
 							}
 
-							if ( ppe_test==true || isp_test==true || nsb_test == true || bp_test == true || newcyberarray ) {
+							if ( ppe_test==true || isp_test==true || nsb_test == true || bp_test == true || cyber_test == true ) {
 								if ( !evalrace.includes( value.name ) ) {
 									evalrace[i]=value.name;
 									i = i+1;								
