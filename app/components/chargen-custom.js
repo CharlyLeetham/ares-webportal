@@ -484,10 +484,10 @@ export default Component.extend({
 												var cyber_test = true;
 												// console.log ( 'Cyber Test: '+cyber_test );
 											}
-										} else if ( cyber_test = value.hasOwnProperty( 'cybernetics' ) ) {
+										} else if ( value.hasOwnProperty( 'cybernetics' ) ) {
 											console.log ('Has cybernetics');
 											var cyber_test = true;
-											// console.log ( 'Cyber Test: '+cyber_test );
+											// console.log ( 'Cyber Test: '+cyber_test ); 
 										} else {
 											var cyber_test = false;
 										}					
