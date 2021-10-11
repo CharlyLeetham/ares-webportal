@@ -292,15 +292,13 @@ export default Component.extend({
 			// console.log ( chosenifarray );
 		// }
 			if ( traittype == 'race' ) {
-				console.log ( swraceall );
-				console.log ( swiconicfall );
-				console.log ( swrace );
-				console.log ( swiconicf );
+				// console.log ( swraceall );
+				// console.log ( swiconicfall );
+				// console.log ( swrace );
+				// console.log ( swiconicf );
 				console.log ( chosenifarray );
 				console.log ( newval );
-				return;
 			}
-			
 		///// End Debug /////
 		
 		if ( newedgarray && newedgarray[0] != null ) {
@@ -308,7 +306,16 @@ export default Component.extend({
 		}
 		newhindarray = chosenifarray[0].hinderances; // Select the hinderances for the new if
 		newcyberarray = chosenifarray[0].cybernetics; // Select the cybernetics for the new if
-		racecompl = chosenifarray[0].complications;		
+		racecompl = chosenifarray[0].complications;	
+
+		///// Debugging /////
+			if ( traittype == 'race' ) {
+				console.log ( newhindarray );
+				console.log ( newcyberarray );
+				console.log ( racecompl );
+				return;
+			}
+		///// End Debug /////		
 		
 		comptypearray = ['ab miracles*', 'ab magic*']; // Used for PPE check
 		comptypearray2 = ['ab psionics*']; // Used for psionics check
