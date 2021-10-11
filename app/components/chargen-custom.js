@@ -439,128 +439,129 @@ export default Component.extend({
 					// console.log ( 'BP: ' +bp_check );
 					// console.log ( 'Dragon: '+dragon_check );				 
 				///// End Debug /////
-			
-			if ( racecompl ) {
-				// Check to see if the Race includes things that the IF can't have //
 				
-				var ppe_check = racecompl.includes(rppe) // see if the race has the value
-				var isp_check = racecompl.includes(risp) //see if the race has the value
-				var cyber_check = racecompl.includes( rcyber ) //see if the race has the value
-				var nsb_check = racecompl.includes(rnsb) //see if the race has the value
-				var bp_check = racecompl.includes(rbp) //see if the race has the value		
-				var dragon_check = racecompl.includes(dragon) //see if the race has the value				
-	
-				// Check the Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
-								
-				for ( const [key, value] of Object.entries( fullsys ) ) { //Loop through the race values. We want to know which races an Iconic Framework can't have.	
-				///// Debugging /////
-					if ( traittype == 'race' ) {
-						// console.log( 'Key: ' +key );
-						// console.log( 'Val: ' );
-						// console.log ( value );
-						console.log ( 'Name: '+ value.name );
-						console.log ( 'Compls: ' );
-						console.log ( value.complications );
-						// console.log ( 'Edges: '+ value.edges );
-						// console.log ( 'PPE: '+ ppe_check );
-						// console.log ( 'ISP: '+isp_check );
-						// console.log ( 'Cyber: '+cyber_check );
-						// console.log ( 'NSB: '+nsb_check );
-						// console.log ( 'BP: ' +bp_check );
-						// console.log ( 'Dragon: '+dragon_check );				 
-					}
-					///// End Debug /////
+				
+			for ( const [key, value] of Object.entries( fullsys ) ) { //Loop through the race values. We want to know which races an Iconic Framework can't have.	
+			///// Debugging /////
+				if ( traittype == 'race' ) {
+					// console.log( 'Key: ' +key );
+					// console.log( 'Val: ' );
+					// console.log ( value );
+					console.log ( 'Name: '+ value.name );
+					console.log ( 'Compls: ' );
+					console.log ( value.complications );
+					// console.log ( 'Edges: '+ value.edges );
+					// console.log ( 'PPE: '+ ppe_check );
+					// console.log ( 'ISP: '+isp_check );
+					// console.log ( 'Cyber: '+cyber_check );
+					// console.log ( 'NSB: '+nsb_check );
+					// console.log ( 'BP: ' +bp_check );
+					// console.log ( 'Dragon: '+dragon_check );				 
+				}
+				///// End Debug /////
 
-					var dragon_check_icf = value.complications.includes( dragon ) //see if the race has the value					
-										
-					if ( ( Array.isArray( value.complications ) && value.complications[0] !== null ) && value.complications.includes( dragon ) ) {  //If the framework has a complication of Dragon, do this.
-						if ( !dragonrace.includes( value.name ) ) { // If the array dragonrace doesn't already include this framework, include this race in the array;
-							dragonrace[dd]=value.name;	
-							dd = dd+1;
-						}						
-					} 
+				var dragon_check_icf = value.complications.includes( dragon ) //see if the race has the value					
+			
+				if ( racecompl ) {
+					// Check to see if the Race includes things that the IF can't have //
 					
-					if ( value.edges  ) { //If complications exist for the race chosen, check the edges for the ICF and make sure they are disabled
-						for ( const [k, v] of Object.entries( value.edges ) ) {
-							///// Debugging /////
-							// if ( traittype == 'race' ) {
-								// console.log('Key: '+k);
-								// console.log('Vlaue:' +v);
-							// }
-							///// End Debug /////
-							if ( v ) {  // This checks that there isn't a blank entry. 
-								if ( ppe_check == true ) {
-									var ppe_test = comptypearray.includes(v.toLowerCase());	
-									// console.log ('PPE Check: '+ppe_check);
-									// console.log ('PPE: '+ppetest);
-									// Check if the race can use this 
-								}	
+					var ppe_check = racecompl.includes(rppe) // see if the race has the value
+					var isp_check = racecompl.includes(risp) //see if the race has the value
+					var cyber_check = racecompl.includes( rcyber ) //see if the race has the value
+					var nsb_check = racecompl.includes(rnsb) //see if the race has the value
+					var bp_check = racecompl.includes(rbp) //see if the race has the value		
+					var dragon_check = racecompl.includes(dragon) //see if the race has the value				
 
-								if ( isp_check == true ) {
-									var isp_test = comptypearray2.includes(v.toLowerCase());	
-									// console.log ('ISP: '+isptest);									
-								}											
-								
-								if ( nsb_check == true ) {
-									var nsb_test = comptypearray3.includes(v.toLowerCase());	
-									// console.log ('NSB: '+nsbtest);									
-								}						
-								
-								if ( bp_check == true ) {
-									var bp_test = comptypearray4.includes(v.toLowerCase());	
-									// console.log ('BP: '+bptest);									
-								}
-								
-								if ( cyber_check == true ) {
-									if ( value.hasOwnProperty( 'chargen_points' ) || value.hasOwnProperty( 'cyberslots' ) ) {
-										if ( value.hasOwnProperty( 'chargen_points' ) ) {
-											chargenslots = value.chargen_points;
-											if ( chargenslots.hasOwnProperty( 'cyber_slots' ) ) {
-												var cyber_test = true;
-											}
-										}
-										
-										if ( value.hasOwnProperty( 'cybernetics' ) ) {
-											var cyber_test = true;
-										} 
-									} 				
-								}
-								
-								if ( ppe_test == true || isp_test == true || nsb_test == true || bp_test == true || cyber_test == true || dragon_check_icf == true ) {
-									// We need to determine if the IF has this edge
-									///// Debugging /////
-									// console.log ('do we get here?');
-									// console.log ('Value.Name: '+value.name);
-										// console.log( 'Key: ' +key );
-										// console.log( 'Val: ' );
-										// console.log ( value );
-										console.log ( 'Name: '+ value.name );
-										// console.log ( 'Edges: '+ value.edges );
-										// console.log ( 'PPE: '+ ppe_check );
-										// console.log ( 'ISP: '+isp_check );
-										// console.log ( 'Cyber: '+cyber_check );
-										// console.log ( 'NSB: '+nsb_check );
-										// console.log ( 'BP: ' +bp_check );
-										// console.log ( 'Dragon: '+dragon_check );				 
-										console.log ( 'Dragon ICF: '+dragon_check_icf );				 
-									///// End Debug /////									
-									if ( !evalrace.includes(value.name) ) {	
-										// console.log ('Value.Name: '+value.name);
-										evalrace[i] = value.name;	
-										i=i+1;
+					// Check the Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.		
+											
+						if ( ( Array.isArray( value.complications ) && value.complications[0] !== null ) && value.complications.includes( dragon ) ) {  //If the framework has a complication of Dragon, do this.
+							if ( !dragonrace.includes( value.name ) ) { // If the array dragonrace doesn't already include this framework, include this race in the array;
+								dragonrace[dd]=value.name;	
+								dd = dd+1;
+							}						
+						} 
+						
+						if ( value.edges  ) { //If complications exist for the race chosen, check the edges for the ICF and make sure they are disabled
+							for ( const [k, v] of Object.entries( value.edges ) ) {
+								///// Debugging /////
+								// if ( traittype == 'race' ) {
+									// console.log('Key: '+k);
+									// console.log('Vlaue:' +v);
+								// }
+								///// End Debug /////
+								if ( v ) {  // This checks that there isn't a blank entry. 
+									if ( ppe_check == true ) {
+										var ppe_test = comptypearray.includes(v.toLowerCase());	
+										// console.log ('PPE Check: '+ppe_check);
+										// console.log ('PPE: '+ppetest);
+										// Check if the race can use this 
+									}	
+
+									if ( isp_check == true ) {
+										var isp_test = comptypearray2.includes(v.toLowerCase());	
+										// console.log ('ISP: '+isptest);									
+									}											
+									
+									if ( nsb_check == true ) {
+										var nsb_test = comptypearray3.includes(v.toLowerCase());	
+										// console.log ('NSB: '+nsbtest);									
+									}						
+									
+									if ( bp_check == true ) {
+										var bp_test = comptypearray4.includes(v.toLowerCase());	
+										// console.log ('BP: '+bptest);									
 									}
-								}
-							} //if (v)
-							var ppe_test = false;
-							var isp_test = false;
-							var nsb_test = false;
-							var bp_test = false;
-							var cyber_test = false;
-							
-						} // For Loop
-					} // Check Edges
-				} // For loop
-			} //Race complication						
+									
+									if ( cyber_check == true ) {
+										if ( value.hasOwnProperty( 'chargen_points' ) || value.hasOwnProperty( 'cyberslots' ) ) {
+											if ( value.hasOwnProperty( 'chargen_points' ) ) {
+												chargenslots = value.chargen_points;
+												if ( chargenslots.hasOwnProperty( 'cyber_slots' ) ) {
+													var cyber_test = true;
+												}
+											}
+											
+											if ( value.hasOwnProperty( 'cybernetics' ) ) {
+												var cyber_test = true;
+											} 
+										} 				
+									}
+									
+									if ( ppe_test == true || isp_test == true || nsb_test == true || bp_test == true || cyber_test == true || dragon_check_icf == true ) {
+										// We need to determine if the IF has this edge
+										///// Debugging /////
+										// console.log ('do we get here?');
+										// console.log ('Value.Name: '+value.name);
+											// console.log( 'Key: ' +key );
+											// console.log( 'Val: ' );
+											// console.log ( value );
+											console.log ( 'Name: '+ value.name );
+											// console.log ( 'Edges: '+ value.edges );
+											// console.log ( 'PPE: '+ ppe_check );
+											// console.log ( 'ISP: '+isp_check );
+											// console.log ( 'Cyber: '+cyber_check );
+											// console.log ( 'NSB: '+nsb_check );
+											// console.log ( 'BP: ' +bp_check );
+											// console.log ( 'Dragon: '+dragon_check );				 
+											console.log ( 'Dragon ICF: '+dragon_check_icf );				 
+										///// End Debug /////									
+										if ( !evalrace.includes(value.name) ) {	
+											// console.log ('Value.Name: '+value.name);
+											evalrace[i] = value.name;	
+											i=i+1;
+										}
+									}
+								} //if (v)
+								var ppe_test = false;
+								var isp_test = false;
+								var nsb_test = false;
+								var bp_test = false;
+								var cyber_test = false;
+								
+							} // For Loop
+						} // Check Edges
+					} //Race complication						
+				} // For loop	
 		} //Traittype
 
 
