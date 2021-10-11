@@ -185,7 +185,7 @@ export default Component.extend({
 		//Get all the details for the New Edges passed in. This is need to do the combination of the arrays below.
 		
 		if ( newedgarray && newedgarray[0] != null ) {
-			console.log ( newedgarray );
+			// console.log ( newedgarray );
 			var ctr1=0;
 			for ( const [key, value] of Object.entries(newedgarray) ) {  // We need to find matching traits and apply the appropriate special characters to the end.
 				en = value.split(specchar)[0].toLowerCase().trim(); // Take the trailing * or ^ from the edge for I/F's
@@ -312,7 +312,7 @@ export default Component.extend({
 			if ( traittype == 'race' ) {
 				// console.log ( newhindarray );
 				// console.log ( newcyberarray );
-				// console.log ( racecompl );
+				console.log ( racecompl );
 				console.log ( lowedgarray );
 			}
 		///// End Debug /////		
@@ -1064,7 +1064,6 @@ export default Component.extend({
 				} else { // We're looking at hjtable not being populated. Need to cycle through HJSlots to ensure the hjtable object is setup correctly.
 					var tmptable1 = {};				
 					for (const [key, value] of Object.entries(hjslots)) {
-						console.log ('Key: '+key+' Value:'+value);
 						tmptable1[key] = {};
 						if (val.name == key) {			
 							tmptable1[val.name]['table'] = val.table;
