@@ -387,7 +387,22 @@ export default Component.extend({
 					
 				}
 			}
-		} else {		
+		} else {
+
+				///// Debugging /////
+					// console.log( 'Key: ' +key );
+					// console.log( 'Val: '+value );
+					// console.log ( value );
+					console.log ( 'Name: '+ value.name );
+					console.log ( 'Edges: '+ value.edges );
+					// console.log ( 'PPE: '+ ppe_check );
+					// console.log ( 'ISP: '+isp_check );
+					// console.log ( 'Cyber: '+cyber_check );
+					// console.log ( 'NSB: '+nsb_check );
+					// console.log ( 'BP: ' +bp_check );
+					// console.log ( 'Dragon: '+dragon_check );				 
+				///// End Debug /////
+			
 			if ( racecompl ) {
 				// Check to see if the Race includes things that the IF can't have //
 				
@@ -511,7 +526,6 @@ export default Component.extend({
 			
 		if ( evalrace ) {
 			for (const [k, v] of Object.entries(evalrace)) {
-				
 				/// Debugging ///
 				// console.log ('k: ' +k);
 				// console.log ('v: ' +v);
