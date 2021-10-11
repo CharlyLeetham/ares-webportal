@@ -434,15 +434,6 @@ export default Component.extend({
 					}
 					///// End Debug /////
 					
-					if ( value.hasOwnProperty( 'chargen_points' ) ) {
-						chargenslots = value.chargen_points;
-						if ( chargenslots.hasOwnProperty( 'cyber_slots' ) ) {
-							hascyberslots = chargenslots['cyber_slots'];
-						}
-						console.log ( 'Cyber: ' )
-						console.log ( hascyberslots );					
-					}
-					
 					if ( ( Array.isArray( value.complications ) && value.complications[0] !== null ) && value.complications.includes( dragon ) ) {  //If the framework has a complication of Dragon, do this.
 						if ( !dragonrace.includes( value.name ) ) { // If the array dragonrace doesn't already include this framework, include this race in the array;
 							dragonrace[dd]=value.name;	
@@ -483,7 +474,12 @@ export default Component.extend({
 								
 								if ( cyber_check == true ) {
 									if ( newcyberarray ) {
-										var cyber_test = true;
+										if ( value.hasOwnProperty( 'chargen_points' ) ) {
+											chargenslots = value.chargen_points;
+											var cyber_test = chargenslots.hasOwnProperty( 'cyber_slots' ) )				
+										} else {
+											var cyber_test = value.hasownProperty( 'cybernetics' );
+										}
 									}
 								}
 								
