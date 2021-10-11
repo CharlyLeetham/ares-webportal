@@ -499,10 +499,10 @@ export default Component.extend({
 
 
 			///// Debugging /////
-			console.log ('evalrace: '+evalrace);									
+			// console.log ('evalrace: '+evalrace);									
 			///// end debug /////
-		return;
-		dislist44 = Object.values(listsys).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the list to an array and filter for any entries that match the new framework selected.
+
+		dislist44 = Object.values( listsys ).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the list to an array and filter for any entries that match the new framework selected.
 
 
 		/// Debugging ///
@@ -515,14 +515,14 @@ export default Component.extend({
 			// value['disabled'] = false //Set disabled for this element to false
 		}					
 		
-		if (evalrace) {
+		if ( evalrace ) {
 			for (const [k, v] of Object.entries(evalrace)) {
 				
 				/// Debugging ///
 				// console.log ('k: ' +k);
 				// console.log ('v: ' +v);
 				/// End debug ///					
-				var dislist44 = Object.values(listsys).filter(slots => slots.class.toString().toLowerCase() == v.toLowerCase()); 					
+				var dislist44 = Object.values( listsys ).filter(slots => slots.class.toString().toLowerCase() == v.toLowerCase()); 					
 				
 				// Convert the iconic framework list to an array and filter for any entries that match the new framework selected.	
 				for (const [k1, v1] of Object.entries(dislist44)) {
