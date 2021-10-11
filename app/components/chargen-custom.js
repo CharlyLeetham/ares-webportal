@@ -269,7 +269,7 @@ export default Component.extend({
 		/// traittype = Tells function whether we're working on icf or race		
 		
 		// Check ICF / Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.
-		var i = 0, dislist44, evalrace=[], dragonrace=[], en1, complrace, newedgarray, newhindarray, newcyberarray, comptypearray=[], comptypearray2=[], comptypearray3=[], comptypearray4=[], lowedgarray, racecompl, fullsys, listsys, rppe, risp, rnsb, rcyber, rbp, dragon, hascyberslots, chargenslots;
+		var i = 0, dislist44, evalrace=[], dragonrace=[], en1, complrace, newedgarray, newhindarray, newcyberarray, comptypearray=[], comptypearray2=[], comptypearray3=[], comptypearray4=[], lowedgarray, racecompl, fullsys, listsys, rppe, risp, rnsb, rcyber, rbp, dragon, hascyberslots, chargenslots, cyber_test;
 		
 		if (traittype == 'icf') {
 			fullsys = swraceall;
@@ -331,7 +331,7 @@ export default Component.extend({
 		if ( traittype == 'icf' ) {
 			for ( const [key, value] of Object.entries( swraceall ) ) { //Loop through the race values. We want to know which races an Iconic Framework can't have.		
 				complrace = value.hasOwnProperty( 'complications' );
-				// hascyberslots = value.hasOwnProperty( 'chargen_slots' );
+
 
 				if ( complrace && newedgarray ) { //Complications exist on the character
 					for ( const [k, v] of Object.entries( value.complications ) ) {
@@ -480,19 +480,19 @@ export default Component.extend({
 											console.log ( chargenslots );
 											if ( chargenslots.hasOwnProperty( 'cyber_slots' ) ) {
 												console.log ('Has cyber slots in cg');
-												var cyber_test = true;
+												cyber_test = true;
 												console.log ( 'Cyber Test: '.cyber_test );
 											}
 										} else if ( cyber_test = value.hasOwnProperty( 'cybernetics' ) ) {
 											console.log ('Has cybernetics');
-											var cyber_test = true;
+											cyber_test = true;
 											console.log ( 'Cyber Test: '.cyber_test );
 										} else {
-											var cyber_test = false;
+											cyber_test = false;
 										}					
 								}
 								
-								if ( ppe_test == true || isp_test == true || nsb_test == true || bp_test == true || cyber_test ) {
+								if ( ppe_test == true || isp_test == true || nsb_test == true || bp_test == true || cyber_test == true ) {
 									// We need to determine if the IF has this edge
 									///// Debugging /////
 									// console.log ('do we get here?');
