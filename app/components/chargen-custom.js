@@ -476,7 +476,7 @@ export default Component.extend({
 									if ( newcyberarray ) {
 										if ( value.hasOwnProperty( 'chargen_points' ) ) {
 											chargenslots = value.chargen_points;
-											var cyber_test = chargenslots.hasOwnProperty( 'cyber_slots' ) )				
+											var cyber_test = chargenslots.hasOwnProperty( 'cyber_slots' );				
 										} else {
 											var cyber_test = value.hasownProperty( 'cybernetics' );
 										}
