@@ -472,7 +472,12 @@ export default Component.extend({
 										i=i+1;
 									}
 								}
-							} //if (v)							
+							} //if (v)
+							var ppetest = false;
+							var isptest = false;
+							var nsbtest = false;
+							var bptest = false;
+							
 						} // For Loop
 					} // Check Edges
 				} // For loop
