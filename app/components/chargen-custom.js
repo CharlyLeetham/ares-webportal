@@ -312,7 +312,7 @@ export default Component.extend({
 			if ( traittype == 'icf' ) {
 				// console.log ( newhindarray );
 				// console.log ( newcyberarray );
-				console.log ( racecompl );
+				// console.log ( racecompl );
 				// console.log ( lowedgarray );
 			}
 		///// End Debug /////		
@@ -373,8 +373,8 @@ export default Component.extend({
 							
 							
 							if ( ( Array.isArray( value.complications ) && value.complications[0] !== null ) && value.complications.includes( dragon ) ) {  //If the framework has a complication of Dragon, do this.
-								// console.log ( "It's a dragon!" );
-								// console.log ( 'Name: '+ value.name );
+								console.log ( "It's a dragon!" );
+								console.log ( 'Name: '+ value.name );
 								if ( !dragonrace.includes( value.name ) ) { // If the array dragonrace doesn't already include this framework, include this race in the array;
 									dragonrace[dd]=value.name;	
 									dd = dd+1;
@@ -401,11 +401,11 @@ export default Component.extend({
 								
 								console.log ( value.name );
 								// if ( value.name == 'DNorr' ) {
-									console.log ( 'PPE: '+ ppe_test );
-									console.log ( 'ISP: '+isp_test );
-									console.log ( 'Cyber: '+cyber_test );
-									console.log ( 'NSB: '+nsb_test );
-									console.log ( 'BP: ' +bp_test );
+									// console.log ( 'PPE: '+ ppe_test );
+									// console.log ( 'ISP: '+isp_test );
+									// console.log ( 'Cyber: '+cyber_test );
+									// console.log ( 'NSB: '+nsb_test );
+									// console.log ( 'BP: ' +bp_test );
 								// }								
 								if ( !evalrace.includes( value.name ) ) {
 									evalrace[i]=value.name;
