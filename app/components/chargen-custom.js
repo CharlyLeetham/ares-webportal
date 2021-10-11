@@ -379,10 +379,8 @@ export default Component.extend({
 								en1 = value.name.split('*')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's 
 								console.log (value.name);
 								console.log ( en1 );
-								if ( !evalrace.includes( en1 ) ) {
-									// console.log('in there dummy');
-								} else {
-									evalrace[i]=en1;
+								if ( !evalrace.includes( value.name ) ) {
+									evalrace[i]=value.name;
 									i = i+1;								
 								}
 							}
@@ -512,7 +510,7 @@ export default Component.extend({
 										// console.log ( 'Dragon: '+dragon_check );				 
 									///// End Debug /////									
 									if ( !evalrace.includes(value.name) ) {	
-										console.log ('Value.Name: '+value.name);
+										// console.log ('Value.Name: '+value.name);
 										evalrace[i] = value.name;	
 										i=i+1;
 									}
