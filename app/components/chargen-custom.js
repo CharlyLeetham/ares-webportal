@@ -543,6 +543,8 @@ export default Component.extend({
 			}
 		}
 
+		var dragon_check = false;
+		
 		if ( evalrace ) {
 			for (const [k, v] of Object.entries(evalrace)) {
 				/// Debugging ///
