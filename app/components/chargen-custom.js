@@ -359,12 +359,14 @@ export default Component.extend({
 							// console.log ( value );
 							// console.log ( 'Name: '+ value.name );
 							// console.log ( 'Complication: '+ v );
-							// console.log ( 'PPE: '+ ppe_check );
-							// console.log ( 'ISP: '+isp_check );
-							// console.log ( 'Cyber: '+cyber_check );
-							// console.log ( 'NSB: '+nsb_check );
-							// console.log ( 'BP: ' +bp_check );
-							// console.log ( 'Dragon: '+dragon_check );				 
+							if ( value.name == 'DNorr' ) {
+								console.log ( 'PPE: '+ ppe_check );
+								console.log ( 'ISP: '+isp_check );
+								console.log ( 'Cyber: '+cyber_check );
+								console.log ( 'NSB: '+nsb_check );
+								console.log ( 'BP: ' +bp_check );
+								console.log ( 'Dragon: '+dragon_check );	
+							}
 							///// End Debug /////							
 							
 							if ( ppe_check == true ) {
