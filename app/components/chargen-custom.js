@@ -416,14 +416,15 @@ export default Component.extend({
 				}
 				///// End Debug /////
 					
-					if ( (Array.isArray(value.complications) && value.complications[0] !== null ) && value.complications.includes(dragon) ) {
-						if (!dragonrace.includes(value.name)) {
+					if ( ( Array.isArray( value.complications ) && value.complications[0] !== null ) && value.complications.includes( dragon ) ) {
+						if ( !dragonrace.includes(value.name) ) {
 							dragonrace[dd]=value.name;	
 							dd = dd+1;
+							console.log ('What the fuck is this? '+value.name;
 						}
 					} 
 					
-					if ( value.edges ) { //If complications exist the race chosen, check the edges for the ICF and make sure they are disabled
+					if ( value.edges ) { //If complications exist for the race chosen, check the edges for the ICF and make sure they are disabled
 						for (const [k, v] of Object.entries(value.edges)) {
 							///// Debugging /////
 							if ( traittype == 'race' ) {
