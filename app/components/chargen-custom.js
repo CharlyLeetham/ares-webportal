@@ -377,7 +377,8 @@ export default Component.extend({
 
 							if ( ppe_test==true || isp_test==true || nsb_test == true || bp_test == true || dragon_check == true || newcyberarray ) {
 								en1 = value.name.split('*')[0].toLowerCase().trim(); // Take the trailing * from the edge for I/F's 
-								// console.log ( en1 );
+								console.log (value.name);
+								console.log ( en1 );
 								if ( !evalrace.includes( en1 ) ) {
 									// console.log('in there dummy');
 								} else {
@@ -512,7 +513,7 @@ export default Component.extend({
 									///// End Debug /////									
 									if ( !evalrace.includes(value.name) ) {	
 										console.log ('Value.Name: '+value.name);
-										evalrace[i]=value.name;	
+										evalrace[i] = value.name;	
 										i=i+1;
 									}
 								}
