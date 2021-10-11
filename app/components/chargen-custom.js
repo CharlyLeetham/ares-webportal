@@ -376,11 +376,11 @@ export default Component.extend({
 							if ( isp_check == true ) {
 								// var isp_test = lowedgarray.some( v => comptypearray2.includes( v ) );
 								var isp_test = newedgarray.includes( v ) ;
-								if ( value.name == 'DNorr' ) {
-									console.log ( lowedgarray );
-									console.log ( v );
-									console.log ( 'ISP Test: '+isp_test );
-								}
+								// if ( value.name == 'DNorr' ) {
+									// console.log ( lowedgarray );
+									// console.log ( v );
+									// console.log ( 'ISP Test: '+isp_test );
+								// }
 							}											
 							
 							if ( nsb_check == true ) {
@@ -407,6 +407,15 @@ export default Component.extend({
 							}
 
 							if ( ppe_test==true || isp_test==true || nsb_test == true || bp_test == true || cyber_test == true ) {
+								
+								if ( value.name == 'DNorr' ) {
+									console.log ( 'PPE: '+ ppe_test );
+									console.log ( 'ISP: '+isp_test );
+									console.log ( 'Cyber: '+cyber_test );
+									console.log ( 'NSB: '+nsb_test );
+									console.log ( 'BP: ' +bp_test );
+									console.log ( 'Dragon: '+dragon_test );	
+								}								
 								if ( !evalrace.includes( value.name ) ) {
 									evalrace[i]=value.name;
 									i = i+1;								
