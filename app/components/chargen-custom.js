@@ -393,8 +393,8 @@ export default Component.extend({
 					// console.log( 'Key: ' +key );
 					// console.log( 'Val: '+value );
 					// console.log ( value );
-					console.log ( 'Name: '+ value.name );
-					console.log ( 'Edges: '+ value.edges );
+					console.log ( chosenifarray );
+					// console.log ( 'Edges: '+ value.edges );
 					// console.log ( 'PPE: '+ ppe_check );
 					// console.log ( 'ISP: '+isp_check );
 					// console.log ( 'Cyber: '+cyber_check );
