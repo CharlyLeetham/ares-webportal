@@ -436,24 +436,24 @@ export default Component.extend({
 							if ( v ) {  // This checks that there isn't a blank entry. 
 								if (ppe_check == true) {
 									var ppetest = comptypearray.includes(v.toLowerCase());	
-									console.log ('PPE Check: '+ppe_check);
-									console.log ('PPE: '+ppetest);
+									// console.log ('PPE Check: '+ppe_check);
+									// console.log ('PPE: '+ppetest);
 									// Check if the race can use this 
 								}	
 
 								if (isp_check == true) {
 									var isptest = comptypearray2.includes(v.toLowerCase());	
-									console.log ('ISP: '+isptest);									
+									// console.log ('ISP: '+isptest);									
 								}											
 								
 								if (nsb_check == true) {
 									var nsbtest = comptypearray3.includes(v.toLowerCase());	
-									console.log ('NSB: '+nsbtest);									
+									// console.log ('NSB: '+nsbtest);									
 								}						
 								
 								if (bp_check == true) {
 									var bptest = comptypearray4.includes(v.toLowerCase());	
-									console.log ('BP: '+bptest);									
+									// console.log ('BP: '+bptest);									
 								}
 
 								if (newcyberarray) {
@@ -466,7 +466,10 @@ export default Component.extend({
 									///// Debugging /////
 									// console.log ('do we get here?');
 									///// end debug /////
-									if (!evalrace.includes(value.name)) {
+									if ( !evalrace.includes(value.name) ) {
+										///// Debugging /////
+										console.log ('Value.Name: '+value.name);
+										///// end debug /////										
 										evalrace[i]=value.name;	
 										i=i+1;
 									}
