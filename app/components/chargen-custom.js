@@ -291,6 +291,10 @@ export default Component.extend({
 			// }
 			// console.log ( chosenifarray );
 		// }
+			if ( traittype == 'race' ) {
+				console.log ( listsys );
+			}
+			
 		///// End Debug /////
 		
 		if ( newedgarray && newedgarray[0] != null ) {
@@ -479,7 +483,7 @@ export default Component.extend({
 
 		/// Debugging ///
 		// console.log (evalrace);
-		console.log (listsys);
+		// console.log (listsys);
 		// console.log (dislist44);
 		/// End debug ///
 		
@@ -491,8 +495,8 @@ export default Component.extend({
 			for (const [k, v] of Object.entries(evalrace)) {
 				
 				/// Debugging ///
-				console.log ('k: ' +k);
-				console.log ('v: ' +v);
+				// console.log ('k: ' +k);
+				// console.log ('v: ' +v);
 				/// End debug ///					
 				var dislist44 = Object.values(listsys).filter(slots => slots.class.toString().toLowerCase() == v.toLowerCase()); 					
 				
