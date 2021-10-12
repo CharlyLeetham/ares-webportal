@@ -617,6 +617,7 @@ export default Component.extend({
 		
 		///// Debugging /////
 		console.log ( currsyshinderances );
+		return;
 		// console.log ( fw );
 		///// End debug /////		
 		
