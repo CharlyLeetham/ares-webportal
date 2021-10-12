@@ -770,11 +770,13 @@ export default Component.extend({
 			var dislist_exedg = Object.values( exedg ).filter( slots => slots.class.endsWith('*') );
 			dislist33 = Object.values( currsysedges ).filter( slots => slots.disabled.toString() == 'true' ); 
 			
-			for (const [k1, v1] of Object.entries(dislist_exedg)) {
+			for (const [k1, v1] of Object.entries(dislist_33)) {
 				console.log( 'K1: '+k1);
 				console.log( 'V1: ');
 				console.log( v1 );
-				// var ppe_test = comptypearray.includes(v.toLowerCase());
+				if ( dislist_exedg.includes( v1.name.toLowerCase() ) {
+					console.log ( 'hehhhe' );
+				}
 			}
 			
 			///// Debugging /////
