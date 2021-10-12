@@ -784,7 +784,7 @@ export default Component.extend({
 			console.log ( dislist_exedg );
 			console.log ( dislist33 );
 			///// End debug /////			
-
+		}
 		//Reset Heroes Journeys
 		hjtables = [];
 		hjslots = [];
