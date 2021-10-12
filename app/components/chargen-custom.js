@@ -779,11 +779,15 @@ export default Component.extend({
 			}
 			
 			for ( const [k2, v2] of Object.entries ( dislist_exedg ) ) {
-				console.log( 'V1: ');
-				console.log( v2 );
+				// console.log( 'V1: ');
+				// console.log( v2 );
+				if ( newedges.includes( v2.name ) ) {
+					
+				}
 			}
 			
 			///// Debugging /////
+			console.log ( newedges );
 			console.log ( dislist_exedg );
 			console.log ( dislist33 );
 			///// End debug /////			
