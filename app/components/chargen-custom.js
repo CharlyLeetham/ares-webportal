@@ -774,7 +774,7 @@ export default Component.extend({
 				// console.log( 'K1: '+k1);
 				// console.log( 'V1: ');
 				// console.log( v1 );
-				newedges[$ctr] = v1.name.toLowerCase();
+				newedges[ctr] = v1.name.toLowerCase();
 				$ctr++;
 			}
 			
