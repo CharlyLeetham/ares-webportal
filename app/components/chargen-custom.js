@@ -606,6 +606,11 @@ export default Component.extend({
 		
 		var cgedgfw, cghindfw, dislist, exedg, exhind, i, cgtr1=[], cgtr2=[], newclass, hjslots, hjtables, curricf, currrace;
 		
+		/// Debugging ///
+		console.log ( fwname );
+		console.log ( fw );
+		/// End debug ///		
+		
 		dislist = Object.values(fwname).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
 					
 		for (const [key, value] of Object.entries(dislist)) {
