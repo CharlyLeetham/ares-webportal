@@ -609,7 +609,7 @@ export default Component.extend({
 		
 		var cgedgfw, cghindfw, dislist, exedg, exhind, i, cgtr1=[], cgtr2=[], newclass, hjslots, hjtables, curricf, currrace, currsysedges, dislist33;
 		var currsysedges = this.get( 'char.custom.sysedges' );
-		var currsyshinderances = this.get( 'char.custom.cgsyshind' );	
+		var currsyshinderances = this.get( 'char.custom.swsyshind' );	
 		exedg = this.get('char.custom.cgedges');
 		exhind = this.get('char.custom.cghind');		
 		curricf = this.get('char.custom.charicf');
