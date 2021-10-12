@@ -625,12 +625,13 @@ export default Component.extend({
 			value['disabled'] = false //Set disabled for this element to false. Anything can be chosen.
 		}
 		
+		// Get what edges and hinderances are set on the character already.
 		exedg = this.get('char.custom.cgedges');
 		exhind = this.get('char.custom.cghind');
 		
 		///// Debugging /////
-		console.log ( exedg );
-		console.log ( exhind );
+		// console.log ( exedg );
+		// console.log ( exhind );
 		///// End debug /////			
 
 		//Because we have to set edges and such based on the selected ICF and Race, we need to know what's selected where. 
@@ -660,6 +661,11 @@ export default Component.extend({
 		} else {
 			// Reset attributes for ICF set to None
 			if ( curricf['class'].toLowerCase() == 'none' && Object.keys(exedg).length > 1 ) {
+				
+				///// Debugging /////	
+				console.log ( 'Edg Array: ' );
+				console.log ( exedg );			
+				///// End Debugging /////
 				for (const[ed, desc] of Object.entries(exedg)) {
 					if (desc['class'].endsWith('*^')) {
 						cgtr1[i]=[];
