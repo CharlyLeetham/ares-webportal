@@ -81,6 +81,10 @@
 				<div class="row features">
 					<div class="col-sm-6">
 						<div class="row">
+							<p> 
+								{{{ansi-format text=this.swsysedges}}}
+							</p> 						
+						
 							<PowerSelectMultiple @searchEnabled={{true}} @searchField="name" @searchPlaceholder="Type a name..." @selected={{char.custom.cgedgesnofw}} @options={{this.swsysedges}} @onChange={{action "edgeChanged"}} as |edg|>
 							  {{edg.name}}
 							</PowerSelectMultiple>						
