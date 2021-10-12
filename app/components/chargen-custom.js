@@ -775,7 +775,7 @@ export default Component.extend({
 				// console.log( 'V1: ');
 				// console.log( v1 );
 				newedges[ctr] = v1.name.toLowerCase();
-				$ctr++;
+				ctr++;
 			}
 			
 			for ( const [k2, v2] of Object.entries ( dislist_exedg ) ) {
