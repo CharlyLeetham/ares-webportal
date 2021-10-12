@@ -601,18 +601,26 @@ export default Component.extend({
 
 	// Reset ICF or Race to none.
 	fwreset: function(fwname, fw) { //Array of system settings, what we're working on (Race or ICF)
-		
-		//fwname is either all the icf's or all the races. fw is icf or race depending on what is reset
+	
+		// **** //
+		// fwname: The framework array that we need to check
+		// fw: The framework that is being reset.
+		// **** //
 		
 		var cgedgfw, cghindfw, dislist, exedg, exhind, i, cgtr1=[], cgtr2=[], newclass, hjslots, hjtables, curricf, currrace;
 		
-		/// Debugging ///
+		///// Debugging /////
 		console.log ( fwname );
 		console.log ( fw );
-		/// End debug ///		
+		///// End debug /////		
 		
-		dislist = Object.values(fwname).filter(slots => slots.disabled.toString().toLowerCase() == 'true'); // Convert the iconic framework list to an array and filter for any entries that match the new framework selected.
-					
+		dislist = Object.values( fwname ).filter( slots => slots.disabled.toString().toLowerCase() == 'true' ); 
+		// Convert the framework list to an array and filter for any entries that match the new framework selected.
+		
+		///// Debugging /////
+		console.log ( dislist );
+		///// End debug /////	
+		
 		for (const [key, value] of Object.entries(dislist)) {
 			value['disabled'] = false //Set disabled for this element to false
 		}
