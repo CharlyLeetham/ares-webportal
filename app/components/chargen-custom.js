@@ -788,7 +788,6 @@ export default Component.extend({
 					}
 				}				
 			}
-			
 		}
 		//Reset Heroes Journeys
 		hjtables = [];
