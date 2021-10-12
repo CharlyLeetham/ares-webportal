@@ -616,7 +616,7 @@ export default Component.extend({
 		currrace = this.get('char.custom.charrace');
 		
 		///// Debugging /////
-		// console.log ( fwname );
+		console.log ( currsyshinderances );
 		// console.log ( fw );
 		///// End debug /////		
 		
@@ -730,6 +730,7 @@ export default Component.extend({
 
 			// Reset displayed selected attributes for ICF set to None			
 			if ( curricf['class'].toLowerCase() == 'none' && Object.keys(exhind).length > 1 ) {		
+			
 				for (const[ed, desc] of Object.entries(exhind)) {
 					if (desc['class'].endsWith('*^')) {
 						cgtr1[i]=[];
