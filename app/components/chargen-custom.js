@@ -677,6 +677,16 @@ export default Component.extend({
 						cgtr1[i]='';
 					}
 				}
+				
+				var dislist_exedg = Object.values( exedg ).filter( slots => slots.class.endsWith('*') );
+				dislist33 = Object.values( currsysedges ).filter( slots => slots.disabled.toString() == 'true' ); 
+				for ( const [k1, v1] of Object.entries( dislist33 ) ) {
+					for ( const [k3, v3] of Object.entries( dislist_exedg ) ) {
+						if ( v1.name.toLowerCase() == v3.name ) {
+							v1.disabled = false;
+						}
+					}
+				}				
 			}
 			
 			// Reset displayed attributes for Race set to None
@@ -701,6 +711,18 @@ export default Component.extend({
 						cgtr1[i]='';
 					}
 				}
+				
+				var dislist_exedg = Object.values( exedg ).filter( slots => slots.class.endsWith('^') );
+				dislist33 = Object.values( currsysedges ).filter( slots => slots.disabled.toString() == 'true' ); 
+				for ( const [k1, v1] of Object.entries( dislist33 ) ) {
+					for ( const [k3, v3] of Object.entries( dislist_exedg ) ) {
+						if ( v1.name.toLowerCase() == v3.name ) {
+							v1.disabled = false;
+						}
+					}
+				}				
+				
+				
 			}		
 			
 			//Reset Hinderances
@@ -726,16 +748,6 @@ export default Component.extend({
 					}
 				}
 				
-				var dislist_exedg = Object.values( exedg ).filter( slots => slots.class.endsWith('*') );
-				dislist33 = Object.values( currsysedges ).filter( slots => slots.disabled.toString() == 'true' ); 
-				for ( const [k1, v1] of Object.entries( dislist33 ) ) {
-					for ( const [k3, v3] of Object.entries( dislist_exedg ) ) {
-						if ( v1.name.toLowerCase() == v3.name ) {
-							v1.disabled = false;
-						}
-					}
-				}
-
 				var dislist_exhind = Object.values( exhind ).filter( slots => slots.class.endsWith('*') );
 				dislist33 = Object.values( currsyshinderances).filter( slots => slots.disabled.toString() == 'true' ); 
 				for ( const [k1, v1] of Object.entries( dislist33 ) ) {
@@ -767,17 +779,6 @@ export default Component.extend({
 						i=i+1;
 					}
 				}
-				
-				var dislist_exedg = Object.values( exedg ).filter( slots => slots.class.endsWith('^') );
-				dislist33 = Object.values( currsysedges ).filter( slots => slots.disabled.toString() == 'true' ); 
-				for ( const [k1, v1] of Object.entries( dislist33 ) ) {
-					for ( const [k3, v3] of Object.entries( dislist_exedg ) ) {
-						if ( v1.name.toLowerCase() == v3.name ) {
-							v1.disabled = false;
-						}
-					}
-				}
-
 				var dislist_exhind = Object.values( exhind ).filter( slots => slots.class.endsWith('^') );
 				dislist33 = Object.values( currsyshinderances).filter( slots => slots.disabled.toString() == 'true' ); 
 				for ( const [k1, v1] of Object.entries( dislist33 ) ) {
