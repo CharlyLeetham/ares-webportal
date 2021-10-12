@@ -762,21 +762,25 @@ export default Component.extend({
 			var currsysedges = this.get( 'char.custom.sysedges' );
 				
 			///// Debugging /////
-			console.log ( currsysedges );
-			console.log ( 'Edg Array: ' );
-			console.log ( exedg );				
+			// console.log ( currsysedges );
+			// console.log ( 'Edg Array: ' );
+			// console.log ( exedg );				
 			///// End debug /////	
 
 			var dislist_exedg = Object.values( exedg ).filter( slots => slots.class.endsWith('*') );
 			dislist33 = Object.values( currsysedges ).filter( slots => slots.disabled.toString() == 'true' ); 
+			var newedges=[], ctr = 0;
+			for ( const [k1, v1] of Object.entries( dislist33 ) ) {
+				// console.log( 'K1: '+k1);
+				// console.log( 'V1: ');
+				// console.log( v1 );
+				newdeges[$ctr] = v1.name.toLowerCase();
+				$ctr++;
+			}
 			
-			for (const [k1, v1] of Object.entries(dislist33)) {
-				console.log( 'K1: '+k1);
+			for ( const [k2, v2] of Object.entries ( dislist_exedg ) ) {
 				console.log( 'V1: ');
-				console.log( v1 );
-				if ( dislist_exedg.includes( v1.name.toLowerCase() ) ) {
-					console.log ( 'hehhhe' );
-				}
+				console.log( v2 );
 			}
 			
 			///// Debugging /////
