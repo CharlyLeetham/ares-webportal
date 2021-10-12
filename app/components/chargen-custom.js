@@ -607,7 +607,7 @@ export default Component.extend({
 		// fw: The framework that is being reset.
 		// **** //
 		
-		var cgedgfw, cghindfw, dislist, exedg, exhind, i, cgtr1=[], cgtr2=[], newclass, hjslots, hjtables, curricf, currrace;
+		var cgedgfw, cghindfw, dislist, exedg, exhind, i, cgtr1=[], cgtr2=[], newclass, hjslots, hjtables, curricf, currrace, currsysedges, dislist33;
 		
 		///// Debugging /////
 		console.log ( fwname );
@@ -763,9 +763,11 @@ export default Component.extend({
 				
 			///// Debugging /////
 			console.log ( currsysedges );
-			// console.log ( currrace );
 			///// End debug /////			
-			
+			dislist33 = Object.values( currsysedges ).filter( slots => slots.disabled.toString() == 'true' ); 
+			///// Debugging /////
+			console.log ( dislist33 );
+			///// End debug /////			
 		
 		}
 		//Reset Heroes Journeys
