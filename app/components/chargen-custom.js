@@ -639,8 +639,8 @@ export default Component.extend({
 		currrace = this.get('char.custom.charrace');
 		
 		///// Debugging /////
-		console.log ( curricf );
-		console.log ( currrace );
+		// console.log ( curricf );
+		// console.log ( currrace );
 		///// End debug /////			
 		
 		//Reset Edges
@@ -659,7 +659,7 @@ export default Component.extend({
 			cgtr1[i] = [];
 			cgtr2[i] = [];
 		} else {
-			// Reset attributes for ICF set to None
+			// Reset displayed selected attributes for ICF set to None
 			if ( curricf['class'].toLowerCase() == 'none' && Object.keys(exedg).length > 1 ) {
 				
 				///// Debugging /////	
@@ -687,7 +687,7 @@ export default Component.extend({
 				}
 			}
 			
-			// Reset attributes for Race set to None
+			// Reset displayed attributes for Race set to None
 			
 			if ( currrace['class'].toLowerCase() == 'none' && Object.keys(exedg).length > 1 ) {		
 				for (const[ed, desc] of Object.entries(exedg)) {
@@ -713,7 +713,8 @@ export default Component.extend({
 			
 			//Reset Hinderances
 			i = 0;
-			
+
+			// Reset displayed selected attributes for ICF set to None			
 			if ( curricf['class'].toLowerCase() == 'none' && Object.keys(exhind).length > 1 ) {		
 				for (const[ed, desc] of Object.entries(exhind)) {
 					if (desc['class'].endsWith('*^')) {
@@ -733,6 +734,8 @@ export default Component.extend({
 					}
 				}
 			}
+			
+			// Reset displayed selected attributes for Race set to None			
 
 			if ( currrace['class'].toLowerCase() == 'none' && Object.keys(exhind).length > 1 ) {		
 				for (const[ed, desc] of Object.entries(exhind)) {
@@ -753,6 +756,17 @@ export default Component.extend({
 					}
 				}
 			}
+			
+			// Update char.custom.cgedgesnofw to reflect the changes 
+			
+			var currsysedges = this.get( 'char.custom.cgedgesnofw' );
+				
+			///// Debugging /////
+			console.log ( currsysedges );
+			// console.log ( currrace );
+			///// End debug /////			
+			
+		
 		}
 		//Reset Heroes Journeys
 		hjtables = [];
