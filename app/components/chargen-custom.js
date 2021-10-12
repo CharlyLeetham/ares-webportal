@@ -608,10 +608,16 @@ export default Component.extend({
 		// **** //
 		
 		var cgedgfw, cghindfw, dislist, exedg, exhind, i, cgtr1=[], cgtr2=[], newclass, hjslots, hjtables, curricf, currrace, currsysedges, dislist33;
+		var currsysedges = this.get( 'char.custom.sysedges' );
+		var currsyshinderances = this.get( 'char.custom.cgsyshind' );	
+		exedg = this.get('char.custom.cgedges');
+		exhind = this.get('char.custom.cghind');		
+		curricf = this.get('char.custom.charicf');
+		currrace = this.get('char.custom.charrace');
 		
 		///// Debugging /////
-		console.log ( fwname );
-		console.log ( fw );
+		// console.log ( fwname );
+		// console.log ( fw );
 		///// End debug /////		
 		
 		dislist = Object.values( fwname ).filter( slots => slots.disabled.toString().toLowerCase() == 'true' ); 
@@ -626,38 +632,24 @@ export default Component.extend({
 		}
 		
 		// Get what edges and hinderances are set on the character already.
-		exedg = this.get('char.custom.cgedges');
-		exhind = this.get('char.custom.cghind');
-		
-		///// Debugging /////
-		// console.log ( exedg );
-		// console.log ( exhind );
-		///// End debug /////			
-
-		//Because we have to set edges and such based on the selected ICF and Race, we need to know what's selected where. 
-		curricf = this.get('char.custom.charicf');
-		currrace = this.get('char.custom.charrace');
-		
-		///// Debugging /////
-		// console.log ( curricf );
-		// console.log ( currrace );
-		///// End debug /////			
-		
+	
 		//Reset Edges
 		i = 0;
-
-		///// Debugging /////
-		// console.log ( 'Edg: ' + Object.keys(exedg).length );		
-		// console.log ( 'Edg Array: ' );
-		// console.log ( exedg );		
-		// console.log ( 'Hind: ' + Object.keys(exhind).length );	
-		///// End Debugging /////
 
 		// If both Race and ICF are set to none, reset everything
 		
 		if ( curricf['class'].toLowerCase() == 'none' && currrace['class'].toLowerCase() == 'none' ) {
 			cgtr1[i] = [];
-			cgtr2[i] = [];
+			cgtr2[i] = [];		
+			dislist33 = Object.values( currsysedges ).filter( slots => slots.disabled.toString() == 'true' ); 
+			for ( const [k1, v1] of Object.entries( dislist33 ) ) {
+				v1.disabled = false;
+			}
+
+			dislist33 = Object.values( currsyshinderances).filter( slots => slots.disabled.toString() == 'true' ); 
+			for ( const [k1, v1] of Object.entries( dislist33 ) ) {
+				v1.disabled = false;
+			}	
 		} else {
 			// Reset displayed selected attributes for ICF set to None
 			if ( curricf['class'].toLowerCase() == 'none' && Object.keys(exedg).length > 1 ) {
@@ -733,6 +725,26 @@ export default Component.extend({
 						i=i+1;
 					}
 				}
+				
+				var dislist_exedg = Object.values( exedg ).filter( slots => slots.class.endsWith('*') );
+				dislist33 = Object.values( currsysedges ).filter( slots => slots.disabled.toString() == 'true' ); 
+				for ( const [k1, v1] of Object.entries( dislist33 ) ) {
+					for ( const [k3, v3] of Object.entries( dislist_exedg ) ) {
+						if ( v1.name.toLowerCase() == v3.name ) {
+							v1.disabled = false;
+						}
+					}
+				}
+
+				var dislist_exhind = Object.values( exhind ).filter( slots => slots.class.endsWith('*') );
+				dislist33 = Object.values( currsyshinderances).filter( slots => slots.disabled.toString() == 'true' ); 
+				for ( const [k1, v1] of Object.entries( dislist33 ) ) {
+					for ( const [k3, v3] of Object.entries( dislist_exhind ) ) {
+						if ( v1.name.toLowerCase() == v3.name ) {
+							v1.disabled = false;
+						}
+					}
+				}				
 			}
 			
 			// Reset displayed selected attributes for Race set to None			
@@ -755,11 +767,31 @@ export default Component.extend({
 						i=i+1;
 					}
 				}
+				
+				var dislist_exedg = Object.values( exedg ).filter( slots => slots.class.endsWith('^') );
+				dislist33 = Object.values( currsysedges ).filter( slots => slots.disabled.toString() == 'true' ); 
+				for ( const [k1, v1] of Object.entries( dislist33 ) ) {
+					for ( const [k3, v3] of Object.entries( dislist_exedg ) ) {
+						if ( v1.name.toLowerCase() == v3.name ) {
+							v1.disabled = false;
+						}
+					}
+				}
+
+				var dislist_exhind = Object.values( exhind ).filter( slots => slots.class.endsWith('^') );
+				dislist33 = Object.values( currsyshinderances).filter( slots => slots.disabled.toString() == 'true' ); 
+				for ( const [k1, v1] of Object.entries( dislist33 ) ) {
+					for ( const [k3, v3] of Object.entries( dislist_exhind ) ) {
+						if ( v1.name.toLowerCase() == v3.name ) {
+							v1.disabled = false;
+						}
+					}
+				}				
 			}
 			
 			// Update char.custom.cgedgesnofw to reflect the changes 
 			
-			var currsysedges = this.get( 'char.custom.sysedges' );
+
 				
 			///// Debugging /////
 			// console.log ( currsysedges );
@@ -770,10 +802,17 @@ export default Component.extend({
 			var dislist_exedg = Object.values( exedg ).filter( slots => slots.class.endsWith('*') );
 			dislist33 = Object.values( currsysedges ).filter( slots => slots.disabled.toString() == 'true' ); 
 			for ( const [k1, v1] of Object.entries( dislist33 ) ) {
-				// console.log( 'K1: '+k1);
-				// console.log( 'V1: ');
-				// console.log( v1 );
 				for ( const [k3, v3] of Object.entries( dislist_exedg ) ) {
+					if ( v1.name.toLowerCase() == v3.name ) {
+						v1.disabled = false;
+					}
+				}
+			}
+
+			var dislist_exhind = Object.values( exhind ).filter( slots => slots.class.endsWith('*') );
+			dislist33 = Object.values( currsyshinderances).filter( slots => slots.disabled.toString() == 'true' ); 
+			for ( const [k1, v1] of Object.entries( dislist33 ) ) {
+				for ( const [k3, v3] of Object.entries( dislist_exhind ) ) {
 					if ( v1.name.toLowerCase() == v3.name ) {
 						v1.disabled = false;
 					}
@@ -781,8 +820,8 @@ export default Component.extend({
 			}
 						
 			///// Debugging /////
-			console.log ( dislist_exedg );
-			console.log ( dislist33 );
+			// console.log ( dislist_exedg );
+			// console.log ( dislist33 );
 			///// End debug /////			
 		}
 		//Reset Heroes Journeys
