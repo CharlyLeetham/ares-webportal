@@ -777,6 +777,7 @@ export default Component.extend({
 					if ( v1.name.toLowerCase() == v3.name ) {
 						v1.disabled = false;
 					}
+				}
 			}
 						
 			///// Debugging /////
