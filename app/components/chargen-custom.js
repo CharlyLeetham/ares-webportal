@@ -663,8 +663,8 @@ export default Component.extend({
 			if ( curricf['class'].toLowerCase() == 'none' && Object.keys(exedg).length > 1 ) {
 				
 				///// Debugging /////	
-				console.log ( 'Edg Array: ' );
-				console.log ( exedg );			
+				// console.log ( 'Edg Array: ' );
+				// console.log ( exedg );			
 				///// End Debugging /////
 				for (const[ed, desc] of Object.entries(exedg)) {
 					if (desc['class'].endsWith('*^')) {
@@ -763,9 +763,14 @@ export default Component.extend({
 				
 			///// Debugging /////
 			console.log ( currsysedges );
-			///// End debug /////			
+			console.log ( 'Edg Array: ' );
+			console.log ( exedg );				
+			///// End debug /////	
+
+			var dislist_exedg = Object.values( exedg ).filter( slots => slots.class.endsWith('*') == 'true' );
 			dislist33 = Object.values( currsysedges ).filter( slots => slots.disabled.toString() == 'true' ); 
 			///// Debugging /////
+			console.log ( dislist_exedg );
 			console.log ( dislist33 );
 			///// End debug /////			
 		
