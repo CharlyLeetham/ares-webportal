@@ -462,30 +462,30 @@ export default Component.extend({
 				}
 				///// End Debug /////
 
-				if ( Array.isArray( value.complications ) && value.complications[0] !== null ) {
+				
+				// Check the ICF complications to see if it has Dragon.								
+				if ( ( Array.isArray( value.complications ) && value.complications[0] !== null ) && value.complications.includes( dragon ) ) {  //If the framework has a complication of Dragon, do this.
 					console.log ('Here ');
-					var dragon_check_icf = value.complications.includes( dragon ) //see if the race has the value
-				}
+					if ( !dragonrace.includes( value.name ) ) { // If the array dragonrace doesn't already include this framework, include this race in the array;
+						dragonrace[dd]=value.name;	
+						dd = dd+1;
+					}	
+					var dragon_check_icf = true //Tell us that the ICF allows the use of Dragon.
+					if ( !evalrace.includes(value.name) ) {	
+						// console.log ('Value.Name: '+value.name);
+						evalrace[i] = value.name;	
+						i=i+1;
+					}					
+				}				
 			
 				if ( racecompl ) {
-					// Check to see if the Race includes things that the IF can't have //
-					
+					// If there are racecomplications, check to see if the Race includes things that the IF can't have //	
 					var ppe_check = racecompl.includes(rppe) // see if the race has the value
 					var isp_check = racecompl.includes(risp) //see if the race has the value
 					var cyber_check = racecompl.includes( rcyber ) //see if the race has the value
 					var nsb_check = racecompl.includes(rnsb) //see if the race has the value
 					var bp_check = racecompl.includes(rbp) //see if the race has the value		
-					var dragon_check = racecompl.includes(dragon) //see if the race has the value				
-
-					// Check the Race and make sure it can be used. If it can't, grey it out from the list. Allow them to select None, to reset the list.		
-											
-						if ( ( Array.isArray( value.complications ) && value.complications[0] !== null ) && value.complications.includes( dragon ) ) {  //If the framework has a complication of Dragon, do this.
-							if ( !dragonrace.includes( value.name ) ) { // If the array dragonrace doesn't already include this framework, include this race in the array;
-								dragonrace[dd]=value.name;	
-								dd = dd+1;
-							}						
-						} 
-						
+					var dragon_check = racecompl.includes(dragon) //see if the race has the value						
 						if ( value.edges  ) { //If complications exist for the race chosen, check the edges for the ICF and make sure they are disabled
 							for ( const [k, v] of Object.entries( value.edges ) ) {
 								///// Debugging /////
@@ -561,13 +561,12 @@ export default Component.extend({
 								var isp_test = false;
 								var nsb_test = false;
 								var bp_test = false;
-								var cyber_test = false;
-								var dragon_check_icf = false;
-								
+								var cyber_test = false;								
 							} // For Loop
 						} // Check Edges
 					} //Race complication						
 				} // For loop	
+				var dragon_check_icf = false;
 		} //Traittype
 
 
