@@ -637,6 +637,11 @@ export default Component.extend({
 		curricf = this.get('char.custom.charicf');
 		currrace = this.get('char.custom.charrace');
 		
+		///// Debugging /////
+		console.log ( curricf );
+		console.log ( currrace );
+		///// End debug /////			
+		
 		//Reset Edges
 		i = 0;
 
