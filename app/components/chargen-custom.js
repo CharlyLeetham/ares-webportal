@@ -461,6 +461,7 @@ export default Component.extend({
 				///// End Debug /////
 
 				if ( Array.isArray( value.complications ) && value.complications[0] !== null ) {
+					console.log ('Here ');
 					var dragon_check_icf = value.complications.includes( dragon ) //see if the race has the value
 				}
 			
