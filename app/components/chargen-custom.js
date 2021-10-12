@@ -767,7 +767,7 @@ export default Component.extend({
 			console.log ( exedg );				
 			///// End debug /////	
 
-			var dislist_exedg = Object.values( exedg ).filter( slots => slots.class.endsWith('*') == 'true' );
+			var dislist_exedg = Object.values( exedg ).filter( slots => slots.class.endsWith('*') );
 			dislist33 = Object.values( currsysedges ).filter( slots => slots.disabled.toString() == 'true' ); 
 			///// Debugging /////
 			console.log ( dislist_exedg );
