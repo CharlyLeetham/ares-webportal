@@ -447,9 +447,11 @@ export default Component.extend({
 					// console.log( 'Key: ' +key );
 					// console.log( 'Val: ' );
 					// console.log ( value );
-					console.log ( 'Name: '+ value.name );
-					console.log ( 'Compls: ' );
-					console.log ( value.complications );
+					if ( value.name == 'Dragon Hatchling ') {
+						console.log ( 'Name: '+ value.name );
+						console.log ( 'Compls: ' );
+						console.log ( value.complications );
+					}
 					// console.log ( 'Edges: '+ value.edges );
 					// console.log ( 'PPE: '+ ppe_check );
 					// console.log ( 'ISP: '+isp_check );
@@ -560,6 +562,7 @@ export default Component.extend({
 								var nsb_test = false;
 								var bp_test = false;
 								var cyber_test = false;
+								var dragon_check_icf = false;
 								
 							} // For Loop
 						} // Check Edges
@@ -569,7 +572,7 @@ export default Component.extend({
 
 
 		/// Debugging ///
-		// console.log (evalrace);
+		console.log (evalrace);
 		// console.log (listsys);
 		// console.log (dislist44);
 		/// End debug ///
