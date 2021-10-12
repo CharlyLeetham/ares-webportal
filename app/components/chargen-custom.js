@@ -309,12 +309,12 @@ export default Component.extend({
 		racecompl = chosenifarray[0].complications;	
 
 		///// Debugging /////
-			if ( traittype == 'icf' ) {
+			// if ( traittype == 'icf' ) {
 				// console.log ( newhindarray );
 				// console.log ( newcyberarray );
 				// console.log ( racecompl );
 				// console.log ( lowedgarray );
-			}
+			// }
 		///// End Debug /////		
 		
 		comptypearray = ['ab miracles*', 'ab magic*']; // Used for PPE check
@@ -373,8 +373,6 @@ export default Component.extend({
 							
 							
 							if ( ( Array.isArray( value.complications ) && value.complications[0] !== null ) && value.complications.includes( dragon ) ) {  //If the framework has a complication of Dragon, do this.
-								console.log ( "It's a dragon!" );
-								console.log ( 'Name: '+ value.name );
 								if ( !dragonrace.includes( value.name ) ) { // If the array dragonrace doesn't already include this framework, include this race in the array;
 									dragonrace[dd]=value.name;	
 									dd = dd+1;
@@ -447,11 +445,11 @@ export default Component.extend({
 					// console.log( 'Key: ' +key );
 					// console.log( 'Val: ' );
 					// console.log ( value );
-					if ( value.name == 'Dragon Hatchling ') {
-						console.log ( 'Name: '+ value.name );
-						console.log ( 'Compls: ' );
-						console.log ( value.complications );
-					}
+					// if ( value.name == 'Dragon Hatchling ') {
+						// console.log ( 'Name: '+ value.name );
+						// console.log ( 'Compls: ' );
+						// console.log ( value.complications );
+					// }
 					// console.log ( 'Edges: '+ value.edges );
 					// console.log ( 'PPE: '+ ppe_check );
 					// console.log ( 'ISP: '+isp_check );
@@ -540,7 +538,7 @@ export default Component.extend({
 											// console.log( 'Key: ' +key );
 											// console.log( 'Val: ' );
 											// console.log ( value );
-											console.log ( 'Name: '+ value.name );
+											// console.log ( 'Name: '+ value.name );
 											// console.log ( 'Edges: '+ value.edges );
 											// console.log ( 'PPE: '+ ppe_check );
 											// console.log ( 'ISP: '+isp_check );
@@ -548,7 +546,7 @@ export default Component.extend({
 											// console.log ( 'NSB: '+nsb_check );
 											// console.log ( 'BP: ' +bp_check );
 											// console.log ( 'Dragon: '+dragon_check );				 
-											console.log ( 'Dragon ICF: '+dragon_check_icf );				 
+											// console.log ( 'Dragon ICF: '+dragon_check_icf );				 
 										///// End Debug /////									
 										if ( !evalrace.includes(value.name) ) {	
 											// console.log ('Value.Name: '+value.name);
@@ -571,13 +569,12 @@ export default Component.extend({
 
 
 		/// Debugging ///
-		console.log (evalrace);
+		// console.log (evalrace);
 		// console.log (listsys);
 		// console.log (dislist44);
 		/// End debug ///
 		
 		if ( dragon_check ) {
-			console.log( dragonrace );
 			dislist44 = Object.values( listsys );  // Convert the framework list to an array	
 			for (const [k1, v1] of Object.entries(dislist44)) {
 				if ( dragonrace.includes( v1['class'] ) ) {
