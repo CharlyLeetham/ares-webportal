@@ -615,18 +615,23 @@ export default Component.extend({
 		///// End debug /////		
 		
 		dislist = Object.values( fwname ).filter( slots => slots.disabled.toString().toLowerCase() == 'true' ); 
-		// Convert the framework list to an array and filter for any entries that match the new framework selected.
+		// Convert the framework list to an array and filter for any entries that are disabled.  This allows us to reset disabled entries because they are now all available
 		
 		///// Debugging /////
-		console.log ( dislist );
+		// console.log ( dislist );
 		///// End debug /////	
 		
 		for (const [key, value] of Object.entries(dislist)) {
-			value['disabled'] = false //Set disabled for this element to false
+			value['disabled'] = false //Set disabled for this element to false. Anything can be chosen.
 		}
 		
 		exedg = this.get('char.custom.cgedges');
 		exhind = this.get('char.custom.cghind');
+		
+		///// Debugging /////
+		console.log ( exedg );
+		console.log ( exhind );
+		///// End debug /////			
 
 		//Because we have to set edges and such based on the selected ICF and Race, we need to know what's selected where. 
 		curricf = this.get('char.custom.charicf');
