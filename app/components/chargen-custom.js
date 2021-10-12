@@ -774,7 +774,7 @@ export default Component.extend({
 				console.log( 'K1: '+k1);
 				console.log( 'V1: ');
 				console.log( v1 );
-				if ( dislist_exedg.includes( v1.name.toLowerCase() ) {
+				if ( dislist_exedg.includes( v1.name.toLowerCase() ) ) {
 					console.log ( 'hehhhe' );
 				}
 			}
