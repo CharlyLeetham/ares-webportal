@@ -772,7 +772,8 @@ export default Component.extend({
 			
 			for (const [k1, v1] of Object.entries(dislist_exedg)) {
 				console.log( 'K1: '+k1);
-				console.log( 'V1: '+v1);
+				console.log( 'V1: ');
+				console.log( v1 );
 				// var ppe_test = comptypearray.includes(v.toLowerCase());
 			}
 			
