@@ -759,7 +759,7 @@ export default Component.extend({
 			
 			// Update char.custom.cgedgesnofw to reflect the changes 
 			
-			var currsysedges = this.get( 'char.custom.cgedgesnofw' );
+			var currsysedges = this.get( 'char.custom.sysedges' );
 				
 			///// Debugging /////
 			console.log ( currsysedges );
