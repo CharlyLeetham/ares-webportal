@@ -616,8 +616,7 @@ export default Component.extend({
 		currrace = this.get('char.custom.charrace');
 		
 		///// Debugging /////
-		console.log ( currsyshinderances );
-		return;
+		// console.log ( currsyshinderances );
 		// console.log ( fw );
 		///// End debug /////		
 		
