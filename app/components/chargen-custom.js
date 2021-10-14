@@ -1091,7 +1091,7 @@ export default Component.extend({
 						console.log (v3);
 					///// End debug /////
 					v3['disabled']=false;
-					dislist = Object.values( sysedges ).filter(slots => slots.name.toString().toLowerCase() == v3['name'].toLowerCase());
+					dislist = Object.values(sysedges).filter(slots => slots.name.toString().toLowerCase() == v3['name'].toLowerCase());
 					dislist[0]['disabled'] = false;
 					if ( dislist[0]['trexcludes'].length > 0 ) {
 						trexcludes = this.ck_includes(dislist, sysedges, 'edge');
