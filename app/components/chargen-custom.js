@@ -1088,10 +1088,10 @@ export default Component.extend({
 			if ( nonfwedges ) {
 				for ( const[k3, v3] of Object.entries( nonfwedges ) ) {
 					/////  Debugging /////				
-						console.log (v3);
+						console.log (v3['name']);
 					///// End debug /////
 					v3['disabled']=false;
-					dislist = Object.values(sysedges).filter(slots => slots.name.toString().toLowerCase() == v3['name'].toLowerCase());
+					dislist = Object.values(sysedges).filter(slots => slots.name.toLowerCase() == v3['name'].toLowerCase());
 					dislist[0]['disabled'] = false;
 					if ( dislist[0]['trexcludes'].length > 0 ) {
 						trexcludes = this.ck_includes(dislist, sysedges, 'edge');
