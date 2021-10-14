@@ -1074,8 +1074,8 @@ export default Component.extend({
 			/////  Debugging /////
 			// console.log ('Val: ');
 			// console.log (val);
-			// console.log ('SysEdges: ');
-			// console.log (sysedges);
+			console.log ('SysEdges: ');
+			console.log (sysedges);
 			// console.log ('Charedges: ');
 			// console.log (charedges);
 			// console.log ('Charedgesall: ');
