@@ -1088,7 +1088,7 @@ export default Component.extend({
 			if ( nonfwedges ) {
 				for ( const[k3, v3] of Object.entries( nonfwedges ) ) {
 					/////  Debugging /////				
-						// console.log ('Here');
+						console.log (v3);
 					///// End debug /////
 					v3['disabled']=false;
 					dislist = Object.values( sysedges ).filter(slots => slots.name.toString().toLowerCase() == v3['name'].toLowerCase());
