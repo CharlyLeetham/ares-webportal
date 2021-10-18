@@ -135,6 +135,9 @@ export default Component.extend({
 						// console.log ('Trait Type: '+traittype);
 						// console.log ('Exeedg: ');
 						// console.log (exedg);
+						console.log ('SysEdg: ');
+						console.log (sysedg);
+						console.log (desc);
 					// }
 					///// End Debug /////
 					en = desc['name'];					
@@ -1092,8 +1095,8 @@ export default Component.extend({
 					dislist = Object.values(sysedges).filter(slots => slots.name.toLowerCase() == v3['name'].toLowerCase());
 					dislist[0]['disabled'] = false;
 					/////  Debugging /////	
-						console.log ('Dislist: ');
-						console.log (dislist);
+						// console.log ('Dislist: ');
+						// console.log (dislist);
 					///// End debug /////				
 					if ( dislist[0]['trexcludes'].length > 0 ) {
 						trexcludes = this.ck_includes(dislist, sysedges, 'edge');
