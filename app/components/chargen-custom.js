@@ -30,7 +30,7 @@ export default Component.extend({
 	
 	swsyshind: computed(function() {
 		var swiconicf;
-		swiconicf = this.get('char.custom.swsyshind');
+		swiconicf = this.get('char.custom.syshind');
 		// console.log (swiconicf);
 		return swiconicf;
 	}),
