@@ -1080,19 +1080,20 @@ export default Component.extend({
 			// console.log (charedges);
 			// console.log ('Charedgesall: ');
 			// console.log (charedgesall);
-			console.log ('Nonfwedges: ');
-			console.log (nonfwedges);
+			// console.log ('Nonfwedges: ');
+			// console.log (nonfwedges);
 			///// End Debug /////			
 			
 			// Reset the non-framework and race edges on the character.	
 			if ( nonfwedges ) {
 				for ( const[k3, v3] of Object.entries( nonfwedges ) ) {
-					/////  Debugging /////				
-						console.log (v3['name']);
-					///// End debug /////
+
 					v3['disabled']=false;
 					dislist = Object.values(sysedges).filter(slots => slots.name.toLowerCase() == v3['name'].toLowerCase());
 					dislist[0]['disabled'] = false;
+					/////  Debugging /////				
+						console.log (dislist);
+					///// End debug /////				
 					if ( dislist[0]['trexcludes'].length > 0 ) {
 						trexcludes = this.ck_includes(dislist, sysedges, 'edge');
 					}				
