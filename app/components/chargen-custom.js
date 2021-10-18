@@ -1074,14 +1074,14 @@ export default Component.extend({
 			/////  Debugging /////
 			// console.log ('Val: ');
 			// console.log (val);
-			console.log ('SysEdges: ');
-			console.log (sysedges);
+			// console.log ('SysEdges: ');
+			// console.log (sysedges);
 			// console.log ('Charedges: ');
 			// console.log (charedges);
 			// console.log ('Charedgesall: ');
 			// console.log (charedgesall);
-			// console.log ('Nonfwedges: ');
-			// console.log (nonfwedges);
+			console.log ('Nonfwedges: ');
+			console.log (nonfwedges);
 			///// End Debug /////			
 			
 			// Reset the non-framework and race edges on the character.	
