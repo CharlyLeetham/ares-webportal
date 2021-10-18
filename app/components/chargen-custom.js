@@ -1083,8 +1083,8 @@ export default Component.extend({
 			// console.log (charedges);
 			// console.log ('Charedgesall: ');
 			// console.log (charedgesall);
-			console.log ('Nonfwedges: ');
-			console.log (nonfwedges);
+			// console.log ('Nonfwedges: ');
+			// console.log (nonfwedges);
 			///// End Debug /////			
 			
 			// Reset the non-framework and race edges on the character.	
@@ -1143,6 +1143,11 @@ export default Component.extend({
 			syshind = this.get('char.custom.swsyshind');
 			charhind = this.get('char.custom.cghind');
 			nofwhind = this.get('char.custom.cghindnofw');
+		
+			/////  Debugging /////				
+				console.log ('syshind');
+				console.log (syshind);
+			///// End debug /////		
 		
 			
 			// Reset all hinderances to available.	
