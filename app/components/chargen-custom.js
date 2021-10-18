@@ -1091,7 +1091,8 @@ export default Component.extend({
 					v3['disabled']=false;
 					dislist = Object.values(sysedges).filter(slots => slots.name.toLowerCase() == v3['name'].toLowerCase());
 					dislist[0]['disabled'] = false;
-					/////  Debugging /////				
+					/////  Debugging /////	
+						console.log ('Dislist: ');
 						console.log (dislist);
 					///// End debug /////				
 					if ( dislist[0]['trexcludes'].length > 0 ) {
