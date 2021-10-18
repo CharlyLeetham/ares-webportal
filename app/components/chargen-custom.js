@@ -1140,7 +1140,7 @@ export default Component.extend({
 		
 		hindChanged( val ) {
 			var syshind, charhind, dislist, dislist33, trexcludes, nofwhind;
-			syshind = this.get('char.custom.swsyshind');
+			syshind = this.get('char.custom.syshind');
 			charhind = this.get('char.custom.cghind');
 			nofwhind = this.get('char.custom.cghindnofw');
 		
