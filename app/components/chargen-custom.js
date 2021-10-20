@@ -157,6 +157,12 @@ export default Component.extend({
 						console.log (desc);
 					///// End Debug /////
 					en = desc['name'];
+					
+					///// Debugging /////
+						// console.log ('Checking  Race ');
+						console.log (desc['name']);
+					///// End Debug /////					
+					
 					dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the trait list to an array and filter for any entries that match the new traits selected.	
 					
 					///// Debugging /////
