@@ -269,7 +269,7 @@ export default Component.extend({
 			this.set('char.custom.cgedges', finaltraits); //Send the new array back to the page for nice display. 	
 			this.set('char.custom.cgedgesfw', finaltraits); //Send the new array back to the page for nice display. 	
 		} else {
-			this.set('char.custom.swsyshind', sysedg); //Send the new dropdown back to the page. 
+			this.set('char.custom.syshind', sysedg); //Send the new dropdown back to the page. 
 			this.set('char.custom.cghind', finaltraits); //Send the new array back to the page for nice display.			
 			this.set('char.custom.cghindfw', finaltraits); //Send the new array back to the page for nice display.			
 		}
@@ -627,7 +627,7 @@ export default Component.extend({
 		
 		var cgedgfw, cghindfw, dislist, exedg, exhind, i, cgtr1=[], cgtr2=[], newclass, hjslots, hjtables, curricf, currrace, currsysedges, dislist33;
 		var currsysedges = this.get( 'char.custom.sysedges' );
-		var currsyshinderances = this.get( 'char.custom.swsyshind' );	
+		var currsyshinderances = this.get( 'char.custom.syshind' );	
 		exedg = this.get('char.custom.cgedges');
 		exhind = this.get('char.custom.cghind');		
 		curricf = this.get('char.custom.charicf');
@@ -880,7 +880,7 @@ export default Component.extend({
 			swiconicfall = this.get('char.custom.sysiconicf');	// Get all the Iconic Frameworks.
 			swraceall = this.get('char.custom.swrifts_race'); // Get all the system races.			
 			sysedg = this.get('char.custom.sysedges'); // Get all the System Edges
-			syshind = this.get('char.custom.swsyshind');// Get all the System Hinderances		
+			syshind = this.get('char.custom.syshind');// Get all the System Hinderances		
 			cgedg = this.get('char.custom.cgedges'); // Get the edges on the character now.
 			newval = val['name'].split('~')[0].toLowerCase().trim(); //Take whatever Iconic Framework has been selected and chop every from ~ in the name, remove the trailing space.			
 			
@@ -1009,7 +1009,7 @@ export default Component.extend({
 			swiconicfall = this.get('char.custom.sysiconicf');	// Get all the Iconic Frameworks.
 			swraceall = this.get('char.custom.swrifts_race'); // Get all the system races.			
 			sysedg = this.get('char.custom.sysedges'); // Get all the System Edges
-			syshind = this.get('char.custom.swsyshind');// Get all the System Hinderances		
+			syshind = this.get('char.custom.syshind');// Get all the System Hinderances		
 			cgedg = this.get('char.custom.cgedges'); // Get the edges on the character now.
 			cghind = this.get('char.custom.cghind'); // Hinderances on the Character. 			
 
