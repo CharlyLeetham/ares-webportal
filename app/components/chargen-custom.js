@@ -161,6 +161,7 @@ export default Component.extend({
 					///// Debugging /////
 						// console.log ('Checking  Race ');
 						console.log (desc['name']);
+						console.log (traittype);
 					///// End Debug /////					
 					
 					dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the trait list to an array and filter for any entries that match the new traits selected.	
