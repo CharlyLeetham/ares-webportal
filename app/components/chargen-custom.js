@@ -155,6 +155,7 @@ export default Component.extend({
 					///// Debugging /////
 						// console.log ('Checking  Race ');
 						console.log (desc);
+						console.log (sysedg);
 					///// End Debug /////
 					en = desc['name'];
 					
