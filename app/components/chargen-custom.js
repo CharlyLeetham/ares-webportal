@@ -142,7 +142,7 @@ export default Component.extend({
 					///// End Debug /////
 					en = desc['name'];					
 					dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the trait list to an array and filter for any entries that match the new traits selected.				
-					if (desc['class'].includes('^')) {						
+					if ( desc['class'].includes('^') && dislist.length > 0 ) {						
 						cgtrnewedg[i] = [];
 						cgtrnewedg[i]['class']=dislist[0]['name']+'^';
 						cgtrnewedg[i]['name']=desc['name'];
@@ -163,8 +163,8 @@ export default Component.extend({
 						console.log ('Dislist: ');
 						console.log ( dislist );
 					///// End Debug /////					
-					if (desc['class'].includes('*')) {
-						console.log ('Class includes *');
+					if ( desc['class'].includes('*') && dislist.length > 0 ) {
+						console.log (desc+' class includes *');
 						cgtrnewedg[i]=[];
 						cgtrnewedg[i]['class']=dislist[0]['name']+'*';
 						cgtrnewedg[i]['name']=desc['name'];
