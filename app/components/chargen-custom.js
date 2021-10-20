@@ -154,6 +154,7 @@ export default Component.extend({
 				for ( const[ed, desc] of Object.entries(exedg) ) {
 					///// Debugging /////
 						console.log ('Checking  Race ');
+						console.log (exedge);
 					///// End Debug /////
 					en = desc['name'];
 					dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the trait list to an array and filter for any entries that match the new traits selected.	
