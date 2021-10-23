@@ -1,47 +1,47 @@
-	<div id="swrifts-sheet" class="tab-pane fade in">          
+	<div id="swrifts-sheet" class="tab-pane fade in">
 		<div class="row">
 			<div class="col-sm-9">
 			<!-- Top Row -->
 				<div class="form-group row icf">
 					<div class="col-sm-6">
 						 <div class="col-sm-6 heading">
-							<span>Iconic Framework</span> 
+							<span>Iconic Framework</span>
 						 </div>
 						 <div class="col-sm-9">
 						<!-- {{{ansi-format text=char.custom.iconicf}}} -->
 							<PowerSelect @searchEnabled={{true}} @searchField="name" @searchPlaceholder="Type a name..." @selected={{char.custom.charicf}} @options={{this.swiconicfsel}}  @onChange={{action "iconicfChanged"}} as |icf|>
 							  {{icf.name}}
-							</PowerSelect>							
-						 </div>	
+							</PowerSelect>
+						 </div>
 					</div>
 					<div class="col-sm-6">
 						<div class="col-sm-6 heading">
-							<span>Race</span> 
+							<span>Race</span>
 						 </div>
 						 <div class="col-sm-9">
-						<!-- {{{ansi-format text=char.custom.charrace}}} -->
+						  {{{ansi-format text=char.custom.cgrace}}} 
 							<PowerSelect @searchEnabled={{true}} @searchField="name" @searchPlaceholder="Type a name..." @selected={{char.custom.charrace}} @options={{this.swracesel}}  @onChange={{action "newRaceChanged"}} as |icf|>
 							  {{icf.name}}
 							</PowerSelect>
-						</div>					
+						</div>
 					</div>
 				</div>
 			<!-- End Top Row -->
-			
+
 			<!-- Second Row -->
 				<div class="form-group row">
-			 
+
 				</div>
-				
+
 			<!-- End Second Row -->
-			
+
 			<!-- Third Row -->
 				<div class = "row features">
 					<div class="col-sm-6">
 						<div class="row txthding">
-							<span class="edges">Edges</span> 
+							<span class="edges">Edges</span>
 						</div>
-						
+
 						<div class="row">
 							<!-- <p> -->
 								<!-- {{{ansi-format text=char.custom.sysedges}}} -->
@@ -57,38 +57,38 @@
 						</div>
 
 					</div>
-					
+
 					<div class="col-sm-6">
 						<div class="row txthding">
 							<span class="heading">Hinderances</span>
 						</div>
-						
+
 						<div class="row">
 							<p><ul class="hind">
-							
+
 							<!-- <pre>
-							 {{{ansi-format text=char.custom.syshind}}} 
+							 {{{ansi-format text=char.custom.syshind}}}
 							 </pre> -->
 							{{#each-in char.custom.cghindfw as |key counter|}}
-								<li><span class="cgtooltip">{{counter.class}} 
+								<li><span class="cgtooltip">{{counter.class}}
 									<span class="tooltiptext">{{counter.rating}}</span>
 								</span></li>
 							{{/each-in}}
 							</ul></p>
-						</div>					
-					</div>	
+						</div>
+					</div>
 				</div>
-				
+
 			<!-- End Third Row -->
-				
+
 			<!-- Fourth Row -->
 				<div class="row features">
 					<div class="col-sm-6">
-						<div class="row">			
-						
+						<div class="row">
+
 							<PowerSelectMultiple @searchEnabled={{true}} @searchField="name" @searchPlaceholder="Type a name..." @selected={{char.custom.cgedgesnofw}} @options={{this.swsysedges}} @onChange={{action "edgeChanged"}} as |edg|>
 							  {{edg.name}}
-							</PowerSelectMultiple>						
+							</PowerSelectMultiple>
 						</div>
 					</div>
 
@@ -96,17 +96,17 @@
 						<div class="row">
 							<PowerSelectMultiple @searchEnabled={{true}} @searchField="name" @searchPlaceholder="Type a name..." @selected={{char.custom.cghindnofw}} @options={{this.swsyshind}} @onChange={{action "hindChanged"}} as |hind|>
 							  {{hind.name}}
-							</PowerSelectMultiple>				
+							</PowerSelectMultiple>
 						</div>
 					</div>
 				</div>
-		
+
 			<!-- End Fourth Row -->
-			
+
 			<!-- Fifth Row -->
-			
-				<div class="row"> 
-					<!-- <pre>{{{ansi-format text=char.custom.hjtables}}}</pre> -->				
+
+				<div class="row">
+					<!-- <pre>{{{ansi-format text=char.custom.hjtables}}}</pre> -->
 
 					{{#each-in char.custom.hjslots as |hjt value|}}
 						<div class="col-sm-4">
@@ -122,9 +122,9 @@
 					{{else}}
 						<div class="col-sm-4">
 						<p style="font-weight: bold; font-style: italic;">No Hero's Journey's to pick from.</p>
-						</div>			
-					{{/each-in}} 
-					
+						</div>
+					{{/each-in}}
+
 				</div> <!-- HJ Options -->
 			<!-- End Fifth Row -->
 			</div> <!-- left column -->
@@ -135,22 +135,22 @@
                  {{#each-in char.custom.cgslots as |key counter|}}
 						 <div class="form-group row">
 							 <div class="col-sm-9">
-									 <b>{{counter.name}}</b> 
+									 <b>{{counter.name}}</b>
 							 </div>
 							 <div class="col-sm-3">
 									 <Input id="inp-{{counter.class}}" @type="text" disabled="disabled" @size={{4}} @value={{counter.rating}} />
 							 </div>
-						 </div>	 	
+						 </div>
 				 {{else}}
                  <div class="form-group row">
                      <div class="col-sm-12">
 						Nothing here
 					</div>
 				  </div>
-                 {{/each-in}}					
-			
+                 {{/each-in}}
+
 			</div>
 		<!-- end Right Col -->
 		</div>
-			
-	</div> 
+
+	</div>
