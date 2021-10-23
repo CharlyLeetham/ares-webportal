@@ -19,7 +19,10 @@
 							<span>Race</span>
 						 </div>
 						 <div class="col-sm-9">
-						  {{{ansi-format text=char.custom.cgrace}}} 
+						  <!--{{{ansi-format text=char.custom.cgrace}}}-->
+							{{#each-in char.custome.cgrace as |k v|}}
+								{{k}} - {{v}}<br />
+							{{/each-in}}
 							<PowerSelect @searchEnabled={{true}} @searchField="name" @searchPlaceholder="Type a name..." @selected={{char.custom.charrace}} @options={{this.swracesel}}  @onChange={{action "newRaceChanged"}} as |icf|>
 							  {{icf.name}}
 							</PowerSelect>
