@@ -593,12 +593,19 @@ export default Component.extend({
 		/// Debugging ///
 		// console.log (evalrace);
 		// console.log (listsys);
-		console.log (dislist44);
+		// console.log (dislist44);
+		console.log (dragonrace);
 		/// End debug ///
 
 		if ( dragon_check || norace_check ) {
 			dislist44 = Object.values( listsys );  // Convert the framework list to an array
 			for (const [k1, v1] of Object.entries(dislist44)) {
+
+        /// Debugging ///
+    		console.log ("k1: "+k1 + "v1: " );
+        console.log (v1);
+    		/// End debug ///
+
 				if ( dragonrace.includes( v1['class'] ) ) {
 					v1['disabled'] = false //Set disabled for this element to false
 				} else {
