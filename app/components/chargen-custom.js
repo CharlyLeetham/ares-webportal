@@ -1109,6 +1109,11 @@ export default Component.extend({
 				for ( const[k1, v1] of Object.entries(charhind) ) {
 					if (!v1['class'].endsWith('*^') && !v1['class'].endsWith('*') && !v1['class'].endsWith('^') ) {
 						dislist33 = Object.values(val).filter(slots => slots.name.toString().toLowerCase() == v1['name'].toLowerCase());
+            /////  Debugging /////
+      				 //console.log ('syshind');
+      				 //console.log (syshind);
+               console.log (dislist33);
+      			///// End debug /////
 						if (dislist33.length < 1) {
 							v1['disabled'] = false;
 							dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == v1['name'].toLowerCase());
@@ -1126,7 +1131,7 @@ export default Component.extend({
             /////  Debugging /////
       				 //console.log ('syshind');
       				 //console.log (syshind);
-               console.log (value);
+               //console.log (value);
       			///// End debug /////
 
             value['disabled']=false;
