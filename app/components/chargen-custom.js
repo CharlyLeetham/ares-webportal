@@ -418,7 +418,6 @@ export default Component.extend({
 
     							if ( ppe_test==true || isp_test==true || nsb_test == true || bp_test == true || cyber_check == true ) {
 
-    								console.log ( value.name );
     								// if ( value.name == 'DNorr' ) {
     									// console.log ( 'PPE: '+ ppe_test );
     									// console.log ( 'ISP: '+isp_test );
@@ -591,10 +590,10 @@ export default Component.extend({
 
 
 		/// Debugging ///
-		// console.log (evalrace);
-		// console.log (listsys);
-    console.log ("Dislist44: ")
-		console.log (dislist44);
+		console.log (evalrace);
+		console.log (listsys);
+    // console.log ("Dislist44: ")
+		// console.log (dislist44);
 		//console.log (dragonrace);
 		/// End debug ///
 
