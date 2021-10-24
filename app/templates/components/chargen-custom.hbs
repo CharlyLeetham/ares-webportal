@@ -77,7 +77,15 @@
 							<p><ul class="hind">
 
 							<pre>
-							 {{{ansi-format text=char.custom.syshind}}}
+							<!-- {{{ansi-format text=char.custom.syshind}}} -->
+
+							 {{#each-in char.custom.syshind as |k v|}}
+							 K: {{k}}  -
+								 {{#each-in v as |x z| }}
+									 x: {{x}} __ z: {{z}}
+								 {{/each-in}}
+								 <br />
+						 {{/each-in}}
 							 </pre>
 							{{#each-in char.custom.cghindfw as |key counter|}}
 								<li><span class="cgtooltip">{{counter.class}}
