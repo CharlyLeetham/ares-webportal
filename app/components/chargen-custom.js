@@ -1087,8 +1087,9 @@ export default Component.extend({
 			nofwhind = this.get('char.custom.cghindnofw');
 
 			/////  Debugging /////
-				// console.log ('syshind');
-				// console.log (syshind);
+				 //console.log ('syshind');
+				 //console.log (syshind);
+         console.log (val);
 			///// End debug /////
 
 
