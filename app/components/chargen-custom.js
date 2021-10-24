@@ -442,49 +442,10 @@ export default Component.extend({
 			}
 		} else {
 
-				///// Debugging /////
-					// console.log( 'Key: ' +key );
-					// console.log( 'Val: '+value );
-					// console.log ( value );
-					// console.log ( 'Name: '+value.name );
-					// console.log ( 'Compls :');
-					// console.log ( value.complications );
-					// console.log ( chosenifarray );
-					// console.log ( 'Edges: '+ value.edges );
-					// console.log ( 'PPE: '+ ppe_check );
-					// console.log ( 'ISP: '+isp_check );
-					// console.log ( 'Cyber: '+cyber_check );
-					// console.log ( 'NSB: '+nsb_check );
-					// console.log ( 'BP: ' +bp_check );
-					// console.log ( 'Dragon: '+dragon_check );
-				///// End Debug /////
-
-
 			for ( const [key, value] of Object.entries( fullsys ) ) { //Loop through the race values. We want to know which races an Iconic Framework can't have.
-			///// Debugging /////
-				if ( traittype == 'race' ) {
-					// console.log( 'Key: ' +key );
-					// console.log( 'Val: ' );
-					// console.log ( value );
-					// if ( value.name == 'Dragon Hatchling ') {
-						// console.log ( 'Name: '+ value.name );
-						// console.log ( 'Compls: ' );
-						// console.log ( value.complications );
-					// }
-					// console.log ( 'Edges: '+ value.edges );
-					// console.log ( 'PPE: '+ ppe_check );
-					// console.log ( 'ISP: '+isp_check );
-					// console.log ( 'Cyber: '+cyber_check );
-					// console.log ( 'NSB: '+nsb_check );
-					// console.log ( 'BP: ' +bp_check );
-					// console.log ( 'Dragon: '+dragon_check );
-				}
-				///// End Debug /////
-
 
 				// Check the ICF complications to see if it has Dragon.
 				if ( ( Array.isArray( value.complications ) && value.complications[0] !== null ) && value.complications.includes( dragon ) ) {  //If the framework has a complication of Dragon, do this.
-					// console.log ('Here ');
 					if ( !dragonrace.includes( value.name ) ) { // If the array dragonrace doesn't already include this framework, include this race in the array;
 						dragonrace[dd]=value.name;
 						dd = dd+1;
@@ -507,33 +468,21 @@ export default Component.extend({
 					var dragon_check = racecompl.includes(dragon) //see if the race has the value
 						if ( value.edges  ) { //If complications exist for the race chosen, check the edges for the ICF and make sure they are disabled
 							for ( const [k, v] of Object.entries( value.edges ) ) {
-								///// Debugging /////
-								// if ( traittype == 'race' ) {
-									// console.log('Key: '+k);
-									// console.log('Vlaue:' +v);
-								// }
-								///// End Debug /////
 								if ( v ) {  // This checks that there isn't a blank entry.
 									if ( ppe_check == true ) {
 										var ppe_test = comptypearray.includes(v.toLowerCase());
-										// console.log ('PPE Check: '+ppe_check);
-										// console.log ('PPE: '+ppetest);
-										// Check if the race can use this
 									}
 
 									if ( isp_check == true ) {
 										var isp_test = comptypearray2.includes(v.toLowerCase());
-										// console.log ('ISP: '+isptest);
 									}
 
 									if ( nsb_check == true ) {
 										var nsb_test = comptypearray3.includes(v.toLowerCase());
-										// console.log ('NSB: '+nsbtest);
 									}
 
 									if ( bp_check == true ) {
 										var bp_test = comptypearray4.includes(v.toLowerCase());
-										// console.log ('BP: '+bptest);
 									}
 
 									if ( cyber_check == true ) {
@@ -553,24 +502,7 @@ export default Component.extend({
 
 									if ( ppe_test == true || isp_test == true || nsb_test == true || bp_test == true || cyber_test == true || dragon_check_icf == true ) {
 										// We need to determine if the IF has this edge
-										///// Debugging /////
-										// console.log ('do we get here?');
-										// console.log ('Value.Name: '+value.name);
-											// console.log( 'Key: ' +key );
-											// console.log( 'Val: ' );
-											// console.log ( value );
-											// console.log ( 'Name: '+ value.name );
-											// console.log ( 'Edges: '+ value.edges );
-											// console.log ( 'PPE: '+ ppe_check );
-											// console.log ( 'ISP: '+isp_check );
-											// console.log ( 'Cyber: '+cyber_check );
-											// console.log ( 'NSB: '+nsb_check );
-											// console.log ( 'BP: ' +bp_check );
-											// console.log ( 'Dragon: '+dragon_check );
-											// console.log ( 'Dragon ICF: '+dragon_check_icf );
-										///// End Debug /////
 										if ( !evalrace.includes(value.name) ) {
-											// console.log ('Value.Name: '+value.name);
 											evalrace[i] = value.name;
 											i=i+1;
 										}
@@ -589,24 +521,13 @@ export default Component.extend({
 		} //Traittype
 
 
-		/// Debugging ///
-		//console.log (evalrace);
-		//console.log (listsys);
-    // console.log ("Dislist44: ")
-		// console.log (dislist44);
-		//console.log (dragonrace);
-		/// End debug ///
+    // We pull No Race and Dragon Races out as seperate checks as the check is a bit easier.
 
+    // We want to see if the ICF doesn't need a race. If it doesn't, we need to mark all RACES as disabled so they can't be chosen.
     if ( norace_check ) {
-
       dislist44 = Object.values( listsys );  // Convert the framework list to an array
-			for (const [k1, v1] of Object.entries(dislist44)) {
-        /// Debugging ///
-    		console.log ("k1: "+k1 + "v1: " );
-        console.log (v1);
-    		/// End debug ///
-        if ( v1['class'] != "none" ) {
-          console.log ("HEre");
+			for (const [k1, v1] of Object.entries(dislist44)) { // Work through the array of races
+        if ( v1['class'] != "none" ) {  // The only entry we want enabled is the 'None' one to be able to reset things as needed.
           v1['disabled'] = true;
         } else {
           v1['disabled'] = false;
@@ -615,16 +536,11 @@ export default Component.extend({
       return;
     }
 
+    // Is this a Dragon Race or Dragon ICF?
 		if ( dragon_check ) {
 			dislist44 = Object.values( listsys );  // Convert the framework list to an array
-			for (const [k1, v1] of Object.entries(dislist44)) {
-
-        /// Debugging ///
-    		//console.log ("k1: "+k1 + "v1: " );
-        //console.log (v1);
-    		/// End debug ///
-
-				if ( dragonrace.includes( v1['class'] ) ) {
+			for (const [k1, v1] of Object.entries(dislist44)) { // Work through the system list of ICF or Race
+			  if ( dragonrace.includes( v1['class'] ) ) { //If the dragonrace array contains the name of this ICF or Race, set it to disbled so it can't be chosen.
 					v1['disabled'] = false //Set disabled for this element to false
 				} else {
 					v1['disabled'] = true //Set disabled for this element to false
@@ -633,10 +549,11 @@ export default Component.extend({
 			return;
 		}
 
-		if ( evalrace ) {
+    // Now more generic tests.
+		if ( evalrace ) { //Have we found an ICF or Race with a complication, edge or hinderance that excludes others being selected?
 			dislist44 = Object.values( listsys );  // Convert the framework list to an array
-			for (const [k1, v1] of Object.entries(dislist44)) {
-				if ( evalrace.includes( v1['class'] ) ) {
+			for (const [k1, v1] of Object.entries(dislist44)) { //Cycle through the array
+				if ( evalrace.includes( v1['class'] ) ) { // Does the Framework match the name of the Race or ICF we're testing?
 					v1['disabled'] = true //Set disabled for this element to false
 				} else {
 					v1['disabled'] = false //Set disabled for this element to false
