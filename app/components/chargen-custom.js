@@ -1131,6 +1131,7 @@ export default Component.extend({
             /////  Debugging /////
       				 //console.log ('syshind');
       				 //console.log (syshind);
+               console.log (val);               
                console.log (value);
       			///// End debug /////
 
