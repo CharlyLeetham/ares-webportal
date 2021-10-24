@@ -1117,6 +1117,7 @@ export default Component.extend({
 						if (dislist33.length < 1) {
 							v1['disabled'] = false;
 							dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == v1['name'].toLowerCase());
+              console.log (dislist);
 							dislist[0]['disabled'] = false;
 							if (dislist[0]['trexcludes'].length > 0) {
 								trexcludes = this.ck_includes(dislist, syshind, 'hind');
@@ -1131,17 +1132,14 @@ export default Component.extend({
             /////  Debugging /////
       				 //console.log ('syshind');
       				 //console.log (syshind);
-               console.log ('Val: ');
-               console.log (val);
-               console.log ('Value: ');
-               console.log (value);
+               //console.log ('Val: ');
+               //console.log (val);
+               //console.log ('Value: ');
+               //console.log (value);
       			///// End debug /////
 
             value['disabled']=false;
   					dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == value['name'].toLowerCase()); // Convert sysedges to an array and filter for any entries that match the new framework selected.
-
-            console.log (dislist);
-            
   					dislist[0]['disabled'] = true;
   				}
 			}
