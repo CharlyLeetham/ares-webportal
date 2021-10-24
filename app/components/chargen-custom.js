@@ -1032,11 +1032,9 @@ export default Component.extend({
 			// Reset the non-framework and race edges on the character.
 			if ( nonfwedges ) {
 				for ( const[k3, v3] of Object.entries( nonfwedges ) ) {
-
 					v3['disabled']=false;
 					dislist = Object.values(sysedges).filter(slots => slots.name.toLowerCase() == v3['name'].toLowerCase());
 					dislist[0]['disabled'] = false;
-
 					/////  Debugging /////
 						// console.log ('Dislist: ');
 						// console.log (dislist);
@@ -1089,7 +1087,7 @@ export default Component.extend({
 			/////  Debugging /////
 				 //console.log ('syshind');
 				 //console.log (syshind);
-         console.log (val);
+         //console.log (val);
 			///// End debug /////
 
 
@@ -1125,12 +1123,11 @@ export default Component.extend({
 
       if ( val ) {
   				for (const [key, value] of Object.entries(val)) {
-  				//	dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == value['name'].toLowerCase()); // Convert sysedges to an array and filter for any entries that match the new framework selected.
-  				//	dislist[0]['disabled'] = true;
-  					// Check to see the Hinderance excludes others and mark them as disabled.
-  				//	if (dislist[0]['trexcludes'].length > 0) {
-  				//		trexcludes = this.ck_excludes(dislist, syshind, 'hind');
-  				//	}
+            /////  Debugging /////
+      				 //console.log ('syshind');
+      				 //console.log (syshind);
+               console.log (value);
+      			///// End debug /////
 
             value['disabled']=false;
   					dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == value['name'].toLowerCase()); // Convert sysedges to an array and filter for any entries that match the new framework selected.
@@ -1140,7 +1137,7 @@ export default Component.extend({
 			this.set('char.custom.cghindnofw', val);
 		},
 
-        groupChanged(group, val) {
+    groupChanged(group, val) {
 			var hjtable, tmptable, hjslots, newhjtable={};
 			hjslots = this.get('char.custom.hjslots');
 			hjtable = this.get('char.custom.hjtables');
