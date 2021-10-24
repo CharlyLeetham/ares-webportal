@@ -606,6 +606,7 @@ export default Component.extend({
         console.log (v1);
     		/// End debug ///
         if ( v1['class'] != "none" ) {
+          console.log ("HEre");
           v1['disabled'] = true;
         } else {
           v1['disabled'] = false;
