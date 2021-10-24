@@ -135,9 +135,9 @@ export default Component.extend({
 						// console.log ('Trait Type: '+traittype);
 						// console.log ('Exeedg: ');
 						// console.log (exedg);
-						console.log ('SysEdg: ');
-						console.log (sysedg);
-						console.log (desc);
+						// console.log ('SysEdg: ');
+						// console.log (sysedg);
+						// console.log (desc);
 					// }
 					///// End Debug /////
 					en = desc['name'];
@@ -154,25 +154,25 @@ export default Component.extend({
 				for ( const[ed, desc] of Object.entries(exedg) ) {
 					///// Debugging /////
 						// console.log ('Checking  Race ');
-						console.log (desc);
-						console.log (sysedg);
+						// console.log (desc);
+						// console.log (sysedg);
 					///// End Debug /////
 					en = desc['name'];
 
 					///// Debugging /////
 						// console.log ('Checking  Race ');
-						console.log (desc['name']);
-						console.log (traittype);
+						// console.log (desc['name']);
+						// console.log (traittype);
 					///// End Debug /////
 
 					dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the trait list to an array and filter for any entries that match the new traits selected.
 
 					///// Debugging /////
-						console.log ('Dislist: ');
-						console.log ( dislist );
+						// console.log ('Dislist: ');
+						// console.log ( dislist );
 					///// End Debug /////
 					if ( desc['class'].includes('*') && dislist.length > 0 ) {
-						console.log (desc+' class includes *');
+						// console.log (desc+' class includes *');
 						cgtrnewedg[i]=[];
 						cgtrnewedg[i]['class']=dislist[0]['name']+'*';
 						cgtrnewedg[i]['name']=desc['name'];
@@ -485,7 +485,7 @@ export default Component.extend({
 
 				// Check the ICF complications to see if it has Dragon.
 				if ( ( Array.isArray( value.complications ) && value.complications[0] !== null ) && value.complications.includes( dragon ) ) {  //If the framework has a complication of Dragon, do this.
-					console.log ('Here ');
+					// console.log ('Here ');
 					if ( !dragonrace.includes( value.name ) ) { // If the array dragonrace doesn't already include this framework, include this race in the array;
 						dragonrace[dd]=value.name;
 						dd = dd+1;
@@ -1107,8 +1107,8 @@ export default Component.extend({
 			/////  Debugging /////
 			// console.log ('Val: ');
 			// console.log (val);
-			console.log ('SysEdges: ');
-			console.log (sysedges);
+			// console.log ('SysEdges: ');
+			// console.log (sysedges);
 			// console.log ('Charedges: ');
 			// console.log (charedges);
 			// console.log ('Charedgesall: ');
@@ -1126,8 +1126,8 @@ export default Component.extend({
 					dislist[0]['disabled'] = false;
 
 					/////  Debugging /////
-						console.log ('Dislist: ');
-						console.log (dislist);
+						// console.log ('Dislist: ');
+						// console.log (dislist);
 					///// End debug /////
 					if ( dislist[0]['trexcludes'].length > 0 ) {
 						trexcludes = this.ck_includes(dislist, sysedges, 'edge');
@@ -1175,8 +1175,8 @@ export default Component.extend({
 			nofwhind = this.get('char.custom.cghindnofw');
 
 			/////  Debugging /////
-				console.log ('syshind');
-				console.log (syshind);
+				// console.log ('syshind');
+				// console.log (syshind);
 			///// End debug /////
 
 
