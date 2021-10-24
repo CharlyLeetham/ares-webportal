@@ -1039,8 +1039,8 @@ export default Component.extend({
 					dislist = Object.values(sysedges).filter(slots => slots.name.toLowerCase() == v3['name'].toLowerCase());
 					dislist[0]['disabled'] = false;
 					/////  Debugging /////
-						// console.log ('Dislist: ');
-						// console.log (dislist);
+					//	console.log ('Dislist: ');
+						//console.log (dislist);
 					///// End debug /////
 					if ( dislist[0]['trexcludes'].length > 0 ) {
 						trexcludes = this.ck_includes(dislist, sysedges, 'edge');
@@ -1115,8 +1115,8 @@ export default Component.extend({
 					if (!v1['class'].endsWith('*^') && !v1['class'].endsWith('*') && !v1['class'].endsWith('^') ) {
 						dislist33 = Object.values(val).filter(slots => slots.name.toString().toLowerCase() == v1['name'].toLowerCase());
             /////  Debugging /////
-      				 //console.log ('syshind');
-      				 //console.log (syshind);
+      				 console.log ('syshind');
+      				 console.log (syshind);
                //console.log (dislist33);
       			///// End debug /////
 						if (dislist33.length < 1) {
