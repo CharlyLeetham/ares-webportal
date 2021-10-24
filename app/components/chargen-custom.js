@@ -598,7 +598,14 @@ export default Component.extend({
 		/// End debug ///
 
     if ( norace_check ) {
-
+      dislist44 = Object.values( listsys );  // Convert the framework list to an array
+			for (const [k1, v1] of Object.entries(dislist44)) {
+        if ( v1['class'] != "none" ) {
+          v1['disabled'] = true;
+        } else {
+          v1['disabled'] = false;
+        }
+      }
     }
 
 		if ( dragon_check ) {
