@@ -579,17 +579,8 @@ export default Component.extend({
 		curricf = this.get('char.custom.charicf');
 		currrace = this.get('char.custom.charrace');
 
-		///// Debugging /////
-		// console.log ( currsyshinderances );
-		// console.log ( fw );
-		///// End debug /////
-
 		dislist = Object.values( fwname ).filter( slots => slots.disabled.toString().toLowerCase() == 'true' );
 		// Convert the framework list to an array and filter for any entries that are disabled.  This allows us to reset disabled entries because they are now all available
-
-		///// Debugging /////
-		// console.log ( dislist );
-		///// End debug /////
 
 		for (const [key, value] of Object.entries(dislist)) {
 			value['disabled'] = false //Set disabled for this element to false. Anything can be chosen.
@@ -618,10 +609,6 @@ export default Component.extend({
 			// Reset displayed selected attributes for ICF set to None
 			if ( curricf['class'].toLowerCase() == 'none' && Object.keys(exedg).length > 1 ) {
 
-				///// Debugging /////
-				// console.log ( 'Edg Array: ' );
-				// console.log ( exedg );
-				///// End Debugging /////
 				for (const[ed, desc] of Object.entries(exedg)) {
 					if (desc['class'].endsWith('*^')) {
 						cgtr1[i]=[];
@@ -654,7 +641,6 @@ export default Component.extend({
 			}
 
 			// Reset displayed attributes for Race set to None
-
 			if ( currrace['class'].toLowerCase() == 'none' && Object.keys(exedg).length > 1 ) {
 				for (const[ed, desc] of Object.entries(exedg)) {
 					if (desc['class'].endsWith('*^')) {
@@ -685,8 +671,6 @@ export default Component.extend({
 						}
 					}
 				}
-
-
 			}
 
 			//Reset Hinderances
@@ -778,13 +762,10 @@ export default Component.extend({
 		newrace = this.get('char.custom.charrace');
 		newrating = 0;
 
-
 		if (newicf['class'] != 'none') {
 			newicfpoints = Object.values(charcgp).filter(slots => slots.ifname.toString() == newicf['class'].toLowerCase()); // Convert charcgp to an array and filter for any entries that match the new framework selected.
 			icfval = newicf['class'].toLowerCase();
 		}
-
-
 
 		if (newrace['class'] != 'none') {
 			newracepoints = Object.values(racecgp).filter(slots => slots.ifname.toString() == newrace['class']); // Convert charcgp to an array and filter for any entries that match the new framework selected.
