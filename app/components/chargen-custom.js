@@ -593,6 +593,7 @@ export default Component.extend({
 		/// Debugging ///
 		// console.log (evalrace);
 		// console.log (listsys);
+    console.log ("Dislist44: ")
 		console.log (dislist44);
 		//console.log (dragonrace);
 		/// End debug ///
