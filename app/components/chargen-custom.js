@@ -612,6 +612,7 @@ export default Component.extend({
           v1['disabled'] = false;
         }
       }
+      return;
     }
 
 		if ( dragon_check ) {
