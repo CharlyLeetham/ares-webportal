@@ -590,14 +590,15 @@ export default Component.extend({
 
 
 		/// Debugging ///
-		console.log (evalrace);
-		console.log (listsys);
+		//console.log (evalrace);
+		//console.log (listsys);
     // console.log ("Dislist44: ")
 		// console.log (dislist44);
 		//console.log (dragonrace);
 		/// End debug ///
 
     if ( norace_check ) {
+      console.log ("Here");
       dislist44 = Object.values( listsys );  // Convert the framework list to an array
 			for (const [k1, v1] of Object.entries(dislist44)) {
         if ( v1['class'] != "none" ) {
