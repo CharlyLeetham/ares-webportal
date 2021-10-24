@@ -598,9 +598,13 @@ export default Component.extend({
 		/// End debug ///
 
     if ( norace_check ) {
-      console.log ("Here");
+
       dislist44 = Object.values( listsys );  // Convert the framework list to an array
 			for (const [k1, v1] of Object.entries(dislist44)) {
+        /// Debugging ///
+    		console.log ("k1: "+k1 + "v1: " );
+        console.log (v1);
+    		/// End debug ///
         if ( v1['class'] != "none" ) {
           v1['disabled'] = true;
         } else {
