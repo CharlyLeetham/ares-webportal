@@ -1112,7 +1112,7 @@ export default Component.extend({
             /////  Debugging /////
       				 //console.log ('syshind');
       				 //console.log (syshind);
-               console.log (dislist33);
+               //console.log (dislist33);
       			///// End debug /////
 						if (dislist33.length < 1) {
 							v1['disabled'] = false;
@@ -1139,6 +1139,9 @@ export default Component.extend({
 
             value['disabled']=false;
   					dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == value['name'].toLowerCase()); // Convert sysedges to an array and filter for any entries that match the new framework selected.
+
+            console.log (dislist);
+            
   					dislist[0]['disabled'] = true;
   				}
 			}
