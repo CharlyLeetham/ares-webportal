@@ -28,7 +28,7 @@
 										x: {{x}} __ z: {{z}}
 									{{/each-in}}
 									<br />
-							{{/each-in}} 
+							{{/each-in}}
 						</pre> -->
 							<PowerSelect @searchEnabled={{true}} @searchField="name" @searchPlaceholder="Type a name..." @selected={{char.custom.charrace}} @options={{this.swracesel}}  @onChange={{action "newRaceChanged"}} as |icf|>
 							  {{icf.name}}
@@ -76,9 +76,9 @@
 						<div class="row">
 							<p><ul class="hind">
 
-							<!-- <pre>
+							<pre>
 							 {{{ansi-format text=char.custom.syshind}}}
-							 </pre> -->
+							 </pre>
 							{{#each-in char.custom.cghindfw as |key counter|}}
 								<li><span class="cgtooltip">{{counter.class}}
 									<span class="tooltiptext">{{counter.rating}}</span>
