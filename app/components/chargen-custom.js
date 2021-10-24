@@ -1131,7 +1131,7 @@ export default Component.extend({
             /////  Debugging /////
       				 //console.log ('syshind');
       				 //console.log (syshind);
-               //console.log (value);
+               console.log (value);
       			///// End debug /////
 
             value['disabled']=false;
