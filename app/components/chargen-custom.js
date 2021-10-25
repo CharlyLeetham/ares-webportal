@@ -359,9 +359,9 @@ export default Component.extend({
     			for ( const [key, value] of Object.entries( fullsys ) ) { //Loop through the race values. We want to know which races an Iconic Framework can't have.
     				complrace = value.hasOwnProperty( 'complications' );
     				///// Debugging /////
-    				console.log ( 'value: ' );
-    				console.log ( value.complications );
-            console.log ( value.edges );
+    				//console.log ( 'value: ' );
+    				//console.log ( value.complications );
+            //console.log ( value.edges );
     				// console.log ( value.name );
     				///// End Debug /////
 
@@ -437,12 +437,11 @@ export default Component.extend({
 				var cyber_test = false;
 			}
 		} else { //trait is Race.
-
-      console.log ( 'value: ' );
-      console.log ( value.complications );
-      console.log ( value.edges ); 
 			for ( const [key, value] of Object.entries( fullsys ) ) { //Loop through the race values. We want to know which races an Iconic Framework can't have.
 
+        console.log ( 'value: ' );
+        console.log ( value.complications );
+        console.log ( value.edges );
 				// Check the ICF complications to see if it has Dragon.
 				if ( ( Array.isArray( value.complications ) && value.complications[0] !== null ) && value.complications.includes( dragon ) ) {  //If the framework has a complication of Dragon, do this.
 					if ( !dragonrace.includes( value.name ) ) { // If the array dragonrace doesn't already include this framework, include this race in the array;
