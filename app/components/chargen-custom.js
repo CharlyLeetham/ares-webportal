@@ -51,6 +51,7 @@ export default Component.extend({
 
     console.log ('Sysedg1: ');
     console.log (sysedg);
+    console.log (dislist);
 		// Check to see the Hinderance excludes others and mark them as disabled.
 		if (dislist[0]['trexcludes'].length > 0) {
 			for (const [k1, v1] of Object.entries(dislist[0]['trexcludes'])) {
