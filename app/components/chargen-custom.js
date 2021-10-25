@@ -358,8 +358,8 @@ export default Component.extend({
     			for ( const [key, value] of Object.entries( fullsys ) ) { //Loop through the race values. We want to know which races an Iconic Framework can't have.
     				complrace = value.hasOwnProperty( 'complications' );
     				///// Debugging /////
-    				console.log ( 'value: ' );
-    				console.log ( value );
+    				//console.log ( 'value: ' );
+    				//console.log ( value );
             //console.log ( value.edges );
     				// console.log ( value.name );
     				///// End Debug /////
@@ -406,8 +406,8 @@ export default Component.extend({
                     // Check to see if the complications array includes anything in the bp_check array
                     for ( const [k, v] of Object.entries( value.complications ) ) {
                       var bp_check = rbp.includes(v);
-                      if (value.name=='Juicer') {
-                        console.log ("Tis a Juicer");
+                      if (value.name=='Fennodi') {
+                        console.log ("Tis a Fennodi");
                         console.log (v);
                         console.log (bp_check);
                       }
