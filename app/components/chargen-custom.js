@@ -48,7 +48,6 @@ export default Component.extend({
 
 	ck_includes: function(dislist, sysedg, traittype) {
 		var trexcludes;
-
     console.log ('Sysedg1: ');
     console.log (sysedg);
     console.log (dislist);
@@ -56,7 +55,7 @@ export default Component.extend({
 		if (dislist[0]['trexcludes'].length > 0) {
 			for (const [k1, v1] of Object.entries(dislist[0]['trexcludes'])) {
 				trexcludes = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == v1.toLowerCase());
-				trexcludes[0]['disabled']= true;
+				trexcludes[0]['disabled']= false;
 			}
 		}
 	},
@@ -1104,7 +1103,7 @@ export default Component.extend({
 					dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == v3['name'].toLowerCase());
 					dislist[0]['disabled'] = false;
 					if (dislist[0]['trexcludes'].length > 0) {
-						trexcludes = this.ck_includes(dislist, syshind, 'hind');
+						trexcludes = this.ck_excludes(dislist, syshind, 'hind');
 					}
 				}
 			}
@@ -1128,7 +1127,7 @@ export default Component.extend({
 							dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == v1['name'].toLowerCase());
 							dislist[0]['disabled'] = false;
 							if (dislist[0]['trexcludes'].length > 0) {
-								trexcludes = this.ck_includes(dislist, syshind, 'hind');
+								trexcludes = this.ck_excludes(dislist, syshind, 'hind');
 							}
 						}
 					}
