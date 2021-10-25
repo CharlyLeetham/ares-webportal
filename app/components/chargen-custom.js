@@ -310,16 +310,16 @@ export default Component.extend({
 			// if ( newedgarray[0] == null ) {
 				// console.log('here');
 			// }
-			// console.log ( chosenifarray );
+			//console.log ( chosenifarray );
 		// }
-			// if ( traittype == 'race' ) {
-				// console.log ( swraceall );
-				// console.log ( swiconicfall );
-				// console.log ( swrace );
-				// console.log ( swiconicf );
-				// console.log ( chosenifarray );
-				// console.log ( newval );
-			// }
+			 if ( traittype == 'race' ) {
+				 console.log ( swraceall );
+				 console.log ( swiconicfall );
+				 console.log ( swrace );
+				 console.log ( swiconicf );
+				 console.log ( chosenifarray );
+				 console.log ( newval );
+			 }
 		///// End Debug /////
 
 		if ( newedgarray && newedgarray[0] != null ) {
@@ -445,7 +445,6 @@ export default Component.extend({
 			}
 		} else { //trait is Race.
 
-            console.log (fullsys);
 			for ( const [key, value] of Object.entries( fullsys ) ) { //Loop through the race values. We want to know which races an Iconic Framework can't have.
 
         if ( value.name == 'DNorr' ) {
