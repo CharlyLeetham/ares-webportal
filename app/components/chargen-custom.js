@@ -450,7 +450,7 @@ export default Component.extend({
 					}
 					var dragon_check_icf = true //Tell us that the ICF allows the use of Dragon.
 					if ( !evalrace.includes(value.name) ) {
-						console.log ('Value.Name: '+value.name);
+						//console.log ('Value.Name: '+value.name);
 						evalrace[i] = value.name;
 						i=i+1;
 					}
@@ -469,22 +469,37 @@ export default Component.extend({
 							for ( const [k, v] of Object.entries( value.edges ) ) {
 								if ( v ) {  // This checks that there isn't a blank entry.
 									if ( ppe_check == true ) {
+                    if (value.name == 'Ley Line Walker')
+                      console.log ('PPE check passed');
+                    }
 										var ppe_test = comptypearray.includes(v.toLowerCase());
 									}
 
 									if ( isp_check == true ) {
+                    if (value.name == 'Ley Line Walker')
+                      console.log ('ISP check passed');
+                    }
 										var isp_test = comptypearray2.includes(v.toLowerCase());
 									}
 
 									if ( nsb_check == true ) {
+                    if (value.name == 'Ley Line Walker')
+                      console.log ('nsb check passed');
+                    }
 										var nsb_test = comptypearray3.includes(v.toLowerCase());
 									}
 
 									if ( bp_check == true ) {
+                    if (value.name == 'Ley Line Walker')
+                      console.log ('bp check passed');
+                    }
 										var bp_test = comptypearray4.includes(v.toLowerCase());
 									}
 
 									if ( cyber_check == true ) {
+                    if (value.name == 'Ley Line Walker')
+                      console.log ('cyber check passed');
+                    }
 										if ( value.hasOwnProperty( 'chargen_points' ) || value.hasOwnProperty( 'cyberslots' ) ) {
 											if ( value.hasOwnProperty( 'chargen_points' ) ) {
 												chargenslots = value.chargen_points;
