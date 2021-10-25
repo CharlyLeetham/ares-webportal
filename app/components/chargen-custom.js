@@ -438,7 +438,7 @@ export default Component.extend({
 		} else { //trait is Race.
 			for ( const [key, value] of Object.entries( fullsys ) ) { //Loop through the race values. We want to know which races an Iconic Framework can't have.
 
-        console.log ( 'value: '+value.name );
+        //console.log ( 'value: '+value.name );
         //console.log ( value.complications );
         //console.log ( value.edges );
 				// Check the ICF complications to see if it has Dragon.
@@ -458,7 +458,11 @@ export default Component.extend({
         if ( (Array.isArray( value.complications ) && value.complications[0] !== null) ) {
           // Check to see if the complications array includes anything in the bp_check array
           for ( const [k, v] of Object.entries( value.complications ) ) {
-            console.log (v);
+            if ( value.name == 'Juicer') {
+              console.log ('Tis a Juicer!');
+              console.log (v);
+            }
+
             var bp_check = rbp.includes(v.toLowerCase());
           }
         }
@@ -489,6 +493,10 @@ export default Component.extend({
 
 									if ( bp_check == true ) {
 										var bp_test = true;
+                    if ( value.name == 'Juicer') {
+                      console.log ('Here');
+                      console.log (bp_test);
+                    }
 									}
 
 									if ( cyber_check == true ) {
