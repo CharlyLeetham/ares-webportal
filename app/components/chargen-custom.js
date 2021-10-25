@@ -1087,17 +1087,8 @@ export default Component.extend({
 			charhind = this.get('char.custom.cghind');
 			nofwhind = this.get('char.custom.cghindnofw');
 
-			/////  Debugging /////
-				 //console.log ('syshind');
-				 //console.log (syshind);
-         //console.log (val);
-			///// End debug /////
-
-
 			// Reset all hinderances to available.
 			if ( nofwhind ) {
-        //console.log ('NoFWHind: ');
-        //console.log (nofwhind);
 				for (const[k3, v3] of Object.entries(nofwhind)) {
 					v3['disabled']=false;
 					dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == v3['name'].toLowerCase());
@@ -1108,20 +1099,13 @@ export default Component.extend({
 				}
 			}
 
-			// What is this really supposed to do now?
+			// Now compare what was previous set on the character to what they've selected. If they've removed a trait, make sure it and it's exclusions are set to enabled.
 
 			if ( charhind ) {
-        //console.log ('Charhind: ');
-        //console.log (charhind);
         // Check the existing hinderances on the character, if they aren't race or ICF specific, determine if we are removing or adding. Change the 'disabled' setting accordingly.
 				for ( const[k1, v1] of Object.entries(charhind) ) {
 					if (!v1['class'].endsWith('*^') && !v1['class'].endsWith('*') && !v1['class'].endsWith('^') ) {
 						dislist33 = Object.values(val).filter(slots => slots.name.toString().toLowerCase() == v1['name'].toLowerCase());
-            /////  Debugging /////
-      				 //console.log ('syshind');
-      				 //console.log (syshind);
-               //console.log (dislist33);
-      			///// End debug /////
 						if (dislist33.length < 1) {
 							v1['disabled'] = false;
 							dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == v1['name'].toLowerCase());
