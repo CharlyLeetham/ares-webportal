@@ -437,12 +437,9 @@ export default Component.extend({
 				var cyber_test = false;
 			}
 		} else { //trait is Race.
-      console.log ('Evalrace: ');
-      console.log (evalrace);
-      return;
 			for ( const [key, value] of Object.entries( fullsys ) ) { //Loop through the race values. We want to know which races an Iconic Framework can't have.
 
-        //console.log ( 'value: '+value.name );
+        console.log ( 'value: '+value.name );
         //console.log ( value.complications );
         //console.log ( value.edges );
 				// Check the ICF complications to see if it has Dragon.
@@ -453,7 +450,7 @@ export default Component.extend({
 					}
 					var dragon_check_icf = true //Tell us that the ICF allows the use of Dragon.
 					if ( !evalrace.includes(value.name) ) {
-						// console.log ('Value.Name: '+value.name);
+						console.log ('Value.Name: '+value.name);
 						evalrace[i] = value.name;
 						i=i+1;
 					}
