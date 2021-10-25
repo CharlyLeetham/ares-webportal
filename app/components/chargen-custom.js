@@ -1149,6 +1149,9 @@ export default Component.extend({
   					dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == value['name'].toLowerCase()); // Convert sysedges to an array and filter for any entries that match the new framework selected.
             console.log (dislist);
   					dislist[0]['disabled'] = true;
+            if (dislist[0]['trexcludes'].length > 0) {
+              trexcludes = this.ck_excludes(dislist, syshind, 'hind');
+            }
   				}
 			}
 			this.set('char.custom.cghindnofw', val);
