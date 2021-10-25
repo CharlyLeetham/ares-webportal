@@ -366,7 +366,7 @@ export default Component.extend({
     				///// End Debug /////
 
 
-    				if ( complrace && newedgarray ) { //Complications exist on the character
+    				if ( complrace ) { //Complications exist on the character
     					for ( const [k, v] of Object.entries( value.complications ) ) {
     						///// Debugging /////
     							// console.log ('v: '+v);
