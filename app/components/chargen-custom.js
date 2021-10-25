@@ -330,12 +330,12 @@ export default Component.extend({
 		racecompl = chosenifarray[0].complications;
 
 		///// Debugging /////
-			// if ( traittype == 'icf' ) {
+			if ( traittype == 'race' ) {
 				// console.log ( newhindarray );
 				// console.log ( newcyberarray );
-				// console.log ( racecompl );
+				console.log ( racecompl );
 				// console.log ( lowedgarray );
-			// }
+		  }
 		///// End Debug /////
 
 		comptypearray = ['ab miracles*', 'ab magic*']; // Used for PPE check
@@ -359,8 +359,9 @@ export default Component.extend({
     			for ( const [key, value] of Object.entries( fullsys ) ) { //Loop through the race values. We want to know which races an Iconic Framework can't have.
     				complrace = value.hasOwnProperty( 'complications' );
     				///// Debugging /////
-    				// console.log ( 'value: ' );
-    				// console.log ( value.complications );
+    				console.log ( 'value: ' );
+    				console.log ( value.complications );
+            console.log ( value.edges );
     				// console.log ( value.name );
     				///// End Debug /////
 
@@ -420,14 +421,6 @@ export default Component.extend({
     							}
 
     							if ( ppe_test==true || isp_test==true || nsb_test == true || bp_test == true || cyber_check == true ) {
-
-    								if ( value.name == 'DNorr' ) {
-    									console.log ( 'PPE: '+ ppe_test );
-    									console.log ( 'ISP: '+isp_test );
-    									console.log ( 'Cyber: '+cyber_test );
-    									console.log ( 'NSB: '+nsb_test );
-    									console.log ( 'BP: ' +bp_test );
-    								}
     								if ( !evalrace.includes( value.name ) ) {
     									evalrace[i]=value.name;
     									i = i+1;
@@ -444,6 +437,10 @@ export default Component.extend({
 				var cyber_test = false;
 			}
 		} else { //trait is Race.
+
+      console.log ( 'value: ' );
+      console.log ( value.complications );
+      console.log ( value.edges ); 
 			for ( const [key, value] of Object.entries( fullsys ) ) { //Loop through the race values. We want to know which races an Iconic Framework can't have.
 
 				// Check the ICF complications to see if it has Dragon.
@@ -469,14 +466,6 @@ export default Component.extend({
 					var bp_check = racecompl.includes(rbp) //see if the race has the value
 					var dragon_check = racecompl.includes(dragon) //see if the race has the value
 
-          if ( newval == "d'norr" ) {
-            console.log ( 'PPE: '+ ppe_check );
-            console.log ( 'ISP: '+isp_check );
-            console.log ( 'Cyber: '+cyber_check );
-            console.log ( 'NSB: '+nsb_check );
-            console.log ( 'BP: ' +bp_check );
-          }
-          
 						if ( value.edges  ) { //If complications exist for the race chosen, check the edges for the ICF and make sure they are disabled
 							for ( const [k, v] of Object.entries( value.edges ) ) {
 								if ( v ) {  // This checks that there isn't a blank entry.
@@ -510,6 +499,14 @@ export default Component.extend({
 											}
 										}
 									}
+
+                  if ( newval == "d'norr" ) {
+                    console.log ( 'PPE: '+ ppe_test );
+                    console.log ( 'ISP: '+isp_test );
+                    console.log ( 'Cyber: '+cyber_test );
+                    console.log ( 'NSB: '+nsb_test );
+                    console.log ( 'BP: ' +bp_test );
+                  }
 
 									if ( ppe_test == true || isp_test == true || nsb_test == true || bp_test == true || cyber_test == true || dragon_check_icf == true ) {
 										// We need to determine if the IF has this edge
