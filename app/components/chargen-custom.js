@@ -499,14 +499,14 @@ export default Component.extend({
 										}
 									}
 
-                  if ( newval == "d'norr" ) {
-                    console.log ( 'PPE: '+ ppe_test );
-                    console.log ( 'ISP: '+isp_test );
-                    console.log ( 'Cyber: '+cyber_test );
-                    console.log ( 'NSB: '+nsb_test );
-                    console.log ( 'BP: ' +bp_test );
-                    console.log ('------');
-                  }
+                  //if ( newval == "d'norr" ) {
+                  //  console.log ( 'PPE: '+ ppe_test );
+                  //  console.log ( 'ISP: '+isp_test );
+                  //  console.log ( 'Cyber: '+cyber_test );
+                  //  console.log ( 'NSB: '+nsb_test );
+                  //  console.log ( 'BP: ' +bp_test );
+                  //  console.log ('------');
+                  //}
 
 									if ( ppe_test == true || isp_test == true || nsb_test == true || bp_test == true || cyber_test == true || dragon_check_icf == true ) {
 										// We need to determine if the IF has this edge
@@ -529,6 +529,7 @@ export default Component.extend({
 		} //Traittype
 
 
+  console.log (evalrace);
     // We pull No Race and Dragon Races out as seperate checks as the check is a bit easier.
 
     // We want to see if the ICF doesn't need a race. If it doesn't, we need to mark all RACES as disabled so they can't be chosen.
