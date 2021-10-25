@@ -445,6 +445,7 @@ export default Component.extend({
 			}
 		} else { //trait is Race.
 
+      console.log ('kdkdkdkd');
 			for ( const [key, value] of Object.entries( fullsys ) ) { //Loop through the race values. We want to know which races an Iconic Framework can't have.
 
         if ( value.name == 'DNorr' ) {
@@ -454,7 +455,7 @@ export default Component.extend({
           console.log ( 'NSB: '+nsb_test );
           console.log ( 'BP: ' +bp_test );
         }
-        
+
 				// Check the ICF complications to see if it has Dragon.
 				if ( ( Array.isArray( value.complications ) && value.complications[0] !== null ) && value.complications.includes( dragon ) ) {  //If the framework has a complication of Dragon, do this.
 					if ( !dragonrace.includes( value.name ) ) { // If the array dragonrace doesn't already include this framework, include this race in the array;
