@@ -407,11 +407,6 @@ export default Component.extend({
                     // Check to see if the complications array includes anything in the bp_check array
                     for ( const [k, v] of Object.entries( value.complications ) ) {
                       var bp_check = rbp.includes(v);
-                      if ( value.name == "D'Norr" ) {
-                        console.log ('Tis a DNorr');
-                        console.log (v);
-                        console.log (bp_check);
-                      }
                       if (bp_check == true) {
                         break;
                       }
@@ -431,7 +426,7 @@ export default Component.extend({
     							}
 
     							if ( bp_check == true ) {
-    								var bp_test = lowedgarray.some( v => comptypearray4.includes( v ) );
+    								var bp_test = true;
     							}
 
     							if ( ppe_test==true || isp_test==true || nsb_test == true || bp_test == true || cyber_check == true ) {
@@ -477,7 +472,7 @@ export default Component.extend({
           }
           if (bp_check == true) {
             break;
-          }          
+          }
         }
 
 				if ( racecompl ) {
