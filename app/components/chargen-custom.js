@@ -407,6 +407,11 @@ export default Component.extend({
                     // Check to see if the complications array includes anything in the bp_check array
                     for ( const [k, v] of Object.entries( value.complications ) ) {
                       var bp_check = rbp.includes(v);
+                      if (value.name=='Juicer') {
+                        console.log ("Tis a Juicer");
+                        console.log (v);
+                        console.log (bp_check);
+                      }
                       if (bp_check == true) {
                         break;
                       }
