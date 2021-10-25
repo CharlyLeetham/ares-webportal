@@ -412,6 +412,9 @@ export default Component.extend({
                         console.log (v);
                         console.log (bp_check);
                       }
+                      if (bp_check == true) {
+                        break;
+                      }
                     }
                   }
 
@@ -472,6 +475,9 @@ export default Component.extend({
           for ( const [k, v] of Object.entries( value.complications ) ) {
             var bp_check = rbp.includes(v);
           }
+          if (bp_check == true) {
+            break;
+          }          
         }
 
 				if ( racecompl ) {
