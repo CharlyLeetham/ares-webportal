@@ -447,7 +447,7 @@ export default Component.extend({
 
 			for ( const [key, value] of Object.entries( fullsys ) ) { //Loop through the race values. We want to know which races an Iconic Framework can't have.
 
-        if ( newval == 'd\'nor' ) {
+        if ( newval == "d'nor" ) {
           console.log ( 'PPE: '+ ppe_test );
           console.log ( 'ISP: '+isp_test );
           console.log ( 'Cyber: '+cyber_test );
