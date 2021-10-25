@@ -302,7 +302,6 @@ export default Component.extend({
 
 		newedgarray = chosenifarray[0].edges; // Select the edges for the new if
 
-
 		///// Debugging /////
 		// if (traittype == 'icf' ) {
 			// console.log ( newedgarray );
@@ -330,7 +329,7 @@ export default Component.extend({
 		racecompl = chosenifarray[0].complications;
 
 		///// Debugging /////
-			if ( traittype == 'race' ) {
+			if ( traittype == 'icf' ) {
 				// console.log ( newhindarray );
 				// console.log ( newcyberarray );
 				console.log ( racecompl );
@@ -359,8 +358,8 @@ export default Component.extend({
     			for ( const [key, value] of Object.entries( fullsys ) ) { //Loop through the race values. We want to know which races an Iconic Framework can't have.
     				complrace = value.hasOwnProperty( 'complications' );
     				///// Debugging /////
-    				//console.log ( 'value: ' );
-    				//console.log ( value.complications );
+    				console.log ( 'value: ' );
+    				console.log ( value.complications );
             //console.log ( value.edges );
     				// console.log ( value.name );
     				///// End Debug /////
