@@ -524,7 +524,7 @@ export default Component.extend({
                       console.log (bp_test);
                       console.log (cyber_test);
                       console.log (dragon_check_icf);
-                      
+
                     }
 
 										if ( !evalrace.includes(value.name) ) {
@@ -538,6 +538,7 @@ export default Component.extend({
 								var nsb_test = false;
 								var bp_test = false;
 								var cyber_test = false;
+                var dragon_check_icf = false;
 							} // For Loop
 						} // Check Edges
 					} //Race complication
