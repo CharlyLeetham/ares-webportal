@@ -333,7 +333,7 @@ export default Component.extend({
 			if ( traittype == 'race' ) {
 				// console.log ( newhindarray );
 				// console.log ( newcyberarray );
-				//console.log ( racecompl );
+				console.log ( racecompl );
 				// console.log ( lowedgarray );
 		  }
 		///// End Debug /////
@@ -474,12 +474,6 @@ export default Component.extend({
 
 									if ( isp_check == true ) {
 										var isp_test = comptypearray2.includes(v.toLowerCase());
-
-                    if (value.name == 'Ley Line Walker') {
-                      console.log ('ISP check passed');
-                      console.log ('v:' +v);
-                      console.log (isp_test);
-                    }
 									}
 
 									if ( nsb_check == true ) {
@@ -516,17 +510,6 @@ export default Component.extend({
 
 									if ( ppe_test == true || isp_test == true || nsb_test == true || bp_test == true || cyber_test == true || dragon_check_icf == true ) {
 										// We need to determine if the IF has this edge
-
-                    if (value.name == 'Ley Line Walker') {
-                      console.log (ppe_test);
-                      console.log (isp_test);
-                      console.log (nsb_test);
-                      console.log (bp_test);
-                      console.log (cyber_test);
-                      console.log (dragon_check_icf);
-
-                    }
-
 										if ( !evalrace.includes(value.name) ) {
 											evalrace[i] = value.name;
 											i=i+1;
