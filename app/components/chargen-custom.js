@@ -56,7 +56,7 @@ export default Component.extend({
 		if (dislist[0]['trexcludes'].length > 0) {
 			for (const [k1, v1] of Object.entries(dislist[0]['trexcludes'])) {
 				trexcludes = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == v1.toLowerCase());
-				trexcludes[0]['disabled']= false;
+				trexcludes[0]['disabled']= true;
 			}
 		}
 	},
@@ -1097,6 +1097,7 @@ export default Component.extend({
 
 			// Reset all hinderances to available.
 			if ( nofwhind ) {
+        console.log (nofwhind);
 				for (const[k3, v3] of Object.entries(nofwhind)) {
 					v3['disabled']=false;
 					dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == v3['name'].toLowerCase());
