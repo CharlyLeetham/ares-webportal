@@ -49,7 +49,7 @@ export default Component.extend({
 	ck_includes: function(dislist, sysedg, traittype) {
 		var trexcludes;
 
-    console.log ('Sysedg: ');
+    console.log ('Sysedg1: ');
     console.log (sysedg);
 		// Check to see the Hinderance excludes others and mark them as disabled.
 		if (dislist[0]['trexcludes'].length > 0) {
@@ -1115,8 +1115,8 @@ export default Component.extend({
 					if (!v1['class'].endsWith('*^') && !v1['class'].endsWith('*') && !v1['class'].endsWith('^') ) {
 						dislist33 = Object.values(val).filter(slots => slots.name.toString().toLowerCase() == v1['name'].toLowerCase());
             /////  Debugging /////
-      				 console.log ('syshind');
-      				 console.log (syshind);
+      				 //console.log ('syshind');
+      				 //console.log (syshind);
                //console.log (dislist33);
       			///// End debug /////
 						if (dislist33.length < 1) {
