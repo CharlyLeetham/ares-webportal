@@ -476,10 +476,13 @@ export default Component.extend({
 									}
 
 									if ( isp_check == true ) {
+										var isp_test = comptypearray2.includes(v.toLowerCase());
+
                     if (value.name == 'Ley Line Walker') {
                       console.log ('ISP check passed');
+                      console.log ('v:' +v);
+                      console.log (isp_test);
                     }
-										var isp_test = comptypearray2.includes(v.toLowerCase());
 									}
 
 									if ( nsb_check == true ) {
@@ -544,7 +547,7 @@ export default Component.extend({
 		} //Traittype
 
 
-  console.log (evalrace);
+  //console.log (evalrace);
     // We pull No Race and Dragon Races out as seperate checks as the check is a bit easier.
 
     // We want to see if the ICF doesn't need a race. If it doesn't, we need to mark all RACES as disabled so they can't be chosen.
