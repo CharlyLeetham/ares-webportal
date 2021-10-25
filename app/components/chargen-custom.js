@@ -317,7 +317,7 @@ export default Component.extend({
 				 //console.log ( swiconicfall );
 				 //console.log ( swrace );
 				 //console.log ( swiconicf );
-				 //console.log ( chosenifarray );
+				 console.log ( chosenifarray );
 				 //console.log ( newval );
 			 }
 		///// End Debug /////
