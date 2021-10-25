@@ -359,7 +359,7 @@ export default Component.extend({
     				complrace = value.hasOwnProperty( 'complications' );
     				///// Debugging /////
     				console.log ( 'value: ' );
-    				console.log ( value.complications );
+    				console.log ( value );
             //console.log ( value.edges );
     				// console.log ( value.name );
     				///// End Debug /////
