@@ -444,6 +444,13 @@ export default Component.extend({
 				var cyber_test = false;
 			}
 		} else { //trait is Race.
+      if ( newval == "d'norr" ) {
+        console.log ( 'PPE: '+ ppe_test );
+        console.log ( 'ISP: '+isp_test );
+        console.log ( 'Cyber: '+cyber_test );
+        console.log ( 'NSB: '+nsb_test );
+        console.log ( 'BP: ' +bp_test );
+      }
 
 			for ( const [key, value] of Object.entries( fullsys ) ) { //Loop through the race values. We want to know which races an Iconic Framework can't have.
 
