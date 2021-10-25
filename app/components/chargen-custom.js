@@ -346,7 +346,7 @@ export default Component.extend({
 		risp = "Restricted Path ISP^";
 		rcyber = "Cyber Resistant^";
 		rnsb = "Non-Standard Build^";
-		rbp = ['Inhuman Physiology+^','Inhuman Physiology++^'];
+		rbp = ['Inhuman Physiology+^','Inhuman Physiology++^', 'Bizarre Physiology^', 'Alien Physiology^'];
 		dragon = "Dragon*";
     norace = "No Race";
 
