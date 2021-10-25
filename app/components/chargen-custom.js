@@ -1096,8 +1096,8 @@ export default Component.extend({
 
 			// Reset all hinderances to available.
 			if ( nofwhind ) {
-        console.log ('NoFWHind: ');
-        console.log (nofwhind);
+        //console.log ('NoFWHind: ');
+        //console.log (nofwhind);
 				for (const[k3, v3] of Object.entries(nofwhind)) {
 					v3['disabled']=false;
 					dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == v3['name'].toLowerCase());
@@ -1111,8 +1111,8 @@ export default Component.extend({
 			// What is this really supposed to do now?
 
 			if ( charhind ) {
-        console.log ('Charhind: ');
-        console.log (charhind);
+        //console.log ('Charhind: ');
+        //console.log (charhind);
         // Check the existing hinderances on the character, if they aren't race or ICF specific, determine if we are removing or adding. Change the 'disabled' setting accordingly.
 				for ( const[k1, v1] of Object.entries(charhind) ) {
 					if (!v1['class'].endsWith('*^') && !v1['class'].endsWith('*') && !v1['class'].endsWith('^') ) {
