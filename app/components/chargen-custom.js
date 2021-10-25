@@ -439,7 +439,7 @@ export default Component.extend({
 		} else { //trait is Race.
 			for ( const [key, value] of Object.entries( fullsys ) ) { //Loop through the race values. We want to know which races an Iconic Framework can't have.
 
-        console.log ( 'value: ' );
+        console.log ( 'value: '+value.name );
         console.log ( value.complications );
         console.log ( value.edges );
 				// Check the ICF complications to see if it has Dragon.
@@ -505,6 +505,7 @@ export default Component.extend({
                     console.log ( 'Cyber: '+cyber_test );
                     console.log ( 'NSB: '+nsb_test );
                     console.log ( 'BP: ' +bp_test );
+                    console.log ('------');
                   }
 
 									if ( ppe_test == true || isp_test == true || nsb_test == true || bp_test == true || cyber_test == true || dragon_check_icf == true ) {
