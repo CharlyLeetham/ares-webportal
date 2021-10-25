@@ -377,7 +377,7 @@ export default Component.extend({
     							var isp_check = v.includes( risp ) //see if the race has the value
     							var cyber_check = v.includes( rcyber ) //see if the race has the value
     							var nsb_check = v.includes( rnsb ) //see if the race has the value
-    							var bp_check = v.includes( rbp ) //see if the race has the value
+    							//var bp_check = v.includes( rbp ) //see if the race has the value
 
     							///// Debugging /////
     							// console.log( 'Key: ' +key );
@@ -402,6 +402,13 @@ export default Component.extend({
     									dd = dd+1;
     								}
     							}
+
+                  if ( (Array.isArray( value.complications ) && value.complications[0] !== null) ) {
+                    // Check to see if the complications array includes anything in the bp_check array
+                    for ( const [k, v] of Object.entries( value.complications ) ) {
+                      var bp_check = rbp.includes(v);
+                    }
+                  }
 
     							if ( ppe_check == true ) {
     								var ppe_test = lowedgarray.some( v => comptypearray.includes( v ) );
@@ -459,12 +466,6 @@ export default Component.extend({
           // Check to see if the complications array includes anything in the bp_check array
           for ( const [k, v] of Object.entries( value.complications ) ) {
             var bp_check = rbp.includes(v);
-            if ( value.name == 'Juicer') {
-              console.log ('Tis a Juicer!');
-              console.log (v);
-              console.log (rbp);
-              console.log (bp_check);
-            }
           }
         }
 
