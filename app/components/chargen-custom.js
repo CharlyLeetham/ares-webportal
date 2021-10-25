@@ -439,6 +439,7 @@ export default Component.extend({
 		} else { //trait is Race.
       console.log ('Evalrace: ');
       console.log (evalrace);
+      return;
 			for ( const [key, value] of Object.entries( fullsys ) ) { //Loop through the race values. We want to know which races an Iconic Framework can't have.
 
         //console.log ( 'value: '+value.name );
