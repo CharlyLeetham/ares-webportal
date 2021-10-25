@@ -1127,24 +1127,16 @@ export default Component.extend({
 							dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == v1['name'].toLowerCase());
 							dislist[0]['disabled'] = false;
 							if (dislist[0]['trexcludes'].length > 0) {
-								trexcludes = this.ck_excludes(dislist, syshind, 'hind');
+								trexcludes = this.ck_includes(dislist, syshind, 'hind');
 							}
 						}
 					}
 				}
 			}
 
+      //Cycle through the values selected by the player and set the other hinderances that are excluded to disabled.
       if ( val ) {
   				for (const [key, value] of Object.entries(val)) {
-            /////  Debugging /////
-      				 //console.log ('syshind');
-      				 //console.log (syshind);
-               console.log ('Val: ');
-               console.log (val);
-               //console.log ('Value: ');
-               //console.log (value);
-      			///// End debug /////
-
             value['disabled']=false;
   					dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == value['name'].toLowerCase()); // Convert sysedges to an array and filter for any entries that match the new framework selected.
             console.log (dislist);
