@@ -458,6 +458,7 @@ export default Component.extend({
         if ( (Array.isArray( value.complications ) && value.complications[0] !== null) ) {
           // Check to see if the complications array includes anything in the bp_check array
           for ( const [k, v] of Object.entries( value.complications ) ) {
+            console.log (v);
             var bp_check = rbp.includes(v.toLowerCase());
           }
         }
@@ -487,7 +488,7 @@ export default Component.extend({
 									}
 
 									if ( bp_check == true ) {
-										var bp_test = comptypearray4.includes(v.toLowerCase());
+										var bp_test = true;
 									}
 
 									if ( cyber_check == true ) {
