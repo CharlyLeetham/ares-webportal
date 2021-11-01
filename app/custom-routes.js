@@ -8,5 +8,5 @@ export default function setupCustomRoutes(router) {
   router.route('swriftsiconicf',  { path: '/icf'}); // Define the page to display all the SWRifts edges.
   router.route('swriftsrace',  { path: '/races'}); // Define the page to display all the SWRifts edges.
   router.route('swriftsskills',  { path: '/skills'}); // Define the page to display all the SWRifts edges.
-  router.route('swriftsabilities',  { path: '/abilities'}); // Define the page to display all the SWRifts edges.    
+  router.route('swriftsabilities',  { path: '/abilities'}); // Define the page to display all the SWRifts edges.
 }

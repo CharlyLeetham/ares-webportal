@@ -8,7 +8,7 @@ export default Route.extend(DefaultRoute, {
 
     model: function() {
         let api = this.gameApi;
-        return api.requestOne('swabilities');
+        return api.requestOne('abilities');
     },
 
     afterModel: function() {
