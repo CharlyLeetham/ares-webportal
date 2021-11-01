@@ -3,9 +3,12 @@
 
 <div class="edgrow">
   <p>We are here </p>
-
-  {{model.swabilities}}
+  <pre>
   {{{ansi-format text=model.swabilities}}}
+
+</pre>
+
+
 {{#each model.swabilities as |ability|}}
     <div class="edgcol">
         <h3 class="txthding">{{ability.name}}</h3>
