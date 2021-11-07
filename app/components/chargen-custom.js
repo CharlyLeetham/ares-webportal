@@ -1166,6 +1166,7 @@ export default Component.extend({
   				for (const [key, value] of Object.entries(val)) {
             value['disabled']=false;
   					dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == value['name'].toLowerCase()); // Convert sysedges to an array and filter for any entries that match the new framework selected.
+            console.log ('Dislist:');
             console.log (dislist);
   					dislist[0]['disabled'] = true;
             if (dislist[0]['trexcludes'].length > 0) {
