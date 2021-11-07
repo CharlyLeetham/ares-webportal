@@ -925,12 +925,15 @@ export default Component.extend({
 						hjname = key.split('_')[0].toLowerCase().trim(); //Take the key name and remove the _ and everything after.
             hjnumber = hjname.replace('hj','');
 						tmptable[hjname]=[];
-						i=hjnumber;
+						i=0;
 							for (const [k1, v1] of Object.entries(value)) {
-								tmptable[hjname][i]=[];
-								tmptable[hjname][i]['name']=hjname;
-								tmptable[hjname][i]['table']=v1;
-                tmptable[hjname][i]['number']=hjnumber;
+								//tmptable[hjname][i]=[];
+								//tmptable[hjname][i]['name']=hjname;
+								//tmptable[hjname][i]['table']=v1;
+                //tmptable[hjname][i]['number']=hjnumber;
+                tmptable[hjnumber][i]=[];
+								tmptable[hjnumber][i]['name']=hjname;
+								tmptable[hjnumber][i]['table']=v1;              
 								i++ // increment our counter so our array grows.
 							}
 
