@@ -916,7 +916,7 @@ export default Component.extend({
 			var newhjtables = [];
       var hjnumber;
 			newhjtables = Object.values(swiconicfall).filter(slots => slots.name.toString().toLowerCase() == newval); // Convert swiconicfall to an array and filter for any entries that match the new framework selected.
-			newhjtables = newhjtables[0];
+			newhjtables = newhjtables[1];
 
 			if (newhjtables) {
 				var tmptable=[], hjname, i;
@@ -933,7 +933,7 @@ export default Component.extend({
                 //tmptable[hjname][i]['number']=hjnumber;
                 tmptable[hjnumber][i]=[];
 								tmptable[hjnumber][i]['name']=hjname;
-								tmptable[hjnumber][i]['table']=v1;              
+								tmptable[hjnumber][i]['table']=v1;
 								i++ // increment our counter so our array grows.
 							}
 
