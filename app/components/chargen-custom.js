@@ -1127,8 +1127,12 @@ export default Component.extend({
       console.log ('NoFWHind: ');
       console.log (nofwhind);
 
+
+      // We need to check NoFWHind to make sure that removing any hinderances also reenables ones that can be.
+
 			// Reset all hinderances to available.
 			if ( nofwhind ) {
+        console.log ( "Do we get here?");
 				for (const[k3, v3] of Object.entries(nofwhind)) {
 					v3['disabled']=false;
 					dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == v3['name'].toLowerCase());
