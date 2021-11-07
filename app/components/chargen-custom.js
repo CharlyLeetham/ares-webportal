@@ -1120,14 +1120,6 @@ export default Component.extend({
 			syshind = this.get('char.custom.syshind'); // System Hinderances
 			charhind = this.get('char.custom.cghind'); // Hinderances set on the character by the frameworks
 			nofwhind = this.get('char.custom.cghindnofw'); // Hinderances chosen by the character
-      console.log ('val:');
-      console.log (val);
-      console.log ('Charhind: ');
-      console.log (charhind);
-      console.log ('NoFWHind: ');
-      console.log (nofwhind);
-
-
 
       // Check the hinderances that are set by the player (not the frameworks) and determine which other hinderances need to be changed.
       if ( nofwhind ) {
@@ -1171,8 +1163,6 @@ export default Component.extend({
   				for (const [key, value] of Object.entries(val)) {
             value['disabled']=false;
   					dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == value['name'].toLowerCase()); // Convert sysedges to an array and filter for any entries that match the new framework selected.
-            console.log ('Dislist:');
-            console.log (dislist);
   					dislist[0]['disabled'] = true;
             if (dislist[0]['trexcludes'].length > 0) {
               trexcludes = this.ck_excludes(dislist, syshind, 'hind');
