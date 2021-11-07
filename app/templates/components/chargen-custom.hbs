@@ -128,6 +128,8 @@
 						<div class="col-sm-4">
 							<span class="hjt">
 								Table: {{{ansi-format text=value.tablenumber}}}
+
+								{{{ansi-format text=value.details}}}
 							</span>
 							<div id="{{hjt}}">
 								<PowerSelect @searchEnabled={{true}} @searchField="name" @searchPlaceholder="Type a name..." @selected={{get this.char.custom.hjtables hjt}} @options={{value.details}} @onChange={{action "groupChanged" hjt}} as |icf|>
