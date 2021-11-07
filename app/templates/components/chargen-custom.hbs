@@ -127,7 +127,10 @@
 					<pre>
 						{{#each-in this.char.custom.hjslots as |hjt value|}}
 							HJT: {{hjt}}<br />
-							Val: {{value}} <br />
+							{{#each-in value as |k v|}}
+								k: {{k}} <br />
+								v: {{v}}<br />
+							{{/each-in}}
 						{{/each-in}}
 					</pre>
 
