@@ -140,7 +140,7 @@
 					{{#each-in this.char.custom.hjslots as |hjt value|}}
 						<div class="col-sm-4">
 							<span class="hjt">
-								Table: {{{ansi-format text=hjt}}}<br />
+								Table: {{{ansi-format text=hjt.number}}}<br />
 							</span>
 							<div id="{{hjt}}">
 								<PowerSelect @searchEnabled={{true}} @searchField="name" @searchPlaceholder="Type a name..." @selected={{get this.char.custom.hjtables hjt}} @options={{value}} @onChange={{action "groupChanged" hjt}} as |icf|>
