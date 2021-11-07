@@ -129,7 +129,9 @@
 							HJT: {{hjt}}<br />
 							{{#each-in value as |k v|}}
 								k: {{k}} <br />
-								v: {{v}}<br />
+								{{#each-in v as |k1 v1|}}
+								k1: {{k1}}<br />
+								v1: {{v1}}<br />
 							{{/each-in}}
 						{{/each-in}}
 					</pre>
