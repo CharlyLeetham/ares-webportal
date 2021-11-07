@@ -129,13 +129,13 @@
 						{{{ansi-format text=this.char.custom.hjslots}}}
 				</pre>
 
-					{{#each-in char.custom.hjslots as |hjt value|}}
+					{{#each-in this.char.custom.hjslots as |hjt value|}}
 						<div class="col-sm-4">
 							<span class="hjt">
-								Table: {{{ansi-format text=value}}}<br />
+								Table: {{{ansi-format text=hjt}}}<br />
 							</span>
 							<div id="{{hjt}}">
-								<PowerSelect @searchEnabled={{true}} @searchField="name" @searchPlaceholder="Type a name..." @selected={{get char.custom.hjtables hjt}} @options={{value}} @onChange={{action "groupChanged" hjt}} as |icf|>
+								<PowerSelect @searchEnabled={{true}} @searchField="name" @searchPlaceholder="Type a name..." @selected={{get this.char.custom.hjtables hjt}} @options={{value}} @onChange={{action "groupChanged" hjt}} as |icf|>
 									{{icf.table}}
 								</PowerSelect>
 							</div>
