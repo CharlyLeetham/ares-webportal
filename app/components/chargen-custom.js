@@ -1122,7 +1122,9 @@ export default Component.extend({
 			nofwhind = this.get('char.custom.cghindnofw');
 
       console.log (val);
-      
+      console.log (charhind);
+      console.log (nofwhind);
+
 			// Reset all hinderances to available.
 			if ( nofwhind ) {
 				for (const[k3, v3] of Object.entries(nofwhind)) {
