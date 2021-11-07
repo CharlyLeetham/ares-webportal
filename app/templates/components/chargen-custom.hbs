@@ -127,14 +127,6 @@
 					<pre>
 
 						{{{ansi-format text=this.char.custom.hjslots}}}
-						
-					{{#each-in char.custom.hjslots as |hjt value|}}
-						hjt: {{{ansi-format text=hjt}}}<br />
-						{{#each-in value as |k3 v3|}}
-							k3: {{{ansi-format text=k3}}} <br />
-							v3: {{{ansi-format text=v3}}}<br />
-						{{/each-in}}
-					{{/each-in}}
 				</pre>
 
 					{{#each-in char.custom.hjslots as |hjt value|}}
