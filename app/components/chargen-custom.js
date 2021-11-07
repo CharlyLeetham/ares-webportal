@@ -1117,10 +1117,10 @@ export default Component.extend({
 
 		hindChanged( val ) {
 			var syshind, charhind, dislist, dislist33, trexcludes, nofwhind;
-			syshind = this.get('char.custom.syshind');
-			charhind = this.get('char.custom.cghind');
-			nofwhind = this.get('char.custom.cghindnofw');
-
+			syshind = this.get('char.custom.syshind'); // System Hinderances
+			charhind = this.get('char.custom.cghind'); // Hinderances set on the character by the frameworks
+			nofwhind = this.get('char.custom.cghindnofw'); // Hinderances chosen by the character
+      console.log ('val:');
       console.log (val);
       console.log ('Charhind: ');
       console.log (charhind);
@@ -1133,10 +1133,6 @@ export default Component.extend({
 			// Reset all hinderances to available.
 			if ( nofwhind ) {
 				for (const[k3, v3] of Object.entries(nofwhind)) {
-          console.log ('k3:');
-          console.log ( k3 );
-          console.log ('v3');
-          console.log ( v3 );
 					v3['disabled']=false;
 					dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == v3['name'].toLowerCase());
 					dislist[0]['disabled'] = false;
@@ -1177,6 +1173,8 @@ export default Component.extend({
             }
   				}
 			}
+
+      // If there are no
 			this.set('char.custom.cghindnofw', val);
 		},
 
