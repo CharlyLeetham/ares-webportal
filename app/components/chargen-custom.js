@@ -1133,7 +1133,10 @@ export default Component.extend({
 			// Reset all hinderances to available.
 			if ( nofwhind ) {
 				for (const[k3, v3] of Object.entries(nofwhind)) {
-          console.log ( k3, v3);
+          console.log ('k3:');
+          console.log ( k3 );
+          console.log ('v3');
+          console.log ( v3 );
 					v3['disabled']=false;
 					dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == v3['name'].toLowerCase());
 					dislist[0]['disabled'] = false;
