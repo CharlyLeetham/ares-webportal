@@ -34,7 +34,7 @@ export default Component.extend({
 		// console.log (swiconicf);
 		return swiconicf;
 	}),
-
+  
 	ck_excludes: function(dislist, sysedg, traittype) {
 		var trexcludes;
 		// Check to see the Hinderance excludes others and mark them as disabled.
