@@ -1131,16 +1131,33 @@ export default Component.extend({
       // We need to check NoFWHind to make sure that removing any hinderances also reenables ones that can be.
 
 			// Reset all hinderances to available.
-			if ( nofwhind ) {
-				for (const[k3, v3] of Object.entries(nofwhind)) {
-					v3['disabled']=false;
-					dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == v3['name'].toLowerCase());
-					dislist[0]['disabled'] = false;
-					if (dislist[0]['trexcludes'].length > 0) {
-						trexcludes = this.ck_excludes(dislist, syshind, 'hind');
-					}
-				}
-			}
+			//if ( nofwhind ) {
+			//	for (const[k3, v3] of Object.entries(nofwhind)) {
+      //		v3['disabled']=false;
+			//		dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == v3['name'].toLowerCase());
+			//		dislist[0]['disabled'] = false;
+			//		if (dislist[0]['trexcludes'].length > 0) {
+			//			trexcludes = this.ck_excludes(dislist, syshind, 'hind');
+			//		}
+			//	}
+			//}
+
+      if ( nofwhind ) {
+        // Check the existing hinderances on the character, if they aren't race or ICF specific, determine if we are removing or adding. Change the 'disabled' setting accordingly.
+        for ( const[k1, v1] of Object.entries(nofwhind) ) {
+          if (!v1['class'].endsWith('*^') && !v1['class'].endsWith('*') && !v1['class'].endsWith('^') ) {
+            dislist33 = Object.values(val).filter(slots => slots.name.toString().toLowerCase() == v1['name'].toLowerCase());
+            if (dislist33.length < 1) {
+              v1['disabled'] = false;
+              dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == v1['name'].toLowerCase());
+              dislist[0]['disabled'] = false;
+              if (dislist[0]['trexcludes'].length > 0) {
+                trexcludes = this.ck_includes(dislist, syshind, 'hind');
+              }
+            }
+          }
+        }
+      }
 
 			// Now compare what was previous set on the character to what they've selected. If they've removed a trait, make sure it and it's exclusions are set to enabled.
 
@@ -1175,7 +1192,6 @@ export default Component.extend({
   				}
 			}
 
-      // If there are no
 			this.set('char.custom.cghindnofw', val);
 		},
 
