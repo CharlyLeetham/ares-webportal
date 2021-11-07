@@ -928,7 +928,7 @@ export default Component.extend({
 						i=0;
 							for (const [k1, v1] of Object.entries(value)) {
 								tmptable[hjname][i]=[];
-                tmptable[hjname][i]['number']=hjnumber;
+                tmptable[hjname][i]['tablenumber']=hjnumber;
                 tmptable[hjname][i][hjnumber]=[];
                 tmptable[hjname][i][hjnumber]['name']=hjname;
                 tmptable[hjname][i][hjnumber]['table']=v1;
