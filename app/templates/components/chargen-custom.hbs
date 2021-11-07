@@ -124,10 +124,20 @@
 			<!-- Fifth Row -->
 
 				<div class="row">
+					<pre>
+					{{#each-in char.custom.hjslots as |hjt value|}}
+						hjt: {{{ansi-format text=hjt}}}<br />
+						{{#each-in value as |k3 v3|}}
+							k3: {{{ansi-format text=k3}}} <br />
+							v3: {{{ansi-format text=v3}}}<br />
+						{{/each-in}}
+					{{/each-in}}
+				</pre>
+
 					{{#each-in char.custom.hjslots as |hjt value|}}
 						<div class="col-sm-4">
 							<span class="hjt">
-								Table: {{{ansi-format text=value.name}}}<br />
+								Table: {{{ansi-format text=value}}}<br />
 							</span>
 							<div id="{{hjt}}">
 								<PowerSelect @searchEnabled={{true}} @searchField="name" @searchPlaceholder="Type a name..." @selected={{get char.custom.hjtables hjt}} @options={{value}} @onChange={{action "groupChanged" hjt}} as |icf|>
