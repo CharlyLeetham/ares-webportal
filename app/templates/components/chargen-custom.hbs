@@ -125,6 +125,9 @@
 
 				<div class="row">
 					<pre>
+
+						{{{ansi-format text=this.char.custom.hjslots}}}
+						
 					{{#each-in char.custom.hjslots as |hjt value|}}
 						hjt: {{{ansi-format text=hjt}}}<br />
 						{{#each-in value as |k3 v3|}}
