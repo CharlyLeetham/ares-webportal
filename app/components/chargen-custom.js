@@ -914,6 +914,7 @@ export default Component.extend({
 			//Update the Heroic Journey Tables
 			// Change the options displayed to the player
 			var newhjtables = [];
+      var hjnumber;
 			newhjtables = Object.values(swiconicfall).filter(slots => slots.name.toString().toLowerCase() == newval); // Convert swiconicfall to an array and filter for any entries that match the new framework selected.
 			newhjtables = newhjtables[0];
 
@@ -922,12 +923,14 @@ export default Component.extend({
 				for (const [key, value] of Object.entries(newhjtables)) {
 					if (key.startsWith('hj')) {
 						hjname = key.split('_')[0].toLowerCase().trim(); //Take the key name and remove the _ and everything after.
+            hjnumber = key.replace('hj','');
 						tmptable[hjname]=[];
 						i=0
 							for (const [k1, v1] of Object.entries(value)) {
 								tmptable[hjname][i]=[];
 								tmptable[hjname][i]['name']=hjname;
 								tmptable[hjname][i]['table']=v1;
+                tmptable[hjname][i]['number']=hjnumber;
 								i++ // increment our counter so our array grows.
 							}
 
