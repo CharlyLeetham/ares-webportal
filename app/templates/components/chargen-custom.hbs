@@ -124,19 +124,6 @@
 			<!-- Fifth Row -->
 
 				<div class="row">
-					<pre>
-						{{#each-in this.char.custom.hjslots as |hjt value|}}
-							HJT: {{hjt}}<br />
-							{{#each-in value as |k v|}}
-								k: {{k}} <br />
-								{{#each-in v as |k1 v1|}}
-									k1: {{k1}}<br />
-									v1: {{v1}}<br />
-								{{/each-in}}
-							{{/each-in}}
-						{{/each-in}}
-					</pre>
-
 					{{#each-in this.char.custom.hjslots as |hjt value|}}
 						<div class="col-sm-4">
 							<span class="hjt">
