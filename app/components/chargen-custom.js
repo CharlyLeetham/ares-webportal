@@ -925,7 +925,7 @@ export default Component.extend({
 						hjname = key.split('_')[0].toLowerCase().trim(); //Take the key name and remove the _ and everything after.
             hjnumber = hjname.replace('hj','');
 						tmptable[hjname]=[];
-						i=0
+						i=hjnumber;
 							for (const [k1, v1] of Object.entries(value)) {
 								tmptable[hjname][i]=[];
 								tmptable[hjname][i]['name']=hjname;
