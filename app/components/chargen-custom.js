@@ -1145,7 +1145,7 @@ export default Component.extend({
       if ( nofwhind ) {
         // Check the existing hinderances on the character, if they aren't race or ICF specific, determine if we are removing or adding. Change the 'disabled' setting accordingly.
         for ( const[k1, v1] of Object.entries(nofwhind) ) {
-          if (!v1['class'].endsWith('*^') && !v1['class'].endsWith('*') && !v1['class'].endsWith('^') ) {
+          if (!v1['name'].endsWith('*^') && !v1['name'].endsWith('*') && !v1['name'].endsWith('^') ) {
             dislist33 = Object.values(val).filter(slots => slots.name.toString().toLowerCase() == v1['name'].toLowerCase());
             if (dislist33.length < 1) {
               v1['disabled'] = false;
