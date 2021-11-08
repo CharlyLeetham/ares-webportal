@@ -64,8 +64,8 @@ export default Component.extend({
       }
     }
 
-    console.log tmptable;
-    return tmptable;
+    console.log (tmptable);
+    return (tmptable);
   }),
 
 	ck_excludes: function(dislist, sysedg, traittype) {
