@@ -35,7 +35,7 @@ export default Component.extend({
 		return swiconicf;
 	}),
 
-  hjtables: computed(function()
+  hjtables: computed(function() {
     var newhjtables, swiconicfall;
     swiconicfall = this.get('char.custom.iconicf');
     console.log (swiconicfall);
