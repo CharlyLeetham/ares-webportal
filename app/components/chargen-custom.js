@@ -43,7 +43,8 @@ export default Component.extend({
     console.log ('Charicf:');
     console.log (charicf);
 
-    //newhjtables = Object.values(swiconicfall).filter(slots => slots.name.toString().toLowerCase() == newval); // Convert swiconicfall to an array and filter for any entries that match the new framework selected.
+    newhjtables = Object.values(sysiconicfall).filter(slots => slots.name.toString().toLowerCase() == charicf['class'].toLowerCase()); // Convert swiconicfall to an array and filter for any entries that match the new framework selected.
+    console.log (newhjtables);
     //newhjtables = newhjtables[0];
 
     //if (newhjtables) {
