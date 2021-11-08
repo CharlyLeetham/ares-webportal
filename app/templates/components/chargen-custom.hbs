@@ -124,11 +124,14 @@
 			<!-- Fifth Row -->
 
 				<div class="row">
-					  {{{ansi-format text=this.char.custom.hjslots}}}<br />					
+					  {{{ansi-format text=this.char.custom.hjslots}}}<br />
 					{{#each-in this.char.custom.hjslots as |hjt value|}}
 
 					  {{{ansi-format text=hjt}}}<br />
-						{{{ansi-format text=value}}}
+						{{#each-in value as |k1 v1|}}
+							{{{ansi-format text=k1}}}: {{{ansi-format text=v1}}}<br />
+						{{/each-in}} 
+
 						<div class="col-sm-4">
 							<span class="hjt">
 								Table: {{{ansi-format text=value.tablenumber}}}
