@@ -45,23 +45,22 @@ export default Component.extend({
 
     newhjtables = Object.values(sysiconicfall).filter(slots => slots.name.toString().toLowerCase() == charicf['class'].toLowerCase()); // Convert swiconicfall to an array and filter for any entries that match the new framework selected.
     console.log (newhjtables);
-    //newhjtables = newhjtables[0];
+    newhjtables = newhjtables[0];
 
-    //if (newhjtables) {
-      //var tmptable=[], hjname, i;
-      //for (const [key, value] of Object.entries(newhjtables)) {
-        //if (key.startsWith('hj')) {
-          //hjname = key.split('_')[0].toLowerCase().trim(); //Take the key name and remove the _ and everything after.
-          //hjnumber = hjname.replace('hj','');
-          //tmptable[hjname]=[];
-            //for (const [k1, v1] of Object.entries(value)) {
-              //tmptable[hjname]['tablenumber']=hjnumber;
-              //tmptable[hjname]['details']=[];
-              //tmptable[hjname]['details']['name']=hjname;
-              //tmptable[hjname]['details']['table']=v1;
-            //}
-        //}
-
+    if (newhjtables) {
+      var tmptable=[], hjname, i;
+      for (const [key, value] of Object.entries(newhjtables)) {
+        if (key.startsWith('hj')) {
+          hjname = key.split('_')[0].toLowerCase().trim(); //Take the key name and remove the _ and everything after.
+          hjnumber = hjname.replace('hj','');
+          tmptable[hjname]=[];
+            for (const [k1, v1] of Object.entries(value)) {
+              tmptable[hjname]['tablenumber']=hjnumber;
+              tmptable[hjname]['details']=[];
+              tmptable[hjname]['details']['name']=hjname;
+              tmptable[hjname]['details']['table']=v1;
+            }
+        }
   }),
 
 	ck_excludes: function(dislist, sysedg, traittype) {
