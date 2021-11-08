@@ -64,6 +64,7 @@ export default Component.extend({
       }
     }
 
+    console.log tmptable;
     return tmptable;
   }),
 
