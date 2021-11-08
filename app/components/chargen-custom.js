@@ -49,7 +49,7 @@ export default Component.extend({
 
     console.log (newhjtables);
     if (newhjtables) {
-      var tmptable=[], hjname, i;
+      var tmptable=[], hjname, i, hjnumber;
       for (const [key, value] of Object.entries(newhjtables)) {
         if (key.startsWith('hj')) {
           hjname = key.split('_')[0].toLowerCase().trim(); //Take the key name and remove the _ and everything after.
