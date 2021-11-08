@@ -40,6 +40,7 @@ export default Component.extend({
     sysiconicfall = this.get('char.custom.sysiconicf');
     charicf = this.get('char.custom.charicf');
     console.log (sysiconicfall);
+    console.log ('Charicf:');
     console.log (charicf);
 
     //newhjtables = Object.values(swiconicfall).filter(slots => slots.name.toString().toLowerCase() == newval); // Convert swiconicfall to an array and filter for any entries that match the new framework selected.
