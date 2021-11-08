@@ -138,7 +138,7 @@
 								Table: {{{ansi-format text=value.tablenumber}}}
 							</span>
 							<div id="{{hjt}}">
-								<PowerSelect @searchEnabled={{true}} @searchField="name" @searchPlaceholder="Type a name..." @selected={{get this.char.custom.hjtables hjt}} @options={{value}} @onChange={{action "groupChanged" hjt}} as |icf|>
+								<PowerSelect @searchEnabled={{true}} @searchField="name" @searchPlaceholder="Type a name..." @selected={{get this.char.custom.hjtables hjt}} @options={{value.table}} @onChange={{action "groupChanged" hjt}} as |icf|>
 									{{icf.table}}
 								</PowerSelect>
 							</div>
