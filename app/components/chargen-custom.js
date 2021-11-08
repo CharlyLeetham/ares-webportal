@@ -61,6 +61,10 @@ export default Component.extend({
               tmptable[hjname]['details']['table']=v1;
             }
         }
+      }
+    }
+
+    return tmptable;
   }),
 
 	ck_excludes: function(dislist, sysedg, traittype) {
