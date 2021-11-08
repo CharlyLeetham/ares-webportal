@@ -128,9 +128,10 @@
 					{{#each-in this.char.custom.hjslots as |hjt value|}}
 
 					  {{{ansi-format text=hjt}}}<br />
+						{{{ansi-format text=value}}}<br />
 						{{#each-in value as |k1 v1|}}
-							{{{ansi-format text=k1}}}: {{{ansi-format text=v1}}}<br />
-						{{/each-in}} 
+							K1: {{{ansi-format text=k1}}}: {{{ansi-format text=v1}}}<br />
+						{{/each-in}}
 
 						<div class="col-sm-4">
 							<span class="hjt">
