@@ -64,7 +64,7 @@ export default Component.extend({
       }
     }
 
-    console.log (tmptable);
+    //console.log (tmptable);
     //return (tmptable);
   }),
 
