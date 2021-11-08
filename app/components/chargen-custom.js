@@ -53,8 +53,8 @@ export default Component.extend({
       for (const [key, value] of Object.entries(newhjtables)) {
         if (key.startsWith('hj')) {
           hjname = key.split('_')[0].toLowerCase().trim(); //Take the key name and remove the _ and everything after.
-          console.log(hjname);
-        //  hjnumber = hjname.replace('hj','');
+          hjnumber = hjname.replace('hj','');
+          console.log (value);
         //  tmptable[hjname]=[];
         //  for (const [k1, v1] of Object.entries(value)) {
         //    tmptable[hjname]['tablenumber']=hjnumber;
