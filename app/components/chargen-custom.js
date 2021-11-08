@@ -48,11 +48,12 @@ export default Component.extend({
     newhjtables = newhjtables[0];
 
     console.log (newhjtables);
-    //if (newhjtables) {
-      //var tmptable=[], hjname, i;
-      //for (const [key, value] of Object.entries(newhjtables)) {
-        //if (key.startsWith('hj')) {
-        //  hjname = key.split('_')[0].toLowerCase().trim(); //Take the key name and remove the _ and everything after.
+    if (newhjtables) {
+      var tmptable=[], hjname, i;
+      for (const [key, value] of Object.entries(newhjtables)) {
+        if (key.startsWith('hj')) {
+          hjname = key.split('_')[0].toLowerCase().trim(); //Take the key name and remove the _ and everything after.
+          console.log('hjname');
         //  hjnumber = hjname.replace('hj','');
         //  tmptable[hjname]=[];
         //  for (const [k1, v1] of Object.entries(value)) {
@@ -61,9 +62,9 @@ export default Component.extend({
         //    tmptable[hjname]['details']['name']=hjname;
         //    tmptable[hjname]['details']['table']=v1;
         //  }
-      //  }
-    //  }
-  //  }
+        }
+      }
+    }
 
     //console.log (tmptable);
     //return (tmptable);
