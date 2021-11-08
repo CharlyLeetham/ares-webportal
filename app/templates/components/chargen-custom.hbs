@@ -126,7 +126,8 @@
 				<div class="row">
 					{{#each-in this.char.custom.hjslots as |hjt value|}}
 
-					  {{{ansi-format text=hjt}}}
+					  {{{ansi-format text=hjt}}}<br />
+						{{{ansi-format text=value}}}
 						<div class="col-sm-4">
 							<span class="hjt">
 								Table: {{{ansi-format text=value.tablenumber}}}
