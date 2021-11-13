@@ -253,7 +253,7 @@ export default Component.extend({
 					cgtr1[ctr1]=[];
 					cgtr1[ctr1]['class'] = value;
 					// cgtr1[ctr1]['name'] = dislist[0]['name'].toString().toLowerCase();
-					cgtr1[ctr1]['name'] = dislist[0]['name'].toString();          
+					cgtr1[ctr1]['name'] = dislist[0]['name'].toString();
 					cgtr1[ctr1]['rating'] = dislist[0]['desc'];
 					// Set this trait as disabled in the drop list for traits.
 					dislist[0]['disabled'] = true;
@@ -296,8 +296,8 @@ export default Component.extend({
 			// console.log ( 'here' );
 			// console.log ( 'Sysedg' );
 			// console.log ( sysedg );
-			 console.log ( 'Final Traits' );
-			 console.log ( finaltraits );
+			// console.log ( 'Final Traits' );
+			// console.log ( finaltraits );
 			this.set('char.custom.sysedges', sysedg); //Send the new dropdown back to the page.
 			this.set('char.custom.cgedges', finaltraits); //Send the new array back to the page for nice display.
 			this.set('char.custom.cgedgesfw', finaltraits); //Send the new array back to the page for nice display.
