@@ -148,8 +148,8 @@ export default Component.extend({
 
 		///// Debugging /////
 		// if (traittype == 'edge') {
-			// console.log ('Exedg: ');
-			// console.log (exedg);
+			 console.log ('Exedg: ');
+			 console.log (exedg);
 			// console.log ('newedgarray: ');
 			// console.log (newedgarray);
 			// console.log ('here');
