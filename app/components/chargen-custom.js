@@ -148,8 +148,8 @@ export default Component.extend({
 
 		///// Debugging /////
 		// if (traittype == 'edge') {
-			 console.log ('Exedg: ');
-			 console.log (exedg);
+			// console.log ('Exedg: ');
+			// console.log (exedg);
 			// console.log ('newedgarray: ');
 			// console.log (newedgarray);
 			// console.log ('here');
@@ -295,8 +295,8 @@ export default Component.extend({
 			// console.log ( 'here' );
 			// console.log ( 'Sysedg' );
 			// console.log ( sysedg );
-			// console.log ( 'Final Traits' );
-			// console.log ( finaltraits );
+			 console.log ( 'Final Traits' );
+			 console.log ( finaltraits );
 			this.set('char.custom.sysedges', sysedg); //Send the new dropdown back to the page.
 			this.set('char.custom.cgedges', finaltraits); //Send the new array back to the page for nice display.
 			this.set('char.custom.cgedgesfw', finaltraits); //Send the new array back to the page for nice display.
