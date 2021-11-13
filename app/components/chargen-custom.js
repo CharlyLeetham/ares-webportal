@@ -983,12 +983,15 @@ export default Component.extend({
 			charcgp = this.get('char.custom.inicgpoints');  // This is the array of all the if's and values
 			cgslots = this.get('char.custom.cgslots');  // This is the cgslots at init and their values.
 
-			newifpoints = Object.values(charcgp).filter(slots => slots.ifname.toString() == newval); // Convert charcgp to an array and filter for any entries that match the new framework selected.
-			for (const [key, value] of Object.entries(cgslots)) { //Loop through the init values. This is our yardstick.
-				resetifpoints = newifpoints.filter(slots => slots.name.toString() == value['class']);  // Test to see if the slot is modified by the Iconic Framework.
+			newifpoints = Object.values(charcgp).filter(slots => slots.ifname.toString() == newval);
+      // Convert charcgp to an array and filter for any entries that match the new framework selected.
+
+      //Loop through the init counter values. We use these as our baseline to measure changes applied by ICF.
+			for (const [key, value] of Object.entries(cgslots)) {
+				resetifpoints = newifpoints.filter(slots => slots.name.toString() == value['class']);
+        // Test to see if the slot is modified by the Iconic Framework.
 
 				if (Object.keys(resetifpoints).length === 0) { // If it isn't, do this.
-
 					newrating = value['rating'];  // Set the value we're going to send back to the web. This is going to equal CGINIT.
 				} else {
 					for (const [key1, value1] of Object.entries(resetifpoints)) {
@@ -1091,8 +1094,8 @@ export default Component.extend({
 			nonfwedges = this.get('char.custom.cgedgesnofw');
 
 			/////  Debugging /////
-			// console.log ('Val: ');
-			// console.log (val);
+			 console.log ('Val: ');
+			 console.log (val);
 			// console.log ('SysEdges: ');
 			// console.log (sysedges);
 			// console.log ('Charedges: ');

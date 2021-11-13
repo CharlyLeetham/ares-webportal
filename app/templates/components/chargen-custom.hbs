@@ -148,7 +148,7 @@
 			<!-- Right Col -->
 			<div class="col-sm-3">
 				<p class="txthding"> CGen Points Available </p>
-                 {{#each-in char.custom.cgslots as |key counter|}}
+                 {{#each-in char.custom.cgslots as |key counter|}} <!-- cgslots is a list of all the counters defined in swrifts_init -->
 						 <div class="form-group row">
 							 <div class="col-sm-9">
 									 <b>{{counter.name}}</b>
