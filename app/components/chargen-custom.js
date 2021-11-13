@@ -1150,6 +1150,9 @@ export default Component.extend({
 					dislist = Object.values(sysedges).filter(slots => slots.name.toString().toLowerCase() == value['name'].toLowerCase()); // Convert sysedges to an array and filter for any entries that match the new framework selected.
 					dislist[0]['disabled'] = true;
 				}
+
+        console.log ('dislist');
+        console.log ('val');
 			}
 			this.set( 'char.custom.cgedgesnofw', val );
 
