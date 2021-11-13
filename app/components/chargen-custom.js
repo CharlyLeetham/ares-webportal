@@ -39,22 +39,20 @@ export default Component.extend({
     var newhjtables, sysiconicfall, charicf;
     sysiconicfall = this.get('char.custom.sysiconicf');
     charicf = this.get('char.custom.charicf');
-    console.log (sysiconicfall);
-    console.log ('Charicf:');
-    console.log (charicf);
+    //console.log (sysiconicfall);
+    //console.log ('Charicf:');
+    //console.log (charicf);
 
     newhjtables = Object.values(sysiconicfall).filter(slots => slots.name.toString().toLowerCase() == charicf['class'].toLowerCase()); // Convert swiconicfall to an array and filter for any entries that match the new framework selected.
     //console.log (newhjtables);
     newhjtables = newhjtables[0];
 
-    console.log (newhjtables);
     if (newhjtables) {
       var tmptable=[], hjname, i, hjnumber;
       for (const [key, value] of Object.entries(newhjtables)) {
         if (key.startsWith('hj')) {
           hjname = key.split('_')[0].toLowerCase().trim(); //Take the key name and remove the _ and everything after.
           hjnumber = hjname.replace('hj','');
-          console.log (value);
           tmptable[hjname]=[];
           for (const [k1, v1] of Object.entries(value)) {
             tmptable[hjname]['tablenumber']=hjnumber;
@@ -66,7 +64,6 @@ export default Component.extend({
       }
     }
 
-    console.log (tmptable);
     return (tmptable);
   }),
 
@@ -83,9 +80,6 @@ export default Component.extend({
 
 	ck_includes: function(dislist, sysedg, traittype) {
 		var trexcludes;
-    console.log ('Sysedg1: ');
-    console.log (sysedg);
-    console.log (dislist);
 		// Check to see the Hinderance excludes others and mark them as disabled.
 		if (dislist[0]['trexcludes'].length > 0) {
 			for (const [k1, v1] of Object.entries(dislist[0]['trexcludes'])) {
@@ -351,7 +345,7 @@ export default Component.extend({
 				 //console.log ( swiconicfall );
 				 //console.log ( swrace );
 				 //console.log ( swiconicf );
-				 console.log ( chosenifarray );
+				 //console.log ( chosenifarray );
 				 //console.log ( newval );
 			 }
 		///// End Debug /////
@@ -367,7 +361,7 @@ export default Component.extend({
 			if ( traittype == 'icf' ) {
 				// console.log ( newhindarray );
 				// console.log ( newcyberarray );
-				console.log ( racecompl );
+				// console.log ( racecompl );
 				// console.log ( lowedgarray );
 		  }
 		///// End Debug /////
@@ -536,8 +530,7 @@ export default Component.extend({
 									if ( bp_check == true ) {
 										var bp_test = true;
                     if ( value.name == 'Juicer') {
-                      console.log ('Here');
-                      console.log (bp_test);
+\
                     }
 									}
 
@@ -1089,8 +1082,8 @@ export default Component.extend({
 			nonfwedges = this.get('char.custom.cgedgesnofw');
 
 			/////  Debugging /////
-			 console.log ('Val: ');
-			 console.log (val);
+			// console.log ('Val: ');
+			// console.log (val);
 			// console.log ('SysEdges: ');
 			// console.log (sysedges);
 			// console.log ('Charedges: ');
@@ -1146,7 +1139,9 @@ export default Component.extend({
 					dislist[0]['disabled'] = true;
 				}
 
+        console.log ('Dislist: ');
         console.log ('dislist');
+        console.log ('Val: ');
         console.log ('val');
 			}
 			this.set( 'char.custom.cgedgesnofw', val );
