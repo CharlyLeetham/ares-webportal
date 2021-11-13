@@ -530,7 +530,7 @@ export default Component.extend({
 									if ( bp_check == true ) {
 										var bp_test = true;
                     if ( value.name == 'Juicer') {
-\
+
                     }
 									}
 
