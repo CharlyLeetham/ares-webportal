@@ -381,8 +381,10 @@ export default Component.extend({
 
 		if ( traittype == 'icf' ) {
 
-			var dragon_check = racecompl.includes(dragon); //see if the race has the value
-      var norace_check = racecompl.includes(norace);
+      if ( racecompl ) {
+  			var dragon_check = racecompl.includes(dragon); //see if the race has the value
+        var norace_check = racecompl.includes(norace);
+      }
 
       if ( !dragon_check || !norace_check ) {
     			for ( const [key, value] of Object.entries( fullsys ) ) { //Loop through the race values. We want to know which races an Iconic Framework can't have.
