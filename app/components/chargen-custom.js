@@ -1111,7 +1111,7 @@ export default Component.extend({
 				}
 			}
 
-			if ( charedges && charedges[0].length > 0 ) {
+			if ( charedges || ( charedges[0] && charedges[0].length > 0 ) ) {
 				for ( const[k1, v1] of Object.entries( charedges ) ) {
 					/////  Debugging /////
 						// console.log ('Here2');
