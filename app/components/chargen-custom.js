@@ -1159,7 +1159,10 @@ export default Component.extend({
 
 
       console.log (val);
-      
+      console.log (syshind);
+      console.log (charhind);
+      console.log (nofwhind);
+
       // Check the hinderances that are set by the player (not the frameworks) and determine which other hinderances need to be changed.
       if ( nofwhind ) {
         // Check the existing hinderances on the character, if they aren't race or ICF specific, determine if we are removing or adding. Change the 'disabled' setting accordingly.
