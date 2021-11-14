@@ -1157,6 +1157,9 @@ export default Component.extend({
 			charhind = this.get('char.custom.cghind'); // Hinderances set on the character by the frameworks
 			nofwhind = this.get('char.custom.cghindnofw'); // Hinderances chosen by the character
 
+
+      console.log (val);
+      
       // Check the hinderances that are set by the player (not the frameworks) and determine which other hinderances need to be changed.
       if ( nofwhind ) {
         // Check the existing hinderances on the character, if they aren't race or ICF specific, determine if we are removing or adding. Change the 'disabled' setting accordingly.
@@ -1205,7 +1208,6 @@ export default Component.extend({
             }
   				}
 			}
-
 			this.set('char.custom.cghindnofw', val);
 		},
 
