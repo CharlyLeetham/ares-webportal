@@ -189,7 +189,7 @@ export default Component.extend({
 						console.log (desc);
 						// console.log (sysedg);
 					///// End Debug /////
-					en = desc['name'];
+					en = desc['name'].toLowerCase();
 
 					///// Debugging /////
 						// console.log ('Checking  Race ');
