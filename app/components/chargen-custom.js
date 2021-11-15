@@ -185,8 +185,8 @@ export default Component.extend({
 			} else if ( fw=='race') {	// If we're looking at changing the Race, find out which attributes are marked as ICF features. We want to keep these and remove all the race ones)
 				for ( const[ed, desc] of Object.entries(exedg) ) {
 					///// Debugging /////
-						console.log ('Checking  Race ');
-						console.log (desc);
+						// console.log ('Checking  Race ');
+						// console.log (desc);
 						// console.log (sysedg);
 					///// End Debug /////
 					en = desc['name'].toLowerCase();
@@ -200,8 +200,8 @@ export default Component.extend({
 					dislist = Object.values(sysedg).filter(slots => slots.name.toString().toLowerCase() == en); // Convert the trait list to an array and filter for any entries that match the new traits selected.
 
 					///// Debugging /////
-						console.log ('Dislist: ');
-						console.log ( dislist );
+						// console.log ('Dislist: ');
+						// console.log ( dislist );
 					///// End Debug /////
 					if ( desc['class'].includes('*') && dislist.length > 0 ) {
 						// console.log (desc+' class includes *');
@@ -224,10 +224,10 @@ export default Component.extend({
 			// console.log ('New Edges: ');
 			// console.log (traittype);
 			// console.log (fw);
-			console.log ('cgtrnewedg:');
-			console.log (cgtrnewedg);
-			console.log ('New Edge Array: ');
-			console.log (newedgarray);
+			// console.log ('cgtrnewedg:');
+			// console.log (cgtrnewedg);
+			// console.log ('New Edge Array: ');
+			// console.log (newedgarray);
 		// }
 		///// End Debug /////
 
@@ -275,10 +275,10 @@ export default Component.extend({
 
 			/// Debugging /////
 			// if (traittype == 'edge') {
-				console.log ('cgtrnewedg');
-				console.log (cgtrnewedg);
-				console.log ('cgtr1');
-				console.log (cgtr1);
+				// console.log ('cgtrnewedg');
+				// console.log (cgtrnewedg);
+				// console.log ('cgtr1');
+				// console.log (cgtr1);
 			// }
 			///// End Debug /////
 		}
