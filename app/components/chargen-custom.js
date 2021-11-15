@@ -185,9 +185,9 @@ export default Component.extend({
 			} else if ( fw=='race') {	// If we're looking at changing the Race, find out which attributes are marked as ICF features. We want to keep these and remove all the race ones)
 				for ( const[ed, desc] of Object.entries(exedg) ) {
 					///// Debugging /////
-						console.log ('Checking  Race ');
-						console.log (desc);
-						console.log (sysedg);
+						// console.log ('Checking  Race ');
+						// console.log (desc);
+						// console.log (sysedg);
 					///// End Debug /////
 					en = desc['name'];
 
@@ -275,10 +275,10 @@ export default Component.extend({
 
 			/// Debugging /////
 			// if (traittype == 'edge') {
-				// console.log ('cgtrnewedg');
-				// console.log (cgtrnewedg);
-				// console.log ('cgtr1');
-				// console.log (cgtr1);
+				console.log ('cgtrnewedg');
+				console.log (cgtrnewedg);
+				console.log ('cgtr1');
+				console.log (cgtr1);
 			// }
 			///// End Debug /////
 		}
