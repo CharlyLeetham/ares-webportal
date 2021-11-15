@@ -148,11 +148,11 @@ export default Component.extend({
 
 		///// Debugging /////
 		// if (traittype == 'hind') {
-			console.log ('Exedg: ');
-			console.log (exedg);
-			console.log ('newedgarray: ');
-			console.log (newedgarray);
-			console.log ('here');
+			// console.log ('Exedg: ');
+			// console.log (exedg);
+			// console.log ('newedgarray: ');
+			// console.log (newedgarray);
+			// console.log ('here');
 		// }
 		///// End Debug /////
 
@@ -185,9 +185,9 @@ export default Component.extend({
 			} else if ( fw=='race') {	// If we're looking at changing the Race, find out which attributes are marked as ICF features. We want to keep these and remove all the race ones)
 				for ( const[ed, desc] of Object.entries(exedg) ) {
 					///// Debugging /////
-						// console.log ('Checking  Race ');
-						// console.log (desc);
-						// console.log (sysedg);
+						console.log ('Checking  Race ');
+						console.log (desc);
+						console.log (sysedg);
 					///// End Debug /////
 					en = desc['name'];
 
