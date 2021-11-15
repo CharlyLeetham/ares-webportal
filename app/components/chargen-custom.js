@@ -302,6 +302,9 @@ export default Component.extend({
 			this.set('char.custom.cgedges', finaltraits); //Send the new array back to the page for nice display.
 			this.set('char.custom.cgedgesfw', finaltraits); //Send the new array back to the page for nice display.
 		} else {
+
+      console.log ( 'Final Traits' );
+			console.log ( finaltraits );
 			this.set('char.custom.syshind', sysedg); //Send the new dropdown back to the page.
 			this.set('char.custom.cghind', finaltraits); //Send the new array back to the page for nice display.
 			this.set('char.custom.cghindfw', finaltraits); //Send the new array back to the page for nice display.
