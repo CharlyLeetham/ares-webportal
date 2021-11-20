@@ -102,6 +102,7 @@
 			<!-- New Fourth Row -->
 			<div class="row features">
 				<div class="row">
+					<p class="heading">Choose your Hinderances: </p>
 					<PowerSelectMultiple @searchEnabled={{true}} @searchField="name" @searchPlaceholder="Type a name..." @selected={{char.custom.cghindnofw}} @options={{this.swsyshind}} @onChange={{action "hindChanged"}} as |hind|>
 						{{hind.name}}
 					</PowerSelectMultiple>
@@ -112,22 +113,12 @@
 
 			<!-- Fourth Row -->
 				<div class="row features">
-					<div class="col-sm-6">
 						<div class="row">
-
+							<p class="heading">Choose your Edges: </p>
 							<PowerSelectMultiple @searchEnabled={{true}} @searchField="name" @searchPlaceholder="Type a name..." @selected={{char.custom.cgedgesnofw}} @options={{this.swsysedges}} @onChange={{action "edgeChanged"}} as |edg|>
 							  {{edg.name}}
 							</PowerSelectMultiple>
 						</div>
-					</div>
-
-					<div class="col-sm-6">
-						<div class="row">
-							<PowerSelectMultiple @searchEnabled={{true}} @searchField="name" @searchPlaceholder="Type a name..." @selected={{char.custom.cghindnofw}} @options={{this.swsyshind}} @onChange={{action "hindChanged"}} as |hind|>
-							  {{hind.name}}
-							</PowerSelectMultiple>
-						</div>
-					</div>
 				</div>
 
 			<!-- End Fourth Row -->
