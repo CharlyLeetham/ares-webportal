@@ -99,6 +99,17 @@
 
 			<!-- End Third Row -->
 
+			<!-- New Fourth Row -->
+			<div class="row features">
+				<div class="row">
+					<PowerSelectMultiple @searchEnabled={{true}} @searchField="name" @searchPlaceholder="Type a name..." @selected={{char.custom.cghindnofw}} @options={{this.swsyshind}} @onChange={{action "hindChanged"}} as |hind|>
+						{{hind.name}}
+					</PowerSelectMultiple>
+				</div>
+			</div>
+
+			<!-- end New Fourth Row -->
+
 			<!-- Fourth Row -->
 				<div class="row features">
 					<div class="col-sm-6">
