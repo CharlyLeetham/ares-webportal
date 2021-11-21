@@ -1164,14 +1164,12 @@ export default Component.extend({
       // console.log (val);
       // console.log (syshind);
       // console.log (charhind);
-      console.log (nofwhind);
+      // console.log (nofwhind);
 
       // Check the hinderances that are set by the player (not the frameworks) and determine which other hinderances need to be changed.
       if ( nofwhind ) {
         // Check the existing hinderances on the character, if they aren't race or ICF specific, determine if we are removing or adding. Change the 'disabled' setting accordingly.
         for ( const[k1, v1] of Object.entries(nofwhind) ) {
-          hindcounter = v1['hind_points'];
-          console.log ( hindcounter );
           if (!v1['name'].endsWith('*^') && !v1['name'].endsWith('*') && !v1['name'].endsWith('^') ) { //This check is probably redundant but it doesn't hurt to leave it in.  It's looking for Hinderances that are set by the ICF or Race. Theoretically, if we're already in this loop, they are none of those.
             dislist33 = Object.values(val).filter(slots => slots.name.toString().toLowerCase() == v1['name'].toLowerCase()); // Check to see if the selected hinderances are already set on the character
             if (dislist33.length < 1) { //If not set, then go through and disable the appropriate hinderances
@@ -1209,6 +1207,8 @@ export default Component.extend({
       if ( val ) {
   				for (const [key, value] of Object.entries(val)) {
             value['disabled']=false;
+            hindcounter = v1['hind_points'];
+            console.log ( hindcounter );            
   					dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == value['name'].toLowerCase()); // Convert sysedges to an array and filter for any entries that match the new framework selected.
   					dislist[0]['disabled'] = true;
             if (dislist[0]['trexcludes'].length > 0) {
