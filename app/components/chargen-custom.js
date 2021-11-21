@@ -1145,10 +1145,10 @@ export default Component.extend({
 					dislist[0]['disabled'] = true;
 				}
 
-        console.log ('Dislist: ');
-        console.log ('dislist');
-        console.log ('Val: ');
-        console.log ('val');
+        // console.log ('Dislist: ');
+        // console.log ('dislist');
+        // console.log ('Val: ');
+        // console.log ('val');
 			}
 			this.set( 'char.custom.cgedgesnofw', val );
 
@@ -1261,8 +1261,8 @@ export default Component.extend({
 	// Return a hash containing your data.  Character data will be in 'char'.  For example:
 	//
 	// return { goals: this.get('char.custom.goals') };
-  var myvar = this.get('char.custom.cgedges' );
-  console.log( myvar );
-	return { iconicf: this.get('char.custom.charicf'), race: this.get('char.custom.charrace'), cgedges: this.get('char.custom.cgedges'), cgedgesnofw: this.get('char.custom.cgedgesnofw'), cghind: this.get('char.custom.cghind'), cghindnofw: this.get('char.custom.cghindnofw'), hjtables: this.get('char.custom.hjtables') };
+  // var myvar = this.get('char.custom.cgedges' );
+  // console.log( myvar );
+	return { iconicf: this.get('char.custom.charicf'), race: this.get('char.custom.charrace'), cgedges: this.get('char.custom.cgedges'), cgedgesnofw: this.get('char.custom.cgedgesnofw'), cghind: this.get('char.custom.cghind'), cghindnofw: this.get('char.custom.cghindnofw'), charhindpoints: this.get('char.custom.charhindpoints'), hjtables: this.get('char.custom.hjtables') };
 	}
 });
