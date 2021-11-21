@@ -1155,30 +1155,32 @@ export default Component.extend({
 		},
 
 		hindChanged( val ) {
-			var syshind, charhind, dislist, dislist33, trexcludes, nofwhind;
+			var syshind, charhind, dislist, dislist33, trexcludes, nofwhind, hindcounter;
 			syshind = this.get('char.custom.syshind'); // System Hinderances
 			charhind = this.get('char.custom.cghind'); // Hinderances set on the character by the frameworks
 			nofwhind = this.get('char.custom.cghindnofw'); // Hinderances chosen by the character
 
 
-      console.log (val);
-      console.log (syshind);
-      console.log (charhind);
-      console.log (nofwhind);
+      // console.log (val);
+      // console.log (syshind);
+      // console.log (charhind);
+      // console.log (nofwhind);
 
       // Check the hinderances that are set by the player (not the frameworks) and determine which other hinderances need to be changed.
       if ( nofwhind ) {
         // Check the existing hinderances on the character, if they aren't race or ICF specific, determine if we are removing or adding. Change the 'disabled' setting accordingly.
         for ( const[k1, v1] of Object.entries(nofwhind) ) {
-          if (!v1['name'].endsWith('*^') && !v1['name'].endsWith('*') && !v1['name'].endsWith('^') ) {
-            dislist33 = Object.values(val).filter(slots => slots.name.toString().toLowerCase() == v1['name'].toLowerCase());
-            if (dislist33.length < 1) {
+          if (!v1['name'].endsWith('*^') && !v1['name'].endsWith('*') && !v1['name'].endsWith('^') ) { //This check is probably redundant but it doesn't hurt to leave it in.  It's looking for Hinderances that are set by the ICF or Race. Theoretically, if we're already in this loop, they are none of those.
+            dislist33 = Object.values(val).filter(slots => slots.name.toString().toLowerCase() == v1['name'].toLowerCase()); // Check to see if the selected hinderances are already set on the character
+            if (dislist33.length < 1) { //If not set, then go through and disable the appropriate hinderances
               v1['disabled'] = false;
               dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == v1['name'].toLowerCase());
               dislist[0]['disabled'] = false;
               if (dislist[0]['trexcludes'].length > 0) {
                 trexcludes = this.ck_includes(dislist, syshind, 'hind');
               }
+              hindcounter = v1['hind_points'];
+              console.log ( hindcounter );
             }
           }
         }
