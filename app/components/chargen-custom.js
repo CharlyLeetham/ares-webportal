@@ -1164,7 +1164,7 @@ export default Component.extend({
       // console.log (val);
       // console.log (syshind);
       // console.log (charhind);
-      // console.log (nofwhind);
+      console.log (nofwhind);
 
       // Check the hinderances that are set by the player (not the frameworks) and determine which other hinderances need to be changed.
       if ( nofwhind ) {
