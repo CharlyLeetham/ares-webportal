@@ -1155,10 +1155,11 @@ export default Component.extend({
 		},
 
 		hindChanged( val ) {
-			var syshind, charhind, dislist, dislist33, trexcludes, nofwhind, hindcounter;
+			var syshind, charhind, dislist, dislist33, trexcludes, nofwhind, maxhindcounter, hindcounter;
 			syshind = this.get('char.custom.syshind'); // System Hinderances
 			charhind = this.get('char.custom.cghind'); // Hinderances set on the character by the frameworks
 			nofwhind = this.get('char.custom.cghindnofw'); // Hinderances chosen by the character
+      maxhindcounter = 4; //This might get set by a YAML later. Maximum number of hinderance points that can be converted to Perks.
 
 
       // console.log (val);
@@ -1207,7 +1208,10 @@ export default Component.extend({
       if ( val ) {
   				for (const [key, value] of Object.entries(val)) {
             value['disabled']=false;
-            hindcounter = value['hind_points'];
+            hindcounter = value['hind_points']+hindcounter;
+            if ( hindcounter >= maxhindcounter ) {
+              hindcounter = maxhindcounter;
+            } 
             console.log ( hindcounter );
   					dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == value['name'].toLowerCase()); // Convert sysedges to an array and filter for any entries that match the new framework selected.
   					dislist[0]['disabled'] = true;
