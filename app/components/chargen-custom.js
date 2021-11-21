@@ -1207,8 +1207,8 @@ export default Component.extend({
       if ( val ) {
   				for (const [key, value] of Object.entries(val)) {
             value['disabled']=false;
-            hindcounter = v1['hind_points'];
-            console.log ( hindcounter );            
+            hindcounter = value['hind_points'];
+            console.log ( hindcounter );
   					dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == value['name'].toLowerCase()); // Convert sysedges to an array and filter for any entries that match the new framework selected.
   					dislist[0]['disabled'] = true;
             if (dislist[0]['trexcludes'].length > 0) {
