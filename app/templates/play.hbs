@@ -3,7 +3,7 @@
  <h1 class="play-title">Play</h1>
 
  <div class="row">
-   <div class="col col-xs-12 col-md-3">
+   <div class="col col-12 col-md-3">
      
      <div class="play-sidebar">     
      
@@ -125,7 +125,7 @@
      
    </div>
    
-   <div class="col col-xs-12 col-md-9">
+   <div class="col col-12 col-md-9">
       
       {{#if this.currentScene}}
       <LinkTo @route="scene-live" @model={{this.currentScene.id}} class="play-scene-title">Scene {{this.currentScene.id}}
@@ -136,7 +136,7 @@
        
        {{/if}}
     
-       <LiveSceneControl @scene={{this.currentScene}} @locations={{this.model.locations}} @abilities={{this.model.abilities}} @places={{this.currentScene.places}} @scrollPaused={{this.scrollPaused}} @playerName={{this.currentUser.name}} @refresh={{action "refresh"}} @scrollDown={{action "scrollDown"}} @setScroll={{action "setScroll"}} />
+       <LiveSceneControl @scene={{this.currentScene}} @locations={{this.model.locations}} @abilities={{this.model.abilities}} @places={{this.currentScene.places}} @characters={{this.model.characters}} @scrollPaused={{this.scrollPaused}} @playerName={{this.currentUser.name}} @refresh={{action "refresh"}} @scrollDown={{action "scrollDown"}} @setScroll={{action "setScroll"}} />
        
        
        {{#if this.selectedChannel}}
@@ -216,7 +216,7 @@
                <div class="col-sm-9">
                  <div class="scene-char-select" >
                    <PowerSelect @selected={{this.poseChar}} @options={{this.model.chat.pose_chars}} @searchField="name" @onChange={{action "poseCharChanged"}} as |poseChar|>
-                       <CharIconTiny @char={{this.poseChar}} />
+                       <CharIconTiny @char={{poseChar}} />
                    </PowerSelect>
                  </div>
                </div> 

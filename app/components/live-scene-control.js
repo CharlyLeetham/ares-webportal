@@ -17,6 +17,8 @@ export default Component.extend(AuthenticatedController, {
     reportReason: null,
     poseType: null,
     commandResponse: null,
+    showInvitation: false,
+    selectedInvitee: null,
     gameApi: service(),
     flashMessages: service(),
     gameSocket: service(),
@@ -101,6 +103,9 @@ export default Component.extend(AuthenticatedController, {
     actions: { 
       locationSelected(loc) {
           this.set('newLocation', loc);  
+      },
+      changeInvitee(char) {
+        this.set('selectedInvitee', char);
       },
       changeLocation() {
           let api = this.gameApi;
@@ -189,6 +194,10 @@ export default Component.extend(AuthenticatedController, {
           });
       },
       
+      loadLastPose() {
+        this.set('scene.draftPose', this.get('scene.lastDraftPose'));
+      },
+      
       addPose(poseType) {
           let pose = this.get('scene.draftPose') || "";
           if (pose.length === 0) {
@@ -196,11 +205,13 @@ export default Component.extend(AuthenticatedController, {
               return;
           }
           let api = this.gameApi;
+          this.set('scene.lastDraftPose', pose);
           this.set('scene.draftPose', '');
+
           api.requestOne('addScenePose', { id: this.get('scene.id'),
               pose: pose, 
               pose_type: poseType,
-              pose_char: this.get('scene.poseChar.id') })
+              pose_char: this.get('scene.poseChar.id') }, null, true)
           .then( (response) => {
               if (response.error) {
                   return;
@@ -257,6 +268,21 @@ export default Component.extend(AuthenticatedController, {
               if (option) {
                 this.refresh(); 
               }
+          });
+      },
+      
+      inviteChar() {
+          let api = this.gameApi;
+          let invitee = this.selectedInvitee;
+          this.set('selectedInvitee', null);
+          this.set('showInvitation', false);
+          
+          api.requestOne('inviteToScene', { id: this.get('scene.id'), invitee: invitee.name }, null)
+          .then( (response) => {
+              if (response.error) {
+                  return;
+              }
+              this.flashMessages.success(`Invitation sent.`);
           });
       },
       

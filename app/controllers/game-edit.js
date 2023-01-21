@@ -4,6 +4,9 @@ import { inject as service } from '@ember/service';
 export default Controller.extend({
     gameApi: service(),
     router: service(),
+    flashMessages: service(),
+  
+    warning: '',
     
     actions: {
         categoryChanged(val) {
@@ -18,6 +21,10 @@ export default Controller.extend({
             .then( (response) => {
                 if (response.error) {
                     return;
+                }
+                
+                if (response.warning) {
+                  this.set('warning', response.warning);
                 }
         
             this.flashMessages.success('Config saved!');

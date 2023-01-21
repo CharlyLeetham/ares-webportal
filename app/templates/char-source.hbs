@@ -11,7 +11,7 @@
     <div id="history" class="card-collapse collapse">
       <div class="card-body">
    
-          <ol>
+          <ol reversed>
               {{#each this.model.versions as |v|}}
     
               <li>
@@ -66,3 +66,5 @@
 {{/if}}
 
 {{outlet}}
+
+<LinkTo @route="char" @model={{this.model.char_name}}><i class="fa fa-long-arrow-alt-left" aria-hidden="true"></i> Back to Page</LinkTo>
