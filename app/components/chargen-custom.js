@@ -1169,7 +1169,7 @@ export default Component.extend({
 			// console.log (charhind);
 			console.log ('nofwhind: '+nofwhind);
 
-			for ( const[k1, v1] of Object.entries(nofwhind) ) {
+			for ( const[k1, v1] of Object.entries(val) ) {
 					console.log (v1);
 			}
 			console.log ('Hindcounter: '+hindcounter);
