@@ -1164,7 +1164,7 @@ export default Component.extend({
 			//hindcounter = this.get('char.custom.charhindpoints'); // Get the points set on the characters
 
 
-			// console.log (val);
+			console.log (val);
 			// console.log (syshind);
 			// console.log (charhind);
 			// console.log (nofwhind);
