@@ -1178,7 +1178,14 @@ export default Component.extend({
 					}
 					console.log( hindcounter );
 			}
-			console.log ('Hindcounter: '+hindcounter);
+
+			if ( hindcounter > maxhindcounter ) {
+				hindcounter = maxhindcounter;
+			} else if ( hindcounter < 0 ) {
+				hindcounter = 0;
+			}
+
+			
 
 			// Check the hinderances that are set by the player (not the frameworks) and determine which other hinderances need to be changed.
 			if ( nofwhind ) {
