@@ -1167,7 +1167,7 @@ export default Component.extend({
 			console.log (val);
 			// console.log (syshind);
 			// console.log (charhind);
-			console.log (nofwhind);
+			console.log ('nofwhind: '+nofwhind);
 
 			for ( const[k1, v1] of Object.entries(nofwhind) ) {
 					console.log (v1);
