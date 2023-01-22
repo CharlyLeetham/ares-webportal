@@ -1168,6 +1168,10 @@ export default Component.extend({
 			// console.log (syshind);
 			// console.log (charhind);
 			console.log (nofwhind);
+
+			for ( const[k1, v1] of Object.entries(nofwhind) ) {
+					console.log (v1);
+			}
 			console.log ('Hindcounter: '+hindcounter);
 
 			// Check the hinderances that are set by the player (not the frameworks) and determine which other hinderances need to be changed.
