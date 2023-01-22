@@ -1159,39 +1159,39 @@ export default Component.extend({
 			syshind = this.get('char.custom.syshind'); // System Hinderances
 			charhind = this.get('char.custom.cghind'); // Hinderances set on the character by the frameworks
 			nofwhind = this.get('char.custom.cghindnofw'); // Hinderances chosen by the character
-      maxhindcounter = 4; //This might get set by a YAML later. Maximum number of hinderance points that can be converted to Perks.
-      // hindcounter = 0;
-      hindcounter = this.get('char.custom.charhindpoints'); // Get the points set on the characters
+      		maxhindcounter = 4; //This might get set by a YAML later. Maximum number of hinderance points that can be converted to Perks.
+			hindcounter = 0;
+			//hindcounter = this.get('char.custom.charhindpoints'); // Get the points set on the characters
 
 
-      // console.log (val);
-      // console.log (syshind);
-      // console.log (charhind);
-      // console.log (nofwhind);
-      console.log ('Hindcounter: '+hindcounter);
+			// console.log (val);
+			// console.log (syshind);
+			// console.log (charhind);
+			// console.log (nofwhind);
+			console.log ('Hindcounter: '+hindcounter);
 
-      // Check the hinderances that are set by the player (not the frameworks) and determine which other hinderances need to be changed.
-      if ( nofwhind ) {
-        // Check the existing hinderances on the character, if they aren't race or ICF specific, determine if we are removing or adding. Change the 'disabled' setting accordingly.
-        for ( const[k1, v1] of Object.entries(nofwhind) ) {
-          if (!v1['name'].endsWith('*^') && !v1['name'].endsWith('*') && !v1['name'].endsWith('^') ) { //This check is probably redundant but it doesn't hurt to leave it in.  It's looking for Hinderances that are set by the ICF or Race. Theoretically, if we're already in this loop, they are none of those.
-            dislist33 = Object.values(val).filter(slots => slots.name.toString().toLowerCase() == v1['name'].toLowerCase()); // Check to see if the selected hinderances are already set on the character
-            if (dislist33.length < 1) { //If not set, then go through and disable the appropriate hinderances
-              v1['disabled'] = false;
-              dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == v1['name'].toLowerCase());
-              dislist[0]['disabled'] = false;
-              if (dislist[0]['trexcludes'].length > 0) {
-                trexcludes = this.ck_includes(dislist, syshind, 'hind');
-              }
-            }
-          }
-        }
-      }
+			// Check the hinderances that are set by the player (not the frameworks) and determine which other hinderances need to be changed.
+			if ( nofwhind ) {
+				// Check the existing hinderances on the character, if they aren't race or ICF specific, determine if we are removing or adding. Change the 'disabled' setting accordingly.
+				for ( const[k1, v1] of Object.entries(nofwhind) ) {
+					if (!v1['name'].endsWith('*^') && !v1['name'].endsWith('*') && !v1['name'].endsWith('^') ) { //This check is probably redundant but it doesn't hurt to leave it in.  It's looking for Hinderances that are set by the ICF or Race. Theoretically, if we're already in this loop, they are none of those.
+						dislist33 = Object.values(val).filter(slots => slots.name.toString().toLowerCase() == v1['name'].toLowerCase()); // Check to see if the selected hinderances are already set on the character
+						if (dislist33.length < 1) { //If not set, then go through and disable the appropriate hinderances
+						v1['disabled'] = false;
+						dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == v1['name'].toLowerCase());
+						dislist[0]['disabled'] = false;
+						if (dislist[0]['trexcludes'].length > 0) {
+							trexcludes = this.ck_includes(dislist, syshind, 'hind');
+						}
+						}
+					}
+				}
+			}
 
-			// Now compare what was previous set on the character to what they've selected. If they've removed a trait, make sure it and it's exclusions are set to enabled.
+	  		// Now compare what was previous set on the character to what they've selected. If they've removed a trait, make sure it and it's exclusions are set to enabled.
 
 			if ( charhind ) {
-        // Check the existing hinderances on the character, if they aren't race or ICF specific, determine if we are removing or adding. Change the 'disabled' setting accordingly.
+			// Check the existing hinderances on the character, if they aren't race or ICF specific, determine if we are removing or adding. Change the 'disabled' setting accordingly.
 				for ( const[k1, v1] of Object.entries(charhind) ) {
 					if (!v1['class'].endsWith('*^') && !v1['class'].endsWith('*') && !v1['class'].endsWith('^') ) {
 						dislist33 = Object.values(val).filter(slots => slots.name.toString().toLowerCase() == v1['name'].toLowerCase());
@@ -1207,22 +1207,22 @@ export default Component.extend({
 				}
 			}
 
-      //Cycle through the values selected by the player and set the other hinderances that are excluded to disabled.
-      if ( val ) {
-  				for (const [key, value] of Object.entries(val)) {
-            value['disabled']=false;
-            hindcounter = value['hind_points']+hindcounter;
-            if ( hindcounter >= maxhindcounter ) {
-              hindcounter = maxhindcounter;
-            }
-            console.log ( hindcounter );
-  					dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == value['name'].toLowerCase()); // Convert sysedges to an array and filter for any entries that match the new framework selected.
-  					dislist[0]['disabled'] = true;
-            if (dislist[0]['trexcludes'].length > 0) {
-              trexcludes = this.ck_excludes(dislist, syshind, 'hind');
-            }
-  				}
-			}
+      		//Cycle through the values selected by the player and set the other hinderances that are excluded to disabled.
+			if ( val ) {
+					for (const [key, value] of Object.entries(val)) {
+						value['disabled']=false;
+						hindcounter = value['hind_points']+hindcounter;
+						if ( hindcounter >= maxhindcounter ) {
+							hindcounter = maxhindcounter;
+						}	
+						console.log ( hindcounter );
+						dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == value['name'].toLowerCase()); // Convert sysedges to an array and filter for any entries that match the new framework selected.
+						dislist[0]['disabled'] = true;
+						if (dislist[0]['trexcludes'].length > 0) {
+							trexcludes = this.ck_excludes(dislist, syshind, 'hind');
+						}
+					}
+				}
 			this.set('char.custom.cghindnofw', val); // Set the chosen hinderances back to the character object
 			this.set('char.custom.charhindpoints', hindcounter); // Set the number of hindpoints the character can spend on their object
 		},
