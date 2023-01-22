@@ -1155,7 +1155,7 @@ export default Component.extend({
 		},
 
 		hindChanged( val ) {
-			var syshind, charhind, dislist, dislist33, trexcludes, nofwhind, maxhindcounter, hindcounter;
+			var syshind, charhind, dislist, dislist33, trexcludes, nofwhind, maxhindcounter, hindcounter, points1;
 			syshind = this.get('char.custom.syshind'); // System Hinderances
 			charhind = this.get('char.custom.cghind'); // Hinderances set on the character by the frameworks
 			nofwhind = this.get('char.custom.cghindnofw'); // Hinderances chosen by the character
