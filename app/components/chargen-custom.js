@@ -1174,6 +1174,7 @@ export default Component.extend({
 					points1 = v1['points'];
 					points1 = parseInt(points1);
 					hindcounter = hindcounter+points1;
+					console.log( hindcounter );
 			}
 			console.log ('Hindcounter: '+hindcounter);
 
