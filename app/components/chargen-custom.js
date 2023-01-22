@@ -1171,7 +1171,7 @@ export default Component.extend({
 
 			for ( const[k1, v1] of Object.entries(val) ) {
 					console.log (v1);
-					hindcounter = hindcounter+v1['points'];
+					hindcounter = hindcounter+int(v1['points']);
 			}
 			console.log ('Hindcounter: '+hindcounter);
 
