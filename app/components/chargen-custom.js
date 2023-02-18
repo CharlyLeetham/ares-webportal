@@ -39,7 +39,7 @@ export default Component.extend({
 		var charhindpoints;
 		charhindpoints = this.get('char.custom.charhindpoints');
 		return charhindpoints;
-	}
+	}),
 
   hjtables: computed(function() {
     var newhjtables, sysiconicfall, charicf;
