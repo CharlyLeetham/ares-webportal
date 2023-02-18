@@ -35,6 +35,12 @@ export default Component.extend({
 		return swiconicf;
 	}),
 
+	charhindpoints: computed(function() {
+		var charhindpoints;
+		charhindpoints = this.get('char.custom.charhindpoints');
+		return charhindpoints;
+	}
+
   hjtables: computed(function() {
     var newhjtables, sysiconicfall, charicf;
     sysiconicfall = this.get('char.custom.sysiconicf');
