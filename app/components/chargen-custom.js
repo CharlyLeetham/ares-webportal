@@ -1173,7 +1173,7 @@ export default Component.extend({
 			// console.log (syshind);
 			// console.log (charhind);
 			//console.log ('nofwhind: '+nofwhind);
-			console.log ('hindcounter: '+hindcounter);
+			console.log ('hindcounter: '+typeof(hindcounter));
 
 			for ( const[k1, v1] of Object.entries(val) ) {
 					if ( v1.hasOwnProperty('points') ) {
