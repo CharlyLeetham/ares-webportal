@@ -35,7 +35,7 @@ export default Component.extend({
 	}),
 
 	charhindpoints: computed(function() {
-		var points1;
+		var points1, nofwhind;
 		points1 = 0;  // Use this to add up the number of perks from hinderances
 		nofwhind = this.get('char.custom.cghindnofw'); // Hinderances chosen by the character
 		maxhindcounter = 4; //This might get set by a YAML later. Maximum number of hinderance points that can be converted to Perks.
@@ -50,7 +50,7 @@ export default Component.extend({
 		if (points1 > maxhindcounter) {
 			points1 = maxhindcounter;
 		}
-
+		console.log (points1);
 		return points1;
 	}),
 
