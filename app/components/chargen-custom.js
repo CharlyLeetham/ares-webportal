@@ -31,7 +31,6 @@ export default Component.extend({
 	swsyshind: computed(function() {
 		var swiconicf;
 		swiconicf = this.get('char.custom.syshind');
-		// console.log (swiconicf);
 		return swiconicf;
 	}),
 
@@ -1231,7 +1230,7 @@ export default Component.extend({
 				}
 			console.log ('hindcounter: '+points1);
 			this.set('char.custom.cghindnofw', val); // Set the chosen hinderances back to the character object
-			this.set('char.custom.charhindpoints', points1); // Set the number of hindpoints the character can spend on their object
+			// this.set('char.custom.charhindpoints', points1); // Set the number of hindpoints the character can spend on their object
 		},
 
     groupChanged(group, val) {
