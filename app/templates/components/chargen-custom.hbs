@@ -53,9 +53,9 @@
 						</div>
 
 						<div class="row">
-							<pre>
+							{{!-- <pre>
 								{{{ansi-format text=char.custom.cgedgesfw}}}
-							</pre> 
+							</pre>  --}}
 							<p><ul class="edges">
 							{{#each-in char.custom.cgedgesfw as |key counter|}}
 								<li><span class="cgtooltip">{{counter.class}}
@@ -109,7 +109,9 @@
 				</div>
 				<div class="row">
 					<!-- Hindpoints (also known as Perk Points) are defined in swrifts_hinderances.yml.  The js function [[function name pls]] in app/components/chargen-custom.js should add these all together. If they exceed 4, then only 4 should be shown in the field below.  4 is the maximun number of perk points a character can have. -->
-					<p class="heading">Perk Points: {{#if this.charhindpoints}}
+					<p class="heading">Perk Points: 
+						{{ansi-format text=char.custom.charhindpoints}}
+						{{#if this.charhindpoints}}
 						{{ansi-format text=this.charhindpoints}}
 						{{else}}
 						4
