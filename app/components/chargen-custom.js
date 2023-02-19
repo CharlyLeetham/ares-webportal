@@ -1167,8 +1167,8 @@ export default Component.extend({
       		maxhindcounter = 4; //This might get set by a YAML later. Maximum number of hinderance points that can be converted to Perks.
 			// hindcounter = 0;
 			hindcounter = this.get('char.custom.charhindpoints'); // Get the points set on the characters
-			
-			console.log (val);
+
+			// console.log (val);
 			// console.log (syshind);
 			// console.log (charhind);
 			//console.log ('nofwhind: '+nofwhind);
@@ -1245,6 +1245,7 @@ export default Component.extend({
 						}
 					}
 				}
+			console.log ('hindcounter: '+hindcounter);
 			this.set('char.custom.cghindnofw', val); // Set the chosen hinderances back to the character object
 			this.set('char.custom.charhindpoints', hindcounter); // Set the number of hindpoints the character can spend on their object
 		},
