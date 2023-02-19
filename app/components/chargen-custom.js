@@ -38,7 +38,7 @@ export default Component.extend({
 	charhindpoints: computed(function() {
 		var charhindpoints;
 		charhindpoints = this.get('char.custom.charhindpoints');
-		return charhindpoints;
+		return '4';
 	}),
 
   hjtables: computed(function() {
