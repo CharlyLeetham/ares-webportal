@@ -1161,6 +1161,7 @@ export default Component.extend({
 
 		hindChanged( val ) {
 			var syshind, charhind, dislist, dislist33, trexcludes, nofwhind, maxhindcounter, hindcounter, points1;
+			points1 = 0;
 			syshind = this.get('char.custom.syshind'); // System Hinderances
 			charhind = this.get('char.custom.cghind'); // Hinderances set on the character by the frameworks
 			nofwhind = this.get('char.custom.cghindnofw'); // Hinderances chosen by the character
@@ -1178,13 +1179,13 @@ export default Component.extend({
 
 			for ( const[k1, v1] of Object.entries(val) ) {
 					if ( v1.hasOwnProperty('points') ) {
-						hindcounter = hindcounter+parseInt(v1['points']);
+						hindcounter = points1+parseInt(v1['points']);
 						console.log ('v1 (points) :'+v1['points']);
 					} else if ( v1.hasOwnProperty('hind_points' )) {
-						hindcounter = hindcounter+parseInt(v1['hind_points']);
+						hindcounter = points1+parseInt(v1['hind_points']);
 						console.log ('v1 (hind_points) :'+v1['hind_points']);
 					}
-					console.log( 'Hindcounter: '+hindcounter );
+					console.log( 'Hindcounter: '+points1 );
 			}
 
 			// Check the hinderances that are set by the player (not the frameworks) and determine which other hinderances need to be changed.
