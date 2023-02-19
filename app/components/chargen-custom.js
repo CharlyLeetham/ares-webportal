@@ -1175,22 +1175,14 @@ export default Component.extend({
 			console.log ('hindcounter: '+hindcounter);
 
 			for ( const[k1, v1] of Object.entries(val) ) {
-					console.log (v1);
+					console.log ('v1 :'+v1);
 					if ( v1.hasOwnProperty('points') ) {
 						hindcounter = hindcounter+v1['points'];
 					} else if ( v1.hasOwnProperty('hind_points' )) {
 						hindcounter = hindcounter+v1['hind_points'];
 					}
-					console.log( hindcounter );
+					console.log( 'Hindcounter: '+hindcounter );
 			}
-
-			if ( hindcounter > maxhindcounter ) {
-				hindcounter = maxhindcounter;
-			} else if ( hindcounter < 0 ) {
-				hindcounter = 0;
-			}
-
-			
 
 			// Check the hinderances that are set by the player (not the frameworks) and determine which other hinderances need to be changed.
 			if ( nofwhind ) {
