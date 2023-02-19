@@ -1250,33 +1250,44 @@ export default Component.extend({
 			this.set('char.custom.charhindpoints', points1); // Set the number of hindpoints the character can spend on their object
 		},
 
-    groupChanged(group, val) {
-			var hjtable, tmptable, hjslots, newhjtable={};
-			hjslots = this.get('char.custom.hjslots');
-			hjtable = this.get('char.custom.hjtables');
 
-			if (val) {
-				tmptable = Object.values(hjtable).filter(slots => slots.name.toString().toLowerCase() == val.name.toLowerCase()); // Convert hjtables to an array and filter for any entries that match the new framework selected.
 
-				if (tmptable.length > 0) {
-						tmptable[0]['table'] = val.table;
-				} else { // We're looking at hjtable not being populated. Need to cycle through HJSlots to ensure the hjtable object is setup correctly.
-					var tmptable1 = {};
-					for (const [key, value] of Object.entries(hjslots)) {
-						tmptable1[key] = {};
-						if (val.name == key) {
-							tmptable1[val.name]['table'] = val.table;
-							tmptable1[val.name]['name'] = val.name;
-						} else {
-							tmptable1[key]['table'] = 'None';
-							tmptable1[key]['name'] = key;
+		groupChanged(group, val) {
+				var hjtable, tmptable, hjslots, newhjtable={};
+				hjslots = this.get('char.custom.hjslots');
+				hjtable = this.get('char.custom.hjtables');
+
+				if (val) {
+					tmptable = Object.values(hjtable).filter(slots => slots.name.toString().toLowerCase() == val.name.toLowerCase()); // Convert hjtables to an array and filter for any entries that match the new framework selected.
+
+					if (tmptable.length > 0) {
+							tmptable[0]['table'] = val.table;
+					} else { // We're looking at hjtable not being populated. Need to cycle through HJSlots to ensure the hjtable object is setup correctly.
+						var tmptable1 = {};
+						for (const [key, value] of Object.entries(hjslots)) {
+							tmptable1[key] = {};
+							if (val.name == key) {
+								tmptable1[val.name]['table'] = val.table;
+								tmptable1[val.name]['name'] = val.name;
+							} else {
+								tmptable1[key]['table'] = 'None';
+								tmptable1[key]['name'] = key;
+							}
 						}
+						hjtable = tmptable1;
 					}
-					hjtable = tmptable1;
-				}
-				this.set ('char.custom.hjtables', hjtable);
-          }
+					this.set ('char.custom.hjtables', hjtable);
+			}
 		},
+
+		perkchanged(group, val) {
+			var syshind, charhind, nofwhind, maxhindcounter, hindcounter, points1;
+			points1 = 0;  // Use this to add up the number of perks from hinderances
+			hindcounter = this.get('char.custom.charhindpoints'); // Get the points set on the characters - what use is this (19 Feb 2023)
+
+			return hindcounter;
+
+		}
 
 	},
 
