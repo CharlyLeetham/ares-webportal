@@ -54,6 +54,12 @@ export default Component.extend({
 		return points1;
 	}),
 
+	perkactions: computed(function()) {
+		const perkactions;
+		perkactions = ['Raise An Attribute', 'Raise A Skill (2 per perk)', 'Add an Edge ( 1 per perk)'];
+		return perkactions;
+	}
+
   hjtables: computed(function() {
     var newhjtables, sysiconicfall, charicf;
     sysiconicfall = this.get('char.custom.sysiconicf');
