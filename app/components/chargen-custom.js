@@ -1161,31 +1161,23 @@ export default Component.extend({
 
 		hindChanged( val ) {
 			var syshind, charhind, dislist, dislist33, trexcludes, nofwhind, maxhindcounter, hindcounter, points1;
-			points1 = 0;
+			points1 = 0;  // Use this to add up the number of perks from hinderances
 			syshind = this.get('char.custom.syshind'); // System Hinderances
 			charhind = this.get('char.custom.cghind'); // Hinderances set on the character by the frameworks
 			nofwhind = this.get('char.custom.cghindnofw'); // Hinderances chosen by the character
       		maxhindcounter = 4; //This might get set by a YAML later. Maximum number of hinderance points that can be converted to Perks.
-			// hindcounter = 0;
-			hindcounter = this.get('char.custom.charhindpoints'); // Get the points set on the characters
-			// hindcounter = parseInt(hindcounter);
-
-			// console.log (val);
-			// console.log (syshind);
-			// console.log (charhind);
-			//console.log ('nofwhind: '+nofwhind);
-			console.log ('hindcounter: '+typeof(hindcounter));
-			console.log (typeof(points1));
+			hindcounter = this.get('char.custom.charhindpoints'); // Get the points set on the characters - what use is this (19 Feb 2023)
 
 			for ( const[k1, v1] of Object.entries(val) ) {
 					if ( v1.hasOwnProperty('points') ) {
 						points1 = points1+v1['points'];
-						console.log ('v1 (points) :'+v1['points']);
 					} else if ( v1.hasOwnProperty('hind_points' )) {
 						points1 = points1+parseInt(v1['hind_points']);
-						console.log ('v1 (hind_points) :'+v1['hind_points']);
 					}
-					console.log( 'Hindcounter: '+points1 );
+			}
+
+			if (points1 > maxhindcounter) {
+				points1 = maxhindcounter;
 			}
 
 			// Check the hinderances that are set by the player (not the frameworks) and determine which other hinderances need to be changed.
@@ -1229,10 +1221,6 @@ export default Component.extend({
 			if ( val ) {
 					for (const [key, value] of Object.entries(val)) {
 						value['disabled']=false;
-						hindcounter = value['hind_points']+hindcounter;
-						if ( hindcounter >= maxhindcounter ) {
-							hindcounter = maxhindcounter;
-						}	
 						//console.log ( hindcounter );
 						dislist = Object.values(syshind).filter(slots => slots.name.toString().toLowerCase() == value['name'].toLowerCase()); // Convert sysedges to an array and filter for any entries that match the new framework selected.
 						dislist[0]['disabled'] = true;
@@ -1241,9 +1229,9 @@ export default Component.extend({
 						}
 					}
 				}
-			console.log ('hindcounter: '+hindcounter);
+			console.log ('hindcounter: '+points1);
 			this.set('char.custom.cghindnofw', val); // Set the chosen hinderances back to the character object
-			this.set('char.custom.charhindpoints', hindcounter); // Set the number of hindpoints the character can spend on their object
+			this.set('char.custom.charhindpoints', points1); // Set the number of hindpoints the character can spend on their object
 		},
 
     groupChanged(group, val) {
