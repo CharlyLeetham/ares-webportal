@@ -38,7 +38,7 @@ export default Component.extend({
 	charhindpoints: computed(function() {
 		var charhindpoints;
 		charhindpoints = this.get('char.custom.charhindpoints');
-		if (charpoints === '') {
+		if (charhindpoints === '') {
 			return '4';
 		} else {
 			return charhindpoints;
