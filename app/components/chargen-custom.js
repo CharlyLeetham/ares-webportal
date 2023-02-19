@@ -54,7 +54,7 @@ export default Component.extend({
 		return points1;
 	}),
 
-	perkactions: computed(function()) {
+	perkactions: computed(function() {
 		const perkactions;
 		perkactions = ['Raise An Attribute', 'Raise A Skill (2 per perk)', 'Add an Edge ( 1 per perk)'];
 		return perkactions;
