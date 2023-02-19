@@ -35,20 +35,31 @@ export default Component.extend({
 	}),
 
 	charhindpoints: computed(function() {
-		var charhindpoints;
-		charhindpoints = this.get('char.custom.charhindpoints');
+		var points1;
+		points1 = 0;  // Use this to add up the number of perks from hinderances
+		nofwhind = this.get('char.custom.cghindnofw'); // Hinderances chosen by the character
+		maxhindcounter = 4; //This might get set by a YAML later. Maximum number of hinderance points that can be converted to Perks.
+		for ( const[k1, v1] of Object.entries(nofwhind) ) {
+				if ( v1.hasOwnProperty('points') ) {
+					points1 = points1+v1['points'];
+				} else if ( v1.hasOwnProperty('hind_points' )) {
+					points1 = points1+parseInt(v1['hind_points']);
+				}
+		}
+
+		if (points1 > maxhindcounter) {
+			points1 = maxhindcounter;
+		}
+
+		return points1;
 	}),
 
   hjtables: computed(function() {
     var newhjtables, sysiconicfall, charicf;
     sysiconicfall = this.get('char.custom.sysiconicf');
     charicf = this.get('char.custom.charicf');
-    //console.log (sysiconicfall);
-    //console.log ('Charicf:');
-    //console.log (charicf);
 
     newhjtables = Object.values(sysiconicfall).filter(slots => slots.name.toString().toLowerCase() == charicf['class'].toLowerCase()); // Convert swiconicfall to an array and filter for any entries that match the new framework selected.
-    //console.log (newhjtables);
     newhjtables = newhjtables[0];
 
     if (newhjtables) {
