@@ -108,7 +108,12 @@
 					</PowerSelectMultiple>
 				</div>
 				<div class="row">
-					<p class="heading">Perk Points: {{{ansi-format text=this.charhindpoints}}}</p>
+					<p class="heading">Perk Points: {{{#if this.charhindpoints}}}
+						{{{ansi-format text=this.charhindpoints}}}
+						{{else}}
+						4
+						{{/if}}
+					</p>
 					<p> Let's set up the counter for how many are selected to start with.</p> 
 					<p>Up to 4 Perk Points. 2 per Major Hinderance, 1 per Minor Hinderance. <br />
 					<ul>
