@@ -38,11 +38,6 @@ export default Component.extend({
 	charhindpoints: computed(function() {
 		var charhindpoints;
 		charhindpoints = this.get('char.custom.charhindpoints');
-		if (charhindpoints === '') {
-			return '4';
-		} else {
-			return charhindpoints;
-		}
 	}),
 
   hjtables: computed(function() {
@@ -1170,14 +1165,14 @@ export default Component.extend({
 			charhind = this.get('char.custom.cghind'); // Hinderances set on the character by the frameworks
 			nofwhind = this.get('char.custom.cghindnofw'); // Hinderances chosen by the character
       		maxhindcounter = 4; //This might get set by a YAML later. Maximum number of hinderance points that can be converted to Perks.
-			hindcounter = 0;
-			//hindcounter = this.get('char.custom.charhindpoints'); // Get the points set on the characters
-
-
+			// hindcounter = 0;
+			hindcounter = this.get('char.custom.charhindpoints'); // Get the points set on the characters
+			
 			console.log (val);
 			// console.log (syshind);
 			// console.log (charhind);
 			//console.log ('nofwhind: '+nofwhind);
+			console.log ('hindcounter: '+hindcounter);
 
 			for ( const[k1, v1] of Object.entries(val) ) {
 					console.log (v1);
