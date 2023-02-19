@@ -1176,10 +1176,10 @@ export default Component.extend({
 
 			for ( const[k1, v1] of Object.entries(val) ) {
 					if ( v1.hasOwnProperty('points') ) {
-						hindcounter = hindcounter+v1['points'];
+						hindcounter = parseInt(hindcounter)+parseInt(v1['points']);
 						console.log ('v1 (points) :'+v1['points']);
 					} else if ( v1.hasOwnProperty('hind_points' )) {
-						hindcounter = hindcounter+v1['hind_points'];
+						hindcounter = parseInt(hindcounter)+parseInt(v1['hind_points']);
 						console.log ('v1 (hind_points) :'+v1['hind_points']);
 					}
 					console.log( 'Hindcounter: '+hindcounter );
