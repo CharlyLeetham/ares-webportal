@@ -1284,9 +1284,8 @@ export default Component.extend({
 			var syshind, charhind, nofwhind, maxhindcounter, hindcounter, points1;
 			points1 = 0;  // Use this to add up the number of perks from hinderances
 			hindcounter = this.get('char.custom.charhindpoints'); // Get the points set on the characters - what use is this (19 Feb 2023)
-
-			return hindcounter;
-
+			this.set('char.custom.charperks', val); // Set the chosen Perks back to the character object
+			console.log (val);
 		}
 
 	},
