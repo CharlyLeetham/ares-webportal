@@ -119,8 +119,8 @@
 				</div> <!-- Perks Heading -->
 				<div class="row">
 					<p class="heading"><strong>Choose A Perk:</strong> </p>
-					<PowerSelectMultiple @options={{this.perkactions}} @onChange={{action "perkchanged"}} as |name|>
-					{{name}}
+					<PowerSelectMultiple @options={{this.perkactions}} @onChange={{action "perkchanged"}} as |perk|>
+					{{perk.name}}
 					</PowerSelectMultiple>
 
 				</div>
