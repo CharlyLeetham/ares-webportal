@@ -60,11 +60,11 @@ export default Component.extend({
 		perkactions[1]=[];
 		perkactions[2]=[];
 		perkactions[0]['name'] = 'Raise An Attribute (2 perks per attribute)';
-		perkactions[0]['points] = 1;
+		perkactions[0]['points'] = 1;
 		perkactions[1]['name'] = 'Raise A Skill (1 perk per Skill)';
 		perkactions[1]['points'] = 1;
 		perkactions[2]['name'] = 'Add an Edge ( 1 perk per Edge)';
-		perkactions[2]['points] = 1;
+		perkactions[2]['points'] = 1;
 		return perkactions;
 	} ),
 
