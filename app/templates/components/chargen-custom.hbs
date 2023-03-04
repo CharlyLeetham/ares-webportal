@@ -118,7 +118,7 @@
 					</p>
 				</div> <!-- Perks Heading -->
 				<!-- Show a dropdown for each perk point available -->
-				{{#if char.custom.charhindpoints}}
+				{{#if this.char.custom.charhindpoints}}
 					{{#each this.char.custom.charhindpoints as |charhind index|}}
 						<div class="row">
 							<p class="heading"><strong>Choose A Perk: (set charhindpoints index: {{index}})</strong> </p>
@@ -137,14 +137,6 @@
 						</div>	
 					{{/each}}					
 				{{/if}}
-
-				<div class="row">
-					<p class="heading"><strong>Choose A Perk:</strong> </p>
-					<PowerSelectMultiple @options={{this.perkactions}} @onChange={{action "perkchanged"}} as |perk|>
-					{{perk.name}}
-					</PowerSelectMultiple>
-
-				</div>
 			</div>
 
 			<!-- end New Fourth Row -->
