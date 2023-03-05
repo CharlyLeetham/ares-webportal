@@ -50,6 +50,11 @@ export default Component.extend({
 		if (points1 > maxhindcounter) {
 			points1 = maxhindcounter;
 		}
+
+		if (points1 <= 0) {
+			points1 = 0;
+		}
+		
 		console.log (points1);
 		return points1;
 	}),
