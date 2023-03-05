@@ -133,6 +133,7 @@
 					<p> Test 2</p>
 					{{#each-in this.char.charhindpoints as |charhind index|}}				
 						<div class="row">
+							{{index}}
 							<p class="heading"><strong>Choose A Perk: (dynamic charhindpoints index: {{index}}</strong> </p>
 							<PowerSelectMultiple @options={{this.perkactions}} @onChange={{action "perkchanged"}} as |perk|>
 							{{perk.name}}
