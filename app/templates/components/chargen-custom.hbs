@@ -117,15 +117,15 @@
 				<!-- Show a dropdown for each perk point available -->
 				{{#if this.charhindpoints}}
 					<p> Test </p>
-					{{#each-in this.charhindpoints as |index|}}
-						<p>dddd{{index}} </p>
+					{{#each this.charhindpoints as |key|}}
+						<p>dddd </p>
 						<div class="row">
 							<p class="heading"><strong>Choose A Perk: (set charhindpoints index: {{index}})</strong> </p>
 							<PowerSelectMultiple @options={{this.perkactions}} @onChange={{action "perkchanged"}} as |perk|>
 							{{perk.name}}
 							</PowerSelectMultiple>
 						</div>
-					{{/each-in}}					
+					{{/each}}					
 				{{else}}
 					<p> Test here</p>
 					{{#each-in this.char.charperkpoints as |charpoint index|}}				
