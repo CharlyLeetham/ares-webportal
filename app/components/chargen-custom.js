@@ -73,7 +73,7 @@ export default Component.extend({
 		console.log (charperkpoints);
 		while ( i < charperkpoints) {
 			perkarray[i]=[];	
-			perkarray[i]['name']= 'Perk '+i;
+			perkarray[i]['name']= 'Perk '+(i+1);
 			console.log('i: '+i);
 			i++;
 		}
