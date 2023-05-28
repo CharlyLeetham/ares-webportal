@@ -56,6 +56,7 @@ export default Component.extend({
 		}
 		
 		console.log (points1);
+		this.set('char.custom.charhindpoints', finaltraits); //Send the new array back to the page for nice display.
 		return points1;
 	}),
 
