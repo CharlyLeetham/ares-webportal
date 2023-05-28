@@ -118,9 +118,8 @@
 				{{#if this.charhindpoints}}
 					<p> Test </p>
 					<p> {{{ansi-format text=this.createperkarray}}} </p>
-					<p> {{this.createperkarray}}</p>
-					{{#each this.charhindpoints as |key|}}
-						<p>dddd </p>
+					{{#each-in this.createperkarray as |key count|}}
+						<p>Key: {{key}}  Count: {{count}}</p>
 						<div class="row">
 							<p class="heading"><strong>Choose A Perk: (set charhindpoints index: {{index}})</strong> </p>
 							<PowerSelectMultiple @options={{this.perkactions}} @onChange={{action "perkchanged"}} as |perk|>
