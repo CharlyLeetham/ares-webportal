@@ -36,7 +36,7 @@ export default Component.extend({
 
 	charperks: computed(function() {
 		var swcharperks;
-		swcharperks=this.get('char.custom.perks');
+		swcharperks=this.get('char.custom.charperkpoints');
 		return swcharperks;
 	}),
 
