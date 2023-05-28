@@ -119,7 +119,7 @@
 					<p> Test </p>
 					<p> {{{ansi-format text=this.createperkarray}}} </p>
 					{{#each-in this.createperkarray as |key count|}}
-						<p>Key: {{key}}  Count: {{count}}</p>
+						<p>Key: {{key}}  Count: {{count.name}}</p>
 						<div class="row">
 							<p class="heading"><strong>Choose A Perk: (set charhindpoints index: {{index}})</strong> </p>
 							<PowerSelectMultiple @options={{this.perkactions}} @onChange={{action "perkchanged"}} as |perk|>
