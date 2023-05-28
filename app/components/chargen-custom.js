@@ -67,12 +67,11 @@ export default Component.extend({
 	}),
 
 	createperkarray: computed(function() {
-		var i, charperkpoints, text;
-		i = 1;
+		var perkarray=[], i, charperkpoints, text;
+		i = 0;
 		charperkpoints = this.get('char.custom.charperkpoints');
 		console.log (charperkpoints);
-		while ( i <= charperkpoints) {
-			var perkarray[i]=[];	
+		while ( i < charperkpoints) {	
 			perkarray[i]['name']= 'Perk '+i;
 			console.log('i: '+i);
 			i++;
