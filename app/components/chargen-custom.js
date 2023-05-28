@@ -38,7 +38,7 @@ export default Component.extend({
 		var swcharperks;
 		swcharperks=this.get('char.custom.perks');
 		return swcharperks;
-	})
+	}),
 
 	charhindpoints: computed(function() {
 		var points1, nofwhind, maxhindcounter;
