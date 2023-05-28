@@ -118,9 +118,9 @@
 					</p>
 				</div> <!-- Perks Heading -->
 				<!-- Show a dropdown for each perk point available -->
-				{{#if char.custom.charhindpoints}}
+				{{#if this.charhindpoints}}
 					<p> Test </p>
-					{{#each-in this.char.custom.charhindpoints as |charhind index|}}
+					{{#each-in this.charhindpoints as |charhind index|}}
 						{{index}}
 						<div class="row">
 							<p class="heading"><strong>Choose A Perk: (set charhindpoints index: {{index}})</strong> </p>
@@ -131,7 +131,7 @@
 					{{/each-in}}					
 				{{else}}
 					<p> Test here</p>
-					{{#each-in this.char.charhindpoints as |charhind index|}}				
+					{{#each-in this.char.charperkpoints as |charpoint index|}}				
 						<div class="row">
 							{{index}}
 							<p class="heading"><strong>Choose A Perk: (dynamic charhindpoints index: {{index}}</strong> </p>
