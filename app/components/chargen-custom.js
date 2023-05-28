@@ -77,6 +77,7 @@ export default Component.extend({
 			console.log('i: '+i);
 			i++;
 		}
+		console.log(perkarray);
 		return perkarray;
 	}),
 
