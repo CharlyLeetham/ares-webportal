@@ -115,7 +115,6 @@
 					</p>
 				</div> <!-- Perks Heading -->
 				<!-- Show a dropdown for each perk point available -->
-				{{#if this.charhindpoints}}
 					<p> Test </p>
 					<p> {{{ansi-format text=this.createperkarray}}} </p>
 					{{#each-in this.createperkarray as |key count|}}
@@ -126,7 +125,6 @@
 							</PowerSelectMultiple>
 						</div>
 					{{/each-in}}
-				{{/if}}
 			</div>
 
 			<!-- end New Fourth Row -->
