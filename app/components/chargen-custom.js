@@ -62,15 +62,15 @@ export default Component.extend({
 		}
 		
 		console.log (points1);
-		//this.set('char.custom.charhindpoints', points1); //Send the new array back to the page for nice display.
+		this.set('char.custom.charperkpoints', points1); //Send the new array back to the page for nice display.
 		return points1;
 	}),
 
 	createperkarray: computed(function() {
 		var perkarray, i;
-		console.log (this.charhindpoints);
-		while ( i <= this.charhindpoints) {		
-			perkarray[key]['name'] = 'Perk '+key;
+		console.log (char.custom.charperkpoints);
+		while ( i <= char.custom.charperkpoints) {		
+			perkarray[i]['name'] = 'Perk '+key;
 			console.log('i: '+i);
 			i++;
 		}
