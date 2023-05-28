@@ -119,26 +119,13 @@
 					<p> Test </p>
 					<p> {{{ansi-format text=this.createperkarray}}} </p>
 					{{#each-in this.createperkarray as |key count|}}
-						<p>Key: {{key}}  Count: {{count.name}}</p>
 						<div class="row">
-							<p class="heading"><strong>Choose A Perk: (set charhindpoints index: {{index}})</strong> </p>
+							<p class="heading"><strong>Choose Perk {{count.name}}:</strong> </p>
 							<PowerSelectMultiple @options={{this.perkactions}} @onChange={{action "perkchanged"}} as |perk|>
 							{{perk.name}}
 							</PowerSelectMultiple>
 						</div>
-					{{/each-in}}					
-				{{else}}
-					<p> Test here</p>
-					{{#each-in this.char.charperkpoints as |charpoint index|}}				
-						<div class="row">
-							{{index}}
-							<p class="heading"><strong>Choose A Perk: (dynamic charhindpoints index: {{index}}</strong> </p>
-							<PowerSelectMultiple @options={{this.perkactions}} @onChange={{action "perkchanged"}} as |perk|>
-							{{perk.name}}
-							</PowerSelectMultiple>
-						</div>	
-					{{/each-in}}					
-				{{/if}}
+					{{/each-in}}
 			</div>
 
 			<!-- end New Fourth Row -->
