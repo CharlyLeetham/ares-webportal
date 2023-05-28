@@ -34,6 +34,12 @@ export default Component.extend({
 		return swiconicf;
 	}),
 
+	charperks: computed(function() {
+		var swcharperks;
+		swcharperks=this.get('char.custom.perks');
+		return swcharperks;
+	})
+
 	charhindpoints: computed(function() {
 		var points1, nofwhind, maxhindcounter;
 		points1 = 0;  // Use this to add up the number of perks from hinderances
