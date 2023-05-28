@@ -72,7 +72,7 @@ export default Component.extend({
 			perkarray[key]['name'] = 'Perk '+key;
 		}
 		return perkarray;
-	})
+	}),
 
 	perkactions: computed(function() {
 		var perkactions=[];
