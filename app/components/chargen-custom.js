@@ -51,7 +51,7 @@ export default Component.extend({
 			points1 = maxhindcounter;
 		}
 
-		//this.set('char.custom.charperkpoints', points1);
+		this.set('char.custom.charperkpoints', points1);
 		return points1;
 	}),
 
