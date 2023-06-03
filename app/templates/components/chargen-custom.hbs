@@ -116,10 +116,9 @@
 				<div class="row">
 					<!-- Hindpoints (also known as Perk Points) are defined in swrifts_hinderances.yml.  The js function [[function name pls]] in app/components/chargen-custom.js should add these all together. If they exceed 4, then only 4 should be shown in the field below.  4 is the maximun number of perk points a character can have. -->
 					<p class="heading"><strong>Perk Points:</strong> 
-						{{{ansi-format text=this.computedcharhind}}}<br />
-						{{{ansi-format text=this.newcharhindpoints }}}<br />
+						{{{ansi-format text=this.charperks}}}<br />
 
-						{{#each-in this.computedcharhind as |index value|}}		
+						{{#each-in this.charperks as |index value|}}		
 							{{index}} | {{value}}
 						{{/each-in}}
 
