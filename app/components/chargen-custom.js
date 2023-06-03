@@ -353,7 +353,7 @@ export default Component.extend({
 		perkpoints['points'] = points1;
 		console.log ("newcharhindpoints:" +points1);
 		this.set('char.custom.charperkpoints', points1); //Send the new array back to the page for nice display.
-		return perkpoints;		
+		return;		
 	},
 
 	checktrait: function(swraceall, swiconicfall, swrace, swiconicf, chosenifarray, newval, traittype) {
