@@ -94,6 +94,12 @@ export default Component.extend({
     return (tmptable);
   }),
 
+  	computedcharhind: computed(function() {
+		var swiconicf;
+		swiconicf = this.get('char.custom.charperkpoints');
+		return swiconicf;
+	}),
+
 	ck_excludes: function(dislist, sysedg, traittype) {
 		var trexcludes;
 		// Check to see the Hinderance excludes others and mark them as disabled.
