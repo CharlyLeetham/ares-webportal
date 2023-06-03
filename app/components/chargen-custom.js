@@ -1190,7 +1190,7 @@ export default Component.extend({
 		},
 
 		hindChanged( val ) {
-			var syshind, charhind, dislist, dislist33, trexcludes, nofwhind, maxhindcounter, hindcounter, points1;
+			var syshind, charhind, dislist, dislist33, trexcludes, nofwhind, maxhindcounter, hindcounter, points1, newhindpoints;
 			points1 = 0;  // Use this to add up the number of perks from hinderances
 			syshind = this.get('char.custom.syshind'); // System Hinderances
 			charhind = this.get('char.custom.cghind'); // Hinderances set on the character by the frameworks
