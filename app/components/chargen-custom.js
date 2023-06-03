@@ -349,9 +349,11 @@ export default Component.extend({
 	newcharhindpoints: function (points1) {
 		//Passed In:
 		// points1 = From the hindchanged function - calculated Perks based on hinderances
+		var swiconicf, perkpoints=[];
+		perkpoints['points'] = points1;
 		console.log ("newcharhindpoints:" +points1);
 		this.set('char.custom.charperkpoints', points1); //Send the new array back to the page for nice display.
-		return;
+		return perkpoints;		
 	},
 
 	checktrait: function(swraceall, swiconicfall, swrace, swiconicf, chosenifarray, newval, traittype) {
