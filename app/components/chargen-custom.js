@@ -109,13 +109,6 @@ export default Component.extend({
     return (tmptable);
   }),
 
-  	computedcharhind: computed(function() {
-		var swiconicf, perkpoints=[];
-		swiconicf = this.get('char.custom.charperkpoints');
-		perkpoints['points'] = swiconicf;
-		return perkpoints;
-	}),
-
 	ck_excludes: function(dislist, sysedg, traittype) {
 		var trexcludes;
 		// Check to see the Hinderance excludes others and mark them as disabled.
