@@ -97,7 +97,6 @@ export default Component.extend({
   	computedcharhind: computed(function() {
 		var swiconicf, perkpoints=[];
 		swiconicf = this.get('char.custom.charperkpoints');
-		perkpoints['name'] = 'Total Points';
 		perkpoints['points'] = swiconicf;
 		return perkpoints;
 	}),
