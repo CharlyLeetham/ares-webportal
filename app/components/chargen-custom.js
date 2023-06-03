@@ -35,10 +35,22 @@ export default Component.extend({
 	}),
 
 	charperks: computed(function() {
-		var swcharperks, swhinds;
-		swhinds = this.get('char.custom.cghindnofw')
-		swcharperks=this.get('char.custom.charperkpoints');
-		return swhinds;
+		var swcharperks, swhinds, maxhindcounter;
+		swhinds = this.get('char.custom.cghindnofw');
+		maxhindcounter = 4;
+		for ( const[k1, v1] of Object.entries(swhinds) ) {
+			if ( v1.hasOwnProperty('points') ) {
+				points1 = points1+v1['points'];
+			} else if ( v1.hasOwnProperty('hind_points' )) {
+				points1 = points1+parseInt(v1['hind_points']);
+			}
+		}	
+
+		if (points1 > maxhindcounter) {
+			points1 = maxhindcounter;
+		}		
+		this.set('char.custom.charperkpoints', points1);
+		return points;
 	}),
 
 	createperkarray: computed(function() {
