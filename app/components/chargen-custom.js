@@ -346,7 +346,7 @@ export default Component.extend({
 	},
 
 	newcharhindpoints: function (points1) {
-		//Passed In://
+		//Passed In:
 		// points1 = From the hindchanged function - calculated Perks based on hinderances
 		console.log ("newcharhindpoints:" +points1);
 		this.set('char.custom.charperkpoints', points1); //Send the new array back to the page for nice display.
