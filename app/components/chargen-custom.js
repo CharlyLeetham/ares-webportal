@@ -39,6 +39,7 @@ export default Component.extend({
 		swhinds = this.get('char.custom.cghindnofw');
 		maxhindcounter = 4;
 		points1=0;
+		console.log (swhinds);
 		for ( const[k1, v1] of Object.entries(swhinds) ) {
 			if ( v1.hasOwnProperty('points') ) {
 				points1 = points1+v1['points'];
