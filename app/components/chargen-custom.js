@@ -94,7 +94,7 @@ export default Component.extend({
     return (tmptable);
   }),
 
-  	computedcharhind: computed('model.char.swrifts.charperkpoints', function() {
+  	computedcharhind: computed(function() {
 		var swiconicf;
 		swiconicf = this.get('char.custom.charperkpoints');
 		return swiconicf;
@@ -350,7 +350,7 @@ export default Component.extend({
 		// points1 = From the hindchanged function - calculated Perks based on hinderances
 		console.log ("newcharhindpoints:" +points1);
 		this.set('char.custom.charperkpoints', points1); //Send the new array back to the page for nice display.
-		return points1;
+		return (points1);
 	},
 
 	checktrait: function(swraceall, swiconicfall, swrace, swiconicf, chosenifarray, newval, traittype) {
