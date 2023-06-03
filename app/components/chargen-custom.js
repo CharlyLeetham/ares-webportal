@@ -61,7 +61,7 @@ export default Component.extend({
 			points1 = 0;
 		}
 		
-		console.log (points1);
+		console.log ("Points1:" +points1);
 		this.set('char.custom.charperkpoints', points1); //Send the new array back to the page for nice display.
 		return points1;
 	}),
