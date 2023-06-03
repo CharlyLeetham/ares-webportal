@@ -40,32 +40,6 @@ export default Component.extend({
 		return swcharperks;
 	}),
 
-	charhindpoints: computed(function() {
-		var points1, nofwhind, maxhindcounter;
-		points1 = 0;  // Use this to add up the number of perks from hinderances
-		nofwhind = this.get('char.custom.cghindnofw'); // Hinderances chosen by the character
-		maxhindcounter = 4; //This might get set by a YAML later. Maximum number of hinderance points that can be converted to Perks.
-		for ( const[k1, v1] of Object.entries(nofwhind) ) {
-				if ( v1.hasOwnProperty('points') ) {
-					points1 = points1+v1['points'];
-				} else if ( v1.hasOwnProperty('hind_points' )) {
-					points1 = points1+parseInt(v1['hind_points']);
-				}
-		}
-
-		if (points1 > maxhindcounter) {
-			points1 = maxhindcounter;
-		}
-
-		if (points1 <= 0) {
-			points1 = 0;
-		}
-		
-		console.log ("Points1:" +points1);
-		this.set('char.custom.charperkpoints', points1); //Send the new array back to the page for nice display.
-		return points1;
-	}),
-
 	createperkarray: computed(function() {
 		var perkarray=[], i, charperkpoints, text;
 		i = 0;
@@ -364,6 +338,14 @@ export default Component.extend({
 		}
 		return (finaltraits);
 	},
+
+	newcharhindpoints: function (points1) {
+		//Passed In://
+		// points1 = From the hindchanged function - calculated Perks based on hinderances
+		console.log ("newcharhindpoints:" +points1);
+		this.set('char.custom.charperkpoints', points1); //Send the new array back to the page for nice display.
+		return points1;
+	}),
 
 	checktrait: function(swraceall, swiconicfall, swrace, swiconicf, chosenifarray, newval, traittype) {
 		//// Passed in: ///
@@ -1278,6 +1260,7 @@ export default Component.extend({
 					}
 				}
 			console.log ('hindcounter: '+points1);
+			newhindpoints = this.newcharhindpoints(points1);	// This returns nothing. It's not used in this function, it's used to adjust other arrays on the page.
 			this.set('char.custom.cghindnofw', val); // Set the chosen hinderances back to the character object
 			this.set('char.custom.charhindpoints', points1); // Set the number of hindpoints the character can spend on their object
 		},
