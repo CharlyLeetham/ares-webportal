@@ -95,9 +95,11 @@ export default Component.extend({
   }),
 
   	computedcharhind: computed(function() {
-		var swiconicf;
+		var swiconicf, perkpoints=[];
 		swiconicf = this.get('char.custom.charperkpoints');
-		return swiconicf;
+		perkpoints['name'] = 'Total Points';
+		perkpoints['points'] = swiconicf;
+		return perkpoints;
 	}),
 
 	ck_excludes: function(dislist, sysedg, traittype) {
@@ -350,7 +352,6 @@ export default Component.extend({
 		// points1 = From the hindchanged function - calculated Perks based on hinderances
 		console.log ("newcharhindpoints:" +points1);
 		this.set('char.custom.charperkpoints', points1); //Send the new array back to the page for nice display.
-		//return (points1);
 		return;
 	},
 
