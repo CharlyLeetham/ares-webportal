@@ -94,7 +94,7 @@ export default Component.extend({
     return (tmptable);
   }),
 
-  	computedcharhind: computed(function() {
+  	computedcharhind: computed('model.char.swrifts.charperkpoints' function() {
 		var swiconicf;
 		swiconicf = this.get('char.custom.charperkpoints');
 		return swiconicf;
