@@ -35,9 +35,10 @@ export default Component.extend({
 	}),
 
 	charperks: computed(function() {
-		var swcharperks;
+		var swcharperks, swhinds;
+		swhinds = this.get('char.custom.cghindnofw')
 		swcharperks=this.get('char.custom.charperkpoints');
-		return swcharperks;
+		return swhinds;
 	}),
 
 	createperkarray: computed(function() {
