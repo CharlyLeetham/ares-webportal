@@ -35,7 +35,7 @@ export default Component.extend({
 	}),
 
 	charperks: computed(function() {
-		var swcharperks, swhinds, maxhindcounter;
+		var swcharperks, swhinds, maxhindcounter, points1;
 		swhinds = this.get('char.custom.cghindnofw');
 		maxhindcounter = 4;
 		for ( const[k1, v1] of Object.entries(swhinds) ) {
