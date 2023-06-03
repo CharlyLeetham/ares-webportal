@@ -118,10 +118,10 @@
 					<p class="heading"><strong>Perk Points:</strong> 
 						{{{ansi-format text=this.computedcharhind}}}
 
-						{{#each this.computedcharhind as |index value|}}		
+						{{#each-in this.computedcharhind as |index value|}}		
 							{{index}} | {{value}}
 
-						{{/each}}		
+						{{/each-in}}		
 							<!-- This does not update dynamically. Could use a text field to do that or find out how to use jscript to do it -->			
 					</p>
 				</div> <!-- Perks Heading -->
