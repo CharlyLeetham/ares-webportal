@@ -48,9 +48,10 @@ export default Component.extend({
 
 		if (points1 > maxhindcounter) {
 			points1 = maxhindcounter;
-		}		
+		}
+
 		this.set('char.custom.charperkpoints', points1);
-		return points;
+		return points1;
 	}),
 
 	createperkarray: computed(function() {
