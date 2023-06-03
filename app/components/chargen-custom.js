@@ -345,7 +345,7 @@ export default Component.extend({
 		console.log ("newcharhindpoints:" +points1);
 		this.set('char.custom.charperkpoints', points1); //Send the new array back to the page for nice display.
 		return points1;
-	}),
+	},
 
 	checktrait: function(swraceall, swiconicfall, swrace, swiconicf, chosenifarray, newval, traittype) {
 		//// Passed in: ///
