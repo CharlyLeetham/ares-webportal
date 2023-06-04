@@ -1222,7 +1222,7 @@ export default Component.extend({
 
 			//if (newperktables) {
 				console.log ('Here');
-				for (x=0; x <= points1; x++) {
+				for (x=0; x < points1; x++) {
 					perkname = "perk"+(x+1);
 					console.log('Perk Name:' + perkname);
 					newperktables[perkname]=[];
