@@ -136,7 +136,7 @@
 					<!-- Perks Heading -->
 					<!-- Show a dropdown for each perk point available -->
 					
-					{{#each-in this.char.custom.charhindpoints as |key count|}}
+					{{#each-in char.custom.charhindpoints as |key count|}}
 						<div class="row">
 							<p class="heading"><strong>Choose Perk {{count.name}}:</strong> </p>
 							<PowerSelectMultiple @options={{this.perkactions}} @onChange={{action "perkchanged"}} as |perk|>
