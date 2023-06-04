@@ -111,7 +111,9 @@ export default Component.extend({
     return (tmptable);
   }),
 
-  	testingperks: function()
+  	testingperks: function() {
+		//
+	}
 
 	ck_excludes: function(dislist, sysedg, traittype) {
 		var trexcludes;
