@@ -136,12 +136,14 @@
 					<!-- Perks Heading -->
 					<!-- Show a dropdown for each perk point available -->
 					
-					{{#each-in char.custom.charhindpoints as |key count|}}
+					{{#each-in char.custom.swperks as |key count|}}
 						<div class="row">
-							<p class="heading"><strong>Choose Perk {{count.name}}:</strong> </p>
-							<PowerSelectMultiple @options={{this.perkactions}} @onChange={{action "perkchanged"}} as |perk|>
-							{{perk.name}}
-							</PowerSelectMultiple>
+							<p class="heading"><strong>Choose Perk {{key}}:</strong> </p>
+							<div id="key">
+								<PowerSelectMultiple @options={{value}} @onChange={{action "perkchanged"}} as |perk|>
+								{{perk.name}}
+								</PowerSelectMultiple>
+							</div>
 						</div>
 					{{/each-in}}
 				</div>
