@@ -1220,7 +1220,7 @@ export default Component.extend({
 			var newperktables = [], x, y, perkname, perkactions=[];
 			newperktables = newperktables[0];
 
-			if (newperktables) {
+			//if (newperktables) {
 				console.log ('Here');
 				for (x=0; x <= points1; x++) {
 					perkname = "perk"+(x+1);
@@ -1230,7 +1230,7 @@ export default Component.extend({
 						perkactions['perkname'][k1] = v1;
 					}
 				}
-			}
+			//}
 			console.log('points: '+points1);
 			console.log(perkactions);
 			this.set('char.custom.swperks', perkactions); //Send the new array back to the page for nice display.
