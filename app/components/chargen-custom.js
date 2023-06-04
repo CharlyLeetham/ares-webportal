@@ -1229,6 +1229,7 @@ export default Component.extend({
 					}
 				}
 			}
+			console.log('points: '+points1);
 			console.log(perkactions);
 			this.set('char.custom.swperks', perkactions); //Send the new array back to the page for nice display.
 			/*
