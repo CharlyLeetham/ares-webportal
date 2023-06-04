@@ -1227,13 +1227,13 @@ export default Component.extend({
 					console.log('Perk Name:' + perkname);
 					newperktables[perkname]=[];
 					for ( const[k1, v1] of Object.entries(newcharperks) ) {
-						perkactions[perkname][k1] = v1;
+						newperktables[perkname][k1] = v1;
 					}
 				}
 			//}
 			console.log('points: '+points1);
-			console.log(perkactions);
-			this.set('char.custom.swperks', perkactions); //Send the new array back to the page for nice display.
+			console.log(newperktables);
+			this.set('char.custom.swperks', newperktables); //Send the new array back to the page for nice display.
 			/*
 			//Reset Heroes Journeys already set on the character
 			hjtables = [];
