@@ -113,7 +113,7 @@ export default Component.extend({
 
   	testingperks: function() {
 		//
-	}
+	},
 
 	ck_excludes: function(dislist, sysedg, traittype) {
 		var trexcludes;
