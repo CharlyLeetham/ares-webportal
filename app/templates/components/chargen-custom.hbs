@@ -132,7 +132,10 @@
 							 {{#each-in this.char.custom.charperkpoints as |k v|}}
 							 K: {{k}}  -
 								 {{#each-in v as |x z| }}
-									 x: {{x}} __ z: {{z}}
+									 x: {{x}} __ z: 
+									 {{#each-in z as | a b | }}
+									 	a: {{a}} __ b: {{b}}
+									 {{/each-in}}
 								 {{/each-in}}
 								 <br />
 						 {{/each-in}}								
