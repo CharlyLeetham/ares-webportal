@@ -140,7 +140,7 @@
 						<div class="row">
 							<p class="heading"><strong>Choose Perk {{key}}:</strong> </p>
 							<div id="{{key}}">
-								<PowerSelectMultiple @options={{value}} @onChange={{action "perkchanged"}} as |perk|>
+								<PowerSelectMultiple @options={{count}} @onChange={{action "perkchanged"}} as |perk|>
 								{{perk.name}}
 								</PowerSelectMultiple>
 							</div>
