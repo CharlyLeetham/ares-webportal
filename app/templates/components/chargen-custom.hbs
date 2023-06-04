@@ -139,7 +139,7 @@
 					{{#each-in char.custom.swperks as |key count|}}
 						<div class="row">
 							<p class="heading"><strong>Choose Perk {{key}}:</strong> </p>
-							<div id="key">
+							<div id="{{key}}">
 								<PowerSelectMultiple @options={{value}} @onChange={{action "perkchanged"}} as |perk|>
 								{{perk.name}}
 								</PowerSelectMultiple>
