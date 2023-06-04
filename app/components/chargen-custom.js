@@ -1196,49 +1196,21 @@ export default Component.extend({
 			Table is returned as an array:
 			name: The name of the Perk
 			cost: the cost of the perk
-
-			if (newhjtables) {
-				var tmptable=[], hjname, i;
-				for (const [key, value] of Object.entries(newhjtables)) {
-					if (key.startsWith('hj')) {
-						hjname = key.split('_')[0].toLowerCase().trim(); //Take the key name and remove the _ and everything after.
-						tmptable[hjname]=[];
-						i=0
-							for (const [k1, v1] of Object.entries(value)) {
-								tmptable[hjname][i]=[];
-								tmptable[hjname][i]['name']=hjname;
-								tmptable[hjname][i]['table']=v1;
-								i++ // increment our counter so our array grows.
-							}
-
-					}
-				}
-			}
+			newperktables - an array to display the system perks
+			newcharperks - is the system perks from the yml
 			*/
 
 			// Change the options displayed to the player
-			var newperktables = [], x, y, perkname, perkactions=[];
-			//newperktables = newperktables[];
-
-			//if (newperktables) {
-				console.log ('Here');
-				for (x=0; x < points1; x++) {
-					perkname = (x+1);
-					newperktables[perkname]=[];
-					for ( const[k1, v1] of Object.entries(newcharperks) ) {
-						newperktables[perkname][k1] = v1;
-					}
+			var newperktables = [], x, perkname;
+			for (x=0; x < points1; x++) {
+				perkname = (x+1);
+				newperktables[perkname]=[];
+				for ( const[k1, v1] of Object.entries(newcharperks) ) {
+					newperktables[perkname][k1] = v1;
 				}
-			//}
-			console.log('points: '+points1);
-			console.log(newperktables);
+			}
+
 			this.set('char.custom.charperkpoints', newperktables); //Send the new array back to the page for nice display.
-			/*
-			//Reset Heroes Journeys already set on the character
-			hjtables = [];
-			this.set('char.custom.hjtables', hjtables);  //Set Heroes Journey	
-			
-			*/
 
 			// Check the hinderances that are set by the player (not the frameworks) and determine which other hinderances need to be changed.
 			if ( nofwhind ) {
