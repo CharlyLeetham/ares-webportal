@@ -1233,7 +1233,7 @@ export default Component.extend({
 			//}
 			console.log('points: '+points1);
 			console.log(newperktables);
-			this.set('char.custom.swperks', newperktables); //Send the new array back to the page for nice display.
+			this.set('char.custom.charperkpoints', newperktables); //Send the new array back to the page for nice display.
 			/*
 			//Reset Heroes Journeys already set on the character
 			hjtables = [];
