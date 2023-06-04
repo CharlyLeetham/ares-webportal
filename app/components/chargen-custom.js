@@ -52,20 +52,6 @@ export default Component.extend({
 		return swperks;
 	}),
 
-	perkactions: computed(function() {
-		var perkactions=[];
-		perkactions[0]=[];
-		perkactions[1]=[];
-		perkactions[2]=[];
-		perkactions[0]['name'] = 'Raise An Attribute (2 perks per attribute)';
-		perkactions[0]['points'] = 1;
-		perkactions[1]['name'] = 'Raise A Skill (1 perk per Skill)';
-		perkactions[1]['points'] = 1;
-		perkactions[2]['name'] = 'Add an Edge ( 1 perk per Edge)';
-		perkactions[2]['points'] = 1;
-		return perkactions;
-	} ),
-
   hjtables: computed(function() {
     var newhjtables, sysiconicfall, charicf;
     sysiconicfall = this.get('char.custom.sysiconicf');
@@ -1182,13 +1168,14 @@ export default Component.extend({
 		},
 
 		hindChanged( val ) {
-			var syshind, charhind, dislist, dislist33, trexcludes, nofwhind, maxhindcounter, hindcounter, points1, newhindpoints;
+			var syshind, charhind, dislist, dislist33, trexcludes, nofwhind, maxhindcounter, hindcounter, points1, newcharperks;
 			points1 = 0;  // Use this to add up the number of perks from hinderances
 			syshind = this.get('char.custom.syshind'); // System Hinderances
 			charhind = this.get('char.custom.cghind'); // Hinderances set on the character by the frameworks
 			nofwhind = this.get('char.custom.cghindnofw'); // Hinderances chosen by the character
       		maxhindcounter = 4; //This might get set by a YAML later. Maximum number of hinderance points that can be converted to Perks.
 			hindcounter = this.get('char.custom.charhindpoints'); // Get the points set on the characters - what use is this (19 Feb 2023)
+			newcharperks = this.get('char.custom.swperks'); //System Perks
 
 			//Calculate the Perk Points
 			for ( const[k1, v1] of Object.entries(val) ) {
@@ -1205,39 +1192,45 @@ export default Component.extend({
 
 			/* Modify this to update the Perk Tables 
 
-			//Update the Heroic Journey Tables
+			/* Update the Perk Tables
+			Table is returned as an array:
+			name: The name of the Perk
+			cost: the cost of the perk
 
-			//		var perkactions=[];
-					perkactions[0]=[];
-					perkactions[1]=[];
-					perkactions[2]=[];
-					perkactions[0]['name'] = 'Raise An Attribute (2 perks per attribute)';
-					perkactions[0]['points'] = 1;
-					perkactions[1]['name'] = 'Raise A Skill (1 perk per Skill)';
-					perkactions[1]['points'] = 1;
-					perkactions[2]['name'] = 'Add an Edge ( 1 perk per Edge)';
-					perkactions[2]['points'] = 1;
-					return perkactions;//
+			if (newhjtables) {
+				var tmptable=[], hjname, i;
+				for (const [key, value] of Object.entries(newhjtables)) {
+					if (key.startsWith('hj')) {
+						hjname = key.split('_')[0].toLowerCase().trim(); //Take the key name and remove the _ and everything after.
+						tmptable[hjname]=[];
+						i=0
+							for (const [k1, v1] of Object.entries(value)) {
+								tmptable[hjname][i]=[];
+								tmptable[hjname][i]['name']=hjname;
+								tmptable[hjname][i]['table']=v1;
+								i++ // increment our counter so our array grows.
+							}
+
+					}
+				}
+			}
+			*/
 
 			// Change the options displayed to the player
-			var newperktables = [], x;
+			var newperktables = [], x, y, perkname, perkactions=[];
 			newperktables = newperktables[0];
 
 			if (newperktables) {
-				var tmptable=[], perkname, i;
 				for (x=0, x <= points1, x++ )) {
-					perkactions[x]=[];
-					perkactions[x]['name'] = 'Raise An Attribute (2 perks per attribute)';
-					perkactions[x]['points'] = 1;
-					perkactions[1]['name'] = 'Raise A Skill (1 perk per Skill)';
-					perkactions[1]['points'] = 1;
-					perkactions[2]['name'] = 'Add an Edge ( 1 perk per Edge)';
-					perkactions[2]['points'] = 1;
-					return perkactions;
+					perkname = "perk"+(x+1);
+					perkactions[perkname]=[];
+					for ( const[k1, v1] of Object.entries(newcharperks) ) {
+						perkactions['perkname'][k1] = v1;
+					}
 				}
 			}
-			this.set('char.custom.hjslots', tmptable); //Send the new array back to the page for nice display.
-
+			this.set('char.custom.swperks', perkactions); //Send the new array back to the page for nice display.
+			/*
 			//Reset Heroes Journeys already set on the character
 			hjtables = [];
 			this.set('char.custom.hjtables', hjtables);  //Set Heroes Journey	
