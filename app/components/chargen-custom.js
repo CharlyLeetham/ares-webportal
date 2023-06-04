@@ -1229,6 +1229,7 @@ export default Component.extend({
 					}
 				}
 			}
+			console.log(perkactions);
 			this.set('char.custom.swperks', perkactions); //Send the new array back to the page for nice display.
 			/*
 			//Reset Heroes Journeys already set on the character
