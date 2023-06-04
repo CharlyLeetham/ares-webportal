@@ -50,7 +50,7 @@ export default Component.extend({
 		var swperks;
 		swperks = this.get('char.custom.swperks');
 		return swperks;
-	})
+	}),
 
 	perkactions: computed(function() {
 		var perkactions=[];
