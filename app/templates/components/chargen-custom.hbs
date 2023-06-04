@@ -114,14 +114,25 @@
 				-->
 				
 				<div class="row">
-					<!-- Hindpoints (also known as Perk Points) are defined in swrifts_hinderances.yml.  The js function 'hindChanged' in app/components/chargen-custom.js should add these all together. If they exceed 4, then only 4 should be shown in the field below.  4 is the maximun number of perk points a character can have. -->
+					<!-- Hindpoints (also known as Perk Points) are defined in swrifts_hinderances.yml.  The js function 'hindChanged' in app/components/chargen-custom.js should add these all together. If they exceed 4, then only 4 should be shown in the field below.  4 is the maximun number of perk points a character can have. 
+					
+					Need to set charhindpoints to 0 on character creation and reset
+					-->
 					<p class="heading"><strong>Perk Points: </strong> 
 							{{{ansi-format text=char.custom.charhindpoints}}} <br />
 							<!-- This does not update dynamically. Could use a text field to do that or find out how to use jscript to do it -->			
 					</p>
 				</div> 
 
-				<div class="row">				
+				<div class="row">	
+					
+							 {{#each-in char.custom.hjslots as |k v|}}
+							 K: {{k}}  -
+								 {{#each-in v as |x z| }}
+									 x: {{x}} __ z: {{z}}
+								 {{/each-in}}
+								 <br />
+						 {{/each-in}}								
 					<!-- Perks Heading -->
 					<!-- Show a dropdown for each perk point available -->
 					{{#each-in this.createperkarray as |key count|}}
