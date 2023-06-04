@@ -1223,6 +1223,7 @@ export default Component.extend({
 			if (newperktables) {
 				for (x=0; x <= points1; x++) {
 					perkname = "perk"+(x+1);
+					console.log('Perk Name:' + perkname);
 					perkactions[perkname]=[];
 					for ( const[k1, v1] of Object.entries(newcharperks) ) {
 						perkactions['perkname'][k1] = v1;
