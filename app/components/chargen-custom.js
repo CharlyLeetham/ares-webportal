@@ -1221,7 +1221,7 @@ export default Component.extend({
 			newperktables = newperktables[0];
 
 			if (newperktables) {
-				for (x=0, x <= points1, x++ ) {
+				for (x=0; x <= points1; x++) {
 					perkname = "perk"+(x+1);
 					perkactions[perkname]=[];
 					for ( const[k1, v1] of Object.entries(newcharperks) ) {
