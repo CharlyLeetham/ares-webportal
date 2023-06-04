@@ -124,28 +124,14 @@
 					</p>
 				</div> 
 
-				<div class="row">	
-
-							Char Perk Points: <br />
-							{{{ansi-format text=char.custom.charperkpoints}}}
-					
-							 {{#each-in this.char.custom.charperkpoints as |k v|}}
-							 K: {{k}}  -
-								 {{#each-in v as |x z| }}
-									 x: {{x}} __ z: 
-									 {{#each-in z as | a b | }}
-									 	a: {{a}} __ b: {{b}}
-									 {{/each-in}}
-								 {{/each-in}}
-								 <br />
-						 {{/each-in}}								
+				<div class="row">		
 					<!-- Perks Heading -->
 					<!-- Show a dropdown for each perk point available -->
 					
 					{{#each-in char.custom.charperkpoints as |key count|}}
 						<div class="row">
 							<p class="heading"><strong>Choose Perk {{key}}:</strong> </p>
-							<div id="{{key}}">
+							<div id="perk-{{key}}">
 								<PowerSelectMultiple @options={{count}} @onChange={{action "perkchanged"}} as |perk|>
 								{{perk.name}}
 								</PowerSelectMultiple>
