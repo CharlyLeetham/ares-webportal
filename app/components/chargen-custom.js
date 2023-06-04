@@ -34,29 +34,6 @@ export default Component.extend({
 		return swiconicf;
 	}),
 
-	charperks: computed(function() {
-		var swcharperks, swhinds, maxhindcounter, points1;
-		swhinds = this.get('char.custom.cghindnofw');
-		maxhindcounter = 4;
-		points1=0;
-		console.log ('Swhinds: ');
-		console.log (swhinds);
-		for ( const[k1, v1] of Object.entries(swhinds) ) {
-			if ( v1.hasOwnProperty('points') ) {
-				points1 = points1+v1['points'];
-			} else if ( v1.hasOwnProperty('hind_points' )) {
-				points1 = points1+parseInt(v1['hind_points']);
-			}
-		}	
-
-		if (points1 > maxhindcounter) {
-			points1 = maxhindcounter;
-		}
-
-		this.set('char.custom.charperkpoints', points1);
-		return points1;
-	}),
-
 	createperkarray: computed(function() {
 		var perkarray=[], i, charperkpoints, text;
 		i = 0;
@@ -111,11 +88,7 @@ export default Component.extend({
     return (tmptable);
   }),
 
-  	testingperks: function() {
-		//
-	},
-
-	ck_excludes: function(dislist, sysedg, traittype) {
+    ck_excludes: function(dislist, sysedg, traittype) {
 		var trexcludes;
 		// Check to see the Hinderance excludes others and mark them as disabled.
 		if (dislist[0]['trexcludes'].length > 0) {
@@ -360,16 +333,6 @@ export default Component.extend({
 		return (finaltraits);
 	},
 
-	newcharhindpoints: function (points1) {
-		//Passed In:
-		// points1 = From the hindchanged function - calculated Perks based on hinderances
-		var swiconicf, perkpoints=[];
-		perkpoints['points'] = points1;
-		console.log ("newcharhindpoints:" +points1);
-		this.set('char.custom.charperkpoints', points1); //Send the new array back to the page for nice display.
-		return;		
-	},
-
 	checktrait: function(swraceall, swiconicfall, swrace, swiconicf, chosenifarray, newval, traittype) {
 		//// Passed in: ///
 		/// swraceall = All system races
@@ -438,7 +401,7 @@ export default Component.extend({
 		rnsb = "Non-Standard Build^";
 		rbp = ['Inhuman Physiology+^','Inhuman Physiology++^', 'Bizarre Physiology^', 'Alien Physiology^'];
 		dragon = "Dragon*";
-    norace = "No Race";
+    	norace = "No Race";
 
 		if ( traittype == 'icf' ) {
 
@@ -1221,6 +1184,7 @@ export default Component.extend({
       		maxhindcounter = 4; //This might get set by a YAML later. Maximum number of hinderance points that can be converted to Perks.
 			hindcounter = this.get('char.custom.charhindpoints'); // Get the points set on the characters - what use is this (19 Feb 2023)
 
+			//Calculate the Perk Points
 			for ( const[k1, v1] of Object.entries(val) ) {
 					if ( v1.hasOwnProperty('points') ) {
 						points1 = points1+v1['points'];
@@ -1283,7 +1247,6 @@ export default Component.extend({
 					}
 				}
 			console.log ('hindcounter: '+points1);
-			newhindpoints = this.newcharhindpoints(points1);	// This returns nothing. It's not used in this function, it's used to adjust other arrays on the page.
 			this.set('char.custom.cghindnofw', val); // Set the chosen hinderances back to the character object
 			this.set('char.custom.charhindpoints', points1); // Set the number of hindpoints the character can spend on their object
 		},
