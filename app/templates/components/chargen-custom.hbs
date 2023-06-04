@@ -118,9 +118,10 @@
 					<p class="heading"><strong>Perk Points:</strong> 
 						{{if (is-empty char.custom.hindpoints)}}
 							{{{ansi-format text=this.charperks}}}
-						{{else}}
-							{{char.custom.charhindpoints}}
 						{{/if}}
+
+						
+							{{char.custom.charhindpoints}}
 						<br />
 						 <Input id="inp-perks" @type="text" disabled="disabled" @size={{4}} @value={{char.custom.charhindpoints}} />
 
