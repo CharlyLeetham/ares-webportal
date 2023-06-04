@@ -1218,7 +1218,7 @@ export default Component.extend({
 
 			// Change the options displayed to the player
 			var newperktables = [], x, y, perkname, perkactions=[];
-			newperktables = newperktables[];
+			//newperktables = newperktables[];
 
 			//if (newperktables) {
 				console.log ('Here');
