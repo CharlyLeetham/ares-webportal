@@ -46,6 +46,12 @@ export default Component.extend({
 		return perkarray;
 	}),
 
+	swriftsperks: computed(function() {
+		var swperks;
+		swperks = this.get('char.custom.swperks');
+		return swperks;
+	})
+
 	perkactions: computed(function() {
 		var perkactions=[];
 		perkactions[0]=[];
@@ -964,11 +970,11 @@ export default Component.extend({
 			//Update the Heroic Journey Tables
 			// Change the options displayed to the player
 			var newhjtables = [];
-      var hjnumber;
+     		 var hjnumber;
 			newhjtables = Object.values(swiconicfall).filter(slots => slots.name.toString().toLowerCase() == newval); // Convert swiconicfall to an array and filter for any entries that match the new framework selected.
 			newhjtables = newhjtables[0];
 
-      if (newhjtables) {
+			if (newhjtables) {
 				var tmptable=[], hjname, i;
 				for (const [key, value] of Object.entries(newhjtables)) {
 					if (key.startsWith('hj')) {
@@ -1196,6 +1202,47 @@ export default Component.extend({
 			if (points1 > maxhindcounter) {
 				points1 = maxhindcounter;
 			}
+
+			/* Modify this to update the Perk Tables 
+
+			//Update the Heroic Journey Tables
+
+			//		var perkactions=[];
+					perkactions[0]=[];
+					perkactions[1]=[];
+					perkactions[2]=[];
+					perkactions[0]['name'] = 'Raise An Attribute (2 perks per attribute)';
+					perkactions[0]['points'] = 1;
+					perkactions[1]['name'] = 'Raise A Skill (1 perk per Skill)';
+					perkactions[1]['points'] = 1;
+					perkactions[2]['name'] = 'Add an Edge ( 1 perk per Edge)';
+					perkactions[2]['points'] = 1;
+					return perkactions;//
+
+			// Change the options displayed to the player
+			var newperktables = [], x;
+			newperktables = newperktables[0];
+
+			if (newperktables) {
+				var tmptable=[], perkname, i;
+				for (x=0, x <= points1, x++ )) {
+					perkactions[x]=[];
+					perkactions[x]['name'] = 'Raise An Attribute (2 perks per attribute)';
+					perkactions[x]['points'] = 1;
+					perkactions[1]['name'] = 'Raise A Skill (1 perk per Skill)';
+					perkactions[1]['points'] = 1;
+					perkactions[2]['name'] = 'Add an Edge ( 1 perk per Edge)';
+					perkactions[2]['points'] = 1;
+					return perkactions;
+				}
+			}
+			this.set('char.custom.hjslots', tmptable); //Send the new array back to the page for nice display.
+
+			//Reset Heroes Journeys already set on the character
+			hjtables = [];
+			this.set('char.custom.hjtables', hjtables);  //Set Heroes Journey	
+			
+			*/
 
 			// Check the hinderances that are set by the player (not the frameworks) and determine which other hinderances need to be changed.
 			if ( nofwhind ) {
