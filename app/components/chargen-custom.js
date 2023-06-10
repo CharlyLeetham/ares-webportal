@@ -1262,6 +1262,7 @@ export default Component.extend({
 						}
 					}
 				}
+			console.log('HERE1');
 			console.log ('hindcounter: '+points1);
 			this.set('char.custom.cghindnofw', val); // Set the chosen hinderances back to the character object
 			this.set('char.custom.charhindpoints', points1); // Set the number of hindpoints the character can spend on their object
@@ -1336,6 +1337,7 @@ export default Component.extend({
 //				}
 //			}
 			//this.set('char.custom.charperks', val); // Set the chosen Perks back to the character object
+			console.log ('Perktable: ');
 			console.log ( perktable );
 			console.log ('val:');
 			console.log (val);
