@@ -1271,10 +1271,12 @@ export default Component.extend({
 
 		groupChanged(group, val) {
 				var hjtable, tmptable, hjslots, newhjtable={};
-				hjslots = this.get('char.custom.hjslots');
-				hjtable = this.get('char.custom.hjtables');
+				hjslots = this.get('char.custom.hjslots');  //The Heroes Journey that can be chosen based on the ICF.
+				hjtable = this.get('char.custom.hjtables'); //The Heroes Journey already selected and saved
 
 				if (val) {
+
+					//Find out if there are existing entries on the character already				
 					tmptable = Object.values(hjtable).filter(slots => slots.name.toString().toLowerCase() == val.name.toLowerCase()); // Convert hjtables to an array and filter for any entries that match the new framework selected.
 
 					if (tmptable.length > 0) {
@@ -1298,7 +1300,43 @@ export default Component.extend({
 		},
 
 		perkchanged(group, val) {
+			var perktable, tmptable, perkslots, newperktable={};
+			perktable = this.get('char.custom.charperks'); //The Perks already set on the character
+
+//			if (val) { //Player has selected a perk
+
+				//Find out if there are existing entries on the character already	
+//				tmptable = Object.values(perktable).filter(slots => slots.name.toString().toLowerCase() == val.name.toLowerCase()); // Convert perktable to an array and filter for any entries that match the new framework selected.
+
+				//Are there existing entries on the record?
+//				if (tmptable.length > 0) {
+					//Yes, then update it
+//					tmptable[0]['table'] = val.table;
+//				} else { 
+//					var tmptable1={}, perkpoints;
+//					perkpoints = this.get('char.custom.charperks');
+//					for (x=0; x < perkpoints; x++) {
+//						ctr = x+1;
+//						key = "Perk_"+ctr;
+//						tmptable1[key] = {};
+//						if (val.name == key) {
+//							tmptable1[val.name]['table'] = val.table;
+//							tmptable1[val.name]['name'] = val.name;
+//						} else {
+//							tmptable1[key]['table'] = 'None';
+//							tmptable1[key]['name'] = key;
+//						}						
+//						ctr = x+1
+//						perkname = "Perk_"+ctr;
+//						newperktables[perkname]=[];
+//						for ( const[k1, v1] of Object.entries(newcharperks) ) {
+//							newperktables[perkname][k1] = v1;
+//						}
+					}
+//				}
+//			}
 			this.set('char.custom.charperks', val); // Set the chosen Perks back to the character object
+			console.log ( perktable );
 			console.log (val);
 		}
 
