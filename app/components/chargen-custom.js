@@ -1203,7 +1203,7 @@ export default Component.extend({
 			// Change the options displayed to the player
 			var newperktables = [], x, perkname;
 			for (x=0; x < points1; x++) {
-				perkname = (x+1);
+				perkname = "Perk_"+x;
 				newperktables[perkname]=[];
 				for ( const[k1, v1] of Object.entries(newcharperks) ) {
 					newperktables[perkname][k1] = v1;
