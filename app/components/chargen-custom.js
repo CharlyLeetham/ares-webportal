@@ -1332,10 +1332,10 @@ export default Component.extend({
 //						for ( const[k1, v1] of Object.entries(newcharperks) ) {
 //							newperktables[perkname][k1] = v1;
 //						}
-					}
+//					}
 //				}
 //			}
-			this.set('char.custom.charperks', val); // Set the chosen Perks back to the character object
+			//this.set('char.custom.charperks', val); // Set the chosen Perks back to the character object
 			console.log ( perktable );
 			console.log (val);
 		}
