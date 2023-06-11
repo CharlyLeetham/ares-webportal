@@ -1202,47 +1202,29 @@ export default Component.extend({
 
 			// Change the options displayed to the player
 			var newperktables = [], x, ctr, perkname;
-			//console.log('Newcharperks')
-			//console.log(newcharperks);
-			//console.log('Object.entries');
-			//console.log(Object.entries(newcharperks));
 
-			Object.entries(newcharperks).forEach(([key, value]) => {
-				console.log(`${key}: ${value}`);
-				Object.entries(value).forEach(([k1, v1]) => {
-					console.log(`${k1}: ${v1}`);
-				});
-			});
-			
+
+			//We need to convert the System Perks (newcharperks) to an array that can be used in the dropdowns on the CGen page.
 			for (x=0; x < points1; x++) {
-				ctr = x+1
-				perkname = "Perk_"+ctr;
-				newperktables[perkname]=[];
+				ctr = x+1; //setup a counter for the Perks
+				perkname = "Perk_"+ctr; //Set the Perkname
+				newperktables[perkname]=[]; //Setup an array with the index of Perkname
 				var z, ctr1;
 				z = 0;
 				for ( const[k1, v1] of Object.entries(newcharperks) ) {
-					newperktables[perkname][z]=[];
-
+				// Loop through the System Perks and the values.	
+					newperktables[perkname][z]=[]; //Create an array for each system perks
 					Object.entries(v1).forEach(([k2, v2]) => {
+						//Loop through the values of the system perks array to 'flatten' it a bit
 						newperktables[perkname][z][k2] = v2;
 					});
-					newperktables[perkname][z]['perknumber'] = ctr;
-					z++
+					newperktables[perkname][z]['perknumber'] = ctr; //Set the field perknumber equal ctr. This is needed for val changing later.
+					z++;
 				}
 			}
 
 			console.log("Perktables");
 			console.log(newperktables);
-
-			for ( const[perkname, perkval] of Object.entries(newperktables) ) {
-				//console.log('Perkname:');
-				//console.log(perkname);
-				//console.log('Vak');
-				//console.log(perkval);
-			}
-			//newperktables[perkname]['perknumber']=ctr;
-			//console.log ('NewPerkTables:');
-			//console.log (typeof newperktables);
 			this.set('char.custom.charperkpoints', newperktables); //Send the new array back to the page for nice display.
 
 			// Check the hinderances that are set by the player (not the frameworks) and determine which other hinderances need to be changed.
@@ -1336,10 +1318,13 @@ export default Component.extend({
 			var perktable, tmptable, perkslots, newperktable={};
 			perktable = this.get('char.custom.charperks'); //The Perks already set on the character
 
-//			if (val) { //Player has selected a perk
+			if (val) { //Player has selected a perk
 
 				//Find out if there are existing entries on the character already	
-//				tmptable = Object.values(perktable).filter(slots => slots.name.toString().toLowerCase() == val.name.toLowerCase()); // Convert perktable to an array and filter for any entries that match the new framework selected.
+				tmptable = Object.values(perktable).filter(slots => slots.name.toString().toLowerCase() == val.name.toLowerCase()); // Convert perktable to an array and filter for any entries that match the new framework selected.
+				console.log ('val:');
+				console.log (val);
+				console.log(tmptable);
 
 				//Are there existing entries on the record?
 //				if (tmptable.length > 0) {
@@ -1367,12 +1352,9 @@ export default Component.extend({
 //						}
 //					}
 //				}
-//			}
+			}
 			//this.set('char.custom.charperks', val); // Set the chosen Perks back to the character object
-			console.log ('Perktable: ');
-			console.log ( perktable );
-			console.log ('val:');
-			console.log (val);
+
 		}
 
 	},
