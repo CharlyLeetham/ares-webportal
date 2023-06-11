@@ -1221,9 +1221,11 @@ export default Component.extend({
 				var z, ctr1;
 				z = 0;
 				for ( const[k1, v1] of Object.entries(newcharperks) ) {
+					newperktables[perkname][z]=[];
 					Object.entries(v1).forEach(([k2, v2]) => {
-						newperktables[perkname][k2] = v2;
+						newperktables[perkname][z][k2] = v2;
 					});
+					z++
 				}
 			}
 
