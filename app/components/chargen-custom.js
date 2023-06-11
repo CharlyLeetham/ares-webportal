@@ -1208,10 +1208,11 @@ export default Component.extend({
 				newperktables[perkname]=[];
 				for ( const[k1, v1] of Object.entries(newcharperks) ) {
 					newperktables[perkname][k1] = v1;
-					newperktables[perkname]['perknumber']=x;
+					newperktables[perkname]['perknumber']=ctr;
 				}
 			}
-
+			console.log ('NewPerkTables:');
+			console.log (newpertables);
 			this.set('char.custom.charperkpoints', newperktables); //Send the new array back to the page for nice display.
 
 			// Check the hinderances that are set by the player (not the frameworks) and determine which other hinderances need to be changed.
