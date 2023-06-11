@@ -1319,10 +1319,10 @@ export default Component.extend({
 			if (val) { //Player has selected a perk
 
 				//Find out if there are existing entries on the character already	
-				tmptable = Object.values(perktable).filter(slots => slots.name.toString().toLowerCase() == val.name.toLowerCase()); // Convert perktable to an array and filter for any entries that match the new framework selected.
+				//tmptable = Object.values(perktable).filter(slots => slots.name.toString().toLowerCase() == val.name.toLowerCase()); // Convert perktable to an array and filter for any entries that match the new framework selected.
 				console.log ('val:');
 				console.log (val);
-				console.log(tmptable);
+				//console.log(tmptable);
 
 				//Are there existing entries on the record?
 //				if (tmptable.length > 0) {
@@ -1354,7 +1354,7 @@ export default Component.extend({
 			//this.set('char.custom.charperks', val); // Set the chosen Perks back to the character object
 
 		}
-
+		return val;
 	},
 
 	onUpdate: function() {
