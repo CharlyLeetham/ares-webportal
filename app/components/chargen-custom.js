@@ -1212,7 +1212,7 @@ export default Component.extend({
 				}
 			}
 			console.log ('NewPerkTables:');
-			console.log (newpertables);
+			console.log (newperktables);
 			this.set('char.custom.charperkpoints', newperktables); //Send the new array back to the page for nice display.
 
 			// Check the hinderances that are set by the player (not the frameworks) and determine which other hinderances need to be changed.
