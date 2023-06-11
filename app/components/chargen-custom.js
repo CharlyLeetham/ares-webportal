@@ -1223,8 +1223,6 @@ export default Component.extend({
 				}
 			}
 
-			console.log("Perktables");
-			console.log(newperktables);
 			this.set('char.custom.charperkpoints', newperktables); //Send the new array back to the page for nice display.
 
 			// Check the hinderances that are set by the player (not the frameworks) and determine which other hinderances need to be changed.
@@ -1276,8 +1274,6 @@ export default Component.extend({
 						}
 					}
 				}
-			console.log('HERE1');
-			console.log ('hindcounter: '+points1);
 			this.set('char.custom.cghindnofw', val); // Set the chosen hinderances back to the character object
 			this.set('char.custom.charhindpoints', points1); // Set the number of hindpoints the character can spend on their object
 		},
@@ -1317,6 +1313,8 @@ export default Component.extend({
 		perkchanged(group, val) {
 			var perktable, tmptable, perkslots, newperktable={};
 			perktable = this.get('char.custom.charperks'); //The Perks already set on the character
+
+			console.log(perktable);
 
 			if (val) { //Player has selected a perk
 
