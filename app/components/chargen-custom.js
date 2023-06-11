@@ -1202,6 +1202,7 @@ export default Component.extend({
 
 			// Change the options displayed to the player
 			var newperktables = [], x, ctr, perkname;
+			console.log(newcharperks);
 			for (x=0; x < points1; x++) {
 				ctr = x+1
 				perkname = "Perk_"+ctr;
@@ -1210,18 +1211,6 @@ export default Component.extend({
 					newperktables[perkname][k1] = v1;
 					newperktables[perkname]['perknumber']=ctr;
 				}
-			}
-
-			for ( const[perk, perkval] of Object.entries(newperktables) ) {
-				console.log ('Perk');
-				console.log( perk);
-				for ( const[perkval1, val] of Object.entries(perkval) ) {
-					console.log (perkval1);
-					console.log('val');
-					console.log(val);
-				}
-				//console.log ('PerkVal');
-				//console.log( perkval);
 			}
 			//newperktables[perkname]['perknumber']=ctr;
 			console.log ('NewPerkTables:');
