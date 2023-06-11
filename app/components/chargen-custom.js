@@ -1329,7 +1329,10 @@ export default Component.extend({
 			z=0;
 			for ( const[k1, v1] of Object.entries(val) ) {
 				console.log ('here');
-				console.log (k1, v1);
+				console.log ('k1');
+				console.log (k1);
+				console.log ('v1');
+				console.log (v1);
 				//Object.entries(v1).forEach(([k2, v2]) => {
 					//Loop through the values of the system perks array to 'flatten' it a bit
 				//	valtable[perkname][dz][k2] = v2;
