@@ -1341,7 +1341,7 @@ export default Component.extend({
 					console.log (v2);					
 				//	valtable[perkname][dz][k2] = v2;
 				//	z++;
-				//});
+				});
 			}				
 
 			//ctr = x+1; //setup a counter for the Perks
