@@ -1208,9 +1208,11 @@ export default Component.extend({
 				newperktables[perkname]=[];
 				for ( const[k1, v1] of Object.entries(newcharperks) ) {
 					newperktables[perkname][k1] = v1;
+					newperktables[perkname][x]['perknumber']=ctr;
 				}
-				newperktables[perkname]['perknumber']=ctr;
 			}
+
+			//newperktables[perkname]['perknumber']=ctr;
 			console.log ('NewPerkTables:');
 			console.log (newperktables);
 			this.set('char.custom.charperkpoints', newperktables); //Send the new array back to the page for nice display.
