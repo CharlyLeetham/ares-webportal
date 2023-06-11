@@ -1202,28 +1202,30 @@ export default Component.extend({
 
 			// Change the options displayed to the player
 			var newperktables = [], x, ctr, perkname;
+			console.log('Newcharperks')
 			console.log(newcharperks);
+			console.log('Object.entries');
+			console.log(Object.entries(newcharperks));
 			for (x=0; x < points1; x++) {
 				ctr = x+1
 				perkname = "Perk_"+ctr;
 				newperktables[perkname]=[];
 				var z, ctr1;
 				z = 0;
-				console.log(Object.entries(newcharperks));
 				for ( const[k1, v1] of Object.entries(newcharperks) ) {
 					newperktables[perkname][k1] = v1;
 				}
 			}
 
 			for ( const[perkname, perkval] of Object.entries(newperktables) ) {
-				console.log('Perkname:');
-				console.log(perkname);
-				console.log('Vak');
-				console.log(perkval);
+				//console.log('Perkname:');
+				//console.log(perkname);
+				//console.log('Vak');
+				//console.log(perkval);
 			}
 			//newperktables[perkname]['perknumber']=ctr;
-			console.log ('NewPerkTables:');
-			console.log (typeof newperktables);
+			//console.log ('NewPerkTables:');
+			//console.log (typeof newperktables);
 			this.set('char.custom.charperkpoints', newperktables); //Send the new array back to the page for nice display.
 
 			// Check the hinderances that are set by the player (not the frameworks) and determine which other hinderances need to be changed.
