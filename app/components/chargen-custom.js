@@ -1211,7 +1211,7 @@ export default Component.extend({
 				console.log(`${key}: ${value}`);
 				Object.entries(value).forEach(([k1, v1]) => {
 					console.log(`${k1}: ${v1}`);
-				}
+				});
 			});
 			
 			for (x=0; x < points1; x++) {
