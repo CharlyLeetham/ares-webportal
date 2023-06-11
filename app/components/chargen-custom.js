@@ -1332,19 +1332,20 @@ export default Component.extend({
 				console.log ('k1');
 				console.log (k1);
 				console.log ('v1');
-				console.log (v1);						
+				console.log (v1);	
+				valtable[k1]=[v1];									
 				Object.entries(v1).forEach(([k2, v2]) => {
-					valtable[k2]=[];
+					//valtable[k2]=[];
 					//Loop through the values of the system perks array to 'flatten' it a bit
 					//console.log ('k2');
 					//console.log (k2);
 					//console.log ('v2');
 					//console.log (v2);				
-					valtable[k2]=v2
+					//valtable[k2]=v2
 				});
 			}				
 
-			//console.log (valtable);
+			console.log (valtable);
 			//ctr = x+1; //setup a counter for the Perks
 			perkname = "Perk_"+valtable['perknumber']; //Set the Perkname
 			console.log(perkname);
