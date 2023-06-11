@@ -1351,9 +1351,7 @@ export default Component.extend({
 //					}
 //				}
 		//	}
-			//this.set('char.custom.charperks', val); // Set the chosen Perks back to the character object
-
-			return val;
+			this.set('char.custom.charperks', val); // Set the chosen Perks back to the character object
 		}
 
 	},
