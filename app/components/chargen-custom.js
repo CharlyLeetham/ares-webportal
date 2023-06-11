@@ -1311,7 +1311,7 @@ export default Component.extend({
 		},
 
 		perkchanged(group, val) {
-			var perktable, tmptable, perkslots, newperktables={}, perkname;
+			var perktable, tmptable, perkslots, newperktable=[], perkname;
 			perktable = this.get('char.custom.charperks'); //The Perks already set on the character
 
 			/* Val returns:
@@ -1330,6 +1330,7 @@ export default Component.extend({
 			//ctr = x+1; //setup a counter for the Perks
 			perkname = "Perk_"+val['perknumber']; //Set the Perkname
 			newperktables[perkname]=[]; //Setup an array with the index of Perkname
+			newperktables[perkname][val['perknumber']]=[];
 			newperktables[perkname][val['perknumber']]['perknumber'] = val['perknumber']; //Set the field perknumber equal ctr. This is needed for val changing later.
 			newperktables[perkname][val['perknumber']]['cost'] = val['cost'];
 			newperktables[perkname][val['perknumber']]['name'] = val['name'];
