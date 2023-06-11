@@ -1325,7 +1325,7 @@ export default Component.extend({
 			[perkname][x][perknumber]
 			*/
 			console.log(perktable);
-			var valtable=[], k1, v1, k2, v2, z;
+			var valtable=[], k1, v1, k2, v2, z, perkname;
 			z=0;
 			for ( const[k1, v1] of Object.entries(val) ) {
 				console.log ('here');
@@ -1334,16 +1334,17 @@ export default Component.extend({
 				console.log ('v1');
 				console.log (v1);
 				Object.entries(v1).forEach(([k2, v2]) => {
+					valtable[k2]=[];
 					//Loop through the values of the system perks array to 'flatten' it a bit
-					console.log ('k2');
-					console.log (k2);
-					console.log ('v2');
-					console.log (v2);					
-				//	valtable[perkname][dz][k2] = v2;
-				//	z++;
+					//console.log ('k2');
+					//console.log (k2);
+					//console.log ('v2');
+					//console.log (v2);				
+					valtable[k2]=v2
 				});
 			}				
 
+			console.log (valtable);
 			//ctr = x+1; //setup a counter for the Perks
 			perkname = "Perk_"+valtable['perknumber']; //Set the Perkname
 			var newperktables=[];
