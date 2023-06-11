@@ -1311,7 +1311,7 @@ export default Component.extend({
 		},
 
 		perkchanged(group, val) {
-			var perktable, tmptable, perkslots, newperktable={};
+			var perktable, tmptable, perkslots, newperktables={}, perkname;
 			perktable = this.get('char.custom.charperks'); //The Perks already set on the character
 
 			/* Val returns:
