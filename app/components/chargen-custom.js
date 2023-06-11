@@ -1327,7 +1327,7 @@ export default Component.extend({
 			console.log(perktable);
 
 
-			ctr = x+1; //setup a counter for the Perks
+			//ctr = x+1; //setup a counter for the Perks
 			perkname = "Perk_"+val['perknumber']; //Set the Perkname
 			newperktables[perkname]=[]; //Setup an array with the index of Perkname
 			newperktables[perkname][val['perknumber']]['perknumber'] = val['perknumber']; //Set the field perknumber equal ctr. This is needed for val changing later.
