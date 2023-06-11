@@ -1207,12 +1207,13 @@ export default Component.extend({
 				ctr = x+1
 				perkname = "Perk_"+ctr;
 				newperktables[perkname]=[];
-				var z;
+				var z, ctr1;
 				z = 0;
 				for ( const[k1, v1] of Object.entries(newcharperks) ) {
+					ctr1 = z+1
 					newperktables[perkname][z]=[];
 					newperktables[perkname][k1] = v1;
-					newperktables[perkname][z]['perknumber']=ctr;
+					newperktables[perkname][z]['perknumber']=ctr1;
 					z++
 				}
 			}
