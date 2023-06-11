@@ -1226,7 +1226,7 @@ export default Component.extend({
 					Object.entries(v1).forEach(([k2, v2]) => {
 						newperktables[perkname][z][k2] = v2;
 					});
-					newperktable[perkname][z]['perknumber'] = ctr1;
+					newperktables[perkname][z]['perknumber'] = ctr1;
 					z++
 				}
 			}
