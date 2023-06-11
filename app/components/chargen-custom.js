@@ -1209,7 +1209,7 @@ export default Component.extend({
 				newperktables[perkname]=[];
 				var z, ctr1;
 				z = 0;
-				console.log(typeof newcharperks);
+				console.log(Object.entries(newcharperks));
 				for ( const[k1, v1] of Object.entries(newcharperks) ) {
 					newperktables[perkname][k1] = v1;
 				}
