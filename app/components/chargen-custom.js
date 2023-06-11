@@ -1314,7 +1314,38 @@ export default Component.extend({
 			var perktable, tmptable, perkslots, newperktable={};
 			perktable = this.get('char.custom.charperks'); //The Perks already set on the character
 
+			/* Val returns:
+			cost
+			name
+			perknumber
+
+			Need to return an array:
+			[perkname][x][name]
+			[perkname][x][cost]
+			[perkname][x][perknumber]
+			*/
 			console.log(perktable);
+
+
+			ctr = x+1; //setup a counter for the Perks
+			perkname = "Perk_"+val['perknumber']; //Set the Perkname
+			newperktables[perkname]=[]; //Setup an array with the index of Perkname
+			newperktables[perkname][val['perknumber']]['perknumber'] = val['perknumber']; //Set the field perknumber equal ctr. This is needed for val changing later.
+			newperktables[perkname][val['perknumber']]['cost'] = val['cost'];
+			newperktables[perkname][val['perknumber']]['name'] = val['name'];
+			console.log(newperktables);
+			var z, ctr1;
+			z = 0;
+			//for ( const[k1, v1] of Object.entries(newcharperks) ) {
+			// Loop through the System Perks and the values.	
+			//	newperktables[perkname][z]=[]; //Create an array for each system perks
+			//	Object.entries(v1).forEach(([k2, v2]) => {
+			//		//Loop through the values of the system perks array to 'flatten' it a bit
+			//		newperktables[perkname][z][k2] = v2;
+			//	});
+			//	newperktables[perkname][z]['perknumber'] = ctr; //Set the field perknumber equal ctr. This is needed for val changing later.
+			//	z++;
+			//}			
 
 			//if (val) { //Player has selected a perk
 
@@ -1351,7 +1382,7 @@ export default Component.extend({
 //					}
 //				}
 		//	}
-			this.set('char.custom.charperks', val); // Set the chosen Perks back to the character object
+			this.set('char.custom.charperks', newperktables); // Set the chosen Perks back to the character object
 		}
 
 	},
