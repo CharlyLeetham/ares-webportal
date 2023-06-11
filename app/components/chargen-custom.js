@@ -1328,6 +1328,7 @@ export default Component.extend({
 			var valtable=[], k1, v1, k2, v2, z;
 			z=0;
 			for ( const[k1, v1] of Object.entries(val) ) {
+				console.log ('here');
 				console.log (k1, v1);
 				//Object.entries(v1).forEach(([k2, v2]) => {
 					//Loop through the values of the system perks array to 'flatten' it a bit
@@ -1344,7 +1345,7 @@ export default Component.extend({
 			newperktables[perkname][val['perknumber']]['perknumber'] = val['perknumber']; //Set the field perknumber equal ctr. This is needed for val changing later.
 			newperktables[perkname][val['perknumber']]['cost'] = val['cost'];
 			newperktables[perkname][val['perknumber']]['name'] = val['name'];
-			console.log(newperktables);
+			//console.log(newperktables);
 			var z, ctr1;
 			z = 0;
 			//for ( const[k1, v1] of Object.entries(newcharperks) ) {
@@ -1362,8 +1363,8 @@ export default Component.extend({
 
 				//Find out if there are existing entries on the character already	
 				//tmptable = Object.values(perktable).filter(slots => slots.name.toString().toLowerCase() == val.name.toLowerCase()); // Convert perktable to an array and filter for any entries that match the new framework selected.
-				console.log ('val:');
-				console.log (val);
+				//console.log ('val:');
+				//console.log (val);
 				//console.log(tmptable);
 
 				//Are there existing entries on the record?
