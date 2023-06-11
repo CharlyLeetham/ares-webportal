@@ -1344,7 +1344,7 @@ export default Component.extend({
 				});
 			}				
 
-			console.log (valtable);
+			//console.log (valtable);
 			//ctr = x+1; //setup a counter for the Perks
 			perkname = "Perk_"+valtable['perknumber']; //Set the Perkname
 			var newperktables=[];
