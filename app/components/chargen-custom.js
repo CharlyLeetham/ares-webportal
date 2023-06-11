@@ -1214,8 +1214,13 @@ export default Component.extend({
 			for ( const[perk, perkval] of Object.entries(newperktables) ) {
 				console.log ('Perk');
 				console.log( perk);
-				console.log ('PerkVal');
-				console.log( perkval);
+				for ( const[perkval1, val] of Object.entries(perval) ) {
+					console.log (perkval1);
+					console.log('val');
+					console.log(val);
+				}
+				//console.log ('PerkVal');
+				//console.log( perkval);
 			}
 			//newperktables[perkname]['perknumber']=ctr;
 			console.log ('NewPerkTables:');
