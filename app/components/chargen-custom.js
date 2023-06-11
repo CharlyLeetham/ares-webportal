@@ -1336,12 +1336,13 @@ export default Component.extend({
 			//ctr = x+1; //setup a counter for the Perks
 			perkname = "Perk_"+valtable['perknumber']; //Set the Perkname
 			console.log(perkname);
-			var newperktables=[];
+			var newperktables=[], ctr;
+			ctr = valtable['perknumber'] - 1;
 			newperktables[perkname]=[]; //Setup an array with the index of Perkname
-			newperktables[perkname][valtable['perknumber']]=[];
-			newperktables[perkname][valtable['perknumber']]['perknumber'] = valtable['perknumber']; //Set the field perknumber equal ctr. This is needed for val changing later.
-			newperktables[perkname][valtable['perknumber']]['cost'] = valtable['cost'];
-			newperktables[perkname][valtable['perknumber']]['name'] = valtable['name'];
+			newperktables[perkname][ctr]=[];
+			newperktables[perkname][ctr]['perknumber'] = valtable['perknumber']; //Set the field perknumber equal ctr. This is needed for val changing later.
+			newperktables[perkname][ctr]['cost'] = valtable['cost'];
+			newperktables[perkname][ctr]['name'] = valtable['name'];
 			console.log(newperktables);
 			var z, ctr1;
 			z = 0;
