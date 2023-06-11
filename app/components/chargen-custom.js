@@ -1202,16 +1202,13 @@ export default Component.extend({
 
 			// Change the options displayed to the player
 			var newperktables = [], x, ctr, perkname;
-			console.log('Newcharperks')
-			console.log(newcharperks);
-			console.log('Object.entries');
-			console.log(Object.entries(newcharperks));
+			//console.log('Newcharperks')
+			//console.log(newcharperks);
+			//console.log('Object.entries');
+			//console.log(Object.entries(newcharperks));
 
-			const keys = Object.keys(newcharperks);
-			console.log('keys');
-			console.log (keys);
-			keys.forEach((key, index) => {
-			//	console.log(`${key}: ${courses[key]}`);
+			Object.entries(newcharperks).forEach(([key, value]) => {
+				console.log(`${key}: ${value}`)
 			});
 			
 			for (x=0; x < points1; x++) {
