@@ -1325,11 +1325,13 @@ export default Component.extend({
 			[perkname][x][perknumber]
 			*/
 			console.log(perktable);
-			var valtable=[];
+			var valtable=[], k1, v1, k2, v2, z;
+			z=0;
 			for ( const[k1, v1] of Object.entries(val) ) {
 				Object.entries(v1).forEach(([k2, v2]) => {
 					//Loop through the values of the system perks array to 'flatten' it a bit
 					valtable[perkname][z][k2] = v2;
+					z++;
 				});
 			}				
 
