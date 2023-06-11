@@ -1206,6 +1206,13 @@ export default Component.extend({
 			console.log(newcharperks);
 			console.log('Object.entries');
 			console.log(Object.entries(newcharperks));
+
+			const keys = Object.keys(newcharperks);
+			console.log (keys);
+			keys.forEach((key, index) => {
+				console.log(`${key}: ${courses[key]}`);
+			});
+			
 			for (x=0; x < points1; x++) {
 				ctr = x+1
 				perkname = "Perk_"+ctr;
