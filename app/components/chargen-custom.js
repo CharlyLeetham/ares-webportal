@@ -1333,7 +1333,7 @@ export default Component.extend({
 				console.log (k1);
 				console.log ('v1');
 				console.log (v1);	
-				valtable[k1]=[v1];									
+				valtable[k1]=v1;									
 				Object.entries(v1).forEach(([k2, v2]) => {
 					//valtable[k2]=[];
 					//Loop through the values of the system perks array to 'flatten' it a bit
