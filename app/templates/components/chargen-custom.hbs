@@ -128,9 +128,9 @@
 						<div class="row">
 							<p class="heading"><strong>Choose Perk {{key}}:</strong> </p>
 							<div id="perk-{{key}}">
-								<PowerSelectMultiple @options={{count}} @onChange={{action "perkchanged" key}} @selected={{get this.char.custom.charperks key}} as |perk|>
+								<PowerSelect @options={{count}} @onChange={{action "perkchanged" key}} @selected={{get this.char.custom.charperks key}} as |perk|>
 								{{perk.name}}
-								</PowerSelectMultiple>
+								</PowerSelect>
 							</div>
 						</div>
 					{{else}}
