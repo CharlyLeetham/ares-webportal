@@ -1208,10 +1208,14 @@ export default Component.extend({
 				perkname = "Perk_"+ctr;
 				//newperktables[perkname]=[];
 				var newperktables = {};
+				newperktables[perkname]={};
+				var z;
+				z = 0;
 				for ( const[k1, v1] of Object.entries(newcharperks) ) {
-					newperktables[perkname] = {};
-					newperktables[perkname][k1] = v1;
-					newperktables[perkname]['perknumber']=ctr;
+					newperktables[perkname][z] = {};
+					newperktables[perkname][z][k1] = v1;
+					newperktables[perkname][z]['perknumber']=ctr;
+					z++;
 				}
 			}
 			//newperktables[perkname]['perknumber']=ctr;
