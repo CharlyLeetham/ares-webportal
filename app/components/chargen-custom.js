@@ -1345,11 +1345,11 @@ export default Component.extend({
 			console.log(perkname);
 			var newperktables=[];
 			newperktables[perkname]=[]; //Setup an array with the index of Perkname
-			newperktables[perkname][val['perknumber']]=[];
-			newperktables[perkname][val['perknumber']]['perknumber'] = val['perknumber']; //Set the field perknumber equal ctr. This is needed for val changing later.
-			newperktables[perkname][val['perknumber']]['cost'] = val['cost'];
-			newperktables[perkname][val['perknumber']]['name'] = val['name'];
-			//console.log(newperktables);
+			newperktables[perkname][valtable['perknumber']]=[];
+			newperktables[perkname][valtable['perknumber']]['perknumber'] = valtable['perknumber']; //Set the field perknumber equal ctr. This is needed for val changing later.
+			newperktables[perkname][valtable['perknumber']]['cost'] = valtable['cost'];
+			newperktables[perkname][valtable['perknumber']]['name'] = valtable['name'];
+			console.log(newperktables);
 			var z, ctr1;
 			z = 0;
 			//for ( const[k1, v1] of Object.entries(newcharperks) ) {
