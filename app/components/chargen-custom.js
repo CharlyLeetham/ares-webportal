@@ -1327,6 +1327,7 @@ export default Component.extend({
 			console.log(perktable);
 			var valtable=[], k1, v1, k2, v2, z, perkname;
 			z=0;
+			console.log(val);
 			for ( const[k1, v1] of Object.entries(val) ) {
 				Object.entries(v1).forEach(([k2, v2]) => {
 					valtable[k2]=[];
