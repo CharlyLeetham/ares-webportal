@@ -1309,6 +1309,7 @@ export default Component.extend({
 						}
 						hjtable = tmptable1;
 					}
+					console.log('hjtable');
 					this.set ('char.custom.hjtables', hjtable);
 			}
 		},
@@ -1334,7 +1335,6 @@ export default Component.extend({
 				valtable[k1]=v1;									
 			}				
 
-			console.log (valtable);
 			//ctr = x+1; //setup a counter for the Perks
 			perkname = "Perk_"+valtable['perknumber']; //Set the Perkname
 				var newperktables=[], ctr;
