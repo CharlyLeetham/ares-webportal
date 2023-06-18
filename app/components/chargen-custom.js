@@ -1310,6 +1310,7 @@ export default Component.extend({
 						hjtable = tmptable1;
 					}
 					console.log('hjtable');
+					console.log(hjtable);
 					this.set ('char.custom.hjtables', hjtable);
 			}
 		},
