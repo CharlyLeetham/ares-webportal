@@ -1346,6 +1346,7 @@ export default Component.extend({
 			newperktables[perkname][ctr]['perknumber'] = valtable['perknumber']; //Set the field perknumber equal ctr. This is needed for val changing later.
 			newperktables[perkname][ctr]['cost'] = valtable['cost'];
 			newperktables[perkname][ctr]['name'] = valtable['name'];
+			console.log ('NewPerkTable:');
 			console.log(newperktables);
 			var z, ctr1;
 			z = 0;
