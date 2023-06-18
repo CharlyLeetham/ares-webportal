@@ -123,7 +123,7 @@
 					<!-- Show a dropdown for each perk point available -->
 					
 					{{{ansi-format text=char.custom.charperks}}} <br />
-					{{#each-in char.custom.charperkpoints as |key count|}} 
+					{{#each-in char.custom.charperks as |key count|}} 
 					<!-- charperkpoints is the array set to the character model with the chosen perks in it. This is updated dynamically by the js function 'hindChanged' in app/components/chargen-custom.js. -->
 						<div class="row">
 							<p class="heading"><strong>Choose Perk {{key}}:</strong> </p>
