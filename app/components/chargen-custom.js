@@ -52,33 +52,40 @@ export default Component.extend({
 		return swperks;
 	}),
 
-  hjtables: computed(function() {
-    var newhjtables, sysiconicfall, charicf;
-    sysiconicfall = this.get('char.custom.sysiconicf');
-    charicf = this.get('char.custom.charicf');
+   hjtables: computed(function() {
+     var newhjtables, sysiconicfall, charicf;
+     sysiconicfall = this.get('char.custom.sysiconicf');
+     charicf = this.get('char.custom.charicf');
 
-    newhjtables = Object.values(sysiconicfall).filter(slots => slots.name.toString().toLowerCase() == charicf['class'].toLowerCase()); // Convert swiconicfall to an array and filter for any entries that match the new framework selected.
-    newhjtables = newhjtables[0];
+     newhjtables = Object.values(sysiconicfall).filter(slots => slots.name.toString().toLowerCase() == charicf['class'].toLowerCase()); // Convert swiconicfall to an array and filter for any entries that match the new framework selected.
+     newhjtables = newhjtables[0];
 
-    if (newhjtables) {
-      var tmptable=[], hjname, i, hjnumber;
-      for (const [key, value] of Object.entries(newhjtables)) {
-        if (key.startsWith('hj')) {
-          hjname = key.split('_')[0].toLowerCase().trim(); //Take the key name and remove the _ and everything after.
-          hjnumber = hjname.replace('hj','');
-          tmptable[hjname]=[];
-          for (const [k1, v1] of Object.entries(value)) {
-            tmptable[hjname]['tablenumber']=hjnumber;
-            tmptable[hjname]['details']=[];
-            tmptable[hjname]['details']['name']=hjname;
-            tmptable[hjname]['details']['table']=v1;
-          }
-        }
-      }
-    }
+     if (newhjtables) {
+       var tmptable=[], hjname, i, hjnumber;
+       for (const [key, value] of Object.entries(newhjtables)) {
+         if (key.startsWith('hj')) {
+           hjname = key.split('_')[0].toLowerCase().trim(); //Take the key name and remove the _ and everything after.
+           hjnumber = hjname.replace('hj','');
+           tmptable[hjname]=[];
+           for (const [k1, v1] of Object.entries(value)) {
+             tmptable[hjname]['tablenumber']=hjnumber;
+             tmptable[hjname]['details']=[];
+             tmptable[hjname]['details']['name']=hjname;
+             tmptable[hjname]['details']['table']=v1;
+           }
+         }
+       }
+     }
+     return (tmptable);
+    }),
 
-    return (tmptable);
-  }),
+	perkslots: computed(function() {
+		var cps;
+		cps = this.get('char.custom.charperks');
+		return cps;
+	}
+	
+	)
 
     ck_excludes: function(dislist, sysedg, traittype) {
 		var trexcludes;
