@@ -1338,7 +1338,7 @@ export default Component.extend({
 			*/
 			var valtable=[], k1, v1, k2, v2, z, perkname;
 			z=0;
-			console.log(val);
+			//console.log(val);
 			for ( const[k1, v1] of Object.entries(val) ) {
 				valtable[k1]=v1;									
 			}		
@@ -1361,6 +1361,7 @@ export default Component.extend({
 //				} else { 
 					var tmptable1={};
 					for (const [key, value] of Object.entries(perktable)) {
+						console.log ('here');
 						console.log (key, value);
 						tmptable1[key] = {};
 						if (val.name == key) {
