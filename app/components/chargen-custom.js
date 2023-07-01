@@ -1363,7 +1363,7 @@ export default Component.extend({
 					var tmptable1={};
 					for (const [key, value] of Object.entries(perktable)) {
 						console.log ('here');
-						console.log (key);
+						console.log (value);
 						console.log (val.name);
 						tmptable1[key] = {};
 						if (val.name == key) {
