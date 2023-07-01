@@ -1223,7 +1223,7 @@ export default Component.extend({
 						//Loop through the values of the system perks array to 'flatten' it a bit
 						newperktables[perkname][z][k2] = v2;
 					});
-					newperktables[perkname][z]['perknumber'] = ctr; //Set the field perknumber equal ctr. This is needed for val changing later.
+					newperktables[perkname][z]['perknumber'] = "Perk "+ctr; //Set the field perknumber equal ctr. This is needed for val changing later.
 					z++;
 				}
 			}
