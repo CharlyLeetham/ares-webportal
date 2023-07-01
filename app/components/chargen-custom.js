@@ -1355,14 +1355,14 @@ export default Component.extend({
 				//tmptable = Object.values(perkslots).filter(slots => slots.name.toString().toLowerCase() == group.toLowerCase()); // Convert perktable to an array and filter for any entries that match the new framework selected.
 				if (Object.keys(perktable).length)  {
 					tmptable = perktable.hasOwnProperty( group );
-					console.log (tmptable);
+					console.log ('Perks after test:')
+					console.log(perktable);
 				}
-				//console.log (tmptable);
 				//Are there existing entries on the record?
-//				if (tmptable.length > 0) {
+				if (tmptable) {
 					//Yes, then update it
-//					tmptable[0]['table'] = val.table;
-//				} else { 
+					perktable[group]['table'] = val.table;
+				} else { 
 					var tmptable1={};
 					for (const [key, value] of Object.entries(perktable)) {
 						console.log ('here');
@@ -1378,7 +1378,7 @@ export default Component.extend({
 						}
 					}
 					perkslots = tmptable1;
-//				}
+				}
 			}
 			console.log('perkslots');
 			console.log(perkslots);
