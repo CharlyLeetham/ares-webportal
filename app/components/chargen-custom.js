@@ -1325,6 +1325,7 @@ export default Component.extend({
 			perktable = this.get('char.custom.charperks'); //The Perks allowed on the character
 			perkslots = this.get('char.custom.perkslots');  //The Perks set on the character
 			console.log (group);
+			console.log (perktable);
 
 			/* Val returns:
 			cost
