@@ -1361,7 +1361,9 @@ export default Component.extend({
 				//Are there existing entries on the record?
 				if (tmptable) {
 					//Yes, then update it
-					perktable[group]['table'] = val.table;
+					perktable[group]['name'] = val.name;
+					perktable[group]['cost'] = val.cost;
+					perkslots = perktable;
 				} else { 
 					var tmptable1={};
 					for (const [key, value] of Object.entries(perktable)) {
