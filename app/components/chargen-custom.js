@@ -1321,12 +1321,14 @@ export default Component.extend({
 		},
 
 		perkchanged(group, val) {
-			var perktable, tmptable, perkslots, newperktable={}, perkname, tst1, tst2;
+			var perktable, tmptable, perkslots, newperktable={}, perkname;
 			perktable = this.get('char.custom.charperks'); //The Perks allowed on the character
 			perkslots = this.get('char.custom.perkslots');  //The Perks set on the character
+			console.log ('Group:');
 			console.log (group);
+			console.log ('Perk Table first:')
 			console.log (perktable);
-			console.log ('Perk Slots:');
+			console.log ('Perk Slots first:');
 			console.log (perkslots);
 
 			/* Val returns:
@@ -1339,16 +1341,7 @@ export default Component.extend({
 			[perkname][x][cost]
 			[perkname][x][perknumber]
 			*/
-			var valtable=[], k1, v1, k2, v2, z, perkname;
-			z=0;
-			//console.log(val);
-			for ( const[k1, v1] of Object.entries(val) ) {
-				valtable[k1]=v1;									
-			}		
-			
-			//console.log ('Valtable');
-			//console.log (valtable);
-
+		
 			if (val) { //Player has selected a perk
 
 				//Find out if there are existing entries on the character already
@@ -1364,6 +1357,8 @@ export default Component.extend({
 					perktable[group]['name'] = val.name;
 					perktable[group]['cost'] = val.cost;
 					perkslots = perktable;
+					console.log ('Perk Slots after existing select:');
+					console.log (perkslots);
 				} else { 
 					var tmptable1={};
 					for (const [key, value] of Object.entries(perktable)) {
@@ -1380,9 +1375,11 @@ export default Component.extend({
 						}
 					}
 					perkslots = tmptable1;
+					console.log ('Perk Slots after new select:');
+					console.log (perkslots);					
 				}
 			}
-			console.log('perkslots');
+			console.log('perkslots last');
 			console.log(perkslots);
 			this.set ('char.custom.perkslots', perkslots);
 		}
