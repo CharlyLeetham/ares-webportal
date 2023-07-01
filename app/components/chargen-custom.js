@@ -1317,7 +1317,8 @@ export default Component.extend({
 
 		perkchanged(group, val) {
 			var perktable, tmptable, perkslots, newperktable={}, perkname;
-			perktable = this.get('char.custom.charperks'); //The Perks already set on the character
+			perktable = this.get('char.custom.charperks'); //The Perks allowed on the character
+			perkslots = this.get('char.custom.perkslots');  //THe Perks set on the character
 			console.log (group);
 
 			/* Val returns:
@@ -1335,7 +1336,10 @@ export default Component.extend({
 			console.log(val);
 			for ( const[k1, v1] of Object.entries(val) ) {
 				valtable[k1]=v1;									
-			}				
+			}		
+			
+			console.log ('Valtable');
+			console.log (valtable);
 
 			//ctr = x+1; //setup a counter for the Perks
 			perkname = "Perk_"+valtable['perknumber']; //Set the Perkname
@@ -1396,7 +1400,7 @@ export default Component.extend({
 //					}
 //				}
 		//	}
-			this.set('char.custom.charperks', newperktables); // Set the chosen Perks back to the character object
+			//this.set('char.custom.charperks', newperktables); // Set the chosen Perks back to the character object
 		}
 
 	},
