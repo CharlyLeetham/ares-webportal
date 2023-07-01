@@ -1321,7 +1321,7 @@ export default Component.extend({
 		},
 
 		perkchanged(group, val) {
-			var perktable, tmptable, perkslots, newperktable={}, perkname;
+			var perktable, tmptable, perkslots, newperktable={}, perkname, tst1, tst2;
 			perktable = this.get('char.custom.charperks'); //The Perks allowed on the character
 			perkslots = this.get('char.custom.perkslots');  //The Perks set on the character
 			console.log (group);
@@ -1354,7 +1354,7 @@ export default Component.extend({
 				//Find out if there are existing entries on the character already
 				//tmptable = Object.values(perkslots).filter(slots => slots.name.toString().toLowerCase() == group.toLowerCase()); // Convert perktable to an array and filter for any entries that match the new framework selected.
 				if (Object.keys(perktable).length)  {
-					tmptable = perkslots.key(group);
+					tmptable = perktable.hasOwnProperty( group );
 					console.log (tmptable);
 				}
 				//console.log (tmptable);
