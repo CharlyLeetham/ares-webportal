@@ -1341,68 +1341,34 @@ export default Component.extend({
 			console.log ('Valtable');
 			console.log (valtable);
 
-			//ctr = x+1; //setup a counter for the Perks
-			perkname = "Perk_"+valtable['perknumber']; //Set the Perkname
-				var newperktables=[], ctr;
-			ctr = valtable['perknumber'] - 1;
-			newperktables[perkname]=[]; //Setup an array with the index of Perkname
-			newperktables[perkname][ctr]=[];
-			newperktables[perkname][ctr]['perknumber'] = valtable['perknumber']; //Set the field perknumber equal ctr. This is needed for val changing later.
-			newperktables[perkname][ctr]['cost'] = valtable['cost'];
-			newperktables[perkname][ctr]['name'] = valtable['name'];
-			console.log ('NewPerkTable:');
-			console.log(newperktables);
-			var z, ctr1;
-			z = 0;
-			//for ( const[k1, v1] of Object.entries(newcharperks) ) {
-			// Loop through the System Perks and the values.	
-			//	newperktables[perkname][z]=[]; //Create an array for each system perks
-			//	Object.entries(v1).forEach(([k2, v2]) => {
-			//		//Loop through the values of the system perks array to 'flatten' it a bit
-			//		newperktables[perkname][z][k2] = v2;
-			//	});
-			//	newperktables[perkname][z]['perknumber'] = ctr; //Set the field perknumber equal ctr. This is needed for val changing later.
-			//	z++;
-			//}			
-
-			//if (val) { //Player has selected a perk
+			if (val) { //Player has selected a perk
 
 				//Find out if there are existing entries on the character already	
-				//tmptable = Object.values(perktable).filter(slots => slots.name.toString().toLowerCase() == val.name.toLowerCase()); // Convert perktable to an array and filter for any entries that match the new framework selected.
-				//console.log ('val:');
-				//console.log (val);
-				//console.log(tmptable);
+				tmptable = Object.values(perkslots).filter(slots => slots.name.toString().toLowerCase() == val.name.toLowerCase()); // Convert perktable to an array and filter for any entries that match the new framework selected.
 
 				//Are there existing entries on the record?
-//				if (tmptable.length > 0) {
+				if (tmptable.length > 0) {
 					//Yes, then update it
-//					tmptable[0]['table'] = val.table;
-//				} else { 
-//					var tmptable1={}, perkpoints;
-//					perkpoints = this.get('char.custom.charperks');
-//					for (x=0; x < perkpoints; x++) {
-//						ctr = x+1;
-//						key = "Perk_"+ctr;
-//						tmptable1[key] = {};
-//						if (val.name == key) {
-//							tmptable1[val.name]['table'] = val.table;
-//							tmptable1[val.name]['name'] = val.name;
-//						} else {
-//							tmptable1[key]['table'] = 'None';
-//							tmptable1[key]['name'] = key;
-//						}						
-//						ctr = x+1
-//						perkname = "Perk_"+ctr;
-//						newperktables[perkname]=[];
-//						for ( const[k1, v1] of Object.entries(newcharperks) ) {
-//							newperktables[perkname][k1] = v1;
-//						}
-//					}
-//				}
-		//	}
-			//this.set('char.custom.charperks', newperktables); // Set the chosen Perks back to the character object
+					tmptable[0]['table'] = val.table;
+				} else { 
+					var tmptable1={};
+					for (const [key, value] of Object.entries(perktable)) {
+						tmptable1[key] = {};
+						if (val.name == key) {
+							tmptable1[val.name]['table'] = val.table;
+							tmptable1[val.name]['name'] = val.name;
+						} else {
+							tmptable1[key]['table'] = 'None';
+							tmptable1[key]['name'] = key;
+						}
+					}
+					perkslots = tmptable1;
+				}
+			}
+			console.log('perkslots');
+			console.log(perkslots);
+			this.set ('char.custom.perkslots', perkslots);
 		}
-
 	},
 
 	onUpdate: function() {
