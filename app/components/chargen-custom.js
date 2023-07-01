@@ -1332,6 +1332,7 @@ export default Component.extend({
 			console.log (perktable);
 			console.log ('Perk Slots first:');
 			console.log (perkslots);
+			return;
 
 			/* Val returns:
 			cost
