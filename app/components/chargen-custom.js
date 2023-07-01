@@ -1379,9 +1379,11 @@ export default Component.extend({
 					console.log (perkslots);					
 				}
 			}
+
 			console.log('perkslots last');
 			console.log(perkslots);
 			this.set ('char.custom.perkslots', perkslots);
+			this.set ('char.custom.charperks', perkslots);
 		}
 	},
 
