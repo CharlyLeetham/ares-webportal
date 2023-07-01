@@ -1356,12 +1356,10 @@ export default Component.extend({
 					for (const [key, value] of Object.entries(perktable)) {
 						tmptable1[key] = {};
 						if (val.name == key) {
-							tmptable1[val.name]['table'] = val.table;
 							tmptable1[val.name]['name'] = val.name;
-						} else {
-							tmptable1[key]['table'] = 'None';
-							tmptable1[key]['name'] = key;
-						}
+							tmptable1[val.name]['cost'] = val.cost;
+							tmptable1[val.name]['perknumber'] = val.perknumber;							
+						} 
 					}
 					perkslots = tmptable1;
 //				}
