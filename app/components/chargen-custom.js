@@ -1359,7 +1359,10 @@ export default Component.extend({
 							tmptable1[val.name]['name'] = val.name;
 							tmptable1[val.name]['cost'] = val.cost;
 							tmptable1[val.name]['perknumber'] = val.perknumber;							
-						} 
+						} else {					
+							tmptable1[key]['Name'] = 'None';
+							tmptable1[key]['cost'] = key;
+						}
 					}
 					perkslots = tmptable1;
 //				}
