@@ -1350,8 +1350,8 @@ export default Component.extend({
 				//Are there existing entries on the record?
 //				if (tmptable.length > 0) {
 					//Yes, then update it
-					tmptable[0]['table'] = val.table;
-				} else { 
+//					tmptable[0]['table'] = val.table;
+//				} else { 
 					var tmptable1={};
 					for (const [key, value] of Object.entries(perktable)) {
 						tmptable1[key] = {};
