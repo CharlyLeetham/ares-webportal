@@ -1366,10 +1366,9 @@ export default Component.extend({
 						console.log (value);
 						console.log (val.name);
 						tmptable1[key] = {};
-						if (val.name == key) {
+						if (group == key) {
 							tmptable1[val.name]['name'] = val.name;
-							tmptable1[val.name]['cost'] = val.cost;
-							tmptable1[val.name]['perknumber'] = val.perknumber;							
+							tmptable1[val.name]['cost'] = val.cost;							
 						} else {					
 							tmptable1[key]['Name'] = 'None';
 							tmptable1[key]['cost'] = key;
