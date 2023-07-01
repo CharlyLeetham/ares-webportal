@@ -1332,7 +1332,7 @@ export default Component.extend({
 			console.log (perktable);
 			console.log ('Perk Slots first:');
 			console.log (perkslots);
-			return;
+			//return;
 
 			/* Val returns:
 			cost
@@ -1357,8 +1357,8 @@ export default Component.extend({
 				//Are there existing entries on the record?
 				if (tmptable) {
 					//Yes, then update it
-					perktable[group]['name'] = val.name;
-					perktable[group]['cost'] = val.cost;
+					perktable[0]['name'] = val.name;
+					perktable[0]['cost'] = val.cost;
 					perkslots = perktable;
 					console.log ('Perk Slots after existing select:');
 					console.log (perkslots);
