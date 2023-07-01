@@ -1349,9 +1349,9 @@ export default Component.extend({
 			if (val) { //Player has selected a perk
 
 				//Find out if there are existing entries on the character already
-				if (perkslots) {	
+				//if (perkslots) {	
 					tmptable = Object.values(perkslots).filter(slots => slots.name.toString().toLowerCase() == val.name.toLowerCase()); // Convert perktable to an array and filter for any entries that match the new framework selected.
-				}
+				//}
 
 				console.log (tmptable);
 				//Are there existing entries on the record?
