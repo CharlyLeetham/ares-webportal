@@ -1357,7 +1357,7 @@ export default Component.extend({
 				//Are there existing entries on the record?
 				if (tmptable) {
 					var tmptable2={};
-					var tmptable2[0]={};
+					tmptable2[0]={};
 					//Yes, then update it
 					tmptable2[0]['name'] = val.name;
 					//perktable[group]['cost'] = val.cost;
