@@ -1353,7 +1353,7 @@ export default Component.extend({
 
 				//Find out if there are existing entries on the character already
 				//tmptable = Object.values(perkslots).filter(slots => slots.name.toString().toLowerCase() == group.toLowerCase()); // Convert perktable to an array and filter for any entries that match the new framework selected.
-				if (perkslots.size)  {
+				if (Object.keys(perktable).length)  {
 					tmptable = perkslots.key(group);
 					console.log (tmptable);
 				}
