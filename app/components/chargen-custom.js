@@ -1367,8 +1367,8 @@ export default Component.extend({
 						console.log (val.name);
 						tmptable1[key] = {};
 						if (group == key) {
-							tmptable1[val.name]['name'] = val.name;
-							tmptable1[val.name]['cost'] = val.cost;							
+							tmptable1[group]['name'] = val.name;
+							tmptable1[group]['cost'] = val.cost;							
 						} else {					
 							tmptable1[key]['Name'] = 'None';
 							tmptable1[key]['cost'] = key;
