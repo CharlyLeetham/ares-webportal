@@ -83,9 +83,7 @@ export default Component.extend({
 		var cps;
 		cps = this.get('char.custom.charperks');
 		return cps;
-	}
-	
-	)
+	}),
 
     ck_excludes: function(dislist, sysedg, traittype) {
 		var trexcludes;
