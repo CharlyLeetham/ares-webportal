@@ -1356,12 +1356,13 @@ export default Component.extend({
 				}
 				//Are there existing entries on the record?
 				if (tmptable) {
-					var tmptable2={}
+					var tmptable2={};
+					var tmptable2[0]={};
 					//Yes, then update it
 					tmptable2[0]['name'] = val.name;
 					//perktable[group]['cost'] = val.cost;
 					//perkslots = perktable;
-					console.log ('Perk Slots after existing select:');
+					console.log ('Tmptable2 after existing select:');
 					console.log (tmptable2);
 				} /* else { 
 					var tmptable1={};
