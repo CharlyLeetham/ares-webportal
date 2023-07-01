@@ -1326,6 +1326,7 @@ export default Component.extend({
 			perkslots = this.get('char.custom.perkslots');  //The Perks set on the character
 			console.log (group);
 			console.log (perktable);
+			console.log ('Perk Slots:');
 			console.log (perkslots);
 
 			/* Val returns:
