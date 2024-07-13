@@ -330,6 +330,67 @@ export default Component.extend({
 		return (finaltraits);
 	},
 
+	// Revised function that simplies the above code. To be tested July 13, 2024
+	newchangedges: function (sysedg, newedgarray, traittype, fw) {
+		let cgtrnewedg = [], i = 0, specialChar, existingTraits, finaltraits = [];
+	
+		// Get either edges or hindrances based on the traittype passed in.
+		existingTraits = this.get(traittype === 'edge' ? 'char.custom.cgedges' : 'char.custom.cghind');
+	
+		// Set the special character to add to the end of edges or hindrances based on the fw passed in.
+		specialChar = fw === 'icf' ? '*' : fw === 'race' ? '^' : '';
+	
+		if (Object.keys(existingTraits).length > 0 && Object.keys(existingTraits[0]).length > 0) {
+			for (const [key, desc] of Object.entries(existingTraits)) {
+				let en = desc['name'].toLowerCase();
+				let matchedTrait = Object.values(sysedg).find(slot => slot.name.toLowerCase() === en);
+	
+				if (matchedTrait && desc['class'].includes(fw === 'icf' ? '^' : '*')) {
+					cgtrnewedg.push({
+						class: `${matchedTrait.name}${fw === 'icf' ? '^' : '*'}`,
+						name: desc['name'],
+						rating: desc['rating']
+					});
+				}
+			}
+		}
+	
+		if (newedgarray && newedgarray[0]) {
+			for (const value of newedgarray) {
+				let en = value.split(specialChar)[0].toLowerCase().trim();
+				let existingMatch = cgtrnewedg.find(trait => trait.name.toLowerCase() === en);
+				let systemMatch = Object.values(sysedg).find(slot => slot.name.toLowerCase() === en);
+	
+				if (!existingMatch && systemMatch) {
+					cgtrnewedg.push({
+						class: value,
+						name: systemMatch.name,
+						rating: systemMatch.desc
+					});
+					systemMatch.disabled = true;
+				} else if (systemMatch) {
+					systemMatch.disabled = true;
+					if (traittype === 'hind') {
+						this.ck_excludes(systemMatch, sysedg, traittype);
+					}
+					existingMatch.class = `${systemMatch.name}*^`;
+				}
+			}
+		}
+	
+		finaltraits = this.mergeArrays(cgtrnewedg);
+	
+		// Sort the data alphabetically
+		finaltraits.sort((x, y) => x.name.toLowerCase().localeCompare(y.name.toLowerCase()));
+	
+		// Update character data
+		const charCustom = `char.custom.${traittype === 'edge' ? 'cgedges' : 'cghind'}`;
+		this.set('char.custom.sys' + (traittype === 'edge' ? 'edges' : 'hind'), sysedg);
+		this.set(charCustom, finaltraits);
+		this.set(charCustom + 'fw', finaltraits);
+	
+		return finaltraits;
+	}
 	checktrait: function(swraceall, swiconicfall, swrace, swiconicf, chosenifarray, newval, traittype) {
 		//// Passed in: ///
 		/// swraceall = All system races
