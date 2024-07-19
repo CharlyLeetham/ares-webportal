@@ -390,7 +390,8 @@ export default Component.extend({
 		this.set(charCustom + 'fw', finaltraits);
 	
 		return finaltraits;
-	}
+	},
+	
 	checktrait: function(swraceall, swiconicfall, swrace, swiconicf, chosenifarray, newval, traittype) {
 		//// Passed in: ///
 		/// swraceall = All system races
